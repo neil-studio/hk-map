@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <title>蓝玛客户项目推荐方案 - LANDMA GLOBAL</title>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #00889A;
+      --primary-dark: #00606D;
+      --primary-light: #E0F5F8;
+      --gold: #C5A880;
+      --gold-dark: #9A7B4F;
+      --slate-900: #0F172A;
+      --slate-800: #1E293B;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748B;
+      --slate-100: #F1F5F9;
+      --slate-50: #F8FAFC;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #525659;
+      color: var(--slate-800);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Top Floating Print Bar (Hidden during print) */
+    .print-control-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 54px;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 9999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      color: #fff;
+    }
+    .print-btn-group {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-print-action {
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-print-primary {
+      background: linear-gradient(135deg, #00889A, #00B4D8);
+      color: #fff;
+    }
+    .btn-print-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-print-secondary {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .btn-print-secondary:hover { background: rgba(255,255,255,0.25); }
+
+    /* A4 Page Container (Screen Preview) */
+    .presentation-wrapper {
+      padding: 70px 0 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .pdf-page {
+      width: 297mm;
+      height: 210mm; /* A4 Landscape */
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      page-break-after: always;
+      break-after: page;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header & Footer Template for inner pages */
+    .page-header {
+      height: 52px;
+      padding: 12px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #E2E8F0;
+      background: #FFFFFF;
+    }
+    .page-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .page-header-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      font-family: 'Noto Serif SC', serif;
+      letter-spacing: 0.5px;
+    }
+    .page-header-badge {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .page-header-logo {
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .page-footer {
+      height: 32px;
+      padding: 0 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: var(--slate-500);
+      border-top: 1px solid #E2E8F0;
+      background: #FAFAFA;
+      margin-top: auto;
+    }
+
+    /* =========================================================================
+       PAGE 1: COVER PAGE (奢华封面)
+       ========================================================================= */
+    .cover-page {
+      padding: 40px 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(145deg, #0B1E28 0%, #082F3B 40%, #004D5A 100%);
+      color: #FFFFFF;
+      position: relative;
+    }
+    .cover-bg-decor {
+      position: absolute;
+      right: -100px;
+      bottom: -100px;
+      width: 550px;
+      height: 550px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 180, 216, 0.12) 0%, rgba(0,0,0,0) 70%);
+      pointer-events: none;
+    }
+    .cover-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cover-tagline {
+      font-size: 0.82rem;
+      letter-spacing: 2px;
+      color: #80E3ED;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .cover-logo-img {
+      height: 48px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+    .cover-center {
+      margin: auto 0;
+    }
+    .cover-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #FFFFFF 30%, #90E0EF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    .cover-subtitle-box {
+      border-left: 4px solid #00B4D8;
+      padding-left: 16px;
+      margin-top: 12px;
+    }
+    .cover-subtitle {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #E0F2FE;
+      letter-spacing: 1px;
+    }
+    .cover-slogan {
+      font-size: 0.95rem;
+      color: #94A3B8;
+      margin-top: 6px;
+      letter-spacing: 0.5px;
+    }
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 20px;
+    }
+    .cover-client-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      padding: 14px 22px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      min-width: 320px;
+    }
+    .cover-client-row {
+      display: flex;
+      margin-bottom: 6px;
+      font-size: 0.88rem;
+    }
+    .cover-client-row:last-child { margin-bottom: 0; }
+    .cover-client-label {
+      color: #94A3B8;
+      width: 90px;
+    }
+    .cover-client-val {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+    .cover-brand-sign {
+      text-align: right;
+      font-size: 0.82rem;
+      color: #CBD5E1;
+      line-height: 1.6;
+    }
+
+    /* =========================================================================
+       PAGE 2: CLIENT REQUIREMENTS & STRATEGY (客户画像与需求)
+       ========================================================================= */
+    .page-content-grid2 {
+      padding: 24px 36px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 24px;
+      flex: 1;
+    }
+    .profile-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+    }
+    .profile-card-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary-light);
+    }
+    .req-item-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .req-cell {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+    .req-cell-label {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--slate-500);
+      margin-bottom: 4px;
+    }
+    .req-cell-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+    .advisor-speech-box {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 8px;
+      padding: 16px;
+      flex: 1;
+    }
+    .advisor-speech-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #166534;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .advisor-speech-text {
+      font-size: 0.84rem;
+      line-height: 1.7;
+      color: #1E293B;
+      white-space: pre-wrap;
+    }
+
+    /* =========================================================================
+       PAGE 3: OVERVIEW MAP & TABLE (全局地图与入选楼盘清单)
+       ========================================================================= */
+    .overview-layout {
+      padding: 18px 36px;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 20px;
+      flex: 1;
+    }
+    .overview-map-container {
+      height: 100%;
+      min-height: 480px;
+      border-radius: 10px;
+      border: 1px solid #CBD5E1;
+      overflow: hidden;
+      position: relative;
+    }
+    .overview-table-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+    }
+    .custom-table th {
+      background: #F1F5F9;
+      color: var(--slate-700);
+      padding: 8px 10px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 1.5px solid #CBD5E1;
+    }
+    .custom-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #E2E8F0;
+      color: var(--slate-800);
+    }
+    .custom-table tr:hover { background: #F8FAFC; }
+    .table-badge-num {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      font-weight: 800;
+      font-size: 0.7rem;
+    }
+
+    /* =========================================================================
+       PAGE 4+: SINGLE PROJECT DETAIL (单盘档案与真实路线)
+       ========================================================================= */
+    .project-detail-layout {
+      padding: 18px 36px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      flex: 1;
+    }
+    .proj-left-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .proj-title-bar {
+      margin-bottom: 12px;
+    }
+    .proj-name-cn {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: var(--slate-900);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .proj-meta-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .meta-chip {
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      color: var(--slate-700);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .meta-chip.primary {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: #B2E7EF;
+    }
+
+    /* Single Project Detail Layout */
+    .project-detail-layout {
+      padding: 12px 36px 8px 36px;
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 18px;
+      flex: 1;
+      overflow: hidden;
+    }
+    .proj-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .proj-title-bar {
+      margin-bottom: 2px;
+    }
+    .proj-name-cn {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--slate-900);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .proj-meta-chips {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 3px;
+    }
+    .meta-chip {
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      color: var(--slate-700);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 600;
+    }
+    .meta-chip.primary {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: #B2E7EF;
+    }
+
+    /* Dual Tables (Sales Control In-Stock & Recent Transactions) */
+    .data-card-box {
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+    .data-card-header {
+      background: #F8FAFC;
+      padding: 3.5px 10px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .data-card-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.68rem;
+    }
+    .data-card-table th {
+      background: #F1F5F9;
+      padding: 3.5px 6px;
+      color: var(--slate-600);
+      font-weight: 700;
+      text-align: left;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .data-card-table td {
+      padding: 3px 6px;
+      border-top: 1px solid #F8FAFC;
+      color: var(--slate-800);
+    }
+    .data-card-table tr:hover { background: #FAFAFA; }
+
+    .price-tender-tag {
+      background: #FEF3C7;
+      color: #92400E;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 800;
+      font-size: 0.66rem;
+    }
+    .price-val-tag {
+      color: #2563EB;
+      font-weight: 700;
+    }
+
+    /* Bullet Points */
+    .proj-highlights-box {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 6px 10px;
+    }
+    .proj-highlights-title {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 3px;
+    }
+    .highlight-item {
+      font-size: 0.68rem;
+      line-height: 1.45;
+      color: var(--slate-700);
+      margin-bottom: 2px;
+      display: flex;
+      gap: 5px;
+    }
+    .highlight-item:last-child { margin-bottom: 0; }
+
+    .proj-right-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .proj-map-frame {
+      flex: 1;
+      min-height: 380px;
+      border-radius: 8px;
+      border: 1px solid #CBD5E1;
+      overflow: hidden;
+      position: relative;
+    }
+    .map-mtr-infobar {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: #166534;
+    }
+
+    /* =========================================================================
+       PAGE FINAL: CLOSING BRAND PAGE (封底)
+       ========================================================================= */
+    .closing-page {
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(145deg, #071923 0%, #0B2533 50%, #003744 100%);
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .closing-logo-top {
+      height: 54px;
+      object-fit: contain;
+    }
+    .closing-main-text {
+      margin: auto 0;
+    }
+    .closing-big-slogan {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 3.8rem;
+      font-weight: 900;
+      letter-spacing: 8px;
+      background: linear-gradient(135deg, #FFFFFF 20%, #90E0EF 70%, #C5A880 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 24px;
+    }
+    .closing-sub-slogan {
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      color: #E0F2FE;
+      font-weight: 500;
+    }
+    .closing-brand-box {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 24px;
+      width: 100%;
+      max-width: 650px;
+      font-size: 0.85rem;
+      color: #94A3B8;
+      line-height: 1.8;
+    }
+
+    /* =========================================================================
+       PRINT SPECIFICATIONS (@media print)
+       ========================================================================= */
+    @media print {
+      body {
+        background: none;
+      }
+      .print-control-bar {
+        display: none !important;
+      }
+      .presentation-wrapper {
+        padding: 0;
+        gap: 0;
+      }
+      .pdf-page {
+        box-shadow: none;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Toolbar -->
+  <div class="print-control-bar">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span style="font-weight:800; font-size:0.95rem;">🇭🇰 蓝玛客户项目推荐方案 (LANDMA Global)</span>
+      <span id="page-stat-badge" style="background:rgba(255,255,255,0.15); padding:2px 10px; border-radius:12px; font-size:0.75rem;">准备就绪</span>
+    </div>
+    <div class="print-btn-group">
+      <button class="btn-print-action btn-print-secondary" onclick="window.close()">❌ 关闭窗口</button>
+      <button class="btn-print-action btn-print-primary" onclick="window.print()">🖨️ 打印 / 保存为高清 PDF</button>
+    </div>
+  </div>
+
+  <div class="presentation-wrapper" id="presentation-root">
+    <!-- Dynamic Pages Injected by JS -->
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await renderExportPresentation();
+    });
+
+    async function renderExportPresentation() {
+      // 1. 读取 localStorage 中传递的导出数据
+      let exportData = null;
+      try {
+        const raw = localStorage.getItem('landma_export_payload');
+        if (raw) exportData = JSON.parse(raw);
+      } catch (e) {
+        console.error(e);
+      }
+
+      if (!exportData || !exportData.projects || exportData.projects.length === 0) {
+        try {
+          const resp = await fetch('sample_payload.json');
+          if (resp.ok) exportData = await resp.json();
+        } catch (e) {}
+      }
+
+      if (!exportData || !exportData.projects || exportData.projects.length === 0) {
+        document.getElementById('presentation-root').innerHTML = `
+          <div style="background:#fff; padding:40px; border-radius:10px; text-align:center;">
+            <h2>⚠️ 未找到选定楼盘数据</h2>
+            <p style="color:#64748b; margin-top:8px;">请返回地图主页面勾选推荐楼盘后再点击导出方案。</p>
+          </div>
+        `;
+        return;
+      }
+
+      const { client, projects, dateStr } = exportData;
+      const root = document.getElementById('presentation-root');
+      root.innerHTML = '';
+
+      const totalPages = 3 + projects.length + 1; // 封面 + 需求 + 全局地图 + N个单盘 + 封底
+      document.getElementById('page-stat-badge').textContent = `共 ${projects.length} 个推荐楼盘 / ${totalPages} 页`;
+
+      // ----------------------------------------------------
+      // PAGE 1: 封面 (Cover Page)
+      // ----------------------------------------------------
+      const coverPage = document.createElement('div');
+      coverPage.className = 'pdf-page cover-page';
+      coverPage.innerHTML = `
+        <div class="cover-bg-decor"></div>
+        <div class="cover-header">
+          <div class="cover-tagline">LANDMA GLOBAL REAL ESTATE ADVISORY</div>
+          <img src="landma_logo.png" alt="LANDMA LOGO" class="cover-logo-img">
+        </div>
+        <div class="cover-center">
+          <div class="cover-title">蓝玛客户项目推荐</div>
+          <div class="cover-subtitle-box">
+            <div class="cover-subtitle">全程陪伴的跨境交易体验，守护您的全球资产之旅</div>
+            <div class="cover-slogan">Exclusive Global Real Estate Advisory & Cross-Border Wealth Strategy</div>
+          </div>
+        </div>
+        <div class="cover-footer">
+          <div class="cover-client-card">
+            <div class="cover-client-row">
+              <span class="cover-client-label">尊尚客户：</span>
+              <span class="cover-client-val">${client.name || '贵宾客户'}</span>
+            </div>
+            <div class="cover-client-row">
+              <span class="cover-client-label">方案日期：</span>
+              <span class="cover-client-val">${dateStr || new Date().toLocaleDateString()}</span>
+            </div>
+          </div>
+        </div>
+      `;
+      root.appendChild(coverPage);
+
+      // ----------------------------------------------------
+      // PAGE 2: 客户需求与策略规划 (Requirements Page)
+      // ----------------------------------------------------
+      const reqPage = document.createElement('div');
+      reqPage.className = 'pdf-page';
+      reqPage.innerHTML = `
+        <div class="page-header">
+          <div class="page-header-left">
+            <span class="page-header-title">客户需求档案与置业策略</span>
+            <span class="page-header-badge">CLIENT REQUIREMENTS</span>
+          </div>
+          <img src="landma_logo.png" class="page-header-logo" alt="Logo">
+        </div>
+
+        <div class="page-content-grid2">
+          <div class="profile-card">
+            <div class="profile-card-title">🎯 客户置业需求指标清单</div>
+            <div class="req-item-box">
+              <div class="req-cell">
+                <div class="req-cell-label">👤 客户尊称</div>
+                <div class="req-cell-val">${client.name || '贵宾客户'}</div>
+              </div>
+              <div class="req-cell">
+                <div class="req-cell-label">💷 置业预算区间</div>
+                <div class="req-cell-val" style="color:#2563EB;">${client.budget || '按精选方案匹配'}</div>
+              </div>
+              <div class="req-cell">
+                <div class="req-cell-label">📍 意向核心区域</div>
+                <div class="req-cell-val">${client.district || '九龙/港岛核心优质地段'}</div>
+              </div>
+              <div class="req-cell">
+                <div class="req-cell-label">🏠 意向户型规格</div>
+                <div class="req-cell-val">${client.layout || '2房 - 4房大宅'}</div>
+              </div>
+              <div class="req-cell">
+                <div class="req-cell-label">📏 面积段需求</div>
+                <div class="req-cell-val">${client.sqftRange || '根据户型灵活配置'}</div>
+              </div>
+              <div class="req-cell">
+                <div class="req-cell-label">🏫 核心诉求权重</div>
+                <div class="req-cell-val">${client.coreFocus || '名校学区 / 轨交枢纽 / 资产保值'}</div>
+              </div>
+            </div>
+
+            <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:12px; border-radius:8px; font-size:0.78rem; color:#475569; line-height:1.6;">
+              💡 <strong>蓝玛跨境置业选筹原则：</strong><br>
+              严格优选香港主流品牌发展商打造之优质项目，综合评估名校网（34/41/11校网）、港铁步行通勤便利度、现楼/期房交楼标准及销控在售房源真实性价比，为客户资金安全与传承价值保驾护航。
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-card-title">📝 置业顾问推荐语与选筹逻辑</div>
+            <div class="advisor-speech-box">
+              <div class="advisor-speech-title">💎 专属置业顾问建议：</div>
+              <div class="advisor-speech-text">${client.intro || '根据您的预算与核心居住/投资诉求，为您精选以下核心项目。方案综合考量了交通轨交、名校教育护城河及真实销控在售房源，供您深度决策参考。'}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span>蓝玛国际 LANDMA GLOBAL · 客户定制方案</span>
+          <span>第 2 页 / 共 ${totalPages} 页</span>
+        </div>
+      `;
+      root.appendChild(reqPage);
+
+      // ----------------------------------------------------
+      // PAGE 3: 全局宏观地图与入选对照表 (Overview Map & Table)
+      // ----------------------------------------------------
+      const overviewPage = document.createElement('div');
+      overviewPage.className = 'pdf-page';
+      overviewPage.innerHTML = `
+        <div class="page-header">
+          <div class="page-header-left">
+            <span class="page-header-title">推荐项目全港宏观分布与选盘清单</span>
+            <span class="page-header-badge">MACRO LOCATION MAP</span>
+          </div>
+          <img src="landma_logo.png" class="page-header-logo" alt="Logo">
+        </div>
+
+        <div class="overview-layout">
+          <div id="overview-map" class="overview-map-container"></div>
+          <div class="overview-table-container">
+            <div style="font-size:0.88rem; font-weight:800; color:#0F172A; margin-bottom:8px; display:flex; justify-content:space-between;">
+              <span>📋 入选推荐楼盘速览 (${projects.length} 个)</span>
+            </div>
+            <div style="flex:1; overflow:hidden; border:1px solid #E2E8F0; border-radius:8px;">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th style="width:36px;">#</th>
+                    <th>项目名称</th>
+                    <th>区域</th>
+                    <th>发展商</th>
+                    <th>最近港铁</th>
+                    <th>总价区间</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${projects.map((p, idx) => `
+                    <tr>
+                      <td><span class="table-badge-num">${idx + 1}</span></td>
+                      <td><strong>${p.name}</strong></td>
+                      <td>${p.region} · ${p.district}</td>
+                      <td>${p.developer || '品牌发展商'}</td>
+                      <td>🚇 ${p.nearest_mtr?.nearest_mtr_cn || '地铁沿线'}</td>
+                      <td style="color:#2563EB; font-weight:700;">${p.total_price_desc || (p.min_price_wan ? p.min_price_wan + '万起' : '详见销控')}</td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+            <div style="font-size:0.72rem; color:#64748B; margin-top:6px;">
+              * 注：所有价格与在售套数均同步自最新一手销控表。
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span>蓝玛国际 LANDMA GLOBAL · 客户定制方案</span>
+          <span>第 3 页 / 共 ${totalPages} 页</span>
+        </div>
+      `;
+      root.appendChild(overviewPage);
+
+      // ----------------------------------------------------
+      // PAGE 4+: 每个项目的独立单盘专页 (Single Project Page)
+      // ----------------------------------------------------
+      projects.forEach((proj, idx) => {
+        const pPage = document.createElement('div');
+        pPage.className = 'pdf-page';
+        const pageNum = 4 + idx;
+        const mtr = proj.nearest_mtr;
+        const sales = proj.sales_control_summary || [];
+        const recentTx = proj.recent_transactions || [];
+
+        // 提取 2 条核心亮点
+        let highlights = [];
+        if (proj.reason) {
+          highlights = proj.reason.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
+        } else if (proj.mainland_selling_points) {
+          highlights = proj.mainland_selling_points.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
+        }
+        if (highlights.length === 0) {
+          highlights = [
+            `1. 坐落于${proj.region}${proj.district}核心板块，享受顶级城市配套与优质居住环境。`,
+            `2. 紧邻港铁${mtr?.nearest_mtr_cn || ''}站，轨交通勤极其高效，往返中环及跨境出行便捷。`
+          ];
+        }
+
+        // 1. 销控在售户型表格
+        let salesTableHtml = '';
+        if (sales && sales.length > 0) {
+          salesTableHtml = `
+            <table class="data-card-table">
+              <thead>
+                <tr>
+                  <th style="width:24%;">在售户型</th>
+                  <th style="width:18%;">在售套数</th>
+                  <th style="width:28%;">实用面积段</th>
+                  <th style="width:30%;">折实总价区间</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${sales.slice(0, 4).map(s => `
+                  <tr>
+                    <td><strong>${s.layout}</strong></td>
+                    <td><span style="background:#F1F5F9; padding:1px 5px; border-radius:3px; font-weight:700;">${s.unsold_count} 套</span></td>
+                    <td>${s.sqft_range}</td>
+                    <td>
+                      ${s.price_range.includes('招标') ? '<span class="price-tender-tag">' + s.price_range + '</span>' : `<span class="price-val-tag">${s.price_range}</span>`}
+                    </td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          `;
+        } else {
+          salesTableHtml = `
+            <div style="padding:6px 10px; font-size:0.68rem; color:#64748B; text-align:center;">
+              全盘热销尾盘，具体在售单元请咨询置业顾问调取最新销控
+            </div>
+          `;
+        }
+
+        // 2. 各户型最近成交参考表格 (每户型最近2套)
+        let txTableHtml = '';
+        if (recentTx && recentTx.length > 0) {
+          txTableHtml = `
+            <table class="data-card-table">
+              <thead>
+                <tr>
+                  <th style="width:15%;">户型</th>
+                  <th style="width:25%;">成交单位</th>
+                  <th style="width:16%;">面积</th>
+                  <th style="width:17%;">折实总价</th>
+                  <th style="width:14%;">实用呎价</th>
+                  <th style="width:13%;">成交日期</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${recentTx.slice(0, 6).map(t => `
+                  <tr>
+                    <td><strong>${t.layout}</strong></td>
+                    <td style="color:#0F172A; font-weight:600;">${t.unit_name}</td>
+                    <td>${t.sqft}</td>
+                    <td style="color:#16A34A; font-weight:700;">${t.price}</td>
+                    <td style="color:#475569; font-size:0.66rem;">${t.unit_price}</td>
+                    <td style="color:#64748B; font-size:0.65rem;">${t.date}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          `;
+        } else {
+          txTableHtml = `
+            <div style="padding:6px 10px; font-size:0.68rem; color:#64748B; text-align:center;">
+              暂无一手历史公开成交记录或一手新盘即将发售
+            </div>
+          `;
+        }
+
+        pPage.innerHTML = `
+          <div class="page-header">
+            <div class="page-header-left">
+              <span class="table-badge-num">${idx + 1}</span>
+              <span class="page-header-title">${proj.name}</span>
+              <span class="page-header-badge">${proj.region} · ${proj.district}</span>
+            </div>
+            <img src="landma_logo.png" class="page-header-logo" alt="Logo">
+          </div>
+
+          <div class="project-detail-layout">
+            <!-- Left Column: Dual Tables & Highlights -->
+            <div class="proj-left-col">
+              <div class="proj-title-bar">
+                <div class="proj-name-cn">${proj.name}</div>
+                <div class="proj-meta-chips">
+                  <span class="meta-chip primary">🏗️ 发展商：${proj.developer || '品牌发展商'}</span>
+                  <span class="meta-chip">📅 落成日期：${proj.completion_date || '现楼发售'}</span>
+                  ${proj.school_net ? `<span class="meta-chip">🏫 校网：${proj.school_net}</span>` : ''}
+                  <span class="meta-chip" style="color:#16A34A; background:#F0FDF4; border-color:#BBF7D0;">
+                    🚇 ${mtr ? mtr.nearest_mtr_cn + '站 (步行' + mtr.dist_walk_m + '米/' + mtr.walk_time_min + '分)' : '地铁沿线'}
+                  </span>
+                </div>
+              </div>
+
+              <!-- 1. 在售未售房源 -->
+              <div class="data-card-box">
+                <div class="data-card-header">
+                  <span>📊 项目实时一手在售房源 (未售销控汇总)</span>
+                  <span style="font-size:0.66rem; color:#64748b;">实时一手数据</span>
+                </div>
+                ${salesTableHtml}
+              </div>
+
+              <!-- 2. 最近真实成交记录 (每户型最新2套) -->
+              <div class="data-card-box">
+                <div class="data-card-header">
+                  <span>📈 各户型最近一手真实成交参考 (最新2套)</span>
+                  <span style="font-size:0.66rem; color:#16A34A; font-weight:700;">官方成交记录册</span>
+                </div>
+                ${txTableHtml}
+              </div>
+
+              <!-- 3. 顾问核心精评 -->
+              <div class="proj-highlights-box">
+                <div class="proj-highlights-title">💎 置业顾问精要点评</div>
+                ${highlights.map(h => `
+                  <div class="highlight-item">
+                    <span>•</span>
+                    <div>${h.replace(/^\d+[\.、]\s*/, '')}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Right Column: Micro Route Map -->
+            <div class="proj-right-col">
+              <div id="proj-map-${idx}" class="proj-map-frame"></div>
+              <div class="map-mtr-infobar">
+                <span>🚇 <strong>${mtr?.nearest_mtr_cn || '港铁'}站</strong> 人行道步行导航</span>
+                <span>🚶 实际步行 <strong>${mtr?.dist_walk_m || 500} 米</strong> · 约 <strong>${mtr?.walk_time_min || 6} 分钟</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-footer">
+            <span>蓝玛国际 LANDMA GLOBAL · 客户定制方案</span>
+            <span>第 ${pageNum} 页 / 共 ${totalPages} 页</span>
+          </div>
+        `;
+        root.appendChild(pPage);
+      });
+
+      // ----------------------------------------------------
+      // PAGE FINAL: 品牌封底 (Closing Page)
+      // ----------------------------------------------------
+      const closingPage = document.createElement('div');
+      closingPage.className = 'pdf-page closing-page';
+      closingPage.innerHTML = `
+        <img src="landma_logo.png" class="closing-logo-top" alt="LANDMA Logo">
+        <div class="closing-main-text">
+          <div class="closing-big-slogan">阅世界 · 置未来</div>
+          <div class="closing-sub-slogan">GLOBAL VISION · TIMELESS ASSETS</div>
+        </div>
+        <div class="closing-brand-box">
+          <strong style="color:#fff; font-size:0.95rem;">藍瑪國際 LANDMA GLOBAL</strong><br>
+          全程陪伴的跨境交易体验 · 守护您的全球资产之旅<br>
+          <span style="font-size:0.75rem; color:#64748B;">免责声明：本推荐方案所载之一切数据及资料仅供贵宾参考，实际价格及销售安排以发展商最新公布之官方价单及成交记录册为准。</span>
+        </div>
+      `;
+      root.appendChild(closingPage);
+
+      // ----------------------------------------------------
+      // 异步初始化所有地图 (Leaflet Maps)
+      // ----------------------------------------------------
+      setTimeout(() => {
+        initPresentationMaps(projects);
+      }, 200);
+    }
+
+    function initPresentationMaps(projects) {
+      // 1. 初始化全局地图 (Overview Map)
+      const overviewContainer = document.getElementById('overview-map');
+      if (overviewContainer && projects.length > 0) {
+        const mapOverview = L.map('overview-map', { zoomControl: false, attributionControl: false });
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+          maxZoom: 18
+        }).addTo(mapOverview);
+
+        const group = [];
+        projects.forEach((p, idx) => {
+          if (p.lat && p.lng) {
+            const icon = L.divIcon({
+              className: 'custom-pin-print',
+              html: `
+                <div style="background:#00889A; color:#fff; padding:4px 8px; border-radius:12px; font-size:11px; font-weight:800; box-shadow:0 3px 8px rgba(0,0,0,0.3); border:2px solid #fff; white-space:nowrap;">
+                  ${idx + 1}. ${p.name}
+                </div>
+              `,
+              iconSize: [90, 24],
+              iconAnchor: [45, 12]
+            });
+            const m = L.marker([p.lat, p.lng], { icon }).addTo(mapOverview);
+            group.push([p.lat, p.lng]);
+          }
+        });
+
+        if (group.length > 0) {
+          mapOverview.fitBounds(L.latLngBounds(group), { padding: [40, 40] });
+        }
+      }
+
+      // 2. 初始化各单盘微观导航地图 (Single Project Maps)
+      projects.forEach((p, idx) => {
+        const mapDiv = document.getElementById(`proj-map-${idx}`);
+        if (!mapDiv || !p.lat || !p.lng) return;
+
+        const mapSingle = L.map(`proj-map-${idx}`, { zoomControl: false, attributionControl: false });
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+          maxZoom: 19
+        }).addTo(mapSingle);
+
+        // 楼盘标记
+        const projIcon = L.divIcon({
+          className: 'proj-pin-single',
+          html: `
+            <div style="background:#2563EB; color:#fff; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:800; box-shadow:0 4px 10px rgba(37,99,235,0.4); border:2px solid #fff; white-space:nowrap;">
+              🏢 ${p.name}
+            </div>
+          `,
+          iconSize: [100, 26],
+          iconAnchor: [50, 13]
+        });
+        L.marker([p.lat, p.lng], { icon: projIcon }).addTo(mapSingle);
+
+        const mtr = p.nearest_mtr;
+        const boundsCoords = [[p.lat, p.lng]];
+
+        if (mtr && mtr.nearest_mtr_lat && mtr.nearest_mtr_lng) {
+          // 港铁站标记
+          const mtrIcon = L.divIcon({
+            className: 'mtr-pin-single',
+            html: `
+              <div style="background:#007DC5; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px; font-weight:700; box-shadow:0 2px 6px rgba(0,0,0,0.3); border:1.5px solid #fff; white-space:nowrap;">
+                🚇 ${mtr.nearest_mtr_cn}站
+              </div>
+            `,
+            iconSize: [80, 22],
+            iconAnchor: [40, 11]
+          });
+          L.marker([mtr.nearest_mtr_lat, mtr.nearest_mtr_lng], { icon: mtrIcon }).addTo(mapSingle);
+          boundsCoords.push([mtr.nearest_mtr_lat, mtr.nearest_mtr_lng]);
+
+          // 绘制人行道真实轨迹
+          let lineCoords = [];
+          if (mtr.route_geometry && mtr.route_geometry.coordinates) {
+            lineCoords = mtr.route_geometry.coordinates.map(c => [c[1], c[0]]);
+          } else {
+            lineCoords = [[p.lat, p.lng], [mtr.nearest_mtr_lat, mtr.nearest_mtr_lng]];
+          }
+
+          L.polyline(lineCoords, {
+            color: '#16A34A',
+            weight: 4,
+            dashArray: '8, 6',
+            opacity: 0.95
+          }).addTo(mapSingle);
+        }
+
+        mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [50, 50] });
+      });
+    }
+  </script>
+</body>
+</html>
