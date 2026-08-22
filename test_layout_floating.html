@@ -1222,6 +1222,9 @@ function applyFilters() {
       `;
     }
 
+    const salesUrl = `https://neil-studio.github.io/hk/sales.html?project=${encodeURIComponent(proj.name)}`;
+    const analyticsUrl = `https://neil-studio.github.io/hk/analytics.html?project=${encodeURIComponent(proj.name)}`;
+
     const card = document.createElement('div');
     card.className = `card-float ${isSelected ? 'selected' : ''}`;
     card.innerHTML = `
@@ -1247,10 +1250,19 @@ function applyFilters() {
         <span class="${proj.sell_status === 'on_sale' ? 'status-tag-sale' : 'status-tag-priced'}">${proj.sell_status_cn}</span>
         ${distKmStr ? `<span class="card-dist-badge">📍 距${activeAnchorLandmark.name.split(' ')[0]} ${distKmStr}</span>` : ''}
       </div>
+      <div style="margin-top:8px; display:flex; gap:6px; align-items:center;">
+        <a href="${salesUrl}" target="_blank" onclick="event.stopPropagation()" style="flex:1; text-align:center; background:#eff6ff; color:#2563eb; font-size:0.72rem; font-weight:700; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #bfdbfe; transition:all 0.2s;">
+          🏢 正式版销控 &rarr;
+        </a>
+        ${proj.marketing_url ? `
+        <a href="${proj.marketing_url}" target="_blank" onclick="event.stopPropagation()" style="flex:1; text-align:center; background:#f0fdf4; color:#16a34a; font-size:0.72rem; font-weight:700; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #bbf7d0; transition:all 0.2s;">
+          📂 营销网盘
+        </a>` : ''}
+      </div>
     `;
 
     card.addEventListener('click', (e) => {
-      if (e.target.classList.contains('card-checkbox')) return;
+      if (e.target.classList.contains('card-checkbox') || e.target.tagName === 'A') return;
       map.flyTo([proj.lat, proj.lng], 16, { duration: 0.8 });
     });
 
@@ -1278,6 +1290,23 @@ function applyFilters() {
       `;
     }
 
+    let salesProgressHtml = '';
+    if (proj.sales_stats) {
+      const st = proj.sales_stats;
+      const rate = st.sold_rate || 0;
+      salesProgressHtml = `
+        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:6px 10px; margin:6px 0;">
+          <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:3px;">
+            <span><strong>📊 去化率: ${rate}%</strong> (已售 ${st.sold} / 总数 ${st.total} 伙)</span>
+            <span style="color:#16a34a; font-weight:700;">在售 ${st.sale} 伙</span>
+          </div>
+          <div style="height:5px; background:#e2e8f0; border-radius:3px; overflow:hidden;">
+            <div style="height:100%; width:${Math.min(rate, 100)}%; background:linear-gradient(90deg, #2563eb, #16a34a); border-radius:3px;"></div>
+          </div>
+        </div>
+      `;
+    }
+
     const popupHTML = `
       <div class="custom-popup">
         <div class="popup-title">${proj.name}</div>
@@ -1286,9 +1315,24 @@ function applyFilters() {
         ${proj.developer ? `<div class="popup-row">🏗️ 开发商：<strong>${proj.developer}</strong></div>` : ''}
         <div class="popup-row">💷 价格描述：<strong style="color:#2563eb;">${proj.total_price_desc || (proj.min_price_wan ? proj.min_price_wan + '万起' : '详见价单')}</strong></div>
         ${distKmStr ? `<div class="popup-row">📏 锚点距离：<strong style="color:#dc2626;">距 ${activeAnchorLandmark.name.split(' ')[0]} ${distKmStr}</strong></div>` : ''}
+        ${salesProgressHtml}
         ${popupMtrRow}
+        <div style="margin-top:10px; padding-top:8px; border-top:1px solid #e2e8f0; display:flex; flex-direction:column; gap:6px;">
+          <a href="${salesUrl}" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:6px; background:#1e3a8a; color:#ffffff; font-size:12px; font-weight:700; padding:7px 12px; border-radius:8px; text-decoration:none; box-shadow:0 2px 6px rgba(30,58,138,0.25);">
+            🏢 打开正式版【销控网格】&rarr;
+          </a>
+          <div style="display:flex; gap:6px;">
+            <a href="${analyticsUrl}" target="_blank" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#f1f5f9; color:#1e293b; font-size:11px; font-weight:600; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #cbd5e1;">
+              📈 成交分析
+            </a>
+            ${proj.marketing_url ? `
+            <a href="${proj.marketing_url}" target="_blank" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#ecfdf5; color:#047857; font-size:11px; font-weight:600; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #a7f3d0;">
+              📂 资料网盘
+            </a>` : ''}
+          </div>
+        </div>
         ${isAdminMode ? `
-          <div class="popup-edit-toolbar">
+          <div class="popup-edit-toolbar" style="margin-top:6px;">
             <button class="btn-tool-ors" onclick="openCoordModal('${proj.name}')">✏️ 手动修改坐标/门牌 (管理权限)</button>
           </div>
         ` : ''}
@@ -1297,6 +1341,7 @@ function applyFilters() {
     `;
     marker.bindPopup(popupHTML);
     projectMarkersLayer.addLayer(marker);
+
   });
 }
 
