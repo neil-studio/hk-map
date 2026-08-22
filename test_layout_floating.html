@@ -622,6 +622,7 @@
     <div class="brand-logo">
       <span>🇭🇰 香港一手新盘地图</span>
       <span class="badge-layout">全屏奢华悬浮版</span>
+      <span class="badge-layout" id="liveSyncBadge" style="background:#f0fdf4; color:#16a34a; border-color:#bbf7d0; display:inline-flex; align-items:center; gap:4px;"><span style="width:6px; height:6px; border-radius:50%; background:#16a34a; display:inline-block;"></span><span id="liveSyncText">正式版销控已实时直连</span></span>
     </div>
 
     <!-- 3 Dropdown Anchors -->
@@ -829,10 +830,105 @@ async function loadData() {
     projectsData = await r3.json();
   } catch(e) { console.error(e); }
 
+  // 🚀 方案 B：只读实时直连正式版数据源 (零修改正式版原则)
+  await fetchProductionSalesData();
+
   populateSelects();
   renderMtrMarkers();
   applyFilters();
 }
+
+async function fetchProductionSalesData() {
+  const endpoints = [
+    'https://neil-studio.github.io/hk/data.json?t=' + Date.now(),
+    '../../价单_正式版/data.json',
+    './data.json'
+  ];
+
+  let prodData = null;
+  for (const url of endpoints) {
+    try {
+      const resp = await fetch(url, { cache: 'no-cache' });
+      if (resp.ok) {
+        prodData = await resp.json();
+        console.log('✅ 地图站成功直连正式版销控数据:', url);
+        break;
+      }
+    } catch(e) {}
+  }
+
+  if (prodData && prodData.projects) {
+    mergeProductionSales(prodData);
+  }
+}
+
+function mergeProductionSales(prodData) {
+  const zhMap = {
+    '峯':'峰','滙':'汇','灣':'湾','賢':'贤','璽':'玺','號':'号','鑽':'钻',
+    '緹':'缇','奧':'奥','譽':'誉','瓏':'珑','晉':'晋','揚':'扬','滶':'滶',
+    '薈':'荟','濤':'涛','閣':'阁','爾':'尔','緻':'致','玥':'玥','莊':'庄',
+    '園':'园','朗':'朗','凱':'凯','嵐':'岚','雲':'云','嶺':'岭','曦':'曦',
+    '迎':'迎','瑧':'瑧','海':'海','匯':'汇','臺':'台','東':'东','南':'南',
+    '西':'西','北':'北','中':'中','島':'岛','龍':'龙','啟':'启','德':'德',
+    '紅':'红','磡':'磡','鴨':'鸭','脷':'脷','洲':'洲','黃':'黄','竹':'竹',
+    '坑':'坑','壽':'寿','臣':'臣','山':'山','頂':'顶','淺':'浅','水':'水',
+    '深':'深','跑':'跑','馬':'马','地':'地','渣':'渣','甸':'甸','薄':'薄',
+    '扶':'扶','林':'林','仔':'仔','環':'环','土':'土','瓜':'瓜','營':'营',
+    '盤':'盘','銅':'铜','鑼':'锣','後':'后','涌':'涌','怡':'怡','太':'太',
+    '古':'古','石':'石','塘':'塘','咀':'咀','摩':'摩','星':'星','赤':'赤',
+    '柱':'柱','潭':'潭','澳':'澳','座':'座','樓':'楼','期':'期','門':'门',
+    '沙':'沙','田':'田','圍':'围','頌':'颂','傲':'傲','華':'华','喆':'喆',
+    '寶':'宝','應':'应','悅':'悦','麓':'麓','維':'维','畔':'畔','語':'语',
+    '晴':'晴','首':'首','澄':'澄','碧':'碧','瀧':'泷','澐':'沄','學':'学',
+    '鑄':'铸','徑':'径','灃':'沣','瀚':'瀚','逸':'逸','雋':'隽','珀':'珀',
+    '珏':'珏','溋':'溋','皓':'皓','晟':'晟','囍':'喜','蘊':'蕴','區':'区',
+    '雙':'双','羅':'罗','藍':'蓝','賓':'宾','吉':'吉','道':'道','階':'阶',
+    '曉':'晓','柏':'柏','澔':'澔','泰':'泰','豐':'丰','遠':'远'
+  };
+
+  function norm(s) {
+    if (!s) return '';
+    s = s.replace(/III/g, '3').replace(/II/g, '2').replace(/I/g, '1');
+    s = s.replace(/iii/g, '3').replace(/ii/g, '2').replace(/i/g, '1');
+    s = s.replace(/[\s\.\‧\・\．\•\-\_\(\)\（\）\,\，\。\、\/\&]/g, '');
+    let res = '';
+    for (let ch of s) { res += zhMap[ch] || ch; }
+    return res.toLowerCase().replace(/第/g, '').replace(/期/g, '').replace(/项目/g, '');
+  }
+
+  const pMap = {};
+  prodData.projects.forEach(p => {
+    pMap[p.name] = p;
+    pMap[norm(p.name)] = p;
+  });
+
+  projectsData.forEach(p => {
+    const prod = pMap[p.name] || pMap[norm(p.name)];
+    if (prod) {
+      if (prod.stats) {
+        p.sales_stats = prod.stats;
+        p.sold_rate = prod.stats.sold_rate;
+        p.unsold_units = prod.stats.sale;
+      }
+      p.sell_status = prod.sell_status || p.sell_status;
+      p.sell_status_cn = prod.sell_status_cn || p.sell_status_cn;
+      if (prod.total_price_desc) p.total_price_desc = prod.total_price_desc;
+      if (prod.sqft_price_desc) p.sqft_price_desc = prod.sqft_price_desc;
+      if (prod.main_layout) p.main_layout = prod.main_layout;
+      if (prod.marketing_url) p.marketing_url = prod.marketing_url;
+      if (prod.roi) p.roi = prod.roi;
+      if (prod.grade) p.grade = prod.grade;
+      if (prod.mainland_selling_points) p.mainland_selling_points = prod.mainland_selling_points;
+    }
+  });
+
+  const syncEl = document.getElementById('liveSyncText');
+  if (syncEl) {
+    const t = (prodData.global_stats && prodData.global_stats.last_updated) ? prodData.global_stats.last_updated.slice(0, 16) : '今日';
+    syncEl.innerHTML = `🟢 正式版实时同步 (${t})`;
+  }
+}
+
 
 function renderMtrMarkers() {
   mtrStationsLayer.clearLayers();
