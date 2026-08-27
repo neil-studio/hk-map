@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>香港一手新盘全景地图（全屏奢华悬浮版）</title>
+<title>香港一手新盘全景地图</title>
 
 <!-- Leaflet CSS & Google Fonts -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -101,14 +101,15 @@
     display: flex;
     gap: 8px;
     flex: 1;
-    max-width: 720px;
+    max-width: 960px;
     min-width: 0;
+    align-items: center;
   }
 
   .anchor-select-glass {
     flex: 1;
     min-width: 0;
-    padding: 7px 12px;
+    padding: 7px 10px;
     border-radius: 8px;
     border: 1px solid #cbd5e1;
     background: #ffffff;
@@ -122,6 +123,132 @@
 
   .anchor-select-glass:focus {
     border-color: var(--brand-accent);
+  }
+
+  /* 🔍 Search Box Styling */
+  .search-box-wrapper {
+    position: relative;
+    flex: 1.2;
+    min-width: 170px;
+    max-width: 260px;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-input-glass {
+    width: 100%;
+    padding: 7px 28px 7px 28px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    outline: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+
+  .search-input-glass:focus {
+    border-color: var(--brand-accent);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  }
+
+  .search-input-glass::placeholder {
+    color: #94a3b8;
+    font-weight: 500;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 8px;
+    font-size: 0.76rem;
+    pointer-events: none;
+    opacity: 0.65;
+  }
+
+  .search-clear-btn {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 0.72rem;
+    color: #94a3b8;
+    cursor: pointer;
+    display: none;
+    padding: 2px;
+    line-height: 1;
+    border-radius: 50%;
+    transition: color 0.15s;
+  }
+
+  .search-clear-btn:hover {
+    color: #334155;
+  }
+
+  .search-clear-btn.visible {
+    display: block;
+  }
+
+  /* Auto-suggestions Dropdown */
+  .search-suggestions {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    min-width: 250px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(15,23,42,0.15);
+    max-height: 280px;
+    overflow-y: auto;
+    z-index: 500;
+    display: none;
+    padding: 4px 0;
+  }
+
+  .search-suggestions.open {
+    display: block;
+  }
+
+  .search-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.76rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s;
+  }
+
+  .search-item:last-child {
+    border-bottom: none;
+  }
+
+  .search-item:hover, .search-item.highlighted {
+    background: #eff6ff;
+  }
+
+  .search-item-title {
+    font-weight: 700;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-item-desc {
+    font-size: 0.7rem;
+    color: #64748b;
+  }
+
+  .search-item-badge {
+    font-size: 0.65rem;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-weight: 600;
   }
 
   .header-btn-group {
@@ -637,11 +764,10 @@
   <div class="header-main-row">
     <div class="brand-logo">
       <span>🇭🇰 香港一手新盘地图</span>
-      <span class="badge-layout">全屏奢华悬浮版</span>
       <span class="badge-layout" id="liveSyncBadge" style="background:#f0fdf4; color:#16a34a; border-color:#bbf7d0; display:inline-flex; align-items:center; gap:4px;"><span style="width:6px; height:6px; border-radius:50%; background:#16a34a; display:inline-block;"></span><span id="liveSyncText">正式版销控已实时直连</span></span>
     </div>
 
-    <!-- 3 Dropdown Anchors -->
+    <!-- 3 Dropdown Anchors + Search Box -->
     <div class="three-anchors-row">
       <select class="anchor-select-glass" id="anchor-school" onchange="onAnchorSelect('school')">
         <option value="">🎓 大学或校网...</option>
@@ -652,6 +778,12 @@
       <select class="anchor-select-glass" id="anchor-district" onchange="onAnchorSelect('district')">
         <option value="">🏙️ 核心豪宅商圈...</option>
       </select>
+      <div class="search-box-wrapper" id="search-box-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input-glass" id="project-search-input" placeholder="搜索楼盘项目..." autocomplete="off" oninput="onProjectSearchInput(this.value)" onkeydown="onProjectSearchKeydown(event)" onfocus="onProjectSearchFocus()">
+        <button class="search-clear-btn" id="search-clear-btn" onclick="clearProjectSearch()" title="清空搜索">✕</button>
+        <div class="search-suggestions" id="search-suggestions"></div>
+      </div>
     </div>
 
     <div class="header-btn-group">
@@ -790,9 +922,10 @@ let isMtrLayerVisible = true;
 let isAdminMode = false;
 
 let projectMarkersLayer, mtrStationsLayer;
+let markersByName = {};
 
 let filterState = {
-  priceChip: 'all', minPrice: null, maxPrice: null, status: 'all'
+  priceChip: 'all', minPrice: null, maxPrice: null, status: 'all', searchKeyword: ''
 };
 
 const LINE_COLORS = {
@@ -1176,9 +1309,21 @@ function applyFilters() {
   const list = document.getElementById('drawer-list');
   list.innerHTML = '';
   projectMarkersLayer.clearLayers();
+  markersByName = {};
 
   let filtered = projectsData.filter(proj => {
     if (filterState.status !== 'all' && proj.sell_status !== filterState.status) return false;
+
+    // 🔍 关键词搜索过滤 (支持项目名、区域、商圈、开发商、地址)
+    if (filterState.searchKeyword) {
+      const kw = filterState.searchKeyword.toLowerCase().trim();
+      const nameMatch = proj.name && proj.name.toLowerCase().includes(kw);
+      const districtMatch = proj.district && proj.district.toLowerCase().includes(kw);
+      const regionMatch = proj.region && proj.region.toLowerCase().includes(kw);
+      const devMatch = proj.developer && proj.developer.toLowerCase().includes(kw);
+      const addrMatch = proj.address && proj.address.toLowerCase().includes(kw);
+      if (!nameMatch && !districtMatch && !regionMatch && !devMatch && !addrMatch) return false;
+    }
 
     const minP = proj.min_price_wan || 0;
     const maxP = proj.max_price_wan || 99999;
@@ -1284,8 +1429,13 @@ function applyFilters() {
     `;
 
     card.addEventListener('click', (e) => {
-      if (e.target.classList.contains('card-checkbox') || e.target.tagName === 'A') return;
+      if (e.target.classList.contains('card-checkbox') || e.target.tagName === 'A' || e.target.closest('a')) return;
       map.flyTo([proj.lat, proj.lng], 16, { duration: 0.8 });
+      setTimeout(() => {
+        if (markersByName[proj.name]) {
+          markersByName[proj.name].openPopup();
+        }
+      }, 850);
     });
 
     list.appendChild(card);
@@ -1366,9 +1516,159 @@ function applyFilters() {
     `;
     marker.bindPopup(popupHTML);
     projectMarkersLayer.addLayer(marker);
+    markersByName[proj.name] = marker;
 
   });
 }
+
+/* =========================================================================
+   🔍 楼盘名称实时搜索与联想建议交互逻辑
+   ========================================================================= */
+
+function onProjectSearchInput(val) {
+  filterState.searchKeyword = val.trim();
+  const clearBtn = document.getElementById('search-clear-btn');
+  if (clearBtn) {
+    if (val.trim()) clearBtn.classList.add('visible');
+    else clearBtn.classList.remove('visible');
+  }
+  updateSearchSuggestions(val.trim());
+  applyFilters();
+}
+
+function onProjectSearchFocus() {
+  const inp = document.getElementById('project-search-input');
+  if (inp && inp.value.trim()) {
+    updateSearchSuggestions(inp.value.trim());
+  }
+}
+
+function updateSearchSuggestions(kw) {
+  const sug = document.getElementById('search-suggestions');
+  if (!sug) return;
+  if (!kw) {
+    sug.innerHTML = '';
+    sug.classList.remove('open');
+    return;
+  }
+
+  const lowerKw = kw.toLowerCase();
+  const matches = projectsData.filter(p => {
+    const nameM = p.name && p.name.toLowerCase().includes(lowerKw);
+    const distM = p.district && p.district.toLowerCase().includes(lowerKw);
+    const regM = p.region && p.region.toLowerCase().includes(lowerKw);
+    const devM = p.developer && p.developer.toLowerCase().includes(lowerKw);
+    const addrM = p.address && p.address.toLowerCase().includes(lowerKw);
+    return nameM || distM || regM || devM || addrM;
+  }).slice(0, 8);
+
+  if (matches.length === 0) {
+    sug.innerHTML = '<div style="padding:10px 14px; font-size:0.75rem; color:#94a3b8; text-align:center;">未找到匹配楼盘</div>';
+    sug.classList.add('open');
+    return;
+  }
+
+  let html = '';
+  matches.forEach(p => {
+    const isSale = p.sell_status === 'on_sale';
+    const statusBg = isSale ? '#f0fdf4' : '#eff6ff';
+    const statusColor = isSale ? '#16a34a' : '#2563eb';
+    const priceText = p.excel_min_price_desc || p.basic_price_desc || (p.min_price_wan ? `${p.min_price_wan}万起` : '价单待查');
+
+    html += `
+      <div class="search-item" onclick="selectProjectSuggestion('${p.name.replace(/'/g, "\\'")}')">
+        <div class="search-item-title">
+          <span>🏢 ${p.name}</span>
+          <span class="search-item-badge" style="background:${statusBg}; color:${statusColor};">${p.sell_status_cn}</span>
+        </div>
+        <div class="search-item-desc">
+          📍 ${p.region} · ${p.district} | 💷 ${priceText}
+        </div>
+      </div>
+    `;
+  });
+
+  sug.innerHTML = html;
+  sug.classList.add('open');
+}
+
+function selectProjectSuggestion(name) {
+  const p = projectsData.find(x => x.name === name);
+  if (!p) return;
+
+  const inp = document.getElementById('project-search-input');
+  if (inp) inp.value = p.name;
+  const clearBtn = document.getElementById('search-clear-btn');
+  if (clearBtn) clearBtn.classList.add('visible');
+
+  const sug = document.getElementById('search-suggestions');
+  if (sug) {
+    sug.innerHTML = '';
+    sug.classList.remove('open');
+  }
+
+  filterState.searchKeyword = p.name;
+  applyFilters();
+
+  map.flyTo([p.lat, p.lng], 16, { duration: 0.8 });
+  setTimeout(() => {
+    if (markersByName[p.name]) {
+      markersByName[p.name].openPopup();
+    }
+  }, 850);
+}
+
+function onProjectSearchKeydown(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    const sug = document.getElementById('search-suggestions');
+    if (sug) sug.classList.remove('open');
+
+    // 若有结果，定位到当前列表第一项
+    const list = document.getElementById('drawer-list');
+    const firstCard = list ? list.querySelector('.card-float-title') : null;
+    if (firstCard) {
+      const pName = firstCard.textContent.trim();
+      const p = projectsData.find(x => x.name === pName);
+      if (p) {
+        map.flyTo([p.lat, p.lng], 16, { duration: 0.8 });
+        setTimeout(() => {
+          if (markersByName[p.name]) markersByName[p.name].openPopup();
+        }, 850);
+      }
+    }
+  } else if (event.key === 'Escape') {
+    const sug = document.getElementById('search-suggestions');
+    if (sug) sug.classList.remove('open');
+  }
+}
+
+function clearProjectSearch() {
+  const inp = document.getElementById('project-search-input');
+  if (inp) {
+    inp.value = '';
+    inp.focus();
+  }
+  const clearBtn = document.getElementById('search-clear-btn');
+  if (clearBtn) clearBtn.classList.remove('visible');
+
+  const sug = document.getElementById('search-suggestions');
+  if (sug) {
+    sug.innerHTML = '';
+    sug.classList.remove('open');
+  }
+
+  filterState.searchKeyword = '';
+  applyFilters();
+}
+
+document.addEventListener('click', (e) => {
+  const box = document.getElementById('search-box-wrapper');
+  const sug = document.getElementById('search-suggestions');
+  if (box && !box.contains(e.target) && sug) {
+    sug.classList.remove('open');
+  }
+});
 
 /* =========================================================================
    🚀 后台权限控制与 ORS 真实路网实时重测
