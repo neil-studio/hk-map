@@ -82,6 +82,7 @@
     font-weight: 800;
     color: var(--brand-primary);
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .badge-layout {
@@ -92,6 +93,8 @@
     font-weight: 700;
     padding: 2px 8px;
     border-radius: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .three-anchors-row {
@@ -99,10 +102,12 @@
     gap: 8px;
     flex: 1;
     max-width: 720px;
+    min-width: 0;
   }
 
   .anchor-select-glass {
     flex: 1;
+    min-width: 0;
     padding: 7px 12px;
     border-radius: 8px;
     border: 1px solid #cbd5e1;
@@ -112,6 +117,7 @@
     outline: none;
     color: var(--text-primary);
     cursor: pointer;
+    text-overflow: ellipsis;
   }
 
   .anchor-select-glass:focus {
@@ -122,6 +128,8 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .btn-layer-toggle {
@@ -137,6 +145,8 @@
     align-items: center;
     gap: 5px;
     transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .btn-layer-toggle.active {
@@ -155,6 +165,8 @@
     font-weight: 600;
     cursor: pointer;
     color: #334155;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .btn-export-main {
@@ -169,6 +181,8 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .btn-export-main:disabled {
@@ -547,6 +561,8 @@
     color: #94a3b8;
     cursor: pointer;
     transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .btn-admin-toggle:hover {
     background: rgba(255, 255, 255, 0.15);
