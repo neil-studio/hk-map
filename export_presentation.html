@@ -1078,7 +1078,7 @@
       const overviewContainer = document.getElementById('overview-map');
       if (overviewContainer && projects.length > 0) {
         const mapOverview = L.map('overview-map', { zoomControl: false, attributionControl: false });
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2agc_1_eee20b45a89c95d86e5610c5', {
           maxZoom: 18
         }).addTo(mapOverview);
 
@@ -1111,7 +1111,7 @@
         if (!mapDiv || !p.lat || !p.lng) return;
 
         const mapSingle = L.map(`proj-map-${idx}`, { zoomControl: false, attributionControl: false });
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2agc_1_eee20b45a89c95d86e5610c5', {
           maxZoom: 19
         }).addTo(mapSingle);
 
