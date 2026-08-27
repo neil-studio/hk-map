@@ -137,6 +137,56 @@ def ors_walk(from_lat, from_lng, to_lat, to_lng):
         pass
     return None
 
+zh_map = {
+    '峯':'峰','滙':'汇','灣':'湾','賢':'贤','璽':'玺','號':'号','鑽':'钻',
+    '緹':'缇','奧':'奥','譽':'誉','瓏':'珑','晉':'晋','揚':'扬','滶':'滶',
+    '薈':'荟','濤':'涛','閣':'阁','爾':'尔','緻':'致','玥':'玥','莊':'庄',
+    '園':'园','朗':'朗','凱':'凯','嵐':'岚','雲':'云','嶺':'岭','曦':'曦',
+    '迎':'迎','瑧':'瑧','海':'海','匯':'汇','臺':'台','東':'东','南':'南',
+    '西':'西','北':'北','中':'中','島':'岛','龍':'龙','啟':'启','德':'德',
+    '紅':'红','磡':'磡','鴨':'鸭','脷':'脷','洲':'洲','黃':'黄','竹':'竹',
+    '坑':'坑','壽':'寿','臣':'臣','山':'山','頂':'顶','淺':'浅','水':'水',
+    '深':'深','跑':'跑','馬':'马','地':'地','渣':'渣','甸':'甸','薄':'薄',
+    '扶':'扶','林':'林','仔':'仔','環':'环','土':'土','瓜':'瓜','營':'营',
+    '盤':'盘','銅':'铜','鑼':'锣','後':'后','涌':'涌','怡':'怡','太':'太',
+    '古':'古','石':'石','塘':'塘','咀':'咀','摩':'摩','星':'星','赤':'赤',
+    '柱':'柱','潭':'潭','澳':'澳','座':'座','樓':'楼','期':'期','門':'门',
+    '沙':'沙','田':'田','圍':'围','頌':'颂','傲':'傲','華':'华','喆':'喆',
+    '寶':'宝','應':'应','悅':'悦','麓':'麓','維':'维','畔':'畔','語':'语',
+    '晴':'晴','首':'首','澄':'澄','碧':'碧','瀧':'泷','澐':'沄','學':'学',
+    '鑄':'铸','徑':'径','灃':'沣','瀚':'瀚','逸':'逸','雋':'隽','珀':'珀',
+    '珏':'珏','溋':'溋','皓':'皓','晟':'晟','囍':'喜','蘊':'蕴','區':'区',
+    '雙':'双','羅':'罗','藍':'蓝','賓':'宾','吉':'吉','道':'道','階':'阶',
+    '曉':'晓','柏':'柏','澔':'澔','泰':'泰','豐':'丰','遠':'远','街':'街'
+}
+
+def norm_name(s):
+    if not s: return ''
+    import re
+    s = s.replace('III', '3').replace('II', '2').replace('I', '1')
+    s = s.replace('iii', '3').replace('ii', '2').replace('i', '1')
+    s = re.sub(r'[\s\.\‧\・\．\•\-\_\(\)\（\）\,\，\。\、\/\&]', '', s)
+    res = ''.join([zh_map.get(ch, ch) for ch in s])
+    return res.lower().replace('第', '').replace('期', '').replace('项目', '').replace('residential', '')
+
+def osrm_walk(from_lat, from_lng, to_lat, to_lng):
+    url = f'https://router.project-osrm.org/route/v1/foot/{from_lng},{from_lat};{to_lng},{to_lat}?overview=full&geometries=geojson'
+    headers = {'User-Agent': 'HKPropertyMap/1.0'}
+    try:
+        r = requests.get(url, headers=headers, timeout=12)
+        if r.status_code == 200:
+            data = r.json()
+            if data.get('routes'):
+                route = data['routes'][0]
+                return {
+                    'distance': round(route['distance']),
+                    'duration': round(route['duration']),
+                    'geometry': route['geometry']
+                }
+    except Exception as e:
+        pass
+    return None
+
 def main():
     print("1️⃣ 加载沙盒项目数据...")
     with open(COORDS_PATH, "r", encoding="utf-8") as f:
@@ -146,47 +196,77 @@ def main():
     print("2️⃣ 加载 302 个已计算好的 ORS 真实路网数据...")
     with open(MAP_HTML_PATH, "r", encoding="utf-8") as f:
         html_c = f.read()
-    idx1 = html_c.find("const DATA = ") + len("const DATA = ")
+    
+    idx1 = html_c.find("let DATA = ")
+    if idx1 != -1:
+        idx1 += len("let DATA = ")
+    else:
+        idx1 = html_c.find("const DATA = ") + len("const DATA = ")
+    
     idx2 = html_c.find(";\n\nlet map,", idx1)
     if idx2 == -1: idx2 = html_c.find(";\nlet map,", idx1)
     ors_data = json.loads(html_c[idx1:idx2])
     print(f"   已计算库总数: {len(ors_data)}")
+
+    ors_by_norm = {norm_name(d['name']): d for d in ors_data}
 
     updated = 0
     calculated_on_fly = 0
 
     for i, p in enumerate(sandbox_projects):
         p_name = p.get("name", "").strip()
+        p_norm = norm_name(p_name)
+        p_addr = norm_name(p.get("address", ""))
         p_lat = p.get("lat")
         p_lng = p.get("lng")
         
         # 1. 尝试匹配已有 ORS 结果
-        match = next((d for d in ors_data if d["name"].strip() == p_name), None)
+        match = None
+        if p_norm in ors_by_norm:
+            match = ors_by_norm[p_norm]
+        else:
+            for d in ors_data:
+                d_norm = norm_name(d['name'])
+                if (p_norm in d_norm or d_norm in p_norm) and len(p_norm) >= 3:
+                    match = d
+                    break
+        
+        if not match and p_addr:
+            for d in ors_data:
+                d_addr = norm_name(d.get('address', ''))
+                if d_addr and (p_addr in d_addr or d_addr in p_addr) and len(p_addr) >= 4:
+                    match = d
+                    break
+        
         if not match and p_lat and p_lng:
-            closest = min(ors_data, key=lambda d: dist_m(p_lat, p_lng, d["lat"], d["lng"]))
-            if dist_m(p_lat, p_lng, closest["lat"], closest["lng"]) < 80:
+            closest = min(ors_data, key=lambda d: dist_m(p_lat, p_lng, d['lat'], d['lng']))
+            if dist_m(p_lat, p_lng, closest['lat'], closest['lng']) < 120:
                 match = closest
         
-        if match and match.get("walk_distance"):
+        if match and match.get("route_geometry"):
+            current_mtr = p.get("nearest_mtr") or {}
             p["nearest_mtr"] = {
-                "address": match.get("address", ""),
-                "nearest_mtr_cn": match.get("station_zh", ""),
-                "nearest_mtr_en": match.get("station_en", ""),
-                "nearest_mtr_lines": "/".join(match.get("lines", [])),
-                "nearest_mtr_lat": match.get("station_lat"),
-                "nearest_mtr_lng": match.get("station_lng"),
-                "dist_straight_m": match.get("straight_distance"),
-                "dist_walk_m": match.get("walk_distance"),
-                "walk_time_min": match.get("walk_duration"),
+                "nearest_mtr_id": current_mtr.get("nearest_mtr_id") or f"mtr_{norm_name(match.get('station_en', ''))}",
+                "nearest_mtr_name": f"{match.get('station_zh')}站 ({match.get('lines', [''])[0] if match.get('lines') else ''})",
+                "nearest_mtr_cn": match.get("station_zh", current_mtr.get("nearest_mtr_cn", "")),
+                "nearest_mtr_en": match.get("station_en", current_mtr.get("nearest_mtr_en", "")),
+                "nearest_mtr_lines": "/".join(match.get("lines", [])) if isinstance(match.get("lines"), list) else match.get("lines", ""),
+                "nearest_mtr_lat": match.get("station_lat", current_mtr.get("nearest_mtr_lat")),
+                "nearest_mtr_lng": match.get("station_lng", current_mtr.get("nearest_mtr_lng")),
+                "dist_straight_m": match.get("straight_distance", current_mtr.get("dist_straight_m")),
+                "dist_walk_m": match.get("walk_distance", current_mtr.get("dist_walk_m")),
+                "walk_time_min": match.get("walk_duration", current_mtr.get("walk_time_min")),
                 "route_geometry": match.get("route_geometry")
             }
             updated += 1
         elif p_lat and p_lng:
-            # 2. 对少量未入库的沙盒楼盘，在线计算 ORS 真实人行道路线
+            # 2. 在线计算真实人行道路线
             closest_st = min(MTR_STATIONS, key=lambda s: dist_m(p_lat, p_lng, s["lat"], s["lng"]))
             straight_m = round(dist_m(p_lat, p_lng, closest_st["lat"], closest_st["lng"]))
             route = ors_walk(p_lat, p_lng, closest_st["lat"], closest_st["lng"])
-            time.sleep(1.6)
+            if not route:
+                route = osrm_walk(p_lat, p_lng, closest_st["lat"], closest_st["lng"])
+            time.sleep(0.5)
             
             if route:
                 walk_m = route["distance"]
@@ -216,7 +296,9 @@ def main():
     print(f"\n3️⃣ 保存更新后的 {COORDS_PATH}...")
     with open(COORDS_PATH, "w", encoding="utf-8") as f:
         json.dump(sandbox_projects, f, ensure_ascii=False, indent=2)
-    print(f"   ✅ 完成！共 {len(sandbox_projects)} 个楼盘，成功挂载真实路线数据 {updated} 个 (其中在线补充 {calculated_on_fly} 个)")
+    
+    total_with_geo = sum(1 for p in sandbox_projects if p.get("nearest_mtr", {}).get("route_geometry", {}).get("coordinates"))
+    print(f"   ✅ 完成！共 {len(sandbox_projects)} 个楼盘，成功挂载真实路线数据 {total_with_geo} 个 (其中在线补充 {calculated_on_fly} 个)")
 
 if __name__ == "__main__":
     main()

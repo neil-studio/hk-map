@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>香港一手新盘全景地图（多维自由筛选沙盒版）</title>
+
+<!-- Leaflet CSS & Fonts -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-main: #f4f6fb;
+    --panel-bg: #ffffff;
+    --panel-border: #e2e8f0;
+    --brand-primary: #1e3a8a;
+    --brand-accent: #2563eb;
+    --brand-gold: #d97706;
+    --text-primary: #0f172a;
+    --text-muted: #64748b;
+    --status-sale: #16a34a;
+    --status-priced: #2563eb;
+    --status-stopped: #dc2626;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-primary);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Header Bar */
+  header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--panel-border);
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    z-index: 100;
+  }
+
+  .brand-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-title h1 {
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .badge-sandbox {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+  }
+
+  .search-box-wrapper {
+    flex: 1;
+    max-width: 420px;
+    position: relative;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 8px 14px 8px 36px;
+    border-radius: 8px;
+    border: 1.5px solid var(--panel-border);
+    font-size: 0.85rem;
+    outline: none;
+    transition: all 0.2s;
+    background: #f8fafc;
+  }
+
+  .search-input:focus {
+    border-color: var(--brand-accent);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .btn-mtr-toggle {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--panel-border);
+    background: #f8fafc;
+    color: #334155;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .btn-mtr-toggle.active {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #1d4ed8;
+    font-weight: 700;
+  }
+
+  .btn-export {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 6px rgba(37,99,235,0.25);
+    transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .btn-export:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  /* Main Split View */
+  .main-wrapper {
+    flex: 1;
+    display: flex;
+    height: calc(100vh - 61px);
+    overflow: hidden;
+  }
+
+  /* Left Sidebar / Filter & List */
+  .sidebar {
+    width: 440px;
+    background: #ffffff;
+    border-right: 1px solid var(--panel-border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* 3 Dropdown Anchors Section */
+  .anchor-three-grid {
+    padding: 12px 16px;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--panel-border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .anchor-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .anchor-label {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+    width: 90px;
+  }
+
+  .anchor-select {
+    flex: 1;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--panel-border);
+    background: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .anchor-select:focus {
+    border-color: var(--brand-accent);
+  }
+
+  /* Multi Filters Container */
+  .filters-container {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--panel-border);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #ffffff;
+    max-height: 230px;
+    overflow-y: auto;
+  }
+
+  .filter-group-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .filter-chip {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--panel-border);
+    background: #f8fafc;
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s;
+  }
+
+  .filter-chip:hover {
+    background: #e2e8f0;
+  }
+
+  .filter-chip.active {
+    background: var(--brand-accent);
+    color: #ffffff;
+    border-color: var(--brand-accent);
+    font-weight: 600;
+  }
+
+  .custom-price-inputs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+  }
+
+  .price-num-input {
+    width: 80px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--panel-border);
+    font-size: 0.75rem;
+    outline: none;
+  }
+
+  .price-unit {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  /* Project List */
+  .project-list-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 16px;
+    background: #f8fafc;
+  }
+
+  .list-stats-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    padding: 0 2px;
+  }
+
+  .project-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    border: 1px solid var(--panel-border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .project-card:hover {
+    border-color: var(--brand-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37,99,235,0.08);
+  }
+
+  .project-card.selected {
+    border-color: var(--brand-gold);
+    background: #fffbeb;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .card-title {
+    font-size: 0.94rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+  }
+
+  .card-district {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-left: 6px;
+  }
+
+  .card-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+  }
+
+  .card-price {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--brand-accent);
+  }
+
+  /* MTR Bar on Card */
+  .card-mtr-bar {
+    margin-top: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 5px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.74rem;
+  }
+
+  .mtr-badge-hot {
+    background: #dcfce7;
+    color: #15803d;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.68rem;
+  }
+
+  .mtr-badge-mid {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.68rem;
+  }
+
+  .mtr-badge-normal {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.68rem;
+  }
+
+  .card-points {
+    font-size: 0.74rem;
+    color: #475569;
+    margin-top: 6px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-select-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .card-distance-badge {
+    display: inline-block;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+
+  /* Right Map Container */
+  #map {
+    flex: 1;
+    height: 100%;
+    z-index: 1;
+  }
+
+  /* MTR Station Marker Pin Styling */
+  .mtr-pin {
+    background: #ffffff;
+    border: 2px solid #007dc5;
+    border-radius: 14px;
+    padding: 2px 7px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .mtr-pin:hover {
+    transform: scale(1.08);
+    z-index: 999;
+  }
+  .mtr-pin-logo {
+    background: #007dc5;
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: 900;
+    padding: 1px 3px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+  .mtr-pin-text {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  /* Popup Info Window */
+  .custom-popup {
+    min-width: 260px;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  .popup-title {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 6px;
+  }
+  .popup-row {
+    font-size: 0.78rem;
+    color: #334155;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  .popup-row strong {
+    color: #0f172a;
+  }
+  .popup-mtr-box {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    font-size: 0.76rem;
+  }
+  .btn-link-mtr {
+    margin-top: 5px;
+    padding: 3px 8px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  /* Modal Overlay */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .modal-overlay.open {
+    display: flex;
+  }
+
+  .modal-card {
+    background: #fff;
+    border-radius: 12px;
+    width: min(540px, 90vw);
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+
+  .modal-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 12px;
+  }
+
+  .form-field { margin-bottom: 14px; }
+  .form-field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .form-input, .form-textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--panel-border);
+    font-size: 0.85rem;
+    outline: none;
+  }
+
+  .form-textarea { min-height: 100px; resize: vertical; }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .btn-cancel {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--panel-border);
+    background: #fff;
+    font-size: 0.82rem;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand-title">
+    <h1>🇭🇰 香港一手新盘全景地图</h1>
+    <span class="badge-sandbox">多维自由筛选沙盒版</span>
+  </div>
+
+  <div class="search-box-wrapper">
+    <span class="search-icon">🔍</span>
+    <input type="text" class="search-input" id="global-search" placeholder="搜楼盘 / 地铁站 / 学区 / 商圈（如“启德”, “41校网”, “两房”）" oninput="handleSearch()">
+  </div>
+
+  <div class="header-actions">
+    <button class="btn-mtr-toggle active" id="btn-toggle-mtr" onclick="toggleMtrLayer()">🚇 港铁站点</button>
+    <button class="btn-export" id="btn-open-export" onclick="openExportModal()" disabled>
+      📄 导出定制 PDF 报告 (<span id="selected-count">0</span>)
+    </button>
+  </div>
+</header>
+
+<div class="main-wrapper">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- 3 Dropdowns Anchor Section -->
+    <div class="anchor-three-grid">
+      <div class="anchor-field">
+        <span class="anchor-label">🎓 大学或校网:</span>
+        <select class="anchor-select" id="anchor-school" onchange="onAnchorSelect('school')">
+          <option value="">-- 不限大学或校网 --</option>
+        </select>
+      </div>
+      <div class="anchor-field">
+        <span class="anchor-label">🚇 港铁车站 (98站):</span>
+        <select class="anchor-select" id="anchor-mtr" onchange="onAnchorSelect('mtr')">
+          <option value="">-- 不限港铁站点 --</option>
+        </select>
+      </div>
+      <div class="anchor-field">
+        <span class="anchor-label">🏙️ 核心商圈:</span>
+        <select class="anchor-select" id="anchor-district" onchange="onAnchorSelect('district')">
+          <option value="">-- 不限核心商圈 --</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Filters Container -->
+    <div class="filters-container">
+      <div>
+        <div class="filter-group-title">
+          <span>💷 总价预算 (万港币)</span>
+          <span style="font-size:0.7rem; color:var(--brand-accent); cursor:pointer;" onclick="clearPriceFilter()">重置价格</span>
+        </div>
+        <div class="filter-row" id="price-chips">
+          <div class="filter-chip active" data-price="all">不限</div>
+          <div class="filter-chip" data-price="1000-down">1000万以内</div>
+          <div class="filter-chip" data-price="1000-2000">1000-2000万</div>
+          <div class="filter-chip" data-price="2000-5000">2000-5000万</div>
+          <div class="filter-chip" data-price="5000-10000">5000-1亿</div>
+          <div class="filter-chip" data-price="10000-up">1亿以上</div>
+        </div>
+
+        <!-- Custom Price Range Inputs -->
+        <div class="custom-price-inputs">
+          <input type="number" class="price-num-input" id="price-min" placeholder="最低万" oninput="onCustomPriceInput()">
+          <span>~</span>
+          <input type="number" class="price-num-input" id="price-max" placeholder="最高万" oninput="onCustomPriceInput()">
+          <span class="price-unit">万港币</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="filter-group-title">🏗️ 销售状态</div>
+        <div class="filter-row" id="status-chips">
+          <div class="filter-chip active" data-status="all">全部</div>
+          <div class="filter-chip" data-status="on_sale">出售中</div>
+          <div class="filter-chip" data-status="coming_soon">即將發售</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project List -->
+    <div class="project-list-wrapper">
+      <div class="list-stats-bar">
+        <span>共找到 <strong id="matching-count">0</strong> 个符合条件的楼盘</span>
+        <span style="color: var(--brand-accent); cursor: pointer;" onclick="resetAllFilters()">清空所有筛选</span>
+      </div>
+
+      <div id="project-list"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet Map -->
+  <div id="map"></div>
+</div>
+
+<!-- Modal for PDF Export -->
+<div class="modal-overlay" id="export-modal">
+  <div class="modal-card">
+    <div class="modal-title">生成定制化 PDF 推荐报告</div>
+    <div class="form-field">
+      <label>客户称呼</label>
+      <input type="text" class="form-input" id="client-name" placeholder="例如：张先生 / 李女士">
+    </div>
+    <div class="form-field">
+      <label>置业顾问推荐语</label>
+      <textarea class="form-textarea" id="client-intro" placeholder="例如：根据您的预算及教育需求，为您精选以下周边新盘方案..."></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeExportModal()">取消</button>
+      <button class="btn-export" onclick="triggerPdfPrint()">确认并生成 PDF</button>
+    </div>
+  </div>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+let landmarksData = [];
+let mtrStationsData = [];
+let projectsData = [];
+let selectedProjectNames = new Set();
+let currentAnchorMarker = null;
+let currentRadiusCircle = null;
+let currentRouteLine = null;
+let activeAnchorLandmark = null;
+let isMtrLayerVisible = true;
+
+let projectMarkersLayer, mtrStationsLayer;
+
+let filterState = {
+  priceChip: 'all',
+  minPrice: null,
+  maxPrice: null,
+  status: 'all',
+  searchKey: ''
+};
+
+const LINE_COLORS = {
+  "港島綫": "#007dc5",
+  "荃灣綫": "#e2231a",
+  "觀塘綫": "#00ab4e",
+  "屯馬綫": "#923011",
+  "東鐵綫": "#53b7e8",
+  "將軍澳綫": "#a35eb5",
+  "東涌綫": "#f3901d",
+  "南港島綫": "#b5bd00",
+  "機場快綫": "#007078",
+  "迪士尼綫": "#f15082"
+};
+
+let map;
+
+document.addEventListener('DOMContentLoaded', async () => {
+  initMap();
+  await loadData();
+  setupFilterEvents();
+});
+
+function initMap() {
+  map = L.map('map', { zoomControl: false }).setView([22.3150, 114.1750], 12);
+  L.control.zoom({ position: 'topright' }).addTo(map);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap &copy; CARTO'
+  }).addTo(map);
+
+  projectMarkersLayer = L.layerGroup().addTo(map);
+  mtrStationsLayer = L.layerGroup().addTo(map);
+}
+
+async function loadData() {
+  try {
+    const resLandmarks = await fetch('hk_landmarks.json?v=' + Date.now());
+    landmarksData = await resLandmarks.json();
+
+    try {
+      const resMtr = await fetch('hk_mtr_stations.json?v=' + Date.now());
+      mtrStationsData = await resMtr.json();
+    } catch(e) {
+      mtrStationsData = landmarksData.filter(x => x.category === 'mtr');
+    }
+
+    const resProjects = await fetch('hk_project_coords.json?v=' + Date.now());
+    projectsData = await resProjects.json();
+
+    populateThreeDropdowns();
+    renderMtrMarkers();
+    applyFilters();
+  } catch (e) {
+    console.error("加载数据失败:", e);
+  }
+}
+
+function renderMtrMarkers() {
+  mtrStationsLayer.clearLayers();
+  if (!mtrStationsData || !mtrStationsData.length) return;
+
+  mtrStationsData.forEach(st => {
+    const mainLine = (st.lines || st.line || '').split('/')[0];
+    const color = LINE_COLORS[mainLine] || st.color || '#007dc5';
+    const cName = st.station_name_cn || st.name.split(' ')[0].replace('站', '');
+
+    const mtrIcon = L.divIcon({
+      className: 'custom-mtr-icon',
+      html: `
+        <div class="mtr-pin" style="border-color: ${color};">
+          <span class="mtr-pin-logo" style="background: ${color};">MTR</span>
+          <span class="mtr-pin-text">${cName}</span>
+        </div>
+      `,
+      iconSize: [85, 26],
+      iconAnchor: [42, 13]
+    });
+
+    const marker = L.marker([st.lat, st.lng], { icon: mtrIcon });
+
+    const nearbyCount = projectsData.filter(p => {
+      return getDistanceKm(st.lat, st.lng, p.lat, p.lng) <= 1.5;
+    }).length;
+
+    const popupContent = `
+      <div class="custom-popup">
+        <div class="popup-title">🚇 ${cName}站 ${st.station_name_en ? '(' + st.station_name_en + ')' : ''}</div>
+        <div style="background:#f1f5f9; padding:4px 8px; border-radius:4px; font-size:0.75rem; border-left:3px solid ${color}; margin-bottom:6px;">
+          ${st.lines || st.line || '港铁线路'}
+        </div>
+        <div class="popup-row">📍 1.5km 辐射圈在售新盘：<strong style="color:#2563eb;">${nearbyCount} 个</strong></div>
+        <button class="btn-link-mtr" style="width:100%; text-align:center; margin-top:6px; padding:6px 10px;" onclick="focusMtrStation('${st.id}')">
+          🎯 聚焦此站并辐射筛选
+        </button>
+      </div>
+    `;
+    marker.bindPopup(popupContent);
+    mtrStationsLayer.addLayer(marker);
+  });
+}
+
+function toggleMtrLayer() {
+  const btn = document.getElementById('btn-toggle-mtr');
+  if (isMtrLayerVisible) {
+    map.removeLayer(mtrStationsLayer);
+    isMtrLayerVisible = false;
+    btn.classList.remove('active');
+  } else {
+    map.addLayer(mtrStationsLayer);
+    isMtrLayerVisible = true;
+    btn.classList.add('active');
+  }
+}
+
+function focusMtrStation(stId) {
+  const selMtr = document.getElementById('anchor-mtr');
+  selMtr.value = stId;
+  onAnchorSelect('mtr');
+  map.closePopup();
+}
+
+function populateThreeDropdowns() {
+  const selSchool = document.getElementById('anchor-school');
+  const selMtr = document.getElementById('anchor-mtr');
+  const selDistrict = document.getElementById('anchor-district');
+
+  selSchool.innerHTML = '<option value="">-- 不限大学或校网 --</option>';
+  selMtr.innerHTML = '<option value="">-- 不限港铁站点 (98站) --</option>';
+  selDistrict.innerHTML = '<option value="">-- 不限核心商圈 --</option>';
+
+  landmarksData.forEach(lm => {
+    if (lm.category === 'university' || lm.category === 'school_net') {
+      const opt = document.createElement('option');
+      opt.value = lm.id;
+      opt.textContent = lm.name;
+      selSchool.appendChild(opt);
+    } else if (lm.category === 'district') {
+      const opt = document.createElement('option');
+      opt.value = lm.id;
+      opt.textContent = lm.name;
+      selDistrict.appendChild(opt);
+    }
+  });
+
+  const groups = {};
+  mtrStationsData.forEach(st => {
+    const mainLine = (st.lines || st.line || '其他线路').split('/')[0];
+    if (!groups[mainLine]) groups[mainLine] = [];
+    groups[mainLine].push(st);
+  });
+
+  for (const [line, stations] of Object.entries(groups)) {
+    const optgroup = document.createElement('optgroup');
+    optgroup.label = `🚇 ${line}`;
+    stations.forEach(st => {
+      const opt = document.createElement('option');
+      opt.value = st.id;
+      opt.textContent = st.name;
+      optgroup.appendChild(opt);
+    });
+    selMtr.appendChild(optgroup);
+  }
+}
+
+function onAnchorSelect(type) {
+  const selSchool = document.getElementById('anchor-school');
+  const selMtr = document.getElementById('anchor-mtr');
+  const selDistrict = document.getElementById('anchor-district');
+
+  let selectedId = '';
+  if (type === 'school') {
+    selectedId = selSchool.value;
+    selMtr.value = '';
+    selDistrict.value = '';
+  } else if (type === 'mtr') {
+    selectedId = selMtr.value;
+    selSchool.value = '';
+    selDistrict.value = '';
+  } else if (type === 'district') {
+    selectedId = selDistrict.value;
+    selSchool.value = '';
+    selMtr.value = '';
+  }
+
+  if (currentAnchorMarker) map.removeLayer(currentAnchorMarker);
+  if (currentRadiusCircle) map.removeLayer(currentRadiusCircle);
+  if (currentRouteLine) { map.removeLayer(currentRouteLine); currentRouteLine = null; }
+
+  if (selectedId) {
+    const lm = landmarksData.find(x => x.id === selectedId) || mtrStationsData.find(x => x.id === selectedId);
+    activeAnchorLandmark = lm;
+    if (lm) {
+      const anchorIcon = L.divIcon({
+        className: 'anchor-pin',
+        html: `<div style="background:#dc2626; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(220,38,38,0.4); border:2px solid #fff; white-space:nowrap;">📍 ${lm.name} (1.5km圈)</div>`,
+        iconSize: [180, 32],
+        iconAnchor: [90, 16]
+      });
+      
+      currentAnchorMarker = L.marker([lm.lat, lm.lng], { icon: anchorIcon }).addTo(map);
+
+      currentRadiusCircle = L.circle([lm.lat, lm.lng], {
+        radius: 1500,
+        color: '#2563eb',
+        fillColor: '#3b82f6',
+        fillOpacity: 0.08,
+        weight: 2,
+        dashArray: '6, 6'
+      }).addTo(map);
+
+      map.fitBounds(currentRadiusCircle.getBounds(), { padding: [40, 40] });
+    }
+  } else {
+    activeAnchorLandmark = null;
+  }
+
+  applyFilters();
+}
+
+function setupFilterEvents() {
+  document.querySelectorAll('#price-chips .filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('#price-chips .filter-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      filterState.priceChip = chip.dataset.price;
+      
+      document.getElementById('price-min').value = '';
+      document.getElementById('price-max').value = '';
+      filterState.minPrice = null;
+      filterState.maxPrice = null;
+
+      applyFilters();
+    });
+  });
+
+  document.querySelectorAll('#status-chips .filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('#status-chips .filter-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      filterState.status = chip.dataset.status;
+      applyFilters();
+    });
+  });
+}
+
+function onCustomPriceInput() {
+  const minVal = parseFloat(document.getElementById('price-min').value);
+  const maxVal = parseFloat(document.getElementById('price-max').value);
+
+  filterState.minPrice = isNaN(minVal) ? null : minVal;
+  filterState.maxPrice = isNaN(maxVal) ? null : maxVal;
+
+  if (filterState.minPrice !== null || filterState.maxPrice !== null) {
+    document.querySelectorAll('#price-chips .filter-chip').forEach(c => c.classList.remove('active'));
+  }
+
+  applyFilters();
+}
+
+function clearPriceFilter() {
+  document.querySelectorAll('#price-chips .filter-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('#price-chips .filter-chip[data-price="all"]').classList.add('active');
+  document.getElementById('price-min').value = '';
+  document.getElementById('price-max').value = '';
+  filterState.priceChip = 'all';
+  filterState.minPrice = null;
+  filterState.maxPrice = null;
+  applyFilters();
+}
+
+function handleSearch() {
+  filterState.searchKey = document.getElementById('global-search').value.trim().toLowerCase();
+  applyFilters();
+}
+
+function getDistanceKm(lat1, lon1, lat2, lon2) {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon/2) * Math.sin(dLon/2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c;
+}
+
+function drawMtrRouteLine(pLat, pLng, mLat, mLng, pName) {
+  if (currentRouteLine) map.removeLayer(currentRouteLine);
+
+  const proj = projectsData.find(p => p.name === pName);
+  let coords = [];
+  if (proj && proj.nearest_mtr && proj.nearest_mtr.route_geometry && proj.nearest_mtr.route_geometry.coordinates) {
+    coords = proj.nearest_mtr.route_geometry.coordinates.map(c => [c[1], c[0]]);
+  } else {
+    coords = [[pLat, pLng], [mLat, mLng]];
+  }
+
+  currentRouteLine = L.polyline(coords, {
+    color: '#16a34a',
+    weight: 3.5,
+    dashArray: '8, 6',
+    opacity: 0.9
+  }).addTo(map);
+
+  map.fitBounds(currentRouteLine.getBounds(), { padding: [80, 80] });
+}
+
+function applyFilters() {
+  projectMarkersLayer.clearLayers();
+
+  const listContainer = document.getElementById('project-list');
+  listContainer.innerHTML = '';
+
+  let filtered = projectsData.filter(proj => {
+    if (filterState.searchKey) {
+      const k = filterState.searchKey;
+      const matchName = proj.name.toLowerCase().includes(k);
+      const matchDistrict = (proj.district || '').toLowerCase().includes(k);
+      const matchReason = (proj.reason || '').toLowerCase().includes(k);
+      const matchMtr = (proj.nearest_mtr && proj.nearest_mtr.nearest_mtr_cn.toLowerCase().includes(k));
+      if (!matchName && !matchDistrict && !matchReason && !matchMtr) return false;
+    }
+
+    if (filterState.status !== 'all') {
+      if (proj.sell_status !== filterState.status) return false;
+    }
+
+    if (filterState.minPrice !== null || filterState.maxPrice !== null) {
+      const pMin = proj.min_price_wan || 0;
+      const pMax = proj.max_price_wan || 99999;
+      if (filterState.minPrice !== null && pMax < filterState.minPrice) return false;
+      if (filterState.maxPrice !== null && pMin > filterState.maxPrice) return false;
+    } 
+    else if (filterState.priceChip !== 'all') {
+      const pMin = proj.min_price_wan || 0;
+      const pMax = proj.max_price_wan || 99999;
+      if (filterState.priceChip === '1000-down' && pMin >= 1000) return false;
+      if (filterState.priceChip === '1000-2000' && (pMax < 1000 || pMin > 2000)) return false;
+      if (filterState.priceChip === '2000-5000' && (pMax < 2000 || pMin > 5000)) return false;
+      if (filterState.priceChip === '5000-10000' && (pMax < 5000 || pMin > 10000)) return false;
+      if (filterState.priceChip === '10000-up' && pMax < 10000) return false;
+    }
+
+    if (activeAnchorLandmark) {
+      const dist = getDistanceKm(activeAnchorLandmark.lat, activeAnchorLandmark.lng, proj.lat, proj.lng);
+      if (dist > 1.5) return false;
+    }
+
+    return true;
+  });
+
+  if (activeAnchorLandmark) {
+    filtered.sort((a, b) => {
+      const da = getDistanceKm(activeAnchorLandmark.lat, activeAnchorLandmark.lng, a.lat, a.lng);
+      const db = getDistanceKm(activeAnchorLandmark.lat, activeAnchorLandmark.lng, b.lat, b.lng);
+      return da - db;
+    });
+  }
+
+  document.getElementById('matching-count').textContent = filtered.length;
+
+  filtered.forEach(proj => {
+    let distKmStr = '';
+    if (activeAnchorLandmark) {
+      const dist = getDistanceKm(activeAnchorLandmark.lat, activeAnchorLandmark.lng, proj.lat, proj.lng);
+      distKmStr = `${dist.toFixed(1)} km`;
+    }
+
+    const mtr = proj.nearest_mtr;
+    let mtrHtml = '';
+    if (mtr) {
+      const walkTime = mtr.walk_time_min || 5;
+      const badgeCls = walkTime <= 5 ? 'mtr-badge-hot' : (walkTime <= 10 ? 'mtr-badge-mid' : 'mtr-badge-normal');
+      mtrHtml = `
+        <div class="card-mtr-bar">
+          <span>🚇 <strong>${mtr.nearest_mtr_cn}站</strong> <span style="color:#64748b; font-size:0.7rem;">(${mtr.nearest_mtr_lines})</span></span>
+          <span class="${badgeCls}">⏱️ 约 ${walkTime} 分钟 (${mtr.dist_walk_m}米)</span>
+        </div>
+      `;
+    }
+
+    const card = document.createElement('div');
+    card.className = `project-card ${selectedProjectNames.has(proj.name) ? 'selected' : ''}`;
+    card.innerHTML = `
+      <div class="card-header">
+        <div>
+          <span class="card-title">${proj.name}</span>
+          <span class="card-district">${proj.district}</span>
+          ${distKmStr ? `<span class="card-distance-badge">📍 距${activeAnchorLandmark.name.split(' ')[0]} ${distKmStr}</span>` : ''}
+        </div>
+        <input type="checkbox" class="card-select-checkbox" ${selectedProjectNames.has(proj.name) ? 'checked' : ''} onclick="toggleSelectProject(event, '${proj.name}')">
+      </div>
+      <div class="card-meta-row">
+        <span class="card-price">${proj.basic_price_desc || proj.total_price_desc || (proj.min_price_wan ? proj.min_price_wan + "万起" : "售價待定")}</span>
+        <span>在售: ${proj.sale_units || 0}套</span>
+        <span>已售: ${proj.sold_units || 0}套</span>
+      </div>
+      ${mtrHtml}
+      <div class="card-points">${proj.reason || proj.mainland_selling_points || '九龙/港岛核心优质物业项目'}</div>
+    `;
+
+    card.addEventListener('click', (e) => {
+      if (e.target.classList.contains('card-select-checkbox')) return;
+      map.flyTo([proj.lat, proj.lng], 16, { duration: 0.8 });
+    });
+
+    listContainer.appendChild(card);
+
+    const markerColor = proj.sell_status === 'on_sale' ? '#16a34a' : '#2563eb';
+    
+    const icon = L.divIcon({
+      className: 'proj-marker',
+      html: `<div style="background:${markerColor}; color:#fff; padding:4px 8px; border-radius:6px; font-size:11px; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,0.25); border:1.5px solid #fff; white-space:nowrap;">${proj.name}</div>`,
+      iconSize: [90, 24],
+      iconAnchor: [45, 12]
+    });
+
+    const marker = L.marker([proj.lat, proj.lng], { icon: icon });
+    
+    let popupMtrRow = '';
+    if (mtr) {
+      popupMtrRow = `
+        <div class="popup-mtr-box">
+          <div>🚇 <strong>最近港铁：</strong>${mtr.nearest_mtr_cn}站 (${mtr.nearest_mtr_lines})</div>
+          <div style="margin-top:2px;">⏱️ 步行通勤：约 <strong>${mtr.walk_time_min} 分钟</strong> (实际步行 <strong>${mtr.dist_walk_m} 米</strong>)</div>
+          <button class="btn-link-mtr" onclick="drawMtrRouteLine(${proj.lat}, ${proj.lng}, ${mtr.nearest_mtr_lat}, ${mtr.nearest_mtr_lng}, '${proj.name}')">
+            🚶 显示真实步行导航轨迹
+          </button>
+        </div>
+      `;
+    }
+
+    const popupContent = `
+      <div class="custom-popup">
+        <div class="popup-title">${proj.name}</div>
+        <div class="popup-row">📍 区域：<strong>${proj.region} - ${proj.district}</strong></div>
+        <div class="popup-row">💷 价格：<strong style="color:#2563eb;">${proj.total_price_desc || (proj.min_price_wan ? proj.min_price_wan + '万起' : '详见价单')}</strong></div>
+        ${distKmStr ? `<div class="popup-row">📏 距离：<strong style="color:#dc2626;">距 ${activeAnchorLandmark.name.split(' ')[0]} ${distKmStr}</strong></div>` : ''}
+        ${popupMtrRow}
+        <div class="popup-row" style="margin-top:6px; font-size:11px; color:#64748b;">${proj.reason || '优质推荐楼盘'}</div>
+      </div>
+    `;
+    marker.bindPopup(popupContent);
+    projectMarkersLayer.addLayer(marker);
+  });
+}
+
+function toggleSelectProject(e, name) {
+  e.stopPropagation();
+  if (selectedProjectNames.has(name)) {
+    selectedProjectNames.delete(name);
+  } else {
+    selectedProjectNames.add(name);
+  }
+  document.getElementById('selected-count').textContent = selectedProjectNames.size;
+  document.getElementById('btn-open-export').disabled = selectedProjectNames.size === 0;
+  applyFilters();
+}
+
+function resetAllFilters() {
+  document.getElementById('global-search').value = '';
+  document.getElementById('anchor-school').value = '';
+  document.getElementById('anchor-mtr').value = '';
+  document.getElementById('anchor-district').value = '';
+  if (currentAnchorMarker) map.removeLayer(currentAnchorMarker);
+  if (currentRadiusCircle) map.removeLayer(currentRadiusCircle);
+  if (currentRouteLine) map.removeLayer(currentRouteLine);
+  activeAnchorLandmark = null;
+
+  clearPriceFilter();
+  
+  filterState = { priceChip: 'all', minPrice: null, maxPrice: null, status: 'all', searchKey: '' };
+  
+  document.querySelectorAll('#status-chips .filter-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('#status-chips .filter-chip[data-status="all"]').classList.add('active');
+
+  applyFilters();
+}
+
+function openExportModal() {
+  document.getElementById('export-modal').classList.add('open');
+}
+
+function closeExportModal() {
+  document.getElementById('export-modal').classList.remove('open');
+}
+
+function triggerPdfPrint() {
+  const name = document.getElementById('client-name').value || '贵宾客户';
+  alert(`正在生成为【${name}】定制的 ${selectedProjectNames.size} 个楼盘推荐方案，即将调用系统打印...`);
+  closeExportModal();
+  window.print();
+}
+</script>
+</body>
+</html>
