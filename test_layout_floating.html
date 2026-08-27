@@ -931,7 +931,9 @@ function mergeProductionSales(prodData) {
       if (prod.total_price_desc) p.total_price_desc = prod.total_price_desc;
       if (prod.sqft_price_desc) p.sqft_price_desc = prod.sqft_price_desc;
       if (prod.main_layout) p.main_layout = prod.main_layout;
-      if (prod.marketing_url) p.marketing_url = prod.marketing_url;
+      if (prod.intro_url !== undefined) p.intro_url = prod.intro_url;
+      if (prod.marketing_url !== undefined) p.marketing_url = prod.marketing_url;
+      if (prod.has_marketing_materials !== undefined) p.has_marketing_materials = prod.has_marketing_materials;
       if (prod.roi) p.roi = prod.roi;
       if (prod.grade) p.grade = prod.grade;
       if (prod.mainland_selling_points) p.mainland_selling_points = prod.mainland_selling_points;
@@ -1239,7 +1241,14 @@ function applyFilters() {
     }
 
     const salesUrl = `https://neil-studio.github.io/hk/sales.html?project=${encodeURIComponent(proj.name)}`;
-    const analyticsUrl = `https://neil-studio.github.io/hk/analytics.html?project=${encodeURIComponent(proj.name)}`;
+
+    const hasIntro = !!(proj.intro_url && String(proj.intro_url).trim().startsWith('http'));
+    const hasMarketing = proj.has_marketing_materials === true && !!(proj.marketing_url && String(proj.marketing_url).trim().startsWith('http'));
+    const marketingUrl = (proj.marketing_url && String(proj.marketing_url).trim().startsWith('http')) ? proj.marketing_url.trim() : '';
+
+    const drawerMarketingBtn = hasMarketing
+      ? `<a href="${marketingUrl}" target="_blank" onclick="event.stopPropagation()" style="flex:1; text-align:center; background:#f0fdf4; color:#16a34a; font-size:0.72rem; font-weight:700; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #bbf7d0; transition:all 0.2s; white-space:nowrap;">📂 营销网盘</a>`
+      : `<button disabled onclick="event.stopPropagation()" title="暂无营销资料" style="flex:1; text-align:center; background:#f1f5f9; color:#94a3b8; font-size:0.72rem; font-weight:600; padding:5px 8px; border-radius:6px; border:1px solid #e2e8f0; cursor:not-allowed; opacity:0.65; white-space:nowrap;">📂 营销网盘</button>`;
 
     const card = document.createElement('div');
     card.className = `card-float ${isSelected ? 'selected' : ''}`;
@@ -1267,13 +1276,10 @@ function applyFilters() {
         ${distKmStr ? `<span class="card-dist-badge">📍 距${activeAnchorLandmark.name.split(' ')[0]} ${distKmStr}</span>` : ''}
       </div>
       <div style="margin-top:8px; display:flex; gap:6px; align-items:center;">
-        <a href="${salesUrl}" target="_blank" onclick="event.stopPropagation()" style="flex:1; text-align:center; background:#eff6ff; color:#2563eb; font-size:0.72rem; font-weight:700; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #bfdbfe; transition:all 0.2s;">
+        <a href="${salesUrl}" target="_blank" onclick="event.stopPropagation()" style="flex:1; text-align:center; background:#eff6ff; color:#2563eb; font-size:0.72rem; font-weight:700; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #bfdbfe; transition:all 0.2s; white-space:nowrap;">
           🏢 正式版销控 &rarr;
         </a>
-        ${proj.marketing_url ? `
-        <a href="${proj.marketing_url}" target="_blank" onclick="event.stopPropagation()" style="flex:1; text-align:center; background:#f0fdf4; color:#16a34a; font-size:0.72rem; font-weight:700; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #bbf7d0; transition:all 0.2s;">
-          📂 营销网盘
-        </a>` : ''}
+        ${drawerMarketingBtn}
       </div>
     `;
 
@@ -1323,6 +1329,14 @@ function applyFilters() {
       `;
     }
 
+    const popupIntroBtn = hasIntro
+      ? `<a href="${proj.intro_url.trim()}" target="_blank" rel="noopener noreferrer" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#eff6ff; color:#2563eb; font-size:11px; font-weight:700; padding:6px 8px; border-radius:6px; text-decoration:none; border:1px solid #bfdbfe; white-space:nowrap; transition:all 0.2s;">📖 楼盘介绍</a>`
+      : `<button disabled title="暂无楼盘介绍" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#f1f5f9; color:#94a3b8; font-size:11px; font-weight:600; padding:6px 8px; border-radius:6px; border:1px solid #e2e8f0; cursor:not-allowed; opacity:0.65; white-space:nowrap;">📖 楼盘介绍</button>`;
+
+    const popupMarketingBtn = hasMarketing
+      ? `<a href="${marketingUrl}" target="_blank" rel="noopener noreferrer" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#ecfdf5; color:#047857; font-size:11px; font-weight:700; padding:6px 8px; border-radius:6px; text-decoration:none; border:1px solid #a7f3d0; white-space:nowrap; transition:all 0.2s;">📂 资料网盘</a>`
+      : `<button disabled title="暂无营销资料" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#f1f5f9; color:#94a3b8; font-size:11px; font-weight:600; padding:6px 8px; border-radius:6px; border:1px solid #e2e8f0; cursor:not-allowed; opacity:0.65; white-space:nowrap;">📂 资料网盘</button>`;
+
     const popupHTML = `
       <div class="custom-popup">
         <div class="popup-title">${proj.name}</div>
@@ -1334,17 +1348,12 @@ function applyFilters() {
         ${salesProgressHtml}
         ${popupMtrRow}
         <div style="margin-top:10px; padding-top:8px; border-top:1px solid #e2e8f0; display:flex; flex-direction:column; gap:6px;">
-          <a href="${salesUrl}" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:6px; background:#1e3a8a; color:#ffffff; font-size:12px; font-weight:700; padding:7px 12px; border-radius:8px; text-decoration:none; box-shadow:0 2px 6px rgba(30,58,138,0.25);">
+          <a href="${salesUrl}" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:6px; background:#1e3a8a; color:#ffffff; font-size:12px; font-weight:700; padding:7px 12px; border-radius:8px; text-decoration:none; box-shadow:0 2px 6px rgba(30,58,138,0.25); white-space:nowrap;">
             🏢 打开正式版【销控网格】&rarr;
           </a>
           <div style="display:flex; gap:6px;">
-            <a href="${analyticsUrl}" target="_blank" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#f1f5f9; color:#1e293b; font-size:11px; font-weight:600; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #cbd5e1;">
-              📈 成交分析
-            </a>
-            ${proj.marketing_url ? `
-            <a href="${proj.marketing_url}" target="_blank" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#ecfdf5; color:#047857; font-size:11px; font-weight:600; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #a7f3d0;">
-              📂 资料网盘
-            </a>` : ''}
+            ${popupIntroBtn}
+            ${popupMarketingBtn}
           </div>
         </div>
         ${isAdminMode ? `
