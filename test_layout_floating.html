@@ -612,7 +612,7 @@
     display: inline-block;
   }
 
-  /* 🎯 全局解决所有 Marker (楼盘、商场、名校、港铁) 尺寸固定截断与文字超出的核心规则 */
+  /* 🎯 自定义 Marker 容器样式：允许子元素自然向外溢出撑开，绝不覆盖 Leaflet 原生 transform 坐标 */
   .leaflet-marker-icon.p-marker,
   .leaflet-marker-icon.custom-school-icon,
   .leaflet-marker-icon.custom-mall-icon,
@@ -620,16 +620,10 @@
   .leaflet-marker-icon.anchor-pin {
     background: transparent !important;
     border: none !important;
-    width: auto !important;
-    height: auto !important;
-    margin-left: 0 !important;
-    margin-top: 0 !important;
-    transform: translate(-50%, -50%) !important;
-    pointer-events: auto;
     overflow: visible !important;
   }
 
-  /* 🏢 Project Marker Pin Styling (楼盘气泡自适应) */
+  /* 🏢 Project Marker Pin Styling (楼盘气泡自适应居中) */
   .proj-pin-box {
     display: inline-flex;
     align-items: center;
@@ -643,10 +637,14 @@
     white-space: nowrap;
     line-height: 1.3;
     cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
     transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
   }
   .proj-pin-box:hover {
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
     z-index: 9999 !important;
     box-shadow: 0 4px 14px rgba(0,0,0,0.35);
   }
@@ -663,10 +661,14 @@
     box-shadow: 0 3px 8px rgba(0,0,0,0.25);
     white-space: nowrap;
     cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
     transition: transform 0.2s;
   }
   .mtr-pin:hover {
-    transform: scale(1.08);
+    transform: translate(-50%, -50%) scale(1.08);
     z-index: 9999 !important;
   }
   .mtr-pin-logo {
@@ -726,16 +728,20 @@
     border: 2px solid #7c3aed;
     border-radius: 14px;
     padding: 2px 7px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 4px;
     box-shadow: 0 3px 8px rgba(124, 58, 237, 0.25);
     white-space: nowrap;
     cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .school-pin:hover {
-    transform: scale(1.08);
+    transform: translate(-50%, -50%) scale(1.08);
     z-index: 9999 !important;
     box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
   }
@@ -776,16 +782,20 @@
     border: 2px solid #ea580c;
     border-radius: 14px;
     padding: 2px 7px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 4px;
     box-shadow: 0 3px 8px rgba(234, 88, 12, 0.25);
     white-space: nowrap;
     cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .mall-pin:hover {
-    transform: scale(1.08);
+    transform: translate(-50%, -50%) scale(1.08);
     z-index: 9999 !important;
     box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
   }
@@ -1498,7 +1508,6 @@ function mergeProductionSales(prodData) {
   }
 }
 
-
 function getDisplayPinName(fullName) {
   if (!fullName) return '';
   let clean = fullName.trim();
@@ -1544,12 +1553,12 @@ function renderMtrMarkers() {
           <span class="mtr-pin-text">${cName}</span>
         </div>
       `,
-      iconSize: null
+      iconSize: [0, 0],
+      iconAnchor: [0, 0]
     });
 
     const marker = L.marker([st.lat, st.lng], { icon: mtrIcon });
 
-    // 计算该港铁站 1.5km 范围内的楼盘数
     const nearbyCount = projectsData ? projectsData.filter(p => {
       return getDistanceKm(st.lat, st.lng, p.lat, p.lng) <= 1.5;
     }).length : 0;
@@ -1601,7 +1610,6 @@ function renderFamousSchoolsMarkers() {
   schools.forEach(sch => {
     const tier = sch.tier || 2;
 
-    // 🎯 防扎堆层级过滤规则：
     if (currentZoom <= 12 && tier > 1) {
       return;
     }
@@ -1613,7 +1621,6 @@ function renderFamousSchoolsMarkers() {
     const color = isUniv ? '#1d4ed8' : (isInter ? '#6d28d9' : '#7c3aed');
     const isMini = currentZoom <= 13;
 
-    // 评选标准专属徽章
     let badgeText = '', badgeBg = '#f5f3ff', badgeColor = '#6d28d9', badgeBorder = '#ddd6fe';
     if (isUniv) {
       badgeText = '🎓 香港八大公立大学 · 高等学府';
@@ -1642,7 +1649,8 @@ function renderFamousSchoolsMarkers() {
           <span class="school-pin-text">${cName}</span>
         </div>
       `,
-      iconSize: null
+      iconSize: [0, 0],
+      iconAnchor: [0, 0]
     });
 
     const marker = L.marker([sch.lat, sch.lng], { icon });
@@ -1709,7 +1717,6 @@ function renderShoppingMallsMarkers() {
   malls.forEach(mall => {
     const tier = mall.tier || 2;
 
-    // 🎯 防扎堆层级过滤规则：
     if (currentZoom <= 12 && tier > 1) {
       return;
     }
@@ -1726,7 +1733,8 @@ function renderShoppingMallsMarkers() {
           <span class="mall-pin-text">${cName}</span>
         </div>
       `,
-      iconSize: null
+      iconSize: [0, 0],
+      iconAnchor: [0, 0]
     });
 
     const marker = L.marker([mall.lat, mall.lng], { icon });
