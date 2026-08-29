@@ -2916,9 +2916,9 @@
     "micro_district": "九龙塘低密度豪宅区 / 广播道及毕架山",
     "micro_district_en": "Statutory Scheme (S/K18/21)",
     "plan_id": "OZP-S-K18-21",
-    "primary_school_net": "12校网",
-    "secondary_school_net": "灣仔校网",
-    "school_net": "12校网 / 灣仔校网"
+    "primary_school_net": "41校网",
+    "secondary_school_net": "九龙城区校网",
+    "school_net": "41校网 / 九龙城区校网"
   },
   {
     "name": "缇外",
@@ -4150,9 +4150,9 @@
     "micro_district": "九龙站及柯士甸",
     "micro_district_en": "Kowloon Station & Austin",
     "plan_id": "FEAT-TPU-251-256",
-    "primary_school_net": "34校网",
-    "secondary_school_net": "九龍城校网",
-    "school_net": "34校网 / 九龍城校网"
+    "primary_school_net": "31校网",
+    "secondary_school_net": "油尖旺区校网",
+    "school_net": "31校网 / 油尖旺区校网"
   },
   {
     "name": "128 Waterloo",
@@ -27745,8 +27745,8 @@
     "micro_district_en": "Nam Cheong & West Kowloon Waterfront",
     "plan_id": "FEAT-TPU-255-269",
     "primary_school_net": "40校网",
-    "secondary_school_net": "深水埗校网",
-    "school_net": "40校网 / 深水埗校网"
+    "secondary_school_net": "深水埗区校网",
+    "school_net": "40校网 / 深水埗区校网"
   },
   {
     "name": "南首",
@@ -65158,8 +65158,8 @@
     "micro_district_en": "Statutory Scheme (S/K22/7)",
     "plan_id": "OZP-S-K22-7",
     "primary_school_net": "34校网",
-    "secondary_school_net": "九龍城校网",
-    "school_net": "34校网 / 九龍城校网"
+    "secondary_school_net": "九龙城区校网",
+    "school_net": "34校网 / 九龙城区校网"
   },
   {
     "name": "花语海第2期",
@@ -65670,8 +65670,8 @@
     "micro_district_en": "Statutory Scheme (S/K22/7)",
     "plan_id": "OZP-S-K22-7",
     "primary_school_net": "34校网",
-    "secondary_school_net": "九龍城校网",
-    "school_net": "34校网 / 九龍城校网"
+    "secondary_school_net": "九龙城区校网",
+    "school_net": "34校网 / 九龙城区校网"
   },
   {
     "name": "Elize Park",
@@ -66142,8 +66142,8 @@
     "micro_district_en": "Nam Cheong & West Kowloon Waterfront",
     "plan_id": "FEAT-TPU-255-269",
     "primary_school_net": "40校网",
-    "secondary_school_net": "深水埗校网",
-    "school_net": "40校网 / 深水埗校网"
+    "secondary_school_net": "深水埗区校网",
+    "school_net": "40校网 / 深水埗区校网"
   },
   {
     "name": "St. George's Mansions",
