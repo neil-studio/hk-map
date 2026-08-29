@@ -16,6 +16,7 @@ PROD_DIR = "/Users/nb/google/Antigravity/工作/运营/价单_正式版"
 FILES_DIR = os.path.join(PROD_DIR, "files")
 COORDS_FILE = os.path.join(SANDBOX_DIR, "hk_project_coords.json")
 DATA_FILE = os.path.join(PROD_DIR, "data.json")
+BASE_INFO_FILE = os.path.join(PROD_DIR, "楼盘基础信息库.xlsx")
 
 KNOWN_DEVELOPERS = [
     ("新鸿基地产", ["新鸿基地产", "新鸿基", "SHKP", "Sun Hung Kai"]),
@@ -285,7 +286,45 @@ def main():
         except Exception as e:
             print("读取 data.json 异常:", e)
 
-    print("3️⃣ 整合发展商、落成日期、在售明细、最近成交记录...")
+    school_net_map = {}
+    if os.path.exists(BASE_INFO_FILE):
+        try:
+            import pandas as pd
+            df_base = pd.read_excel(BASE_INFO_FILE, sheet_name='楼盘基础信息汇总')
+            for _, r in df_base.iterrows():
+                pn = str(r['项目名称']).strip()
+                p_net = str(r['小学校网']).strip() if pd.notna(r['小学校网']) else ''
+                s_net = str(r['中学校网']).strip() if pd.notna(r['中学校网']) else ''
+                school_net_map[pn.lower()] = (p_net, s_net)
+                if pd.notna(r.get('规范项目名')):
+                    school_net_map[str(r['规范项目名']).strip().lower()] = (p_net, s_net)
+        except Exception as e:
+            print("读取 楼盘基础信息库.xlsx 异常:", e)
+
+    MANUAL_OVERRIDE = {
+        '喇沙汇': ('41校网', '九龙城区校网'),
+        '耀爵台': ('34校网', '九龙城区校网'),
+        '本木': ('31校网', '油尖旺区校网'),
+        'Upper Prince': ('32校网', '油尖旺区校网'),
+        '利奥坊．壹隅': ('32校网', '油尖旺区校网'),
+        '吉喆': ('11校网', '中西区校网'),
+        'Shouson Peak': ('18校网', '南区校网'),
+        '浅水湾108': ('18校网', '南区校网'),
+        'Twelve Peaks': ('11校网', '中西区校网'),
+        '宾吉道3号': ('11校网', '中西区校网'),
+        '活道1号': ('12校网', '湾仔区校网'),
+        '远晴': ('16校网', '东区校网'),
+        '环角道7号、9号及11号': ('18校网', '南区校网'),
+        '339 Tai Hang Road': ('12校网', '湾仔区校网'),
+        '启德海湾 1': ('34校网', '九龙城区校网'),
+        '启德海湾 2': ('34校网', '九龙城区校网'),
+        '天铸 (第2期)': ('34校网', '九龙城区校网'),
+        '朗贤峰第IIA期': ('34校网', '九龙城区校网'),
+        '朗贤峰第IIB期': ('34校网', '九龙城区校网'),
+        'st. george\'s mansions': ('34校网', '九龙城区校网'),
+    }
+
+    print("3️⃣ 整合发展商、落成日期、校网归属、在售明细、最近成交记录...")
     tx_attached = 0
     for p in projects:
         pname = p["name"].strip()
@@ -300,6 +339,25 @@ def main():
 
         p["developer"] = extract_developer(full_text)
         p["completion_date"] = extract_completion_date(full_text)
+
+        # 匹配校网归属
+        sn_info = None
+        if pname in MANUAL_OVERRIDE:
+            sn_info = MANUAL_OVERRIDE[pname]
+        elif pname.lower() in school_net_map:
+            sn_info = school_net_map[pname.lower()]
+        else:
+            for k, val in school_net_map.items():
+                if k in pname.lower() or pname.lower() in k:
+                    sn_info = val
+                    break
+        if sn_info:
+            p["primary_school_net"] = sn_info[0]
+            p["secondary_school_net"] = sn_info[1]
+            if sn_info[0] and sn_info[1]:
+                p["school_net"] = f"{sn_info[0]} / {sn_info[1]}"
+            elif sn_info[0]:
+                p["school_net"] = sn_info[0]
 
         # 匹配在售数据
         sc = sales_data.get(pname)

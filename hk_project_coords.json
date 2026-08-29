@@ -266,12 +266,6 @@
         "unsold_count": 1,
         "sqft_range": "1463 呎",
         "price_range": "招标"
-      },
-      {
-        "layout": "4 房",
-        "unsold_count": 1,
-        "sqft_range": "3060 呎",
-        "price_range": "招标"
       }
     ],
     "recent_transactions": [
@@ -292,27 +286,30 @@
         "date": "2026-06-23"
       },
       {
+        "unit_name": "Park College座 G&1楼 GV室",
+        "layout": "4 房",
+        "sqft": "3060 呎",
+        "price": "暂无",
+        "unit_price": "-",
+        "date": "2026-08-19"
+      },
+      {
         "unit_name": "Park College座 7&8楼 A室",
         "layout": "4 房",
         "sqft": "3040 呎",
         "price": "暂无",
         "unit_price": "-",
         "date": "2026-04-21"
-      },
-      {
-        "unit_name": "Park College座 7&8楼 B室",
-        "layout": "4 房",
-        "sqft": "3022 呎",
-        "price": "暂无",
-        "unit_price": "-",
-        "date": "2026-01-21"
       }
     ],
     "address": "衙前圍道57A號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "九龙塘低密度豪宅区 / 广播道及毕架山",
     "micro_district_en": "Statutory Scheme (S/K18/21)",
-    "plan_id": "OZP-S-K18-21"
+    "plan_id": "OZP-S-K18-21",
+    "primary_school_net": "41校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "41校网 / 九龍城校网"
   },
   {
     "name": "The Monet 第1期",
@@ -736,7 +733,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "九龙塘低密度豪宅区 / 广播道及毕架山",
     "micro_district_en": "Statutory Scheme (S/K18/21)",
-    "plan_id": "OZP-S-K18-21"
+    "plan_id": "OZP-S-K18-21",
+    "primary_school_net": "41校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "41校网 / 九龍城校网"
   },
   {
     "name": "The Monet 第2期",
@@ -1120,7 +1120,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "九龙塘低密度豪宅区 / 广播道及毕架山",
     "micro_district_en": "Statutory Scheme (S/K18/21)",
-    "plan_id": "OZP-S-K18-21"
+    "plan_id": "OZP-S-K18-21",
+    "primary_school_net": "41校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "41校网 / 九龍城校网"
   },
   {
     "name": "The Monet 第3期",
@@ -1521,7 +1524,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "九龙塘低密度豪宅区 / 广播道及毕架山",
     "micro_district_en": "Statutory Scheme (S/K18/21)",
-    "plan_id": "OZP-S-K18-21"
+    "plan_id": "OZP-S-K18-21",
+    "primary_school_net": "41校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "41校网 / 九龍城校网"
   },
   {
     "name": "博峰",
@@ -1907,7 +1913,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "九龙塘低密度豪宅区 / 广播道及毕架山",
     "micro_district_en": "Statutory Scheme (S/K18/21)",
-    "plan_id": "OZP-S-K18-21"
+    "plan_id": "OZP-S-K18-21",
+    "primary_school_net": "41校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "41校网 / 九龍城校网"
   },
   {
     "name": "喇沙汇",
@@ -2293,19 +2302,15 @@
     },
     "developer": "香港品牌发展商",
     "completion_date": "现楼 / 详见项目资料",
-    "sales_control_summary": [
-      {
-        "layout": "4 房",
-        "unsold_count": 4,
-        "sqft_range": "4799 - 5291 呎",
-        "price_range": "1.66 亿 - 2.08 亿"
-      }
-    ],
+    "sales_control_summary": [],
     "recent_transactions": [],
     "main_area": "九龙西北（深水埗区）",
     "micro_district": "石硖尾及又一村",
     "micro_district_en": "Statutory Scheme (S/K4/30)",
-    "plan_id": "OZP-S-K4-30"
+    "plan_id": "OZP-S-K4-30",
+    "primary_school_net": "41校网",
+    "secondary_school_net": "九龙城区校网",
+    "school_net": "41校网 / 九龙城区校网"
   },
   {
     "name": "皇廷汇",
@@ -2910,7 +2915,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "九龙塘低密度豪宅区 / 广播道及毕架山",
     "micro_district_en": "Statutory Scheme (S/K18/21)",
-    "plan_id": "OZP-S-K18-21"
+    "plan_id": "OZP-S-K18-21",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网"
   },
   {
     "name": "缇外",
@@ -3410,7 +3418,7 @@
         "layout": "4 房",
         "unsold_count": 11,
         "sqft_range": "3731 - 7915 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       }
     ],
     "recent_transactions": [
@@ -3435,7 +3443,10 @@
     "main_area": "九龙西北（深水埗区）",
     "micro_district": "石硖尾及又一村",
     "micro_district_en": "Statutory Scheme (S/K4/30)",
-    "plan_id": "OZP-S-K4-30"
+    "plan_id": "OZP-S-K4-30",
+    "primary_school_net": "40校网",
+    "secondary_school_net": "深水埗校网",
+    "school_net": "40校网 / 深水埗校网"
   },
   {
     "name": "天玺",
@@ -4053,7 +4064,7 @@
         "layout": "2 房",
         "unsold_count": 19,
         "sqft_range": "644 - 693 呎",
-        "price_range": "5526.6 万 (含招标)"
+        "price_range": "4863.4 万 (含招标)"
       },
       {
         "layout": "3 房",
@@ -4065,7 +4076,7 @@
         "layout": "4 房",
         "unsold_count": 21,
         "sqft_range": "1061 - 3113 呎",
-        "price_range": "1.03 亿 (含招标)"
+        "price_range": "9100.6 万 (含招标)"
       }
     ],
     "recent_transactions": [
@@ -4075,7 +4086,7 @@
         "sqft": "435 呎",
         "price": "1296 万",
         "unit_price": "$29,793/呎",
-        "date": "2016-08-07"
+        "date": "2016-08-08"
       },
       {
         "unit_name": "星钻玺座 51楼 K室",
@@ -4083,7 +4094,7 @@
         "sqft": "434 呎",
         "price": "1517.5 万",
         "unit_price": "$34,966/呎",
-        "date": "2013-11-27"
+        "date": "2013-11-28"
       },
       {
         "unit_name": "彗钻玺座 37楼 E室",
@@ -4091,7 +4102,7 @@
         "sqft": "670 呎",
         "price": "2300 万",
         "unit_price": "$34,328/呎",
-        "date": "2021-10-04"
+        "date": "2021-10-05"
       },
       {
         "unit_name": "天钻玺座 85楼 B室",
@@ -4099,7 +4110,7 @@
         "sqft": "678 呎",
         "price": "5178.4 万",
         "unit_price": "$76,377/呎",
-        "date": "2021-08-02"
+        "date": "2021-08-03"
       },
       {
         "unit_name": "皇钻玺座 79楼 C室",
@@ -4107,7 +4118,7 @@
         "sqft": "1608 呎",
         "price": "1.31 亿",
         "unit_price": "$81,300/呎",
-        "date": "2021-10-03"
+        "date": "2021-10-04"
       },
       {
         "unit_name": "皇钻玺座 80楼 E室",
@@ -4115,7 +4126,7 @@
         "sqft": "910 呎",
         "price": "3950.1 万",
         "unit_price": "$43,408/呎",
-        "date": "2013-12-23"
+        "date": "2013-12-24"
       },
       {
         "unit_name": "天钻玺座 91楼 C室",
@@ -4123,7 +4134,7 @@
         "sqft": "1775 呎",
         "price": "2.32 亿",
         "unit_price": "$130,686/呎",
-        "date": "2025-08-25"
+        "date": "2025-08-26"
       },
       {
         "unit_name": "天钻玺座 89楼 A室",
@@ -4131,14 +4142,17 @@
         "sqft": "1535 呎",
         "price": "1.50 亿",
         "unit_price": "$97,423/呎",
-        "date": "2025-04-22"
+        "date": "2025-04-23"
       }
     ],
     "address": "柯士甸道西1號",
     "main_area": "九龙西（油尖旺）",
     "micro_district": "九龙站及柯士甸",
     "micro_district_en": "Kowloon Station & Austin",
-    "plan_id": "FEAT-TPU-251-256"
+    "plan_id": "FEAT-TPU-251-256",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "128 Waterloo",
@@ -4388,7 +4402,7 @@
       },
       {
         "layout": "3 房",
-        "unsold_count": 4,
+        "unsold_count": 3,
         "sqft_range": "842 呎",
         "price_range": "招标"
       },
@@ -4439,20 +4453,20 @@
         "date": "2026-06-03"
       },
       {
+        "unit_name": "128 Waterloo座 15楼 D室",
+        "layout": "3 房",
+        "sqft": "842 呎",
+        "price": "2580 万",
+        "unit_price": "$30,641/呎",
+        "date": "2026-08-22"
+      },
+      {
         "unit_name": "128 Waterloo座 17楼 D室",
         "layout": "3 房",
         "sqft": "842 呎",
         "price": "3482.1 万",
         "unit_price": "$41,355/呎",
         "date": "2024-04-17"
-      },
-      {
-        "unit_name": "128 Waterloo座 12楼 D室",
-        "layout": "3 房",
-        "sqft": "842 呎",
-        "price": "2921.7 万",
-        "unit_price": "$34,700/呎",
-        "date": "2022-04-01"
       },
       {
         "unit_name": "128 Waterloo座 8楼 H室",
@@ -4491,7 +4505,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "Prince Central",
@@ -4720,7 +4737,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "VAU Residence",
@@ -4922,7 +4942,7 @@
         "sqft": "211 呎",
         "price": "609.5 万",
         "unit_price": "$28,886/呎",
-        "date": "2026-08-05"
+        "date": "2026-08-24"
       },
       {
         "unit_name": "VAU Residence座 27楼 E室",
@@ -4985,7 +5005,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "st. george's mansions",
@@ -5182,20 +5205,20 @@
     ],
     "recent_transactions": [
       {
+        "unit_name": "2座 2楼 C室",
+        "layout": "2 房",
+        "sqft": "723 呎",
+        "price": "暂无",
+        "unit_price": "-",
+        "date": "2026-08-20"
+      },
+      {
         "unit_name": "3座 6楼 C室",
         "layout": "2 房",
         "sqft": "732 呎",
         "price": "暂无",
         "unit_price": "-",
         "date": "2026-08-17"
-      },
-      {
-        "unit_name": "2座 2楼 C室",
-        "layout": "2 房",
-        "sqft": "764 呎",
-        "price": "暂无",
-        "unit_price": "-",
-        "date": "2026-07-28"
       },
       {
         "unit_name": "2座 6楼 A室",
@@ -5233,7 +5256,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龙城区校网",
+    "school_net": "34校网 / 九龙城区校网"
   },
   {
     "name": "傲玟",
@@ -5521,13 +5547,13 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 2,
+        "unsold_count": 1,
         "sqft_range": "890 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
-        "unsold_count": 49,
+        "unsold_count": 48,
         "sqft_range": "1251 - 1747 呎",
         "price_range": "招标"
       },
@@ -5540,36 +5566,36 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "5座 18楼 D室",
+        "unit_name": "5座 19楼 D室",
         "layout": "2 房",
-        "sqft": "892 呎",
+        "sqft": "811 呎",
         "price": "暂无",
         "unit_price": "-",
-        "date": "2026-08-14"
+        "date": "2026-08-25"
       },
       {
-        "unit_name": "5座 17楼 D室",
+        "unit_name": "5座 19楼 C室",
         "layout": "2 房",
-        "sqft": "812 呎",
+        "sqft": "813 呎",
         "price": "暂无",
         "unit_price": "-",
-        "date": "2026-08-11"
+        "date": "2026-08-25"
       },
       {
-        "unit_name": "7座 16楼 A室",
+        "unit_name": "1座 19楼 C室",
         "layout": "3 房",
-        "sqft": "1401 呎",
+        "sqft": "1186 呎",
         "price": "暂无",
         "unit_price": "-",
-        "date": "2026-08-11"
+        "date": "2026-08-25"
       },
       {
-        "unit_name": "1座 8楼 C室",
+        "unit_name": "1座 21楼 C室",
         "layout": "3 房",
-        "sqft": "1251 呎",
+        "sqft": "1186 呎",
         "price": "暂无",
         "unit_price": "-",
-        "date": "2026-08-10"
+        "date": "2026-08-20"
       },
       {
         "unit_name": "5座 20&21楼 B室",
@@ -5592,7 +5618,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "名钻",
@@ -5881,7 +5910,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "天铸 (第2期)",
@@ -6082,7 +6114,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龙城区校网",
+    "school_net": "34校网 / 九龙城区校网"
   },
   {
     "name": "太子道西233号",
@@ -6293,7 +6328,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "明寓",
@@ -6542,7 +6580,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "朗贤峰第IIA期",
@@ -6723,7 +6764,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龙城区校网",
+    "school_net": "34校网 / 九龙城区校网"
   },
   {
     "name": "朗贤峰第IIB期",
@@ -6950,7 +6994,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龙城区校网",
+    "school_net": "34校网 / 九龙城区校网"
   },
   {
     "name": "瑜一第IC期",
@@ -7135,7 +7182,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "瑜一．天海",
@@ -7247,7 +7297,7 @@
       },
       {
         "layout": "3 房",
-        "unsold_count": 55,
+        "unsold_count": 52,
         "sqft_range": "925 - 1116 呎",
         "price_range": "招标"
       },
@@ -7276,6 +7326,14 @@
         "date": "2025-05-30"
       },
       {
+        "unit_name": "2A座 19楼 C室",
+        "layout": "2 房",
+        "sqft": "593 呎",
+        "price": "1903.9 万",
+        "unit_price": "$32,106/呎",
+        "date": "2026-08-20"
+      },
+      {
         "unit_name": "2A座 1楼 C室",
         "layout": "2 房",
         "sqft": "550 呎",
@@ -7284,28 +7342,20 @@
         "date": "2026-08-14"
       },
       {
-        "unit_name": "2A座 22楼 C室",
-        "layout": "2 房",
-        "sqft": "593 呎",
-        "price": "1996.7 万",
-        "unit_price": "$33,671/呎",
-        "date": "2026-08-03"
-      },
-      {
-        "unit_name": "2A座 9楼 A室",
-        "layout": "3 房",
-        "sqft": "997 呎",
-        "price": "2921.3 万",
-        "unit_price": "$29,301/呎",
-        "date": "2026-08-03"
-      },
-      {
         "unit_name": "1B座 19楼 A室",
         "layout": "3 房",
         "sqft": "959 呎",
         "price": "2764.8 万",
         "unit_price": "$28,830/呎",
-        "date": "2026-07-31"
+        "date": "2026-08-25"
+      },
+      {
+        "unit_name": "2A座 G楼 MAISON D室",
+        "layout": "3 房",
+        "sqft": "889 呎",
+        "price": "3201 万",
+        "unit_price": "$36,007/呎",
+        "date": "2026-08-25"
       },
       {
         "unit_name": "1A座 28楼 B室",
@@ -7320,7 +7370,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "耀爵台",
@@ -7671,7 +7724,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龙城区校网",
+    "school_net": "34校网 / 九龙城区校网"
   },
   {
     "name": "芳菲",
@@ -7876,27 +7932,30 @@
         "date": "2026-06-04"
       },
       {
-        "unit_name": "芳菲座 15楼 C室",
+        "unit_name": "芳菲座 19楼 C室",
         "layout": "2 房",
         "sqft": "414 呎",
-        "price": "957.9 万",
-        "unit_price": "$23,138/呎",
-        "date": "2026-08-18"
+        "price": "1005.7 万",
+        "unit_price": "$24,292/呎",
+        "date": "2026-08-26"
       },
       {
-        "unit_name": "芳菲座 2楼 C室",
+        "unit_name": "芳菲座 18楼 C室",
         "layout": "2 房",
-        "sqft": "377 呎",
-        "price": "1078.2 万",
-        "unit_price": "$28,600/呎",
-        "date": "2026-08-04"
+        "sqft": "414 呎",
+        "price": "996 万",
+        "unit_price": "$24,058/呎",
+        "date": "2026-08-26"
       }
     ],
     "address": "勝利道5號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "誉林",
@@ -8153,7 +8212,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "隆敍",
@@ -8489,7 +8551,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "Double Coast I",
@@ -8923,7 +8988,7 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 16,
+        "unsold_count": 15,
         "sqft_range": "440 - 477 呎",
         "price_range": "招标"
       }
@@ -8962,20 +9027,20 @@
         "date": "2026-03-02"
       },
       {
+        "unit_name": "3座 23楼 A室",
+        "layout": "2 房",
+        "sqft": "440 呎",
+        "price": "976 万",
+        "unit_price": "$22,182/呎",
+        "date": "2026-08-18"
+      },
+      {
         "unit_name": "3座 1楼 D室",
         "layout": "2 房",
         "sqft": "480 呎",
         "price": "944 万",
         "unit_price": "$19,667/呎",
         "date": "2026-08-03"
-      },
-      {
-        "unit_name": "3座 39楼 E室",
-        "layout": "2 房",
-        "sqft": "455 呎",
-        "price": "977 万",
-        "unit_price": "$21,473/呎",
-        "date": "2026-07-21"
       },
       {
         "unit_name": "3座 36楼 B室",
@@ -9014,7 +9079,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "Double Coast III",
@@ -9553,7 +9621,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "Henley Park",
@@ -9778,27 +9849,30 @@
         "date": "2026-07-21"
       },
       {
-        "unit_name": "1A座 9楼 A室",
-        "layout": "3 房",
-        "sqft": "937 呎",
-        "price": "3101.4 万",
-        "unit_price": "$33,099/呎",
-        "date": "2026-08-14"
-      },
-      {
-        "unit_name": "1A座 18楼 A室",
+        "unit_name": "1A座 10楼 A室",
         "layout": "3 房",
         "sqft": "936 呎",
-        "price": "3183.8 万",
-        "unit_price": "$34,015/呎",
-        "date": "2026-08-05"
+        "price": "3111 万",
+        "unit_price": "$33,237/呎",
+        "date": "2026-08-25"
+      },
+      {
+        "unit_name": "1A座 12楼 A室",
+        "layout": "3 房",
+        "sqft": "936 呎",
+        "price": "3056 万",
+        "unit_price": "$32,650/呎",
+        "date": "2026-08-20"
       }
     ],
     "address": "沐泰街8號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "Miami Quay I",
@@ -10288,93 +10362,93 @@
     "sales_control_summary": [
       {
         "layout": "开放式",
-        "unsold_count": 28,
+        "unsold_count": 26,
         "sqft_range": "250 - 251 呎",
         "price_range": "566.5 万 - 633.1 万"
       },
       {
         "layout": "1 房",
-        "unsold_count": 47,
+        "unsold_count": 44,
         "sqft_range": "280 - 329 呎",
         "price_range": "669.3 万 - 851.2 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 133,
+        "unsold_count": 127,
         "sqft_range": "398 - 487 呎",
         "price_range": "986.3 万 - 1056.9 万 (含招标)"
       },
       {
         "layout": "3 房",
-        "unsold_count": 10,
+        "unsold_count": 9,
         "sqft_range": "620 呎",
-        "price_range": "1451.3 万 - 1464.4 万 (含招标)"
+        "price_range": "招标"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "2座 6楼 H室",
+        "unit_name": "2座 10楼 H室",
         "layout": "开放式",
         "sqft": "251 呎",
-        "price": "571.6 万",
-        "unit_price": "$22,773/呎",
-        "date": "2026-08-14"
+        "price": "598.1 万",
+        "unit_price": "$23,829/呎",
+        "date": "2026-08-24"
       },
       {
-        "unit_name": "2座 7楼 H室",
+        "unit_name": "2座 16楼 H室",
         "layout": "开放式",
         "sqft": "251 呎",
-        "price": "573.4 万",
-        "unit_price": "$22,845/呎",
-        "date": "2026-08-13"
+        "price": "605.3 万",
+        "unit_price": "$24,116/呎",
+        "date": "2026-08-18"
       },
       {
-        "unit_name": "3座 5楼 K室",
-        "layout": "1 房",
-        "sqft": "329 呎",
-        "price": "792.2 万",
-        "unit_price": "$24,079/呎",
-        "date": "2026-08-16"
-      },
-      {
-        "unit_name": "2座 19楼 F室",
+        "unit_name": "2座 18楼 F室",
         "layout": "1 房",
         "sqft": "323 呎",
-        "price": "759.6 万",
-        "unit_price": "$23,517/呎",
-        "date": "2026-08-14"
+        "price": "757.3 万",
+        "unit_price": "$23,446/呎",
+        "date": "2026-08-25"
       },
       {
-        "unit_name": "1座 19楼 F室",
+        "unit_name": "3座 16楼 D室",
+        "layout": "1 房",
+        "sqft": "317 呎",
+        "price": "734.1 万",
+        "unit_price": "$23,158/呎",
+        "date": "2026-08-23"
+      },
+      {
+        "unit_name": "3座 29楼 B室",
         "layout": "2 房",
-        "sqft": "448 呎",
-        "price": "1045.2 万",
-        "unit_price": "$23,330/呎",
-        "date": "2026-08-07"
+        "sqft": "468 呎",
+        "price": "1190.9 万",
+        "unit_price": "$25,447/呎",
+        "date": "2026-08-26"
       },
       {
-        "unit_name": "1座 12楼 F室",
+        "unit_name": "2座 11楼 A室",
         "layout": "2 房",
-        "sqft": "448 呎",
-        "price": "1026.6 万",
-        "unit_price": "$22,915/呎",
-        "date": "2026-08-07"
+        "sqft": "487 呎",
+        "price": "1227.3 万",
+        "unit_price": "$25,201/呎",
+        "date": "2026-08-25"
       },
       {
-        "unit_name": "3座 19楼 A室",
+        "unit_name": "3座 17楼 A室",
         "layout": "3 房",
         "sqft": "620 呎",
-        "price": "1524.9 万",
-        "unit_price": "$24,595/呎",
-        "date": "2026-08-14"
+        "price": "1511.2 万",
+        "unit_price": "$24,374/呎",
+        "date": "2026-08-22"
       },
       {
-        "unit_name": "3座 15楼 A室",
+        "unit_name": "3座 23楼 A室",
         "layout": "3 房",
         "sqft": "620 呎",
-        "price": "1502.2 万",
-        "unit_price": "$24,229/呎",
-        "date": "2026-08-13"
+        "price": "1543.3 万",
+        "unit_price": "$24,892/呎",
+        "date": "2026-08-19"
       },
       {
         "unit_name": "1座 30楼 A室",
@@ -10389,7 +10463,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "Miami Quay II",
@@ -10891,13 +10968,13 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 226,
+        "unsold_count": 225,
         "sqft_range": "406 - 494 呎",
-        "price_range": "1224.7 万"
+        "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
-        "unsold_count": 8,
+        "unsold_count": 7,
         "sqft_range": "620 呎",
         "price_range": "招标"
       }
@@ -10936,6 +11013,14 @@
         "date": "2026-05-29"
       },
       {
+        "unit_name": "6座 8楼 A室",
+        "layout": "2 房",
+        "sqft": "482 呎",
+        "price": "1224.7 万",
+        "unit_price": "$25,409/呎",
+        "date": "2026-08-26"
+      },
+      {
         "unit_name": "6座 9楼 A室",
         "layout": "2 房",
         "sqft": "482 呎",
@@ -10944,28 +11029,20 @@
         "date": "2026-07-09"
       },
       {
-        "unit_name": "6座 6楼 L室",
-        "layout": "2 房",
-        "sqft": "463 呎",
-        "price": "1113.3 万",
-        "unit_price": "$24,045/呎",
-        "date": "2026-06-18"
-      },
-      {
-        "unit_name": "5座 20楼 A室",
+        "unit_name": "5座 23楼 A室",
         "layout": "3 房",
         "sqft": "620 呎",
-        "price": "1538 万",
-        "unit_price": "$24,806/呎",
-        "date": "2026-08-10"
+        "price": "1576.1 万",
+        "unit_price": "$25,421/呎",
+        "date": "2026-08-23"
       },
       {
-        "unit_name": "5座 12楼 A室",
+        "unit_name": "5座 22楼 A室",
         "layout": "3 房",
         "sqft": "620 呎",
-        "price": "1511.4 万",
-        "unit_price": "$24,377/呎",
-        "date": "2026-08-06"
+        "price": "1545.8 万",
+        "unit_price": "$24,932/呎",
+        "date": "2026-08-18"
       },
       {
         "unit_name": "6座 30楼 A室",
@@ -10980,7 +11057,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "Monaco Marine",
@@ -11197,7 +11277,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "Monaco One",
@@ -11410,7 +11493,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "Monaco 第1期",
@@ -11641,7 +11727,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "The Henley I",
@@ -11805,9 +11894,9 @@
       },
       {
         "layout": "3 房",
-        "unsold_count": 9,
+        "unsold_count": 8,
         "sqft_range": "696 - 889 呎",
-        "price_range": "258.3 万 - 2710.8 万 (含招标)"
+        "price_range": "258.3 万 - 2641.4 万 (含招标)"
       }
     ],
     "recent_transactions": [
@@ -11849,7 +11938,7 @@
         "sqft": "550 呎",
         "price": "1835 万",
         "unit_price": "$33,364/呎",
-        "date": "2026-08-03"
+        "date": "2026-08-26"
       },
       {
         "unit_name": "2座 22楼 D室",
@@ -11860,27 +11949,30 @@
         "date": "2026-07-08"
       },
       {
+        "unit_name": "2座 10楼 A室",
+        "layout": "3 房",
+        "sqft": "889 呎",
+        "price": "2831.1 万",
+        "unit_price": "$31,846/呎",
+        "date": "2026-08-18"
+      },
+      {
         "unit_name": "2座 12楼 A室",
         "layout": "3 房",
         "sqft": "890 呎",
         "price": "2904.6 万",
         "unit_price": "$32,636/呎",
         "date": "2026-07-06"
-      },
-      {
-        "unit_name": "2座 15楼 A室",
-        "layout": "3 房",
-        "sqft": "890 呎",
-        "price": "2824.9 万",
-        "unit_price": "$31,741/呎",
-        "date": "2026-06-12"
       }
     ],
     "address": "沐泰街7號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "The Henley II",
@@ -12061,20 +12153,20 @@
         "date": "2026-01-08"
       },
       {
+        "unit_name": "1座 10楼 B室",
+        "layout": "2 房",
+        "sqft": "550 呎",
+        "price": "1760 万",
+        "unit_price": "$32,000/呎",
+        "date": "2026-08-20"
+      },
+      {
         "unit_name": "1座 18楼 D室",
         "layout": "2 房",
         "sqft": "479 呎",
         "price": "1461.3 万",
         "unit_price": "$30,508/呎",
         "date": "2026-08-18"
-      },
-      {
-        "unit_name": "1座 19楼 C室",
-        "layout": "2 房",
-        "sqft": "543 呎",
-        "price": "1808 万",
-        "unit_price": "$33,297/呎",
-        "date": "2026-08-03"
       },
       {
         "unit_name": "1座 7楼 A室",
@@ -12097,7 +12189,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "The Henley III",
@@ -12336,7 +12431,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "启德海湾 1",
@@ -12774,7 +12872,7 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 69,
+        "unsold_count": 68,
         "sqft_range": "288 - 315 呎",
         "price_range": "617.9 万 - 942.8 万"
       },
@@ -12782,7 +12880,7 @@
         "layout": "2 房",
         "unsold_count": 93,
         "sqft_range": "427 - 553 呎",
-        "price_range": "844.2 万 - 1306.5 万 (含招标)"
+        "price_range": "907.6 万 - 1306.5 万 (含招标)"
       },
       {
         "layout": "3 房",
@@ -12793,20 +12891,20 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "2A座 30楼 J室",
-        "layout": "1 房",
-        "sqft": "306 呎",
-        "price": "721.8 万",
-        "unit_price": "$23,588/呎",
-        "date": "2026-08-11"
-      },
-      {
         "unit_name": "2C座 28楼 K室",
         "layout": "1 房",
-        "sqft": "305 呎",
+        "sqft": "306 呎",
         "price": "680.8 万",
-        "unit_price": "$22,321/呎",
-        "date": "2026-08-05"
+        "unit_price": "$22,248/呎",
+        "date": "2026-08-26"
+      },
+      {
+        "unit_name": "2C座 27楼 K室",
+        "layout": "1 房",
+        "sqft": "306 呎",
+        "price": "672.8 万",
+        "unit_price": "$21,987/呎",
+        "date": "2026-08-20"
       },
       {
         "unit_name": "2C座 21楼 C室",
@@ -12845,7 +12943,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龙城区校网",
+    "school_net": "34校网 / 九龙城区校网"
   },
   {
     "name": "启德海湾 2",
@@ -13209,20 +13310,20 @@
       },
       {
         "layout": "1 房",
-        "unsold_count": 332,
+        "unsold_count": 182,
         "sqft_range": "278 - 313 呎",
         "price_range": "695 万 - 823.5 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 447,
+        "unsold_count": 231,
         "sqft_range": "416 - 613 呎",
         "price_range": "1003.8 万 - 1201.2 万 (含招标)"
       },
       {
         "layout": "3 房",
-        "unsold_count": 61,
-        "sqft_range": "668 - 771 呎",
+        "unsold_count": 30,
+        "sqft_range": "713 - 734 呎",
         "price_range": "招标"
       }
     ],
@@ -13244,27 +13345,38 @@
         "date": "2026-08-05"
       },
       {
-        "unit_name": "1C座 11楼 E室",
+        "unit_name": "1C座 3楼 A室",
         "layout": "2 房",
-        "sqft": "499 呎",
-        "price": "1131 万",
-        "unit_price": "$22,665/呎",
-        "date": "2026-08-14"
+        "sqft": "612 呎",
+        "price": "1269.8 万",
+        "unit_price": "$20,748/呎",
+        "date": "2026-08-27"
       },
       {
-        "unit_name": "1C座 3楼 C室",
+        "unit_name": "1C座 23楼 B室",
         "layout": "2 房",
-        "sqft": "550 呎",
-        "price": "1178 万",
-        "unit_price": "$21,418/呎",
-        "date": "2026-08-12"
+        "sqft": "486 呎",
+        "price": "1203.8 万",
+        "unit_price": "$24,770/呎",
+        "date": "2026-08-26"
+      },
+      {
+        "unit_name": "1C座 3楼 M室",
+        "layout": "3 房",
+        "sqft": "668 呎",
+        "price": "1772 万",
+        "unit_price": "$26,527/呎",
+        "date": "2026-08-22"
       }
     ],
     "address": "承豐道15號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龙城区校网",
+    "school_net": "34校网 / 九龙城区校网"
   },
   {
     "name": "天泷",
@@ -13751,6 +13863,14 @@
     ],
     "recent_transactions": [
       {
+        "unit_name": "3座 26楼 A室",
+        "layout": "3 房",
+        "sqft": "1027 呎",
+        "price": "暂无",
+        "unit_price": "-",
+        "date": "2026-08-21"
+      },
+      {
         "unit_name": "1座 33楼 C室",
         "layout": "3 房",
         "sqft": "635 呎",
@@ -13759,35 +13879,30 @@
         "date": "2026-08-13"
       },
       {
-        "unit_name": "3座 26楼 A室",
-        "layout": "3 房",
-        "sqft": "1027 呎",
-        "price": "暂无",
-        "unit_price": "-",
-        "date": "2026-07-31"
-      },
-      {
-        "unit_name": "2座 23楼 A室",
-        "layout": "4 房",
-        "sqft": "1076 呎",
-        "price": "暂无",
-        "unit_price": "-",
-        "date": "2026-08-14"
-      },
-      {
         "unit_name": "8座 21楼 B室",
         "layout": "4 房",
-        "sqft": "1298 呎",
+        "sqft": "1204 呎",
         "price": "暂无",
         "unit_price": "-",
-        "date": "2026-08-07"
+        "date": "2026-08-24"
+      },
+      {
+        "unit_name": "1座 12楼 B室",
+        "layout": "4 房",
+        "sqft": "1171 呎",
+        "price": "暂无",
+        "unit_price": "-",
+        "date": "2026-08-20"
       }
     ],
     "address": "承豐道22號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "天玺．天",
@@ -14024,7 +14139,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "天玺．天第2期",
@@ -14164,7 +14282,7 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 127,
+        "unsold_count": 120,
         "sqft_range": "443 - 612 呎",
         "price_range": "1242.2 万 - 1601.8 万 (含招标)"
       },
@@ -14176,7 +14294,7 @@
       },
       {
         "layout": "4 房",
-        "unsold_count": 97,
+        "unsold_count": 96,
         "sqft_range": "908 - 4306 呎",
         "price_range": "招标"
       }
@@ -14199,20 +14317,20 @@
         "date": "2025-12-23"
       },
       {
-        "unit_name": "2座 12楼 A5室",
+        "unit_name": "2座 25楼 B1室",
         "layout": "2 房",
-        "sqft": "545 呎",
-        "price": "1899.8 万",
-        "unit_price": "$34,859/呎",
-        "date": "2026-08-18"
+        "sqft": "478 呎",
+        "price": "1305.3 万",
+        "unit_price": "$27,309/呎",
+        "date": "2026-08-26"
       },
       {
-        "unit_name": "2座 6楼 A2室",
+        "unit_name": "2座 23楼 A5室",
         "layout": "2 房",
-        "sqft": "446 呎",
-        "price": "1422.8 万",
-        "unit_price": "$31,901/呎",
-        "date": "2026-08-17"
+        "sqft": "545 呎",
+        "price": "2038 万",
+        "unit_price": "$37,394/呎",
+        "date": "2026-08-26"
       },
       {
         "unit_name": "1座 5楼 B8室",
@@ -14231,27 +14349,30 @@
         "date": "2026-01-26"
       },
       {
-        "unit_name": "1座 25楼 A1室",
+        "unit_name": "1座 17楼 A1室",
         "layout": "4 房",
         "sqft": "908 呎",
-        "price": "4301.9 万",
-        "unit_price": "$47,378/呎",
-        "date": "2026-08-14"
+        "price": "3554.2 万",
+        "unit_price": "$39,143/呎",
+        "date": "2026-08-27"
       },
       {
-        "unit_name": "1座 21楼 A1室",
+        "unit_name": "1座 7楼 A1室",
         "layout": "4 房",
         "sqft": "908 呎",
-        "price": "4094.4 万",
-        "unit_price": "$45,093/呎",
-        "date": "2026-08-14"
+        "price": "3433.1 万",
+        "unit_price": "$37,809/呎",
+        "date": "2026-08-18"
       }
     ],
     "address": "協調道10號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "天玺．海第1期",
@@ -14784,7 +14905,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "天玺．海第2A期",
@@ -15262,12 +15386,20 @@
     "sales_control_summary": [
       {
         "layout": "4 房",
-        "unsold_count": 26,
+        "unsold_count": 25,
         "sqft_range": "1124 - 2476 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "7座 11楼 A室",
+        "layout": "4 房",
+        "sqft": "1150 呎",
+        "price": "暂无",
+        "unit_price": "-",
+        "date": "2026-08-20"
+      },
       {
         "unit_name": "7座 12楼 A室",
         "layout": "4 房",
@@ -15275,21 +15407,16 @@
         "price": "暂无",
         "unit_price": "-",
         "date": "2026-06-26"
-      },
-      {
-        "unit_name": "7座 10楼 A室",
-        "layout": "4 房",
-        "sqft": "1150 呎",
-        "price": "暂无",
-        "unit_price": "-",
-        "date": "2026-06-25"
       }
     ],
     "address": "承豐道26號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "天玺．海第2B期",
@@ -15798,7 +15925,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "柏蔚森 I",
@@ -16268,14 +16398,8 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 12,
-        "sqft_range": "374 - 400 呎",
-        "price_range": "招标"
-      },
-      {
-        "layout": "3 房",
-        "unsold_count": 10,
-        "sqft_range": "512 - 560 呎",
+        "unsold_count": 2,
+        "sqft_range": "385 呎",
         "price_range": "招标"
       }
     ],
@@ -16297,14 +16421,6 @@
         "date": "2024-08-13"
       },
       {
-        "unit_name": "5座 26楼 E室",
-        "layout": "2 房",
-        "sqft": "391 呎",
-        "price": "866.4 万",
-        "unit_price": "$22,159/呎",
-        "date": "2026-07-31"
-      },
-      {
         "unit_name": "6座 3楼 A室",
         "layout": "2 房",
         "sqft": "385 呎",
@@ -16313,27 +16429,22 @@
         "date": "2026-07-28"
       },
       {
-        "unit_name": "5座 25楼 C室",
-        "layout": "3 房",
-        "sqft": "560 呎",
-        "price": "1405.2 万",
-        "unit_price": "$25,093/呎",
-        "date": "2026-08-13"
-      },
-      {
-        "unit_name": "5座 9楼 A室",
-        "layout": "3 房",
-        "sqft": "512 呎",
-        "price": "1105.7 万",
-        "unit_price": "$21,596/呎",
-        "date": "2026-07-17"
+        "unit_name": "6座 6楼 G室",
+        "layout": "2 房",
+        "sqft": "385 呎",
+        "price": "880 万",
+        "unit_price": "$22,857/呎",
+        "date": "2025-09-05"
       }
     ],
     "address": "承景街2號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "柏蔚森 II",
@@ -16793,7 +16904,7 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 263,
+        "unsold_count": 261,
         "sqft_range": "381 - 451 呎",
         "price_range": "832.4 万 - 1115.8 万 (含招标)"
       }
@@ -16816,27 +16927,30 @@
         "date": "2026-08-12"
       },
       {
-        "unit_name": "3座 22楼 K室",
+        "unit_name": "2座 19楼 G室",
         "layout": "2 房",
         "sqft": "393 呎",
-        "price": "961.2 万",
-        "unit_price": "$24,458/呎",
-        "date": "2026-08-17"
+        "price": "901.8 万",
+        "unit_price": "$22,947/呎",
+        "date": "2026-08-25"
       },
       {
-        "unit_name": "2座 21楼 D室",
+        "unit_name": "3座 22楼 E室",
         "layout": "2 房",
         "sqft": "383 呎",
-        "price": "918.4 万",
-        "unit_price": "$23,979/呎",
-        "date": "2026-08-12"
+        "price": "950.5 万",
+        "unit_price": "$24,817/呎",
+        "date": "2026-08-24"
       }
     ],
     "address": "承景街2號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "柏蔚森 III",
@@ -17326,7 +17440,7 @@
         "sqft": "390 呎",
         "price": "842.2 万",
         "unit_price": "$21,595/呎",
-        "date": "2026-07-23"
+        "date": "2026-08-20"
       },
       {
         "unit_name": "1座 21楼 B室",
@@ -17357,7 +17471,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "沄璟",
@@ -17869,7 +17986,7 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 30,
+        "unsold_count": 29,
         "sqft_range": "509 - 577 呎",
         "price_range": "1075.2 万 - 1261.8 万 (含招标)"
       },
@@ -17890,20 +18007,20 @@
         "date": "2026-08-09"
       },
       {
+        "unit_name": "3A座 3楼 B室",
+        "layout": "2 房",
+        "sqft": "554 呎",
+        "price": "1159.1 万",
+        "unit_price": "$20,922/呎",
+        "date": "2026-08-18"
+      },
+      {
         "unit_name": "3A座 8楼 B室",
         "layout": "2 房",
         "sqft": "554 呎",
         "price": "1198.4 万",
         "unit_price": "$21,632/呎",
         "date": "2026-08-12"
-      },
-      {
-        "unit_name": "3A座 9楼 B室",
-        "layout": "2 房",
-        "sqft": "554 呎",
-        "price": "1198.4 万",
-        "unit_price": "$21,632/呎",
-        "date": "2026-08-10"
       },
       {
         "unit_name": "3B座 38楼 A室",
@@ -17922,27 +18039,30 @@
         "date": "2026-06-30"
       },
       {
+        "unit_name": "1座 28楼 B室",
+        "layout": "4 房",
+        "sqft": "1816 呎",
+        "price": "9229.9 万",
+        "unit_price": "$50,825/呎",
+        "date": "2026-08-20"
+      },
+      {
         "unit_name": "1座 18楼 B室",
         "layout": "4 房",
         "sqft": "1816 呎",
         "price": "8928.9 万",
         "unit_price": "$49,168/呎",
         "date": "2026-08-11"
-      },
-      {
-        "unit_name": "1座 28楼 A室",
-        "layout": "4 房",
-        "sqft": "2088 呎",
-        "price": "1.13 亿",
-        "unit_price": "$54,264/呎",
-        "date": "2026-08-07"
       }
     ],
     "address": "承豐道18號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "维港1号",
@@ -18481,7 +18601,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "维港．双钻",
@@ -18887,7 +19010,7 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 173,
+        "unsold_count": 172,
         "sqft_range": "437 - 509 呎",
         "price_range": "789.7 万 - 1333.3 万 (含招标)"
       },
@@ -18905,7 +19028,7 @@
         "sqft": "244 呎",
         "price": "579.6 万",
         "unit_price": "$23,754/呎",
-        "date": "2026-08-01"
+        "date": "2026-08-20"
       },
       {
         "unit_name": "2A座 27楼 C室",
@@ -18932,6 +19055,14 @@
         "date": "2026-03-12"
       },
       {
+        "unit_name": "2A座 22楼 G室",
+        "layout": "2 房",
+        "sqft": "494 呎",
+        "price": "1487.2 万",
+        "unit_price": "$30,105/呎",
+        "date": "2026-08-24"
+      },
+      {
         "unit_name": "2A座 25楼 A室",
         "layout": "2 房",
         "sqft": "439 呎",
@@ -18940,20 +19071,12 @@
         "date": "2026-07-27"
       },
       {
-        "unit_name": "2B座 25楼 E室",
-        "layout": "2 房",
-        "sqft": "496 呎",
-        "price": "1479.5 万",
-        "unit_price": "$29,829/呎",
-        "date": "2026-07-17"
-      },
-      {
         "unit_name": "2B座 6楼 G室",
         "layout": "3 房",
-        "sqft": "657 呎",
+        "sqft": "658 呎",
         "price": "1989.2 万",
-        "unit_price": "$30,277/呎",
-        "date": "2026-08-04"
+        "unit_price": "$30,231/呎",
+        "date": "2026-08-27"
       },
       {
         "unit_name": "2B座 19楼 G室",
@@ -18976,7 +19099,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "维港．湾畔第1A期",
@@ -19512,7 +19638,7 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 261,
+        "unsold_count": 259,
         "sqft_range": "426 - 548 呎",
         "price_range": "1185.6 万 - 1618.7 万 (含招标)"
       },
@@ -19547,20 +19673,20 @@
         "date": "2026-07-16"
       },
       {
-        "unit_name": "1B座 3楼 A室",
+        "unit_name": "1B座 9楼 A室",
         "layout": "2 房",
         "sqft": "548 呎",
-        "price": "1401.4 万",
-        "unit_price": "$25,573/呎",
-        "date": "2026-08-02"
+        "price": "1481.2 万",
+        "unit_price": "$27,029/呎",
+        "date": "2026-08-25"
       },
       {
-        "unit_name": "1C座 27楼 G室",
+        "unit_name": "1B座 10楼 A室",
         "layout": "2 房",
-        "sqft": "513 呎",
-        "price": "1590.6 万",
-        "unit_price": "$31,006/呎",
-        "date": "2026-07-31"
+        "sqft": "548 呎",
+        "price": "1488.6 万",
+        "unit_price": "$27,164/呎",
+        "date": "2026-08-24"
       },
       {
         "unit_name": "1A座 28楼 B室",
@@ -19583,7 +19709,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "维港．湾畔第1B期",
@@ -20076,20 +20205,20 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "2A座 28楼 J室",
-        "layout": "2 房",
-        "sqft": "559 呎",
-        "price": "1897 万",
-        "unit_price": "$33,936/呎",
-        "date": "2026-08-07"
-      },
-      {
         "unit_name": "2B座 26楼 J室",
         "layout": "2 房",
         "sqft": "549 呎",
         "price": "1848.7 万",
         "unit_price": "$33,674/呎",
-        "date": "2026-08-04"
+        "date": "2026-08-27"
+      },
+      {
+        "unit_name": "2A座 28楼 J室",
+        "layout": "2 房",
+        "sqft": "559 呎",
+        "price": "1897 万",
+        "unit_price": "$33,936/呎",
+        "date": "2026-08-25"
       },
       {
         "unit_name": "2B座 31楼 C室",
@@ -20112,7 +20241,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "维港．湾畔第2B期",
@@ -20591,27 +20723,30 @@
     ],
     "recent_transactions": [
       {
+        "unit_name": "5B座 12楼 D室",
+        "layout": "3 房",
+        "sqft": "662 呎",
+        "price": "暂无",
+        "unit_price": "-",
+        "date": "2026-08-19"
+      },
+      {
         "unit_name": "5B座 6楼 B室",
         "layout": "3 房",
         "sqft": "667 呎",
         "price": "暂无",
         "unit_price": "-",
         "date": "2026-08-13"
-      },
-      {
-        "unit_name": "5B座 21楼 B室",
-        "layout": "3 房",
-        "sqft": "667 呎",
-        "price": "暂无",
-        "unit_price": "-",
-        "date": "2026-08-12"
       }
     ],
     "address": "承豐道23號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "本木",
@@ -20725,7 +20860,7 @@
         "layout": "1 房",
         "unsold_count": 1,
         "sqft_range": "335 呎",
-        "price_range": "招标"
+        "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
@@ -20752,20 +20887,20 @@
         "date": "2021-08-02"
       },
       {
+        "unit_name": "本木座 19楼 B5室",
+        "layout": "1 房",
+        "sqft": "335 呎",
+        "price": "804.8 万",
+        "unit_price": "$24,024/呎",
+        "date": "2026-08-24"
+      },
+      {
         "unit_name": "本木座 22楼 B5室",
         "layout": "1 房",
         "sqft": "335 呎",
         "price": "811 万",
         "unit_price": "$24,209/呎",
         "date": "2026-08-06"
-      },
-      {
-        "unit_name": "本木座 19楼 B5室",
-        "layout": "1 房",
-        "sqft": "335 呎",
-        "price": "804.8 万",
-        "unit_price": "$24,024/呎",
-        "date": "2026-08-02"
       },
       {
         "unit_name": "本木座 23楼 A3室",
@@ -20804,7 +20939,10 @@
     "main_area": "九龙西（油尖旺）",
     "micro_district": "尖沙咀核心及尖东",
     "micro_district_en": "Statutory Scheme (S/K1/28)",
-    "plan_id": "OZP-S-K1-28"
+    "plan_id": "OZP-S-K1-28",
+    "primary_school_net": "31校网",
+    "secondary_school_net": "油尖旺区校网",
+    "school_net": "31校网 / 油尖旺区校网"
   },
   {
     "name": "The Boundary",
@@ -21126,7 +21264,10 @@
     "main_area": "九龙西（油尖旺）",
     "micro_district": "旺角及太子",
     "micro_district_en": "Statutory Scheme (S/K3/35)",
-    "plan_id": "OZP-S-K3-35"
+    "plan_id": "OZP-S-K3-35",
+    "primary_school_net": "32校网",
+    "secondary_school_net": "油尖旺校网",
+    "school_net": "32校网 / 油尖旺校网"
   },
   {
     "name": "Upper Prince",
@@ -21379,7 +21520,10 @@
     "main_area": "九龙西（油尖旺）",
     "micro_district": "旺角及太子",
     "micro_district_en": "Statutory Scheme (S/K3/35)",
-    "plan_id": "OZP-S-K3-35"
+    "plan_id": "OZP-S-K3-35",
+    "primary_school_net": "32校网",
+    "secondary_school_net": "油尖旺区校网",
+    "school_net": "32校网 / 油尖旺区校网"
   },
   {
     "name": "利奥坊．凯岸",
@@ -21704,7 +21848,10 @@
     "main_area": "九龙西（油尖旺）",
     "micro_district": "旺角及太子",
     "micro_district_en": "Statutory Scheme (S/K3/35)",
-    "plan_id": "OZP-S-K3-35"
+    "plan_id": "OZP-S-K3-35",
+    "primary_school_net": "32校网",
+    "secondary_school_net": "油尖旺校网",
+    "school_net": "32校网 / 油尖旺校网"
   },
   {
     "name": "利奥坊．壹隅",
@@ -22013,7 +22160,10 @@
     "main_area": "九龙西（油尖旺）",
     "micro_district": "旺角及太子",
     "micro_district_en": "Statutory Scheme (S/K3/35)",
-    "plan_id": "OZP-S-K3-35"
+    "plan_id": "OZP-S-K3-35",
+    "primary_school_net": "32校网",
+    "secondary_school_net": "油尖旺区校网",
+    "school_net": "32校网 / 油尖旺区校网"
   },
   {
     "name": "利奥坊．曦岸",
@@ -22321,7 +22471,7 @@
         "layout": "3 房",
         "unsold_count": 1,
         "sqft_range": "697 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       }
     ],
     "recent_transactions": [
@@ -22394,7 +22544,10 @@
     "main_area": "九龙西（油尖旺）",
     "micro_district": "旺角及太子",
     "micro_district_en": "Statutory Scheme (S/K3/35)",
-    "plan_id": "OZP-S-K3-35"
+    "plan_id": "OZP-S-K3-35",
+    "primary_school_net": "32校网",
+    "secondary_school_net": "油尖旺校网",
+    "school_net": "32校网 / 油尖旺校网"
   },
   {
     "name": "映居",
@@ -22751,7 +22904,10 @@
     "main_area": "九龙西（油尖旺）",
     "micro_district": "旺角及太子",
     "micro_district_en": "Statutory Scheme (S/K3/35)",
-    "plan_id": "OZP-S-K3-35"
+    "plan_id": "OZP-S-K3-35",
+    "primary_school_net": "32校网",
+    "secondary_school_net": "油尖旺校网",
+    "school_net": "32校网 / 油尖旺校网"
   },
   {
     "name": "原舍",
@@ -22979,14 +23135,14 @@
       },
       {
         "layout": "1 房",
-        "unsold_count": 50,
+        "unsold_count": 49,
         "sqft_range": "248 - 318 呎",
-        "price_range": "495 万 - 557.6 万"
+        "price_range": "502 万 - 557.6 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 2,
-        "sqft_range": "572 - 674 呎",
+        "sqft_range": "603 - 673 呎",
         "price_range": "待定/详见价单"
       }
     ],
@@ -23008,27 +23164,30 @@
         "date": "2026-07-22"
       },
       {
+        "unit_name": "原舍座 17楼 B室",
+        "layout": "1 房",
+        "sqft": "286 呎",
+        "price": "495 万",
+        "unit_price": "$17,308/呎",
+        "date": "2026-08-18"
+      },
+      {
         "unit_name": "原舍座 16楼 B室",
         "layout": "1 房",
         "sqft": "286 呎",
         "price": "493.1 万",
         "unit_price": "$17,241/呎",
         "date": "2026-08-09"
-      },
-      {
-        "unit_name": "原舍座 7楼 B室",
-        "layout": "1 房",
-        "sqft": "286 呎",
-        "price": "457.5 万",
-        "unit_price": "$15,997/呎",
-        "date": "2026-07-30"
       }
     ],
     "address": "德昌里22號",
     "main_area": "九龙西（油尖旺）",
     "micro_district": "油麻地及佐敦",
     "micro_district_en": "Statutory Scheme (S/K2/23)",
-    "plan_id": "OZP-S-K2-23"
+    "plan_id": "OZP-S-K2-23",
+    "primary_school_net": "31校网",
+    "secondary_school_net": "油尖旺校网",
+    "school_net": "31校网 / 油尖旺校网"
   },
   {
     "name": "Beacon Peak 第1期",
@@ -23586,15 +23745,15 @@
     "sales_control_summary": [
       {
         "layout": "3 房",
-        "unsold_count": 94,
+        "unsold_count": 93,
         "sqft_range": "748 - 1395 呎",
-        "price_range": "1839.5 万 - 3600.7 万 (含招标)"
+        "price_range": "1839.5 万 - 3600.7 万"
       },
       {
         "layout": "4 房",
-        "unsold_count": 109,
+        "unsold_count": 108,
         "sqft_range": "1462 - 3165 呎",
-        "price_range": "3539.7 万 - 5529.7 万"
+        "price_range": "3539.7 万 - 5266.4 万 (含招标)"
       }
     ],
     "recent_transactions": [
@@ -23615,43 +23774,46 @@
         "date": "2026-06-29"
       },
       {
-        "unit_name": "2座 12楼 C室",
-        "layout": "3 房",
-        "sqft": "1252 呎",
-        "price": "2966 万",
-        "unit_price": "$23,690/呎",
-        "date": "2026-08-05"
-      },
-      {
         "unit_name": "2座 15楼 C室",
         "layout": "3 房",
         "sqft": "1252 呎",
         "price": "3011.9 万",
         "unit_price": "$24,057/呎",
-        "date": "2026-07-26"
+        "date": "2026-08-25"
+      },
+      {
+        "unit_name": "2座 18楼 C室",
+        "layout": "3 房",
+        "sqft": "1304 呎",
+        "price": "3233.9 万",
+        "unit_price": "$24,800/呎",
+        "date": "2026-08-20"
+      },
+      {
+        "unit_name": "5座 18楼 B室",
+        "layout": "4 房",
+        "sqft": "1856 呎",
+        "price": "5529.7 万",
+        "unit_price": "$29,794/呎",
+        "date": "2026-08-20"
       },
       {
         "unit_name": "5座 22楼 A室",
         "layout": "4 房",
-        "sqft": "1865 呎",
-        "price": "6688 万",
-        "unit_price": "$35,861/呎",
-        "date": "2026-08-03"
-      },
-      {
-        "unit_name": "5座 21楼 A室",
-        "layout": "4 房",
         "sqft": "1788 呎",
-        "price": "6600 万",
-        "unit_price": "$36,913/呎",
-        "date": "2026-07-24"
+        "price": "6688 万",
+        "unit_price": "$37,405/呎",
+        "date": "2026-08-19"
       }
     ],
     "address": "延坪道9號",
     "main_area": "九龙西北（深水埗区）",
     "micro_district": "石硖尾及又一村",
     "micro_district_en": "Statutory Scheme (S/K4/30)",
-    "plan_id": "OZP-S-K4-30"
+    "plan_id": "OZP-S-K4-30",
+    "primary_school_net": "40校网",
+    "secondary_school_net": "深水埗校网",
+    "school_net": "40校网 / 深水埗校网"
   },
   {
     "name": "滶蕴",
@@ -23978,20 +24140,20 @@
         "date": "2026-07-08"
       },
       {
+        "unit_name": "滶蕴座 2楼 E7室",
+        "layout": "2 房",
+        "sqft": "477 呎",
+        "price": "1796.6 万",
+        "unit_price": "$37,665/呎",
+        "date": "2026-08-19"
+      },
+      {
         "unit_name": "滶蕴座 7楼 E1室",
         "layout": "2 房",
         "sqft": "561 呎",
         "price": "1982.1 万",
         "unit_price": "$35,332/呎",
         "date": "2026-08-17"
-      },
-      {
-        "unit_name": "滶蕴座 2楼 E2室",
-        "layout": "2 房",
-        "sqft": "435 呎",
-        "price": "1432.5 万",
-        "unit_price": "$32,931/呎",
-        "date": "2026-08-14"
       },
       {
         "unit_name": "滶蕴座 7楼 S2室",
@@ -24030,7 +24192,10 @@
     "main_area": "九龙西北（深水埗区）",
     "micro_district": "石硖尾及又一村",
     "micro_district_en": "Statutory Scheme (S/K4/30)",
-    "plan_id": "OZP-S-K4-30"
+    "plan_id": "OZP-S-K4-30",
+    "primary_school_net": "40校网",
+    "secondary_school_net": "深水埗校网",
+    "school_net": "40校网 / 深水埗校网"
   },
   {
     "name": "The Haddon",
@@ -24331,7 +24496,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "红磡及黄埔",
     "micro_district_en": "Statutory Scheme (S/K9/28)",
-    "plan_id": "OZP-S-K9-28"
+    "plan_id": "OZP-S-K9-28",
+    "primary_school_net": "35校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "35校网 / 九龍城校网"
   },
   {
     "name": "必嘉坊．曦汇",
@@ -24552,20 +24720,20 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "必嘉坊．曦汇座 21楼 F室",
+        "unit_name": "必嘉坊．曦汇座 27楼 D室",
         "layout": "开放式",
-        "sqft": "218 呎",
-        "price": "485.6 万",
-        "unit_price": "$22,277/呎",
-        "date": "2026-08-12"
+        "sqft": "202 呎",
+        "price": "465.9 万",
+        "unit_price": "$23,063/呎",
+        "date": "2026-08-20"
       },
       {
-        "unit_name": "必嘉坊．曦汇座 10楼 F室",
+        "unit_name": "必嘉坊．曦汇座 16楼 F室",
         "layout": "开放式",
-        "sqft": "218 呎",
-        "price": "463.6 万",
-        "unit_price": "$21,267/呎",
-        "date": "2026-08-11"
+        "sqft": "217 呎",
+        "price": "478.3 万",
+        "unit_price": "$22,042/呎",
+        "date": "2026-08-20"
       },
       {
         "unit_name": "必嘉坊．曦汇座 10楼 G室",
@@ -24612,7 +24780,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "红磡及黄埔",
     "micro_district_en": "Statutory Scheme (S/K9/28)",
-    "plan_id": "OZP-S-K9-28"
+    "plan_id": "OZP-S-K9-28",
+    "primary_school_net": "35校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "35校网 / 九龍城校网"
   },
   {
     "name": "必嘉坊．迎汇",
@@ -24917,7 +25088,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "红磡及黄埔",
     "micro_district_en": "Statutory Scheme (S/K9/28)",
-    "plan_id": "OZP-S-K9-28"
+    "plan_id": "OZP-S-K9-28",
+    "primary_school_net": "35校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "35校网 / 九龍城校网"
   },
   {
     "name": "悦麓",
@@ -25132,27 +25306,30 @@
         "date": "2026-03-02"
       },
       {
-        "unit_name": "悦麓座 12楼 D室",
+        "unit_name": "悦麓座 20楼 D室",
         "layout": "1 房",
-        "sqft": "266 呎",
+        "sqft": "252 呎",
         "price": "暂无",
         "unit_price": "-",
-        "date": "2026-08-17"
+        "date": "2026-08-27"
       },
       {
-        "unit_name": "悦麓座 12楼 C室",
+        "unit_name": "悦麓座 21楼 B室",
         "layout": "1 房",
-        "sqft": "264 呎",
+        "sqft": "267 呎",
         "price": "暂无",
         "unit_price": "-",
-        "date": "2026-08-17"
+        "date": "2026-08-19"
       }
     ],
     "address": "鶴齡街8號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "红磡及黄埔",
     "micro_district_en": "Statutory Scheme (S/K9/28)",
-    "plan_id": "OZP-S-K9-28"
+    "plan_id": "OZP-S-K9-28",
+    "primary_school_net": "35校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "35校网 / 九龍城校网"
   },
   {
     "name": "首岸第1期",
@@ -25394,33 +25571,41 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 13,
+        "unsold_count": 9,
         "sqft_range": "352 - 435 呎",
-        "price_range": "725.3 万 - 825.7 万 (含招标)"
+        "price_range": "789.9 万 - 825.7 万 (含招标)"
       },
       {
         "layout": "3 房",
-        "unsold_count": 2,
-        "sqft_range": "605 - 642 呎",
+        "unsold_count": 1,
+        "sqft_range": "642 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "2座 12楼 H室",
+        "unit_name": "2座 19楼 H室",
         "layout": "2 房",
         "sqft": "399 呎",
-        "price": "833.3 万",
-        "unit_price": "$20,884/呎",
-        "date": "2026-08-16"
+        "price": "818.5 万",
+        "unit_price": "$20,515/呎",
+        "date": "2026-08-21"
       },
       {
-        "unit_name": "2座 11楼 H室",
+        "unit_name": "2座 18楼 H室",
         "layout": "2 房",
         "sqft": "399 呎",
-        "price": "786.2 万",
-        "unit_price": "$19,705/呎",
-        "date": "2026-08-16"
+        "price": "810.7 万",
+        "unit_price": "$20,319/呎",
+        "date": "2026-08-18"
+      },
+      {
+        "unit_name": "2座 3楼 A室",
+        "layout": "3 房",
+        "sqft": "605 呎",
+        "price": "1633.5 万",
+        "unit_price": "$27,000/呎",
+        "date": "2026-08-27"
       },
       {
         "unit_name": "2座 28楼 A室",
@@ -25429,21 +25614,16 @@
         "price": "1386.7 万",
         "unit_price": "$21,600/呎",
         "date": "2026-05-27"
-      },
-      {
-        "unit_name": "2座 27楼 A室",
-        "layout": "3 房",
-        "sqft": "642 呎",
-        "price": "1376.7 万",
-        "unit_price": "$21,444/呎",
-        "date": "2026-05-27"
       }
     ],
     "address": "庇利街1號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "红磡及黄埔",
     "micro_district_en": "Statutory Scheme (S/K9/28)",
-    "plan_id": "OZP-S-K9-28"
+    "plan_id": "OZP-S-K9-28",
+    "primary_school_net": "35校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "35校网 / 九龍城校网"
   },
   {
     "name": "首岸第2期",
@@ -25695,7 +25875,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "红磡及黄埔",
     "micro_district_en": "Statutory Scheme (S/K9/28)",
-    "plan_id": "OZP-S-K9-28"
+    "plan_id": "OZP-S-K9-28",
+    "primary_school_net": "35校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "35校网 / 九龍城校网"
   },
   {
     "name": "首岸第3期",
@@ -25978,7 +26161,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "红磡及黄埔",
     "micro_district_en": "Statutory Scheme (S/K9/28)",
-    "plan_id": "OZP-S-K9-28"
+    "plan_id": "OZP-S-K9-28",
+    "primary_school_net": "35校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "35校网 / 九龍城校网"
   },
   {
     "name": "首岸第4期",
@@ -26192,9 +26378,9 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 153,
+        "unsold_count": 143,
         "sqft_range": "338 - 469 呎",
-        "price_range": "695.3 万 - 1026.7 万"
+        "price_range": "734.6 万 - 1026.7 万"
       },
       {
         "layout": "3 房",
@@ -26205,20 +26391,20 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "5座 19楼 F室",
+        "unit_name": "5座 21楼 L室",
         "layout": "2 房",
-        "sqft": "341 呎",
-        "price": "744.6 万",
-        "unit_price": "$21,837/呎",
-        "date": "2026-08-18"
+        "sqft": "343 呎",
+        "price": "744.7 万",
+        "unit_price": "$21,713/呎",
+        "date": "2026-08-25"
       },
       {
-        "unit_name": "5座 17楼 F室",
+        "unit_name": "5座 16楼 M室",
         "layout": "2 房",
-        "sqft": "341 呎",
-        "price": "736.9 万",
-        "unit_price": "$21,610/呎",
-        "date": "2026-08-18"
+        "sqft": "469 呎",
+        "price": "1005.4 万",
+        "unit_price": "$21,436/呎",
+        "date": "2026-08-25"
       },
       {
         "unit_name": "5座 20楼 A室",
@@ -26241,7 +26427,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "红磡及黄埔",
     "micro_district_en": "Statutory Scheme (S/K9/28)",
-    "plan_id": "OZP-S-K9-28"
+    "plan_id": "OZP-S-K9-28",
+    "primary_school_net": "35校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "35校网 / 九龍城校网"
   },
   {
     "name": "首汇",
@@ -26509,7 +26698,7 @@
       },
       {
         "layout": "4 房",
-        "unsold_count": 12,
+        "unsold_count": 11,
         "sqft_range": "600 呎",
         "price_range": "招标"
       }
@@ -26564,27 +26753,30 @@
         "date": "2026-06-16"
       },
       {
+        "unit_name": "首汇座 16楼 A室",
+        "layout": "4 房",
+        "sqft": "600 呎",
+        "price": "1523 万",
+        "unit_price": "$25,383/呎",
+        "date": "2026-08-19"
+      },
+      {
         "unit_name": "首汇座 15楼 A室",
         "layout": "4 房",
         "sqft": "600 呎",
         "price": "1515 万",
         "unit_price": "$25,250/呎",
         "date": "2026-07-09"
-      },
-      {
-        "unit_name": "首汇座 20楼 A室",
-        "layout": "4 房",
-        "sqft": "600 呎",
-        "price": "1585 万",
-        "unit_price": "$26,417/呎",
-        "date": "2026-05-26"
       }
     ],
     "address": "寶其利街121號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "红磡及黄埔",
     "micro_district_en": "Statutory Scheme (S/K9/28)",
-    "plan_id": "OZP-S-K9-28"
+    "plan_id": "OZP-S-K9-28",
+    "primary_school_net": "35校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "35校网 / 九龍城校网"
   },
   {
     "name": "叡璟I",
@@ -26858,29 +27050,81 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 117,
+        "unsold_count": 95,
         "sqft_range": "267 - 313 呎",
-        "price_range": "529.8 万 - 597.8 万"
+        "price_range": "539.4 万 - 657.2 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 234,
-        "sqft_range": "373 - 476 呎",
-        "price_range": "698.8 万 - 942.4 万"
+        "unsold_count": 111,
+        "sqft_range": "373 - 473 呎",
+        "price_range": "798.6 万 - 1058.1 万 (含招标)"
       },
       {
         "layout": "3 房",
-        "unsold_count": 156,
+        "unsold_count": 104,
         "sqft_range": "521 - 680 呎",
-        "price_range": "1160.7 万 - 1323.5 万 (含招标)"
+        "price_range": "1199.3 万 - 1337.8 万 (含招标)"
       }
     ],
-    "recent_transactions": [],
+    "recent_transactions": [
+      {
+        "unit_name": "3B座 40楼 C室",
+        "layout": "1 房",
+        "sqft": "306 呎",
+        "price": "597.9 万",
+        "unit_price": "$19,539/呎",
+        "date": "2026-08-22"
+      },
+      {
+        "unit_name": "3B座 39楼 C室",
+        "layout": "1 房",
+        "sqft": "306 呎",
+        "price": "596.1 万",
+        "unit_price": "$19,480/呎",
+        "date": "2026-08-22"
+      },
+      {
+        "unit_name": "3A座 45楼 E室",
+        "layout": "2 房",
+        "sqft": "423 呎",
+        "price": "978.8 万",
+        "unit_price": "$23,139/呎",
+        "date": "2026-08-22"
+      },
+      {
+        "unit_name": "3A座 43楼 E室",
+        "layout": "2 房",
+        "sqft": "423 呎",
+        "price": "969.1 万",
+        "unit_price": "$22,910/呎",
+        "date": "2026-08-22"
+      },
+      {
+        "unit_name": "3A座 35楼 D室",
+        "layout": "3 房",
+        "sqft": "676 呎",
+        "price": "1690 万",
+        "unit_price": "$25,000/呎",
+        "date": "2026-08-23"
+      },
+      {
+        "unit_name": "3A座 33楼 D室",
+        "layout": "3 房",
+        "sqft": "676 呎",
+        "price": "1683.3 万",
+        "unit_price": "$24,901/呎",
+        "date": "2026-08-23"
+      }
+    ],
     "address": "發祥街西8號",
     "main_area": "九龙西（油尖旺）",
     "micro_district": "南昌及西九龙海滨",
     "micro_district_en": "Nam Cheong & West Kowloon Waterfront",
-    "plan_id": "FEAT-TPU-255-269"
+    "plan_id": "FEAT-TPU-255-269",
+    "primary_school_net": "40校网",
+    "secondary_school_net": "深水埗校网",
+    "school_net": "40校网 / 深水埗校网"
   },
   {
     "name": "汇玺III",
@@ -27111,7 +27355,10 @@
     "main_area": "九龙西（油尖旺）",
     "micro_district": "南昌及西九龙海滨",
     "micro_district_en": "Nam Cheong & West Kowloon Waterfront",
-    "plan_id": "FEAT-TPU-255-269"
+    "plan_id": "FEAT-TPU-255-269",
+    "primary_school_net": "40校网",
+    "secondary_school_net": "深水埗校网",
+    "school_net": "40校网 / 深水埗校网"
   },
   {
     "name": "维港汇 III",
@@ -27496,7 +27743,10 @@
     "main_area": "九龙西（油尖旺）",
     "micro_district": "南昌及西九龙海滨",
     "micro_district_en": "Nam Cheong & West Kowloon Waterfront",
-    "plan_id": "FEAT-TPU-255-269"
+    "plan_id": "FEAT-TPU-255-269",
+    "primary_school_net": "40校网",
+    "secondary_school_net": "深水埗校网",
+    "school_net": "40校网 / 深水埗校网"
   },
   {
     "name": "南首",
@@ -27638,7 +27888,7 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 8,
+        "unsold_count": 7,
         "sqft_range": "261 - 263 呎",
         "price_range": "621.5 万 - 673.9 万"
       }
@@ -27661,20 +27911,20 @@
         "date": "2026-07-20"
       },
       {
+        "unit_name": "南首座 25楼 A8室",
+        "layout": "1 房",
+        "sqft": "262 呎",
+        "price": "666.1 万",
+        "unit_price": "$25,424/呎",
+        "date": "2026-08-24"
+      },
+      {
         "unit_name": "南首座 27楼 A7室",
         "layout": "1 房",
         "sqft": "262 呎",
         "price": "617.4 万",
         "unit_price": "$23,565/呎",
         "date": "2026-08-14"
-      },
-      {
-        "unit_name": "南首座 26楼 A7室",
-        "layout": "1 房",
-        "sqft": "262 呎",
-        "price": "610.7 万",
-        "unit_price": "$23,310/呎",
-        "date": "2026-08-12"
       },
       {
         "unit_name": "南首座 26楼 B1室",
@@ -27697,7 +27947,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "马头角及土瓜湾",
     "micro_district_en": "Statutory Scheme (S/K10/28)",
-    "plan_id": "OZP-S-K10-28"
+    "plan_id": "OZP-S-K10-28",
+    "primary_school_net": "41校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "41校网 / 九龍城校网"
   },
   {
     "name": "壹沐第1期",
@@ -27868,20 +28121,20 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "1座 33楼 E室",
-        "layout": "1 房",
-        "sqft": "269 呎",
-        "price": "632.3 万",
-        "unit_price": "$23,507/呎",
-        "date": "2026-06-30"
-      },
-      {
         "unit_name": "1座 3楼 L室",
         "layout": "1 房",
         "sqft": "235 呎",
         "price": "688.5 万",
         "unit_price": "$29,300/呎",
         "date": "2026-06-05"
+      },
+      {
+        "unit_name": "1座 33楼 E室",
+        "layout": "1 房",
+        "sqft": "269 呎",
+        "price": "672.9 万",
+        "unit_price": "$25,015/呎",
+        "date": "2026-06-04"
       },
       {
         "unit_name": "1座 3楼 P室",
@@ -27920,7 +28173,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "马头角及土瓜湾",
     "micro_district_en": "Statutory Scheme (S/K10/28)",
-    "plan_id": "OZP-S-K10-28"
+    "plan_id": "OZP-S-K10-28",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "壹沐第2期",
@@ -28084,15 +28340,15 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 68,
+        "unsold_count": 66,
         "sqft_range": "311 - 350 呎",
         "price_range": "737 万 - 947 万"
       },
       {
         "layout": "3 房",
-        "unsold_count": 46,
-        "sqft_range": "357 - 684 呎",
-        "price_range": "874.3 万 - 1323.8 万 (含招标)"
+        "unsold_count": 43,
+        "sqft_range": "359 - 684 呎",
+        "price_range": "890.7 万 - 1323.8 万 (含招标)"
       },
       {
         "layout": "4 房",
@@ -28103,59 +28359,62 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "2座 27楼 P室",
-        "layout": "1 房",
-        "sqft": "273 呎",
-        "price": "603.2 万",
-        "unit_price": "$22,095/呎",
-        "date": "2026-08-14"
-      },
-      {
         "unit_name": "2座 28楼 P室",
         "layout": "1 房",
         "sqft": "273 呎",
         "price": "640.5 万",
         "unit_price": "$23,461/呎",
-        "date": "2026-08-13"
+        "date": "2026-08-27"
       },
       {
-        "unit_name": "2座 31楼 G室",
+        "unit_name": "2座 25楼 P室",
+        "layout": "1 房",
+        "sqft": "273 呎",
+        "price": "599.6 万",
+        "unit_price": "$21,963/呎",
+        "date": "2026-08-25"
+      },
+      {
+        "unit_name": "2座 32楼 F室",
         "layout": "2 房",
         "sqft": "348 呎",
-        "price": "857.9 万",
-        "unit_price": "$24,652/呎",
-        "date": "2026-08-16"
+        "price": "862.5 万",
+        "unit_price": "$24,784/呎",
+        "date": "2026-08-26"
       },
       {
-        "unit_name": "2座 26楼 F室",
+        "unit_name": "2座 15楼 C室",
         "layout": "2 房",
-        "sqft": "348 呎",
-        "price": "833.5 万",
-        "unit_price": "$23,951/呎",
-        "date": "2026-08-11"
+        "sqft": "350 呎",
+        "price": "775.1 万",
+        "unit_price": "$22,145/呎",
+        "date": "2026-08-26"
       },
       {
-        "unit_name": "2座 16楼 A室",
+        "unit_name": "2座 15楼 B室",
         "layout": "3 房",
-        "sqft": "512 呎",
-        "price": "1178 万",
-        "unit_price": "$23,008/呎",
-        "date": "2026-08-17"
+        "sqft": "397 呎",
+        "price": "874.3 万",
+        "unit_price": "$22,022/呎",
+        "date": "2026-08-26"
       },
       {
-        "unit_name": "2座 8楼 A室",
+        "unit_name": "2座 28楼 B室",
         "layout": "3 房",
-        "sqft": "512 呎",
-        "price": "1081.2 万",
-        "unit_price": "$21,117/呎",
-        "date": "2026-08-16"
+        "sqft": "397 呎",
+        "price": "943.5 万",
+        "unit_price": "$23,765/呎",
+        "date": "2026-08-19"
       }
     ],
     "address": "土瓜灣道70號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "马头角及土瓜湾",
     "micro_district_en": "Statutory Scheme (S/K10/28)",
-    "plan_id": "OZP-S-K10-28"
+    "plan_id": "OZP-S-K10-28",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "文曜",
@@ -28424,7 +28683,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "马头角及土瓜湾",
     "micro_district_en": "Statutory Scheme (S/K10/28)",
-    "plan_id": "OZP-S-K10-28"
+    "plan_id": "OZP-S-K10-28",
+    "primary_school_net": "41校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "41校网 / 九龍城校网"
   },
   {
     "name": "瑧博",
@@ -28601,7 +28863,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "马头角及土瓜湾",
     "micro_district_en": "Statutory Scheme (S/K10/28)",
-    "plan_id": "OZP-S-K10-28"
+    "plan_id": "OZP-S-K10-28",
+    "primary_school_net": "41校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "41校网 / 九龍城校网"
   },
   {
     "name": "101 Kings Road",
@@ -28808,7 +29073,10 @@
     "main_area": "港岛东区",
     "micro_district": "北角核心及炮台山",
     "micro_district_en": "North Point & Fortress Hill",
-    "plan_id": "FEAT-S-H8"
+    "plan_id": "FEAT-S-H8",
+    "primary_school_net": "14校网",
+    "secondary_school_net": "東區校网",
+    "school_net": "14校网 / 東區校网"
   },
   {
     "name": "君誉峰",
@@ -28951,7 +29219,10 @@
     "main_area": "港岛东区",
     "micro_district": "北角核心及炮台山",
     "micro_district_en": "North Point & Fortress Hill",
-    "plan_id": "FEAT-S-H8"
+    "plan_id": "FEAT-S-H8",
+    "primary_school_net": "14校网",
+    "secondary_school_net": "東區校网",
+    "school_net": "14校网 / 東區校网"
   },
   {
     "name": "嘉居．天后",
@@ -29108,7 +29379,10 @@
     "main_area": "港岛东区",
     "micro_district": "北角核心及炮台山",
     "micro_district_en": "North Point & Fortress Hill",
-    "plan_id": "FEAT-S-H8"
+    "plan_id": "FEAT-S-H8",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网"
   },
   {
     "name": "柏蔚山",
@@ -29405,7 +29679,10 @@
     "main_area": "港岛东区",
     "micro_district": "北角核心及炮台山",
     "micro_district_en": "North Point & Fortress Hill",
-    "plan_id": "FEAT-S-H8"
+    "plan_id": "FEAT-S-H8",
+    "primary_school_net": "14校网",
+    "secondary_school_net": "東區校网",
+    "school_net": "14校网 / 東區校网"
   },
   {
     "name": "海璇",
@@ -29571,7 +29848,7 @@
       },
       {
         "layout": "4 房",
-        "unsold_count": 42,
+        "unsold_count": 40,
         "sqft_range": "1402 - 2373 呎",
         "price_range": "招标"
       }
@@ -29644,25 +29921,28 @@
       {
         "unit_name": "5座 6楼 B室",
         "layout": "4 房",
-        "sqft": "1488 呎",
+        "sqft": "1446 呎",
         "price": "7365.6 万",
-        "unit_price": "$49,500/呎",
-        "date": "2026-08-10"
+        "unit_price": "$50,938/呎",
+        "date": "2026-08-25"
       },
       {
-        "unit_name": "2座 19楼 A室",
+        "unit_name": "5座 15楼 B室",
         "layout": "4 房",
-        "sqft": "2322 呎",
-        "price": "2 亿",
-        "unit_price": "$86,133/呎",
-        "date": "2026-07-20"
+        "sqft": "1488 呎",
+        "price": "8311.3 万",
+        "unit_price": "$55,856/呎",
+        "date": "2026-08-19"
       }
     ],
     "address": "渣華道133號",
     "main_area": "港岛东区",
     "micro_district": "北角核心及炮台山",
     "micro_district_en": "North Point & Fortress Hill",
-    "plan_id": "FEAT-S-H8"
+    "plan_id": "FEAT-S-H8",
+    "primary_school_net": "14校网",
+    "secondary_school_net": "東區校网",
+    "school_net": "14校网 / 東區校网"
   },
   {
     "name": "海璇 II",
@@ -29851,7 +30131,10 @@
     "main_area": "港岛东区",
     "micro_district": "北角核心及炮台山",
     "micro_district_en": "North Point & Fortress Hill",
-    "plan_id": "FEAT-S-H8"
+    "plan_id": "FEAT-S-H8",
+    "primary_school_net": "14校网",
+    "secondary_school_net": "東區校网",
+    "school_net": "14校网 / 東區校网"
   },
   {
     "name": "海璇 II (第2B-3期)",
@@ -30040,7 +30323,10 @@
     "main_area": "港岛东区",
     "micro_district": "北角核心及炮台山",
     "micro_district_en": "North Point & Fortress Hill",
-    "plan_id": "FEAT-S-H8"
+    "plan_id": "FEAT-S-H8",
+    "primary_school_net": "14校网",
+    "secondary_school_net": "東區校网",
+    "school_net": "14校网 / 東區校网"
   },
   {
     "name": "雅盈峰",
@@ -30403,7 +30689,10 @@
     "main_area": "港岛中西区",
     "micro_district": "西营盘及石塘咀 / 上环",
     "micro_district_en": "Statutory Scheme (S/H3/34)",
-    "plan_id": "OZP-S-H3-34"
+    "plan_id": "OZP-S-H3-34",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "Central Peak I",
@@ -30938,7 +31227,10 @@
     "main_area": "港岛湾仔及东半山",
     "micro_district": "东半山",
     "micro_district_en": "Mid-Levels East",
-    "plan_id": "FEAT-S-H12"
+    "plan_id": "FEAT-S-H12",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网"
   },
   {
     "name": "Central Peak II",
@@ -31457,7 +31749,10 @@
     "main_area": "港岛湾仔及东半山",
     "micro_district": "东半山",
     "micro_district_en": "Mid-Levels East",
-    "plan_id": "FEAT-S-H12"
+    "plan_id": "FEAT-S-H12",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网"
   },
   {
     "name": "21 Borrett Road 第1期",
@@ -31926,12 +32221,6 @@
         "unsold_count": 55,
         "sqft_range": "2075 - 2945 呎",
         "price_range": "待定/详见价单"
-      },
-      {
-        "layout": "暂无",
-        "unsold_count": 1,
-        "sqft_range": "2945 呎",
-        "price_range": "待定/详见价单"
       }
     ],
     "recent_transactions": [
@@ -31950,13 +32239,24 @@
         "price": "暂无",
         "unit_price": "-",
         "date": "2026-08-10"
+      },
+      {
+        "unit_name": "1号及2号座 10楼 1室",
+        "layout": "暂无",
+        "sqft": "2945 呎",
+        "price": "暂无",
+        "unit_price": "-",
+        "date": "2024-04-29"
       }
     ],
     "address": "波老道21號",
     "main_area": "港岛中西区",
     "micro_district": "中半山",
     "micro_district_en": "Mid-Levels Central",
-    "plan_id": "FEAT-TPU-142-143"
+    "plan_id": "FEAT-TPU-142-143",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "Mount Pokfulam",
@@ -32409,7 +32709,10 @@
     "main_area": "港岛中西区",
     "micro_district": "西半山",
     "micro_district_en": "Mid-Levels West",
-    "plan_id": "FEAT-S-H11"
+    "plan_id": "FEAT-S-H11",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "Upper Central",
@@ -32770,7 +33073,10 @@
     "main_area": "港岛中西区",
     "micro_district": "中半山",
     "micro_district_en": "Mid-Levels Central",
-    "plan_id": "FEAT-TPU-142-143"
+    "plan_id": "FEAT-TPU-142-143",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "大学阁",
@@ -33113,7 +33419,10 @@
     "main_area": "港岛中西区",
     "micro_district": "西半山",
     "micro_district_en": "Mid-Levels West",
-    "plan_id": "FEAT-S-H11"
+    "plan_id": "FEAT-S-H11",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "天御第1期",
@@ -33435,7 +33744,7 @@
         "layout": "3 房",
         "unsold_count": 46,
         "sqft_range": "1376 - 4710 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       },
       {
         "layout": "4 房",
@@ -33482,7 +33791,10 @@
     "main_area": "港岛中西区",
     "micro_district": "中半山",
     "micro_district_en": "Mid-Levels Central",
-    "plan_id": "FEAT-TPU-142-143"
+    "plan_id": "FEAT-TPU-142-143",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "天御第2期",
@@ -33808,9 +34120,9 @@
     "sales_control_summary": [
       {
         "layout": "3 房",
-        "unsold_count": 3,
+        "unsold_count": 2,
         "sqft_range": "5590 - 5593 呎",
-        "price_range": "招标"
+        "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
@@ -33820,6 +34132,14 @@
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "1座 37楼 -室",
+        "layout": "3 房",
+        "sqft": "5590 呎",
+        "price": "暂无",
+        "unit_price": "-",
+        "date": "2026-08-19"
+      },
       {
         "unit_name": "1座 36楼 -室",
         "layout": "3 房",
@@ -33849,7 +34169,10 @@
     "main_area": "港岛中西区",
     "micro_district": "中半山",
     "micro_district_en": "Mid-Levels Central",
-    "plan_id": "FEAT-TPU-142-143"
+    "plan_id": "FEAT-TPU-142-143",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "宝峰",
@@ -34198,7 +34521,10 @@
     "main_area": "港岛中西区",
     "micro_district": "西半山",
     "micro_district_en": "Mid-Levels West",
-    "plan_id": "FEAT-S-H11"
+    "plan_id": "FEAT-S-H11",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "帝汇豪庭",
@@ -34659,7 +34985,10 @@
     "main_area": "港岛中西区",
     "micro_district": "中半山",
     "micro_district_en": "Mid-Levels Central",
-    "plan_id": "FEAT-TPU-142-143"
+    "plan_id": "FEAT-TPU-142-143",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "应天",
@@ -35188,7 +35517,10 @@
     "main_area": "港岛中西区",
     "micro_district": "中半山",
     "micro_district_en": "Mid-Levels Central",
-    "plan_id": "FEAT-TPU-142-143"
+    "plan_id": "FEAT-TPU-142-143",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "罗便臣道80号",
@@ -35427,7 +35759,10 @@
     "main_area": "港岛中西区",
     "micro_district": "中半山",
     "micro_district_en": "Mid-Levels Central",
-    "plan_id": "FEAT-TPU-142-143"
+    "plan_id": "FEAT-TPU-142-143",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "Kennedy 38",
@@ -35541,7 +35876,7 @@
     "sales_control_summary": [
       {
         "layout": "开放式",
-        "unsold_count": 36,
+        "unsold_count": 35,
         "sqft_range": "229 - 262 呎",
         "price_range": "651.4 万 - 890.7 万"
       },
@@ -35554,20 +35889,20 @@
     ],
     "recent_transactions": [
       {
+        "unit_name": "Kennedy 38座 27楼 E室",
+        "layout": "开放式",
+        "sqft": "262 呎",
+        "price": "868.9 万",
+        "unit_price": "$33,163/呎",
+        "date": "2026-08-25"
+      },
+      {
         "unit_name": "Kennedy 38座 2楼 E室",
         "layout": "开放式",
         "sqft": "242 呎",
         "price": "804.3 万",
         "unit_price": "$33,236/呎",
         "date": "2026-07-24"
-      },
-      {
-        "unit_name": "Kennedy 38座 28楼 E室",
-        "layout": "开放式",
-        "sqft": "262 呎",
-        "price": "876.5 万",
-        "unit_price": "$33,454/呎",
-        "date": "2026-06-17"
       },
       {
         "unit_name": "Kennedy 38座 20楼 M室",
@@ -35630,7 +35965,10 @@
     "main_area": "港岛中西区",
     "micro_district": "坚尼地城",
     "micro_district_en": "Kennedy Town",
-    "plan_id": "FEAT-TPU-111-KT"
+    "plan_id": "FEAT-TPU-111-KT",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "吉喆",
@@ -35789,7 +36127,10 @@
     "main_area": "港岛中西区",
     "micro_district": "坚尼地城",
     "micro_district_en": "Kennedy Town",
-    "plan_id": "FEAT-TPU-111-KT"
+    "plan_id": "FEAT-TPU-111-KT",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西区校网",
+    "school_net": "11校网 / 中西区校网"
   },
   {
     "name": "海嵎",
@@ -35983,7 +36324,7 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 12,
+        "unsold_count": 11,
         "sqft_range": "247 - 328 呎",
         "price_range": "招标"
       },
@@ -35991,25 +36332,25 @@
         "layout": "2 房",
         "unsold_count": 5,
         "sqft_range": "412 - 1063 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "海嵎座 23楼 B室",
+        "unit_name": "海嵎座 23楼 C室",
         "layout": "1 房",
         "sqft": "284 呎",
         "price": "暂无",
         "unit_price": "-",
-        "date": "2026-08-14"
+        "date": "2026-08-27"
       },
       {
-        "unit_name": "海嵎座 18楼 F室",
+        "unit_name": "海嵎座 23楼 A室",
         "layout": "1 房",
-        "sqft": "288 呎",
+        "sqft": "287 呎",
         "price": "暂无",
         "unit_price": "-",
-        "date": "2026-08-14"
+        "date": "2026-08-27"
       },
       {
         "unit_name": "海嵎座 23楼 E室",
@@ -36017,7 +36358,7 @@
         "sqft": "412 呎",
         "price": "暂无",
         "unit_price": "-",
-        "date": "2026-08-12"
+        "date": "2026-08-25"
       },
       {
         "unit_name": "海嵎座 26楼 E室",
@@ -36032,7 +36373,10 @@
     "main_area": "港岛中西区",
     "micro_district": "坚尼地城",
     "micro_district_en": "Kennedy Town",
-    "plan_id": "FEAT-TPU-111-KT"
+    "plan_id": "FEAT-TPU-111-KT",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "皇府湾",
@@ -37133,7 +37477,10 @@
     "main_area": "港岛南区",
     "micro_district": "大潭及红山半岛",
     "micro_district_en": "Statutory Scheme (S/H18/10)",
-    "plan_id": "OZP-S-H18-10"
+    "plan_id": "OZP-S-H18-10",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "寿臣山15号",
@@ -37466,7 +37813,10 @@
     "main_area": "港岛南区",
     "micro_district": "寿臣山",
     "micro_district_en": "Shouson Hill",
-    "plan_id": "FEAT-TPU-191-SSH"
+    "plan_id": "FEAT-TPU-191-SSH",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "No.3 Repulse Bay Road",
@@ -38075,7 +38425,10 @@
     "main_area": "港岛南区",
     "micro_district": "浅水湾及舂磡角",
     "micro_district_en": "Repulse Bay & Chung Hom Kok",
-    "plan_id": "FEAT-TPU-192-193"
+    "plan_id": "FEAT-TPU-192-193",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "Shouson Peak",
@@ -38618,7 +38971,10 @@
     "main_area": "港岛南区",
     "micro_district": "寿臣山",
     "micro_district_en": "Shouson Hill",
-    "plan_id": "FEAT-TPU-191-SSH"
+    "plan_id": "FEAT-TPU-191-SSH",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南区校网",
+    "school_net": "18校网 / 南区校网"
   },
   {
     "name": "浅水湾108",
@@ -39752,7 +40108,10 @@
     "main_area": "港岛南区",
     "micro_district": "浅水湾及舂磡角",
     "micro_district_en": "Repulse Bay & Chung Hom Kok",
-    "plan_id": "FEAT-TPU-192-193"
+    "plan_id": "FEAT-TPU-192-193",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南区校网",
+    "school_net": "18校网 / 南区校网"
   },
   {
     "name": "深水湾径8号",
@@ -40251,7 +40610,10 @@
     "main_area": "港岛南区",
     "micro_district": "深水湾",
     "micro_district_en": "Deep Water Bay",
-    "plan_id": "FEAT-TPU-191-DWB"
+    "plan_id": "FEAT-TPU-191-DWB",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "Mount Nicholson I",
@@ -41272,7 +41634,10 @@
     "main_area": "港岛中西区",
     "micro_district": "山顶",
     "micro_district_en": "The Peak",
-    "plan_id": "FEAT-S-H14"
+    "plan_id": "FEAT-S-H14",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网"
   },
   {
     "name": "Mount Nicholson II",
@@ -42289,7 +42654,10 @@
     "main_area": "港岛中西区",
     "micro_district": "山顶",
     "micro_district_en": "The Peak",
-    "plan_id": "FEAT-S-H14"
+    "plan_id": "FEAT-S-H14",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网"
   },
   {
     "name": "Twelve Peaks",
@@ -45100,6 +45468,14 @@
     ],
     "recent_transactions": [
       {
+        "unit_name": "10号屋座 -楼 -室",
+        "layout": "3 房",
+        "sqft": "3845 呎",
+        "price": "4.58 亿",
+        "unit_price": "$119,116/呎",
+        "date": "2018-12-23"
+      },
+      {
         "unit_name": "12号屋座 -楼 -室",
         "layout": "3 房",
         "sqft": "4030 呎",
@@ -45128,7 +45504,10 @@
     "main_area": "港岛中西区",
     "micro_district": "山顶",
     "micro_district_en": "The Peak",
-    "plan_id": "FEAT-S-H14"
+    "plan_id": "FEAT-S-H14",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西区校网",
+    "school_net": "11校网 / 中西区校网"
   },
   {
     "name": "宾吉道3号",
@@ -47936,7 +48315,10 @@
     "main_area": "港岛中西区",
     "micro_district": "山顶",
     "micro_district_en": "The Peak",
-    "plan_id": "FEAT-S-H14"
+    "plan_id": "FEAT-S-H14",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西区校网",
+    "school_net": "11校网 / 中西区校网"
   },
   {
     "name": "海德园第1期",
@@ -48192,9 +48574,9 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 67,
+        "unsold_count": 47,
         "sqft_range": "490 - 573 呎",
-        "price_range": "883.7 万 - 1001.5 万 (含招标)"
+        "price_range": "912.3 万 - 984 万 (含招标)"
       },
       {
         "layout": "3 房",
@@ -48221,26 +48603,29 @@
         "date": "2026-07-09"
       },
       {
-        "unit_name": "2座 32楼 G室",
+        "unit_name": "3座 37楼 H室",
         "layout": "2 房",
-        "sqft": "538 呎",
-        "price": "1093.6 万",
-        "unit_price": "$20,327/呎",
-        "date": "2026-08-17"
+        "sqft": "573 呎",
+        "price": "1206.2 万",
+        "unit_price": "$21,051/呎",
+        "date": "2026-08-27"
       },
       {
-        "unit_name": "2座 42楼 G室",
+        "unit_name": "3座 30楼 H室",
         "layout": "2 房",
-        "sqft": "538 呎",
-        "price": "1194.8 万",
-        "unit_price": "$22,208/呎",
-        "date": "2026-08-16"
+        "sqft": "573 呎",
+        "price": "1149.9 万",
+        "unit_price": "$20,068/呎",
+        "date": "2026-08-27"
       }
     ],
     "main_area": "港岛南区",
     "micro_district": "石澳、大浪湾及鹤咀",
     "micro_district_en": "Statutory Scheme (S/H20/25)",
-    "plan_id": "OZP-S-H20-25"
+    "plan_id": "OZP-S-H20-25",
+    "primary_school_net": "16校网",
+    "secondary_school_net": "東區校网",
+    "school_net": "16校网 / 東區校网"
   },
   {
     "name": "峻誉．渣甸山",
@@ -48738,7 +49123,7 @@
         "layout": "4 房",
         "unsold_count": 17,
         "sqft_range": "1616 - 2949 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       }
     ],
     "recent_transactions": [
@@ -48778,7 +49163,10 @@
     "main_area": "港岛湾仔及东半山",
     "micro_district": "大坑及渣甸山",
     "micro_district_en": "Tai Hang & Jardine's Lookout",
-    "plan_id": "FEAT-S-H13"
+    "plan_id": "FEAT-S-H13",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网"
   },
   {
     "name": "皇第",
@@ -49407,7 +49795,10 @@
     "main_area": "港岛湾仔及东半山",
     "micro_district": "大坑及渣甸山",
     "micro_district_en": "Tai Hang & Jardine's Lookout",
-    "plan_id": "FEAT-S-H13"
+    "plan_id": "FEAT-S-H13",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网"
   },
   {
     "name": "Woodis",
@@ -49760,7 +50151,10 @@
     "main_area": "港岛湾仔及东半山",
     "micro_district": "湾仔",
     "micro_district_en": "Wan Chai",
-    "plan_id": "FEAT-S-H5,S-H25"
+    "plan_id": "FEAT-S-H5,S-H25",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网"
   },
   {
     "name": "活道1号",
@@ -50039,53 +50433,16 @@
     },
     "developer": "香港品牌发展商",
     "completion_date": "现楼 / 详见项目资料",
-    "sales_control_summary": [
-      {
-        "layout": "3 房",
-        "unsold_count": 1,
-        "sqft_range": "1284 呎",
-        "price_range": "3508 万"
-      }
-    ],
-    "recent_transactions": [
-      {
-        "unit_name": "One Wood Road座 26楼 B室",
-        "layout": "2 房",
-        "sqft": "461 呎",
-        "price": "1060 万",
-        "unit_price": "$22,993/呎",
-        "date": "2025-09-25"
-      },
-      {
-        "unit_name": "One Wood Road座 12楼 B室",
-        "layout": "2 房",
-        "sqft": "461 呎",
-        "price": "893.8 万",
-        "unit_price": "$19,388/呎",
-        "date": "2025-09-25"
-      },
-      {
-        "unit_name": "One Wood Road座 28&29楼 A室",
-        "layout": "3 房",
-        "sqft": "940 呎",
-        "price": "2799.9 万",
-        "unit_price": "$29,786/呎",
-        "date": "2026-06-11"
-      },
-      {
-        "unit_name": "One Wood Road座 28&29楼 B室",
-        "layout": "3 房",
-        "sqft": "949 呎",
-        "price": "2550 万",
-        "unit_price": "$26,870/呎",
-        "date": "2026-06-07"
-      }
-    ],
+    "sales_control_summary": [],
+    "recent_transactions": [],
     "address": "活道1號",
     "main_area": "港岛湾仔及东半山",
     "micro_district": "湾仔",
     "micro_district_en": "Wan Chai",
-    "plan_id": "FEAT-S-H5,S-H25"
+    "plan_id": "FEAT-S-H5,S-H25",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "湾仔区校网",
+    "school_net": "12校网 / 湾仔区校网"
   },
   {
     "name": "One Eighty",
@@ -50292,7 +50649,10 @@
     "main_area": "港岛东区",
     "micro_district": "西湾河 / 筲箕湾及阿公岩",
     "micro_district_en": "Statutory Scheme (S/H9/18)",
-    "plan_id": "OZP-S-H9-18"
+    "plan_id": "OZP-S-H9-18",
+    "primary_school_net": "16校网",
+    "secondary_school_net": "東區校网",
+    "school_net": "16校网 / 東區校网"
   },
   {
     "name": "傲华",
@@ -50422,7 +50782,7 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 8,
+        "unsold_count": 6,
         "sqft_range": "283 - 340 呎",
         "price_range": "662.3 万 - 823.3 万"
       },
@@ -50457,20 +50817,20 @@
         "date": "2026-01-16"
       },
       {
-        "unit_name": "傲华座 23楼 D室",
+        "unit_name": "傲华座 21楼 D室",
         "layout": "1 房",
         "sqft": "340 呎",
-        "price": "805 万",
-        "unit_price": "$23,676/呎",
-        "date": "2026-08-14"
+        "price": "772.8 万",
+        "unit_price": "$22,729/呎",
+        "date": "2026-08-22"
       },
       {
-        "unit_name": "傲华座 20楼 D室",
+        "unit_name": "傲华座 18楼 E室",
         "layout": "1 房",
-        "sqft": "340 呎",
-        "price": "762.2 万",
-        "unit_price": "$22,418/呎",
-        "date": "2026-08-14"
+        "sqft": "324 呎",
+        "price": "777.6 万",
+        "unit_price": "$24,000/呎",
+        "date": "2026-08-22"
       },
       {
         "unit_name": "傲华座 3楼 F室",
@@ -50493,7 +50853,10 @@
     "main_area": "港岛东区",
     "micro_district": "西湾河 / 筲箕湾及阿公岩",
     "micro_district_en": "Statutory Scheme (S/H9/18)",
-    "plan_id": "OZP-S-H9-18"
+    "plan_id": "OZP-S-H9-18",
+    "primary_school_net": "16校网",
+    "secondary_school_net": "東區校网",
+    "school_net": "16校网 / 東區校网"
   },
   {
     "name": "远晴",
@@ -51032,7 +51395,10 @@
     "main_area": "港岛东区",
     "micro_district": "西湾河 / 筲箕湾及阿公岩",
     "micro_district_en": "Statutory Scheme (S/H9/18)",
-    "plan_id": "OZP-S-H9-18"
+    "plan_id": "OZP-S-H9-18",
+    "primary_school_net": "16校网",
+    "secondary_school_net": "东区校网",
+    "school_net": "16校网 / 东区校网"
   },
   {
     "name": "Victoria Coast",
@@ -51471,27 +51837,30 @@
         "date": "2026-03-17"
       },
       {
-        "unit_name": "A座 19楼 2室",
-        "layout": "3 房",
-        "sqft": "1367 呎",
-        "price": "暂无",
-        "unit_price": "-",
-        "date": "2026-08-14"
-      },
-      {
         "unit_name": "A座 28楼 2室",
         "layout": "3 房",
         "sqft": "1367 呎",
         "price": "暂无",
         "unit_price": "-",
         "date": "2026-06-25"
+      },
+      {
+        "unit_name": "A座 19楼 2室",
+        "layout": "3 房",
+        "sqft": "1367 呎",
+        "price": "暂无",
+        "unit_price": "-",
+        "date": "2026-06-12"
       }
     ],
     "address": "域多利道301號",
     "main_area": "港岛南区",
     "micro_district": "薄扶林",
     "micro_district_en": "Pok Fu Lam",
-    "plan_id": "OZP-S-H10-20"
+    "plan_id": "OZP-S-H10-20",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "15 Western Street",
@@ -51704,7 +52073,10 @@
     "main_area": "港岛中西区",
     "micro_district": "西营盘及石塘咀 / 上环",
     "micro_district_en": "Statutory Scheme (S/H3/34)",
-    "plan_id": "OZP-S-H3-34"
+    "plan_id": "OZP-S-H3-34",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "42 Tung St.",
@@ -51969,7 +52341,10 @@
     "main_area": "港岛中西区",
     "micro_district": "西营盘及石塘咀 / 上环",
     "micro_district_en": "Statutory Scheme (S/H3/34)",
-    "plan_id": "OZP-S-H3-34"
+    "plan_id": "OZP-S-H3-34",
+    "primary_school_net": "11校网",
+    "secondary_school_net": "中西區校网",
+    "school_net": "11校网 / 中西區校网"
   },
   {
     "name": "50 Stanley Village Road",
@@ -53586,7 +53961,10 @@
     "main_area": "港岛南区",
     "micro_district": "赤柱及黄麻角",
     "micro_district_en": "Stanley",
-    "plan_id": "FEAT-S-H19"
+    "plan_id": "FEAT-S-H19",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "One Stanley",
@@ -55692,7 +56070,7 @@
       },
       {
         "layout": "4 房",
-        "unsold_count": 22,
+        "unsold_count": 21,
         "sqft_range": "1855 - 6723 呎",
         "price_range": "招标"
       }
@@ -55731,17 +56109,17 @@
         "date": "2026-05-22"
       },
       {
+        "unit_name": "3号屋座 -楼 -室",
+        "layout": "4 房",
+        "sqft": "4662 呎",
+        "price": "暂无",
+        "unit_price": "-",
+        "date": "2026-08-26"
+      },
+      {
         "unit_name": "9座 G&1楼 A室",
         "layout": "4 房",
         "sqft": "2436 呎",
-        "price": "暂无",
-        "unit_price": "-",
-        "date": "2026-08-12"
-      },
-      {
-        "unit_name": "17号屋座 -楼 -室",
-        "layout": "4 房",
-        "sqft": "3059 呎",
         "price": "暂无",
         "unit_price": "-",
         "date": "2026-08-12"
@@ -55751,7 +56129,10 @@
     "main_area": "港岛南区",
     "micro_district": "赤柱及黄麻角",
     "micro_district_en": "Stanley",
-    "plan_id": "FEAT-S-H19"
+    "plan_id": "FEAT-S-H19",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "Solace",
@@ -56888,7 +57269,10 @@
     "main_area": "港岛南区",
     "micro_district": "赤柱及黄麻角",
     "micro_district_en": "Stanley",
-    "plan_id": "FEAT-S-H19"
+    "plan_id": "FEAT-S-H19",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "海天径 1号, 舂磡角道 44, 46, 48, 50号",
@@ -57920,7 +58304,10 @@
     "main_area": "港岛南区",
     "micro_district": "浅水湾及舂磡角",
     "micro_district_en": "Repulse Bay & Chung Hom Kok",
-    "plan_id": "FEAT-TPU-192-193"
+    "plan_id": "FEAT-TPU-192-193",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "环角道7号、9号及11号",
@@ -59055,7 +59442,10 @@
     "main_area": "港岛南区",
     "micro_district": "赤柱及黄麻角",
     "micro_district_en": "Stanley",
-    "plan_id": "FEAT-S-H19"
+    "plan_id": "FEAT-S-H19",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南区校网",
+    "school_net": "18校网 / 南区校网"
   },
   {
     "name": "339 Tai Hang Road",
@@ -60710,7 +61100,10 @@
     "main_area": "港岛中西区",
     "micro_district": "山顶",
     "micro_district_en": "The Peak",
-    "plan_id": "FEAT-S-H14"
+    "plan_id": "FEAT-S-H14",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "湾仔区校网",
+    "school_net": "12校网 / 湾仔区校网"
   },
   {
     "name": "Blue Coast",
@@ -60843,27 +61236,30 @@
         "date": "2026-05-28"
       },
       {
-        "unit_name": "1A座 29楼 B室",
-        "layout": "4 房",
-        "sqft": "1267 呎",
-        "price": "4029.1 万",
-        "unit_price": "$31,800/呎",
-        "date": "2026-08-17"
-      },
-      {
         "unit_name": "1A座 38楼 A室",
         "layout": "4 房",
         "sqft": "1263 呎",
         "price": "4824.7 万",
         "unit_price": "$38,200/呎",
-        "date": "2026-08-03"
+        "date": "2026-08-25"
+      },
+      {
+        "unit_name": "1A座 38楼 B室",
+        "layout": "4 房",
+        "sqft": "1267 呎",
+        "price": "4637.2 万",
+        "unit_price": "$36,600/呎",
+        "date": "2026-08-24"
       }
     ],
     "address": "香葉道11號",
     "main_area": "港岛南区",
     "micro_district": "黄竹坑及深湾",
     "micro_district_en": "Wong Chuk Hang & Sham Wan",
-    "plan_id": "FEAT-TPU-175-176"
+    "plan_id": "FEAT-TPU-175-176",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "Blue Coast II",
@@ -60984,7 +61380,10 @@
     "main_area": "港岛南区",
     "micro_district": "黄竹坑及深湾",
     "micro_district_en": "Wong Chuk Hang & Sham Wan",
-    "plan_id": "FEAT-TPU-175-176"
+    "plan_id": "FEAT-TPU-175-176",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "Deep Water South 第6A期",
@@ -61046,7 +61445,7 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 121,
+        "unsold_count": 120,
         "sqft_range": "297 - 342 呎",
         "price_range": "902.5 万 - 973.4 万 (含招标)"
       },
@@ -61071,20 +61470,20 @@
     ],
     "recent_transactions": [
       {
+        "unit_name": "2B座 31楼 D室",
+        "layout": "1 房",
+        "sqft": "340 呎",
+        "price": "977 万",
+        "unit_price": "$28,735/呎",
+        "date": "2026-08-24"
+      },
+      {
         "unit_name": "2B座 28楼 D室",
         "layout": "1 房",
         "sqft": "340 呎",
         "price": "938.1 万",
         "unit_price": "$27,591/呎",
         "date": "2026-08-13"
-      },
-      {
-        "unit_name": "2C座 8楼 D室",
-        "layout": "1 房",
-        "sqft": "304 呎",
-        "price": "1021.4 万",
-        "unit_price": "$33,599/呎",
-        "date": "2026-08-10"
       },
       {
         "unit_name": "2B座 26楼 A室",
@@ -61107,7 +61506,10 @@
     "main_area": "港岛南区",
     "micro_district": "黄竹坑及深湾",
     "micro_district_en": "Wong Chuk Hang & Sham Wan",
-    "plan_id": "FEAT-TPU-175-176"
+    "plan_id": "FEAT-TPU-175-176",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "Deep Water South 第6B期",
@@ -61218,7 +61620,10 @@
     "main_area": "港岛南区",
     "micro_district": "黄竹坑及深湾",
     "micro_district_en": "Wong Chuk Hang & Sham Wan",
-    "plan_id": "FEAT-TPU-175-176"
+    "plan_id": "FEAT-TPU-175-176",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "PORTO",
@@ -61361,27 +61766,30 @@
         "date": "2026-07-14"
       },
       {
+        "unit_name": "PORTO座 15楼 A室",
+        "layout": "2 房",
+        "sqft": "388 呎",
+        "price": "974 万",
+        "unit_price": "$25,103/呎",
+        "date": "2026-08-20"
+      },
+      {
         "unit_name": "PORTO座 17楼 C室",
         "layout": "2 房",
         "sqft": "436 呎",
         "price": "1155.2 万",
         "unit_price": "$26,495/呎",
         "date": "2026-07-16"
-      },
-      {
-        "unit_name": "PORTO座 19楼 A室",
-        "layout": "2 房",
-        "sqft": "388 呎",
-        "price": "1037 万",
-        "unit_price": "$26,727/呎",
-        "date": "2026-06-08"
       }
     ],
     "address": "平瀾街9號",
     "main_area": "港岛南区",
     "micro_district": "鸭脷洲 (海怡半岛及鸭脷洲大街)",
     "micro_district_en": "Ap Lei Chau (South Horizons & Main St)",
-    "plan_id": "FEAT-TPU-174"
+    "plan_id": "FEAT-TPU-174",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "弦岸",
@@ -61580,7 +61988,10 @@
     "main_area": "港岛南区",
     "micro_district": "鸭脷洲 (海怡半岛及鸭脷洲大街)",
     "micro_district_en": "Ap Lei Chau (South Horizons & Main St)",
-    "plan_id": "FEAT-TPU-174"
+    "plan_id": "FEAT-TPU-174",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "扬海",
@@ -61738,7 +62149,7 @@
         "layout": "4 房",
         "unsold_count": 7,
         "sqft_range": "1299 - 1634 呎",
-        "price_range": "7064.4 万 - 1.07 亿"
+        "price_range": "5227.7 万 - 7194.9 万"
       }
     ],
     "recent_transactions": [
@@ -61748,7 +62159,7 @@
         "sqft": "341 呎",
         "price": "918 万",
         "unit_price": "$26,920/呎",
-        "date": "2024-04-22"
+        "date": "2024-04-23"
       },
       {
         "unit_name": "2B座 27楼 F室",
@@ -61756,7 +62167,7 @@
         "sqft": "343 呎",
         "price": "977 万",
         "unit_price": "$28,484/呎",
-        "date": "2024-04-22"
+        "date": "2024-04-23"
       },
       {
         "unit_name": "2B座 6楼 E室",
@@ -61764,7 +62175,7 @@
         "sqft": "553 呎",
         "price": "1530.7 万",
         "unit_price": "$27,680/呎",
-        "date": "2026-01-14"
+        "date": "2026-01-15"
       },
       {
         "unit_name": "2B座 19楼 G室",
@@ -61772,7 +62183,7 @@
         "sqft": "470 呎",
         "price": "1342.5 万",
         "unit_price": "$28,565/呎",
-        "date": "2025-11-27"
+        "date": "2025-11-28"
       },
       {
         "unit_name": "1B座 29楼 B室",
@@ -61780,7 +62191,7 @@
         "sqft": "942 呎",
         "price": "4359.8 万",
         "unit_price": "$46,283/呎",
-        "date": "2026-07-27"
+        "date": "2026-07-28"
       },
       {
         "unit_name": "1B座 11楼 B室",
@@ -61788,7 +62199,7 @@
         "sqft": "942 呎",
         "price": "3554.9 万",
         "unit_price": "$37,738/呎",
-        "date": "2026-04-19"
+        "date": "2026-04-20"
       },
       {
         "unit_name": "1B座 31楼 A室",
@@ -61796,7 +62207,7 @@
         "sqft": "1420 呎",
         "price": "8556.9 万",
         "unit_price": "$60,260/呎",
-        "date": "2026-03-04"
+        "date": "2026-03-05"
       },
       {
         "unit_name": "1B座 10楼 A室",
@@ -61804,14 +62215,17 @@
         "sqft": "1420 呎",
         "price": "5909.7 万",
         "unit_price": "$41,618/呎",
-        "date": "2026-02-25"
+        "date": "2026-02-26"
       }
     ],
     "address": "香葉道11號",
     "main_area": "港岛南区",
     "micro_district": "黄竹坑及深湾",
     "micro_district_en": "Wong Chuk Hang & Sham Wan",
-    "plan_id": "FEAT-TPU-175-176"
+    "plan_id": "FEAT-TPU-175-176",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "晋环",
@@ -62020,7 +62434,10 @@
     "main_area": "港岛南区",
     "micro_district": "黄竹坑及深湾",
     "micro_district_en": "Wong Chuk Hang & Sham Wan",
-    "plan_id": "FEAT-TPU-175-176"
+    "plan_id": "FEAT-TPU-175-176",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "海盈山第4A期",
@@ -62207,7 +62624,10 @@
     "main_area": "港岛南区",
     "micro_district": "黄竹坑及深湾",
     "micro_district_en": "Wong Chuk Hang & Sham Wan",
-    "plan_id": "FEAT-TPU-175-176"
+    "plan_id": "FEAT-TPU-175-176",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "海盈山第4B期",
@@ -62323,18 +62743,26 @@
       },
       {
         "layout": "3 房",
-        "unsold_count": 78,
+        "unsold_count": 72,
         "sqft_range": "812 - 1054 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
-        "unsold_count": 47,
+        "unsold_count": 46,
         "sqft_range": "1148 - 2291 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "1B座 9楼 E室",
+        "layout": "2 房",
+        "sqft": "499 呎",
+        "price": "1391.1 万",
+        "unit_price": "$27,878/呎",
+        "date": "2026-08-20"
+      },
       {
         "unit_name": "1B座 31楼 C室",
         "layout": "2 房",
@@ -62344,28 +62772,28 @@
         "date": "2026-08-17"
       },
       {
-        "unit_name": "1B座 17楼 E室",
-        "layout": "2 房",
-        "sqft": "499 呎",
-        "price": "1419.1 万",
-        "unit_price": "$28,439/呎",
-        "date": "2026-08-17"
-      },
-      {
-        "unit_name": "1B座 19楼 A室",
+        "unit_name": "1B座 26楼 B室",
         "layout": "3 房",
         "sqft": "960 呎",
-        "price": "3703 万",
-        "unit_price": "$38,573/呎",
-        "date": "2026-08-17"
+        "price": "4019.3 万",
+        "unit_price": "$41,868/呎",
+        "date": "2026-08-26"
       },
       {
-        "unit_name": "1B座 21楼 B室",
+        "unit_name": "1B座 11楼 B室",
         "layout": "3 房",
         "sqft": "960 呎",
-        "price": "3812.6 万",
-        "unit_price": "$39,715/呎",
-        "date": "2026-08-07"
+        "price": "3380 万",
+        "unit_price": "$35,208/呎",
+        "date": "2026-08-26"
+      },
+      {
+        "unit_name": "1A座 26楼 A室",
+        "layout": "4 房",
+        "sqft": "1515 呎",
+        "price": "6983.7 万",
+        "unit_price": "$46,097/呎",
+        "date": "2026-08-21"
       },
       {
         "unit_name": "1A座 35楼 A室",
@@ -62374,21 +62802,16 @@
         "price": "7768.9 万",
         "unit_price": "$51,280/呎",
         "date": "2026-08-14"
-      },
-      {
-        "unit_name": "1A座 32楼 B室",
-        "layout": "4 房",
-        "sqft": "1154 呎",
-        "price": "5625.2 万",
-        "unit_price": "$48,745/呎",
-        "date": "2026-06-25"
       }
     ],
     "address": "香葉道11號",
     "main_area": "港岛南区",
     "micro_district": "黄竹坑及深湾",
     "micro_district_en": "Wong Chuk Hang & Sham Wan",
-    "plan_id": "FEAT-TPU-175-176"
+    "plan_id": "FEAT-TPU-175-176",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "滶晨 II",
@@ -62569,7 +62992,10 @@
     "main_area": "港岛南区",
     "micro_district": "黄竹坑及深湾",
     "micro_district_en": "Wong Chuk Hang & Sham Wan",
-    "plan_id": "FEAT-TPU-175-176"
+    "plan_id": "FEAT-TPU-175-176",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "璟南",
@@ -62827,14 +63253,17 @@
         "sqft": "1709 呎",
         "price": "暂无",
         "unit_price": "-",
-        "date": "2026-07-31"
+        "date": "2026-08-27"
       }
     ],
     "address": "鴨脷洲海旁道18號",
     "main_area": "港岛南区",
     "micro_district": "鸭脷洲 (海怡半岛及鸭脷洲大街)",
     "micro_district_en": "Ap Lei Chau (South Horizons & Main St)",
-    "plan_id": "FEAT-TPU-174"
+    "plan_id": "FEAT-TPU-174",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "逸南",
@@ -62961,7 +63390,10 @@
     "main_area": "港岛南区",
     "micro_district": "鸭脷洲 (海怡半岛及鸭脷洲大街)",
     "micro_district_en": "Ap Lei Chau (South Horizons & Main St)",
-    "plan_id": "FEAT-TPU-174"
+    "plan_id": "FEAT-TPU-174",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "君豪峰",
@@ -63124,7 +63556,10 @@
     "main_area": "港岛东区",
     "micro_district": "鲗鱼涌及太古",
     "micro_district_en": "Statutory Scheme (S/H21/28)",
-    "plan_id": "OZP-S-H21-28"
+    "plan_id": "OZP-S-H21-28",
+    "primary_school_net": "14校网",
+    "secondary_school_net": "東區校网",
+    "school_net": "14校网 / 東區校网"
   },
   {
     "name": "凯玥",
@@ -63307,7 +63742,10 @@
     "main_area": "港岛南区",
     "micro_district": "鸭脷洲 (海怡半岛及鸭脷洲大街)",
     "micro_district_en": "Ap Lei Chau (South Horizons & Main St)",
-    "plan_id": "FEAT-TPU-174"
+    "plan_id": "FEAT-TPU-174",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "Eight Kwai Fong Happy Valley",
@@ -63706,7 +64144,10 @@
     "main_area": "港岛湾仔及东半山",
     "micro_district": "跑马地及黄泥涌",
     "micro_district_en": "Happy Valley & Wong Nai Chung",
-    "plan_id": "FEAT-S-H7"
+    "plan_id": "FEAT-S-H7",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网"
   },
   {
     "name": "蓝塘道23-39号",
@@ -64099,7 +64540,10 @@
     "main_area": "港岛湾仔及东半山",
     "micro_district": "跑马地及黄泥涌",
     "micro_district_en": "Happy Valley & Wong Nai Chung",
-    "plan_id": "FEAT-S-H7"
+    "plan_id": "FEAT-S-H7",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网"
   },
   {
     "name": "滶晨",
@@ -64308,7 +64752,10 @@
     "main_area": "港岛南区",
     "micro_district": "黄竹坑及深湾",
     "micro_district_en": "Wong Chuk Hang & Sham Wan",
-    "plan_id": "FEAT-TPU-175-176"
+    "plan_id": "FEAT-TPU-175-176",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "花语海第1期",
@@ -64709,7 +65156,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "花语海第2期",
@@ -65218,7 +65668,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
     "micro_district_en": "Statutory Scheme (S/K22/7)",
-    "plan_id": "OZP-S-K22-7"
+    "plan_id": "OZP-S-K22-7",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "Elize Park",
@@ -65359,7 +65812,10 @@
     "main_area": "九龙西（油尖旺）",
     "micro_district": "旺角及太子",
     "micro_district_en": "Statutory Scheme (S/K3/35)",
-    "plan_id": "OZP-S-K3-35"
+    "plan_id": "OZP-S-K3-35",
+    "primary_school_net": "32校网",
+    "secondary_school_net": "油尖旺校网",
+    "school_net": "32校网 / 油尖旺校网"
   },
   {
     "name": "维港汇 I",
@@ -65684,7 +66140,10 @@
     "main_area": "九龙西（油尖旺）",
     "micro_district": "南昌及西九龙海滨",
     "micro_district_en": "Nam Cheong & West Kowloon Waterfront",
-    "plan_id": "FEAT-TPU-255-269"
+    "plan_id": "FEAT-TPU-255-269",
+    "primary_school_net": "40校网",
+    "secondary_school_net": "深水埗校网",
+    "school_net": "40校网 / 深水埗校网"
   },
   {
     "name": "St. George's Mansions",
@@ -65877,7 +66336,10 @@
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
     "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24"
+    "plan_id": "OZP-S-K7-24",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网"
   },
   {
     "name": "红山半岛 - C区",
@@ -67058,7 +67520,10 @@
     "main_area": "港岛南区",
     "micro_district": "大潭及红山半岛",
     "micro_district_en": "Statutory Scheme (S/H18/10)",
-    "plan_id": "OZP-S-H18-10"
+    "plan_id": "OZP-S-H18-10",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   },
   {
     "name": "红山半岛 - B区",
@@ -68155,6 +68620,9 @@
     "main_area": "港岛南区",
     "micro_district": "大潭及红山半岛",
     "micro_district_en": "Statutory Scheme (S/H18/10)",
-    "plan_id": "OZP-S-H18-10"
+    "plan_id": "OZP-S-H18-10",
+    "primary_school_net": "18校网",
+    "secondary_school_net": "南區校网",
+    "school_net": "18校网 / 南區校网"
   }
 ]

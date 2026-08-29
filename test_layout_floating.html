@@ -916,6 +916,7 @@
 <script>
 let landmarksData = [], mtrStationsData = [], projectsData = [];
 let map, currentAnchorMarker, currentRadiusCircle, activeAnchorLandmark = null;
+let activeAnchorSchoolNet = null;
 let activeAnchorDistrict = null;
 let districtBoundsMap = {};
 let microDistrictsGeoJSON = null;
@@ -1190,14 +1191,55 @@ function populateSelects() {
   sMtr.innerHTML = '<option value="">🚇 全港港铁站 (98站)...</option>';
   sDistrict.innerHTML = '<option value="">🏙️ 核心商圈/规划片区 (两级划分)...</option>';
 
+  // 1. 🏫 香港官方小学校网分组 (法定精准归属)
+  const schoolNetGroup = document.createElement('optgroup');
+  schoolNetGroup.label = '🏫 香港官方小学校网 (法定精准归属)';
+
+  const netCounts = {};
+  projectsData.forEach(p => {
+    if (p.primary_school_net) {
+      netCounts[p.primary_school_net] = (netCounts[p.primary_school_net] || 0) + 1;
+    }
+  });
+
+  const schoolNetConfig = [
+    { id: 'net_34', name: '34校网 (何文田 / 启德 / 土瓜湾 / 马头角)' },
+    { id: 'net_41', name: '41校网 (九龙塘 / 九龙城 / 喇沙 / 拔萃 / 玛利诺)' },
+    { id: 'net_11', name: '11校网 (中西区 / 中半山 / 西半山 / 坚尼地城)' },
+    { id: 'net_12', name: '12校网 (湾仔 / 铜锣湾 / 跑马地 / 大坑 / 东半山)' },
+    { id: 'net_18', name: '18校网 (港岛南区 / 黄竹坑 / 浅水湾 / 赤柱)' },
+    { id: 'net_40', name: '40校网 (深水埗 / 长沙湾 / 荔枝角 / 龙驹道)' },
+    { id: 'net_35', name: '35校网 (红磡 / 黄埔)' },
+    { id: 'net_32', name: '32校网 (旺角 / 大角咀 / 奥运)' },
+    { id: 'net_14', name: '14校网 (东区 / 北角 / 炮台山 / 鲗鱼涌)' },
+    { id: 'net_16', name: '16校网 (筲箕湾 / 柴湾)' },
+    { id: 'net_31', name: '31校网 (油麻地 / 尖沙咀 / 佐敦)' }
+  ];
+
+  schoolNetConfig.forEach(sn => {
+    const key = sn.id.replace('net_', '') + '校网';
+    const count = netCounts[key] || 0;
+    if (count > 0) {
+      const opt = document.createElement('option');
+      opt.value = sn.id;
+      opt.textContent = `${sn.name} [${count}盘]`;
+      schoolNetGroup.appendChild(opt);
+    }
+  });
+  sSchool.appendChild(schoolNetGroup);
+
+  // 2. 🎓 知名大学 (1.5km生活圈)
+  const univGroup = document.createElement('optgroup');
+  univGroup.label = '🎓 知名大学 (1.5km生活圈)';
   landmarksData.forEach(lm => {
-    if (lm.category === 'university' || lm.category === 'school_net') {
+    if (lm.category === 'university') {
       const opt = document.createElement('option');
       opt.value = lm.id;
       opt.textContent = lm.name;
-      sSchool.appendChild(opt);
+      univGroup.appendChild(opt);
     }
   });
+  sSchool.appendChild(univGroup);
 
   // 港铁站按主要线路分组展示
   const groups = {};
@@ -1338,28 +1380,45 @@ function onAnchorSelect(type) {
     activeAnchorDistrict = null;
     const id = sSchool.value;
     if (id) {
-      const lm = landmarksData.find(x => x.id === id);
-      activeAnchorLandmark = lm;
-      if (lm) {
-        currentRadiusCircle = L.circle([lm.lat, lm.lng], {
-          radius: 1500, color: '#2563eb', fillColor: '#3b82f6', fillOpacity: 0.08, weight: 2, dashArray: '6,6'
-        }).addTo(map);
+      if (id.startsWith('net_')) {
+        activeAnchorLandmark = null;
+        activeAnchorSchoolNet = id.replace('net_', '') + '校网';
+        
+        // 自动聚焦该校网所有项目
+        const matched = projectsData.filter(p => p.primary_school_net === activeAnchorSchoolNet);
+        if (matched.length > 0) {
+          const bounds = L.latLngBounds(matched.map(p => [p.lat, p.lng]));
+          map.fitBounds(bounds, { padding: [60, 60], maxZoom: 15, animate: true, duration: 0.8 });
+          showToast(`🏫 已精准筛选【${activeAnchorSchoolNet}】法定归属新盘（共 ${matched.length} 个项目）`);
+        }
+      } else {
+        activeAnchorSchoolNet = null;
+        const lm = landmarksData.find(x => x.id === id);
+        activeAnchorLandmark = lm;
+        if (lm) {
+          currentRadiusCircle = L.circle([lm.lat, lm.lng], {
+            radius: 1500, color: '#2563eb', fillColor: '#3b82f6', fillOpacity: 0.08, weight: 2, dashArray: '6,6'
+          }).addTo(map);
 
-        map.fitBounds(currentRadiusCircle.getBounds(), { padding: [50, 50] });
+          map.fitBounds(currentRadiusCircle.getBounds(), { padding: [50, 50] });
 
-        const icon = L.divIcon({
-          className: 'anchor-pin',
-          html: `<div style="background:#dc2626; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(220,38,38,0.4); border:2px solid #fff; white-space:nowrap;">📍 ${lm.name} (1.5km圈)</div>`,
-          iconSize: [180, 32], iconAnchor: [90, 16]
-        });
-        currentAnchorMarker = L.marker([lm.lat, lm.lng], { icon }).addTo(map);
+          const icon = L.divIcon({
+            className: 'anchor-pin',
+            html: `<div style="background:#dc2626; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(220,38,38,0.4); border:2px solid #fff; white-space:nowrap;">📍 ${lm.name} (1.5km圈)</div>`,
+            iconSize: [180, 32], iconAnchor: [90, 16]
+          });
+          currentAnchorMarker = L.marker([lm.lat, lm.lng], { icon }).addTo(map);
+          showToast(`🎓 已定位【${lm.name}】1.5km 生活圈`);
+        }
       }
     } else {
+      activeAnchorSchoolNet = null;
       activeAnchorLandmark = null;
     }
   } else if (type === 'mtr') {
     sSchool.value = ''; sDistrict.value = '';
     activeAnchorDistrict = null;
+    activeAnchorSchoolNet = null;
     const id = sMtr.value;
     if (id) {
       const st = mtrStationsData.find(x => x.id === id);
@@ -1377,6 +1436,7 @@ function onAnchorSelect(type) {
           iconSize: [180, 32], iconAnchor: [90, 16]
         });
         currentAnchorMarker = L.marker([st.lat, st.lng], { icon }).addTo(map);
+        showToast(`🚇 已定位港铁【${st.name}】1.5km 通勤圈`);
       }
     } else {
       activeAnchorLandmark = null;
@@ -1384,6 +1444,7 @@ function onAnchorSelect(type) {
   } else if (type === 'district') {
     sSchool.value = ''; sMtr.value = '';
     activeAnchorLandmark = null;
+    activeAnchorSchoolNet = null;
     const selectedDistrict = sDistrict.value;
     if (selectedDistrict) {
       activeAnchorDistrict = selectedDistrict;
@@ -1396,6 +1457,7 @@ function onAnchorSelect(type) {
           duration: 1.0
         });
       }
+      showToast(`🏙️ 已聚焦商圈【${selectedDistrict}】`);
     } else {
       activeAnchorDistrict = null;
     }
@@ -1476,7 +1538,12 @@ function applyFilters() {
       if (pDist !== activeAnchorDistrict) return false;
     }
 
-    // 若选定学校/地铁锚点，则优先过滤出 1.5km 范围
+    // 若选定了官方小学校网，精确过滤属于该校网的楼盘
+    if (activeAnchorSchoolNet) {
+      if (proj.primary_school_net !== activeAnchorSchoolNet) return false;
+    }
+
+    // 若选定大学地标/地铁锚点，则优先过滤出 1.5km 范围
     if (activeAnchorLandmark) {
       const d = getDistanceKm(activeAnchorLandmark.lat, activeAnchorLandmark.lng, proj.lat, proj.lng);
       if (d > 1.5) return false;
@@ -1553,8 +1620,11 @@ function applyFilters() {
         </div>
       </div>
       ${mtrHtml}
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px;">
-        <span class="${proj.sell_status === 'on_sale' ? 'status-tag-sale' : 'status-tag-priced'}">${proj.sell_status_cn}</span>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px; flex-wrap:wrap; gap:4px;">
+        <div style="display:flex; gap:4px; align-items:center;">
+          <span class="${proj.sell_status === 'on_sale' ? 'status-tag-sale' : 'status-tag-priced'}">${proj.sell_status_cn}</span>
+          ${proj.primary_school_net ? `<span style="background:#fef3c7; color:#92400e; font-size:0.68rem; font-weight:700; padding:1px 6px; border-radius:4px; border:1px solid #fde68a;">🏫 ${proj.primary_school_net}</span>` : ''}
+        </div>
         ${distKmStr ? `<span class="card-dist-badge">📍 距${activeAnchorLandmark.name.split(' ')[0]} ${distKmStr}</span>` : ''}
       </div>
       <div style="margin-top:8px; display:flex; gap:6px; align-items:center;">
