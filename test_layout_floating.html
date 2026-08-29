@@ -677,6 +677,248 @@
     margin-top: 6px;
   }
 
+  /* Famous School Marker Pin Styling */
+  .school-pin {
+    background: #ffffff;
+    border: 2px solid #7c3aed;
+    border-radius: 14px;
+    padding: 2px 7px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 3px 8px rgba(124, 58, 237, 0.25);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .school-pin:hover {
+    transform: scale(1.08);
+    z-index: 999;
+  }
+  .school-pin-logo {
+    background: #7c3aed;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 1px 4px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+  .school-pin-text {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #4c1d95;
+  }
+
+  /* Shopping Mall Marker Pin Styling */
+  .mall-pin {
+    background: #ffffff;
+    border: 2px solid #ea580c;
+    border-radius: 14px;
+    padding: 2px 7px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 3px 8px rgba(234, 88, 12, 0.25);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .mall-pin:hover {
+    transform: scale(1.08);
+    z-index: 999;
+  }
+  .mall-pin-logo {
+    background: #ea580c;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 1px 4px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+  .mall-pin-text {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #7c2d12;
+  }
+
+  /* School & Mall Popups */
+  .school-popup, .mall-popup {
+    min-width: 230px;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  .school-popup-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #6d28d9;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .mall-popup-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #c2410c;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .school-popup-desc, .mall-popup-desc {
+    display: inline-block;
+    background: #f8fafc;
+    color: #475569;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    line-height: 1.4;
+    margin: 4px 0 8px 0;
+  }
+  .btn-focus-school {
+    width: 100%;
+    padding: 6px 10px;
+    background: linear-gradient(135deg, #6d28d9, #7c3aed);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 6px;
+  }
+  .btn-focus-mall {
+    width: 100%;
+    padding: 6px 10px;
+    background: linear-gradient(135deg, #c2410c, #ea580c);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 6px;
+  }
+
+  /* Tooltip Container & Info Bubble (Option 1) */
+  .layer-btn-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+  .info-bubble {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(109, 40, 217, 0.12);
+    color: #6d28d9;
+    font-size: 10px;
+    margin-left: 4px;
+    cursor: help;
+    transition: all 0.2s;
+  }
+  .info-bubble:hover {
+    background: #6d28d9;
+    color: #ffffff;
+    transform: scale(1.15);
+  }
+  .school-standard-tooltip {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    width: 320px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18), 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 12px 14px;
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  .school-standard-tooltip.open,
+  .layer-btn-wrapper:hover .school-standard-tooltip {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .school-standard-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-left: 1px solid rgba(226, 232, 240, 0.9);
+    border-top: 1px solid rgba(226, 232, 240, 0.9);
+  }
+  .tooltip-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .tooltip-title {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .tooltip-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    background: #f5f3ff;
+    color: #7c3aed;
+    border: 1px solid #ddd6fe;
+    padding: 2px 6px;
+    border-radius: 10px;
+  }
+  .tooltip-body {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .tooltip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: #f8fafc;
+    padding: 6px 8px;
+    border-radius: 6px;
+  }
+  .tooltip-icon {
+    font-size: 13px;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+  .tooltip-item strong {
+    font-size: 0.74rem;
+    color: #1e293b;
+    display: block;
+    line-height: 1.3;
+  }
+  .tooltip-item p {
+    font-size: 0.68rem;
+    color: #64748b;
+    margin: 1px 0 0 0;
+    line-height: 1.3;
+  }
+
   /* Admin Mode Button */
   .btn-admin-toggle {
     padding: 6px 10px;
@@ -788,6 +1030,49 @@
 
     <div class="header-btn-group">
       <button class="btn-layer-toggle active" id="btn-toggle-mtr" onclick="toggleMtrLayer()">🚇 港铁站点</button>
+      <div class="layer-btn-wrapper">
+        <button class="btn-layer-toggle active" id="btn-toggle-school" onclick="toggleFamousSchoolsLayer()">
+          🏫 重点名校
+          <span class="info-bubble" title="查看名校评选标准" onclick="event.stopPropagation(); toggleSchoolTooltip();">ℹ️</span>
+        </button>
+        <div class="school-standard-tooltip" id="school-tooltip">
+          <div class="tooltip-header">
+            <span class="tooltip-title">🏫 重点名校精选收录标准</span>
+            <span class="tooltip-badge">45 所核心名门</span>
+          </div>
+          <div class="tooltip-body">
+            <div class="tooltip-item">
+              <span class="tooltip-icon">👑</span>
+              <div>
+                <strong>顶尖神校 (状元摇篮)</strong>
+                <p>圣保罗男女、拔萃男/女、喇沙等全港 DSE/IB 状元名门</p>
+              </div>
+            </div>
+            <div class="tooltip-item">
+              <span class="tooltip-icon">🏫</span>
+              <div>
+                <strong>黄金名校网龙头</strong>
+                <p>11、12、34、41 四大豪宅学区核心龙头公立/资助小学</p>
+              </div>
+            </div>
+            <div class="tooltip-item">
+              <span class="tooltip-icon">🌍</span>
+              <div>
+                <strong>顶奢国际学校</strong>
+                <p>汉基、德瑞、弘立、哈罗、HKIS 等高净值专才首选</p>
+              </div>
+            </div>
+            <div class="tooltip-item">
+              <span class="tooltip-icon">🎓</span>
+              <div>
+                <strong>知名高等学府</strong>
+                <p>港大、中大、科大、理大等高校 1.5km 优质租住生活圈</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn-layer-toggle active" id="btn-toggle-mall" onclick="toggleShoppingMallsLayer()">🛍️ 大型商场</button>
       <button class="btn-filter-toggle" onclick="toggleExpandFilters()">⚙️ 高级筛选</button>
       <button class="btn-admin-toggle" id="btn-admin-mode" onclick="toggleAdminMode()" title="切换后台管理编辑模式">🔒 管理模式</button>
       <button class="btn-export-main" id="btn-export" onclick="openExportModal()" disabled>
@@ -924,9 +1209,11 @@ let microDistrictsLayer = null;
 let currentRouteLine = null;
 let selectedNames = new Set();
 let isMtrLayerVisible = true;
+let isFamousSchoolsLayerVisible = true;
+let isShoppingMallsLayerVisible = true;
 let isAdminMode = false;
 
-let projectMarkersLayer, mtrStationsLayer;
+let projectMarkersLayer, mtrStationsLayer, famousSchoolsLayer, shoppingMallsLayer;
 let markersByName = {};
 
 let filterState = {
@@ -963,6 +1250,8 @@ function initMap() {
 
   projectMarkersLayer = L.layerGroup().addTo(map);
   mtrStationsLayer = L.layerGroup().addTo(map);
+  famousSchoolsLayer = L.layerGroup().addTo(map);
+  shoppingMallsLayer = L.layerGroup().addTo(map);
 }
 
 async function loadData() {
@@ -995,6 +1284,8 @@ async function loadData() {
 
   populateSelects();
   renderMtrMarkers();
+  renderFamousSchoolsMarkers();
+  renderShoppingMallsMarkers();
   applyFilters();
 }
 
@@ -1181,15 +1472,175 @@ function focusMtrStation(stId) {
   map.closePopup();
 }
 
+function renderFamousSchoolsMarkers() {
+  famousSchoolsLayer.clearLayers();
+  if (!landmarksData || !landmarksData.length) return;
+
+  const schools = landmarksData.filter(x => x.category === 'famous_school');
+  schools.forEach(sch => {
+    const cName = sch.name.split(' ')[0];
+    const isInter = sch.sub_type === 'international';
+    const tag = isInter ? '国际' : (sch.sub_type === 'primary' ? '小学' : '名校');
+    const color = isInter ? '#6d28d9' : '#7c3aed';
+
+    // 评选标准专属徽章 (Option 4 深度落地)
+    let badgeText = '', badgeBg = '#f5f3ff', badgeColor = '#6d28d9', badgeBorder = '#ddd6fe';
+    if (sch.sub_type === 'international') {
+      badgeText = '🌍 顶奢国际学校 · 高净值首选';
+      badgeBg = '#f5f3ff'; badgeColor = '#6d28d9'; badgeBorder = '#ddd6fe';
+    } else if (sch.district && sch.district.includes('校网')) {
+      const netMatch = sch.district.match(/\d+校网/);
+      const netStr = netMatch ? netMatch[0] : '黄金学区';
+      badgeText = `🏫 ${netStr}核心龙头 · 豪宅黄金学区`;
+      badgeBg = '#fdf2f8'; badgeColor = '#be185d'; badgeBorder = '#fbcfe8';
+    } else if (sch.sub_type === 'primary') {
+      badgeText = '🏫 传统名牌小学 · 升中直升优势';
+      badgeBg = '#fdf2f8'; badgeColor = '#be185d'; badgeBorder = '#fbcfe8';
+    } else {
+      badgeText = '👑 顶尖神校 · 全港状元摇篮名门';
+      badgeBg = '#fffbeb'; badgeColor = '#b45309'; badgeBorder = '#fde68a';
+    }
+
+    const icon = L.divIcon({
+      className: 'custom-school-icon',
+      html: `
+        <div class="school-pin" style="border-color: ${color};">
+          <span class="school-pin-logo" style="background: ${color};">${tag}</span>
+          <span class="school-pin-text">${cName}</span>
+        </div>
+      `,
+      iconSize: [95, 26],
+      iconAnchor: [47, 13]
+    });
+
+    const marker = L.marker([sch.lat, sch.lng], { icon });
+
+    const nearbyCount = projectsData.filter(p => {
+      return getDistanceKm(sch.lat, sch.lng, p.lat, p.lng) <= 1.5;
+    }).length;
+
+    const popupContent = `
+      <div class="school-popup">
+        <div class="school-popup-title">🏫 ${sch.name}</div>
+        <div style="margin: 4px 0 6px 0;">
+          <span style="display:inline-block; padding: 2px 8px; font-size: 10.5px; font-weight: 700; border-radius: 4px; background: ${badgeBg}; color: ${badgeColor}; border: 1px solid ${badgeBorder};">
+            ${badgeText}
+          </span>
+        </div>
+        <div class="school-popup-desc">
+          📍 ${sch.region} · ${sch.district}<br>
+          ✨ ${sch.highlight || '香港重点知名学校'}
+        </div>
+        <div style="font-size:0.76rem; color:#475569; margin-top:2px;">
+          📍 1.5km 辐射圈在售一手新盘：<strong style="color:#7c3aed;">${nearbyCount} 个</strong>
+        </div>
+        <button class="btn-focus-school" onclick="focusFamousSchool('${sch.id}')">🎯 辐射筛选该校周边楼盘 (1.5km)</button>
+      </div>
+    `;
+    marker.bindPopup(popupContent);
+    famousSchoolsLayer.addLayer(marker);
+  });
+}
+
+function toggleSchoolTooltip() {
+  const tip = document.getElementById('school-tooltip');
+  if (tip) tip.classList.toggle('open');
+}
+
+function toggleFamousSchoolsLayer() {
+  const btn = document.getElementById('btn-toggle-school');
+  if (isFamousSchoolsLayerVisible) {
+    map.removeLayer(famousSchoolsLayer);
+    isFamousSchoolsLayerVisible = false;
+    btn.classList.remove('active');
+  } else {
+    map.addLayer(famousSchoolsLayer);
+    isFamousSchoolsLayerVisible = true;
+    btn.classList.add('active');
+  }
+}
+
+function focusFamousSchool(schId) {
+  const sSchool = document.getElementById('anchor-school');
+  sSchool.value = schId;
+  onAnchorSelect('school');
+  map.closePopup();
+}
+
+function renderShoppingMallsMarkers() {
+  shoppingMallsLayer.clearLayers();
+  if (!landmarksData || !landmarksData.length) return;
+
+  const malls = landmarksData.filter(x => x.category === 'shopping_mall');
+  malls.forEach(mall => {
+    const cName = mall.name.split(' ')[0];
+    const color = '#ea580c';
+
+    const icon = L.divIcon({
+      className: 'custom-mall-icon',
+      html: `
+        <div class="mall-pin" style="border-color: ${color};">
+          <span class="mall-pin-logo" style="background: ${color};">商场</span>
+          <span class="mall-pin-text">${cName}</span>
+        </div>
+      `,
+      iconSize: [95, 26],
+      iconAnchor: [47, 13]
+    });
+
+    const marker = L.marker([mall.lat, mall.lng], { icon });
+
+    const nearbyCount = projectsData.filter(p => {
+      return getDistanceKm(mall.lat, mall.lng, p.lat, p.lng) <= 1.5;
+    }).length;
+
+    const popupContent = `
+      <div class="mall-popup">
+        <div class="mall-popup-title">🛍️ ${mall.name}</div>
+        <div class="mall-popup-desc">
+          📍 ${mall.region} · ${mall.district}<br>
+          ✨ ${mall.highlight || '香港核心大型购物商场'}
+        </div>
+        <div style="font-size:0.76rem; color:#475569; margin-top:2px;">
+          📍 1.5km 辐射圈在售一手新盘：<strong style="color:#ea580c;">${nearbyCount} 个</strong>
+        </div>
+        <button class="btn-focus-mall" onclick="focusShoppingMall('${mall.id}')">🎯 辐射筛选商场周边楼盘 (1.5km)</button>
+      </div>
+    `;
+    marker.bindPopup(popupContent);
+    shoppingMallsLayer.addLayer(marker);
+  });
+}
+
+function toggleShoppingMallsLayer() {
+  const btn = document.getElementById('btn-toggle-mall');
+  if (isShoppingMallsLayerVisible) {
+    map.removeLayer(shoppingMallsLayer);
+    isShoppingMallsLayerVisible = false;
+    btn.classList.remove('active');
+  } else {
+    map.addLayer(shoppingMallsLayer);
+    isShoppingMallsLayerVisible = true;
+    btn.classList.add('active');
+  }
+}
+
+function focusShoppingMall(mallId) {
+  const sDistrict = document.getElementById('anchor-district');
+  sDistrict.value = mallId;
+  onAnchorSelect('district');
+  map.closePopup();
+}
+
 function populateSelects() {
   const sSchool = document.getElementById('anchor-school');
   const sMtr = document.getElementById('anchor-mtr');
   const sDistrict = document.getElementById('anchor-district');
 
   // 清空除默认项外的 option
-  sSchool.innerHTML = '<option value="">🎓 大学或校网...</option>';
+  sSchool.innerHTML = '<option value="">🎓 大学/名校/校网...</option>';
   sMtr.innerHTML = '<option value="">🚇 全港港铁站 (98站)...</option>';
-  sDistrict.innerHTML = '<option value="">🏙️ 核心商圈/规划片区 (两级划分)...</option>';
+  sDistrict.innerHTML = '<option value="">🏙️ 核心商圈/大型商场...</option>';
 
   // 1. 🏫 香港官方小学校网分组 (法定精准归属)
   const schoolNetGroup = document.createElement('optgroup');
@@ -1228,7 +1679,33 @@ function populateSelects() {
   });
   sSchool.appendChild(schoolNetGroup);
 
-  // 2. 🎓 知名大学 (1.5km生活圈)
+  // 2. 🏆 顶尖传统名校 (1.5km生活圈)
+  const tradSchoolGroup = document.createElement('optgroup');
+  tradSchoolGroup.label = '🏆 顶尖传统名牌中小学 (1.5km生活圈)';
+  landmarksData.forEach(lm => {
+    if (lm.category === 'famous_school' && lm.sub_type !== 'international') {
+      const opt = document.createElement('option');
+      opt.value = lm.id;
+      opt.textContent = `${lm.name} (${lm.region}·${lm.district})`;
+      tradSchoolGroup.appendChild(opt);
+    }
+  });
+  sSchool.appendChild(tradSchoolGroup);
+
+  // 3. 🌍 顶尖国际学校 (1.5km生活圈)
+  const interSchoolGroup = document.createElement('optgroup');
+  interSchoolGroup.label = '🌍 顶尖国际学校 (1.5km生活圈)';
+  landmarksData.forEach(lm => {
+    if (lm.category === 'famous_school' && lm.sub_type === 'international') {
+      const opt = document.createElement('option');
+      opt.value = lm.id;
+      opt.textContent = `${lm.name} (${lm.region}·${lm.district})`;
+      interSchoolGroup.appendChild(opt);
+    }
+  });
+  sSchool.appendChild(interSchoolGroup);
+
+  // 4. 🎓 知名大学 (1.5km生活圈)
   const univGroup = document.createElement('optgroup');
   univGroup.label = '🎓 知名大学 (1.5km生活圈)';
   landmarksData.forEach(lm => {
@@ -1319,6 +1796,19 @@ function populateSelects() {
     });
     sDistrict.appendChild(optgroup);
   });
+
+  // 🛍️ 大型旗舰商场分组 (1.5km生活圈)
+  const mallGroup = document.createElement('optgroup');
+  mallGroup.label = '🛍️ 核心大型旗舰商场 (1.5km生活圈)';
+  landmarksData.forEach(lm => {
+    if (lm.category === 'shopping_mall') {
+      const opt = document.createElement('option');
+      opt.value = lm.id;
+      opt.textContent = `${lm.name} (${lm.region}·${lm.district})`;
+      mallGroup.appendChild(opt);
+    }
+  });
+  sDistrict.appendChild(mallGroup);
 }
 
 function toggleExpandFilters() {
@@ -1350,6 +1840,15 @@ function setupFilterEvents() {
       filterState.status = chip.dataset.status;
       applyFilters();
     });
+  });
+
+  // 点击外部自动收起名校收录标准气泡
+  document.addEventListener('click', (e) => {
+    const tip = document.getElementById('school-tooltip');
+    const wrapper = document.querySelector('.layer-btn-wrapper');
+    if (tip && wrapper && !wrapper.contains(e.target)) {
+      tip.classList.remove('open');
+    }
   });
 }
 
@@ -1396,19 +1895,24 @@ function onAnchorSelect(type) {
         const lm = landmarksData.find(x => x.id === id);
         activeAnchorLandmark = lm;
         if (lm) {
+          const isUniv = lm.category === 'university';
+          const circleColor = isUniv ? '#2563eb' : '#7c3aed';
+          const pinColor = isUniv ? '#2563eb' : '#7c3aed';
+          const iconEmoji = isUniv ? '🎓' : '🏫';
+
           currentRadiusCircle = L.circle([lm.lat, lm.lng], {
-            radius: 1500, color: '#2563eb', fillColor: '#3b82f6', fillOpacity: 0.08, weight: 2, dashArray: '6,6'
+            radius: 1500, color: circleColor, fillColor: circleColor, fillOpacity: 0.08, weight: 2, dashArray: '6,6'
           }).addTo(map);
 
           map.fitBounds(currentRadiusCircle.getBounds(), { padding: [50, 50] });
 
           const icon = L.divIcon({
             className: 'anchor-pin',
-            html: `<div style="background:#dc2626; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(220,38,38,0.4); border:2px solid #fff; white-space:nowrap;">📍 ${lm.name} (1.5km圈)</div>`,
-            iconSize: [180, 32], iconAnchor: [90, 16]
+            html: `<div style="background:${pinColor}; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(124,58,237,0.4); border:2px solid #fff; white-space:nowrap;">${iconEmoji} ${lm.name} (1.5km圈)</div>`,
+            iconSize: [200, 32], iconAnchor: [100, 16]
           });
           currentAnchorMarker = L.marker([lm.lat, lm.lng], { icon }).addTo(map);
-          showToast(`🎓 已定位【${lm.name}】1.5km 生活圈`);
+          showToast(`${iconEmoji} 已定位【${lm.name}】1.5km 生活圈`);
         }
       }
     } else {
@@ -1425,7 +1929,7 @@ function onAnchorSelect(type) {
       activeAnchorLandmark = st;
       if (st) {
         currentRadiusCircle = L.circle([st.lat, st.lng], {
-          radius: 1500, color: '#2563eb', fillColor: '#3b82f6', fillOpacity: 0.08, weight: 2, dashArray: '6,6'
+          radius: 1500, color: '#0284c7', fillColor: '#38bdf8', fillOpacity: 0.08, weight: 2, dashArray: '6,6'
         }).addTo(map);
 
         map.fitBounds(currentRadiusCircle.getBounds(), { padding: [50, 50] });
@@ -1443,23 +1947,45 @@ function onAnchorSelect(type) {
     }
   } else if (type === 'district') {
     sSchool.value = ''; sMtr.value = '';
-    activeAnchorLandmark = null;
     activeAnchorSchoolNet = null;
     const selectedDistrict = sDistrict.value;
     if (selectedDistrict) {
-      activeAnchorDistrict = selectedDistrict;
-      const bounds = districtBoundsMap[selectedDistrict];
-      if (bounds) {
-        map.fitBounds(bounds, {
-          padding: [40, 40],
-          maxZoom: 15,
-          animate: true,
-          duration: 1.0
-        });
+      if (selectedDistrict.startsWith('mall_')) {
+        const lm = landmarksData.find(x => x.id === selectedDistrict);
+        activeAnchorLandmark = lm;
+        activeAnchorDistrict = null;
+        if (lm) {
+          currentRadiusCircle = L.circle([lm.lat, lm.lng], {
+            radius: 1500, color: '#ea580c', fillColor: '#f97316', fillOpacity: 0.08, weight: 2, dashArray: '6,6'
+          }).addTo(map);
+
+          map.fitBounds(currentRadiusCircle.getBounds(), { padding: [50, 50] });
+
+          const icon = L.divIcon({
+            className: 'anchor-pin',
+            html: `<div style="background:#ea580c; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(234,88,12,0.4); border:2px solid #fff; white-space:nowrap;">🛍️ ${lm.name} (1.5km圈)</div>`,
+            iconSize: [200, 32], iconAnchor: [100, 16]
+          });
+          currentAnchorMarker = L.marker([lm.lat, lm.lng], { icon }).addTo(map);
+          showToast(`🛍️ 已定位商场【${lm.name}】1.5km 购物生活圈`);
+        }
+      } else {
+        activeAnchorLandmark = null;
+        activeAnchorDistrict = selectedDistrict;
+        const bounds = districtBoundsMap[selectedDistrict];
+        if (bounds) {
+          map.fitBounds(bounds, {
+            padding: [40, 40],
+            maxZoom: 15,
+            animate: true,
+            duration: 1.0
+          });
+        }
+        showToast(`🏙️ 已聚焦商圈【${selectedDistrict}】`);
       }
-      showToast(`🏙️ 已聚焦商圈【${selectedDistrict}】`);
     } else {
       activeAnchorDistrict = null;
+      activeAnchorLandmark = null;
     }
   }
 
