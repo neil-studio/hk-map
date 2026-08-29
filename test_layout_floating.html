@@ -693,11 +693,12 @@
     box-shadow: 0 3px 8px rgba(124, 58, 237, 0.25);
     white-space: nowrap;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .school-pin:hover {
     transform: scale(1.08);
-    z-index: 999;
+    z-index: 9999 !important;
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
   }
   .school-pin-logo {
     background: #7c3aed;
@@ -712,6 +713,22 @@
     font-size: 10.5px;
     font-weight: 700;
     color: #4c1d95;
+  }
+
+  /* 🏫 Mini-Pin 轻量学校微标样式（用于远景及中景防重叠） */
+  .school-pin.mini-pin {
+    padding: 2px 5px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(124, 58, 237, 0.2);
+  }
+  .school-pin.mini-pin .school-pin-text {
+    display: none;
+  }
+  .school-pin.mini-pin:hover {
+    padding: 2px 7px;
+  }
+  .school-pin.mini-pin:hover .school-pin-text {
+    display: inline;
   }
 
   /* Shopping Mall Marker Pin Styling */
@@ -1274,10 +1291,13 @@ function initMap() {
   famousSchoolsLayer = L.layerGroup().addTo(map);
   shoppingMallsLayer = L.layerGroup().addTo(map);
 
-  // 🛍️ 监听地图缩放级别变化，自适应动态调整商场展示密度与形态 (防密集扎堆)
+  // 🛍️/🏫 监听地图缩放级别变化，自适应动态调整商场与名校展示密度与形态 (防密集扎堆)
   map.on('zoomend', () => {
     if (isShoppingMallsLayerVisible) {
       renderShoppingMallsMarkers();
+    }
+    if (isFamousSchoolsLayerVisible) {
+      renderFamousSchoolsMarkers();
     }
   });
 }
@@ -1507,18 +1527,35 @@ function focusMtrStation(stId) {
 
 function renderFamousSchoolsMarkers() {
   famousSchoolsLayer.clearLayers();
-  if (!landmarksData || !landmarksData.length) return;
+  if (!landmarksData || !landmarksData.length || !map) return;
 
-  const schools = landmarksData.filter(x => x.category === 'famous_school');
+  const currentZoom = map.getZoom();
+  const schools = landmarksData.filter(x => x.category === 'famous_school' || x.category === 'university');
+
   schools.forEach(sch => {
+    const tier = sch.tier || 2;
+
+    // 🎯 防扎堆层级过滤规则：
+    // Zoom <= 12 (全港远景): 仅显示 Tier 1 大学与超级顶尖神校 (如港大、中大、男拔、女拔、圣保罗男女等)
+    // Zoom == 13 (片区中景): 显示 Tier 1 和 Tier 2 重点名校
+    // Zoom >= 14 (街区细节): 全量展示所有学校
+    if (currentZoom <= 12 && tier > 1) {
+      return;
+    }
+
     const cName = sch.name.split(' ')[0];
     const isInter = sch.sub_type === 'international';
-    const tag = isInter ? '国际' : (sch.sub_type === 'primary' ? '小学' : '名校');
-    const color = isInter ? '#6d28d9' : '#7c3aed';
+    const isUniv = sch.category === 'university';
+    const tag = isUniv ? '大学' : (isInter ? '国际' : (sch.sub_type === 'primary' ? '小学' : '名校'));
+    const color = isUniv ? '#1d4ed8' : (isInter ? '#6d28d9' : '#7c3aed');
+    const isMini = currentZoom <= 13;
 
-    // 评选标准专属徽章 (Option 4 深度落地)
+    // 评选标准专属徽章
     let badgeText = '', badgeBg = '#f5f3ff', badgeColor = '#6d28d9', badgeBorder = '#ddd6fe';
-    if (sch.sub_type === 'international') {
+    if (isUniv) {
+      badgeText = '🎓 香港八大公立大学 · 高等学府';
+      badgeBg = '#eff6ff'; badgeColor = '#1d4ed8'; badgeBorder = '#bfdbfe';
+    } else if (isInter) {
       badgeText = '🌍 顶奢国际学校 · 高净值首选';
       badgeBg = '#f5f3ff'; badgeColor = '#6d28d9'; badgeBorder = '#ddd6fe';
     } else if (sch.district && sch.district.includes('校网')) {
@@ -1537,24 +1574,24 @@ function renderFamousSchoolsMarkers() {
     const icon = L.divIcon({
       className: 'custom-school-icon',
       html: `
-        <div class="school-pin" style="border-color: ${color};">
+        <div class="school-pin ${isMini ? 'mini-pin' : ''}" style="border-color: ${color};" title="${sch.name}">
           <span class="school-pin-logo" style="background: ${color};">${tag}</span>
           <span class="school-pin-text">${cName}</span>
         </div>
       `,
-      iconSize: [95, 26],
-      iconAnchor: [47, 13]
+      iconSize: isMini ? [36, 22] : [95, 26],
+      iconAnchor: isMini ? [18, 11] : [47, 13]
     });
 
     const marker = L.marker([sch.lat, sch.lng], { icon });
 
-    const nearbyCount = projectsData.filter(p => {
+    const nearbyCount = projectsData ? projectsData.filter(p => {
       return getDistanceKm(sch.lat, sch.lng, p.lat, p.lng) <= 1.5;
-    }).length;
+    }).length : 0;
 
     const popupContent = `
       <div class="school-popup">
-        <div class="school-popup-title">🏫 ${sch.name}</div>
+        <div class="school-popup-title">${isUniv ? '🎓' : '🏫'} ${sch.name}</div>
         <div style="margin: 4px 0 6px 0;">
           <span style="display:inline-block; padding: 2px 8px; font-size: 10.5px; font-weight: 700; border-radius: 4px; background: ${badgeBg}; color: ${badgeColor}; border: 1px solid ${badgeBorder};">
             ${badgeText}
@@ -1565,7 +1602,7 @@ function renderFamousSchoolsMarkers() {
           ✨ ${sch.highlight || '香港重点知名学校'}
         </div>
         <div style="font-size:0.76rem; color:#475569; margin-top:2px;">
-          📍 1.5km 辐射圈在售一手新盘：<strong style="color:#7c3aed;">${nearbyCount} 个</strong>
+          📍 1.5km 辐射圈在售一手新盘：<strong style="color:${color};">${nearbyCount} 个</strong>
         </div>
         <button class="btn-focus-school" onclick="focusFamousSchool('${sch.id}')">🎯 辐射筛选该校周边楼盘 (1.5km)</button>
       </div>
