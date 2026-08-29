@@ -726,11 +726,12 @@
     box-shadow: 0 3px 8px rgba(234, 88, 12, 0.25);
     white-space: nowrap;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .mall-pin:hover {
     transform: scale(1.08);
-    z-index: 999;
+    z-index: 9999 !important;
+    box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
   }
   .mall-pin-logo {
     background: #ea580c;
@@ -745,6 +746,22 @@
     font-size: 10.5px;
     font-weight: 700;
     color: #7c2d12;
+  }
+
+  /* 🛍️ Mini-Pin 轻量微标样式（用于远景及中景防重叠） */
+  .mall-pin.mini-pin {
+    padding: 2px 5px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(234, 88, 12, 0.2);
+  }
+  .mall-pin.mini-pin .mall-pin-text {
+    display: none;
+  }
+  .mall-pin.mini-pin:hover {
+    padding: 2px 7px;
+  }
+  .mall-pin.mini-pin:hover .mall-pin-text {
+    display: inline;
   }
 
   /* School & Mall Popups */
@@ -1256,6 +1273,13 @@ function initMap() {
   mtrStationsLayer = L.layerGroup().addTo(map);
   famousSchoolsLayer = L.layerGroup().addTo(map);
   shoppingMallsLayer = L.layerGroup().addTo(map);
+
+  // 🛍️ 监听地图缩放级别变化，自适应动态调整商场展示密度与形态 (防密集扎堆)
+  map.on('zoomend', () => {
+    if (isShoppingMallsLayerVisible) {
+      renderShoppingMallsMarkers();
+    }
+  });
 }
 
 const MAP_DATA_VERSION = '20260829_fast_v1';
@@ -1578,30 +1602,44 @@ function focusFamousSchool(schId) {
 
 function renderShoppingMallsMarkers() {
   shoppingMallsLayer.clearLayers();
-  if (!landmarksData || !landmarksData.length) return;
+  if (!landmarksData || !landmarksData.length || !map) return;
 
+  const currentZoom = map.getZoom();
   const malls = landmarksData.filter(x => x.category === 'shopping_mall');
+
   malls.forEach(mall => {
+    const tier = mall.tier || 2;
+
+    // 🎯 防扎堆层级过滤规则：
+    // Zoom <= 12 (全港远景): 仅显示 Tier 1 超级旗舰地标 (如置地、海港城、IFC、圆方等)
+    // Zoom == 13 (商圈中景): 显示 Tier 1 和 Tier 2 骨干商场
+    // Zoom >= 14 (街区细节): 全量展示所有商场
+    if (currentZoom <= 12 && tier > 1) {
+      return;
+    }
+
     const cName = mall.name.split(' ')[0];
     const color = '#ea580c';
+    // Zoom <= 13 时使用 Mini-Pin (微型徽标，Hover 展开全名)
+    const isMini = currentZoom <= 13;
 
     const icon = L.divIcon({
       className: 'custom-mall-icon',
       html: `
-        <div class="mall-pin" style="border-color: ${color};">
+        <div class="mall-pin ${isMini ? 'mini-pin' : ''}" style="border-color: ${color};" title="${mall.name}">
           <span class="mall-pin-logo" style="background: ${color};">商场</span>
           <span class="mall-pin-text">${cName}</span>
         </div>
       `,
-      iconSize: [95, 26],
-      iconAnchor: [47, 13]
+      iconSize: isMini ? [36, 22] : [95, 26],
+      iconAnchor: isMini ? [18, 11] : [47, 13]
     });
 
     const marker = L.marker([mall.lat, mall.lng], { icon });
 
-    const nearbyCount = projectsData.filter(p => {
+    const nearbyCount = projectsData ? projectsData.filter(p => {
       return getDistanceKm(mall.lat, mall.lng, p.lat, p.lng) <= 1.5;
-    }).length;
+    }).length : 0;
 
     const popupContent = `
       <div class="mall-popup">
