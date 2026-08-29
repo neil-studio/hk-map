@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>香港一手新盘全景地图</title>
 
-<!-- Leaflet CSS & Google Fonts -->
+<!-- Leaflet CSS & Google Fonts & Network Optimization -->
+<link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin />
+<link rel="dns-prefetch" href="https://basemaps.cartocdn.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -1254,33 +1258,62 @@ function initMap() {
   shoppingMallsLayer = L.layerGroup().addTo(map);
 }
 
+const MAP_DATA_VERSION = '20260829_fast_v1';
+
 async function loadData() {
-  try {
-    const rGeo = await fetch('hong_kong_micro_districts.geojson?v=' + Date.now());
-    microDistrictsGeoJSON = await rGeo.json();
-    renderMicroDistrictsLayer();
-  } catch(e) { console.error('加载片区GeoJSON失败:', e); }
+  console.time('⚡ 地图数据并发加载耗时');
+
+  const fetchProdSales = async () => {
+    const endpoints = [
+      './data.json',
+      '../../价单_正式版/data.json',
+      'https://neil-studio.github.io/hk/data.json?v=' + MAP_DATA_VERSION
+    ];
+    for (const url of endpoints) {
+      try {
+        const resp = await fetch(url);
+        if (resp.ok) {
+          const prodData = await resp.json();
+          console.log('✅ 成功直连正式版销控数据:', url);
+          return prodData;
+        }
+      } catch(e) {}
+    }
+    return null;
+  };
 
   try {
-    const r1 = await fetch('hk_landmarks.json?v=' + Date.now());
-    landmarksData = await r1.json();
-  } catch(e) { console.error(e); }
+    const [resGeo, resLandmarks, resMtr, resCoords, prodData] = await Promise.all([
+      fetch('hong_kong_micro_districts.geojson?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => { console.error('GeoJSON加载异常:', e); return null; }),
+      fetch('hk_landmarks.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null),
+      fetch('hk_mtr_stations.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null),
+      fetch('hk_project_coords.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null),
+      fetchProdSales()
+    ]);
 
-  try {
-    const r2 = await fetch('hk_mtr_stations.json?v=' + Date.now());
-    mtrStationsData = await r2.json();
-  } catch(e) {
-    // 兼容从 landmarks 过滤
-    mtrStationsData = landmarksData.filter(x => x.category === 'mtr');
+    if (resGeo) {
+      microDistrictsGeoJSON = resGeo;
+      renderMicroDistrictsLayer();
+    }
+    if (resLandmarks) {
+      landmarksData = resLandmarks;
+    }
+    if (resMtr) {
+      mtrStationsData = resMtr;
+    } else if (landmarksData) {
+      mtrStationsData = landmarksData.filter(x => x.category === 'mtr');
+    }
+    if (resCoords) {
+      projectsData = resCoords;
+    }
+    if (prodData && prodData.projects) {
+      mergeProductionSales(prodData);
+    }
+  } catch(err) {
+    console.error('地图数据初始化加载异常:', err);
   }
 
-  try {
-    const r3 = await fetch('hk_project_coords.json?v=' + Date.now());
-    projectsData = await r3.json();
-  } catch(e) { console.error(e); }
-
-  // 🚀 方案 B：只读实时直连正式版数据源 (零修改正式版原则)
-  await fetchProductionSalesData();
+  console.timeEnd('⚡ 地图数据并发加载耗时');
 
   populateSelects();
   renderMtrMarkers();
@@ -1300,41 +1333,17 @@ function renderMicroDistrictsLayer() {
         color: '#e11d48',       // 规划红线
         weight: 1.2,
         opacity: 0.75,
-        fillColor: feature.properties.color || '#3b82f6',
+        fillColor: (feature.properties && feature.properties.color) || '#3b82f6',
         fillOpacity: 0.08       // 低透明度半透明底色
       };
     },
     onEachFeature: function(feature, layer) {
-      const name = feature.properties.micro_district;
+      const name = feature.properties && feature.properties.micro_district;
       if (name) {
         districtBoundsMap[name] = layer.getBounds();
       }
     }
   }).addTo(map);
-}
-
-async function fetchProductionSalesData() {
-  const endpoints = [
-    'https://neil-studio.github.io/hk/data.json?t=' + Date.now(),
-    '../../价单_正式版/data.json',
-    './data.json'
-  ];
-
-  let prodData = null;
-  for (const url of endpoints) {
-    try {
-      const resp = await fetch(url, { cache: 'no-cache' });
-      if (resp.ok) {
-        prodData = await resp.json();
-        console.log('✅ 地图站成功直连正式版销控数据:', url);
-        break;
-      }
-    } catch(e) {}
-  }
-
-  if (prodData && prodData.projects) {
-    mergeProductionSales(prodData);
-  }
 }
 
 function mergeProductionSales(prodData) {
