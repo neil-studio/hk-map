@@ -612,13 +612,52 @@
     display: inline-block;
   }
 
+  /* 🎯 全局解决所有 Marker (楼盘、商场、名校、港铁) 尺寸固定截断与文字超出的核心规则 */
+  .leaflet-marker-icon.p-marker,
+  .leaflet-marker-icon.custom-school-icon,
+  .leaflet-marker-icon.custom-mall-icon,
+  .leaflet-marker-icon.custom-mtr-icon,
+  .leaflet-marker-icon.anchor-pin {
+    background: transparent !important;
+    border: none !important;
+    width: auto !important;
+    height: auto !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    pointer-events: auto;
+    overflow: visible !important;
+  }
+
+  /* 🏢 Project Marker Pin Styling (楼盘气泡自适应) */
+  .proj-pin-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    border: 1.5px solid #ffffff;
+    white-space: nowrap;
+    line-height: 1.3;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+  }
+  .proj-pin-box:hover {
+    transform: scale(1.1);
+    z-index: 9999 !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  }
+
   /* MTR Station Marker Pin Styling */
   .mtr-pin {
     background: #ffffff;
     border: 2px solid #007dc5;
     border-radius: 14px;
     padding: 2px 7px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 4px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.25);
@@ -628,7 +667,7 @@
   }
   .mtr-pin:hover {
     transform: scale(1.08);
-    z-index: 999;
+    z-index: 9999 !important;
   }
   .mtr-pin-logo {
     background: #007dc5;
@@ -1460,6 +1499,34 @@ function mergeProductionSales(prodData) {
 }
 
 
+function getDisplayPinName(fullName) {
+  if (!fullName) return '';
+  let clean = fullName.trim();
+  clean = clean.replace(/\(The Landmark\)/i, '')
+               .replace(/\(国际金融中心商场\)/i, '')
+               .replace(/\(人文艺术购物馆\)/i, '')
+               .replace(/\(港岛南岸商场\)/i, '')
+               .replace(/\(创纪之城五期\)/i, '')
+               .replace(/\(启德旗舰\)/i, '')
+               .replace(/\(The Twins \/ 启德SOGO\)/i, 'SOGO')
+               .replace(/\(Pacific Place\)/i, '')
+               .replace(/\(Times Square\)/i, '')
+               .replace(/\(Hysan Place\)/i, '')
+               .replace(/\(SOGO 铜锣湾\)/i, 'SOGO')
+               .replace(/\(The Lee Gardens\)/i, '')
+               .replace(/\(Cityplaza\)/i, '')
+               .replace(/\(Harbour City\)/i, '')
+               .replace(/\(Elements\)/i, '')
+               .replace(/\(Langham Place\)/i, '')
+               .replace(/\(Festival Walk\)/i, '')
+               .replace(/附属小学/g, '附小')
+               .replace(/Primary Division/gi, '附小')
+               .replace(/Junior School/gi, '附小')
+               .replace(/\(.*?\)/g, '')
+               .trim();
+  return clean || fullName;
+}
+
 function renderMtrMarkers() {
   mtrStationsLayer.clearLayers();
   if (!mtrStationsData || !mtrStationsData.length) return;
@@ -1467,26 +1534,25 @@ function renderMtrMarkers() {
   mtrStationsData.forEach(st => {
     const mainLine = (st.lines || st.line || '').split('/')[0];
     const color = LINE_COLORS[mainLine] || st.color || '#007dc5';
-    const cName = st.station_name_cn || st.name.split(' ')[0].replace('站', '');
+    const cName = st.station_name_cn || st.name.split(' ')[0].replace('站', '').trim();
 
     const mtrIcon = L.divIcon({
       className: 'custom-mtr-icon',
       html: `
-        <div class="mtr-pin" style="border-color: ${color};">
+        <div class="mtr-pin" style="border-color: ${color};" title="${st.name}">
           <span class="mtr-pin-logo" style="background: ${color};">MTR</span>
           <span class="mtr-pin-text">${cName}</span>
         </div>
       `,
-      iconSize: [85, 26],
-      iconAnchor: [42, 13]
+      iconSize: null
     });
 
     const marker = L.marker([st.lat, st.lng], { icon: mtrIcon });
 
     // 计算该港铁站 1.5km 范围内的楼盘数
-    const nearbyCount = projectsData.filter(p => {
+    const nearbyCount = projectsData ? projectsData.filter(p => {
       return getDistanceKm(st.lat, st.lng, p.lat, p.lng) <= 1.5;
-    }).length;
+    }).length : 0;
 
     const popupContent = `
       <div class="mtr-popup">
@@ -1536,14 +1602,11 @@ function renderFamousSchoolsMarkers() {
     const tier = sch.tier || 2;
 
     // 🎯 防扎堆层级过滤规则：
-    // Zoom <= 12 (全港远景): 仅显示 Tier 1 大学与超级顶尖神校 (如港大、中大、男拔、女拔、圣保罗男女等)
-    // Zoom == 13 (片区中景): 显示 Tier 1 和 Tier 2 重点名校
-    // Zoom >= 14 (街区细节): 全量展示所有学校
     if (currentZoom <= 12 && tier > 1) {
       return;
     }
 
-    const cName = sch.name.split(' ')[0];
+    const cName = getDisplayPinName(sch.name);
     const isInter = sch.sub_type === 'international';
     const isUniv = sch.category === 'university';
     const tag = isUniv ? '大学' : (isInter ? '国际' : (sch.sub_type === 'primary' ? '小学' : '名校'));
@@ -1579,8 +1642,7 @@ function renderFamousSchoolsMarkers() {
           <span class="school-pin-text">${cName}</span>
         </div>
       `,
-      iconSize: isMini ? [36, 22] : [95, 26],
-      iconAnchor: isMini ? [18, 11] : [47, 13]
+      iconSize: null
     });
 
     const marker = L.marker([sch.lat, sch.lng], { icon });
@@ -1648,16 +1710,12 @@ function renderShoppingMallsMarkers() {
     const tier = mall.tier || 2;
 
     // 🎯 防扎堆层级过滤规则：
-    // Zoom <= 12 (全港远景): 仅显示 Tier 1 超级旗舰地标 (如置地、海港城、IFC、圆方等)
-    // Zoom == 13 (商圈中景): 显示 Tier 1 和 Tier 2 骨干商场
-    // Zoom >= 14 (街区细节): 全量展示所有商场
     if (currentZoom <= 12 && tier > 1) {
       return;
     }
 
-    const cName = mall.name.split(' ')[0];
+    const cName = getDisplayPinName(mall.name);
     const color = '#ea580c';
-    // Zoom <= 13 时使用 Mini-Pin (微型徽标，Hover 展开全名)
     const isMini = currentZoom <= 13;
 
     const icon = L.divIcon({
@@ -1668,8 +1726,7 @@ function renderShoppingMallsMarkers() {
           <span class="mall-pin-text">${cName}</span>
         </div>
       `,
-      iconSize: isMini ? [36, 22] : [95, 26],
-      iconAnchor: isMini ? [18, 11] : [47, 13]
+      iconSize: null
     });
 
     const marker = L.marker([mall.lat, mall.lng], { icon });
@@ -1993,7 +2050,7 @@ function onAnchorSelect(type) {
           const icon = L.divIcon({
             className: 'anchor-pin',
             html: `<div style="background:${pinColor}; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(124,58,237,0.4); border:2px solid #fff; white-space:nowrap;">${iconEmoji} ${lm.name} (1.5km圈)</div>`,
-            iconSize: [200, 32], iconAnchor: [100, 16]
+            iconSize: null
           });
           currentAnchorMarker = L.marker([lm.lat, lm.lng], { icon }).addTo(map);
           showToast(`${iconEmoji} 已定位【${lm.name}】1.5km 生活圈`);
@@ -2021,7 +2078,7 @@ function onAnchorSelect(type) {
         const icon = L.divIcon({
           className: 'anchor-pin',
           html: `<div style="background:#0284c7; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(2,132,199,0.4); border:2px solid #fff; white-space:nowrap;">🚇 港铁 ${st.name} (1.5km圈)</div>`,
-          iconSize: [180, 32], iconAnchor: [90, 16]
+          iconSize: null
         });
         currentAnchorMarker = L.marker([st.lat, st.lng], { icon }).addTo(map);
         showToast(`🚇 已定位港铁【${st.name}】1.5km 通勤圈`);
@@ -2048,7 +2105,7 @@ function onAnchorSelect(type) {
           const icon = L.divIcon({
             className: 'anchor-pin',
             html: `<div style="background:#ea580c; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(234,88,12,0.4); border:2px solid #fff; white-space:nowrap;">🛍️ ${lm.name} (1.5km圈)</div>`,
-            iconSize: [200, 32], iconAnchor: [100, 16]
+            iconSize: null
           });
           currentAnchorMarker = L.marker([lm.lat, lm.lng], { icon }).addTo(map);
           showToast(`🛍️ 已定位商场【${lm.name}】1.5km 购物生活圈`);
@@ -2260,8 +2317,8 @@ function applyFilters() {
     const mColor = proj.sell_status === 'on_sale' ? '#16a34a' : '#2563eb';
     const mIcon = L.divIcon({
       className: 'p-marker',
-      html: `<div style="background:${mColor}; color:#fff; padding:4px 8px; border-radius:6px; font-size:11px; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,0.25); border:1.5px solid #fff; white-space:nowrap;">${proj.name}</div>`,
-      iconSize: [90, 24], iconAnchor: [45, 12]
+      html: `<div class="proj-pin-box" style="background:${mColor}; color:#fff;" title="${proj.name}">${proj.name}</div>`,
+      iconSize: null
     });
     const marker = L.marker([proj.lat, proj.lng], { icon: mIcon });
     marker._pName = proj.name;
