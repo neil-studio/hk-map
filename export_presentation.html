@@ -854,7 +854,7 @@
                     <tr>
                       <td><span class="table-badge-num">${idx + 1}</span></td>
                       <td><strong>${p.name}</strong></td>
-                      <td>${p.region} · ${p.district}</td>
+                      <td>${p.main_area || p.region} · ${p.micro_district || p.district}</td>
                       <td>${p.developer || '品牌发展商'}</td>
                       <td>🚇 ${p.nearest_mtr?.nearest_mtr_cn || '地铁沿线'}</td>
                       <td style="color:#2563EB; font-weight:700;">${p.total_price_desc || (p.min_price_wan ? p.min_price_wan + '万起' : '详见销控')}</td>
@@ -896,7 +896,7 @@
         }
         if (highlights.length === 0) {
           highlights = [
-            `1. 坐落于${proj.region}${proj.district}核心板块，享受顶级城市配套与优质居住环境。`,
+            `1. 坐落于${proj.main_area || proj.region} - ${proj.micro_district || proj.district}核心板块，享受顶级城市配套与优质居住环境。`,
             `2. 紧邻港铁${mtr?.nearest_mtr_cn || ''}站，轨交通勤极其高效，往返中环及跨境出行便捷。`
           ];
         }
@@ -908,35 +908,29 @@
             <table class="data-card-table">
               <thead>
                 <tr>
-                  <th style="width:24%;">在售户型</th>
-                  <th style="width:18%;">在售套数</th>
-                  <th style="width:28%;">实用面积段</th>
-                  <th style="width:30%;">折实总价区间</th>
+                  <th>户型</th>
+                  <th>待售房源</th>
+                  <th>面积段</th>
+                  <th>总价区间</th>
                 </tr>
               </thead>
               <tbody>
-                ${sales.slice(0, 4).map(s => `
+                ${sales.map(s => `
                   <tr>
                     <td><strong>${s.layout}</strong></td>
-                    <td><span style="background:#F1F5F9; padding:1px 5px; border-radius:3px; font-weight:700;">${s.unsold_count} 套</span></td>
+                    <td><span class="table-badge-num" style="background:#eff6ff; color:#2563eb;">${s.unsold_count} 伙</span></td>
                     <td>${s.sqft_range}</td>
-                    <td>
-                      ${s.price_range.includes('招标') ? '<span class="price-tender-tag">' + s.price_range + '</span>' : `<span class="price-val-tag">${s.price_range}</span>`}
-                    </td>
+                    <td style="font-weight:700; color:${s.price_range === '招标' ? '#d97706' : '#16a34a'};">${s.price_range}</td>
                   </tr>
                 `).join('')}
               </tbody>
             </table>
           `;
         } else {
-          salesTableHtml = `
-            <div style="padding:6px 10px; font-size:0.68rem; color:#64748B; text-align:center;">
-              全盘热销尾盘，具体在售单元请咨询置业顾问调取最新销控
-            </div>
-          `;
+          salesTableHtml = '<div style="padding:15px; font-size:0.75rem; color:#94a3b8; text-align:center;">暂无在售分户数据 / 现房整盘发售</div>';
         }
 
-        // 2. 各户型最近成交参考表格 (每户型最近2套)
+        // 2. 最近真实成交表格
         let txTableHtml = '';
         if (recentTx && recentTx.length > 0) {
           txTableHtml = `
@@ -978,7 +972,7 @@
             <div class="page-header-left">
               <span class="table-badge-num">${idx + 1}</span>
               <span class="page-header-title">${proj.name}</span>
-              <span class="page-header-badge">${proj.region} · ${proj.district}</span>
+              <span class="page-header-badge">${proj.main_area || proj.region} · ${proj.micro_district || proj.district}</span>
             </div>
             <img src="landma_logo.png" class="page-header-logo" alt="Logo">
           </div>

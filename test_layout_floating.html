@@ -916,6 +916,10 @@
 <script>
 let landmarksData = [], mtrStationsData = [], projectsData = [];
 let map, currentAnchorMarker, currentRadiusCircle, activeAnchorLandmark = null;
+let activeAnchorDistrict = null;
+let districtBoundsMap = {};
+let microDistrictsGeoJSON = null;
+let microDistrictsLayer = null;
 let currentRouteLine = null;
 let selectedNames = new Set();
 let isMtrLayerVisible = true;
@@ -962,6 +966,12 @@ function initMap() {
 
 async function loadData() {
   try {
+    const rGeo = await fetch('hong_kong_micro_districts.geojson?v=' + Date.now());
+    microDistrictsGeoJSON = await rGeo.json();
+    renderMicroDistrictsLayer();
+  } catch(e) { console.error('加载片区GeoJSON失败:', e); }
+
+  try {
     const r1 = await fetch('hk_landmarks.json?v=' + Date.now());
     landmarksData = await r1.json();
   } catch(e) { console.error(e); }
@@ -985,6 +995,30 @@ async function loadData() {
   populateSelects();
   renderMtrMarkers();
   applyFilters();
+}
+
+function renderMicroDistrictsLayer() {
+  if (!microDistrictsGeoJSON || !map) return;
+  if (microDistrictsLayer) map.removeLayer(microDistrictsLayer);
+
+  microDistrictsLayer = L.geoJSON(microDistrictsGeoJSON, {
+    interactive: false, // 关键：鼠标交互直接穿透至底层楼盘 Marker
+    style: function(feature) {
+      return {
+        color: '#e11d48',       // 规划红线
+        weight: 1.2,
+        opacity: 0.75,
+        fillColor: feature.properties.color || '#3b82f6',
+        fillOpacity: 0.08       // 低透明度半透明底色
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      const name = feature.properties.micro_district;
+      if (name) {
+        districtBoundsMap[name] = layer.getBounds();
+      }
+    }
+  }).addTo(map);
 }
 
 async function fetchProductionSalesData() {
@@ -1154,7 +1188,7 @@ function populateSelects() {
   // 清空除默认项外的 option
   sSchool.innerHTML = '<option value="">🎓 大学或校网...</option>';
   sMtr.innerHTML = '<option value="">🚇 全港港铁站 (98站)...</option>';
-  sDistrict.innerHTML = '<option value="">🏙️ 核心豪宅商圈...</option>';
+  sDistrict.innerHTML = '<option value="">🏙️ 核心商圈/规划片区 (两级划分)...</option>';
 
   landmarksData.forEach(lm => {
     if (lm.category === 'university' || lm.category === 'school_net') {
@@ -1162,11 +1196,6 @@ function populateSelects() {
       opt.value = lm.id;
       opt.textContent = lm.name;
       sSchool.appendChild(opt);
-    } else if (lm.category === 'district') {
-      const opt = document.createElement('option');
-      opt.value = lm.id;
-      opt.textContent = lm.name;
-      sDistrict.appendChild(opt);
     }
   });
 
@@ -1189,6 +1218,65 @@ function populateSelects() {
     });
     sMtr.appendChild(optgroup);
   }
+
+  // 🏙️ 方案 A：两级商圈下拉菜单（按大区分组，仅展示有楼盘项目的微型商圈）
+  const districtGroups = {};
+  const districtCounts = {};
+
+  projectsData.forEach(p => {
+    const ma = p.main_area || '其他大区';
+    const md = p.micro_district || p.district || '其他片区';
+    if (!districtGroups[ma]) districtGroups[ma] = new Set();
+    districtGroups[ma].add(md);
+    districtCounts[md] = (districtCounts[md] || 0) + 1;
+  });
+
+  const iconMap = {
+    '港岛中西区': '🏛️',
+    '港岛南区': '🌊',
+    '港岛湾仔及东半山': '🌟',
+    '港岛东区': '🏢',
+    '九龙中（九龙城/何文田）': '👑',
+    '九龙西（油尖旺）': '🏙️',
+    '九龙东（黄大仙/观塘）': '🌳',
+    '九龙西北（深水埗区）': '🌲'
+  };
+
+  const orderedAreas = [
+    '九龙中（九龙城/何文田）',
+    '港岛南区',
+    '港岛中西区',
+    '九龙西（油尖旺）',
+    '港岛东区',
+    '港岛湾仔及东半山',
+    '九龙西北（深水埗区）',
+    '九龙东（黄大仙/观塘）'
+  ];
+
+  const allAreas = Object.keys(districtGroups);
+  const sortedAreas = [
+    ...orderedAreas.filter(a => allAreas.includes(a)),
+    ...allAreas.filter(a => !orderedAreas.includes(a)).sort()
+  ];
+
+  sortedAreas.forEach(mainArea => {
+    const microList = Array.from(districtGroups[mainArea]).sort((a, b) => {
+      return (districtCounts[b] || 0) - (districtCounts[a] || 0);
+    });
+    const totalProjInArea = microList.reduce((sum, md) => sum + (districtCounts[md] || 0), 0);
+    const icon = iconMap[mainArea] || '📍';
+
+    const optgroup = document.createElement('optgroup');
+    optgroup.label = `${icon} ${mainArea} (${totalProjInArea}盘)`;
+
+    microList.forEach(md => {
+      const opt = document.createElement('option');
+      opt.value = md;
+      opt.textContent = `${md} (${districtCounts[md]}盘)`;
+      optgroup.appendChild(opt);
+    });
+    sDistrict.appendChild(optgroup);
+  });
 }
 
 function toggleExpandFilters() {
@@ -1241,35 +1329,78 @@ function onAnchorSelect(type) {
   const sMtr = document.getElementById('anchor-mtr');
   const sDistrict = document.getElementById('anchor-district');
 
-  let id = '';
-  if (type === 'school') { id = sSchool.value; sMtr.value = ''; sDistrict.value = ''; }
-  else if (type === 'mtr') { id = sMtr.value; sSchool.value = ''; sDistrict.value = ''; }
-  else if (type === 'district') { id = sDistrict.value; sSchool.value = ''; sMtr.value = ''; }
-
   if (currentAnchorMarker) map.removeLayer(currentAnchorMarker);
   if (currentRadiusCircle) map.removeLayer(currentRadiusCircle);
   if (currentRouteLine) { map.removeLayer(currentRouteLine); currentRouteLine = null; }
 
-  if (id) {
-    const lm = landmarksData.find(x => x.id === id) || mtrStationsData.find(x => x.id === id);
-    activeAnchorLandmark = lm;
-    if (lm) {
-      currentRadiusCircle = L.circle([lm.lat, lm.lng], {
-        radius: 1500, color: '#2563eb', fillColor: '#3b82f6', fillOpacity: 0.08, weight: 2, dashArray: '6,6'
-      }).addTo(map);
+  if (type === 'school') {
+    sMtr.value = ''; sDistrict.value = '';
+    activeAnchorDistrict = null;
+    const id = sSchool.value;
+    if (id) {
+      const lm = landmarksData.find(x => x.id === id);
+      activeAnchorLandmark = lm;
+      if (lm) {
+        currentRadiusCircle = L.circle([lm.lat, lm.lng], {
+          radius: 1500, color: '#2563eb', fillColor: '#3b82f6', fillOpacity: 0.08, weight: 2, dashArray: '6,6'
+        }).addTo(map);
 
-      map.fitBounds(currentRadiusCircle.getBounds(), { padding: [50, 50] });
+        map.fitBounds(currentRadiusCircle.getBounds(), { padding: [50, 50] });
 
-      const icon = L.divIcon({
-        className: 'anchor-pin',
-        html: `<div style="background:#dc2626; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(220,38,38,0.4); border:2px solid #fff; white-space:nowrap;">📍 ${lm.name} (1.5km圈)</div>`,
-        iconSize: [180, 32], iconAnchor: [90, 16]
-      });
-      currentAnchorMarker = L.marker([lm.lat, lm.lng], { icon }).addTo(map);
+        const icon = L.divIcon({
+          className: 'anchor-pin',
+          html: `<div style="background:#dc2626; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(220,38,38,0.4); border:2px solid #fff; white-space:nowrap;">📍 ${lm.name} (1.5km圈)</div>`,
+          iconSize: [180, 32], iconAnchor: [90, 16]
+        });
+        currentAnchorMarker = L.marker([lm.lat, lm.lng], { icon }).addTo(map);
+      }
+    } else {
+      activeAnchorLandmark = null;
     }
-  } else {
+  } else if (type === 'mtr') {
+    sSchool.value = ''; sDistrict.value = '';
+    activeAnchorDistrict = null;
+    const id = sMtr.value;
+    if (id) {
+      const st = mtrStationsData.find(x => x.id === id);
+      activeAnchorLandmark = st;
+      if (st) {
+        currentRadiusCircle = L.circle([st.lat, st.lng], {
+          radius: 1500, color: '#2563eb', fillColor: '#3b82f6', fillOpacity: 0.08, weight: 2, dashArray: '6,6'
+        }).addTo(map);
+
+        map.fitBounds(currentRadiusCircle.getBounds(), { padding: [50, 50] });
+
+        const icon = L.divIcon({
+          className: 'anchor-pin',
+          html: `<div style="background:#0284c7; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(2,132,199,0.4); border:2px solid #fff; white-space:nowrap;">🚇 港铁 ${st.name} (1.5km圈)</div>`,
+          iconSize: [180, 32], iconAnchor: [90, 16]
+        });
+        currentAnchorMarker = L.marker([st.lat, st.lng], { icon }).addTo(map);
+      }
+    } else {
+      activeAnchorLandmark = null;
+    }
+  } else if (type === 'district') {
+    sSchool.value = ''; sMtr.value = '';
     activeAnchorLandmark = null;
+    const selectedDistrict = sDistrict.value;
+    if (selectedDistrict) {
+      activeAnchorDistrict = selectedDistrict;
+      const bounds = districtBoundsMap[selectedDistrict];
+      if (bounds) {
+        map.fitBounds(bounds, {
+          padding: [40, 40],
+          maxZoom: 15,
+          animate: true,
+          duration: 1.0
+        });
+      }
+    } else {
+      activeAnchorDistrict = null;
+    }
   }
+
   applyFilters();
 }
 
@@ -1314,12 +1445,12 @@ function applyFilters() {
   let filtered = projectsData.filter(proj => {
     if (filterState.status !== 'all' && proj.sell_status !== filterState.status) return false;
 
-    // 🔍 关键词搜索过滤 (支持项目名、区域、商圈、开发商、地址)
+    // 🔍 关键词搜索过滤 (支持项目名、大区、商圈、开发商、地址)
     if (filterState.searchKeyword) {
       const kw = filterState.searchKeyword.toLowerCase().trim();
       const nameMatch = proj.name && proj.name.toLowerCase().includes(kw);
-      const districtMatch = proj.district && proj.district.toLowerCase().includes(kw);
-      const regionMatch = proj.region && proj.region.toLowerCase().includes(kw);
+      const districtMatch = (proj.micro_district && proj.micro_district.toLowerCase().includes(kw)) || (proj.district && proj.district.toLowerCase().includes(kw));
+      const regionMatch = (proj.main_area && proj.main_area.toLowerCase().includes(kw)) || (proj.region && proj.region.toLowerCase().includes(kw));
       const devMatch = proj.developer && proj.developer.toLowerCase().includes(kw);
       const addrMatch = proj.address && proj.address.toLowerCase().includes(kw);
       if (!nameMatch && !districtMatch && !regionMatch && !devMatch && !addrMatch) return false;
@@ -1339,7 +1470,13 @@ function applyFilters() {
       if (filterState.priceChip === '10000-up' && maxP < 10000) return false;
     }
 
-    // 若有选定锚点，则优先过滤出 1.5km 范围
+    // 若选定了微型商圈/片区，过滤出该片区楼盘
+    if (activeAnchorDistrict) {
+      const pDist = proj.micro_district || proj.district;
+      if (pDist !== activeAnchorDistrict) return false;
+    }
+
+    // 若选定学校/地铁锚点，则优先过滤出 1.5km 范围
     if (activeAnchorLandmark) {
       const d = getDistanceKm(activeAnchorLandmark.lat, activeAnchorLandmark.lng, proj.lat, proj.lng);
       if (d > 1.5) return false;
@@ -1401,7 +1538,7 @@ function applyFilters() {
       <div class="card-float-top">
         <div>
           <span class="card-float-title">${proj.name}</span>
-          <span style="font-size:0.72rem; color:#64748b; margin-left:6px;">📍 ${proj.region} · ${proj.district}</span>
+          <span style="font-size:0.72rem; color:#64748b; margin-left:6px;">📍 ${proj.main_area || proj.region} · ${proj.micro_district || proj.district}</span>
         </div>
         <input type="checkbox" class="card-checkbox" ${isSelected ? 'checked' : ''} onclick="toggleSelect(event, '${proj.name}')">
       </div>
@@ -1490,7 +1627,7 @@ function applyFilters() {
     const popupHTML = `
       <div class="custom-popup">
         <div class="popup-title">${proj.name}</div>
-        <div class="popup-row">📍 区域地址：<strong>${proj.region} - ${proj.district} ${proj.address ? '(' + proj.address + ')' : ''}</strong></div>
+        <div class="popup-row">📍 区域地址：<strong>${proj.main_area || proj.region} - ${proj.micro_district || proj.district} ${proj.address ? '(' + proj.address + ')' : ''}</strong></div>
         ${proj.school_net ? `<div class="popup-row">🏫 所属校网：<strong style="color:#d97706;">${proj.school_net}</strong></div>` : ''}
         ${proj.developer ? `<div class="popup-row">🏗️ 开发商：<strong>${proj.developer}</strong></div>` : ''}
         <div class="popup-row">💷 价格描述：<strong style="color:#2563eb;">${proj.total_price_desc || (proj.min_price_wan ? proj.min_price_wan + '万起' : '详见价单')}</strong></div>
@@ -1555,8 +1692,8 @@ function updateSearchSuggestions(kw) {
   const lowerKw = kw.toLowerCase();
   const matches = projectsData.filter(p => {
     const nameM = p.name && p.name.toLowerCase().includes(lowerKw);
-    const distM = p.district && p.district.toLowerCase().includes(lowerKw);
-    const regM = p.region && p.region.toLowerCase().includes(lowerKw);
+    const distM = (p.micro_district && p.micro_district.toLowerCase().includes(lowerKw)) || (p.district && p.district.toLowerCase().includes(lowerKw));
+    const regM = (p.main_area && p.main_area.toLowerCase().includes(lowerKw)) || (p.region && p.region.toLowerCase().includes(lowerKw));
     const devM = p.developer && p.developer.toLowerCase().includes(lowerKw);
     const addrM = p.address && p.address.toLowerCase().includes(lowerKw);
     return nameM || distM || regM || devM || addrM;
@@ -1582,7 +1719,7 @@ function updateSearchSuggestions(kw) {
           <span class="search-item-badge" style="background:${statusBg}; color:${statusColor};">${p.sell_status_cn}</span>
         </div>
         <div class="search-item-desc">
-          📍 ${p.region} · ${p.district} | 💷 ${priceText}
+          📍 ${p.main_area || p.region} · ${p.micro_district || p.district} | 💷 ${priceText}
         </div>
       </div>
     `;
@@ -1933,7 +2070,7 @@ function openExportModal() {
   let minP = Infinity, maxP = -Infinity;
   const districts = new Set();
   selectedList.forEach(p => {
-    districts.add(p.district || p.region);
+    districts.add(p.micro_district || p.district || p.region);
     if (p.min_price_wan) {
       if (p.min_price_wan < minP) minP = p.min_price_wan;
       if (p.min_price_wan > maxP) maxP = p.min_price_wan;
