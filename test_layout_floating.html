@@ -105,47 +105,59 @@
     display: flex;
     gap: 8px;
     flex: 1;
-    max-width: 960px;
     min-width: 0;
     align-items: center;
   }
 
   .anchor-select-glass {
-    flex: 1;
-    min-width: 0;
-    padding: 7px 10px;
+    flex: 1 1 145px;
+    min-width: 135px;
+    max-width: 175px;
+    padding: 7px 22px 7px 10px;
     border-radius: 8px;
     border: 1px solid #cbd5e1;
-    background: #ffffff;
-    font-size: 0.78rem;
+    background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") no-repeat right 7px center/11px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 0.76rem;
     font-weight: 600;
     outline: none;
     color: var(--text-primary);
     cursor: pointer;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+
+  .anchor-select-glass:hover {
+    border-color: #94a3b8;
+    background-color: #f8fafc;
   }
 
   .anchor-select-glass:focus {
     border-color: var(--brand-accent);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
   }
 
   /* 🔍 Search Box Styling */
   .search-box-wrapper {
     position: relative;
-    flex: 1.2;
-    min-width: 170px;
-    max-width: 260px;
+    flex: 1.2 1 180px;
+    min-width: 165px;
+    max-width: 250px;
     display: flex;
     align-items: center;
   }
 
   .search-input-glass {
     width: 100%;
-    padding: 7px 28px 7px 28px;
+    padding: 7px 26px 7px 26px;
     border-radius: 8px;
     border: 1px solid #cbd5e1;
     background: #ffffff;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     font-weight: 600;
     outline: none;
     color: var(--text-primary);
@@ -166,7 +178,7 @@
   .search-icon {
     position: absolute;
     left: 8px;
-    font-size: 0.76rem;
+    font-size: 0.74rem;
     pointer-events: none;
     opacity: 0.65;
   }
@@ -258,7 +270,7 @@
   .header-btn-group {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     flex-shrink: 0;
     white-space: nowrap;
   }
@@ -266,16 +278,16 @@
   .btn-layer-toggle {
     background: #f1f5f9;
     border: 1px solid #cbd5e1;
-    padding: 7px 12px;
+    padding: 6.5px 10px;
     border-radius: 8px;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     font-weight: 600;
     cursor: pointer;
     color: #334155;
     display: flex;
     align-items: center;
-    gap: 5px;
-    transition: all 0.2s;
+    gap: 4px;
+    transition: all 0.15s;
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -290,35 +302,53 @@
   .btn-filter-toggle {
     background: #f1f5f9;
     border: 1px solid #cbd5e1;
-    padding: 7px 14px;
+    padding: 6.5px 11px;
     border-radius: 8px;
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     font-weight: 600;
     cursor: pointer;
     color: #334155;
     white-space: nowrap;
     flex-shrink: 0;
+    transition: all 0.15s;
+  }
+
+  .btn-filter-toggle.active {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #1d4ed8;
+    font-weight: 700;
   }
 
   .btn-export-main {
     background: linear-gradient(135deg, #1e3a8a, #2563eb);
     color: #ffffff;
     border: none;
-    padding: 7px 16px;
+    padding: 6.5px 14px;
     border-radius: 8px;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     white-space: nowrap;
     flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(37,99,235,0.25);
+    transition: all 0.15s;
+  }
+
+  .btn-export-main:hover:not(:disabled) {
+    background: linear-gradient(135deg, #172554, #1d4ed8);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37,99,235,0.35);
   }
 
   .btn-export-main:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    background: #94a3b8;
+    box-shadow: none;
   }
 
   /* Expandable Advanced Filter Drawer */
@@ -1098,14 +1128,14 @@
 
     <!-- 3 Dropdown Anchors + Search Box -->
     <div class="three-anchors-row">
-      <select class="anchor-select-glass" id="anchor-school" onchange="onAnchorSelect('school')">
-        <option value="">🎓 大学或校网...</option>
+      <select class="anchor-select-glass" id="anchor-school" onchange="onAnchorSelect('school')" title="按重点学区、八大高校或名校筛选定位">
+        <option value="">🎓 重点学区/名校...</option>
       </select>
-      <select class="anchor-select-glass" id="anchor-mtr" onchange="onAnchorSelect('mtr')">
-        <option value="">🚇 全港港铁站 (98站)...</option>
+      <select class="anchor-select-glass" id="anchor-mtr" onchange="onAnchorSelect('mtr')" title="按全港 98 个港铁站点筛选定位">
+        <option value="">🚇 全线港铁站点...</option>
       </select>
-      <select class="anchor-select-glass" id="anchor-district" onchange="onAnchorSelect('district')">
-        <option value="">🏙️ 核心豪宅商圈...</option>
+      <select class="anchor-select-glass" id="anchor-district" onchange="onAnchorSelect('district')" title="按法定豪宅商圈或核心商场筛选定位">
+        <option value="">🏙️ 核心商圈/商场...</option>
       </select>
       <div class="search-box-wrapper" id="search-box-wrapper">
         <span class="search-icon">🔍</span>
@@ -1116,10 +1146,10 @@
     </div>
 
     <div class="header-btn-group">
-      <button class="btn-layer-toggle active" id="btn-toggle-mtr" onclick="toggleMtrLayer()">🚇 港铁站点</button>
+      <button class="btn-layer-toggle active" id="btn-toggle-mtr" onclick="toggleMtrLayer()" title="显示/隐藏港铁站点标记">🚇 港铁</button>
       <div class="layer-btn-wrapper">
-        <button class="btn-layer-toggle active" id="btn-toggle-school" onclick="toggleFamousSchoolsLayer()">
-          🏫 重点名校
+        <button class="btn-layer-toggle active" id="btn-toggle-school" onclick="toggleFamousSchoolsLayer()" title="显示/隐藏重点名校与大学标记">
+          🏫 名校
           <span class="info-bubble" title="查看名校评选标准" onclick="event.stopPropagation(); toggleSchoolTooltip();">ℹ️</span>
         </button>
         <div class="school-standard-tooltip" id="school-tooltip">
@@ -1159,9 +1189,8 @@
           </div>
         </div>
       </div>
-      <button class="btn-layer-toggle active" id="btn-toggle-mall" onclick="toggleShoppingMallsLayer()">🛍️ 大型商场</button>
-      <button class="btn-filter-toggle" onclick="toggleExpandFilters()">⚙️ 高级筛选</button>
-      <button class="btn-admin-toggle" id="btn-admin-mode" onclick="toggleAdminMode()" title="切换后台管理编辑模式">🔒 管理模式</button>
+      <button class="btn-layer-toggle active" id="btn-toggle-mall" onclick="toggleShoppingMallsLayer()" title="显示/隐藏大型商场标记">🛍️ 商场</button>
+      <button class="btn-filter-toggle" id="btn-filter-toggle" onclick="toggleExpandFilters()" title="展开/收起预算与状态筛选面板">⚙️ 筛选</button>
       <button class="btn-export-main" id="btn-export" onclick="openExportModal()" disabled>
         📄 导出方案 (<span id="selected-count">0</span>)
       </button>
@@ -1788,9 +1817,9 @@ function populateSelects() {
   const sDistrict = document.getElementById('anchor-district');
 
   // 清空除默认项外的 option
-  sSchool.innerHTML = '<option value="">🎓 大学/名校/校网...</option>';
-  sMtr.innerHTML = '<option value="">🚇 全港港铁站 (98站)...</option>';
-  sDistrict.innerHTML = '<option value="">🏙️ 核心商圈/大型商场...</option>';
+  sSchool.innerHTML = '<option value="">🎓 重点学区/名校...</option>';
+  sMtr.innerHTML = '<option value="">🚇 全线港铁站点 (98站)...</option>';
+  sDistrict.innerHTML = '<option value="">🏙️ 核心商圈/商场...</option>';
 
   // 1. 🏫 香港官方小学校网分组 (法定精准归属)
   const schoolNetGroup = document.createElement('optgroup');
@@ -1962,7 +1991,10 @@ function populateSelects() {
 }
 
 function toggleExpandFilters() {
-  document.getElementById('filter-expand-box').classList.toggle('open');
+  const box = document.getElementById('filter-expand-box');
+  const btn = document.getElementById('btn-filter-toggle');
+  const isOpen = box.classList.toggle('open');
+  if (btn) btn.classList.toggle('active', isOpen);
 }
 
 function toggleDrawer() {
