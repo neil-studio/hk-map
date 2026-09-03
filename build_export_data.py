@@ -11,12 +11,23 @@
 import os, json, re, glob
 import openpyxl
 
-SANDBOX_DIR = "/Users/nb/google/Antigravity/工作/运营/价单/sandbox"
+SANDBOX_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.join(SANDBOX_DIR, ".."))
 PROD_DIR = "/Users/nb/google/Antigravity/工作/运营/价单_正式版"
 FILES_DIR = os.path.join(PROD_DIR, "files")
 COORDS_FILE = os.path.join(SANDBOX_DIR, "hk_project_coords.json")
+
 DATA_FILE = os.path.join(PROD_DIR, "data.json")
+if not os.path.exists(DATA_FILE) or not os.access(DATA_FILE, os.R_OK):
+    DATA_FILE = os.path.join(BASE_DIR, "data.json")
+
 BASE_INFO_FILE = os.path.join(PROD_DIR, "楼盘基础信息库.xlsx")
+if not os.path.exists(BASE_INFO_FILE) or not os.access(BASE_INFO_FILE, os.R_OK):
+    alt_base = "/Users/nb/google/Antigravity/工作/运营/聚焦盘精选盘/楼盘资料.xlsx"
+    if os.path.exists(alt_base) and os.access(alt_base, os.R_OK):
+        BASE_INFO_FILE = alt_base
+    else:
+        BASE_INFO_FILE = os.path.join(BASE_DIR, "楼盘基础信息库.xlsx")
 
 KNOWN_DEVELOPERS = [
     ("新鸿基地产", ["新鸿基地产", "新鸿基", "SHKP", "Sun Hung Kai"]),
@@ -99,11 +110,16 @@ def extract_completion_date(text):
 
 def parse_excel_sales_and_tx():
     files = glob.glob(os.path.join(FILES_DIR, "*.xlsx"))
+    if not files:
+        files = glob.glob(os.path.join(SANDBOX_DIR, "../files", "*.xlsx"))
+    if not files:
+        files = glob.glob(os.path.join(SANDBOX_DIR, "../*/*_销控明细表.xlsx"))
     project_sales = {}
     project_tx = {}
+    project_bounds = {}
     
     for fpath in files:
-        fname = os.path.basename(fpath).replace(".xlsx", "")
+        fname = os.path.basename(fpath).replace(".xlsx", "").replace("_销控明细表", "")
         parts = fname.split("-")
         pname = parts[-1].strip()
         
@@ -130,8 +146,13 @@ def parse_excel_sales_and_tx():
             col_layout = find_col(["户型", "间隔", "单位类型", "房间"])
             col_sqft = find_col(["实用面积", "面积", "呎数"])
             col_status = find_col(["销控状态", "状态", "销售状态"])
-            col_price = find_col(["折实总价", "总价", "售价", "成交价"])
-            col_uprice = find_col(["折实呎价", "实用呎价", "呎价"])
+            
+            # 分离折实价与基础总价/呎价列
+            col_disc_price = find_col(["折实总价"])
+            col_tot_price = find_col(["总价", "售价", "成交价"])
+            col_disc_uprice = find_col(["折实呎价"])
+            col_tot_uprice = find_col(["实用呎价", "呎价"])
+            
             col_date = find_col(["成交日期", "日期"])
             col_tender = find_col(["是否招标", "招标"])
 
@@ -162,8 +183,16 @@ def parse_excel_sales_and_tx():
                 elif "特色" in layout or "天台" in layout or "花园" in layout: layout = "特色单位"
                 
                 sqft = r[col_sqft]
-                price = clean_price(r[col_price]) if col_price != -1 and col_price < len(r) else None
-                uprice = r[col_uprice] if col_uprice != -1 and col_uprice < len(r) else None
+                
+                # 双重回退读取总价与呎价
+                p_disc = clean_price(r[col_disc_price]) if col_disc_price != -1 and col_disc_price < len(r) else None
+                p_tot = clean_price(r[col_tot_price]) if col_tot_price != -1 and col_tot_price < len(r) else None
+                price = p_disc if p_disc is not None else p_tot
+
+                u_disc = r[col_disc_uprice] if col_disc_uprice != -1 and col_disc_uprice < len(r) else None
+                u_tot = r[col_tot_uprice] if col_tot_uprice != -1 and col_tot_uprice < len(r) else None
+                uprice = u_disc if (u_disc not in [None, '-', '暂无', '']) else u_tot
+
                 date = str(r[col_date]).strip() if col_date != -1 and col_date < len(r) and r[col_date] is not None else ""
                 if date in ["-", "None", "暂无"]: date = ""
 
@@ -187,6 +216,7 @@ def parse_excel_sales_and_tx():
                         'layout': layout,
                         'sqft': f'{int(sqft)} 呎' if isinstance(sqft, (int, float)) and sqft > 0 else '详见销控',
                         'price': fmt_currency(price),
+                        'price_num': price,
                         'unit_price': fmt_uprice(uprice),
                         'date': date or '-'
                     })
@@ -197,7 +227,9 @@ def parse_excel_sales_and_tx():
                 if col_tender != -1 and col_tender < len(r) and r[col_tender] is not None:
                     if str(r[col_tender]).strip() in ["是", "招标", "True", "true"]:
                         is_tender = True
-                if col_price != -1 and col_price < len(r) and str(r[col_price]).strip() in ["招标", "招标单位"]:
+                if col_disc_price != -1 and col_disc_price < len(r) and str(r[col_disc_price]).strip() in ["招标", "招标单位"]:
+                    is_tender = True
+                if col_tot_price != -1 and col_tot_price < len(r) and str(r[col_tot_price]).strip() in ["招标", "招标单位"]:
                     is_tender = True
                 
                 if layout not in unsold_layout_data:
@@ -217,6 +249,7 @@ def parse_excel_sales_and_tx():
             layout_order = ["开放式", "1 房", "2 房", "3 房", "4 房", "5 房 / 大宅", "复式大宅", "特色单位", "独立洋房"]
             sorted_keys = sorted(unsold_layout_data.keys(), key=lambda k: layout_order.index(k) if k in layout_order else 99)
             
+            all_unsold_prices = []
             for l_name in sorted_keys:
                 d = unsold_layout_data[l_name]
                 if d["unsold"] == 0:
@@ -229,6 +262,7 @@ def parse_excel_sales_and_tx():
                     sqft_str = "详见销控"
                 
                 if d["prices"]:
+                    all_unsold_prices.extend(d["prices"])
                     min_p = min(d["prices"])
                     max_p = max(d["prices"])
                     p_str1 = fmt_currency(min_p)
@@ -252,25 +286,58 @@ def parse_excel_sales_and_tx():
 
             # 整理各户型最近2套成交列表
             recent_tx_list = []
+            all_sold_prices = []
             sorted_sold_layouts = sorted(sold_layout_data.keys(), key=lambda k: layout_order.index(k) if k in layout_order else 99)
             for l_name in sorted_sold_layouts:
                 tx_items = sold_layout_data[l_name]
+                for item in tx_items:
+                    if item.get('price_num'):
+                        all_sold_prices.append(item['price_num'])
                 # 按日期倒序排列，取最近 2 套
                 tx_items_sorted = sorted(tx_items, key=lambda x: str(x['date']) if x['date'] and x['date'] != '-' else '0000-00-00', reverse=True)
                 for tx in tx_items_sorted[:2]:
-                    recent_tx_list.append(tx)
+                    # 清理 price_num 临时字段
+                    clean_tx = {k: v for k, v in tx.items() if k != 'price_num'}
+                    recent_tx_list.append(clean_tx)
 
             project_tx[pname] = recent_tx_list
+
+            # 计算项目的精准最低与最高价格 (万元)
+            if all_unsold_prices:
+                min_wan = round(min(all_unsold_prices) / 10000.0, 2)
+                max_wan = round(max(all_unsold_prices) / 10000.0, 2)
+                project_bounds[pname] = {
+                    'min_price_wan': min_wan,
+                    'max_price_wan': max_wan,
+                    'has_price_data': True,
+                    'desc': f"${min_wan}万起" if min_wan == max_wan else f"${min_wan}万 - ${max_wan}万"
+                }
+            elif all_sold_prices:
+                min_wan = round(min(all_sold_prices) / 10000.0, 2)
+                max_wan = round(max(all_sold_prices) / 10000.0, 2)
+                project_bounds[pname] = {
+                    'min_price_wan': min_wan,
+                    'max_price_wan': max_wan,
+                    'has_price_data': True,
+                    'desc': f"参考成交: ${min_wan}万起" if min_wan == max_wan else f"参考成交: ${min_wan}万 - ${max_wan}万"
+                }
+            else:
+                project_bounds[pname] = {
+                    'min_price_wan': None,
+                    'max_price_wan': None,
+                    'has_price_data': False,
+                    'desc': '招标发售 / 详见价单'
+                }
 
         except Exception as e:
             print(f"⚠️ 解析 {fname} 失败: {e}")
             
     print(f"✅ 成功解析在售项目: {len(project_sales)} 个，成交记录项目: {len(project_tx)} 个")
-    return project_sales, project_tx
+    return project_sales, project_tx, project_bounds
 
 def main():
     print("1️⃣ 开始解析销控表与成交记录...")
-    sales_data, tx_data = parse_excel_sales_and_tx()
+    sales_data, tx_data, bounds_data = parse_excel_sales_and_tx()
 
     print("2️⃣ 读取沙盒数据 hk_project_coords.json...")
     with open(COORDS_FILE, "r", encoding="utf-8") as f:
@@ -330,8 +397,9 @@ def main():
         '花语海第2期': ('34校网', '九龙城区校网'),
     }
 
-    print("3️⃣ 整合发展商、落成日期、校网归属、在售明细、最近成交记录...")
+    print("3️⃣ 整合发展商、落成日期、校网归属、在售明细、最近成交记录、精准价格区间...")
     tx_attached = 0
+    price_attached = 0
     for p in projects:
         pname = p["name"].strip()
         dj_p = data_json_map.get(pname, {})
@@ -384,6 +452,64 @@ def main():
         p["recent_transactions"] = tx if tx else []
         if p["recent_transactions"]:
             tx_attached += 1
+
+        # 匹配精准价格区间与在售最低价描述
+        pb = bounds_data.get(pname)
+        if not pb:
+            for k, val in bounds_data.items():
+                if k in pname or pname in k:
+                    pb = val
+                    break
+        
+        if pb and pb.get('has_price_data'):
+            p["min_price_wan"] = pb["min_price_wan"]
+            p["max_price_wan"] = pb["max_price_wan"]
+            p["has_price_data"] = True
+            p["excel_min_price_desc"] = pb["desc"]
+            price_attached += 1
+        else:
+            # 兜底：优先从文本描述中提取具体数值，其次根据 price_tier 设定
+            tier = p.get("price_tier") or dj_p.get("price_tier", "")
+            p_desc = " ".join(filter(None, [
+                p.get("total_price_desc"),
+                dj_p.get("total_price_desc"),
+                p.get("basic_price_desc"),
+                dj_p.get("basic_price_desc")
+            ]))
+            
+            min_w, max_w = None, None
+            if p_desc:
+                m_yi = re.search(r'(\d+(?:\.\d+)?)\s*亿', p_desc)
+                m_wan = re.search(r'(\d+(?:\.\d+)?)\s*万', p_desc)
+                if m_yi:
+                    val_w = float(m_yi.group(1)) * 10000
+                    min_w, max_w = round(val_w * 0.95, 2), round(val_w * 1.3, 2)
+                elif m_wan:
+                    val_w = float(m_wan.group(1))
+                    min_w, max_w = round(val_w * 0.95, 2), round(val_w * 1.3, 2)
+            
+            if min_w is None:
+                if tier in ["1000-down", "1000万以内"]:
+                    min_w, max_w = 0, 1000
+                elif tier in ["1000-2000", "1000-2000万"]:
+                    min_w, max_w = 1000, 2000
+                elif tier in ["2000-5000", "2000-5000万"]:
+                    min_w, max_w = 2000, 5000
+                elif tier in ["5000-10000", "5000-1亿"]:
+                    min_w, max_w = 5000, 10000
+                elif tier in ["10000+", "10000-up", "1亿以上"]:
+                    min_w, max_w = 10000, 99999
+            
+            p["min_price_wan"] = min_w
+            p["max_price_wan"] = max_w
+            p["has_price_data"] = (min_w is not None)
+            if p["has_price_data"]:
+                price_attached += 1
+                p["excel_min_price_desc"] = f"预估约: ${int(min_w)}万 - ${int(max_w)}万"
+            elif p.get("sell_status") == "coming_soon":
+                p["excel_min_price_desc"] = "即将发售 / 待定"
+            else:
+                p["excel_min_price_desc"] = "招标发售 / 详见价单"
 
     print(f"4️⃣ 保存更新至 {COORDS_FILE} (共 {len(projects)} 个楼盘，挂载最近成交数据 {tx_attached} 个)...")
     with open(COORDS_FILE, "w", encoding="utf-8") as f:

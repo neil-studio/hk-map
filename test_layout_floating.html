@@ -1178,6 +1178,7 @@
       <div class="filter-chip-mini" data-price="2000-5000">2000-5000万</div>
       <div class="filter-chip-mini" data-price="5000-10000">5000-1亿</div>
       <div class="filter-chip-mini" data-price="10000-up">1亿以上</div>
+      <div class="filter-chip-mini" data-price="tender">待定/招标</div>
     </div>
 
     <div class="filter-group-item">
@@ -2193,18 +2194,28 @@ function applyFilters() {
       if (!nameMatch && !districtMatch && !regionMatch && !devMatch && !addrMatch) return false;
     }
 
-    const minP = proj.min_price_wan || 0;
-    const maxP = proj.max_price_wan || 99999;
+    // 💷 价格预算过滤 (基于项目真实 min_price_wan 与 max_price_wan 的精准区间交集算法)
+    const hasP = (proj.min_price_wan !== null && proj.min_price_wan !== undefined && proj.max_price_wan !== null && proj.max_price_wan !== undefined);
+    const minP = hasP ? proj.min_price_wan : null;
+    const maxP = hasP ? proj.max_price_wan : null;
 
     if (filterState.minPrice !== null || filterState.maxPrice !== null) {
+      // 自定义区间过滤：无标价项目不计入数值区间
+      if (!hasP) return false;
       if (filterState.minPrice !== null && maxP < filterState.minPrice) return false;
       if (filterState.maxPrice !== null && minP > filterState.maxPrice) return false;
     } else if (filterState.priceChip !== 'all') {
-      if (filterState.priceChip === '1000-down' && minP >= 1000) return false;
-      if (filterState.priceChip === '1000-2000' && (maxP < 1000 || minP > 2000)) return false;
-      if (filterState.priceChip === '2000-5000' && (maxP < 2000 || minP > 5000)) return false;
-      if (filterState.priceChip === '5000-10000' && (maxP < 5000 || minP > 10000)) return false;
-      if (filterState.priceChip === '10000-up' && maxP < 10000) return false;
+      if (filterState.priceChip === 'tender') {
+        // 专门查看无标价/纯招标/即将发售待定项目
+        if (hasP && proj.sell_status !== 'coming_soon') return false;
+      } else {
+        if (!hasP) return false;
+        if (filterState.priceChip === '1000-down' && minP >= 1000) return false;
+        if (filterState.priceChip === '1000-2000' && (maxP < 1000 || minP > 2000)) return false;
+        if (filterState.priceChip === '2000-5000' && (maxP < 2000 || minP > 5000)) return false;
+        if (filterState.priceChip === '5000-10000' && (maxP < 5000 || minP > 10000)) return false;
+        if (filterState.priceChip === '10000-up' && maxP < 10000) return false;
+      }
     }
 
     // 若选定了微型商圈/片区，过滤出该片区楼盘
@@ -2816,15 +2827,19 @@ function openExportModal() {
   const districts = new Set();
   selectedList.forEach(p => {
     districts.add(p.micro_district || p.district || p.region);
-    if (p.min_price_wan) {
+    if (p.min_price_wan !== null && p.min_price_wan !== undefined) {
       if (p.min_price_wan < minP) minP = p.min_price_wan;
-      if (p.min_price_wan > maxP) maxP = p.min_price_wan;
+    }
+    if (p.max_price_wan !== null && p.max_price_wan !== undefined) {
+      if (p.max_price_wan > maxP) maxP = p.max_price_wan;
+    } else if (p.min_price_wan !== null && p.min_price_wan !== undefined && p.min_price_wan > maxP) {
+      maxP = p.min_price_wan;
     }
   });
 
   let budgetStr = '';
   if (minP !== Infinity && maxP !== -Infinity) {
-    budgetStr = minP === maxP ? `${minP}万 港币左右` : `${minP}万 - ${maxP + 1000}万 港币`;
+    budgetStr = minP === maxP ? `${Math.round(minP)}万 港币左右` : `${Math.round(minP)}万 - ${Math.round(maxP)}万 港币`;
   } else {
     budgetStr = '2000万 - 5000万 港币';
   }
