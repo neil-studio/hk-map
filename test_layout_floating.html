@@ -1612,7 +1612,7 @@ function initMap() {
   });
 }
 
-const MAP_DATA_VERSION = '20260908_midlevels_v2';
+const MAP_DATA_VERSION = '20260909_search_fix_v3';
 
 async function loadData() {
   console.time('⚡ 地图数据并发加载耗时');
@@ -1658,7 +1658,9 @@ async function loadData() {
       mtrStationsData = landmarksData.filter(x => x.category === 'mtr');
     }
     if (resCoords) {
-      projectsData = resCoords;
+      // 按照用户指示排除特定项目 (如 33清水湾第1期)
+      const EXCLUDE_PROJECTS = ['33清水湾第1期'];
+      projectsData = resCoords.filter(p => !EXCLUDE_PROJECTS.includes(p.name));
     }
     if (prodData && prodData.projects) {
       mergeProductionSales(prodData);
@@ -2682,14 +2684,36 @@ function applyFilters() {
    ========================================================================= */
 
 function onProjectSearchInput(val) {
-  filterState.searchKeyword = val.trim();
+  const kw = val.trim();
+  filterState.searchKeyword = kw;
   const clearBtn = document.getElementById('search-clear-btn');
   if (clearBtn) {
-    if (val.trim()) clearBtn.classList.add('visible');
+    if (kw) clearBtn.classList.add('visible');
     else clearBtn.classList.remove('visible');
   }
-  updateSearchSuggestions(val.trim());
+  updateSearchSuggestions(kw);
+
+  if (kw) {
+    // 检查是否有完全精准匹配的项目名 (例如用户输入完整的"博峰"或"泓璟")
+    const exact = projectsData.find(p => p.name.toLowerCase() === kw.toLowerCase());
+    if (exact) {
+      resetConflictingFilters(exact);
+    }
+  }
+
   applyFilters();
+
+  // 若搜索关键词明确且仅匹配到 1 个项目，自动平移聚焦该项目
+  if (kw) {
+    const matched = projectsData.filter(p => p.name.toLowerCase() === kw.toLowerCase());
+    if (matched.length === 1) {
+      const p = matched[0];
+      map.flyTo([p.lat, p.lng], 16, { duration: 0.8 });
+      setTimeout(() => {
+        if (markersByName[p.name]) markersByName[p.name].openPopup();
+      }, 850);
+    }
+  }
 }
 
 function onProjectSearchFocus() {
@@ -2748,6 +2772,88 @@ function updateSearchSuggestions(kw) {
   sug.classList.add('open');
 }
 
+function resetConflictingFilters(p) {
+  let changed = false;
+
+  // 1. 状态筛选冲突处理：若当前筛选了特定状态（如 on_sale），但目标楼盘不符（如 coming_soon），自动将状态切回“全部”
+  if (filterState.status !== 'all' && p.sell_status && filterState.status !== p.sell_status) {
+    filterState.status = 'all';
+    document.querySelectorAll('#status-chips .filter-chip-mini').forEach(c => {
+      c.classList.toggle('active', c.dataset.status === 'all');
+    });
+    changed = true;
+  }
+
+  // 2. 价格区间冲突处理：若当前有价格预算过滤，但目标楼盘为待定/无价格，或价格落在当前区间外，自动重置价格为“全部”
+  const hasP = (p.min_price_wan !== null && p.min_price_wan !== undefined && p.max_price_wan !== null && p.max_price_wan !== undefined);
+  const minP = hasP ? p.min_price_wan : null;
+  const maxP = hasP ? p.max_price_wan : null;
+  let priceConflict = false;
+
+  if (filterState.minPrice !== null || filterState.maxPrice !== null) {
+    if (!hasP) priceConflict = true;
+    else if (filterState.minPrice !== null && maxP < filterState.minPrice) priceConflict = true;
+    else if (filterState.maxPrice !== null && minP > filterState.maxPrice) priceConflict = true;
+  } else if (filterState.priceChip !== 'all') {
+    if (filterState.priceChip === 'tender') {
+      if (hasP && p.sell_status !== 'coming_soon') priceConflict = true;
+    } else {
+      if (!hasP) priceConflict = true;
+      else if (filterState.priceChip === '1000-down' && minP >= 1000) priceConflict = true;
+      else if (filterState.priceChip === '1000-2000' && (maxP < 1000 || minP > 2000)) priceConflict = true;
+      else if (filterState.priceChip === '2000-5000' && (maxP < 2000 || minP > 5000)) priceConflict = true;
+      else if (filterState.priceChip === '5000-10000' && (maxP < 5000 || minP > 10000)) priceConflict = true;
+      else if (filterState.priceChip === '10000-up' && maxP < 10000) priceConflict = true;
+    }
+  }
+
+  if (priceConflict) {
+    filterState.priceChip = 'all';
+    filterState.minPrice = null;
+    filterState.maxPrice = null;
+    const pMin = document.getElementById('p-min');
+    const pMax = document.getElementById('p-max');
+    if (pMin) pMin.value = '';
+    if (pMax) pMax.value = '';
+    document.querySelectorAll('#price-chips .filter-chip-mini').forEach(c => {
+      c.classList.toggle('active', c.dataset.price === 'all');
+    });
+    changed = true;
+  }
+
+  // 3. 商圈/学区/港铁锚点冲突处理：清除区域性锁定，保证全局视野
+  let anchorConflict = false;
+  if (activeAnchorDistrict) {
+    const pDist = p.micro_district || p.district;
+    if (pDist !== activeAnchorDistrict) anchorConflict = true;
+  }
+  if (activeAnchorSchoolNet) {
+    if (p.primary_school_net !== activeAnchorSchoolNet) anchorConflict = true;
+  }
+  if (activeAnchorLandmark) {
+    const d = getDistanceKm(activeAnchorLandmark.lat, activeAnchorLandmark.lng, p.lat, p.lng);
+    if (d > 1.5) anchorConflict = true;
+  }
+
+  if (anchorConflict) {
+    activeAnchorDistrict = null;
+    activeAnchorSchoolNet = null;
+    activeAnchorLandmark = null;
+    const sSchool = document.getElementById('anchor-school');
+    const sMtr = document.getElementById('anchor-mtr');
+    const sDistrict = document.getElementById('anchor-district');
+    if (sSchool) sSchool.value = '';
+    if (sMtr) sMtr.value = '';
+    if (sDistrict) sDistrict.value = '';
+    if (currentAnchorMarker) { map.removeLayer(currentAnchorMarker); currentAnchorMarker = null; }
+    if (currentRadiusCircle) { map.removeLayer(currentRadiusCircle); currentRadiusCircle = null; }
+    if (currentRouteLine) { map.removeLayer(currentRouteLine); currentRouteLine = null; }
+    changed = true;
+  }
+
+  return changed;
+}
+
 function selectProjectSuggestion(name) {
   const p = projectsData.find(x => x.name === name);
   if (!p) return;
@@ -2762,6 +2868,9 @@ function selectProjectSuggestion(name) {
     sug.innerHTML = '';
     sug.classList.remove('open');
   }
+
+  // 智能清除所有与该楼盘相冲突的外部筛选，确保该楼盘 100% 能够被渲染
+  resetConflictingFilters(p);
 
   filterState.searchKeyword = p.name;
   applyFilters();
@@ -2780,18 +2889,22 @@ function onProjectSearchKeydown(event) {
     const sug = document.getElementById('search-suggestions');
     if (sug) sug.classList.remove('open');
 
+    // 回车时，若输入框有内容，优先取第一个匹配项进行完整联动选择定位
+    const kw = (document.getElementById('project-search-input')?.value || '').trim();
+    if (kw) {
+      const first = projectsData.find(p => p.name.toLowerCase().includes(kw.toLowerCase()) || kw.toLowerCase().includes(p.name.toLowerCase()));
+      if (first) {
+        selectProjectSuggestion(first.name);
+        return;
+      }
+    }
+
     // 若有结果，定位到当前列表第一项
     const list = document.getElementById('drawer-list');
     const firstCard = list ? list.querySelector('.card-float-title') : null;
     if (firstCard) {
       const pName = firstCard.textContent.trim();
-      const p = projectsData.find(x => x.name === pName);
-      if (p) {
-        map.flyTo([p.lat, p.lng], 16, { duration: 0.8 });
-        setTimeout(() => {
-          if (markersByName[p.name]) markersByName[p.name].openPopup();
-        }, 850);
-      }
+      selectProjectSuggestion(pName);
     }
   } else if (event.key === 'Escape') {
     const sug = document.getElementById('search-suggestions');

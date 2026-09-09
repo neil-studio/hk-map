@@ -68872,5 +68872,404 @@
     "school_net": "18校网 / 南區校网",
     "max_price_wan": null,
     "has_price_data": false
+  },
+  {
+    "name": "泓璟",
+    "region": "九龙",
+    "district": "何文田",
+    "lat": 22.319018,
+    "lng": 114.173888,
+    "sell_status": "on_sale",
+    "sell_status_cn": "出售中",
+    "is_coming_soon": false,
+    "price_tier": "",
+    "total_units": 91,
+    "sale_units": 24,
+    "sold_units": 13,
+    "priced_units": 0,
+    "pending_units": 54,
+    "basic_price_desc": "招标发售 / 详见价单",
+    "excel_min_price_desc": "招标发售",
+    "min_price_wan": null,
+    "max_price_wan": null,
+    "has_price_data": false,
+    "sqft_price_desc": "",
+    "main_layout": "开放式 - 1房",
+    "reason": "何文田核心名校网精品新盘",
+    "mainland_selling_points": "34名校网，旺中带静",
+    "developer": "輝宇國際",
+    "address": "自由道 1B號",
+    "main_area": "九龙中（九龙城/何文田）",
+    "micro_district": "何文田及加多利山",
+    "primary_school_net": "34校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "34校网 / 九龍城校网",
+    "nearest_mtr": {
+      "nearest_mtr_id": "mtr_mong_kok_east",
+      "nearest_mtr_name": "旺角東站 (東鐵綫)",
+      "nearest_mtr_cn": "旺角東",
+      "nearest_mtr_en": "Mong Kok East",
+      "nearest_mtr_lines": "東鐵綫",
+      "nearest_mtr_lat": 22.3221,
+      "nearest_mtr_lng": 114.1722,
+      "dist_straight_m": 384,
+      "dist_walk_m": 499,
+      "walk_time_min": 6.2,
+      "route_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.173888,
+            22.319018
+          ],
+          [
+            114.1722,
+            22.3221
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "name": "海德园第2期",
+    "region": "港岛",
+    "district": "柴湾",
+    "lat": 22.265957,
+    "lng": 114.24407,
+    "sell_status": "registration",
+    "sell_status_cn": "即將發售",
+    "is_coming_soon": true,
+    "price_tier": "",
+    "total_units": 258,
+    "sale_units": 52,
+    "sold_units": 0,
+    "priced_units": 0,
+    "pending_units": 206,
+    "basic_price_desc": "即将发售 / 待定",
+    "excel_min_price_desc": "即将发售 / 待定",
+    "min_price_wan": null,
+    "max_price_wan": null,
+    "has_price_data": false,
+    "sqft_price_desc": "",
+    "main_layout": "1房 - 3房",
+    "reason": "太古地产柴湾全新海景大型住宅项目",
+    "mainland_selling_points": "太古品质港岛全新大型综合体",
+    "developer": "太古地產",
+    "address": "常安街99號",
+    "main_area": "港岛东区",
+    "micro_district": "石澳、大浪湾及鹤咀",
+    "primary_school_net": "16校网",
+    "secondary_school_net": "東區校网",
+    "school_net": "16校网 / 東區校网",
+    "nearest_mtr": {
+      "nearest_mtr_id": "mtr_chai_wan",
+      "nearest_mtr_name": "柴灣站 (港島綫)",
+      "nearest_mtr_cn": "柴灣",
+      "nearest_mtr_en": "Chai Wan",
+      "nearest_mtr_lines": "港島綫",
+      "nearest_mtr_lat": 22.2649,
+      "nearest_mtr_lng": 114.2371,
+      "dist_straight_m": 727,
+      "dist_walk_m": 945,
+      "walk_time_min": 11.8,
+      "route_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.24407,
+            22.265957
+          ],
+          [
+            114.2371,
+            22.2649
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "name": "叡璟II",
+    "region": "九龙",
+    "district": "西南九龙",
+    "lat": 22.331917,
+    "lng": 114.151362,
+    "sell_status": "coming_soon",
+    "sell_status_cn": "即將發售",
+    "is_coming_soon": true,
+    "price_tier": "",
+    "total_units": 407,
+    "sale_units": 0,
+    "sold_units": 0,
+    "priced_units": 0,
+    "pending_units": 407,
+    "basic_price_desc": "即将发售 / 待定",
+    "excel_min_price_desc": "即将发售 / 待定",
+    "min_price_wan": null,
+    "max_price_wan": null,
+    "has_price_data": false,
+    "sqft_price_desc": "",
+    "main_layout": "1房 - 4房",
+    "reason": "西南九龙临海优质豪宅新盘",
+    "mainland_selling_points": "西九龙海滨成熟配套，交通极度便利",
+    "developer": "華潤置地",
+    "address": "發祥街西8號",
+    "main_area": "九龙西（油尖旺）",
+    "micro_district": "南昌及西九龙海滨",
+    "primary_school_net": "40校网",
+    "secondary_school_net": "深水埗校网",
+    "school_net": "40校网 / 深水埗校网",
+    "nearest_mtr": {
+      "nearest_mtr_id": "mtr_cheung_sha_wan",
+      "nearest_mtr_name": "長沙灣站 (荃灣綫)",
+      "nearest_mtr_cn": "長沙灣",
+      "nearest_mtr_en": "Cheung Sha Wan",
+      "nearest_mtr_lines": "荃灣綫",
+      "nearest_mtr_lat": 22.3358,
+      "nearest_mtr_lng": 114.1558,
+      "dist_straight_m": 628,
+      "dist_walk_m": 817,
+      "walk_time_min": 10.2,
+      "route_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.151362,
+            22.331917
+          ],
+          [
+            114.1558,
+            22.3358
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "name": "映汇",
+    "region": "九龙",
+    "district": "红磡",
+    "lat": 22.30712,
+    "lng": 114.18499,
+    "sell_status": "registration",
+    "sell_status_cn": "即將發售",
+    "is_coming_soon": true,
+    "price_tier": "",
+    "total_units": 263,
+    "sale_units": 0,
+    "sold_units": 0,
+    "priced_units": 111,
+    "pending_units": 152,
+    "basic_price_desc": "公开价单 / 详见正式版",
+    "excel_min_price_desc": "已开价待售",
+    "min_price_wan": 360.0,
+    "max_price_wan": 980.0,
+    "has_price_data": true,
+    "sqft_price_desc": "",
+    "main_layout": "开放式 - 2房",
+    "reason": "恒基必嘉坊系列 Baker Circle Greenwich",
+    "mainland_selling_points": "红磡三线铁路上盖百万方尺大型商住综合体",
+    "developer": "恒基兆業",
+    "address": "寶其利街18號",
+    "main_area": "九龙中（九龙城/何文田）",
+    "micro_district": "红磡及黄埔",
+    "primary_school_net": "35校网",
+    "secondary_school_net": "九龍城校网",
+    "school_net": "35校网 / 九龍城校网",
+    "nearest_mtr": {
+      "nearest_mtr_id": "mtr_ho_man_tin",
+      "nearest_mtr_name": "何文田站 (觀塘綫)",
+      "nearest_mtr_cn": "何文田",
+      "nearest_mtr_en": "Ho Man Tin",
+      "nearest_mtr_lines": "觀塘綫/屯馬綫",
+      "nearest_mtr_lat": 22.3094,
+      "nearest_mtr_lng": 114.183,
+      "dist_straight_m": 326,
+      "dist_walk_m": 424,
+      "walk_time_min": 5.3,
+      "route_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.18499,
+            22.30712
+          ],
+          [
+            114.183,
+            22.3094
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "name": "肇辉台6号",
+    "region": "港岛",
+    "district": "半山区东部",
+    "lat": 22.27178,
+    "lng": 114.17798,
+    "sell_status": "on_sale",
+    "sell_status_cn": "出售中",
+    "is_coming_soon": false,
+    "price_tier": "5000-10000",
+    "total_units": 24,
+    "sale_units": 0,
+    "sold_units": 8,
+    "priced_units": 9,
+    "pending_units": 3,
+    "basic_price_desc": "现楼豪宅 / 详见价单",
+    "excel_min_price_desc": "现楼豪宅",
+    "min_price_wan": 5000.0,
+    "max_price_wan": 12000.0,
+    "has_price_data": true,
+    "sqft_price_desc": "",
+    "main_layout": "3房 - 4房大户",
+    "reason": "东半山传统顶尖豪宅地段现楼",
+    "mainland_selling_points": "东半山稀缺独立地段，名人贵胄聚居地",
+    "developer": "嘉華",
+    "address": "肇輝台6號",
+    "main_area": "港岛湾仔及东半山",
+    "micro_district": "东半山",
+    "primary_school_net": "12校网",
+    "secondary_school_net": "灣仔校网",
+    "school_net": "12校网 / 灣仔校网",
+    "nearest_mtr": {
+      "nearest_mtr_id": "mtr_wan_chai",
+      "nearest_mtr_name": "灣仔站 (港島綫)",
+      "nearest_mtr_cn": "灣仔",
+      "nearest_mtr_en": "Wan Chai",
+      "nearest_mtr_lines": "港島綫",
+      "nearest_mtr_lat": 22.2776,
+      "nearest_mtr_lng": 114.1731,
+      "dist_straight_m": 819,
+      "dist_walk_m": 1065,
+      "walk_time_min": 13.3,
+      "route_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.17798,
+            22.27178
+          ],
+          [
+            114.1731,
+            22.2776
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "name": "海瑅湾 I",
+    "region": "九龙",
+    "district": "将军澳",
+    "lat": 22.29526,
+    "lng": 114.267231,
+    "sell_status": "on_sale",
+    "sell_status_cn": "出售中",
+    "is_coming_soon": false,
+    "price_tier": "1000-2000",
+    "total_units": 1266,
+    "sale_units": 280,
+    "sold_units": 871,
+    "priced_units": 6,
+    "pending_units": 114,
+    "basic_price_desc": "约650万起",
+    "excel_min_price_desc": "约650万起",
+    "min_price_wan": 650.0,
+    "max_price_wan": 2500.0,
+    "has_price_data": true,
+    "sqft_price_desc": "",
+    "main_layout": "1房 - 4房",
+    "reason": "将军澳日出康城一线临海大盘",
+    "mainland_selling_points": "康城站铁路上盖，无遮挡全海景",
+    "developer": "信和置業 / 嘉里建設 / 嘉華國際 / 招商置地 / 港鐵",
+    "address": "康城路1號",
+    "main_area": "九龙东（黄大仙/观塘）",
+    "micro_district": "将军澳南及日出康城",
+    "primary_school_net": "95校网",
+    "secondary_school_net": "西貢校网",
+    "school_net": "95校网 / 西貢校网",
+    "nearest_mtr": {
+      "nearest_mtr_id": "mtr_lohas_park",
+      "nearest_mtr_name": "康城站 (將軍澳綫)",
+      "nearest_mtr_cn": "康城",
+      "nearest_mtr_en": "LOHAS Park",
+      "nearest_mtr_lines": "將軍澳綫",
+      "nearest_mtr_lat": 22.2955,
+      "nearest_mtr_lng": 114.2695,
+      "dist_straight_m": 235,
+      "dist_walk_m": 305,
+      "walk_time_min": 3.8,
+      "route_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.267231,
+            22.29526
+          ],
+          [
+            114.2695,
+            22.2955
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "name": "海瑅湾 II",
+    "region": "九龙",
+    "district": "将军澳",
+    "lat": 22.296039,
+    "lng": 114.267513,
+    "sell_status": "on_sale",
+    "sell_status_cn": "出售中",
+    "is_coming_soon": false,
+    "price_tier": "1000-2000",
+    "total_units": 893,
+    "sale_units": 102,
+    "sold_units": 244,
+    "priced_units": 40,
+    "pending_units": 547,
+    "basic_price_desc": "约680万起",
+    "excel_min_price_desc": "约680万起",
+    "min_price_wan": 680.0,
+    "max_price_wan": 2800.0,
+    "has_price_data": true,
+    "sqft_price_desc": "",
+    "main_layout": "1房 - 4房",
+    "reason": "将军澳日出康城一线临海大盘第2期",
+    "mainland_selling_points": "康城站铁路上盖，无遮挡全海景",
+    "developer": "信和置業 / 嘉里建設 / 嘉華國際 / 招商置地 / 港鐵",
+    "address": "康城路1號",
+    "main_area": "九龙东（黄大仙/观塘）",
+    "micro_district": "将军澳南及日出康城",
+    "primary_school_net": "95校网",
+    "secondary_school_net": "西貢校网",
+    "school_net": "95校网 / 西貢校网",
+    "nearest_mtr": {
+      "nearest_mtr_id": "mtr_lohas_park",
+      "nearest_mtr_name": "康城站 (將軍澳綫)",
+      "nearest_mtr_cn": "康城",
+      "nearest_mtr_en": "LOHAS Park",
+      "nearest_mtr_lines": "將軍澳綫",
+      "nearest_mtr_lat": 22.2955,
+      "nearest_mtr_lng": 114.2695,
+      "dist_straight_m": 213,
+      "dist_walk_m": 277,
+      "walk_time_min": 3.5,
+      "route_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.267513,
+            22.296039
+          ],
+          [
+            114.2695,
+            22.2955
+          ]
+        ]
+      }
+    }
   }
 ]
