@@ -117,6 +117,7 @@ def parse_excel_sales_and_tx():
     project_sales = {}
     project_tx = {}
     project_bounds = {}
+    project_unit_stats = {}
     
     for fpath in files:
         fname = os.path.basename(fpath).replace(".xlsx", "").replace("_销控明细表", "")
@@ -161,11 +162,15 @@ def parse_excel_sales_and_tx():
 
             unsold_layout_data = {}
             sold_layout_data = {}
+            excel_total_units = 0
+            excel_sold_units = 0
+            excel_on_sale_units = 0
 
             for r in rows[2:]:
                 if len(r) <= max(col_layout, col_sqft, col_status):
                     continue
                 
+                excel_total_units += 1
                 status = str(r[col_status]).strip() if r[col_status] is not None else ""
                 raw_layout = str(r[col_layout]).strip() if r[col_layout] is not None else "特色单位"
                 if not raw_layout or raw_layout == "None" or raw_layout == "-":
@@ -198,6 +203,7 @@ def parse_excel_sales_and_tx():
 
                 # 1. 已售单位 -> 存入 sold_layout_data 用于最近成交
                 if status in ["已售", "已售出", "已签约", "成交"]:
+                    excel_sold_units += 1
                     block = str(r[col_block]).strip() if col_block != -1 and r[col_block] is not None and str(r[col_block]) != 'None' else ''
                     floor = str(r[col_floor]).strip() if col_floor != -1 and r[col_floor] is not None and str(r[col_floor]) != 'None' else ''
                     unit = str(r[col_unit]).strip() if col_unit != -1 and r[col_unit] is not None and str(r[col_unit]) != 'None' else ''
@@ -240,6 +246,7 @@ def parse_excel_sales_and_tx():
                 
                 unsold_layout_data[layout]["unsold"] += 1
                 if is_on_sale:
+                    excel_on_sale_units += 1
                     unsold_layout_data[layout]["on_sale"] += 1
 
                 if isinstance(sqft, (int, float)) and sqft > 0:
@@ -290,6 +297,11 @@ def parse_excel_sales_and_tx():
                 })
             
             project_sales[pname] = summary_list
+            project_unit_stats[pname] = {
+                "total_units": excel_total_units,
+                "sold_units": excel_sold_units,
+                "sale_units": excel_on_sale_units
+            }
 
             # 整理各户型最近2套成交列表
             recent_tx_list = []
@@ -340,11 +352,11 @@ def parse_excel_sales_and_tx():
             print(f"⚠️ 解析 {fname} 失败: {e}")
             
     print(f"✅ 成功解析在售项目: {len(project_sales)} 个，成交记录项目: {len(project_tx)} 个")
-    return project_sales, project_tx, project_bounds
+    return project_sales, project_tx, project_bounds, project_unit_stats
 
 def main():
     print("1️⃣ 开始解析销控表与成交记录...")
-    sales_data, tx_data, bounds_data = parse_excel_sales_and_tx()
+    sales_data, tx_data, bounds_data, unit_stats_data = parse_excel_sales_and_tx()
 
     print("2️⃣ 读取沙盒数据 hk_project_coords.json...")
     with open(COORDS_FILE, "r", encoding="utf-8") as f:
@@ -404,7 +416,7 @@ def main():
         '花语海第2期': ('34校网', '九龙城区校网'),
     }
 
-    print("3️⃣ 整合发展商、落成日期、校网归属、在售明细、最近成交记录、精准价格区间...")
+    print("3️⃣ 整合发展商、落成日期、校网归属、在售明细、最近成交记录、精准价格区间与套数统计...")
     tx_attached = 0
     price_attached = 0
     for p in projects:
@@ -440,14 +452,20 @@ def main():
             elif sn_info[0]:
                 p["school_net"] = sn_info[0]
 
-        # 匹配在售数据
+        # 匹配在售数据与物理销控套数统计
         sc = sales_data.get(pname)
-        if not sc:
+        ustats = unit_stats_data.get(pname)
+        if not sc or not ustats:
             for k, val in sales_data.items():
                 if k in pname or pname in k:
                     sc = val
+                    ustats = unit_stats_data.get(k)
                     break
         p["sales_control_summary"] = sc if sc else []
+        if ustats and ustats.get("total_units", 0) > 0:
+            p["total_units"] = ustats["total_units"]
+            p["sold_units"] = ustats["sold_units"]
+            p["sale_units"] = ustats["sale_units"]
 
         # 匹配最近成交数据
         tx = tx_data.get(pname)
