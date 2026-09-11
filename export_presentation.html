@@ -21,6 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- 核心商圈深度知识库数据 -->
+  <script src="hk_districts_data.js"></script>
 
   <style>
     :root {
@@ -359,7 +361,351 @@
     }
 
     /* =========================================================================
-       PAGE 3: OVERVIEW MAP & TABLE (全局地图与入选楼盘清单)
+       PAGE 3: DISTRICT PROFILE (核心商圈深度解析)
+       ========================================================================= */
+    .district-page-body {
+      padding: 18px 36px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .dist-area-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .dist-inplan-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #DBEAFE;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .dist-quote-banner {
+      background: linear-gradient(135deg, #F0FDF4 0%, #E6FBF0 100%);
+      border-left: 4px solid #16A34A;
+      border-radius: 6px;
+      padding: 9px 14px;
+      font-size: 0.83rem;
+      color: #14532D;
+      line-height: 1.5;
+    }
+
+    /* --- Layout 1: Single District (1 商圈全景深度版) --- */
+    .dist-l1-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      height: 100%;
+    }
+    .dist-l1-header {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .dist-l1-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .dist-l1-name {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--slate-900);
+      font-family: 'Noto Serif SC', serif;
+    }
+    .dist-l1-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 12px;
+      flex: 1;
+      min-height: 0;
+    }
+    .dist-l1-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      overflow: hidden;
+    }
+    .dist-l1-card-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+      padding-bottom: 5px;
+      border-bottom: 1.5px solid #F1F5F9;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dist-l1-card-text {
+      font-size: 0.79rem;
+      color: var(--slate-700);
+      line-height: 1.55;
+      overflow-y: auto;
+    }
+    .dist-l1-fac-item {
+      margin-bottom: 4px;
+      font-size: 0.78rem;
+      color: var(--slate-700);
+      line-height: 1.45;
+    }
+    .dist-l1-fac-item strong {
+      color: var(--slate-900);
+    }
+    .dist-l1-footer-bar {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .dist-proj-pill-box {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .dist-proj-pill {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 0.76rem;
+      color: var(--slate-800);
+      font-weight: 600;
+    }
+
+    /* --- Layout 2: Dual District (2 商圈并列对比版) --- */
+    .dist-l2-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      height: 100%;
+    }
+    .dist-l2-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      height: 100%;
+      overflow: hidden;
+    }
+    .dist-l2-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--primary-light);
+    }
+    .dist-l2-name {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--slate-900);
+      font-family: 'Noto Serif SC', serif;
+    }
+    .dist-l2-quote {
+      background: #F0FDF4;
+      border-left: 3.5px solid #16A34A;
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 0.77rem;
+      color: #14532D;
+      line-height: 1.45;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .dist-l2-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow-y: auto;
+    }
+    .dist-section-block {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+    .dist-block-label {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .dist-block-content {
+      font-size: 0.75rem;
+      color: var(--slate-700);
+      line-height: 1.5;
+    }
+    .dist-proj-tag {
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 0.72rem;
+      color: var(--slate-800);
+    }
+
+    /* --- Layout 3: Triple District (3 商圈鼎立竖卡版) --- */
+    .dist-l3-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      height: 100%;
+    }
+    .dist-l3-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      height: 100%;
+      overflow: hidden;
+    }
+    .dist-l3-header {
+      margin-bottom: 6px;
+      padding-bottom: 5px;
+      border-bottom: 1.5px solid var(--primary-light);
+    }
+    .dist-l3-name {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      font-family: 'Noto Serif SC', serif;
+      margin-bottom: 3px;
+    }
+    .dist-l3-quote {
+      background: #F0FDF4;
+      border-left: 3px solid #16A34A;
+      padding: 5px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      color: #14532D;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .dist-l3-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      overflow-y: auto;
+    }
+    .dist-section-block-sm {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 6px 8px;
+    }
+    .dist-block-label-sm {
+      font-size: 0.71rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+    .dist-block-content-sm {
+      font-size: 0.71rem;
+      color: var(--slate-700);
+      line-height: 1.4;
+    }
+    .dist-proj-tag-sm {
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      border-radius: 3px;
+      padding: 1px 5px;
+      font-size: 0.68rem;
+      color: var(--slate-800);
+      font-weight: 600;
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    /* --- Layout 4: Quad District (4 商圈田字格 2x2 版) --- */
+    .dist-l4-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
+      height: 100%;
+    }
+    .dist-l4-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      overflow: hidden;
+    }
+    .dist-l4-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid #F1F5F9;
+    }
+    .dist-l4-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      font-family: 'Noto Serif SC', serif;
+    }
+    .dist-l4-quote {
+      font-size: 0.71rem;
+      color: #166534;
+      background: #F0FDF4;
+      padding: 3px 6px;
+      border-radius: 4px;
+      margin-bottom: 5px;
+      line-height: 1.35;
+    }
+    .dist-l4-body {
+      font-size: 0.71rem;
+      color: var(--slate-700);
+      line-height: 1.42;
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    /* =========================================================================
+       PAGE 4+: OVERVIEW MAP & TABLE (全局地图与入选楼盘清单)
        ========================================================================= */
     .overview-layout {
       padding: 18px 36px;
@@ -884,6 +1230,332 @@
       await renderExportPresentation();
     });
 
+    // =========================================================================
+    // 核心商圈知识库匹配与自适应渲染函数
+    // =========================================================================
+    function findDistrictData(p) {
+      if (!window.HK_DISTRICTS_DATA || !Array.isArray(window.HK_DISTRICTS_DATA)) return null;
+      const dList = window.HK_DISTRICTS_DATA;
+      const md = (p.micro_district || '').trim();
+      const d = (p.district || '').trim();
+
+      // 1. 精确匹配 micro_district
+      if (md) {
+        const direct = dList.find(item => item.name === md || item.name.includes(md) || md.includes(item.name));
+        if (direct) return direct;
+      }
+
+      // 2. 常用关键字与别名表映射
+      const aliasMap = {
+        '笔架山': '石硖尾及又一村',
+        '西南九龙': '南昌及西九龙海滨',
+        '启德': '启德城中心 (AIRSIDE/天玺) / 启德跑道区',
+        '何文田': '何文田及加多利山',
+        '九龙塘': '九龙塘低密度豪宅区 / 广播道及毕架山',
+        '黄竹坑': '黄竹坑及深湾',
+        '深湾': '黄竹坑及深湾',
+        '香港仔': '鸭脷洲 (海怡半岛及鸭脷洲大街)',
+        '鸭脷洲': '鸭脷洲 (海怡半岛及鸭脷洲大街)',
+        '坚尼地城': '坚尼地城 (Kennedy Town)',
+        '西营盘': '西营盘及石塘咀 / 上环',
+        '上环': '西营盘及石塘咀 / 上环',
+        '中半山': '中半山 (Mid-Levels Central)',
+        '西半山': '西半山 (Mid-Levels West)',
+        '东半山': '东半山 (Mid-Levels East)',
+        '山顶': '山顶 (The Peak)',
+        '跑马地': '跑马地及黄泥涌',
+        '大坑': '大坑及渣甸山',
+        '渣甸山': '大坑及渣甸山',
+        '湾仔': '湾仔核心区',
+        '北角': '北角核心及炮台山',
+        '鲗鱼涌': '鲗鱼涌及太古',
+        '太古': '鲗鱼涌及太古',
+        '西湾河': '西湾河 / 筲箕湾及阿公岩',
+        '筲箕湾': '西湾河 / 筲箕湾及阿公岩',
+        '浅水湾': '浅水湾及舂磡角',
+        '深水湾': '深水湾',
+        '寿臣山': '寿臣山',
+        '大潭': '大潭及红山半岛',
+        '红山半岛': '大潭及红山半岛',
+        '赤柱': '赤柱及黄麻角',
+        '薄扶林': '薄扶林',
+        '石澳': '石澳、大浪湾及鹤咀',
+        '九龙站': '九龙站及柯士甸',
+        '柯士甸': '九龙站及柯士甸',
+        '尖沙咀': '尖沙咀核心及尖东',
+        '尖东': '尖沙咀核心及尖东',
+        '南昌': '南昌及西九龙海滨',
+        '旺角': '旺角及太子',
+        '太子': '旺角及太子',
+        '油麻地': '油麻地及佐敦',
+        '佐敦': '油麻地及佐敦',
+        '石硖尾': '石硖尾及又一村',
+        '又一村': '石硖尾及又一村',
+        '土瓜湾': '马头角及土瓜湾',
+        '马头角': '马头角及土瓜湾',
+        '红磡': '红磡及黄埔',
+        '黄埔': '红磡及黄埔',
+        '日出康城': '将军澳南及日出康城',
+        '将军澳': '将军澳南及日出康城'
+      };
+
+      if (d && aliasMap[d]) {
+        const found = dList.find(item => item.name === aliasMap[d]);
+        if (found) return found;
+      }
+
+      // 3. 子串模糊匹配
+      for (const item of dList) {
+        if (d && (item.name.includes(d) || (item.short_name && item.short_name.includes(d)))) {
+          return item;
+        }
+      }
+
+      return null;
+    }
+
+    function renderDistrictPage(districtsInPage, pageNum, totalPages, totalUniqueDistricts) {
+      const pageEl = document.createElement('div');
+      pageEl.className = 'pdf-page';
+      
+      let contentHtml = '';
+      const count = districtsInPage.length;
+      if (count === 1) {
+        contentHtml = buildDistrictLayout1(districtsInPage[0]);
+      } else if (count === 2) {
+        contentHtml = buildDistrictLayout2(districtsInPage);
+      } else if (count === 3) {
+        contentHtml = buildDistrictLayout3(districtsInPage);
+      } else {
+        contentHtml = buildDistrictLayout4(districtsInPage);
+      }
+
+      pageEl.innerHTML = `
+        <div class="page-header">
+          <div class="page-header-left">
+            <span class="page-header-title">推荐项目所属核心商圈深度解析</span>
+            <span class="page-header-badge">DISTRICT PROFILES · 涉及 ${totalUniqueDistricts} 个核心商圈</span>
+          </div>
+          <img src="landma_logo.png" class="page-header-logo" alt="Logo">
+        </div>
+
+        <div class="district-page-body">
+          ${contentHtml}
+        </div>
+
+        <div class="page-footer">
+          <span>蓝玛国际 LANDMA GLOBAL · 客户定制方案</span>
+          <span>第 ${pageNum} 页 / 共 ${totalPages} 页</span>
+        </div>
+      `;
+      return pageEl;
+    }
+
+    function buildDistrictLayout1(item) {
+      const dist = item.info;
+      const projs = item.projects;
+      const facHtml = (dist.facilities || []).map(f => `
+        <div class="dist-l1-fac-item">
+          <strong>${f.label}：</strong>${(f.text || '').replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}
+        </div>
+      `).join('');
+
+      const projsHtml = projs.map(p => `
+        <div class="dist-proj-pill">
+          <strong>${p.name}</strong> · ${p.total_price_desc || (p.min_price_wan ? p.min_price_wan + '万起' : '在售')} ${p.main_layout ? '· ' + p.main_layout : ''}
+        </div>
+      `).join('');
+
+      return `
+        <div class="dist-l1-container">
+          <div class="dist-l1-header">
+            <div class="dist-l1-title-group">
+              <span class="dist-area-badge">📍 ${dist.main_area || '核心区域'}</span>
+              <span class="dist-l1-name">${dist.name}</span>
+            </div>
+            <div class="dist-inplan-pill">
+              <span>📋 本案入选 ${projs.length} 个项目</span>
+            </div>
+          </div>
+
+          <div class="dist-quote-banner">
+            💡 <strong>【商圈核心定位】</strong> ${dist.positioning}
+          </div>
+
+          <div class="dist-l1-grid">
+            <div class="dist-l1-card">
+              <div class="dist-l1-card-title">🏛️ 区域历史与文脉底蕴</div>
+              <div class="dist-l1-card-text">${dist.history}</div>
+            </div>
+            <div class="dist-l1-card">
+              <div class="dist-l1-card-title">🎯 现时定位与高端圈层</div>
+              <div class="dist-l1-card-text">${dist.current_status}</div>
+            </div>
+            <div class="dist-l1-card">
+              <div class="dist-l1-card-title">🛍️ 核心配套与顶尖学区</div>
+              <div class="dist-l1-card-text">${facHtml}</div>
+            </div>
+            <div class="dist-l1-card">
+              <div class="dist-l1-card-title">🚀 未来规划与价值催化</div>
+              <div class="dist-l1-card-text">${dist.future}</div>
+            </div>
+          </div>
+
+          <div class="dist-l1-footer-bar">
+            <span style="font-size:0.78rem; font-weight:700; color:var(--slate-600); white-space:nowrap;">📌 本案所属楼盘：</span>
+            <div class="dist-proj-pill-box">
+              ${projsHtml}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function buildDistrictLayout2(distList) {
+      return `
+        <div class="dist-l2-container">
+          ${distList.map(item => {
+            const dist = item.info;
+            const projs = item.projects;
+            const facHtml = (dist.facilities || []).slice(0, 3).map(f => `
+              <div class="dist-block-content" style="margin-bottom:4px;">
+                <strong>${f.label}:</strong> ${(f.text || '').replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}
+              </div>
+            `).join('');
+
+            const projsHtml = projs.map(p => `
+              <span class="dist-proj-tag"><strong>${p.name}</strong> (${p.total_price_desc || (p.min_price_wan ? p.min_price_wan + '万起' : '在售')})</span>
+            `).join('');
+
+            return `
+              <div class="dist-l2-card">
+                <div class="dist-l2-header">
+                  <div>
+                    <div class="dist-area-badge" style="margin-bottom:4px;">${dist.main_area || '核心大区'}</div>
+                    <div class="dist-l2-name">📍 ${dist.short_name || dist.name}</div>
+                  </div>
+                  <div class="dist-inplan-pill">入选 ${projs.length} 盘</div>
+                </div>
+
+                <div class="dist-l2-quote">
+                  <strong>【定位】</strong>${dist.positioning}
+                </div>
+
+                <div class="dist-l2-body">
+                  <div class="dist-section-block">
+                    <div class="dist-block-label">🎯 圈层定位与历史底蕴</div>
+                    <div class="dist-block-content">${dist.current_status}</div>
+                  </div>
+                  <div class="dist-section-block">
+                    <div class="dist-block-label">🛍️ 核心生活配套与名校网</div>
+                    ${facHtml}
+                  </div>
+                  <div class="dist-section-block">
+                    <div class="dist-block-label">🚀 未来红利与爆发规划</div>
+                    <div class="dist-block-content">${dist.future}</div>
+                  </div>
+                </div>
+
+                <div style="margin-top:auto; padding-top:8px; border-top:1px dashed #CBD5E1; font-size:0.75rem; color:var(--slate-600);">
+                  <div style="font-weight:700; margin-bottom:4px;">📌 入选楼盘：</div>
+                  <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                    ${projsHtml}
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    function buildDistrictLayout3(distList) {
+      return `
+        <div class="dist-l3-container">
+          ${distList.map(item => {
+            const dist = item.info;
+            const projs = item.projects;
+            const facHtml = (dist.facilities || []).slice(0, 3).map(f => `
+              <div class="dist-block-content-sm" style="margin-bottom:3px;">
+                <strong>${f.label}:</strong> ${(f.text || '').replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}
+              </div>
+            `).join('');
+
+            const projsHtml = projs.map(p => `
+              <span class="dist-proj-tag-sm">${p.name}</span>
+            `).join('');
+
+            return `
+              <div class="dist-l3-card">
+                <div class="dist-l3-header">
+                  <div class="dist-area-badge" style="margin-bottom:3px; font-size:0.68rem;">${dist.main_area || '核心大区'}</div>
+                  <div class="dist-l3-name">📍 ${dist.short_name || dist.name}</div>
+                </div>
+
+                <div class="dist-l3-quote">
+                  ${dist.positioning}
+                </div>
+
+                <div class="dist-l3-body">
+                  <div class="dist-section-block-sm">
+                    <div class="dist-block-label-sm">🎯 圈层与特征</div>
+                    <div class="dist-block-content-sm">${dist.current_status}</div>
+                  </div>
+                  <div class="dist-section-block-sm">
+                    <div class="dist-block-label-sm">🛍️ 核心配套与名校网</div>
+                    ${facHtml}
+                  </div>
+                  <div class="dist-section-block-sm">
+                    <div class="dist-block-label-sm">🚀 未来发展</div>
+                    <div class="dist-block-content-sm">${dist.future}</div>
+                  </div>
+                </div>
+
+                <div style="margin-top:auto; padding-top:6px; border-top:1px dashed #CBD5E1; font-size:0.72rem;">
+                  <span style="font-weight:700; color:var(--slate-600);">入选楼盘: </span>
+                  ${projsHtml}
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    function buildDistrictLayout4(distList) {
+      return `
+        <div class="dist-l4-container">
+          ${distList.map(item => {
+            const dist = item.info;
+            const projs = item.projects;
+            const facPreview = (dist.facilities || []).slice(0, 2).map(f => `<strong>${f.label}:</strong> ${(f.text || '').replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}`).join(' ； ');
+            const projsHtml = projs.map(p => `<span class="dist-proj-tag-sm">${p.name}</span>`).join('');
+
+            return `
+              <div class="dist-l4-card">
+                <div class="dist-l4-header">
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <span class="dist-area-badge" style="font-size:0.65rem;">${dist.main_area || ''}</span>
+                    <span class="dist-l4-name">📍 ${dist.short_name || dist.name}</span>
+                  </div>
+                  <span class="dist-inplan-pill" style="font-size:0.65rem;">${projs.length} 盘</span>
+                </div>
+                <div class="dist-l4-quote">${dist.positioning}</div>
+                <div class="dist-l4-body">
+                  <div style="margin-bottom:3px;">🎯 <strong>圈层地位：</strong>${dist.current_status}</div>
+                  <div style="margin-bottom:3px;">🛍️ <strong>核心配套：</strong>${facPreview}</div>
+                  <div>🚀 <strong>未来爆发：</strong>${dist.future}</div>
+                </div>
+                <div style="margin-top:auto; padding-top:4px; border-top:1px dashed #E2E8F0; font-size:0.7rem;">
+                  <span style="font-weight:700; color:var(--slate-600);">入选: </span>${projsHtml}
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
     async function renderExportPresentation() {
       // 1. 读取 localStorage 中传递的导出数据
       let exportData = null;
@@ -915,7 +1587,46 @@
       const root = document.getElementById('presentation-root');
       root.innerHTML = '';
 
-      const totalPages = 3 + projects.length + 1; // 封面 + 需求 + 全局地图 + N个单盘 + 封底
+      // 提取本方案所涉核心商圈及关联项目
+      const districtMap = new Map();
+      projects.forEach(p => {
+        const dObj = findDistrictData(p);
+        const dKey = dObj ? dObj.name : (p.micro_district || p.district || '其他核心商圈');
+        if (!districtMap.has(dKey)) {
+          districtMap.set(dKey, {
+            info: dObj || {
+              id: 99,
+              name: dKey,
+              short_name: dKey.split('/')[0].split('(')[0].trim(),
+              main_area: p.main_area || p.region || '香港核心区',
+              positioning: '香港高品质核心人居板块，配套完善，出行便捷。',
+              history: '历史底蕴深厚，承载着香港城市功能的成熟演进与多元居住体验。',
+              current_status: '优质生活圈层，坐拥醇熟自足的人居环境与稳健资产属性。',
+              facilities: [{ label: '综合配套', text: '周边涵盖轨道交通、生活商业与多元教育资源。' }],
+              future: '长远受益于香港整体城市更新发展规划与全岛交通互联红利。'
+            },
+            projects: []
+          });
+        }
+        districtMap.get(dKey).projects.push(p);
+      });
+
+      const districtList = Array.from(districtMap.values());
+      const numDistricts = districtList.length;
+
+      // 计算商圈页面数：1-4个商圈占1页，>=5个商圈每页3个分页
+      const districtPageChunks = [];
+      if (numDistricts <= 4) {
+        districtPageChunks.push(districtList);
+      } else {
+        for (let i = 0; i < numDistricts; i += 3) {
+          districtPageChunks.push(districtList.slice(i, i + 3));
+        }
+      }
+      const numDistrictPages = districtPageChunks.length;
+
+      // 页面计算：封面(1) + 需求(1) + 商圈(numDistrictPages) + 宏观地图(1) + 单盘(projects.length) + 封底(1)
+      const totalPages = 2 + numDistrictPages + 1 + projects.length + 1;
       document.getElementById('page-stat-badge').textContent = `共 ${projects.length} 个推荐楼盘 / ${totalPages} 页`;
 
       // ----------------------------------------------------
@@ -1008,8 +1719,18 @@
       root.appendChild(reqPage);
 
       // ----------------------------------------------------
-      // PAGE 3: 全局宏观地图与入选对照表 (Overview Map & Table)
+      // PAGE 3+: 推荐项目所属核心商圈深度解析 (District Profile Pages)
       // ----------------------------------------------------
+      districtPageChunks.forEach((chunk, cIdx) => {
+        const pageNum = 3 + cIdx;
+        const dPage = renderDistrictPage(chunk, pageNum, totalPages, numDistricts);
+        root.appendChild(dPage);
+      });
+
+      // ----------------------------------------------------
+      // 全局宏观地图与入选对照表 (Overview Map & Table)
+      // ----------------------------------------------------
+      const overviewPageNum = 3 + numDistrictPages;
       const overviewPage = document.createElement('div');
       overviewPage.className = 'pdf-page';
       overviewPage.innerHTML = `
@@ -1061,18 +1782,18 @@
 
         <div class="page-footer">
           <span>蓝玛国际 LANDMA GLOBAL · 客户定制方案</span>
-          <span>第 3 页 / 共 ${totalPages} 页</span>
+          <span>第 ${overviewPageNum} 页 / 共 ${totalPages} 页</span>
         </div>
       `;
       root.appendChild(overviewPage);
 
       // ----------------------------------------------------
-      // PAGE 4+: 每个项目的独立单盘专页 (Single Project Page)
+      // 每个项目的独立单盘专页 (Single Project Page)
       // ----------------------------------------------------
       projects.forEach((proj, idx) => {
         const pPage = document.createElement('div');
         pPage.className = 'pdf-page';
-        const pageNum = 4 + idx;
+        const pageNum = overviewPageNum + 1 + idx;
         const mtr = proj.nearest_mtr;
         const sales = proj.sales_control_summary || [];
         const recentTx = proj.recent_transactions || [];
