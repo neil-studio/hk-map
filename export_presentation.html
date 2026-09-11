@@ -278,77 +278,84 @@
     /* =========================================================================
        PAGE 2: CLIENT REQUIREMENTS & STRATEGY (客户画像与需求)
        ========================================================================= */
-    .page-content-grid2 {
-      padding: 24px 36px;
-      display: grid;
-      grid-template-columns: 1.15fr 1fr;
-      gap: 24px;
+    .page-content-requirements {
+      padding: 36px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       flex: 1;
     }
-    .profile-card {
+    .profile-card-full {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border-radius: 14px;
+      padding: 36px 42px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
       display: flex;
       flex-direction: column;
     }
-    .profile-card-title {
-      font-size: 1rem;
+    .profile-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 26px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--primary-light);
+    }
+    .profile-card-title-main {
+      font-size: 1.25rem;
       font-weight: 800;
       color: var(--primary-dark);
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--primary-light);
+      gap: 10px;
+      font-family: 'Noto Serif SC', serif;
+      letter-spacing: 0.5px;
     }
-    .req-item-box {
+    .profile-card-subtag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .req-item-box-full {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-bottom: 16px;
+      gap: 20px 28px;
     }
-    .req-cell {
+    .req-cell-full {
       background: #F8FAFC;
       border: 1px solid #E2E8F0;
-      padding: 12px 14px;
-      border-radius: 8px;
+      padding: 16px 22px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 82px;
+      transition: all 0.2s;
     }
-    .req-cell-label {
-      font-size: 0.76rem;
+    .req-cell-full:hover {
+      background: #F1F5F9;
+      border-color: #CBD5E1;
+    }
+    .req-cell-full .req-cell-label {
+      font-size: 0.8rem;
       font-weight: 600;
       color: var(--slate-500);
-      margin-bottom: 4px;
-    }
-    .req-cell-val {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--slate-900);
-    }
-    .advisor-speech-box {
-      background: #F0FDF4;
-      border: 1px solid #BBF7D0;
-      border-radius: 8px;
-      padding: 16px;
-      flex: 1;
-    }
-    .advisor-speech-title {
-      font-size: 0.88rem;
-      font-weight: 800;
-      color: #166534;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .advisor-speech-text {
-      font-size: 0.84rem;
-      line-height: 1.7;
-      color: #1E293B;
-      white-space: pre-wrap;
+    .req-cell-full .req-cell-val {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      line-height: 1.4;
+      word-break: break-word;
     }
 
     /* =========================================================================
@@ -945,7 +952,7 @@
       root.appendChild(coverPage);
 
       // ----------------------------------------------------
-      // PAGE 2: 客户需求与策略规划 (Requirements Page)
+      // PAGE 2: 客户置业需求档案 (Requirements Page)
       // ----------------------------------------------------
       const reqPage = document.createElement('div');
       reqPage.className = 'pdf-page';
@@ -958,47 +965,37 @@
           <img src="landma_logo.png" class="page-header-logo" alt="Logo">
         </div>
 
-        <div class="page-content-grid2">
-          <div class="profile-card">
-            <div class="profile-card-title">🎯 客户置业需求指标清单</div>
-            <div class="req-item-box">
-              <div class="req-cell">
+        <div class="page-content-requirements">
+          <div class="profile-card-full">
+            <div class="profile-card-header">
+              <div class="profile-card-title-main">🎯 客户置业需求指标清单</div>
+              <div class="profile-card-subtag">CUSTOMIZED SELECTION PROFILE</div>
+            </div>
+            <div class="req-item-box-full">
+              <div class="req-cell-full">
                 <div class="req-cell-label">👤 客户尊称</div>
                 <div class="req-cell-val">${client.name || '贵宾客户'}</div>
               </div>
-              <div class="req-cell">
+              <div class="req-cell-full">
                 <div class="req-cell-label">💷 置业预算区间</div>
-                <div class="req-cell-val" style="color:#2563EB;">${client.budget || '按精选方案匹配'}</div>
+                <div class="req-cell-val" style="color:#0284C7;">${client.budget || '按精选方案匹配'}</div>
               </div>
-              <div class="req-cell">
+              <div class="req-cell-full">
                 <div class="req-cell-label">📍 意向核心区域</div>
                 <div class="req-cell-val">${client.district || '九龙/港岛核心优质地段'}</div>
               </div>
-              <div class="req-cell">
+              <div class="req-cell-full">
                 <div class="req-cell-label">🏠 意向户型规格</div>
                 <div class="req-cell-val">${client.layout || '2房 - 4房大宅'}</div>
               </div>
-              <div class="req-cell">
+              <div class="req-cell-full">
                 <div class="req-cell-label">📏 面积段需求</div>
                 <div class="req-cell-val">${client.sqftRange || '根据户型灵活配置'}</div>
               </div>
-              <div class="req-cell">
+              <div class="req-cell-full">
                 <div class="req-cell-label">🏫 核心诉求权重</div>
                 <div class="req-cell-val">${client.coreFocus || '名校学区 / 轨交枢纽 / 资产保值'}</div>
               </div>
-            </div>
-
-            <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:12px; border-radius:8px; font-size:0.78rem; color:#475569; line-height:1.6;">
-              💡 <strong>蓝玛跨境置业选筹原则：</strong><br>
-              严格优选香港主流品牌发展商打造之优质项目，综合评估名校网（34/41/11校网）、港铁步行通勤便利度、现楼/期房交楼标准及销控在售房源真实性价比，为客户资金安全与传承价值保驾护航。
-            </div>
-          </div>
-
-          <div class="profile-card">
-            <div class="profile-card-title">📝 置业顾问推荐语与选筹逻辑</div>
-            <div class="advisor-speech-box">
-              <div class="advisor-speech-title">💎 专属置业顾问建议：</div>
-              <div class="advisor-speech-text">${client.intro || '根据您的预算与核心居住/投资诉求，为您精选以下核心项目。方案综合考量了交通轨交、名校教育护城河及真实销控在售房源，供您深度决策参考。'}</div>
             </div>
           </div>
         </div>

@@ -1446,10 +1446,6 @@
       <label>🏫 核心诉求重点</label>
       <input type="text" class="form-input" id="client-focus" placeholder="例如：34/41顶尖名校网、轨交直通中环、资产传承">
     </div>
-    <div class="form-field">
-      <label>📝 置业顾问推荐语与选筹建议</label>
-      <textarea class="form-textarea" id="client-intro" style="height:70px;" placeholder="例如：根据您的预算及置业诉求，为您精选以下核心项目。方案综合考量了交通轨交、名校教育护城河及真实销控在售房源..."></textarea>
-    </div>
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closeExportModal()">取消</button>
       <button class="btn-export-main" style="background: linear-gradient(135deg, #00889A, #00B4D8);" onclick="triggerPdfPrint()">🚀 生成高清 PDF 方案</button>
@@ -3237,8 +3233,9 @@ function openExportModal() {
   if (!document.getElementById('client-focus').value) {
     document.getElementById('client-focus').value = '34/41顶尖名校网、轨交直通中环、资产保值传承';
   }
-  if (!document.getElementById('client-intro').value) {
-    document.getElementById('client-intro').value = `根据您的预算与核心置业诉求，为您精选${selectedList.length}个全港核心楼盘。方案综合考量了交通轨交、名校教育护城河及真实销控在售房源，供您深度决策参考。`;
+  const clientIntroEl = document.getElementById('client-intro');
+  if (clientIntroEl && !clientIntroEl.value) {
+    clientIntroEl.value = `根据您的预算与核心置业诉求，为您精选${selectedList.length}个全港核心楼盘。方案综合考量了交通轨交、名校教育护城河及真实销控在售房源，供您深度决策参考。`;
   }
 
   document.getElementById('export-modal').classList.add('open');
@@ -3262,7 +3259,7 @@ function triggerPdfPrint() {
     layout: document.getElementById('client-layout').value.trim() || '2房 - 4房大宅',
     sqftRange: document.getElementById('client-sqft').value.trim() || '600 - 1500 呎',
     coreFocus: document.getElementById('client-focus').value.trim() || '名校学区 / 轨交枢纽 / 资产保值',
-    intro: document.getElementById('client-intro').value.trim() || '为您精选的核心置业方案。'
+    intro: document.getElementById('client-intro') ? document.getElementById('client-intro').value.trim() : ''
   };
 
   const payload = {
