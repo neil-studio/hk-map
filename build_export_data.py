@@ -232,10 +232,16 @@ def parse_excel_sales_and_tx():
                 if col_tot_price != -1 and col_tot_price < len(r) and str(r[col_tot_price]).strip() in ["招标", "招标单位"]:
                     is_tender = True
                 
+                # 判断是否属于狭义在售（已正式发售安排推售）
+                is_on_sale = (status in ["在售", "出售中", "sale", "Sale"])
+                
                 if layout not in unsold_layout_data:
-                    unsold_layout_data[layout] = {"sqfts": [], "prices": [], "tender_count": 0, "unsold": 0}
+                    unsold_layout_data[layout] = {"sqfts": [], "prices": [], "tender_count": 0, "unsold": 0, "on_sale": 0}
                 
                 unsold_layout_data[layout]["unsold"] += 1
+                if is_on_sale:
+                    unsold_layout_data[layout]["on_sale"] += 1
+
                 if isinstance(sqft, (int, float)) and sqft > 0:
                     unsold_layout_data[layout]["sqfts"].append(sqft)
                 
@@ -278,6 +284,7 @@ def parse_excel_sales_and_tx():
                 summary_list.append({
                     "layout": l_name,
                     "unsold_count": d["unsold"],
+                    "on_sale_count": d["on_sale"],
                     "sqft_range": sqft_str,
                     "price_range": price_str
                 })

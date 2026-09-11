@@ -273,13 +273,8 @@
         {
           "layout": "3 房",
           "unsold_count": 1,
+          "on_sale_count": 1,
           "sqft_range": "1463 呎",
-          "price_range": "招标"
-        },
-        {
-          "layout": "4 房",
-          "unsold_count": 1,
-          "sqft_range": "3060 呎",
           "price_range": "招标"
         }
       ],
@@ -816,9 +811,10 @@
       "sales_control_summary": [
         {
           "layout": "4 房",
-          "unsold_count": 12,
+          "unsold_count": 9,
+          "on_sale_count": 0,
           "sqft_range": "3731 - 7915 呎",
-          "price_range": "招标"
+          "price_range": "待定/详见价单"
         }
       ],
       "recent_transactions": [
@@ -1126,25 +1122,29 @@
       "sales_control_summary": [
         {
           "layout": "1 房",
-          "unsold_count": 5,
-          "sqft_range": "298 - 336 呎",
-          "price_range": "1049 万 - 1231.5 万"
+          "unsold_count": 4,
+          "on_sale_count": 4,
+          "sqft_range": "336 呎",
+          "price_range": "1160.4 万 - 1231.5 万"
         },
         {
           "layout": "2 房",
-          "unsold_count": 18,
+          "unsold_count": 17,
+          "on_sale_count": 12,
           "sqft_range": "397 - 584 呎",
           "price_range": "1514.5 万 - 2181.3 万"
         },
         {
           "layout": "3 房",
           "unsold_count": 16,
+          "on_sale_count": 16,
           "sqft_range": "831 - 1061 呎",
           "price_range": "招标"
         },
         {
           "layout": "4 房",
           "unsold_count": 7,
+          "on_sale_count": 7,
           "sqft_range": "1135 - 3058 呎",
           "price_range": "招标"
         }
@@ -1471,6 +1471,7 @@
         {
           "layout": "开放式",
           "unsold_count": 3,
+          "on_sale_count": 3,
           "sqft_range": "277 呎",
           "price_range": "735 万 - 757.3 万"
         }

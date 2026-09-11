@@ -1871,14 +1871,21 @@
                 </tr>
               </thead>
               <tbody>
-                ${sales.map(s => `
+                ${sales.map(s => {
+                  const onSalePart = (s.on_sale_count !== undefined) 
+                    ? `<span style="font-size:0.68rem; color:#16a34a; font-weight:600; margin-left:2px;">(在售${s.on_sale_count})</span>` 
+                    : '';
+                  return `
                   <tr>
                     <td><strong>${s.layout}</strong></td>
-                    <td><span class="badge-unit-count">${s.unsold_count} 伙</span></td>
+                    <td>
+                      <span class="badge-unit-count">${s.unsold_count} 伙</span>
+                      ${onSalePart}
+                    </td>
                     <td>${s.sqft_range}</td>
                     <td style="font-weight:700; color:${s.price_range === '招标' ? '#d97706' : '#16a34a'};">${s.price_range}</td>
                   </tr>
-                `).join('')}
+                `;}).join('')}
               </tbody>
             </table>
           `;
@@ -1927,13 +1934,13 @@
         const buildingCount = proj.building_count || proj.towers || 1;
         const totalUnitsVal = proj.total_units || 0;
         const soldUnitsVal = proj.sold_units || 0;
-        const saleUnitsVal = proj.sale_units || (proj.units_unsold || 0);
+        const unsoldUnitsVal = Math.max(0, totalUnitsVal - soldUnitsVal);
 
         let totalUnitsStr = totalUnitsVal > 0 ? `${totalUnitsVal} 伙` : '详见销控';
         let soldRateStr = '暂无统计';
         if (totalUnitsVal > 0) {
           const rateNum = ((soldUnitsVal / totalUnitsVal) * 100).toFixed(1);
-          soldRateStr = `${rateNum}% <span style="font-size:0.68rem; font-weight:normal; color:#64748B;">(已售${soldUnitsVal}/在售${saleUnitsVal})</span>`;
+          soldRateStr = `${rateNum}% <span style="font-size:0.68rem; font-weight:normal; color:#64748B;">(已售 ${soldUnitsVal} 伙 / 未售 ${unsoldUnitsVal} 伙)</span>`;
         }
 
         pPage.innerHTML = `

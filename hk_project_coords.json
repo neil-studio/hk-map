@@ -264,6 +264,7 @@
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "1463 呎",
         "price_range": "招标"
       }
@@ -291,7 +292,7 @@
         "sqft": "3060 呎",
         "price": "1.49 亿",
         "unit_price": "$48,627/呎",
-        "date": "2026-08-19"
+        "date": "2026-09-04"
       },
       {
         "unit_name": "Park College座 7&8楼 A室",
@@ -727,6 +728,7 @@
       {
         "layout": "null房",
         "unsold_count": 73,
+        "on_sale_count": 0,
         "sqft_range": "详见销控",
         "price_range": "待定/详见价单"
       }
@@ -1117,6 +1119,7 @@
       {
         "layout": "null房",
         "unsold_count": 14,
+        "on_sale_count": 0,
         "sqft_range": "详见销控",
         "price_range": "待定/详见价单"
       }
@@ -1507,6 +1510,7 @@
       {
         "layout": "null房",
         "unsold_count": 23,
+        "on_sale_count": 0,
         "sqft_range": "详见销控",
         "price_range": "待定/详见价单"
       }
@@ -1910,12 +1914,14 @@
       {
         "layout": "3 房",
         "unsold_count": 22,
+        "on_sale_count": 0,
         "sqft_range": "1089 - 2207 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 24,
+        "on_sale_count": 0,
         "sqft_range": "1322 - 2623 呎",
         "price_range": "待定/详见价单"
       }
@@ -2907,6 +2913,7 @@
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "8265 呎",
         "price_range": "4.28 亿"
       }
@@ -3437,12 +3444,21 @@
     "sales_control_summary": [
       {
         "layout": "4 房",
-        "unsold_count": 10,
+        "unsold_count": 9,
+        "on_sale_count": 0,
         "sqft_range": "3731 - 7915 呎",
-        "price_range": "招标"
+        "price_range": "待定/详见价单"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "5座 1楼 B室",
+        "layout": "4 房",
+        "sqft": "4325 呎",
+        "price": "2 亿",
+        "unit_price": "$46,243/呎",
+        "date": "2026-09-01"
+      },
       {
         "unit_name": "6座 6&7楼 PH A室",
         "layout": "4 房",
@@ -3450,14 +3466,6 @@
         "price": "5.80 亿",
         "unit_price": "$78,347/呎",
         "date": "2026-08-30"
-      },
-      {
-        "unit_name": "1座 2楼 A室",
-        "layout": "4 房",
-        "sqft": "4247 呎",
-        "price": "2 亿",
-        "unit_price": "$47,092/呎",
-        "date": "2026-08-17"
       }
     ],
     "address": "龍駒道3號",
@@ -3488,8 +3496,8 @@
     "priced_units": 0,
     "pending_units": 37,
     "basic_price_desc": "",
-    "excel_min_price_desc": "$5526.6万 - $10341.6万",
-    "min_price_wan": 5526.6,
+    "excel_min_price_desc": "$4863.41万 - $9100.61万",
+    "min_price_wan": 4863.41,
     "sqft_price_desc": "",
     "main_layout": "",
     "reason": "",
@@ -4087,20 +4095,23 @@
       {
         "layout": "2 房",
         "unsold_count": 19,
+        "on_sale_count": 3,
         "sqft_range": "644 - 693 呎",
-        "price_range": "5526.6 万 (含招标)"
+        "price_range": "4863.4 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 6,
+        "on_sale_count": 0,
         "sqft_range": "875 - 1963 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 21,
+        "on_sale_count": 6,
         "sqft_range": "1061 - 3113 呎",
-        "price_range": "1.03 亿 (含招标)"
+        "price_range": "9100.6 万 (含招标)"
       }
     ],
     "recent_transactions": [
@@ -4110,7 +4121,7 @@
         "sqft": "435 呎",
         "price": "1296 万",
         "unit_price": "$29,793/呎",
-        "date": "2016-08-07"
+        "date": "2016-08-08"
       },
       {
         "unit_name": "星钻玺座 51楼 K室",
@@ -4118,7 +4129,7 @@
         "sqft": "434 呎",
         "price": "1517.5 万",
         "unit_price": "$34,966/呎",
-        "date": "2013-11-27"
+        "date": "2013-11-28"
       },
       {
         "unit_name": "彗钻玺座 37楼 E室",
@@ -4126,7 +4137,7 @@
         "sqft": "670 呎",
         "price": "2300 万",
         "unit_price": "$34,328/呎",
-        "date": "2021-10-04"
+        "date": "2021-10-05"
       },
       {
         "unit_name": "天钻玺座 85楼 B室",
@@ -4134,7 +4145,7 @@
         "sqft": "678 呎",
         "price": "5178.4 万",
         "unit_price": "$76,377/呎",
-        "date": "2021-08-02"
+        "date": "2021-08-03"
       },
       {
         "unit_name": "皇钻玺座 79楼 C室",
@@ -4142,7 +4153,7 @@
         "sqft": "1608 呎",
         "price": "1.31 亿",
         "unit_price": "$81,300/呎",
-        "date": "2021-10-03"
+        "date": "2021-10-04"
       },
       {
         "unit_name": "皇钻玺座 80楼 E室",
@@ -4150,7 +4161,7 @@
         "sqft": "910 呎",
         "price": "3950.1 万",
         "unit_price": "$43,408/呎",
-        "date": "2013-12-23"
+        "date": "2013-12-24"
       },
       {
         "unit_name": "天钻玺座 91楼 C室",
@@ -4158,7 +4169,7 @@
         "sqft": "1775 呎",
         "price": "2.32 亿",
         "unit_price": "$130,686/呎",
-        "date": "2025-08-25"
+        "date": "2025-08-26"
       },
       {
         "unit_name": "天钻玺座 89楼 A室",
@@ -4166,7 +4177,7 @@
         "sqft": "1535 呎",
         "price": "1.50 亿",
         "unit_price": "$97,423/呎",
-        "date": "2025-04-22"
+        "date": "2025-04-23"
       }
     ],
     "address": "柯士甸道西1號",
@@ -4177,7 +4188,7 @@
     "primary_school_net": "31校网",
     "secondary_school_net": "油尖旺区校网",
     "school_net": "31校网 / 油尖旺区校网",
-    "max_price_wan": 10341.6,
+    "max_price_wan": 9100.61,
     "has_price_data": true,
     "building_count": 7
   },
@@ -4418,30 +4429,35 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "342 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
         "unsold_count": 3,
+        "on_sale_count": 1,
         "sqft_range": "534 - 579 呎",
         "price_range": "1658.2 万 - 1722.1 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 3,
+        "on_sale_count": 3,
         "sqft_range": "842 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 2,
+        "on_sale_count": 1,
         "sqft_range": "1257 - 1258 呎",
         "price_range": "招标"
       },
       {
         "layout": "null房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "535 - 1257 呎",
         "price_range": "待定/详见价单"
       }
@@ -4556,8 +4572,8 @@
     "priced_units": 23,
     "pending_units": 21,
     "basic_price_desc": "",
-    "excel_min_price_desc": "$776.43万 - $2509.61万",
-    "min_price_wan": 776.43,
+    "excel_min_price_desc": "$817.3万 - $2641.7万",
+    "min_price_wan": 817.3,
     "sqft_price_desc": "",
     "main_layout": "",
     "reason": "",
@@ -4669,30 +4685,35 @@
       {
         "layout": "开放式",
         "unsold_count": 24,
+        "on_sale_count": 0,
         "sqft_range": "251 - 266 呎",
-        "price_range": "776.4 万 - 924.7 万"
+        "price_range": "817.3 万 - 973.4 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 35,
+        "on_sale_count": 3,
         "sqft_range": "274 - 345 呎",
-        "price_range": "1047.6 万 - 1218.6 万"
+        "price_range": "1102.7 万 - 1282.8 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 8,
+        "on_sale_count": 3,
         "sqft_range": "349 - 436 呎",
-        "price_range": "1395 万 - 1430.4 万 (含招标)"
+        "price_range": "1468.4 万 - 1505.7 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "624 呎",
-        "price_range": "2457.7 万 - 2509.6 万"
+        "price_range": "2587.1 万 - 2641.7 万"
       },
       {
         "layout": "4 房",
         "unsold_count": 3,
+        "on_sale_count": 3,
         "sqft_range": "834 - 871 呎",
         "price_range": "招标"
       }
@@ -4704,7 +4725,7 @@
         "sqft": "304 呎",
         "price": "971.3 万",
         "unit_price": "$31,950/呎",
-        "date": "2026-06-18"
+        "date": "2026-06-17"
       },
       {
         "unit_name": "Prince Central座 18楼 C室",
@@ -4712,7 +4733,7 @@
         "sqft": "344 呎",
         "price": "1075.2 万",
         "unit_price": "$31,255/呎",
-        "date": "2024-07-11"
+        "date": "2024-07-10"
       },
       {
         "unit_name": "Prince Central座 17楼 A室",
@@ -4720,7 +4741,7 @@
         "sqft": "436 呎",
         "price": "1388.1 万",
         "unit_price": "$31,838/呎",
-        "date": "2026-04-28"
+        "date": "2026-04-27"
       },
       {
         "unit_name": "Prince Central座 11楼 A室",
@@ -4728,7 +4749,7 @@
         "sqft": "436 呎",
         "price": "1362 万",
         "unit_price": "$31,238/呎",
-        "date": "2024-09-26"
+        "date": "2024-09-25"
       },
       {
         "unit_name": "Prince Central座 12楼 F室",
@@ -4736,7 +4757,7 @@
         "sqft": "624 呎",
         "price": "2062.3 万",
         "unit_price": "$33,049/呎",
-        "date": "2025-05-20"
+        "date": "2025-05-19"
       },
       {
         "unit_name": "Prince Central座 19楼 B室",
@@ -4744,7 +4765,7 @@
         "sqft": "685 呎",
         "price": "2459.6 万",
         "unit_price": "$35,907/呎",
-        "date": "2023-03-24"
+        "date": "2023-03-23"
       },
       {
         "unit_name": "Prince Central座 18楼 D室",
@@ -4752,7 +4773,7 @@
         "sqft": "891 呎",
         "price": "3150 万",
         "unit_price": "$35,354/呎",
-        "date": "2026-03-04"
+        "date": "2026-03-03"
       },
       {
         "unit_name": "Prince Central座 19楼 C室",
@@ -4760,7 +4781,7 @@
         "sqft": "890 呎",
         "price": "3217.8 万",
         "unit_price": "$36,154/呎",
-        "date": "2022-07-20"
+        "date": "2022-07-19"
       }
     ],
     "address": "太子道西195號",
@@ -4771,7 +4792,7 @@
     "primary_school_net": "34校网",
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
-    "max_price_wan": 2509.61,
+    "max_price_wan": 2641.7,
     "has_price_data": true,
     "building_count": 1
   },
@@ -4952,18 +4973,21 @@
       {
         "layout": "开放式",
         "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "209 - 210 呎",
         "price_range": "招标"
       },
       {
         "layout": "1 房",
         "unsold_count": 6,
+        "on_sale_count": 4,
         "sqft_range": "264 - 283 呎",
         "price_range": "561.9 万 - 948.3 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "499 呎",
         "price_range": "1508.3 万"
       }
@@ -5234,12 +5258,21 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 13,
+        "unsold_count": 12,
+        "on_sale_count": 11,
         "sqft_range": "764 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "2座 22楼 C室",
+        "layout": "2 房",
+        "sqft": "764 呎",
+        "price": "2968 万",
+        "unit_price": "$38,848/呎",
+        "date": "2026-09-01"
+      },
       {
         "unit_name": "2座 2楼 C室",
         "layout": "2 房",
@@ -5247,14 +5280,6 @@
         "price": "2621 万",
         "unit_price": "$36,252/呎",
         "date": "2026-08-20"
-      },
-      {
-        "unit_name": "3座 6楼 C室",
-        "layout": "2 房",
-        "sqft": "732 呎",
-        "price": "2662 万",
-        "unit_price": "$36,366/呎",
-        "date": "2026-08-17"
       },
       {
         "unit_name": "2座 6楼 A室",
@@ -5581,29 +5606,41 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "1442 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "890 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       },
       {
         "layout": "3 房",
-        "unsold_count": 48,
+        "unsold_count": 43,
+        "on_sale_count": 5,
         "sqft_range": "1251 - 1747 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 3,
+        "on_sale_count": 0,
         "sqft_range": "2268 - 6681 呎",
         "price_range": "待定/详见价单"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "5座 2楼 D室",
+        "layout": "2 房",
+        "sqft": "812 呎",
+        "price": "1846.4 万",
+        "unit_price": "$22,739/呎",
+        "date": "2026-09-04"
+      },
       {
         "unit_name": "5座 19楼 D室",
         "layout": "2 房",
@@ -5613,28 +5650,20 @@
         "date": "2026-08-25"
       },
       {
-        "unit_name": "5座 19楼 C室",
-        "layout": "2 房",
-        "sqft": "813 呎",
-        "price": "2127.1 万",
-        "unit_price": "$26,164/呎",
-        "date": "2026-08-25"
+        "unit_name": "7座 10楼 B室",
+        "layout": "3 房",
+        "sqft": "1415 呎",
+        "price": "3197.9 万",
+        "unit_price": "$22,600/呎",
+        "date": "2026-09-04"
       },
       {
-        "unit_name": "7座 16楼 A室",
+        "unit_name": "5座 19楼 B室",
         "layout": "3 房",
-        "sqft": "1321 呎",
-        "price": "3334.4 万",
-        "unit_price": "$25,241/呎",
-        "date": "2026-08-28"
-      },
-      {
-        "unit_name": "1座 19楼 C室",
-        "layout": "3 房",
-        "sqft": "1186 呎",
-        "price": "3264.8 万",
-        "unit_price": "$27,528/呎",
-        "date": "2026-08-25"
+        "sqft": "1287 呎",
+        "price": "3398 万",
+        "unit_price": "$26,402/呎",
+        "date": "2026-09-02"
       },
       {
         "unit_name": "5座 20&21楼 B室",
@@ -5898,18 +5927,21 @@
       {
         "layout": "2 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "448 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 4,
+        "on_sale_count": 3,
         "sqft_range": "671 - 1083 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "1610 呎",
         "price_range": "招标"
       }
@@ -6109,6 +6141,7 @@
       {
         "layout": "4 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "2493 - 2866 呎",
         "price_range": "待定/详见价单"
       }
@@ -6123,20 +6156,20 @@
         "date": "2016-05-19"
       },
       {
+        "unit_name": "3座 22楼 C室",
+        "layout": "3 房",
+        "sqft": "1237 呎",
+        "price": "3250 万",
+        "unit_price": "$26,273/呎",
+        "date": "2024-04-16"
+      },
+      {
         "unit_name": "5座 23楼 C室",
         "layout": "3 房",
         "sqft": "2044 呎",
         "price": "1.29 亿",
         "unit_price": "$62,916/呎",
         "date": "2020-02-21"
-      },
-      {
-        "unit_name": "1座 15楼 C室",
-        "layout": "3 房",
-        "sqft": "1154 呎",
-        "price": "3346.7 万",
-        "unit_price": "$29,001/呎",
-        "date": "2016-05-18"
       },
       {
         "unit_name": "2座 18楼 B室",
@@ -6147,12 +6180,12 @@
         "date": "2026-01-07"
       },
       {
-        "unit_name": "1座 20楼 A室",
+        "unit_name": "3座 25&26楼 A室",
         "layout": "4 房",
-        "sqft": "1910 呎",
-        "price": "7751.6 万",
-        "unit_price": "$40,584/呎",
-        "date": "2025-11-13"
+        "sqft": "2681 呎",
+        "price": "1.52 亿",
+        "unit_price": "$56,795/呎",
+        "date": "2025-11-25"
       }
     ],
     "address": "忠孝街68號",
@@ -6312,12 +6345,14 @@
       {
         "layout": "3 房",
         "unsold_count": 3,
+        "on_sale_count": 3,
         "sqft_range": "842 - 884 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "1465 - 1748 呎",
         "price_range": "招标"
       }
@@ -6581,6 +6616,7 @@
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "2721 呎",
         "price_range": "招标"
       }
@@ -6748,18 +6784,21 @@
       {
         "layout": "2 房",
         "unsold_count": 110,
+        "on_sale_count": 0,
         "sqft_range": "445 - 636 呎",
         "price_range": "941.2 万 - 1383.1 万"
       },
       {
         "layout": "3 房",
         "unsold_count": 85,
+        "on_sale_count": 0,
         "sqft_range": "684 - 1005 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 61,
+        "on_sale_count": 0,
         "sqft_range": "1249 - 2572 呎",
         "price_range": "待定/详见价单"
       }
@@ -6975,24 +7014,28 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "350 呎",
         "price_range": "812.6 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 18,
+        "on_sale_count": 0,
         "sqft_range": "521 - 555 呎",
         "price_range": "1136.4 万 - 1570.6 万"
       },
       {
         "layout": "3 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "783 呎",
         "price_range": "1729.1 万 - 1737.6 万"
       },
       {
         "layout": "4 房",
         "unsold_count": 4,
+        "on_sale_count": 0,
         "sqft_range": "1277 - 1304 呎",
         "price_range": "待定/详见价单"
       }
@@ -7192,6 +7235,7 @@
       {
         "layout": "4 房",
         "unsold_count": 3,
+        "on_sale_count": 3,
         "sqft_range": "1207 - 1213 呎",
         "price_range": "招标"
       }
@@ -7355,23 +7399,50 @@
       {
         "layout": "2 房",
         "unsold_count": 16,
+        "on_sale_count": 10,
         "sqft_range": "555 - 597 呎",
         "price_range": "1871.5 万 - 2018.2 万 (含招标)"
       },
       {
         "layout": "3 房",
-        "unsold_count": 51,
+        "unsold_count": 52,
+        "on_sale_count": 30,
         "sqft_range": "925 - 1116 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 7,
+        "on_sale_count": 7,
         "sqft_range": "1515 - 1615 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "1B座 5楼 E室",
+        "layout": "1 房",
+        "sqft": "364 呎",
+        "price": "726.6 万",
+        "unit_price": "$19,961/呎",
+        "date": "2025-06-19"
+      },
+      {
+        "unit_name": "1B座 9楼 E室",
+        "layout": "1 房",
+        "sqft": "364 呎",
+        "price": "737.5 万",
+        "unit_price": "$20,262/呎",
+        "date": "2025-05-30"
+      },
+      {
+        "unit_name": "2A座 22楼 C室",
+        "layout": "2 房",
+        "sqft": "593 呎",
+        "price": "1996.7 万",
+        "unit_price": "$33,671/呎",
+        "date": "2026-09-01"
+      },
       {
         "unit_name": "2A座 19楼 C室",
         "layout": "2 房",
@@ -7381,12 +7452,12 @@
         "date": "2026-08-20"
       },
       {
-        "unit_name": "2A座 1楼 C室",
-        "layout": "2 房",
-        "sqft": "550 呎",
-        "price": "1705 万",
-        "unit_price": "$31,000/呎",
-        "date": "2026-08-14"
+        "unit_name": "1B座 19楼 A室",
+        "layout": "3 房",
+        "sqft": "959 呎",
+        "price": "2764.8 万",
+        "unit_price": "$28,830/呎",
+        "date": "2026-08-25"
       },
       {
         "unit_name": "2A座 G楼 MAISON D室",
@@ -7395,14 +7466,6 @@
         "price": "3201 万",
         "unit_price": "$36,007/呎",
         "date": "2026-08-25"
-      },
-      {
-        "unit_name": "2B座 27楼 A室",
-        "layout": "3 房",
-        "sqft": "957 呎",
-        "price": "3115 万",
-        "unit_price": "$32,550/呎",
-        "date": "2026-08-24"
       },
       {
         "unit_name": "1A座 28楼 B室",
@@ -7740,6 +7803,7 @@
       {
         "layout": "3 房",
         "unsold_count": 3,
+        "on_sale_count": 0,
         "sqft_range": "982 呎",
         "price_range": "2949.1 万 - 3203.6 万"
       }
@@ -7951,18 +8015,21 @@
       {
         "layout": "1 房",
         "unsold_count": 9,
+        "on_sale_count": 3,
         "sqft_range": "286 呎",
         "price_range": "701.1 万 - 810.3 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 23,
+        "unsold_count": 22,
+        "on_sale_count": 6,
         "sqft_range": "414 - 481 呎",
         "price_range": "924.4 万 - 1267.7 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "742 呎",
         "price_range": "招标"
       }
@@ -7985,20 +8052,20 @@
         "date": "2026-06-04"
       },
       {
-        "unit_name": "芳菲座 19楼 C室",
+        "unit_name": "芳菲座 12楼 A室",
         "layout": "2 房",
-        "sqft": "414 呎",
-        "price": "1005.7 万",
-        "unit_price": "$24,292/呎",
-        "date": "2026-08-26"
+        "sqft": "481 呎",
+        "price": "1296.4 万",
+        "unit_price": "$26,952/呎",
+        "date": "2026-09-07"
       },
       {
-        "unit_name": "芳菲座 18楼 C室",
+        "unit_name": "芳菲座 22楼 C室",
         "layout": "2 房",
         "sqft": "414 呎",
-        "price": "996 万",
-        "unit_price": "$24,058/呎",
-        "date": "2026-08-26"
+        "price": "1035.7 万",
+        "unit_price": "$25,017/呎",
+        "date": "2026-09-01"
       }
     ],
     "address": "勝利道5號",
@@ -8182,18 +8249,21 @@
       {
         "layout": "2 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "879 呎",
         "price_range": "招标"
       },
       {
         "layout": "3 房",
         "unsold_count": 6,
+        "on_sale_count": 6,
         "sqft_range": "698 - 1386 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "2449 - 2597 呎",
         "price_range": "招标"
       }
@@ -8589,18 +8659,21 @@
       {
         "layout": "2 房",
         "unsold_count": 10,
+        "on_sale_count": 0,
         "sqft_range": "680 - 726 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 28,
+        "on_sale_count": 0,
         "sqft_range": "1061 - 1187 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 7,
+        "on_sale_count": 0,
         "sqft_range": "1492 - 2296 呎",
         "price_range": "待定/详见价单"
       }
@@ -9050,7 +9123,8 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 15,
+        "unsold_count": 14,
+        "on_sale_count": 14,
         "sqft_range": "440 - 477 呎",
         "price_range": "招标"
       }
@@ -9089,20 +9163,20 @@
         "date": "2026-03-02"
       },
       {
+        "unit_name": "3座 35楼 A室",
+        "layout": "2 房",
+        "sqft": "440 呎",
+        "price": "1003.2 万",
+        "unit_price": "$22,800/呎",
+        "date": "2026-09-05"
+      },
+      {
         "unit_name": "3座 23楼 A室",
         "layout": "2 房",
         "sqft": "440 呎",
         "price": "976 万",
         "unit_price": "$22,182/呎",
         "date": "2026-08-18"
-      },
-      {
-        "unit_name": "3座 1楼 D室",
-        "layout": "2 房",
-        "sqft": "480 呎",
-        "price": "944 万",
-        "unit_price": "$19,667/呎",
-        "date": "2026-08-03"
       },
       {
         "unit_name": "3座 36楼 B室",
@@ -9165,8 +9239,8 @@
     "priced_units": 5,
     "pending_units": 299,
     "basic_price_desc": "",
-    "excel_min_price_desc": "$577.25万 - $1661.52万",
-    "min_price_wan": 577.25,
+    "excel_min_price_desc": "$461.29万 - $1661.52万",
+    "min_price_wan": 461.29,
     "sqft_price_desc": "",
     "main_layout": "",
     "reason": "",
@@ -9586,24 +9660,28 @@
       {
         "layout": "开放式",
         "unsold_count": 7,
+        "on_sale_count": 0,
         "sqft_range": "249 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "461.3 万 - 522.9 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 91,
+        "on_sale_count": 0,
         "sqft_range": "292 - 340 呎",
-        "price_range": "577.3 万 - 578.7 万"
+        "price_range": "577.3 万 - 732.7 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 173,
+        "on_sale_count": 0,
         "sqft_range": "414 - 518 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 35,
+        "on_sale_count": 0,
         "sqft_range": "641 - 696 呎",
         "price_range": "1553.2 万 - 1661.5 万"
       }
@@ -9851,18 +9929,21 @@
       {
         "layout": "1 房",
         "unsold_count": 165,
+        "on_sale_count": 6,
         "sqft_range": "416 - 477 呎",
         "price_range": "1172 万 - 1411.5 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 59,
+        "on_sale_count": 41,
         "sqft_range": "564 - 678 呎",
         "price_range": "1507.9 万 - 2035.7 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 10,
+        "on_sale_count": 6,
         "sqft_range": "857 - 1558 呎",
         "price_range": "招标"
       }
@@ -10434,29 +10515,41 @@
       {
         "layout": "开放式",
         "unsold_count": 26,
+        "on_sale_count": 10,
         "sqft_range": "250 - 251 呎",
         "price_range": "566.5 万 - 633.1 万"
       },
       {
         "layout": "1 房",
-        "unsold_count": 44,
+        "unsold_count": 43,
+        "on_sale_count": 28,
         "sqft_range": "280 - 329 呎",
         "price_range": "669.3 万 - 851.2 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 126,
+        "unsold_count": 123,
+        "on_sale_count": 32,
         "sqft_range": "398 - 487 呎",
         "price_range": "986.3 万 - 1056.9 万 (含招标)"
       },
       {
         "layout": "3 房",
-        "unsold_count": 9,
+        "unsold_count": 8,
+        "on_sale_count": 7,
         "sqft_range": "620 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "2座 16楼 H室",
+        "layout": "开放式",
+        "sqft": "251 呎",
+        "price": "605.3 万",
+        "unit_price": "$24,116/呎",
+        "date": "2026-09-07"
+      },
       {
         "unit_name": "2座 10楼 H室",
         "layout": "开放式",
@@ -10466,44 +10559,44 @@
         "date": "2026-08-24"
       },
       {
-        "unit_name": "2座 16楼 H室",
-        "layout": "开放式",
-        "sqft": "251 呎",
-        "price": "605.3 万",
-        "unit_price": "$24,116/呎",
-        "date": "2026-08-18"
-      },
-      {
-        "unit_name": "2座 21楼 F室",
+        "unit_name": "2座 23楼 F室",
         "layout": "1 房",
         "sqft": "323 呎",
-        "price": "764.2 万",
-        "unit_price": "$23,659/呎",
-        "date": "2026-08-28"
+        "price": "768.7 万",
+        "unit_price": "$23,799/呎",
+        "date": "2026-09-06"
       },
       {
-        "unit_name": "2座 20楼 F室",
+        "unit_name": "2座 17楼 F室",
         "layout": "1 房",
         "sqft": "323 呎",
-        "price": "761.9 万",
-        "unit_price": "$23,588/呎",
-        "date": "2026-08-28"
+        "price": "752.8 万",
+        "unit_price": "$23,307/呎",
+        "date": "2026-09-02"
       },
       {
-        "unit_name": "2座 22楼 A室",
+        "unit_name": "2座 6楼 J室",
         "layout": "2 房",
-        "sqft": "487 呎",
-        "price": "1256.8 万",
-        "unit_price": "$25,807/呎",
-        "date": "2026-08-29"
+        "sqft": "459 呎",
+        "price": "995.2 万",
+        "unit_price": "$21,682/呎",
+        "date": "2026-09-05"
       },
       {
-        "unit_name": "1座 19楼 F室",
+        "unit_name": "1座 12楼 F室",
         "layout": "2 房",
         "sqft": "449 呎",
-        "price": "1045.2 万",
-        "unit_price": "$23,278/呎",
-        "date": "2026-08-28"
+        "price": "1026.6 万",
+        "unit_price": "$22,864/呎",
+        "date": "2026-09-04"
+      },
+      {
+        "unit_name": "3座 6楼 A室",
+        "layout": "3 房",
+        "sqft": "620 呎",
+        "price": "1466.7 万",
+        "unit_price": "$23,656/呎",
+        "date": "2026-09-02"
       },
       {
         "unit_name": "3座 17楼 A室",
@@ -10512,14 +10605,6 @@
         "price": "1511.2 万",
         "unit_price": "$24,374/呎",
         "date": "2026-08-22"
-      },
-      {
-        "unit_name": "3座 23楼 A室",
-        "layout": "3 房",
-        "sqft": "620 呎",
-        "price": "1543.3 万",
-        "unit_price": "$24,892/呎",
-        "date": "2026-08-19"
       },
       {
         "unit_name": "1座 30楼 A室",
@@ -11031,24 +11116,28 @@
       {
         "layout": "开放式",
         "unsold_count": 22,
+        "on_sale_count": 0,
         "sqft_range": "251 - 256 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "1 房",
         "unsold_count": 200,
+        "on_sale_count": 4,
         "sqft_range": "307 - 334 呎",
         "price_range": "招标"
       },
       {
         "layout": "2 房",
         "unsold_count": 225,
+        "on_sale_count": 0,
         "sqft_range": "406 - 494 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 7,
+        "on_sale_count": 7,
         "sqft_range": "620 呎",
         "price_range": "招标"
       }
@@ -11155,7 +11244,7 @@
     "priced_units": 0,
     "pending_units": 0,
     "basic_price_desc": "",
-    "excel_min_price_desc": "$871.58万 - $879.85万",
+    "excel_min_price_desc": "$871.58万 - $874.16万",
     "min_price_wan": 871.58,
     "sqft_price_desc": "",
     "main_layout": "",
@@ -11279,12 +11368,21 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 3,
+        "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "328 - 337 呎",
-        "price_range": "871.6 万 - 879.9 万"
+        "price_range": "871.6 万 - 874.2 万"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "1A座 38楼 H室",
+        "layout": "1 房",
+        "sqft": "328 呎",
+        "price": "879.9 万",
+        "unit_price": "$26,826/呎",
+        "date": "2026-09-02"
+      },
       {
         "unit_name": "1A座 5楼 H室",
         "layout": "1 房",
@@ -11292,14 +11390,6 @@
         "price": "857.7 万",
         "unit_price": "$26,229/呎",
         "date": "2026-08-10"
-      },
-      {
-        "unit_name": "1A座 31楼 H室",
-        "layout": "1 房",
-        "sqft": "327 呎",
-        "price": "893.9 万",
-        "unit_price": "$27,336/呎",
-        "date": "2026-07-31"
       },
       {
         "unit_name": "1B座 35楼 E室",
@@ -11358,7 +11448,7 @@
     "primary_school_net": "34校网",
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
-    "max_price_wan": 879.85,
+    "max_price_wan": 874.16,
     "has_price_data": true,
     "building_count": 6
   },
@@ -11507,6 +11597,7 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "329 呎",
         "price_range": "901.1 万"
       }
@@ -11722,14 +11813,9 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "347 呎",
         "price_range": "953.2 万"
-      },
-      {
-        "layout": "3 房",
-        "unsold_count": 1,
-        "sqft_range": "678 呎",
-        "price_range": "招标"
       }
     ],
     "recent_transactions": [
@@ -11782,20 +11868,20 @@
         "date": "2024-02-12"
       },
       {
+        "unit_name": "2A座 35楼 B室",
+        "layout": "3 房",
+        "sqft": "678 呎",
+        "price": "2017.2 万",
+        "unit_price": "$29,752/呎",
+        "date": "2026-08-31"
+      },
+      {
         "unit_name": "2A座 27楼 B室",
         "layout": "3 房",
         "sqft": "678 呎",
         "price": "1875.5 万",
         "unit_price": "$27,662/呎",
         "date": "2026-06-23"
-      },
-      {
-        "unit_name": "2A座 37楼 C室",
-        "layout": "3 房",
-        "sqft": "551 呎",
-        "price": "1561.9 万",
-        "unit_price": "$28,347/呎",
-        "date": "2026-06-17"
       },
       {
         "unit_name": "2A座 38楼 A室",
@@ -11963,24 +12049,28 @@
       {
         "layout": "开放式",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "186 呎",
         "price_range": "招标"
       },
       {
         "layout": "1 房",
         "unsold_count": 6,
+        "on_sale_count": 6,
         "sqft_range": "417 - 418 呎",
         "price_range": "948.8 万 - 1313.5 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 62,
+        "on_sale_count": 32,
         "sqft_range": "546 - 550 呎",
         "price_range": "166.1 万 - 1963.4 万"
       },
       {
         "layout": "3 房",
         "unsold_count": 8,
+        "on_sale_count": 6,
         "sqft_range": "696 - 889 呎",
         "price_range": "258.3 万 - 2641.4 万 (含招标)"
       }
@@ -12037,9 +12127,9 @@
       {
         "unit_name": "2座 10楼 A室",
         "layout": "3 房",
-        "sqft": "889 呎",
+        "sqft": "890 呎",
         "price": "2831.1 万",
-        "unit_price": "$31,846/呎",
+        "unit_price": "$31,810/呎",
         "date": "2026-08-18"
       },
       {
@@ -12208,18 +12298,21 @@
       {
         "layout": "1 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "379 - 414 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
         "unsold_count": 31,
+        "on_sale_count": 31,
         "sqft_range": "476 - 550 呎",
         "price_range": "招标"
       },
       {
         "layout": "3 房",
         "unsold_count": 4,
+        "on_sale_count": 3,
         "sqft_range": "888 - 1365 呎",
         "price_range": "招标"
       }
@@ -12302,7 +12395,7 @@
     "priced_units": 10,
     "pending_units": 52,
     "basic_price_desc": "2400万左右",
-    "excel_min_price_desc": "$620.62万 - $2388.59万",
+    "excel_min_price_desc": "$620.62万 - $2374.37万",
     "min_price_wan": 620.62,
     "sqft_price_desc": "3万左右",
     "main_layout": "3房775呎",
@@ -12431,26 +12524,30 @@
       {
         "layout": "开放式",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "229 呎",
         "price_range": "620.6 万 - 628.5 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 4,
+        "on_sale_count": 2,
         "sqft_range": "356 - 367 呎",
         "price_range": "1106.8 万 - 1202.3 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 54,
+        "on_sale_count": 15,
         "sqft_range": "540 - 541 呎",
         "price_range": "1466.3 万 - 1798.2 万"
       },
       {
         "layout": "3 房",
-        "unsold_count": 47,
+        "unsold_count": 46,
+        "on_sale_count": 25,
         "sqft_range": "776 - 778 呎",
-        "price_range": "2075.7 万 - 2388.6 万 (含招标)"
+        "price_range": "2075.7 万 - 2374.4 万 (含招标)"
       }
     ],
     "recent_transactions": [
@@ -12503,20 +12600,20 @@
         "date": "2024-04-16"
       },
       {
+        "unit_name": "3B座 27楼 A室",
+        "layout": "3 房",
+        "sqft": "778 呎",
+        "price": "2494.6 万",
+        "unit_price": "$32,065/呎",
+        "date": "2026-09-04"
+      },
+      {
         "unit_name": "3A座 35楼 A室",
         "layout": "3 房",
         "sqft": "775 呎",
         "price": "2599.6 万",
         "unit_price": "$33,543/呎",
         "date": "2026-08-18"
-      },
-      {
-        "unit_name": "3B座 17楼 A室",
-        "layout": "3 房",
-        "sqft": "777 呎",
-        "price": "2397.5 万",
-        "unit_price": "$30,856/呎",
-        "date": "2026-06-17"
       }
     ],
     "address": "沐泰街7號",
@@ -12527,7 +12624,7 @@
     "primary_school_net": "34校网",
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
-    "max_price_wan": 2388.59,
+    "max_price_wan": 2374.37,
     "has_price_data": true,
     "building_count": 2
   },
@@ -12968,18 +13065,21 @@
       {
         "layout": "1 房",
         "unsold_count": 68,
+        "on_sale_count": 24,
         "sqft_range": "288 - 315 呎",
         "price_range": "617.9 万 - 942.8 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 93,
+        "unsold_count": 92,
+        "on_sale_count": 40,
         "sqft_range": "427 - 553 呎",
         "price_range": "907.6 万 - 1306.5 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 5,
+        "on_sale_count": 4,
         "sqft_range": "586 - 771 呎",
         "price_range": "2199.4 万 (含招标)"
       }
@@ -13002,20 +13102,20 @@
         "date": "2026-08-20"
       },
       {
+        "unit_name": "2B座 7楼 D室",
+        "layout": "2 房",
+        "sqft": "477 呎",
+        "price": "992.8 万",
+        "unit_price": "$20,813/呎",
+        "date": "2026-09-06"
+      },
+      {
         "unit_name": "2C座 21楼 C室",
         "layout": "2 房",
         "sqft": "551 呎",
         "price": "1308 万",
         "unit_price": "$23,739/呎",
         "date": "2026-08-12"
-      },
-      {
-        "unit_name": "2C座 31楼 B室",
-        "layout": "2 房",
-        "sqft": "482 呎",
-        "price": "1253.6 万",
-        "unit_price": "$26,008/呎",
-        "date": "2026-07-17"
       },
       {
         "unit_name": "2A座 32楼 A室",
@@ -13062,7 +13162,7 @@
     "priced_units": 0,
     "pending_units": 715,
     "basic_price_desc": "1200万",
-    "excel_min_price_desc": "$559.95万 - $1257.15万",
+    "excel_min_price_desc": "$559.95万 - $1218.45万",
     "min_price_wan": 559.95,
     "sqft_price_desc": "2.4万左右",
     "main_layout": "2房429呎",
@@ -13403,68 +13503,80 @@
       {
         "layout": "开放式",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "258 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "1 房",
-        "unsold_count": 332,
+        "unsold_count": 272,
+        "on_sale_count": 23,
         "sqft_range": "278 - 313 呎",
         "price_range": "560 万 - 823.5 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 441,
+        "unsold_count": 399,
+        "on_sale_count": 86,
         "sqft_range": "416 - 613 呎",
-        "price_range": "823.8 万 - 1257.2 万 (含招标)"
+        "price_range": "816.8 万 - 1218.5 万 (含招标)"
       },
       {
         "layout": "3 房",
-        "unsold_count": 60,
+        "unsold_count": 53,
+        "on_sale_count": 13,
         "sqft_range": "713 - 771 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "1C座 31楼 N室",
+        "unit_name": "1A座 25楼 K室",
         "layout": "1 房",
-        "sqft": "278 呎",
-        "price": "670.8 万",
-        "unit_price": "$24,129/呎",
-        "date": "2026-08-09"
+        "sqft": "308 呎",
+        "price": "651.1 万",
+        "unit_price": "$21,140/呎",
+        "date": "2026-09-06"
       },
       {
-        "unit_name": "1C座 32楼 L室",
+        "unit_name": "1A座 17楼 J室",
         "layout": "1 房",
         "sqft": "305 呎",
-        "price": "732 万",
-        "unit_price": "$24,000/呎",
-        "date": "2026-08-05"
+        "price": "604.5 万",
+        "unit_price": "$19,820/呎",
+        "date": "2026-09-06"
       },
       {
-        "unit_name": "1C座 6楼 B室",
+        "unit_name": "1A座 7楼 B室",
         "layout": "2 房",
-        "sqft": "486 呎",
-        "price": "1080.8 万",
-        "unit_price": "$22,239/呎",
-        "date": "2026-08-28"
+        "sqft": "536 呎",
+        "price": "1191 万",
+        "unit_price": "$22,220/呎",
+        "date": "2026-09-07"
       },
       {
-        "unit_name": "1C座 3楼 A室",
+        "unit_name": "1A座 3楼 M室",
         "layout": "2 房",
-        "sqft": "612 呎",
-        "price": "1269.8 万",
-        "unit_price": "$20,748/呎",
-        "date": "2026-08-27"
+        "sqft": "481 呎",
+        "price": "1006 万",
+        "unit_price": "$20,915/呎",
+        "date": "2026-09-07"
       },
       {
-        "unit_name": "1C座 3楼 M室",
+        "unit_name": "1A座 18楼 A室",
         "layout": "3 房",
-        "sqft": "668 呎",
-        "price": "1772 万",
-        "unit_price": "$26,527/呎",
-        "date": "2026-08-22"
+        "sqft": "771 呎",
+        "price": "1888 万",
+        "unit_price": "$24,488/呎",
+        "date": "2026-09-05"
+      },
+      {
+        "unit_name": "1A座 22楼 A室",
+        "layout": "3 房",
+        "sqft": "771 呎",
+        "price": "1936.8 万",
+        "unit_price": "$25,121/呎",
+        "date": "2026-09-04"
       }
     ],
     "address": "承豐道15號",
@@ -13475,7 +13587,7 @@
     "primary_school_net": "34校网",
     "secondary_school_net": "九龙城区校网",
     "school_net": "34校网 / 九龙城区校网",
-    "max_price_wan": 1257.15,
+    "max_price_wan": 1218.45,
     "has_price_data": true,
     "building_count": 3
   },
@@ -13940,29 +14052,41 @@
       {
         "layout": "1 房",
         "unsold_count": 160,
+        "on_sale_count": 0,
         "sqft_range": "351 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "1085 - 1259 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 32,
+        "on_sale_count": 13,
         "sqft_range": "920 - 1384 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 59,
+        "on_sale_count": 21,
         "sqft_range": "1173 - 1677 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "1座 33楼 C室",
+        "layout": "3 房",
+        "sqft": "590 呎",
+        "price": "1638.3 万",
+        "unit_price": "$27,768/呎",
+        "date": "2026-09-07"
+      },
       {
         "unit_name": "3座 26楼 A室",
         "layout": "3 房",
@@ -13970,14 +14094,6 @@
         "price": "4163.2 万",
         "unit_price": "$40,537/呎",
         "date": "2026-08-21"
-      },
-      {
-        "unit_name": "1座 33楼 C室",
-        "layout": "3 房",
-        "sqft": "635 呎",
-        "price": "1638.3 万",
-        "unit_price": "$25,800/呎",
-        "date": "2026-08-13"
       },
       {
         "unit_name": "8座 21楼 B室",
@@ -14141,18 +14257,21 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "299 呎",
         "price_range": "698.8 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "458 - 614 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 16,
+        "on_sale_count": 0,
         "sqft_range": "909 - 3936 呎",
         "price_range": "待定/详见价单"
       }
@@ -14384,24 +14503,28 @@
       {
         "layout": "1 房",
         "unsold_count": 99,
+        "on_sale_count": 0,
         "sqft_range": "296 - 308 呎",
         "price_range": "745.7 万 - 1072.1 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 120,
+        "unsold_count": 118,
+        "on_sale_count": 9,
         "sqft_range": "443 - 612 呎",
         "price_range": "1242.2 万 - 1601.8 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 9,
+        "on_sale_count": 0,
         "sqft_range": "787 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 96,
+        "on_sale_count": 15,
         "sqft_range": "908 - 4306 呎",
         "price_range": "招标"
       }
@@ -14424,20 +14547,20 @@
         "date": "2025-12-23"
       },
       {
-        "unit_name": "2座 11楼 B1室",
+        "unit_name": "2座 22楼 A5室",
         "layout": "2 房",
-        "sqft": "478 呎",
-        "price": "1223.5 万",
-        "unit_price": "$25,597/呎",
-        "date": "2026-08-28"
+        "sqft": "545 呎",
+        "price": "2069.8 万",
+        "unit_price": "$37,978/呎",
+        "date": "2026-09-04"
       },
       {
-        "unit_name": "2座 10楼 A2室",
+        "unit_name": "2座 23楼 B1室",
         "layout": "2 房",
-        "sqft": "446 呎",
-        "price": "1508.3 万",
-        "unit_price": "$33,818/呎",
-        "date": "2026-08-28"
+        "sqft": "478 呎",
+        "price": "1374.7 万",
+        "unit_price": "$28,760/呎",
+        "date": "2026-09-03"
       },
       {
         "unit_name": "1座 5楼 B8室",
@@ -14456,20 +14579,20 @@
         "date": "2026-01-26"
       },
       {
-        "unit_name": "1座 9楼 A1室",
+        "unit_name": "1座 22楼 A1室",
         "layout": "4 房",
         "sqft": "908 呎",
-        "price": "3356.8 万",
-        "unit_price": "$36,969/呎",
-        "date": "2026-08-28"
+        "price": "4192.9 万",
+        "unit_price": "$46,177/呎",
+        "date": "2026-09-02"
       },
       {
-        "unit_name": "1座 17楼 A1室",
+        "unit_name": "1座 5楼 A1室",
         "layout": "4 房",
         "sqft": "908 呎",
-        "price": "3554.2 万",
-        "unit_price": "$39,143/呎",
-        "date": "2026-08-27"
+        "price": "3110 万",
+        "unit_price": "$34,251/呎",
+        "date": "2026-09-02"
       }
     ],
     "address": "協調道10號",
@@ -14977,18 +15100,21 @@
       {
         "layout": "2 房",
         "unsold_count": 36,
+        "on_sale_count": 0,
         "sqft_range": "541 - 560 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 16,
+        "on_sale_count": 1,
         "sqft_range": "789 - 998 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 102,
+        "on_sale_count": 12,
         "sqft_range": "1089 - 4608 呎",
         "price_range": "招标"
       }
@@ -15500,6 +15626,7 @@
       {
         "layout": "4 房",
         "unsold_count": 25,
+        "on_sale_count": 2,
         "sqft_range": "1124 - 2476 呎",
         "price_range": "招标"
       }
@@ -16003,18 +16130,21 @@
       {
         "layout": "2 房",
         "unsold_count": 33,
+        "on_sale_count": 0,
         "sqft_range": "498 - 592 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 19,
+        "on_sale_count": 0,
         "sqft_range": "826 - 2171 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 84,
+        "on_sale_count": 6,
         "sqft_range": "1084 - 3537 呎",
         "price_range": "招标"
       }
@@ -16518,12 +16648,14 @@
       {
         "layout": "2 房",
         "unsold_count": 11,
+        "on_sale_count": 11,
         "sqft_range": "374 - 392 呎",
         "price_range": "招标"
       },
       {
         "layout": "3 房",
         "unsold_count": 9,
+        "on_sale_count": 9,
         "sqft_range": "512 - 560 呎",
         "price_range": "招标"
       }
@@ -16546,20 +16678,20 @@
         "date": "2024-08-13"
       },
       {
+        "unit_name": "5座 26楼 E室",
+        "layout": "2 房",
+        "sqft": "391 呎",
+        "price": "866.4 万",
+        "unit_price": "$22,159/呎",
+        "date": "2026-09-04"
+      },
+      {
         "unit_name": "5座 23楼 F室",
         "layout": "2 房",
         "sqft": "400 呎",
         "price": "871.2 万",
         "unit_price": "$21,780/呎",
         "date": "2026-08-22"
-      },
-      {
-        "unit_name": "5座 26楼 E室",
-        "layout": "2 房",
-        "sqft": "391 呎",
-        "price": "866.4 万",
-        "unit_price": "$22,159/呎",
-        "date": "2026-07-31"
       },
       {
         "unit_name": "5座 29楼 C室",
@@ -17042,18 +17174,28 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 30,
+        "unsold_count": 29,
+        "on_sale_count": 6,
         "sqft_range": "262 - 287 呎",
         "price_range": "633.8 万 - 849.4 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 260,
+        "unsold_count": 257,
+        "on_sale_count": 84,
         "sqft_range": "381 - 451 呎",
         "price_range": "832.4 万 - 1115.8 万 (含招标)"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "2座 22楼 F室",
+        "layout": "1 房",
+        "sqft": "262 呎",
+        "price": "649.5 万",
+        "unit_price": "$24,790/呎",
+        "date": "2026-09-03"
+      },
       {
         "unit_name": "2座 21楼 J室",
         "layout": "1 房",
@@ -17063,28 +17205,20 @@
         "date": "2026-08-28"
       },
       {
-        "unit_name": "2座 20楼 J室",
-        "layout": "1 房",
-        "sqft": "287 呎",
-        "price": "690.3 万",
-        "unit_price": "$24,052/呎",
-        "date": "2026-08-28"
+        "unit_name": "2座 20楼 B室",
+        "layout": "2 房",
+        "sqft": "389 呎",
+        "price": "904.7 万",
+        "unit_price": "$23,257/呎",
+        "date": "2026-09-05"
       },
       {
-        "unit_name": "3座 21楼 K室",
+        "unit_name": "2座 19楼 B室",
         "layout": "2 房",
-        "sqft": "393 呎",
-        "price": "933.3 万",
-        "unit_price": "$23,748/呎",
-        "date": "2026-08-29"
-      },
-      {
-        "unit_name": "2座 19楼 G室",
-        "layout": "2 房",
-        "sqft": "393 呎",
-        "price": "901.8 万",
-        "unit_price": "$22,947/呎",
-        "date": "2026-08-25"
+        "sqft": "389 呎",
+        "price": "882.6 万",
+        "unit_price": "$22,689/呎",
+        "date": "2026-09-05"
       }
     ],
     "address": "承景街2號",
@@ -17548,18 +17682,21 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "263 呎",
         "price_range": "730 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 20,
+        "unsold_count": 19,
+        "on_sale_count": 7,
         "sqft_range": "382 - 395 呎",
         "price_range": "招标"
       },
       {
         "layout": "3 房",
         "unsold_count": 13,
+        "on_sale_count": 7,
         "sqft_range": "579 - 666 呎",
         "price_range": "招标"
       }
@@ -17582,20 +17719,20 @@
         "date": "2026-07-16"
       },
       {
+        "unit_name": "1座 15楼 B室",
+        "layout": "2 房",
+        "sqft": "382 呎",
+        "price": "913.4 万",
+        "unit_price": "$23,911/呎",
+        "date": "2026-09-05"
+      },
+      {
         "unit_name": "1座 9楼 L室",
         "layout": "2 房",
         "sqft": "390 呎",
         "price": "842.2 万",
         "unit_price": "$21,595/呎",
         "date": "2026-08-20"
-      },
-      {
-        "unit_name": "1座 21楼 B室",
-        "layout": "2 房",
-        "sqft": "382 呎",
-        "price": "990.1 万",
-        "unit_price": "$25,919/呎",
-        "date": "2026-06-15"
       },
       {
         "unit_name": "1座 2楼 A室",
@@ -18131,18 +18268,21 @@
       {
         "layout": "1 房",
         "unsold_count": 29,
+        "on_sale_count": 10,
         "sqft_range": "371 呎",
         "price_range": "746.1 万 - 824.7 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 29,
+        "on_sale_count": 9,
         "sqft_range": "509 - 577 呎",
         "price_range": "1075.2 万 - 1261.8 万 (含招标)"
       },
       {
         "layout": "4 房",
         "unsold_count": 39,
+        "on_sale_count": 22,
         "sqft_range": "1870 - 4850 呎",
         "price_range": "招标"
       }
@@ -18154,23 +18294,23 @@
         "sqft": "371 呎",
         "price": "795.6 万",
         "unit_price": "$21,445/呎",
-        "date": "2026-08-09"
+        "date": "2026-09-03"
       },
       {
-        "unit_name": "3A座 3楼 B室",
+        "unit_name": "3A座 35楼 B室",
         "layout": "2 房",
-        "sqft": "554 呎",
-        "price": "1159.1 万",
-        "unit_price": "$20,922/呎",
-        "date": "2026-08-18"
+        "sqft": "553 呎",
+        "price": "1451.5 万",
+        "unit_price": "$26,247/呎",
+        "date": "2026-09-03"
       },
       {
-        "unit_name": "3A座 8楼 B室",
+        "unit_name": "3A座 9楼 B室",
         "layout": "2 房",
-        "sqft": "554 呎",
+        "sqft": "553 呎",
         "price": "1198.4 万",
-        "unit_price": "$21,632/呎",
-        "date": "2026-08-12"
+        "unit_price": "$21,671/呎",
+        "date": "2026-09-02"
       },
       {
         "unit_name": "3B座 38楼 A室",
@@ -18178,7 +18318,7 @@
         "sqft": "1114 呎",
         "price": "4308 万",
         "unit_price": "$38,671/呎",
-        "date": "2026-08-03"
+        "date": "2026-09-03"
       },
       {
         "unit_name": "3A座 38楼 A室",
@@ -18189,20 +18329,20 @@
         "date": "2026-06-30"
       },
       {
+        "unit_name": "1座 28楼 A室",
+        "layout": "4 房",
+        "sqft": "2034 呎",
+        "price": "1.13 亿",
+        "unit_price": "$55,704/呎",
+        "date": "2026-09-02"
+      },
+      {
         "unit_name": "1座 28楼 B室",
         "layout": "4 房",
         "sqft": "1816 呎",
         "price": "9229.9 万",
         "unit_price": "$50,825/呎",
         "date": "2026-08-20"
-      },
-      {
-        "unit_name": "1座 18楼 B室",
-        "layout": "4 房",
-        "sqft": "1816 呎",
-        "price": "8928.9 万",
-        "unit_price": "$49,168/呎",
-        "date": "2026-08-11"
       }
     ],
     "address": "承豐道18號",
@@ -19077,26 +19217,30 @@
       {
         "layout": "开放式",
         "unsold_count": 11,
+        "on_sale_count": 2,
         "sqft_range": "244 - 247 呎",
         "price_range": "443.2 万 - 534.3 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 85,
+        "on_sale_count": 0,
         "sqft_range": "300 - 311 呎",
         "price_range": "551.5 万 - 668.3 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 172,
+        "on_sale_count": 17,
         "sqft_range": "437 - 509 呎",
         "price_range": "789.7 万 - 1333.3 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 53,
+        "on_sale_count": 8,
         "sqft_range": "593 - 705 呎",
-        "price_range": "1414.6 万 - 2034.5 万"
+        "price_range": "1414.6 万 - 2034.5 万 (含招标)"
       }
     ],
     "recent_transactions": [
@@ -19714,24 +19858,28 @@
       {
         "layout": "1 房",
         "unsold_count": 205,
+        "on_sale_count": 4,
         "sqft_range": "290 - 319 呎",
         "price_range": "853.6 万 - 870.8 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 259,
+        "unsold_count": 251,
+        "on_sale_count": 39,
         "sqft_range": "426 - 548 呎",
         "price_range": "1185.6 万 - 1618.7 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 11,
+        "on_sale_count": 1,
         "sqft_range": "818 - 819 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "1908 呎",
         "price_range": "待定/详见价单"
       }
@@ -19754,20 +19902,20 @@
         "date": "2026-07-16"
       },
       {
-        "unit_name": "1B座 9楼 A室",
+        "unit_name": "1C座 22楼 B室",
         "layout": "2 房",
-        "sqft": "548 呎",
-        "price": "1481.2 万",
-        "unit_price": "$27,029/呎",
-        "date": "2026-08-25"
+        "sqft": "489 呎",
+        "price": "1512.1 万",
+        "unit_price": "$30,922/呎",
+        "date": "2026-09-06"
       },
       {
-        "unit_name": "1B座 10楼 A室",
+        "unit_name": "1C座 15楼 A室",
         "layout": "2 房",
-        "sqft": "548 呎",
-        "price": "1488.6 万",
-        "unit_price": "$27,164/呎",
-        "date": "2026-08-24"
+        "sqft": "451 呎",
+        "price": "1294.3 万",
+        "unit_price": "$28,698/呎",
+        "date": "2026-09-06"
       },
       {
         "unit_name": "1A座 28楼 B室",
@@ -20271,18 +20419,21 @@
       {
         "layout": "1 房",
         "unsold_count": 145,
+        "on_sale_count": 0,
         "sqft_range": "300 - 309 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
         "unsold_count": 189,
+        "on_sale_count": 7,
         "sqft_range": "450 - 592 呎",
         "price_range": "1871 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "569 - 669 呎",
         "price_range": "待定/详见价单"
       }
@@ -20786,29 +20937,41 @@
       {
         "layout": "1 房",
         "unsold_count": 161,
+        "on_sale_count": 0,
         "sqft_range": "305 - 314 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
         "unsold_count": 242,
+        "on_sale_count": 0,
         "sqft_range": "434 - 570 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
-        "unsold_count": 66,
+        "unsold_count": 65,
+        "on_sale_count": 14,
         "sqft_range": "662 - 752 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "1839 呎",
         "price_range": "待定/详见价单"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "5B座 15楼 D室",
+        "layout": "3 房",
+        "sqft": "662 呎",
+        "price": "1918.9 万",
+        "unit_price": "$28,986/呎",
+        "date": "2026-08-31"
+      },
       {
         "unit_name": "5B座 12楼 D室",
         "layout": "3 房",
@@ -20816,14 +20979,6 @@
         "price": "1909.3 万",
         "unit_price": "$28,841/呎",
         "date": "2026-08-19"
-      },
-      {
-        "unit_name": "5B座 6楼 B室",
-        "layout": "3 房",
-        "sqft": "667 呎",
-        "price": "2151.2 万",
-        "unit_price": "$32,252/呎",
-        "date": "2026-08-13"
       }
     ],
     "address": "承豐道23號",
@@ -20943,18 +21098,21 @@
       {
         "layout": "开放式",
         "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "235 - 236 呎",
         "price_range": "招标"
       },
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "335 呎",
         "price_range": "招标"
       },
       {
         "layout": "3 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "752 呎",
         "price_range": "2151.4 万 - 2342.3 万"
       }
@@ -21342,12 +21500,14 @@
       {
         "layout": "开放式",
         "unsold_count": 38,
+        "on_sale_count": 0,
         "sqft_range": "187 - 213 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "1 房",
         "unsold_count": 20,
+        "on_sale_count": 0,
         "sqft_range": "240 - 261 呎",
         "price_range": "待定/详见价单"
       }
@@ -21572,24 +21732,28 @@
       {
         "layout": "开放式",
         "unsold_count": 21,
+        "on_sale_count": 0,
         "sqft_range": "192 - 215 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "1 房",
         "unsold_count": 88,
+        "on_sale_count": 0,
         "sqft_range": "228 - 357 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
         "unsold_count": 13,
+        "on_sale_count": 0,
         "sqft_range": "357 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 15,
+        "on_sale_count": 0,
         "sqft_range": "487 呎",
         "price_range": "待定/详见价单"
       }
@@ -21873,6 +22037,7 @@
       {
         "layout": "3 房",
         "unsold_count": 2,
+        "on_sale_count": 1,
         "sqft_range": "509 - 632 呎",
         "price_range": "招标"
       }
@@ -22575,6 +22740,7 @@
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "697 呎",
         "price_range": "招标"
       }
@@ -22986,6 +23152,7 @@
       {
         "layout": "1 房",
         "unsold_count": 15,
+        "on_sale_count": 15,
         "sqft_range": "338 - 347 呎",
         "price_range": "749.2 万 - 888.8 万"
       }
@@ -23241,18 +23408,21 @@
       {
         "layout": "开放式",
         "unsold_count": 17,
+        "on_sale_count": 4,
         "sqft_range": "180 - 218 呎",
         "price_range": "410.6 万 - 431.6 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 49,
+        "on_sale_count": 10,
         "sqft_range": "248 - 318 呎",
         "price_range": "502 万 - 557.6 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "603 - 673 呎",
         "price_range": "待定/详见价单"
       }
@@ -23280,7 +23450,7 @@
         "sqft": "286 呎",
         "price": "495 万",
         "unit_price": "$17,308/呎",
-        "date": "2026-08-18"
+        "date": "2026-09-03"
       },
       {
         "unit_name": "原舍座 16楼 B室",
@@ -23288,7 +23458,7 @@
         "sqft": "286 呎",
         "price": "493.1 万",
         "unit_price": "$17,241/呎",
-        "date": "2026-08-09"
+        "date": "2026-08-31"
       }
     ],
     "address": "德昌里22號",
@@ -23860,14 +24030,16 @@
       {
         "layout": "3 房",
         "unsold_count": 93,
+        "on_sale_count": 6,
         "sqft_range": "748 - 1395 呎",
         "price_range": "1839.5 万 - 3600.7 万"
       },
       {
         "layout": "4 房",
-        "unsold_count": 108,
+        "unsold_count": 107,
+        "on_sale_count": 0,
         "sqft_range": "1462 - 3165 呎",
-        "price_range": "3539.7 万 - 5266.4 万 (含招标)"
+        "price_range": "3539.7 万 - 5266.4 万"
       }
     ],
     "recent_transactions": [
@@ -23904,20 +24076,20 @@
         "date": "2026-08-20"
       },
       {
+        "unit_name": "2座 23楼 A室",
+        "layout": "4 房",
+        "sqft": "1711 呎",
+        "price": "6296.5 万",
+        "unit_price": "$36,800/呎",
+        "date": "2026-09-03"
+      },
+      {
         "unit_name": "5座 18楼 B室",
         "layout": "4 房",
         "sqft": "1856 呎",
         "price": "5529.7 万",
         "unit_price": "$29,794/呎",
         "date": "2026-08-20"
-      },
-      {
-        "unit_name": "5座 22楼 A室",
-        "layout": "4 房",
-        "sqft": "1788 呎",
-        "price": "6688 万",
-        "unit_price": "$37,405/呎",
-        "date": "2026-08-19"
       }
     ],
     "address": "延坪道9號",
@@ -24217,24 +24389,28 @@
       {
         "layout": "1 房",
         "unsold_count": 4,
+        "on_sale_count": 4,
         "sqft_range": "336 呎",
         "price_range": "1160.4 万 - 1231.5 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 17,
+        "on_sale_count": 12,
         "sqft_range": "397 - 584 呎",
         "price_range": "1514.5 万 - 2181.3 万"
       },
       {
         "layout": "3 房",
         "unsold_count": 16,
+        "on_sale_count": 16,
         "sqft_range": "831 - 1061 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 7,
+        "on_sale_count": 7,
         "sqft_range": "1135 - 3058 呎",
         "price_range": "招标"
       }
@@ -24546,18 +24722,21 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "255 呎",
         "price_range": "招标"
       },
       {
         "layout": "2 房",
         "unsold_count": 5,
+        "on_sale_count": 5,
         "sqft_range": "317 - 384 呎",
         "price_range": "招标"
       },
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "568 呎",
         "price_range": "招标"
       }
@@ -24640,8 +24819,8 @@
     "priced_units": 0,
     "pending_units": 0,
     "basic_price_desc": "",
-    "excel_min_price_desc": "$435.61万 - $725.41万",
-    "min_price_wan": 435.61,
+    "excel_min_price_desc": "$453.62万 - $725.41万",
+    "min_price_wan": 453.62,
     "sqft_price_desc": "",
     "main_layout": "",
     "reason": "",
@@ -24824,39 +25003,50 @@
     "sales_control_summary": [
       {
         "layout": "开放式",
-        "unsold_count": 20,
-        "sqft_range": "180 - 218 呎",
-        "price_range": "435.6 万 - 492.9 万"
+        "unsold_count": 18,
+        "on_sale_count": 18,
+        "sqft_range": "189 - 218 呎",
+        "price_range": "453.6 万 - 492.9 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 15,
+        "on_sale_count": 15,
         "sqft_range": "213 - 383 呎",
         "price_range": "702 万 - 725.4 万 (含招标)"
       },
       {
         "layout": "2 房",
         "unsold_count": 3,
+        "on_sale_count": 3,
         "sqft_range": "331 - 544 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "必嘉坊．曦汇座 25楼 F室",
+        "unit_name": "必嘉坊．曦汇座 10楼 F室",
         "layout": "开放式",
-        "sqft": "218 呎",
-        "price": "490.1 万",
-        "unit_price": "$22,480/呎",
-        "date": "2026-08-29"
+        "sqft": "217 呎",
+        "price": "463.6 万",
+        "unit_price": "$21,365/呎",
+        "date": "2026-09-07"
       },
       {
-        "unit_name": "必嘉坊．曦汇座 12楼 D室",
+        "unit_name": "必嘉坊．曦汇座 21楼 E室",
         "layout": "开放式",
         "sqft": "202 呎",
-        "price": "443.9 万",
-        "unit_price": "$21,974/呎",
-        "date": "2026-08-29"
+        "price": "455.1 万",
+        "unit_price": "$22,529/呎",
+        "date": "2026-09-03"
+      },
+      {
+        "unit_name": "必嘉坊．曦汇座 15楼 G室",
+        "layout": "1 房",
+        "sqft": "339 呎",
+        "price": "723.2 万",
+        "unit_price": "$21,334/呎",
+        "date": "2026-09-07"
       },
       {
         "unit_name": "必嘉坊．曦汇座 10楼 G室",
@@ -24865,14 +25055,6 @@
         "price": "710 万",
         "unit_price": "$20,944/呎",
         "date": "2026-08-13"
-      },
-      {
-        "unit_name": "必嘉坊．曦汇座 15楼 G室",
-        "layout": "1 房",
-        "sqft": "339 呎",
-        "price": "723.2 万",
-        "unit_price": "$21,334/呎",
-        "date": "2026-08-06"
       },
       {
         "unit_name": "必嘉坊．曦汇座 6楼 H室",
@@ -25128,18 +25310,21 @@
       {
         "layout": "开放式",
         "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "214 - 222 呎",
         "price_range": "招标"
       },
       {
         "layout": "1 房",
         "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "271 - 324 呎",
         "price_range": "招标"
       },
       {
         "layout": "2 房",
         "unsold_count": 3,
+        "on_sale_count": 3,
         "sqft_range": "340 - 433 呎",
         "price_range": "招标"
       }
@@ -25162,20 +25347,20 @@
         "date": "2026-02-05"
       },
       {
+        "unit_name": "必嘉坊．迎汇座 25楼 F室",
+        "layout": "1 房",
+        "sqft": "270 呎",
+        "price": "552 万",
+        "unit_price": "$20,444/呎",
+        "date": "2026-09-03"
+      },
+      {
         "unit_name": "必嘉坊．迎汇座 29楼 F室",
         "layout": "1 房",
         "sqft": "270 呎",
         "price": "658.8 万",
         "unit_price": "$24,400/呎",
         "date": "2026-07-28"
-      },
-      {
-        "unit_name": "必嘉坊．迎汇座 29楼 K室",
-        "layout": "1 房",
-        "sqft": "377 呎",
-        "price": "1020.6 万",
-        "unit_price": "$27,072/呎",
-        "date": "2026-04-29"
       },
       {
         "unit_name": "必嘉坊．迎汇座 29楼 J室",
@@ -25407,14 +25592,16 @@
       {
         "layout": "开放式",
         "unsold_count": 4,
+        "on_sale_count": 0,
         "sqft_range": "189 - 203 呎",
         "price_range": "413.7 万 - 491.4 万"
       },
       {
         "layout": "1 房",
-        "unsold_count": 12,
+        "unsold_count": 11,
+        "on_sale_count": 11,
         "sqft_range": "245 - 304 呎",
-        "price_range": "622.8 万 - 661 万 (含招标)"
+        "price_range": "656 万 - 661 万 (含招标)"
       }
     ],
     "recent_transactions": [
@@ -25435,20 +25622,20 @@
         "date": "2026-03-02"
       },
       {
+        "unit_name": "悦麓座 7楼 B室",
+        "layout": "1 房",
+        "sqft": "283 呎",
+        "price": "622.8 万",
+        "unit_price": "$22,008/呎",
+        "date": "2026-09-05"
+      },
+      {
         "unit_name": "悦麓座 20楼 D室",
         "layout": "1 房",
         "sqft": "252 呎",
         "price": "641 万",
         "unit_price": "$25,438/呎",
         "date": "2026-08-27"
-      },
-      {
-        "unit_name": "悦麓座 21楼 B室",
-        "layout": "1 房",
-        "sqft": "267 呎",
-        "price": "683.2 万",
-        "unit_price": "$25,588/呎",
-        "date": "2026-08-19"
       }
     ],
     "address": "鶴齡街8號",
@@ -25479,8 +25666,8 @@
     "priced_units": 22,
     "pending_units": 0,
     "basic_price_desc": "",
-    "excel_min_price_desc": "$825.73万起",
-    "min_price_wan": 825.73,
+    "excel_min_price_desc": "参考成交: $641.36万 - $1633.5万",
+    "min_price_wan": 641.36,
     "sqft_price_desc": "",
     "main_layout": "",
     "reason": "",
@@ -25703,33 +25890,35 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 8,
+        "unsold_count": 6,
+        "on_sale_count": 6,
         "sqft_range": "352 - 435 呎",
-        "price_range": "825.7 万 (含招标)"
+        "price_range": "招标"
       },
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "642 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "2座 12楼 H室",
+        "unit_name": "2座 15楼 H室",
         "layout": "2 房",
         "sqft": "399 呎",
-        "price": "789.9 万",
-        "unit_price": "$19,796/呎",
-        "date": "2026-08-29"
+        "price": "794.1 万",
+        "unit_price": "$19,901/呎",
+        "date": "2026-09-07"
       },
       {
-        "unit_name": "2座 19楼 H室",
+        "unit_name": "2座 17楼 H室",
         "layout": "2 房",
         "sqft": "399 呎",
-        "price": "818.5 万",
-        "unit_price": "$20,515/呎",
-        "date": "2026-08-21"
+        "price": "805.5 万",
+        "unit_price": "$20,189/呎",
+        "date": "2026-09-04"
       },
       {
         "unit_name": "2座 3楼 A室",
@@ -25756,7 +25945,7 @@
     "primary_school_net": "35校网",
     "secondary_school_net": "九龍城校网",
     "school_net": "35校网 / 九龍城校网",
-    "max_price_wan": 825.73,
+    "max_price_wan": 1633.5,
     "has_price_data": true,
     "building_count": 1
   },
@@ -26001,6 +26190,7 @@
       {
         "layout": "null房",
         "unsold_count": 384,
+        "on_sale_count": 0,
         "sqft_range": "详见销控",
         "price_range": "待定/详见价单"
       }
@@ -26250,18 +26440,28 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 25,
+        "unsold_count": 24,
+        "on_sale_count": 13,
         "sqft_range": "338 - 436 呎",
         "price_range": "784 万 - 1048 万"
       },
       {
         "layout": "3 房",
         "unsold_count": 19,
+        "on_sale_count": 0,
         "sqft_range": "573 - 708 呎",
         "price_range": "1336.2 万 - 1679.7 万"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "1座 30楼 H室",
+        "layout": "2 房",
+        "sqft": "339 呎",
+        "price": "796.1 万",
+        "unit_price": "$23,483/呎",
+        "date": "2026-09-06"
+      },
       {
         "unit_name": "1座 20楼 F室",
         "layout": "2 房",
@@ -26269,14 +26469,6 @@
         "price": "1010.5 万",
         "unit_price": "$23,178/呎",
         "date": "2026-08-13"
-      },
-      {
-        "unit_name": "1座 30楼 G室",
-        "layout": "2 房",
-        "sqft": "340 呎",
-        "price": "803.4 万",
-        "unit_price": "$23,630/呎",
-        "date": "2026-07-03"
       },
       {
         "unit_name": "1座 23楼 A室",
@@ -26323,8 +26515,8 @@
     "priced_units": 7,
     "pending_units": 124,
     "basic_price_desc": "",
-    "excel_min_price_desc": "$734.55万 - $1351.62万",
-    "min_price_wan": 734.55,
+    "excel_min_price_desc": "$678.22万 - $1351.62万",
+    "min_price_wan": 678.22,
     "sqft_price_desc": "",
     "main_layout": "",
     "reason": "",
@@ -26519,33 +26711,43 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 142,
+        "unsold_count": 128,
+        "on_sale_count": 44,
         "sqft_range": "338 - 469 呎",
-        "price_range": "734.6 万 - 1026.7 万"
+        "price_range": "678.2 万 - 1026.7 万"
       },
       {
         "layout": "3 房",
-        "unsold_count": 20,
+        "unsold_count": 19,
+        "on_sale_count": 5,
         "sqft_range": "585 呎",
         "price_range": "1183.2 万 - 1351.6 万"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "5座 23楼 L室",
+        "unit_name": "5座 18楼 L室",
         "layout": "2 房",
         "sqft": "343 呎",
-        "price": "749.8 万",
-        "unit_price": "$21,861/呎",
-        "date": "2026-08-27"
+        "price": "731.8 万",
+        "unit_price": "$21,336/呎",
+        "date": "2026-09-07"
       },
       {
-        "unit_name": "5座 21楼 L室",
+        "unit_name": "5座 26楼 C室",
         "layout": "2 房",
-        "sqft": "343 呎",
-        "price": "744.7 万",
-        "unit_price": "$21,713/呎",
-        "date": "2026-08-25"
+        "sqft": "344 呎",
+        "price": "771.2 万",
+        "unit_price": "$22,419/呎",
+        "date": "2026-09-06"
+      },
+      {
+        "unit_name": "5座 11楼 A室",
+        "layout": "3 房",
+        "sqft": "585 呎",
+        "price": "1229.1 万",
+        "unit_price": "$21,011/呎",
+        "date": "2026-08-30"
       },
       {
         "unit_name": "5座 20楼 A室",
@@ -26554,14 +26756,6 @@
         "price": "1269.7 万",
         "unit_price": "$21,705/呎",
         "date": "2026-07-13"
-      },
-      {
-        "unit_name": "5座 21楼 A室",
-        "layout": "3 房",
-        "sqft": "585 呎",
-        "price": "1279.6 万",
-        "unit_price": "$21,874/呎",
-        "date": "2026-07-07"
       }
     ],
     "address": "庇利街1號",
@@ -26825,24 +27019,28 @@
       {
         "layout": "1 房",
         "unsold_count": 5,
+        "on_sale_count": 5,
         "sqft_range": "228 - 274 呎",
         "price_range": "招标"
       },
       {
         "layout": "2 房",
         "unsold_count": 6,
+        "on_sale_count": 4,
         "sqft_range": "347 - 415 呎",
         "price_range": "710.9 万 - 955.4 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "534 呎",
         "price_range": "1239.3 万"
       },
       {
         "layout": "4 房",
         "unsold_count": 11,
+        "on_sale_count": 10,
         "sqft_range": "600 呎",
         "price_range": "招标"
       }
@@ -26902,7 +27100,7 @@
         "sqft": "600 呎",
         "price": "1523 万",
         "unit_price": "$25,383/呎",
-        "date": "2026-08-19"
+        "date": "2026-09-02"
       },
       {
         "unit_name": "首汇座 15楼 A室",
@@ -26941,8 +27139,8 @@
     "priced_units": 0,
     "pending_units": 507,
     "basic_price_desc": "",
-    "excel_min_price_desc": "$553.9万 - $1403.98万",
-    "min_price_wan": 553.9,
+    "excel_min_price_desc": "参考成交: $540.8万 - $1919.15万",
+    "min_price_wan": 540.8,
     "sqft_price_desc": "",
     "main_layout": "",
     "reason": "",
@@ -27197,71 +27395,74 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 48,
-        "sqft_range": "267 - 313 呎",
-        "price_range": "553.9 万 - 669.2 万"
+        "unsold_count": 3,
+        "on_sale_count": 3,
+        "sqft_range": "306 - 313 呎",
+        "price_range": "招标"
       },
       {
         "layout": "2 房",
-        "unsold_count": 48,
-        "sqft_range": "373 - 473 呎",
-        "price_range": "725.8 万 - 983.1 万"
+        "unsold_count": 3,
+        "on_sale_count": 3,
+        "sqft_range": "408 - 473 呎",
+        "price_range": "招标"
       },
       {
         "layout": "3 房",
-        "unsold_count": 52,
-        "sqft_range": "558 - 680 呎",
-        "price_range": "1103.8 万 - 1404 万 (含招标)"
+        "unsold_count": 19,
+        "on_sale_count": 19,
+        "sqft_range": "559 - 676 呎",
+        "price_range": "招标"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "3B座 47楼 C室",
+        "unit_name": "3B座 47楼 D室",
         "layout": "1 房",
-        "sqft": "306 呎",
-        "price": "646 万",
-        "unit_price": "$21,111/呎",
-        "date": "2026-08-29"
+        "sqft": "307 呎",
+        "price": "669.3 万",
+        "unit_price": "$21,801/呎",
+        "date": "2026-09-05"
       },
       {
-        "unit_name": "3B座 47楼 B室",
+        "unit_name": "3B座 46楼 D室",
         "layout": "1 房",
-        "sqft": "313 呎",
-        "price": "649.4 万",
-        "unit_price": "$20,748/呎",
-        "date": "2026-08-29"
+        "sqft": "307 呎",
+        "price": "661.3 万",
+        "unit_price": "$21,541/呎",
+        "date": "2026-09-05"
       },
       {
-        "unit_name": "3A座 47楼 E室",
-        "layout": "2 房",
-        "sqft": "423 呎",
-        "price": "1034.3 万",
-        "unit_price": "$24,452/呎",
-        "date": "2026-08-29"
-      },
-      {
-        "unit_name": "3A座 47楼 B室",
+        "unit_name": "3A座 48楼 B室",
         "layout": "2 房",
         "sqft": "444 呎",
-        "price": "1032.3 万",
-        "unit_price": "$23,250/呎",
-        "date": "2026-08-29"
+        "price": "1204.7 万",
+        "unit_price": "$27,133/呎",
+        "date": "2026-09-05"
       },
       {
-        "unit_name": "3A座 39楼 D室",
-        "layout": "3 房",
-        "sqft": "676 呎",
-        "price": "1866.4 万",
-        "unit_price": "$27,609/呎",
-        "date": "2026-08-29"
+        "unit_name": "3A座 3楼 E室",
+        "layout": "2 房",
+        "sqft": "383 呎",
+        "price": "995.8 万",
+        "unit_price": "$26,000/呎",
+        "date": "2026-09-05"
       },
       {
-        "unit_name": "3A座 35楼 C室",
+        "unit_name": "3A座 48楼 A室",
         "layout": "3 房",
-        "sqft": "559 呎",
-        "price": "1419.9 万",
-        "unit_price": "$25,400/呎",
-        "date": "2026-08-29"
+        "sqft": "655 呎",
+        "price": "1919.2 万",
+        "unit_price": "$29,300/呎",
+        "date": "2026-09-05"
+      },
+      {
+        "unit_name": "3A座 47楼 A室",
+        "layout": "3 房",
+        "sqft": "655 呎",
+        "price": "1473.8 万",
+        "unit_price": "$22,500/呎",
+        "date": "2026-09-05"
       }
     ],
     "address": "發祥街西8號",
@@ -27272,7 +27473,7 @@
     "primary_school_net": "40校网",
     "secondary_school_net": "深水埗校网",
     "school_net": "40校网 / 深水埗校网",
-    "max_price_wan": 1403.98,
+    "max_price_wan": 1919.15,
     "has_price_data": true,
     "building_count": 2
   },
@@ -27397,24 +27598,28 @@
       {
         "layout": "开放式",
         "unsold_count": 22,
+        "on_sale_count": 10,
         "sqft_range": "275 - 279 呎",
         "price_range": "696 万 - 873.4 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 12,
+        "on_sale_count": 1,
         "sqft_range": "350 - 393 呎",
         "price_range": "774.7 万 - 1201.8 万"
       },
       {
         "layout": "3 房",
         "unsold_count": 8,
+        "on_sale_count": 4,
         "sqft_range": "1629 - 1739 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 3,
+        "on_sale_count": 2,
         "sqft_range": "1214 - 2171 呎",
         "price_range": "招标"
       }
@@ -27806,6 +28011,7 @@
       {
         "layout": "开放式",
         "unsold_count": 3,
+        "on_sale_count": 3,
         "sqft_range": "277 呎",
         "price_range": "735 万 - 757.3 万"
       }
@@ -28045,6 +28251,7 @@
       {
         "layout": "1 房",
         "unsold_count": 7,
+        "on_sale_count": 5,
         "sqft_range": "261 - 263 呎",
         "price_range": "621.5 万 - 673.9 万"
       }
@@ -28268,12 +28475,14 @@
       {
         "layout": "2 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "379 呎",
         "price_range": "899.3 万"
       },
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "832 呎",
         "price_range": "招标"
       }
@@ -28497,60 +28706,72 @@
       {
         "layout": "1 房",
         "unsold_count": 8,
+        "on_sale_count": 8,
         "sqft_range": "232 - 273 呎",
         "price_range": "650.2 万 - 675.6 万 (含招标)"
       },
       {
         "layout": "2 房",
-        "unsold_count": 66,
+        "unsold_count": 63,
+        "on_sale_count": 26,
         "sqft_range": "311 - 350 呎",
-        "price_range": "737 万 - 947 万"
+        "price_range": "737 万 - 947 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 42,
+        "on_sale_count": 18,
         "sqft_range": "359 - 684 呎",
         "price_range": "890.7 万 - 1323.8 万 (含招标)"
       },
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "957 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "2座 28楼 P室",
+        "unit_name": "2座 27楼 P室",
         "layout": "1 房",
         "sqft": "273 呎",
-        "price": "640.5 万",
-        "unit_price": "$23,461/呎",
-        "date": "2026-08-27"
+        "price": "603.2 万",
+        "unit_price": "$22,095/呎",
+        "date": "2026-09-07"
       },
       {
-        "unit_name": "2座 25楼 P室",
+        "unit_name": "2座 26楼 P室",
         "layout": "1 房",
         "sqft": "273 呎",
-        "price": "599.6 万",
-        "unit_price": "$21,963/呎",
-        "date": "2026-08-25"
+        "price": "601.5 万",
+        "unit_price": "$22,032/呎",
+        "date": "2026-09-02"
       },
       {
-        "unit_name": "2座 32楼 F室",
+        "unit_name": "2座 10楼 F室",
         "layout": "2 房",
         "sqft": "348 呎",
-        "price": "862.5 万",
-        "unit_price": "$24,784/呎",
-        "date": "2026-08-26"
+        "price": "741.9 万",
+        "unit_price": "$21,318/呎",
+        "date": "2026-09-06"
       },
       {
-        "unit_name": "2座 15楼 C室",
+        "unit_name": "2座 30楼 H室",
         "layout": "2 房",
-        "sqft": "350 呎",
-        "price": "775.1 万",
-        "unit_price": "$22,145/呎",
-        "date": "2026-08-26"
+        "sqft": "348 呎",
+        "price": "855 万",
+        "unit_price": "$24,569/呎",
+        "date": "2026-09-05"
+      },
+      {
+        "unit_name": "2座 3楼 K室",
+        "layout": "3 房",
+        "sqft": "357 呎",
+        "price": "1178.1 万",
+        "unit_price": "$33,000/呎",
+        "date": "2026-09-04"
       },
       {
         "unit_name": "2座 33楼 B室",
@@ -28559,14 +28780,6 @@
         "price": "1016.8 万",
         "unit_price": "$25,613/呎",
         "date": "2026-08-27"
-      },
-      {
-        "unit_name": "2座 15楼 B室",
-        "layout": "3 房",
-        "sqft": "397 呎",
-        "price": "874.3 万",
-        "unit_price": "$22,022/呎",
-        "date": "2026-08-26"
       }
     ],
     "address": "土瓜灣道70號",
@@ -28781,7 +28994,8 @@
     "sales_control_summary": [
       {
         "layout": "3 房",
-        "unsold_count": 9,
+        "unsold_count": 8,
+        "on_sale_count": 0,
         "sqft_range": "904 - 905 呎",
         "price_range": "1779 万"
       }
@@ -28820,20 +29034,20 @@
         "date": "2026-06-12"
       },
       {
+        "unit_name": "文曜座 18楼 C室",
+        "layout": "3 房",
+        "sqft": "904 呎",
+        "price": "2062 万",
+        "unit_price": "$22,810/呎",
+        "date": "2026-09-02"
+      },
+      {
         "unit_name": "文曜座 15楼 C室",
         "layout": "3 房",
         "sqft": "905 呎",
         "price": "1902.4 万",
         "unit_price": "$21,021/呎",
         "date": "2026-02-27"
-      },
-      {
-        "unit_name": "文曜座 29楼 C室",
-        "layout": "3 房",
-        "sqft": "904 呎",
-        "price": "2130.9 万",
-        "unit_price": "$23,572/呎",
-        "date": "2026-02-02"
       },
       {
         "unit_name": "文曜座 30楼 A室",
@@ -28973,6 +29187,7 @@
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "580 呎",
         "price_range": "1449.3 万"
       }
@@ -29168,24 +29383,28 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "273 呎",
         "price_range": "招标"
       },
       {
         "layout": "2 房",
         "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "402 - 440 呎",
         "price_range": "1502.3 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 4,
+        "on_sale_count": 4,
         "sqft_range": "531 - 1119 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "1291 呎",
         "price_range": "招标"
       }
@@ -29328,18 +29547,28 @@
     "sales_control_summary": [
       {
         "layout": "开放式",
-        "unsold_count": 5,
+        "unsold_count": 4,
+        "on_sale_count": 4,
         "sqft_range": "205 呎",
         "price_range": "536 万 - 586.7 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "355 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "君誉峰座 23楼 E室",
+        "layout": "开放式",
+        "sqft": "205 呎",
+        "price": "539.6 万",
+        "unit_price": "$26,322/呎",
+        "date": "2026-09-02"
+      },
       {
         "unit_name": "君誉峰座 22楼 D室",
         "layout": "开放式",
@@ -29347,14 +29576,6 @@
         "price": "597.5 万",
         "unit_price": "$29,147/呎",
         "date": "2021-05-25"
-      },
-      {
-        "unit_name": "君誉峰座 20楼 D室",
-        "layout": "开放式",
-        "sqft": "205 呎",
-        "price": "583.3 万",
-        "unit_price": "$28,453/呎",
-        "date": "2021-05-04"
       },
       {
         "unit_name": "君誉峰座 3楼 G室",
@@ -29375,9 +29596,9 @@
       {
         "unit_name": "君誉峰座 28楼 D室",
         "layout": "2 房",
-        "sqft": "418 呎",
+        "sqft": "419 呎",
         "price": "1521.5 万",
-        "unit_price": "$36,400/呎",
+        "unit_price": "$36,313/呎",
         "date": "2026-08-27"
       },
       {
@@ -29514,6 +29735,7 @@
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "946 呎",
         "price_range": "招标"
       }
@@ -29785,6 +30007,7 @@
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "1006 呎",
         "price_range": "招标"
       }
@@ -29839,20 +30062,20 @@
         "date": "2019-07-15"
       },
       {
+        "unit_name": "2座 28楼 A室",
+        "layout": "4 房",
+        "sqft": "1271 呎",
+        "price": "3411.7 万",
+        "unit_price": "$26,843/呎",
+        "date": "2026-08-31"
+      },
+      {
         "unit_name": "2座 31楼 A室",
         "layout": "4 房",
         "sqft": "1271 呎",
         "price": "3694.3 万",
         "unit_price": "$29,066/呎",
         "date": "2026-08-12"
-      },
-      {
-        "unit_name": "2座 28楼 A室",
-        "layout": "4 房",
-        "sqft": "1271 呎",
-        "price": "3411.7 万",
-        "unit_price": "$26,843/呎",
-        "date": "2026-08-07"
       }
     ],
     "address": "繼園街1號",
@@ -30008,30 +30231,35 @@
       {
         "layout": "开放式",
         "unsold_count": 3,
+        "on_sale_count": 2,
         "sqft_range": "286 呎",
         "price_range": "1059 万 - 1078 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 112,
+        "on_sale_count": 6,
         "sqft_range": "361 - 458 呎",
         "price_range": "1294.9 万 - 1677.5 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 32,
+        "on_sale_count": 0,
         "sqft_range": "529 - 603 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 22,
+        "on_sale_count": 1,
         "sqft_range": "813 - 1602 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 40,
+        "on_sale_count": 6,
         "sqft_range": "1402 - 2373 呎",
         "price_range": "招标"
       }
@@ -30263,18 +30491,21 @@
       {
         "layout": "开放式",
         "unsold_count": 16,
+        "on_sale_count": 0,
         "sqft_range": "277 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "1 房",
         "unsold_count": 61,
+        "on_sale_count": 0,
         "sqft_range": "355 - 412 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
         "unsold_count": 16,
+        "on_sale_count": 0,
         "sqft_range": "507 - 755 呎",
         "price_range": "待定/详见价单"
       }
@@ -30458,18 +30689,21 @@
       {
         "layout": "开放式",
         "unsold_count": 16,
+        "on_sale_count": 0,
         "sqft_range": "277 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "1 房",
         "unsold_count": 61,
+        "on_sale_count": 0,
         "sqft_range": "355 - 412 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
         "unsold_count": 16,
+        "on_sale_count": 0,
         "sqft_range": "507 - 755 呎",
         "price_range": "待定/详见价单"
       }
@@ -30801,12 +31035,14 @@
       {
         "layout": "3 房",
         "unsold_count": 3,
+        "on_sale_count": 0,
         "sqft_range": "1254 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 5,
+        "on_sale_count": 0,
         "sqft_range": "1608 - 2523 呎",
         "price_range": "待定/详见价单"
       }
@@ -31374,12 +31610,14 @@
       {
         "layout": "3 房",
         "unsold_count": 20,
+        "on_sale_count": 1,
         "sqft_range": "1615 - 2962 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 25,
+        "on_sale_count": 1,
         "sqft_range": "1985 - 2785 呎",
         "price_range": "招标"
       }
@@ -31915,12 +32153,14 @@
       {
         "layout": "3 房",
         "unsold_count": 6,
+        "on_sale_count": 0,
         "sqft_range": "2754 - 2780 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 10,
+        "on_sale_count": 1,
         "sqft_range": "3648 - 4022 呎",
         "price_range": "招标"
       }
@@ -32408,18 +32648,21 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "2316 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "2169 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 55,
+        "on_sale_count": 0,
         "sqft_range": "2075 - 2945 呎",
         "price_range": "待定/详见价单"
       }
@@ -32428,18 +32671,18 @@
       {
         "unit_name": "3号及5号座 11楼 3室",
         "layout": "4 房",
-        "sqft": "2193 呎",
+        "sqft": "2133 呎",
         "price": "1.51 亿",
-        "unit_price": "$68,855/呎",
-        "date": "2026-08-17"
+        "unit_price": "$70,792/呎",
+        "date": "2026-09-03"
       },
       {
         "unit_name": "6号及7号座 8楼 7室",
         "layout": "4 房",
-        "sqft": "2316 呎",
+        "sqft": "2256 呎",
         "price": "1.48 亿",
-        "unit_price": "$63,731/呎",
-        "date": "2026-08-10"
+        "unit_price": "$65,426/呎",
+        "date": "2026-09-01"
       },
       {
         "unit_name": "1号及2号座 10楼 1室",
@@ -32879,6 +33122,7 @@
       {
         "layout": "4 房",
         "unsold_count": 3,
+        "on_sale_count": 1,
         "sqft_range": "3654 - 4810 呎",
         "price_range": "招标"
       }
@@ -33238,6 +33482,7 @@
       {
         "layout": "开放式",
         "unsold_count": 12,
+        "on_sale_count": 4,
         "sqft_range": "156 - 244 呎",
         "price_range": "457 万 - 860.3 万"
       }
@@ -33581,12 +33826,14 @@
       {
         "layout": "3 房",
         "unsold_count": 6,
+        "on_sale_count": 0,
         "sqft_range": "1508 - 1584 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 17,
+        "on_sale_count": 0,
         "sqft_range": "1505 - 3237 呎",
         "price_range": "待定/详见价单"
       }
@@ -33950,38 +34197,41 @@
       {
         "layout": "2 房",
         "unsold_count": 40,
+        "on_sale_count": 0,
         "sqft_range": "834 - 856 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
-        "unsold_count": 46,
+        "unsold_count": 44,
+        "on_sale_count": 0,
         "sqft_range": "1376 - 4710 呎",
-        "price_range": "招标"
+        "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 8,
+        "on_sale_count": 0,
         "sqft_range": "4710 - 11200 呎",
         "price_range": "待定/详见价单"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "2座 36楼 -室",
-        "layout": "3 房",
-        "sqft": "4596 呎",
-        "price": "2.69 亿",
-        "unit_price": "$58,526/呎",
-        "date": "2026-04-30"
-      },
-      {
-        "unit_name": "2座 50楼 -室",
+        "unit_name": "2座 39楼 -室",
         "layout": "3 房",
         "sqft": "4710 呎",
-        "price": "3.55 亿",
-        "unit_price": "$75,363/呎",
-        "date": "2025-10-28"
+        "price": "2.85 亿",
+        "unit_price": "$60,480/呎",
+        "date": "2026-09-04"
+      },
+      {
+        "unit_name": "2座 37楼 -室",
+        "layout": "3 房",
+        "sqft": "4710 呎",
+        "price": "2.86 亿",
+        "unit_price": "$60,660/呎",
+        "date": "2026-08-31"
       },
       {
         "unit_name": "2座 35楼 A室",
@@ -34337,14 +34587,16 @@
       {
         "layout": "3 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "5590 - 5593 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 35,
+        "on_sale_count": 8,
         "sqft_range": "2682 - 12582 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       }
     ],
     "recent_transactions": [
@@ -34697,9 +34949,10 @@
     "sales_control_summary": [
       {
         "layout": "4 房",
-        "unsold_count": 2,
-        "sqft_range": "6799 - 7263 呎",
-        "price_range": "招标"
+        "unsold_count": 1,
+        "on_sale_count": 0,
+        "sqft_range": "7263 呎",
+        "price_range": "待定/详见价单"
       }
     ],
     "recent_transactions": [
@@ -34720,20 +34973,20 @@
         "date": "2025-11-21"
       },
       {
+        "unit_name": "宝峰座 9楼 A室",
+        "layout": "4 房",
+        "sqft": "6799 呎",
+        "price": "3.99 亿",
+        "unit_price": "$58,685/呎",
+        "date": "2026-09-03"
+      },
+      {
         "unit_name": "宝峰座 1楼 B室",
         "layout": "4 房",
         "sqft": "3700 呎",
         "price": "1.51 亿",
         "unit_price": "$40,811/呎",
         "date": "2026-07-14"
-      },
-      {
-        "unit_name": "宝峰座 1楼 A室",
-        "layout": "4 房",
-        "sqft": "4049 呎",
-        "price": "1.80 亿",
-        "unit_price": "$44,455/呎",
-        "date": "2026-06-23"
       }
     ],
     "address": "寶珊道23號",
@@ -35137,18 +35390,21 @@
       {
         "layout": "2 房",
         "unsold_count": 10,
+        "on_sale_count": 0,
         "sqft_range": "978 - 1024 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 10,
+        "on_sale_count": 0,
         "sqft_range": "1179 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 31,
+        "on_sale_count": 0,
         "sqft_range": "1670 - 4754 呎",
         "price_range": "待定/详见价单"
       }
@@ -35688,18 +35944,21 @@
       {
         "layout": "2 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "1875 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 14,
+        "on_sale_count": 3,
         "sqft_range": "1800 - 1875 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
-        "unsold_count": 40,
+        "unsold_count": 39,
+        "on_sale_count": 4,
         "sqft_range": "2056 - 2193 呎",
         "price_range": "招标"
       }
@@ -35722,20 +35981,20 @@
         "date": "2026-07-07"
       },
       {
-        "unit_name": "8号及9号座 10楼 9室",
-        "layout": "4 房",
-        "sqft": "2137 呎",
-        "price": "1.41 亿",
-        "unit_price": "$65,800/呎",
-        "date": "2026-08-28"
-      },
-      {
-        "unit_name": "10号及11号座 11楼 10室",
+        "unit_name": "10号及11号座 16楼 10室",
         "layout": "4 房",
         "sqft": "2153 呎",
-        "price": "1.43 亿",
-        "unit_price": "$66,600/呎",
-        "date": "2026-08-14"
+        "price": "1.59 亿",
+        "unit_price": "$74,000/呎",
+        "date": "2026-09-02"
+      },
+      {
+        "unit_name": "8号及9号座 11楼 9室",
+        "layout": "4 房",
+        "sqft": "2137 呎",
+        "price": "1.42 亿",
+        "unit_price": "$66,500/呎",
+        "date": "2026-09-02"
       }
     ],
     "address": "波老道25號",
@@ -35939,12 +36198,14 @@
       {
         "layout": "2 房",
         "unsold_count": 4,
+        "on_sale_count": 0,
         "sqft_range": "840 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
-        "unsold_count": 27,
+        "unsold_count": 26,
+        "on_sale_count": 0,
         "sqft_range": "841 - 2158 呎",
         "price_range": "待定/详见价单"
       }
@@ -35967,12 +36228,12 @@
         "date": "2011-01-31"
       },
       {
-        "unit_name": "1座 45楼 B室",
+        "unit_name": "2座 46楼 A室",
         "layout": "3 房",
         "sqft": "1070 呎",
-        "price": "3680 万",
-        "unit_price": "$34,393/呎",
-        "date": "2026-08-17"
+        "price": "3750 万",
+        "unit_price": "$35,047/呎",
+        "date": "2026-09-07"
       },
       {
         "unit_name": "2座 30楼 B室",
@@ -35980,7 +36241,7 @@
         "sqft": "1032 呎",
         "price": "3028 万",
         "unit_price": "$29,341/呎",
-        "date": "2026-08-04"
+        "date": "2026-08-31"
       }
     ],
     "address": "羅便臣道80號",
@@ -36108,12 +36369,14 @@
       {
         "layout": "开放式",
         "unsold_count": 35,
+        "on_sale_count": 2,
         "sqft_range": "229 - 262 呎",
         "price_range": "651.4 万 - 890.7 万"
       },
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "687 呎",
         "price_range": "招标"
       }
@@ -36287,6 +36550,7 @@
       {
         "layout": "3 房",
         "unsold_count": 7,
+        "on_sale_count": 0,
         "sqft_range": "821 - 979 呎",
         "price_range": "待定/详见价单"
       }
@@ -36385,7 +36649,7 @@
     "priced_units": 0,
     "pending_units": 11,
     "basic_price_desc": "1000-1500万左右",
-    "excel_min_price_desc": "参考成交: $714.6万 - $1452.0万",
+    "excel_min_price_desc": "参考成交: $714.6万 - $2260.0万",
     "min_price_wan": 714.6,
     "sqft_price_desc": "3.5万左右",
     "main_layout": "284-412呎",
@@ -36561,18 +36825,28 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 11,
+        "unsold_count": 10,
+        "on_sale_count": 7,
         "sqft_range": "247 - 328 呎",
         "price_range": "招标"
       },
       {
         "layout": "2 房",
-        "unsold_count": 5,
+        "unsold_count": 4,
+        "on_sale_count": 1,
         "sqft_range": "412 - 1063 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "海嵎座 26楼 F室",
+        "layout": "1 房",
+        "sqft": "288 呎",
+        "price": "1001.7 万",
+        "unit_price": "$34,781/呎",
+        "date": "2026-09-06"
+      },
       {
         "unit_name": "海嵎座 23楼 C室",
         "layout": "1 房",
@@ -36582,12 +36856,12 @@
         "date": "2026-08-27"
       },
       {
-        "unit_name": "海嵎座 23楼 A室",
-        "layout": "1 房",
-        "sqft": "287 呎",
-        "price": "1031.3 万",
-        "unit_price": "$35,934/呎",
-        "date": "2026-08-27"
+        "unit_name": "海嵎座 27楼 A室",
+        "layout": "2 房",
+        "sqft": "471 呎",
+        "price": "2260 万",
+        "unit_price": "$47,983/呎",
+        "date": "2026-08-31"
       },
       {
         "unit_name": "海嵎座 23楼 E室",
@@ -36596,14 +36870,6 @@
         "price": "1452 万",
         "unit_price": "$35,243/呎",
         "date": "2026-08-25"
-      },
-      {
-        "unit_name": "海嵎座 26楼 E室",
-        "layout": "2 房",
-        "sqft": "412 呎",
-        "price": "1425 万",
-        "unit_price": "$34,587/呎",
-        "date": "2026-05-11"
       }
     ],
     "address": "爹核士街1D號",
@@ -36614,7 +36880,7 @@
     "primary_school_net": "11校网",
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
-    "max_price_wan": 1452.0,
+    "max_price_wan": 2260.0,
     "has_price_data": true,
     "building_count": 1
   },
@@ -37690,7 +37956,8 @@
     "sales_control_summary": [
       {
         "layout": "4 房",
-        "unsold_count": 29,
+        "unsold_count": 28,
+        "on_sale_count": 3,
         "sqft_range": "2476 - 3343 呎",
         "price_range": "招标"
       }
@@ -38030,6 +38297,7 @@
       {
         "layout": "4 房",
         "unsold_count": 4,
+        "on_sale_count": 3,
         "sqft_range": "3777 - 11660 呎",
         "price_range": "招标"
       }
@@ -38645,6 +38913,7 @@
       {
         "layout": "4 房",
         "unsold_count": 12,
+        "on_sale_count": 0,
         "sqft_range": "1664 - 3510 呎",
         "price_range": "待定/详见价单"
       }
@@ -39194,6 +39463,7 @@
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "2908 呎",
         "price_range": "招标"
       }
@@ -40351,6 +40621,7 @@
       {
         "layout": "4 房",
         "unsold_count": 8,
+        "on_sale_count": 0,
         "sqft_range": "4963 - 8694 呎",
         "price_range": "待定/详见价单"
       }
@@ -40817,12 +41088,14 @@
       {
         "layout": "3 房",
         "unsold_count": 8,
+        "on_sale_count": 0,
         "sqft_range": "2865 - 7710 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 26,
+        "on_sale_count": 0,
         "sqft_range": "3407 - 12566 呎",
         "price_range": "待定/详见价单"
       }
@@ -41850,6 +42123,7 @@
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "8093 呎",
         "price_range": "待定/详见价单"
       }
@@ -42881,6 +43155,7 @@
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "4499 呎",
         "price_range": "待定/详见价单"
       }
@@ -45726,6 +46001,7 @@
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "4945 呎",
         "price_range": "招标"
       }
@@ -48567,12 +48843,14 @@
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "4561 呎",
         "price_range": "4.51 亿"
       },
       {
         "layout": "4 房",
         "unsold_count": 5,
+        "on_sale_count": 3,
         "sqft_range": "4432 - 4893 呎",
         "price_range": "4.55 亿 - 5.03 亿"
       }
@@ -48839,18 +49117,21 @@
       {
         "layout": "1 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "397 - 416 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
-        "unsold_count": 45,
+        "unsold_count": 44,
+        "on_sale_count": 32,
         "sqft_range": "490 - 573 呎",
         "price_range": "912.3 万 - 984 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 148,
+        "on_sale_count": 0,
         "sqft_range": "854 - 938 呎",
         "price_range": "1841.9 万 - 2163.4 万"
       }
@@ -48873,20 +49154,20 @@
         "date": "2026-07-09"
       },
       {
-        "unit_name": "3座 27楼 E室",
+        "unit_name": "2座 35楼 G室",
         "layout": "2 房",
-        "sqft": "537 呎",
-        "price": "917.6 万",
-        "unit_price": "$17,088/呎",
-        "date": "2026-08-30"
+        "sqft": "538 呎",
+        "price": "1111.2 万",
+        "unit_price": "$20,654/呎",
+        "date": "2026-09-07"
       },
       {
-        "unit_name": "3座 26楼 H室",
+        "unit_name": "3座 43楼 H室",
         "layout": "2 房",
         "sqft": "573 呎",
-        "price": "1120.5 万",
-        "unit_price": "$19,555/呎",
-        "date": "2026-08-30"
+        "price": "1318.9 万",
+        "unit_price": "$23,017/呎",
+        "date": "2026-09-07"
       }
     ],
     "main_area": "港岛南区",
@@ -49388,18 +49669,28 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 54,
+        "unsold_count": 53,
+        "on_sale_count": 0,
         "sqft_range": "434 - 731 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
-        "unsold_count": 17,
+        "unsold_count": 15,
+        "on_sale_count": 0,
         "sqft_range": "1616 - 2949 呎",
         "price_range": "待定/详见价单"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "2座 11楼 B室",
+        "layout": "2 房",
+        "sqft": "645 呎",
+        "price": "2800 万",
+        "unit_price": "$43,411/呎",
+        "date": "2026-09-07"
+      },
       {
         "unit_name": "2座 19楼 C室",
         "layout": "2 房",
@@ -49409,28 +49700,20 @@
         "date": "2026-07-28"
       },
       {
-        "unit_name": "2座 12楼 E室",
-        "layout": "2 房",
-        "sqft": "439 呎",
-        "price": "2319.3 万",
-        "unit_price": "$52,832/呎",
-        "date": "2026-06-30"
+        "unit_name": "1座 10楼 B室",
+        "layout": "4 房",
+        "sqft": "1686 呎",
+        "price": "8400 万",
+        "unit_price": "$49,822/呎",
+        "date": "2026-08-31"
       },
       {
-        "unit_name": "1座 5楼 A室",
+        "unit_name": "1座 10楼 A室",
         "layout": "4 房",
         "sqft": "1679 呎",
-        "price": "8280 万",
-        "unit_price": "$49,315/呎",
-        "date": "2026-07-15"
-      },
-      {
-        "unit_name": "1座 12楼 B室",
-        "layout": "4 房",
-        "sqft": "1684 呎",
-        "price": "8642 万",
-        "unit_price": "$51,318/呎",
-        "date": "2026-06-29"
+        "price": "8480 万",
+        "unit_price": "$50,506/呎",
+        "date": "2026-08-31"
       }
     ],
     "main_area": "港岛湾仔及东半山",
@@ -50021,6 +50304,7 @@
       {
         "layout": "3 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "4283 - 5515 呎",
         "price_range": "待定/详见价单"
       }
@@ -50360,18 +50644,21 @@
       {
         "layout": "1 房",
         "unsold_count": 14,
+        "on_sale_count": 0,
         "sqft_range": "282 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "2 房",
         "unsold_count": 38,
+        "on_sale_count": 0,
         "sqft_range": "305 - 540 呎",
         "price_range": "715.9 万 - 736.7 万"
       },
       {
         "layout": "3 房",
         "unsold_count": 10,
+        "on_sale_count": 0,
         "sqft_range": "560 - 1016 呎",
         "price_range": "待定/详见价单"
       }
@@ -50870,12 +51157,14 @@
       {
         "layout": "1 房",
         "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "323 - 324 呎",
         "price_range": "919.9 万 - 930.6 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 14,
+        "on_sale_count": 14,
         "sqft_range": "331 - 333 呎",
         "price_range": "832.8 万 - 1241 万"
       }
@@ -51071,20 +51360,23 @@
       {
         "layout": "1 房",
         "unsold_count": 6,
+        "on_sale_count": 6,
         "sqft_range": "283 - 340 呎",
         "price_range": "662.3 万 - 823.3 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "497 - 514 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       },
       {
         "layout": "3 房",
         "unsold_count": 2,
+        "on_sale_count": 2,
         "sqft_range": "577 - 737 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       }
     ],
     "recent_transactions": [
@@ -51640,18 +51932,21 @@
       {
         "layout": "1 房",
         "unsold_count": 5,
+        "on_sale_count": 0,
         "sqft_range": "271 - 434 呎",
         "price_range": "808.1 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 23,
+        "on_sale_count": 0,
         "sqft_range": "527 呎",
         "price_range": "844.1 万 - 1076.4 万"
       },
       {
         "layout": "3 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "1194 - 1283 呎",
         "price_range": "待定/详见价单"
       }
@@ -52103,12 +52398,14 @@
       {
         "layout": "2 房",
         "unsold_count": 44,
+        "on_sale_count": 0,
         "sqft_range": "1356 - 1367 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 57,
+        "on_sale_count": 0,
         "sqft_range": "1356 - 1367 呎",
         "price_range": "待定/详见价单"
       }
@@ -52296,6 +52593,7 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "307 呎",
         "price_range": "1076.8 万"
       }
@@ -52599,6 +52897,7 @@
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "1157 呎",
         "price_range": "4396.6 万"
       }
@@ -52665,7 +52964,7 @@
     "priced_units": 0,
     "pending_units": 0,
     "basic_price_desc": "",
-    "excel_min_price_desc": "参考成交: $10680.0万 - $16929.4万",
+    "excel_min_price_desc": "参考成交: $10680.0万 - $16880.0万",
     "min_price_wan": 10680.0,
     "sqft_price_desc": "",
     "main_layout": "",
@@ -54222,6 +54521,7 @@
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "4076 呎",
         "price_range": "招标"
       }
@@ -54250,14 +54550,6 @@
         "price": "1.49 亿",
         "unit_price": "$45,939/呎",
         "date": "2015-05-08"
-      },
-      {
-        "unit_name": "3号屋座 -楼 -室",
-        "layout": "4 房",
-        "sqft": "3179 呎",
-        "price": "1.69 亿",
-        "unit_price": "$53,254/呎",
-        "date": "2015-04-29"
       }
     ],
     "address": "赤柱村道50號",
@@ -54268,7 +54560,7 @@
     "primary_school_net": "18校网",
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
-    "max_price_wan": 16929.4,
+    "max_price_wan": 16880.0,
     "has_price_data": true,
     "building_count": 1
   },
@@ -56365,18 +56657,21 @@
       {
         "layout": "2 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "844 呎",
         "price_range": "招标"
       },
       {
         "layout": "3 房",
         "unsold_count": 4,
+        "on_sale_count": 3,
         "sqft_range": "1097 - 7079 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 20,
+        "on_sale_count": 8,
         "sqft_range": "1855 - 6723 呎",
         "price_range": "招标"
       }
@@ -56388,7 +56683,7 @@
         "sqft": "834 呎",
         "price": "2342 万",
         "unit_price": "$28,082/呎",
-        "date": "2026-08-17"
+        "date": "2026-09-04"
       },
       {
         "unit_name": "3座 G楼 A室",
@@ -56396,15 +56691,15 @@
         "sqft": "844 呎",
         "price": "2398 万",
         "unit_price": "$28,412/呎",
-        "date": "2026-08-17"
+        "date": "2026-09-04"
       },
       {
         "unit_name": "8座 3楼 B室",
         "layout": "3 房",
-        "sqft": "1215 呎",
+        "sqft": "1171 呎",
         "price": "4275 万",
-        "unit_price": "$35,185/呎",
-        "date": "2026-08-11"
+        "unit_price": "$36,507/呎",
+        "date": "2026-09-04"
       },
       {
         "unit_name": "7座 G楼 A室",
@@ -56415,20 +56710,20 @@
         "date": "2026-05-22"
       },
       {
-        "unit_name": "11座 G&1楼 B室",
+        "unit_name": "17号屋座 -楼 -室",
         "layout": "4 房",
-        "sqft": "2436 呎",
-        "price": "8468 万",
-        "unit_price": "$34,762/呎",
-        "date": "2026-08-28"
+        "sqft": "3034 呎",
+        "price": "1.18 亿",
+        "unit_price": "$38,916/呎",
+        "date": "2026-09-02"
       },
       {
-        "unit_name": "3号屋座 -楼 -室",
+        "unit_name": "9座 G&1楼 A室",
         "layout": "4 房",
-        "sqft": "4662 呎",
-        "price": "2.49 亿",
-        "unit_price": "$53,445/呎",
-        "date": "2026-08-26"
+        "sqft": "2436 呎",
+        "price": "8695 万",
+        "unit_price": "$35,694/呎",
+        "date": "2026-08-31"
       }
     ],
     "address": "黃麻角道128號",
@@ -57552,6 +57847,7 @@
       {
         "layout": "4 房",
         "unsold_count": 4,
+        "on_sale_count": 1,
         "sqft_range": "2362 - 2787 呎",
         "price_range": "招标"
       }
@@ -58607,6 +58903,7 @@
       {
         "layout": "4 房",
         "unsold_count": 5,
+        "on_sale_count": 0,
         "sqft_range": "4215 - 6364 呎",
         "price_range": "待定/详见价单"
       }
@@ -59749,6 +60046,7 @@
       {
         "layout": "3 房",
         "unsold_count": 3,
+        "on_sale_count": 0,
         "sqft_range": "2513 - 2671 呎",
         "price_range": "1.56 亿 - 1.64 亿"
       }
@@ -61376,6 +61674,7 @@
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "5046 呎",
         "price_range": "3.71 亿"
       }
@@ -61519,6 +61818,7 @@
       {
         "layout": "4 房",
         "unsold_count": 12,
+        "on_sale_count": 12,
         "sqft_range": "1229 - 1267 呎",
         "price_range": "招标"
       }
@@ -61646,6 +61946,7 @@
       {
         "layout": "4 房",
         "unsold_count": 8,
+        "on_sale_count": 8,
         "sqft_range": "1224 - 1267 呎",
         "price_range": "招标"
       }
@@ -61772,45 +62073,57 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 118,
+        "unsold_count": 117,
+        "on_sale_count": 52,
         "sqft_range": "297 - 342 呎",
         "price_range": "913.1 万 - 984.9 万 (含招标)"
       },
       {
         "layout": "2 房",
-        "unsold_count": 52,
+        "unsold_count": 51,
+        "on_sale_count": 20,
         "sqft_range": "363 - 577 呎",
         "price_range": "1751.1 万 - 1931.9 万 (含招标)"
       },
       {
         "layout": "3 房",
         "unsold_count": 121,
+        "on_sale_count": 0,
         "sqft_range": "784 - 922 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "2011 呎",
         "price_range": "待定/详见价单"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "2A座 30楼 F室",
+        "unit_name": "2A座 32楼 F室",
         "layout": "1 房",
         "sqft": "337 呎",
-        "price": "935.6 万",
-        "unit_price": "$27,763/呎",
-        "date": "2026-08-27"
+        "price": "939.5 万",
+        "unit_price": "$27,878/呎",
+        "date": "2026-08-31"
       },
       {
-        "unit_name": "2A座 29楼 F室",
+        "unit_name": "2B座 28楼 D室",
         "layout": "1 房",
-        "sqft": "337 呎",
-        "price": "933.6 万",
-        "unit_price": "$27,703/呎",
-        "date": "2026-08-27"
+        "sqft": "340 呎",
+        "price": "938.1 万",
+        "unit_price": "$27,591/呎",
+        "date": "2026-08-31"
+      },
+      {
+        "unit_name": "2B座 41楼 A室",
+        "layout": "2 房",
+        "sqft": "577 呎",
+        "price": "1903.5 万",
+        "unit_price": "$32,990/呎",
+        "date": "2026-08-31"
       },
       {
         "unit_name": "2B座 26楼 A室",
@@ -61819,14 +62132,6 @@
         "price": "1873.8 万",
         "unit_price": "$32,475/呎",
         "date": "2026-08-06"
-      },
-      {
-        "unit_name": "2C座 30楼 C室",
-        "layout": "2 房",
-        "sqft": "563 呎",
-        "price": "1789.1 万",
-        "unit_price": "$31,778/呎",
-        "date": "2026-07-14"
       }
     ],
     "address": "香葉道11號",
@@ -61902,12 +62207,14 @@
       {
         "layout": "3 房",
         "unsold_count": 77,
+        "on_sale_count": 20,
         "sqft_range": "837 - 922 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 46,
+        "on_sale_count": 23,
         "sqft_range": "1520 - 2642 呎",
         "price_range": "招标"
       }
@@ -61919,7 +62226,7 @@
         "sqft": "918 呎",
         "price": "3047.8 万",
         "unit_price": "$33,200/呎",
-        "date": "2026-08-04"
+        "date": "2026-09-02"
       },
       {
         "unit_name": "1B座 27楼 A室",
@@ -62059,29 +62366,41 @@
       {
         "layout": "开放式",
         "unsold_count": 30,
+        "on_sale_count": 12,
         "sqft_range": "192 - 220 呎",
         "price_range": "505.8 万 - 604.4 万"
       },
       {
         "layout": "1 房",
-        "unsold_count": 34,
+        "unsold_count": 33,
+        "on_sale_count": 14,
         "sqft_range": "204 - 296 呎",
         "price_range": "611.2 万 - 747 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 43,
+        "on_sale_count": 16,
         "sqft_range": "346 - 644 呎",
         "price_range": "880.4 万 - 1246.7 万"
       },
       {
         "layout": "3 房",
         "unsold_count": 2,
+        "on_sale_count": 0,
         "sqft_range": "746 - 757 呎",
         "price_range": "待定/详见价单"
       }
     ],
     "recent_transactions": [
+      {
+        "unit_name": "PORTO座 10楼 D室",
+        "layout": "1 房",
+        "sqft": "271 呎",
+        "price": "624.8 万",
+        "unit_price": "$23,055/呎",
+        "date": "2026-09-02"
+      },
       {
         "unit_name": "PORTO座 6楼 E室",
         "layout": "1 房",
@@ -62089,14 +62408,6 @@
         "price": "622.5 万",
         "unit_price": "$22,554/呎",
         "date": "2026-08-14"
-      },
-      {
-        "unit_name": "PORTO座 17楼 D室",
-        "layout": "1 房",
-        "sqft": "270 呎",
-        "price": "675.7 万",
-        "unit_price": "$25,026/呎",
-        "date": "2026-07-14"
       },
       {
         "unit_name": "PORTO座 15楼 A室",
@@ -62143,8 +62454,8 @@
     "priced_units": 10,
     "pending_units": 5,
     "basic_price_desc": "",
-    "excel_min_price_desc": "$491.47万 - $791.85万",
-    "min_price_wan": 491.47,
+    "excel_min_price_desc": "$550.45万 - $858.2万",
+    "min_price_wan": 550.45,
     "sqft_price_desc": "",
     "main_layout": "",
     "reason": "",
@@ -62276,14 +62587,16 @@
       {
         "layout": "开放式",
         "unsold_count": 6,
+        "on_sale_count": 3,
         "sqft_range": "205 - 206 呎",
-        "price_range": "491.5 万 - 552.9 万"
+        "price_range": "550.4 万 - 578.9 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 21,
+        "on_sale_count": 9,
         "sqft_range": "272 - 317 呎",
-        "price_range": "634.6 万 - 791.8 万"
+        "price_range": "707.5 万 - 858.2 万"
       }
     ],
     "recent_transactions": [
@@ -62328,7 +62641,7 @@
     "primary_school_net": "18校网",
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
-    "max_price_wan": 791.85,
+    "max_price_wan": 858.2,
     "has_price_data": true,
     "building_count": 1
   },
@@ -62481,12 +62794,14 @@
       {
         "layout": "3 房",
         "unsold_count": 4,
+        "on_sale_count": 0,
         "sqft_range": "951 - 1235 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 7,
+        "on_sale_count": 0,
         "sqft_range": "1299 - 1634 呎",
         "price_range": "5227.7 万 - 7194.9 万"
       }
@@ -62686,6 +63001,7 @@
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "1292 呎",
         "price_range": "招标"
       }
@@ -62893,24 +63209,28 @@
       {
         "layout": "1 房",
         "unsold_count": 49,
+        "on_sale_count": 0,
         "sqft_range": "351 - 403 呎",
         "price_range": "966.7 万 - 1051.6 万"
       },
       {
         "layout": "2 房",
         "unsold_count": 7,
+        "on_sale_count": 0,
         "sqft_range": "450 - 643 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 12,
+        "on_sale_count": 5,
         "sqft_range": "622 - 1218 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
         "unsold_count": 3,
+        "on_sale_count": 0,
         "sqft_range": "1478 - 1847 呎",
         "price_range": "待定/详见价单"
       }
@@ -62954,7 +63274,7 @@
         "sqft": "853 呎",
         "price": "3547.4 万",
         "unit_price": "$41,587/呎",
-        "date": "2026-08-17"
+        "date": "2026-09-02"
       },
       {
         "unit_name": "2B座 42楼 C室",
@@ -62993,8 +63313,8 @@
     "priced_units": 0,
     "pending_units": 231,
     "basic_price_desc": "1204呎5000万左右，1515呎6000万以上",
-    "excel_min_price_desc": "$1402.2万 - $1719.6万",
-    "min_price_wan": 1402.2,
+    "excel_min_price_desc": "$1414.3万 - $1719.6万",
+    "min_price_wan": 1414.3,
     "sqft_price_desc": "4万以上",
     "main_layout": "1204、1515呎",
     "reason": "1、香港岛30年唯一新房地铁上盖，自带60 W 平方尺southside大型商业配套，三站就能到中环，楼下就是新加坡国际学校           2、单价3.9万起，嘉里和港铁联合开发小区品质极高，拥有独立会所和联合会所。",
@@ -63085,39 +63405,42 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 154,
+        "unsold_count": 152,
+        "on_sale_count": 29,
         "sqft_range": "446 - 592 呎",
-        "price_range": "1402.2 万 - 1719.6 万"
+        "price_range": "1414.3 万 - 1719.6 万"
       },
       {
         "layout": "3 房",
         "unsold_count": 72,
+        "on_sale_count": 9,
         "sqft_range": "812 - 1054 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
-        "unsold_count": 46,
+        "unsold_count": 45,
+        "on_sale_count": 15,
         "sqft_range": "1148 - 2291 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "1B座 9楼 E室",
+        "unit_name": "1B座 20楼 D室",
         "layout": "2 房",
-        "sqft": "499 呎",
-        "price": "1391.1 万",
-        "unit_price": "$27,878/呎",
-        "date": "2026-08-20"
+        "sqft": "484 呎",
+        "price": "1403 万",
+        "unit_price": "$28,988/呎",
+        "date": "2026-09-06"
       },
       {
-        "unit_name": "1B座 31楼 C室",
+        "unit_name": "1B座 11楼 E室",
         "layout": "2 房",
-        "sqft": "546 呎",
-        "price": "1705.9 万",
-        "unit_price": "$31,244/呎",
-        "date": "2026-08-17"
+        "sqft": "499 呎",
+        "price": "1402.2 万",
+        "unit_price": "$28,100/呎",
+        "date": "2026-09-05"
       },
       {
         "unit_name": "1B座 26楼 B室",
@@ -63136,20 +63459,20 @@
         "date": "2026-08-26"
       },
       {
+        "unit_name": "1A座 20楼 B室",
+        "layout": "4 房",
+        "sqft": "1204 呎",
+        "price": "5047.2 万",
+        "unit_price": "$41,920/呎",
+        "date": "2026-09-04"
+      },
+      {
         "unit_name": "1A座 26楼 A室",
         "layout": "4 房",
         "sqft": "1515 呎",
         "price": "6983.7 万",
         "unit_price": "$46,097/呎",
         "date": "2026-08-21"
-      },
-      {
-        "unit_name": "1A座 35楼 A室",
-        "layout": "4 房",
-        "sqft": "1515 呎",
-        "price": "7768.9 万",
-        "unit_price": "$51,280/呎",
-        "date": "2026-08-14"
       }
     ],
     "address": "香葉道11號",
@@ -63269,6 +63592,7 @@
       {
         "layout": "4 房",
         "unsold_count": 17,
+        "on_sale_count": 0,
         "sqft_range": "1158 - 1294 呎",
         "price_range": "待定/详见价单"
       }
@@ -63596,6 +63920,7 @@
       {
         "layout": "4 房",
         "unsold_count": 37,
+        "on_sale_count": 0,
         "sqft_range": "1598 - 3523 呎",
         "price_range": "待定/详见价单"
       }
@@ -63699,12 +64024,14 @@
       {
         "layout": "开放式",
         "unsold_count": 39,
+        "on_sale_count": 0,
         "sqft_range": "183 - 186 呎",
         "price_range": "449 万 - 498.4 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 8,
+        "on_sale_count": 4,
         "sqft_range": "264 - 334 呎",
         "price_range": "663 万 - 704.3 万 (含招标)"
       }
@@ -63852,12 +64179,14 @@
       {
         "layout": "开放式",
         "unsold_count": 3,
+        "on_sale_count": 3,
         "sqft_range": "238 呎",
         "price_range": "598 万 - 606.8 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 5,
+        "on_sale_count": 5,
         "sqft_range": "301 呎",
         "price_range": "713.6 万 - 763.6 万"
       }
@@ -63940,8 +64269,8 @@
     "priced_units": 0,
     "pending_units": 143,
     "basic_price_desc": "1.2亿起",
-    "excel_min_price_desc": "参考成交: $3535.0万 - $18465.8万",
-    "min_price_wan": 3535.0,
+    "excel_min_price_desc": "参考成交: $3520.0万 - $18465.8万",
+    "min_price_wan": 3520.0,
     "sqft_price_desc": "3.8万起",
     "main_layout": "3300、3600呎",
     "reason": "1.\t港岛南区罕见纯正“正南向”一线海景超级豪宅，前临南中国海浩瀚海景，背靠玉桂山。\n2.\t合景泰富与龙光联合打造，全盘仅295伙纯大户型规划，配备双私家电梯大堂，私密尊贵。\n3.\t现楼发售即买即入住，邻近海怡半岛及利东站，兼顾南区极致隐逸海景与市区生活便利。",
@@ -64065,32 +64394,34 @@
       {
         "layout": "3 房",
         "unsold_count": 56,
+        "on_sale_count": 7,
         "sqft_range": "1340 - 4559 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
-        "unsold_count": 116,
+        "unsold_count": 128,
+        "on_sale_count": 3,
         "sqft_range": "1689 - 9663 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "8座 6楼 B室",
+        "unit_name": "8座 5楼 B室",
         "layout": "3 房",
         "sqft": "1393 呎",
-        "price": "3535 万",
-        "unit_price": "$25,377/呎",
-        "date": "2026-08-28"
+        "price": "3520 万",
+        "unit_price": "$25,269/呎",
+        "date": "2026-09-07"
       },
       {
         "unit_name": "8座 7楼 B室",
         "layout": "3 房",
-        "sqft": "1393 呎",
+        "sqft": "1305 呎",
         "price": "3600 万",
-        "unit_price": "$25,844/呎",
-        "date": "2026-08-16"
+        "unit_price": "$27,586/呎",
+        "date": "2026-09-02"
       },
       {
         "unit_name": "5座 6楼 B室",
@@ -64486,12 +64817,14 @@
       {
         "layout": "开放式",
         "unsold_count": 52,
+        "on_sale_count": 0,
         "sqft_range": "258 - 265 呎",
         "price_range": "866.3 万 - 912.6 万"
       },
       {
         "layout": "1 房",
         "unsold_count": 78,
+        "on_sale_count": 9,
         "sqft_range": "392 - 428 呎",
         "price_range": "1141.8 万 - 1655.6 万"
       }
@@ -64855,18 +65188,21 @@
       {
         "layout": "1 房",
         "unsold_count": 1,
+        "on_sale_count": 1,
         "sqft_range": "4571 呎",
         "price_range": "招标"
       },
       {
         "layout": "2 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "4575 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "3 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "4602 呎",
         "price_range": "待定/详见价单"
       }
@@ -65062,18 +65398,21 @@
       {
         "layout": "2 房",
         "unsold_count": 1,
+        "on_sale_count": 0,
         "sqft_range": "476 呎",
         "price_range": "1551.6 万"
       },
       {
         "layout": "3 房",
         "unsold_count": 5,
+        "on_sale_count": 0,
         "sqft_range": "1016 - 1083 呎",
         "price_range": "待定/详见价单"
       },
       {
         "layout": "4 房",
         "unsold_count": 11,
+        "on_sale_count": 0,
         "sqft_range": "1417 - 3120 呎",
         "price_range": "待定/详见价单"
       }
@@ -66442,6 +66781,7 @@
       {
         "layout": "开放式",
         "unsold_count": 3,
+        "on_sale_count": 3,
         "sqft_range": "277 呎",
         "price_range": "735 万 - 757.3 万"
       }
@@ -69045,15 +69385,15 @@
     "priced_units": 0,
     "pending_units": 54,
     "basic_price_desc": "招标发售 / 详见价单",
-    "excel_min_price_desc": "招标发售",
-    "min_price_wan": null,
-    "max_price_wan": null,
-    "has_price_data": false,
+    "excel_min_price_desc": "参考成交: $367.8万 - $734.4万",
+    "min_price_wan": 367.8,
+    "max_price_wan": 734.4,
+    "has_price_data": true,
     "sqft_price_desc": "",
     "main_layout": "开放式 - 1房",
     "reason": "何文田核心名校网精品新盘",
     "mainland_selling_points": "34名校网，旺中带静",
-    "developer": "輝宇國際",
+    "developer": "香港品牌发展商",
     "address": "自由道 1B號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "何文田及加多利山",
@@ -69085,7 +69425,58 @@
         ]
       }
     },
-    "building_count": 1
+    "building_count": 1,
+    "completion_date": "现楼 / 详见项目资料",
+    "sales_control_summary": [
+      {
+        "layout": "开放式",
+        "unsold_count": 75,
+        "on_sale_count": 22,
+        "sqft_range": "130 - 272 呎",
+        "price_range": "招标"
+      },
+      {
+        "layout": "1 房",
+        "unsold_count": 3,
+        "on_sale_count": 2,
+        "sqft_range": "246 - 272 呎",
+        "price_range": "招标"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "unit_name": "泓璟座 7楼 E室",
+        "layout": "开放式",
+        "sqft": "168 呎",
+        "price": "372.8 万",
+        "unit_price": "$22,190/呎",
+        "date": "2026-09-07"
+      },
+      {
+        "unit_name": "泓璟座 25楼 E室",
+        "layout": "开放式",
+        "sqft": "203 呎",
+        "price": "548.1 万",
+        "unit_price": "$27,000/呎",
+        "date": "2026-09-02"
+      },
+      {
+        "unit_name": "泓璟座 25楼 C室",
+        "layout": "1 房",
+        "sqft": "272 呎",
+        "price": "734.4 万",
+        "unit_price": "$27,000/呎",
+        "date": "2026-09-02"
+      },
+      {
+        "unit_name": "泓璟座 25楼 B室",
+        "layout": "1 房",
+        "sqft": "246 呎",
+        "price": "664.2 万",
+        "unit_price": "$27,000/呎",
+        "date": "2026-09-02"
+      }
+    ]
   },
   {
     "name": "海德园第2期",
@@ -69103,7 +69494,7 @@
     "priced_units": 0,
     "pending_units": 206,
     "basic_price_desc": "即将发售 / 待定",
-    "excel_min_price_desc": "即将发售 / 待定",
+    "excel_min_price_desc": "招标发售 / 详见价单",
     "min_price_wan": null,
     "max_price_wan": null,
     "has_price_data": false,
@@ -69111,7 +69502,7 @@
     "main_layout": "1房 - 3房",
     "reason": "太古地产柴湾全新海景大型住宅项目",
     "mainland_selling_points": "太古品质港岛全新大型综合体",
-    "developer": "太古地產",
+    "developer": "太古地产",
     "address": "常安街99號",
     "main_area": "港岛东区",
     "micro_district": "石澳、大浪湾及鹤咀",
@@ -69143,7 +69534,32 @@
         ]
       }
     },
-    "building_count": 2
+    "building_count": 2,
+    "completion_date": "现楼 / 详见项目资料",
+    "sales_control_summary": [
+      {
+        "layout": "2 房",
+        "unsold_count": 107,
+        "on_sale_count": 52,
+        "sqft_range": "547 - 610 呎",
+        "price_range": "招标"
+      },
+      {
+        "layout": "3 房",
+        "unsold_count": 112,
+        "on_sale_count": 0,
+        "sqft_range": "744 - 2847 呎",
+        "price_range": "待定/详见价单"
+      },
+      {
+        "layout": "4 房",
+        "unsold_count": 39,
+        "on_sale_count": 0,
+        "sqft_range": "1339 - 1744 呎",
+        "price_range": "待定/详见价单"
+      }
+    ],
+    "recent_transactions": []
   },
   {
     "name": "叡璟II",
@@ -69161,15 +69577,15 @@
     "priced_units": 0,
     "pending_units": 407,
     "basic_price_desc": "即将发售 / 待定",
-    "excel_min_price_desc": "即将发售 / 待定",
-    "min_price_wan": null,
-    "max_price_wan": null,
-    "has_price_data": false,
+    "excel_min_price_desc": "参考成交: $540.8万 - $1919.15万",
+    "min_price_wan": 540.8,
+    "max_price_wan": 1919.15,
+    "has_price_data": true,
     "sqft_price_desc": "",
     "main_layout": "1房 - 4房",
     "reason": "西南九龙临海优质豪宅新盘",
     "mainland_selling_points": "西九龙海滨成熟配套，交通极度便利",
-    "developer": "華潤置地",
+    "developer": "香港品牌发展商",
     "address": "發祥街西8號",
     "main_area": "九龙西（油尖旺）",
     "micro_district": "南昌及西九龙海滨",
@@ -69201,7 +69617,81 @@
         ]
       }
     },
-    "building_count": 2
+    "building_count": 2,
+    "completion_date": "现楼 / 详见项目资料",
+    "sales_control_summary": [
+      {
+        "layout": "1 房",
+        "unsold_count": 3,
+        "on_sale_count": 3,
+        "sqft_range": "306 - 313 呎",
+        "price_range": "招标"
+      },
+      {
+        "layout": "2 房",
+        "unsold_count": 3,
+        "on_sale_count": 3,
+        "sqft_range": "408 - 473 呎",
+        "price_range": "招标"
+      },
+      {
+        "layout": "3 房",
+        "unsold_count": 19,
+        "on_sale_count": 19,
+        "sqft_range": "559 - 676 呎",
+        "price_range": "招标"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "unit_name": "3B座 47楼 D室",
+        "layout": "1 房",
+        "sqft": "307 呎",
+        "price": "669.3 万",
+        "unit_price": "$21,801/呎",
+        "date": "2026-09-05"
+      },
+      {
+        "unit_name": "3B座 46楼 D室",
+        "layout": "1 房",
+        "sqft": "307 呎",
+        "price": "661.3 万",
+        "unit_price": "$21,541/呎",
+        "date": "2026-09-05"
+      },
+      {
+        "unit_name": "3A座 48楼 B室",
+        "layout": "2 房",
+        "sqft": "444 呎",
+        "price": "1204.7 万",
+        "unit_price": "$27,133/呎",
+        "date": "2026-09-05"
+      },
+      {
+        "unit_name": "3A座 3楼 E室",
+        "layout": "2 房",
+        "sqft": "383 呎",
+        "price": "995.8 万",
+        "unit_price": "$26,000/呎",
+        "date": "2026-09-05"
+      },
+      {
+        "unit_name": "3A座 48楼 A室",
+        "layout": "3 房",
+        "sqft": "655 呎",
+        "price": "1919.2 万",
+        "unit_price": "$29,300/呎",
+        "date": "2026-09-05"
+      },
+      {
+        "unit_name": "3A座 47楼 A室",
+        "layout": "3 房",
+        "sqft": "655 呎",
+        "price": "1473.8 万",
+        "unit_price": "$22,500/呎",
+        "date": "2026-09-05"
+      }
+    ]
   },
   {
     "name": "映汇",
@@ -69219,15 +69709,15 @@
     "priced_units": 111,
     "pending_units": 152,
     "basic_price_desc": "公开价单 / 详见正式版",
-    "excel_min_price_desc": "已开价待售",
-    "min_price_wan": 360.0,
-    "max_price_wan": 980.0,
+    "excel_min_price_desc": "$542.88万 - $1037.7万",
+    "min_price_wan": 542.88,
+    "max_price_wan": 1037.7,
     "has_price_data": true,
     "sqft_price_desc": "",
     "main_layout": "开放式 - 2房",
     "reason": "恒基必嘉坊系列 Baker Circle Greenwich",
     "mainland_selling_points": "红磡三线铁路上盖百万方尺大型商住综合体",
-    "developer": "恒基兆業",
+    "developer": "恒基兆业地产",
     "address": "寶其利街18號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "红磡及黄埔",
@@ -69259,7 +69749,32 @@
         ]
       }
     },
-    "building_count": 1
+    "building_count": 1,
+    "completion_date": "现楼 / 详见项目资料",
+    "sales_control_summary": [
+      {
+        "layout": "1 房",
+        "unsold_count": 88,
+        "on_sale_count": 0,
+        "sqft_range": "226 - 317 呎",
+        "price_range": "542.9 万 - 709.8 万"
+      },
+      {
+        "layout": "2 房",
+        "unsold_count": 124,
+        "on_sale_count": 0,
+        "sqft_range": "306 - 387 呎",
+        "price_range": "704.4 万 - 910.2 万"
+      },
+      {
+        "layout": "3 房",
+        "unsold_count": 51,
+        "on_sale_count": 0,
+        "sqft_range": "348 - 630 呎",
+        "price_range": "779.6 万 - 1037.7 万"
+      }
+    ],
+    "recent_transactions": []
   },
   {
     "name": "肇辉台6号",
@@ -69277,15 +69792,15 @@
     "priced_units": 9,
     "pending_units": 3,
     "basic_price_desc": "现楼豪宅 / 详见价单",
-    "excel_min_price_desc": "现楼豪宅",
-    "min_price_wan": 5000.0,
-    "max_price_wan": 12000.0,
+    "excel_min_price_desc": "$11595.14万 - $14727.12万",
+    "min_price_wan": 11595.14,
+    "max_price_wan": 14727.12,
     "has_price_data": true,
     "sqft_price_desc": "",
     "main_layout": "3房 - 4房大户",
     "reason": "东半山传统顶尖豪宅地段现楼",
     "mainland_selling_points": "东半山稀缺独立地段，名人贵胄聚居地",
-    "developer": "嘉華",
+    "developer": "香港品牌发展商",
     "address": "肇輝台6號",
     "main_area": "港岛湾仔及东半山",
     "micro_district": "东半山",
@@ -69317,7 +69832,35 @@
         ]
       }
     },
-    "building_count": 1
+    "building_count": 1,
+    "completion_date": "现楼发售 (即买即住)",
+    "sales_control_summary": [
+      {
+        "layout": "4 房",
+        "unsold_count": 16,
+        "on_sale_count": 0,
+        "sqft_range": "2697 - 2800 呎",
+        "price_range": "1.16 亿 - 1.47 亿"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "unit_name": "肇辉台6号座 16楼 A室",
+        "layout": "4 房",
+        "sqft": "2704 呎",
+        "price": "1.18 亿",
+        "unit_price": "$43,639/呎",
+        "date": "2023-07-14"
+      },
+      {
+        "unit_name": "肇辉台6号座 7楼 B室",
+        "layout": "4 房",
+        "sqft": "2697 呎",
+        "price": "8578.5 万",
+        "unit_price": "$31,808/呎",
+        "date": "2014-10-29"
+      }
+    ]
   },
   {
     "name": "海瑅湾 I",
@@ -69335,15 +69878,15 @@
     "priced_units": 6,
     "pending_units": 114,
     "basic_price_desc": "约650万起",
-    "excel_min_price_desc": "约650万起",
-    "min_price_wan": 650.0,
-    "max_price_wan": 2500.0,
+    "excel_min_price_desc": "$641.33万 - $1154.47万",
+    "min_price_wan": 641.33,
+    "max_price_wan": 1154.47,
     "has_price_data": true,
     "sqft_price_desc": "",
     "main_layout": "1房 - 4房",
     "reason": "将军澳日出康城一线临海大盘",
     "mainland_selling_points": "康城站铁路上盖，无遮挡全海景",
-    "developer": "信和置業 / 嘉里建設 / 嘉華國際 / 招商置地 / 港鐵",
+    "developer": "香港品牌发展商",
     "address": "康城路1號",
     "main_area": "九龙东（黄大仙/观塘）",
     "micro_district": "将军澳南及日出康城",
@@ -69375,7 +69918,96 @@
         ]
       }
     },
-    "building_count": 4
+    "building_count": 4,
+    "completion_date": "现楼 / 详见项目资料",
+    "sales_control_summary": [
+      {
+        "layout": "1 房",
+        "unsold_count": 10,
+        "on_sale_count": 10,
+        "sqft_range": "345 - 358 呎",
+        "price_range": "641.3 万 - 651.7 万 (含招标)"
+      },
+      {
+        "layout": "2 房",
+        "unsold_count": 269,
+        "on_sale_count": 166,
+        "sqft_range": "416 - 615 呎",
+        "price_range": "723.1 万 - 1154.5 万 (含招标)"
+      },
+      {
+        "layout": "3 房",
+        "unsold_count": 105,
+        "on_sale_count": 97,
+        "sqft_range": "588 - 952 呎",
+        "price_range": "招标"
+      },
+      {
+        "layout": "4 房",
+        "unsold_count": 17,
+        "on_sale_count": 7,
+        "sqft_range": "1075 - 1716 呎",
+        "price_range": "招标"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "unit_name": "1A座 61楼 E室",
+        "layout": "1 房",
+        "sqft": "358 呎",
+        "price": "633.7 万",
+        "unit_price": "$17,700/呎",
+        "date": "2026-07-29"
+      },
+      {
+        "unit_name": "1A座 59楼 E室",
+        "layout": "1 房",
+        "sqft": "358 呎",
+        "price": "631.2 万",
+        "unit_price": "$17,632/呎",
+        "date": "2026-07-22"
+      },
+      {
+        "unit_name": "1B座 38楼 C室",
+        "layout": "2 房",
+        "sqft": "584 呎",
+        "price": "1062.3 万",
+        "unit_price": "$18,191/呎",
+        "date": "2026-09-07"
+      },
+      {
+        "unit_name": "1B座 16楼 C室",
+        "layout": "2 房",
+        "sqft": "584 呎",
+        "price": "1023.8 万",
+        "unit_price": "$17,531/呎",
+        "date": "2026-09-03"
+      },
+      {
+        "unit_name": "2B座 11楼 B室",
+        "layout": "3 房",
+        "sqft": "628 呎",
+        "price": "1184 万",
+        "unit_price": "$18,854/呎",
+        "date": "2026-09-04"
+      },
+      {
+        "unit_name": "2B座 47楼 B室",
+        "layout": "3 房",
+        "sqft": "628 呎",
+        "price": "1247.3 万",
+        "unit_price": "$19,861/呎",
+        "date": "2026-08-27"
+      },
+      {
+        "unit_name": "1A座 56楼 A室",
+        "layout": "4 房",
+        "sqft": "1154 呎",
+        "price": "2692.4 万",
+        "unit_price": "$23,331/呎",
+        "date": "2026-04-15"
+      }
+    ]
   },
   {
     "name": "海瑅湾 II",
@@ -69393,15 +70025,15 @@
     "priced_units": 40,
     "pending_units": 547,
     "basic_price_desc": "约680万起",
-    "excel_min_price_desc": "约680万起",
-    "min_price_wan": 680.0,
-    "max_price_wan": 2800.0,
+    "excel_min_price_desc": "$716.72万 - $940.01万",
+    "min_price_wan": 716.72,
+    "max_price_wan": 940.01,
     "has_price_data": true,
     "sqft_price_desc": "",
     "main_layout": "1房 - 4房",
     "reason": "将军澳日出康城一线临海大盘第2期",
     "mainland_selling_points": "康城站铁路上盖，无遮挡全海景",
-    "developer": "信和置業 / 嘉里建設 / 嘉華國際 / 招商置地 / 港鐵",
+    "developer": "香港品牌发展商",
     "address": "康城路1號",
     "main_area": "九龙东（黄大仙/观塘）",
     "micro_district": "将军澳南及日出康城",
@@ -69433,6 +70065,56 @@
         ]
       }
     },
-    "building_count": 3
+    "building_count": 3,
+    "completion_date": "现楼 / 详见项目资料",
+    "sales_control_summary": [
+      {
+        "layout": "2 房",
+        "unsold_count": 577,
+        "on_sale_count": 93,
+        "sqft_range": "410 - 602 呎",
+        "price_range": "716.7 万 - 940 万 (含招标)"
+      },
+      {
+        "layout": "3 房",
+        "unsold_count": 111,
+        "on_sale_count": 9,
+        "sqft_range": "588 - 957 呎",
+        "price_range": "招标"
+      },
+      {
+        "layout": "4 房",
+        "unsold_count": 1,
+        "on_sale_count": 0,
+        "sqft_range": "1075 呎",
+        "price_range": "待定/详见价单"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "unit_name": "3A座 45楼 D室",
+        "layout": "2 房",
+        "sqft": "446 呎",
+        "price": "727.2 万",
+        "unit_price": "$16,304/呎",
+        "date": "2026-09-07"
+      },
+      {
+        "unit_name": "3A座 8楼 E室",
+        "layout": "2 房",
+        "sqft": "460 呎",
+        "price": "720 万",
+        "unit_price": "$15,653/呎",
+        "date": "2026-09-07"
+      },
+      {
+        "unit_name": "3B座 35楼 B室",
+        "layout": "3 房",
+        "sqft": "628 呎",
+        "price": "1254.5 万",
+        "unit_price": "$19,976/呎",
+        "date": "2026-08-31"
+      }
+    ]
   }
 ]
