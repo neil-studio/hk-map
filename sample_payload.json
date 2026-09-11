@@ -318,7 +318,8 @@
         }
       ],
       "micro_district": "九龙塘低密度豪宅区 / 广播道及毕架山",
-      "main_area": "九龙中（九龙城/何文田）"
+      "main_area": "九龙中（九龙城/何文田）",
+      "building_count": 1
     },
     {
       "name": "缇外",
@@ -839,7 +840,8 @@
         }
       ],
       "micro_district": "石硖尾及又一村",
-      "main_area": "九龙西北（深水埗区）"
+      "main_area": "九龙西北（深水埗区）",
+      "building_count": 6
     },
     {
       "name": "滶蕴",
@@ -1206,7 +1208,8 @@
         }
       ],
       "micro_district": "石硖尾及又一村",
-      "main_area": "九龙西北（深水埗区）"
+      "main_area": "九龙西北（深水埗区）",
+      "building_count": 1
     },
     {
       "name": "维港汇 III",
@@ -1555,7 +1558,8 @@
         }
       ],
       "micro_district": "南昌及西九龙海滨",
-      "main_area": "九龙西（油尖旺）"
+      "main_area": "九龙西（油尖旺）",
+      "building_count": 3
     }
   ],
   "dateStr": "2026年8月22日"

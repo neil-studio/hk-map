@@ -951,6 +951,51 @@
       font-size: 0.72rem;
       color: #166534;
     }
+    .proj-kpi-summary-bar {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      margin-top: 6px;
+      padding: 7px 12px;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 1.25fr;
+      gap: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+      align-items: center;
+    }
+    .proj-kpi-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .proj-kpi-item:not(:last-child) {
+      border-right: 1px solid #F1F5F9;
+      padding-right: 8px;
+    }
+    .proj-kpi-label {
+      font-size: 0.68rem;
+      color: var(--slate-500);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .proj-kpi-val {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+    .proj-kpi-val.highlight {
+      color: #2563EB;
+    }
+    .badge-unit-count {
+      display: inline-block;
+      padding: 2px 8px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-weight: 700;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      white-space: nowrap;
+    }
 
     /* =========================================================================
        PAGE FINAL: CLOSING BRAND PAGE (封底)
@@ -1829,7 +1874,7 @@
                 ${sales.map(s => `
                   <tr>
                     <td><strong>${s.layout}</strong></td>
-                    <td><span class="table-badge-num" style="background:#eff6ff; color:#2563eb;">${s.unsold_count} 伙</span></td>
+                    <td><span class="badge-unit-count">${s.unsold_count} 伙</span></td>
                     <td>${s.sqft_range}</td>
                     <td style="font-weight:700; color:${s.price_range === '招标' ? '#d97706' : '#16a34a'};">${s.price_range}</td>
                   </tr>
@@ -1876,6 +1921,19 @@
               暂无一手历史公开成交记录或一手新盘即将发售
             </div>
           `;
+        }
+
+        // 3. 项目核心KPI指标计算 (楼栋数、总伙数、去化率)
+        const buildingCount = proj.building_count || proj.towers || 1;
+        const totalUnitsVal = proj.total_units || 0;
+        const soldUnitsVal = proj.sold_units || 0;
+        const saleUnitsVal = proj.sale_units || (proj.units_unsold || 0);
+
+        let totalUnitsStr = totalUnitsVal > 0 ? `${totalUnitsVal} 伙` : '详见销控';
+        let soldRateStr = '暂无统计';
+        if (totalUnitsVal > 0) {
+          const rateNum = ((soldUnitsVal / totalUnitsVal) * 100).toFixed(1);
+          soldRateStr = `${rateNum}% <span style="font-size:0.68rem; font-weight:normal; color:#64748B;">(已售${soldUnitsVal}/在售${saleUnitsVal})</span>`;
         }
 
         pPage.innerHTML = `
@@ -1933,12 +1991,26 @@
               </div>
             </div>
 
-            <!-- Right Column: Micro Route Map -->
+            <!-- Right Column: Micro Route Map & KPI Bar -->
             <div class="proj-right-col">
               <div id="proj-map-${idx}" class="proj-map-frame"></div>
               <div class="map-mtr-infobar">
                 <span>🚇 <strong>${mtr?.nearest_mtr_cn || '港铁'}站</strong> 人行道步行导航</span>
                 <span>🚶 实际步行 <strong>${mtr?.dist_walk_m || 500} 米</strong> · 约 <strong>${mtr?.walk_time_min || 6} 分钟</strong></span>
+              </div>
+              <div class="proj-kpi-summary-bar">
+                <div class="proj-kpi-item">
+                  <div class="proj-kpi-label">🏢 规划楼栋数</div>
+                  <div class="proj-kpi-val">${buildingCount} 栋 (座)</div>
+                </div>
+                <div class="proj-kpi-item">
+                  <div class="proj-kpi-label">🏠 项目总伙数</div>
+                  <div class="proj-kpi-val">${totalUnitsStr}</div>
+                </div>
+                <div class="proj-kpi-item">
+                  <div class="proj-kpi-label">📈 当前去化率</div>
+                  <div class="proj-kpi-val highlight">${soldRateStr}</div>
+                </div>
               </div>
             </div>
           </div>

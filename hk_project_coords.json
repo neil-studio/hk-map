@@ -311,7 +311,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "41校网 / 九龍城校网",
     "max_price_wan": 15000.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "The Monet 第1期",
@@ -740,7 +741,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "41校网 / 九龍城校网",
     "max_price_wan": 99999,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "The Monet 第2期",
@@ -1129,7 +1131,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "41校网 / 九龍城校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "The Monet 第3期",
@@ -1535,7 +1538,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "41校网 / 九龍城校网",
     "max_price_wan": 11990.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "博峰",
@@ -1926,7 +1930,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "41校网 / 九龍城校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 3
   },
   {
     "name": "喇沙汇",
@@ -2322,7 +2327,8 @@
     "secondary_school_net": "九龙城区校网",
     "school_net": "41校网 / 九龙城区校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "皇廷汇",
@@ -2932,7 +2938,8 @@
     "secondary_school_net": "九龙城区校网",
     "school_net": "41校网 / 九龙城区校网",
     "max_price_wan": 42800.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "缇外",
@@ -3462,7 +3469,8 @@
     "secondary_school_net": "深水埗校网",
     "school_net": "40校网 / 深水埗校网",
     "max_price_wan": 102800.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 6
   },
   {
     "name": "天玺",
@@ -4170,7 +4178,8 @@
     "secondary_school_net": "油尖旺区校网",
     "school_net": "31校网 / 油尖旺区校网",
     "max_price_wan": 10341.6,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 7
   },
   {
     "name": "128 Waterloo",
@@ -4528,7 +4537,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1722.1,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "Prince Central",
@@ -4762,7 +4772,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 2509.61,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "VAU Residence",
@@ -5032,7 +5043,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1508.33,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "st. george's mansions",
@@ -5285,7 +5297,8 @@
     "secondary_school_net": "九龙城区校网",
     "school_net": "34校网 / 九龙城区校网",
     "max_price_wan": 26000.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "傲玟",
@@ -5649,7 +5662,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 12066.6,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 6
   },
   {
     "name": "名钻",
@@ -5943,7 +5957,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 2866.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "天铸 (第2期)",
@@ -6149,7 +6164,8 @@
     "secondary_school_net": "九龙城区校网",
     "school_net": "34校网 / 九龙城区校网",
     "max_price_wan": 21391.2,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 4
   },
   {
     "name": "太子道西233号",
@@ -6365,7 +6381,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 7338.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "明寓",
@@ -6619,7 +6636,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 14800.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "朗贤峰第IIA期",
@@ -6805,7 +6823,8 @@
     "secondary_school_net": "九龙城区校网",
     "school_net": "34校网 / 九龙城区校网",
     "max_price_wan": 1383.09,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "朗贤峰第IIB期",
@@ -7037,7 +7056,8 @@
     "secondary_school_net": "九龙城区校网",
     "school_net": "34校网 / 九龙城区校网",
     "max_price_wan": 1737.58,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 4
   },
   {
     "name": "瑜一第IC期",
@@ -7227,7 +7247,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 4828.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "瑜一．天海",
@@ -7401,7 +7422,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 2018.15,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 4
   },
   {
     "name": "耀爵台",
@@ -7757,7 +7779,8 @@
     "secondary_school_net": "九龙城区校网",
     "school_net": "34校网 / 九龙城区校网",
     "max_price_wan": 3203.55,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "芳菲",
@@ -7987,7 +8010,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1267.73,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "誉林",
@@ -8249,7 +8273,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 3874.4,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "隆敍",
@@ -8590,7 +8615,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "Double Coast I",
@@ -9120,7 +9146,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 3151.7,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "Double Coast III",
@@ -9664,7 +9691,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1661.52,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "Henley Park",
@@ -9914,7 +9942,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 2035.68,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 6
   },
   {
     "name": "Miami Quay I",
@@ -10510,7 +10539,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1056.88,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "Miami Quay II",
@@ -11106,7 +11136,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 4634.5,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "Monaco Marine",
@@ -11328,7 +11359,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 879.85,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 6
   },
   {
     "name": "Monaco One",
@@ -11546,7 +11578,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 901.08,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "Monaco 第1期",
@@ -11782,7 +11815,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 953.16,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "The Henley I",
@@ -12026,7 +12060,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 2641.39,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 5
   },
   {
     "name": "The Henley II",
@@ -12248,7 +12283,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 3450.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "The Henley III",
@@ -12492,7 +12528,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 2388.59,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "启德海湾 1",
@@ -13006,7 +13043,8 @@
     "secondary_school_net": "九龙城区校网",
     "school_net": "34校网 / 九龙城区校网",
     "max_price_wan": 2199.39,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "启德海湾 2",
@@ -13438,7 +13476,8 @@
     "secondary_school_net": "九龙城区校网",
     "school_net": "34校网 / 九龙城区校网",
     "max_price_wan": 1257.15,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "天泷",
@@ -13966,7 +14005,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 11215.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 8
   },
   {
     "name": "天玺．天",
@@ -14208,7 +14248,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 698.82,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "天玺．天第2期",
@@ -14440,7 +14481,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1601.81,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "天玺．海第1期",
@@ -14978,7 +15020,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 24792.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 7
   },
   {
     "name": "天玺．海第2A期",
@@ -15488,7 +15531,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 5128.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "天玺．海第2B期",
@@ -16002,7 +16046,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 5089.36,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "柏蔚森 I",
@@ -16542,7 +16587,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1640.8,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "柏蔚森 II",
@@ -17050,7 +17096,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1115.77,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "柏蔚森 III",
@@ -17576,7 +17623,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 730.05,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "沄璟",
@@ -18166,7 +18214,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1261.8,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 8
   },
   {
     "name": "维港1号",
@@ -18632,7 +18681,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "维港．双钻",
@@ -19132,7 +19182,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 2034.54,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 4
   },
   {
     "name": "维港．湾畔第1A期",
@@ -19744,7 +19795,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1618.67,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "维港．湾畔第1B期",
@@ -20278,7 +20330,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1870.97,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "维港．湾畔第2B期",
@@ -20782,7 +20835,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 3211.3,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "本木",
@@ -20980,7 +21034,8 @@
     "secondary_school_net": "油尖旺区校网",
     "school_net": "31校网 / 油尖旺区校网",
     "max_price_wan": 2342.3,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "The Boundary",
@@ -21307,7 +21362,8 @@
     "secondary_school_net": "油尖旺校网",
     "school_net": "32校网 / 油尖旺校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "Upper Prince",
@@ -21565,7 +21621,8 @@
     "secondary_school_net": "油尖旺区校网",
     "school_net": "32校网 / 油尖旺区校网",
     "max_price_wan": 514.6,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "利奥坊．凯岸",
@@ -21895,7 +21952,8 @@
     "secondary_school_net": "油尖旺校网",
     "school_net": "32校网 / 油尖旺校网",
     "max_price_wan": 2000.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "利奥坊．壹隅",
@@ -22209,7 +22267,8 @@
     "secondary_school_net": "油尖旺区校网",
     "school_net": "32校网 / 油尖旺区校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "利奥坊．曦岸",
@@ -22595,7 +22654,8 @@
     "secondary_school_net": "油尖旺校网",
     "school_net": "32校网 / 油尖旺校网",
     "max_price_wan": 1895.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "映居",
@@ -22957,7 +23017,8 @@
     "secondary_school_net": "油尖旺校网",
     "school_net": "32校网 / 油尖旺校网",
     "max_price_wan": 888.8,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "原舍",
@@ -23239,7 +23300,8 @@
     "secondary_school_net": "油尖旺校网",
     "school_net": "31校网 / 油尖旺校网",
     "max_price_wan": 557.61,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "Beacon Peak 第1期",
@@ -23867,7 +23929,8 @@
     "secondary_school_net": "深水埗校网",
     "school_net": "40校网 / 深水埗校网",
     "max_price_wan": 5266.4,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 6
   },
   {
     "name": "滶蕴",
@@ -24251,7 +24314,8 @@
     "secondary_school_net": "深水埗校网",
     "school_net": "40校网 / 深水埗校网",
     "max_price_wan": 2181.3,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "The Haddon",
@@ -24557,7 +24621,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "35校网 / 九龍城校网",
     "max_price_wan": 2182.8,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "必嘉坊．曦汇",
@@ -24843,7 +24908,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "35校网 / 九龍城校网",
     "max_price_wan": 725.41,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "必嘉坊．迎汇",
@@ -25153,7 +25219,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "35校网 / 九龍城校网",
     "max_price_wan": 1209.39,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "悦麓",
@@ -25393,7 +25460,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "35校网 / 九龍城校网",
     "max_price_wan": 661.01,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "首岸第1期",
@@ -25689,7 +25757,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "35校网 / 九龍城校网",
     "max_price_wan": 825.73,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "首岸第2期",
@@ -25946,7 +26015,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "35校网 / 九龍城校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "首岸第3期",
@@ -26234,7 +26304,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "35校网 / 九龍城校网",
     "max_price_wan": 1679.67,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "首岸第4期",
@@ -26502,7 +26573,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "35校网 / 九龍城校网",
     "max_price_wan": 1351.62,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "首汇",
@@ -26850,7 +26922,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "35校网 / 九龍城校网",
     "max_price_wan": 1239.3,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "叡璟I",
@@ -27200,7 +27273,8 @@
     "secondary_school_net": "深水埗校网",
     "school_net": "40校网 / 深水埗校网",
     "max_price_wan": 1403.98,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "汇玺III",
@@ -27436,7 +27510,8 @@
     "secondary_school_net": "深水埗校网",
     "school_net": "40校网 / 深水埗校网",
     "max_price_wan": 1201.84,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 5
   },
   {
     "name": "维港汇 III",
@@ -27826,7 +27901,8 @@
     "secondary_school_net": "深水埗区校网",
     "school_net": "40校网 / 深水埗区校网",
     "max_price_wan": 757.27,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "南首",
@@ -28032,7 +28108,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "41校网 / 九龍城校网",
     "max_price_wan": 673.95,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "壹沐第1期",
@@ -28260,7 +28337,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 899.28,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "壹沐第2期",
@@ -28500,7 +28578,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": 1323.81,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "文曜",
@@ -28774,7 +28853,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "41校网 / 九龍城校网",
     "max_price_wan": 1779.03,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "瑧博",
@@ -28956,7 +29036,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "41校网 / 九龍城校网",
     "max_price_wan": 1449.28,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "101 Kings Road",
@@ -29168,7 +29249,8 @@
     "secondary_school_net": "東區校网",
     "school_net": "14校网 / 東區校网",
     "max_price_wan": 1502.26,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "君誉峰",
@@ -29316,7 +29398,8 @@
     "secondary_school_net": "東區校网",
     "school_net": "14校网 / 東區校网",
     "max_price_wan": 586.68,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "嘉居．天后",
@@ -29478,7 +29561,8 @@
     "secondary_school_net": "灣仔校网",
     "school_net": "12校网 / 灣仔校网",
     "max_price_wan": 2980.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "柏蔚山",
@@ -29780,7 +29864,8 @@
     "secondary_school_net": "東區校网",
     "school_net": "14校网 / 東區校网",
     "max_price_wan": 17715.5,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "海璇",
@@ -30042,7 +30127,8 @@
     "secondary_school_net": "東區校网",
     "school_net": "14校网 / 東區校网",
     "max_price_wan": 1677.51,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 6
   },
   {
     "name": "海璇 II",
@@ -30236,7 +30322,8 @@
     "secondary_school_net": "東區校网",
     "school_net": "14校网 / 東區校网",
     "max_price_wan": 12172.81,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "海璇 II (第2B-3期)",
@@ -30430,7 +30517,8 @@
     "secondary_school_net": "東區校网",
     "school_net": "14校网 / 東區校网",
     "max_price_wan": 12172.81,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "雅盈峰",
@@ -30798,7 +30886,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 10934.4,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "Central Peak I",
@@ -31338,7 +31427,8 @@
     "secondary_school_net": "灣仔校网",
     "school_net": "12校网 / 灣仔校网",
     "max_price_wan": 28800.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 5
   },
   {
     "name": "Central Peak II",
@@ -31862,7 +31952,8 @@
     "secondary_school_net": "灣仔校网",
     "school_net": "12校网 / 灣仔校网",
     "max_price_wan": 40963.2,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "21 Borrett Road 第1期",
@@ -32368,7 +32459,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 45940.8,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "Mount Pokfulam",
@@ -32826,7 +32918,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 33355.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "Upper Central",
@@ -33192,7 +33285,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 860.29,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "大学阁",
@@ -33540,7 +33634,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 25805.4,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "天御第1期",
@@ -33914,7 +34009,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 35496.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "天御第2期",
@@ -34294,7 +34390,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 42291.2,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "宝峰",
@@ -34648,7 +34745,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 42000.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "帝汇豪庭",
@@ -35114,7 +35212,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 15700.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "应天",
@@ -35648,7 +35747,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 38077.2,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "罗便臣道80号",
@@ -35892,7 +35992,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 52262.1,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "Kennedy 38",
@@ -36100,7 +36201,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 890.73,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "吉喆",
@@ -36264,7 +36366,8 @@
     "secondary_school_net": "中西区校网",
     "school_net": "11校网 / 中西区校网",
     "max_price_wan": 4100.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "海嵎",
@@ -36512,7 +36615,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 1452.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "皇府湾",
@@ -37618,7 +37722,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 12532.8,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "寿臣山15号",
@@ -37956,7 +38061,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 87024.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "No.3 Repulse Bay Road",
@@ -38570,7 +38676,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 5854.5,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "Shouson Peak",
@@ -39118,7 +39225,8 @@
     "secondary_school_net": "南区校网",
     "school_net": "18校网 / 南区校网",
     "max_price_wan": 38800.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "浅水湾108",
@@ -40257,7 +40365,8 @@
     "secondary_school_net": "南区校网",
     "school_net": "18校网 / 南区校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "深水湾径8号",
@@ -40761,7 +40870,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 60544.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "Mount Nicholson I",
@@ -41787,7 +41897,8 @@
     "secondary_school_net": "灣仔校网",
     "school_net": "12校网 / 灣仔校网",
     "max_price_wan": 139900.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "Mount Nicholson II",
@@ -42809,7 +42920,8 @@
     "secondary_school_net": "灣仔校网",
     "school_net": "12校网 / 灣仔校网",
     "max_price_wan": 91200.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "Twelve Peaks",
@@ -45661,7 +45773,8 @@
     "secondary_school_net": "中西区校网",
     "school_net": "11校网 / 中西区校网",
     "max_price_wan": 73000.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "宾吉道3号",
@@ -48474,7 +48587,8 @@
     "secondary_school_net": "中西区校网",
     "school_net": "11校网 / 中西区校网",
     "max_price_wan": 50336.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "海德园第1期",
@@ -48783,7 +48897,8 @@
     "secondary_school_net": "東區校网",
     "school_net": "16校网 / 東區校网",
     "max_price_wan": 2163.43,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "峻誉．渣甸山",
@@ -49326,7 +49441,8 @@
     "secondary_school_net": "灣仔校网",
     "school_net": "12校网 / 灣仔校网",
     "max_price_wan": 9900.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "皇第",
@@ -49960,7 +50076,8 @@
     "secondary_school_net": "灣仔校网",
     "school_net": "12校网 / 灣仔校网",
     "max_price_wan": 42000.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "Woodis",
@@ -50318,7 +50435,8 @@
     "secondary_school_net": "灣仔校网",
     "school_net": "12校网 / 灣仔校网",
     "max_price_wan": 736.74,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "活道1号",
@@ -50608,7 +50726,8 @@
     "secondary_school_net": "湾仔区校网",
     "school_net": "12校网 / 湾仔区校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "One Eighty",
@@ -50820,7 +50939,8 @@
     "secondary_school_net": "東區校网",
     "school_net": "16校网 / 東區校网",
     "max_price_wan": 1240.98,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "傲华",
@@ -51026,7 +51146,8 @@
     "secondary_school_net": "東區校网",
     "school_net": "16校网 / 東區校网",
     "max_price_wan": 823.27,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "远晴",
@@ -51570,7 +51691,8 @@
     "secondary_school_net": "东区校网",
     "school_net": "16校网 / 东区校网",
     "max_price_wan": 1076.4,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "Victoria Coast",
@@ -52034,7 +52156,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 3480.53,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "15 Western Street",
@@ -52252,7 +52375,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 1076.76,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "42 Tung St.",
@@ -52522,7 +52646,8 @@
     "secondary_school_net": "中西區校网",
     "school_net": "11校网 / 中西區校网",
     "max_price_wan": 4396.59,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "50 Stanley Village Road",
@@ -54144,7 +54269,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 16929.4,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "One Stanley",
@@ -56314,7 +56440,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 36250.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 12
   },
   {
     "name": "Solace",
@@ -57456,7 +57583,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 12000.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "海天径 1号, 舂磡角道 44, 46, 48, 50号",
@@ -58493,7 +58621,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 99999,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "环角道7号、9号及11号",
@@ -59633,7 +59762,8 @@
     "secondary_school_net": "南区校网",
     "school_net": "18校网 / 南区校网",
     "max_price_wan": 16354.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "339 Tai Hang Road",
@@ -61293,7 +61423,8 @@
     "secondary_school_net": "湾仔区校网",
     "school_net": "12校网 / 湾仔区校网",
     "max_price_wan": 37150.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "Blue Coast",
@@ -61451,7 +61582,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 4824.66,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 4
   },
   {
     "name": "Blue Coast II",
@@ -61577,7 +61709,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 4409.16,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "Deep Water South 第6A期",
@@ -61705,7 +61838,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 1931.92,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "Deep Water South 第6B期",
@@ -61821,7 +61955,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 8686.43,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "PORTO",
@@ -61989,7 +62124,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 1246.74,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "弦岸",
@@ -62193,7 +62329,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 791.85,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "扬海",
@@ -62429,7 +62566,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 7194.93,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 4
   },
   {
     "name": "晋环",
@@ -62643,7 +62781,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 11000.0,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 4
   },
   {
     "name": "海盈山第4A期",
@@ -62835,7 +62974,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 1051.57,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "海盈山第4B期",
@@ -63021,7 +63161,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 1719.6,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "滶晨 II",
@@ -63207,7 +63348,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 6060.6,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "璟南",
@@ -63477,7 +63619,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 5645.53,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "逸南",
@@ -63609,7 +63752,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 704.34,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "君豪峰",
@@ -63777,7 +63921,8 @@
     "secondary_school_net": "東區校网",
     "school_net": "14校网 / 東區校网",
     "max_price_wan": 763.61,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "凯玥",
@@ -63973,7 +64118,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 18465.8,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 6
   },
   {
     "name": "Eight Kwai Fong Happy Valley",
@@ -64377,7 +64523,8 @@
     "secondary_school_net": "灣仔校网",
     "school_net": "12校网 / 灣仔校网",
     "max_price_wan": 1655.55,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "蓝塘道23-39号",
@@ -64775,7 +64922,8 @@
     "secondary_school_net": "灣仔校网",
     "school_net": "12校网 / 灣仔校网",
     "max_price_wan": 44719.2,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 1
   },
   {
     "name": "滶晨",
@@ -64989,7 +65137,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": 1551.61,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 2
   },
   {
     "name": "花语海第1期",
@@ -65395,7 +65544,8 @@
     "secondary_school_net": "九龙城区校网",
     "school_net": "34校网 / 九龙城区校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "花语海第2期",
@@ -65909,7 +66059,8 @@
     "secondary_school_net": "九龙城区校网",
     "school_net": "34校网 / 九龙城区校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "Elize Park",
@@ -66055,7 +66206,8 @@
     "secondary_school_net": "油尖旺校网",
     "school_net": "32校网 / 油尖旺校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "维港汇 I",
@@ -66385,7 +66537,8 @@
     "secondary_school_net": "深水埗区校网",
     "school_net": "40校网 / 深水埗区校网",
     "max_price_wan": 757.27,
-    "has_price_data": true
+    "has_price_data": true,
+    "building_count": 3
   },
   {
     "name": "St. George's Mansions",
@@ -66583,7 +66736,8 @@
     "secondary_school_net": "九龍城校网",
     "school_net": "34校网 / 九龍城校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "红山半岛 - C区",
@@ -67769,7 +67923,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "红山半岛 - B区",
@@ -68871,7 +69026,8 @@
     "secondary_school_net": "南區校网",
     "school_net": "18校网 / 南區校网",
     "max_price_wan": null,
-    "has_price_data": false
+    "has_price_data": false,
+    "building_count": 1
   },
   {
     "name": "泓璟",
@@ -68928,7 +69084,8 @@
           ]
         ]
       }
-    }
+    },
+    "building_count": 1
   },
   {
     "name": "海德园第2期",
@@ -68985,7 +69142,8 @@
           ]
         ]
       }
-    }
+    },
+    "building_count": 2
   },
   {
     "name": "叡璟II",
@@ -69042,7 +69200,8 @@
           ]
         ]
       }
-    }
+    },
+    "building_count": 2
   },
   {
     "name": "映汇",
@@ -69099,7 +69258,8 @@
           ]
         ]
       }
-    }
+    },
+    "building_count": 1
   },
   {
     "name": "肇辉台6号",
@@ -69156,7 +69316,8 @@
           ]
         ]
       }
-    }
+    },
+    "building_count": 1
   },
   {
     "name": "海瑅湾 I",
@@ -69213,7 +69374,8 @@
           ]
         ]
       }
-    }
+    },
+    "building_count": 4
   },
   {
     "name": "海瑅湾 II",
@@ -69270,6 +69432,7 @@
           ]
         ]
       }
-    }
+    },
+    "building_count": 3
   }
 ]
