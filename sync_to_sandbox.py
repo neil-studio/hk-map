@@ -178,9 +178,11 @@ def osrm_walk(from_lat, from_lng, to_lat, to_lng):
             data = r.json()
             if data.get('routes'):
                 route = data['routes'][0]
+                dist_m = round(route['distance'])
+                # OSRM public foot profile duration bug: 官方演示接口误按车速返回duration，此处强制使用人行步速 75m/min (4.5 km/h) 重算
                 return {
-                    'distance': round(route['distance']),
-                    'duration': round(route['duration']),
+                    'distance': dist_m,
+                    'duration': round((dist_m / 75.0) * 60),
                     'geometry': route['geometry']
                 }
     except Exception as e:
@@ -245,6 +247,12 @@ def main():
         
         if match and match.get("route_geometry"):
             current_mtr = p.get("nearest_mtr") or {}
+            w_dist = match.get("walk_distance", current_mtr.get("dist_walk_m"))
+            w_dur = match.get("walk_duration", current_mtr.get("walk_time_min"))
+            if w_dist and w_dur and w_dur > 0:
+                speed_kmh = (w_dist / 1000.0) / (w_dur / 60.0)
+                if not (2.5 <= speed_kmh <= 6.5):
+                    w_dur = round(w_dist / 75.0, 1)
             p["nearest_mtr"] = {
                 "nearest_mtr_id": current_mtr.get("nearest_mtr_id") or f"mtr_{norm_name(match.get('station_en', ''))}",
                 "nearest_mtr_name": f"{match.get('station_zh')}站 ({match.get('lines', [''])[0] if match.get('lines') else ''})",
@@ -254,8 +262,8 @@ def main():
                 "nearest_mtr_lat": match.get("station_lat", current_mtr.get("nearest_mtr_lat")),
                 "nearest_mtr_lng": match.get("station_lng", current_mtr.get("nearest_mtr_lng")),
                 "dist_straight_m": match.get("straight_distance", current_mtr.get("dist_straight_m")),
-                "dist_walk_m": match.get("walk_distance", current_mtr.get("dist_walk_m")),
-                "walk_time_min": match.get("walk_duration", current_mtr.get("walk_time_min")),
+                "dist_walk_m": w_dist,
+                "walk_time_min": w_dur,
                 "route_geometry": match.get("route_geometry")
             }
             updated += 1
@@ -270,11 +278,16 @@ def main():
             
             if route:
                 walk_m = route["distance"]
-                walk_min = round(route["duration"] / 60, 1)
+                dur_raw = route["duration"] / 60.0
+                speed_kmh = (walk_m / 1000.0) / (dur_raw / 60.0) if dur_raw > 0 else 0
+                if 2.5 <= speed_kmh <= 6.5:
+                    walk_min = round(dur_raw, 1)
+                else:
+                    walk_min = round(walk_m / 75.0, 1)
                 route_geo = route["geometry"]
             else:
                 walk_m = round(straight_m * 1.3)
-                walk_min = round(walk_m / 80.0, 1)
+                walk_min = round(walk_m / 75.0, 1)
                 route_geo = None
             
             p["nearest_mtr"] = {
