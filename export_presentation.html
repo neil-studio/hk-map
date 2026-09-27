@@ -1091,18 +1091,18 @@
     }
 
     /* =========================================================================
-       PAGE: FINAL VERDICT (全案横向综合对比与最终决策建议)
+       PAGE: FINAL VERDICT (全案综合置业决策与看房指引)
        ========================================================================= */
     .verdict-layout {
-      padding: 14px 36px 12px 36px;
+      padding: 12px 36px 10px 36px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       flex: 1;
       overflow: hidden;
     }
     .verdict-sec-title {
-      font-size: 0.86rem;
+      font-size: 0.82rem;
       font-weight: 800;
       color: var(--slate-900);
       margin-bottom: 4px;
@@ -1111,84 +1111,22 @@
       justify-content: space-between;
     }
     .verdict-sec-subtitle {
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       color: var(--slate-500);
       font-weight: normal;
     }
-    .verdict-matrix-card {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
-    }
-    .verdict-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.72rem;
-    }
-    .verdict-table th {
-      background: #F8FAFC;
-      color: var(--slate-800);
-      padding: 6px 10px;
-      font-weight: 800;
-      border-bottom: 1.5px solid #CBD5E1;
-      text-align: left;
-    }
-    .verdict-table th.proj-head {
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      text-align: center;
-      font-size: 0.75rem;
-    }
-    .verdict-table td {
-      padding: 5px 10px;
-      border-bottom: 1px solid #E2E8F0;
-      color: var(--slate-700);
-      vertical-align: middle;
-    }
-    .verdict-table td.dim-label {
-      font-weight: 700;
-      color: var(--slate-900);
-      white-space: nowrap;
-      background: #FAFAFA;
-      width: 110px;
-    }
-    .verdict-table td.dim-crit {
-      font-size: 0.65rem;
-      color: var(--slate-500);
-      line-height: 1.35;
-      width: 165px;
-      border-right: 1px solid #E2E8F0;
-    }
-    .verdict-table td.proj-score-cell {
-      text-align: center;
-      line-height: 1.35;
-    }
-    .score-stars {
-      color: #D97706;
-      font-size: 0.84rem;
-      font-weight: 900;
-      letter-spacing: 1px;
-      margin-bottom: 2px;
-    }
-    .score-desc {
-      font-size: 0.65rem;
-      color: var(--slate-600);
-    }
     .verdict-cards-container {
       display: grid;
-      gap: 10px;
-      flex: 1;
+      gap: 8px;
     }
     .verdict-card {
       background: #F8FAFC;
       border: 1px solid #E2E8F0;
       border-radius: 8px;
-      padding: 10px 14px;
+      padding: 8px 12px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       position: relative;
       border-left: 4px solid var(--primary);
     }
@@ -1200,12 +1138,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
     .verdict-card-tag {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 800;
-      padding: 2px 8px;
+      padding: 2px 7px;
       border-radius: 4px;
     }
     .tag-edu { background: #FEF3C7; color: #B45309; }
@@ -1213,15 +1151,73 @@
     .tag-roi { background: #DCFCE7; color: #15803D; }
     .tag-lux { background: #F3E8FF; color: #6D28D9; }
     .verdict-card-title {
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       font-weight: 800;
       color: var(--slate-900);
       font-family: 'Noto Serif SC', serif;
     }
+    .verdict-card-meta {
+      font-size: 0.65rem;
+      color: #0369a1;
+      font-weight: 600;
+      margin-bottom: 3px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
     .verdict-card-desc {
-      font-size: 0.72rem;
+      font-size: 0.69rem;
       color: var(--slate-700);
-      line-height: 1.45;
+      line-height: 1.4;
+    }
+    .verdict-fin-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .verdict-fin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.68rem;
+    }
+    .verdict-fin-table th {
+      background: #F8FAFC;
+      color: var(--slate-800);
+      padding: 5px 8px;
+      font-weight: 800;
+      border-bottom: 1.5px solid #CBD5E1;
+      text-align: center;
+    }
+    .verdict-fin-table th.dim-col {
+      text-align: left;
+      width: 155px;
+      background: #F1F5F9;
+      color: #334155;
+    }
+    .verdict-fin-table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid #E2E8F0;
+      text-align: center;
+      color: var(--slate-700);
+    }
+    .verdict-fin-table td.dim-col {
+      text-align: left;
+      font-weight: 700;
+      background: #FAFAFA;
+      color: #0f172a;
+    }
+    .verdict-route-banner {
+      background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+      border: 1px solid #BBF7D0;
+      border-radius: 6px;
+      padding: 6px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.68rem;
+      color: #166534;
     }
 
     /* =========================================================================
@@ -2402,14 +2398,35 @@
                     `).join('')}
                   </tr>
 
-                  <!-- 2. 落成时间 -->
+                  <!-- 2. 规划体量 · 交付形态 -->
                   <tr>
-                    <td class="dim-col">落成时间</td>
-                    ${chunkProjects.map(p => `
-                      <td>
-                        <strong>${formatCompletionDate(p.completion_date)}</strong>
-                      </td>
-                    `).join('')}
+                    <td class="dim-col">规划体量 · 交付</td>
+                    ${chunkProjects.map(p => {
+                      const tCount = p.tower_count || 1;
+                      const units = p.total_units;
+                      const unitsStr = units ? `共 ${units} 伙` : '详见销控';
+                      const towerStr = tCount === 1 ? '1 幢独栋' : `${tCount} 座大厦`;
+
+                      let scaleTag = '精品都会住区';
+                      if (units) {
+                        if (units <= 20) scaleTag = '极低密纯大宅';
+                        else if (units <= 80) scaleTag = '低密名门大宅';
+                        else if (units <= 250) scaleTag = '精品都会雅居';
+                        else if (units <= 600) scaleTag = '中大型综合住区';
+                        else scaleTag = '地标巨型综合体';
+                      }
+
+                      const compDate = formatCompletionDate(p.completion_date);
+                      return `
+                        <td>
+                          <div style="font-weight:700; color:#0f172a; font-size:0.72rem;">${towerStr} · ${unitsStr}</div>
+                          <div class="comp-cell-sub" style="margin-top:2px;">
+                            <span style="color:#0284C7; font-weight:600;">${compDate}</span>
+                            <span style="color:#64748b; margin-left:2px;">(${scaleTag})</span>
+                          </div>
+                        </td>
+                      `;
+                    }).join('')}
                   </tr>
 
                   <!-- 3. 校网配置 -->
@@ -2872,48 +2889,11 @@
         const pageEl = document.createElement('div');
         pageEl.className = 'pdf-page verdict-page';
 
-        // 选取参与对比的项目 (保证 A4 横版排版美观度)
-        const targetProjs = projects.slice(0, 4);
+        // 支持所有入选项目（3~5/6个项目全部展示，不再硬截断为4个）
+        const targetProjs = projects;
 
-        // 计算各项目的 6 维度量化评分
-        const projectScores = targetProjs.map(p => ({
-          proj: p,
-          scores: calcProjectScores(p)
-        }));
-
-        const DIMENSIONS = [
-          { key: 'capital', label: '💷 资金门槛', crit: '按内地客常规按揭3成首付测算' },
-          { key: 'education', label: '🎓 名校教育', crit: '公立顶尖校网与拔尖升学护城河' },
-          { key: 'transit', label: '🚇 轨道通勤', crit: '港铁步行接驳与核心CBD通达时效' },
-          { key: 'certainty', label: '🏅 现楼确定性', crit: '实景所见即所得，规避期房交付风险' },
-          { key: 'view', label: '🌊 景观环境', crit: '维港海景/半山生态等稀缺自然资源' },
-          { key: 'rental', label: '📈 租金回报', crit: '片区租务流动性与年化净现金流防守' }
-        ];
-
-        const tableRowsHtml = DIMENSIONS.map(dim => {
-          const scoreCells = projectScores.map(item => {
-            const sObj = item.scores[dim.key];
-            const starStr = '★'.repeat(sObj.score) + '☆'.repeat(5 - sObj.score);
-            return `
-              <td class="proj-score-cell">
-                <div class="score-stars">${starStr}</div>
-                <div class="score-desc">${sObj.desc}</div>
-              </td>
-            `;
-          }).join('');
-
-          return `
-            <tr>
-              <td class="dim-label">${dim.label}</td>
-              <td class="dim-crit">${dim.crit}</td>
-              ${scoreCells}
-            </tr>
-          `;
-        }).join('');
-
-        const verdictCardsHtml = projectScores.map((item, idx) => {
-          const p = item.proj;
-          const sc = item.scores;
+        // 决策卡片生成
+        const verdictCardsHtml = targetProjs.map((p, idx) => {
           const addr = (p.address || '').toLowerCase();
           const pname = (p.name || '').toLowerCase();
           const minP = p.min_price_wan || 1500;
@@ -2960,6 +2940,12 @@
             verdictDesc = `折实入场门槛相对亲民，首付压力极小。凭借成熟的租赁刚需与高实用率户型，租金回报率领先同区，以租养贷现金流极为健康，适合注重资金配置弹性、低门槛落脚或稳健收租的配置客。`;
           }
 
+          const tCount = p.tower_count || 1;
+          const units = p.total_units;
+          const towerStr = tCount === 1 ? '1幢独栋' : `${tCount}座大厦`;
+          const unitsStr = units ? `共${units}伙` : '';
+          const compStr = formatCompletionDate(p.completion_date);
+
           return `
             <div class="verdict-card ${typeClass}">
               <div class="verdict-card-head">
@@ -2968,6 +2954,11 @@
                 </div>
                 <span class="verdict-card-tag ${tagClass}">${roleTag}</span>
               </div>
+              <div class="verdict-card-meta">
+                <span>🏛️ ${towerStr} ${unitsStr}</span>
+                <span>🔑 ${compStr}</span>
+                <span>🚇 ${p.nearest_mtr?.nearest_mtr_cn ? `近${p.nearest_mtr.nearest_mtr_cn}站` : '核心轨交'}</span>
+              </div>
               <div class="verdict-card-desc">
                 <strong>【顾问选房指引】</strong>${verdictDesc}
               </div>
@@ -2975,47 +2966,90 @@
           `;
         }).join('');
 
+        // 动态设置卡片网格布局
+        let gridCols = 'repeat(3, 1fr)';
+        if (targetProjs.length <= 2) gridCols = `repeat(${targetProjs.length}, 1fr)`;
+        else if (targetProjs.length === 4) gridCols = 'repeat(2, 1fr)';
+        else if (targetProjs.length === 3 || targetProjs.length >= 5) gridCols = 'repeat(3, 1fr)';
+
+        // 提取实地看房推荐动线 (按所涉区域排布)
+        const routeDistricts = Array.from(new Set(targetProjs.map(p => p.micro_district || p.district || p.region)));
+        const routeStr = routeDistricts.join(' ➔ ');
+
         pageEl.innerHTML = `
           <div class="page-header">
             <div class="page-header-left">
-              <span class="page-header-title">全案综合横向比选与顾问决策建议</span>
-              <span class="page-header-badge">THE FINAL VERDICT · 综合决策收尾</span>
+              <span class="page-header-title">全案综合置业决策建议与实地看房动线指南</span>
+              <span class="page-header-badge">THE FINAL VERDICT · 综合决策落地</span>
             </div>
             <img src="landma_logo.png" class="page-header-logo" alt="Logo">
           </div>
 
           <div class="verdict-layout">
-            <!-- 上半部：量化打分矩阵 -->
+            <!-- 模块 1：终极选房决策结论卡片 (精准对号入座) -->
             <div>
               <div class="verdict-sec-title">
-                <span>📊 入选推荐项目 6 大核心决策维度客观量化打分 (5星制)</span>
-                <span class="verdict-sec-subtitle">* 评分基于项目备案售价、法定校网、实测地铁距离及交楼形态等物理参数客观推导</span>
+                <span>💡 蓝玛置业专家终极选房决策结论 (入选项目精准对号入座)</span>
+                <span class="verdict-sec-subtitle">全案入选 ${targetProjs.length} 个重点新盘 · 根据王牌优势与客群置业权重分类匹配</span>
               </div>
-              <div class="verdict-matrix-card">
-                <table class="verdict-table">
+              <div class="verdict-cards-container" style="grid-template-columns: ${gridCols};">
+                ${verdictCardsHtml}
+              </div>
+            </div>
+
+            <!-- 模块 2：资金门槛与现金流速查矩阵 -->
+            <div>
+              <div class="verdict-sec-title">
+                <span>💷 入选楼盘资金门槛与财务现金流速查矩阵 (常规3成首付测算)</span>
+                <span class="verdict-sec-subtitle">* 测算基于法定备案折实最低价及主流按揭利率(P-1.75%)，实际以银行最终批核为准</span>
+              </div>
+              <div class="verdict-fin-card">
+                <table class="verdict-fin-table">
                   <thead>
                     <tr>
-                      <th>考核维度</th>
-                      <th>判定口径与标准说明</th>
-                      ${targetProjs.map(p => `<th class="proj-head">${p.name}</th>`).join('')}
+                      <th class="dim-col">财务核心考量指标</th>
+                      ${targetProjs.map(p => `<th>${p.name}</th>`).join('')}
                     </tr>
                   </thead>
                   <tbody>
-                    ${tableRowsHtml}
+                    <tr>
+                      <td class="dim-col">入场折实总价参考</td>
+                      ${targetProjs.map(p => {
+                        const minP = p.min_price_wan || 1500;
+                        return `<td style="font-weight:700; color:#0284C7;">约 $${Math.round(minP)} 万起</td>`;
+                      }).join('')}
+                    </tr>
+                    <tr>
+                      <td class="dim-col">建议首期准备 (3成)</td>
+                      ${targetProjs.map(p => {
+                        const minP = p.min_price_wan || 1500;
+                        const downpay = Math.round(minP * 0.3);
+                        return `<td style="font-weight:700; color:#16A34A;">约 $${downpay} 万起</td>`;
+                      }).join('')}
+                    </tr>
+                    <tr>
+                      <td class="dim-col">预估参考月供 (30年)</td>
+                      ${targetProjs.map(p => {
+                        const minP = p.min_price_wan || 1500;
+                        const monthlyW = (Math.round(minP * 0.7 * 0.04702 * 10) / 10).toFixed(1);
+                        return `<td>约 $${monthlyW} 万/月</td>`;
+                      }).join('')}
+                    </tr>
+                    <tr>
+                      <td class="dim-col">预估年化租金回报</td>
+                      ${targetProjs.map(p => {
+                        return `<td style="font-weight:600; color:#D97706;">${p.roi || '3.2% - 3.8%'}</td>`;
+                      }).join('')}
+                    </tr>
                   </tbody>
                 </table>
               </div>
             </div>
 
-            <!-- 下半部：终极选房决策结论 -->
-            <div style="flex:1; display:flex; flex-direction:column; min-height:0;">
-              <div class="verdict-sec-title" style="margin-bottom:6px;">
-                <span>💡 蓝玛置业专家终极选房决策结论 (精准对号入座)</span>
-                <span class="verdict-sec-subtitle">根据项目王牌优势与客群置业权重分类匹配</span>
-              </div>
-              <div class="verdict-cards-container">
-                ${verdictCardsHtml}
-              </div>
+            <!-- 模块 3：实地考察推荐动线横幅 -->
+            <div class="verdict-route-banner">
+              <span>📍 <strong>蓝玛专属实地看房推荐动线</strong>：${routeStr}</span>
+              <span>🚘 <strong>VIP 置业礼遇</strong>：专属顾问专车全程陪同考察、实地核算实时销控、专享发展商专属优惠</span>
             </div>
           </div>
 

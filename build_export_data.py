@@ -319,11 +319,15 @@ def parse_excel_sales_and_tx():
                     "price_range": price_str
                 })
             
+            towers = [s for s in wb.sheetnames if s != '销控汇总明细']
+            tower_count = len(towers) if len(towers) > 0 else 1
             project_sales[pname] = summary_list
             project_unit_stats[pname] = {
                 "total_units": excel_total_units,
                 "sold_units": excel_sold_units,
-                "sale_units": excel_on_sale_units
+                "sale_units": excel_on_sale_units,
+                "tower_count": tower_count,
+                "tower_names": towers
             }
 
             # 整理各户型最近2套成交列表
@@ -507,6 +511,10 @@ def main():
             p["total_units"] = ustats["total_units"]
             p["sold_units"] = ustats["sold_units"]
             p["sale_units"] = ustats["sale_units"]
+            p["tower_count"] = ustats.get("tower_count", 1)
+            p["tower_names"] = ustats.get("tower_names", [])
+        if not p.get("tower_count"):
+            p["tower_count"] = 1
 
         # 匹配最近成交数据
         tx = tx_data.get(pname)
