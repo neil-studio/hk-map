@@ -2687,8 +2687,10 @@
       // PAGE: 全案综合横向比选与最终决策建议 (Final Verdict Page)
       // ----------------------------------------------------
       function calcProjectScores(p) {
-        const text = ((p.mainland_selling_points || '') + ' ' + (p.reason || '')).toLowerCase();
+        const addr = (p.address || '').toLowerCase();
         const pname = (p.name || '').toLowerCase();
+        const district = ((p.district || '') + ' ' + (p.micro_district || '')).toLowerCase();
+        const text = ((p.mainland_selling_points || '') + ' ' + (p.reason || '')).toLowerCase();
 
         // 1. 资金门槛 (Capital Threshold) - 按内地客户常规按揭3成首付测算
         let capScore = 3, capDesc = '核心区主流总价';
@@ -2749,21 +2751,74 @@
           cerScore = 2; cerDesc = '中远期预售楼花，建设周期较长';
         }
 
-        // 5. 景观视野 (View & Living Environment)
+        // 5. 景观视野 (View & Living Environment) - 基于客观实体地理位置与法定规划
         let viewScore = 2, viewDesc = '繁华市区成熟街景';
-        const isNegSea = text.includes('无开阔') || text.includes('无维港') || text.includes('毫无海景') || text.includes('无海景') || text.includes('不具备维港') || text.includes('无一线');
-        const isSea = (text.includes('维港') || text.includes('海景') || text.includes('临海') || text.includes('海湾') || pname.includes('海')) && !isNegSea;
         
-        if (isSea) {
-          if (text.includes('一线') || text.includes('前排临海') || text.includes('全海景') || text.includes('跑道区大型滨水')) {
-            viewScore = 5; viewDesc = '一线维港海滨长廊开阔海景';
-          } else {
-            viewScore = 4; viewDesc = '维港内海海景 / 视野舒缓';
-          }
-        } else if (text.includes('半山') || text.includes('山景')) {
-          viewScore = 4; viewDesc = '背靠翠绿山峦天然氧吧，闹中取静';
-        } else if (isNegSea) {
-          viewScore = 3; viewDesc = '高层开阔繁华城市景 / 狮子山景';
+        // A. 启德城中心沐泰街 (The Henley, Henley Park, Monaco等，直面体育园非一线海滨)
+        if (addr.includes('沐泰街') || pname.includes('henley') || pname.includes('monaco')) {
+          viewScore = 4;
+          viewDesc = '直面启德体育园地标，高层开阔远眺海景';
+        }
+        // B. 启德协调道/城央枢纽 (天玺·天)
+        else if (addr.includes('協調道') || pname.includes('天璽．天') || pname.includes('天玺．天')) {
+          viewScore = 4;
+          viewDesc = '启德城央都会天际线，狮子山与都会全景';
+        }
+        // C. 启德跑道区滨水一线海景 (承丰道, 承景街, 维港湾畔, 启德海湾, 澐璟, 天泷, 天玺海, 柏蔚森, Miami Quay, 维港双钻等)
+        else if (
+          addr.includes('承豐') || addr.includes('承景') ||
+          pname.includes('灣畔') || pname.includes('湾畔') ||
+          pname.includes('miami quay') || pname.includes('double coast') ||
+          pname.includes('澐璟') || pname.includes('沄璟') ||
+          pname.includes('天瀧') || pname.includes('天泷') ||
+          pname.includes('維港1號') || pname.includes('维港1号') ||
+          pname.includes('啟德海灣') || pname.includes('启德海湾') ||
+          pname.includes('柏蔚森') || pname.includes('花語海') || pname.includes('花语海') ||
+          pname.includes('維港．雙鑽') || pname.includes('维港．双钻')
+        ) {
+          viewScore = 5;
+          viewDesc = '一线维港海滨长廊开阔海景';
+        }
+        // D. 港岛/九龙其他一线维港或顶级滨海盘
+        else if (
+          pname.includes('海璇') || pname.includes('維港頌') || pname.includes('维港颂') ||
+          pname.includes('維港星岸') || pname.includes('维港星岸') || pname.includes('凱旋門') ||
+          pname.includes('凯旋门') || (pname.includes('天璽') && !pname.includes('天'))
+        ) {
+          viewScore = 5;
+          viewDesc = '一线维港海滨长廊开阔海景';
+        }
+        // E. 港岛南区深湾/大潭开阔海景
+        else if (
+          pname.includes('凱玥') || pname.includes('凯玥') || pname.includes('揚海') ||
+          pname.includes('扬海') || pname.includes('晉環') || pname.includes('晋环') ||
+          district.includes('南区') || district.includes('香港仔') || district.includes('鸭脷洲')
+        ) {
+          viewScore = 5;
+          viewDesc = '一线南区深湾/港岛南开阔海景';
+        }
+        // F. 半山生态或翠绿山景豪宅
+        else if (
+          text.includes('半山') || text.includes('山景') || pname.includes('半山') ||
+          pname.includes('mount') || pname.includes('傲玟') || pname.includes('瑜一') ||
+          pname.includes('天鑄') || pname.includes('天铸')
+        ) {
+          viewScore = 4;
+          viewDesc = '背靠翠绿山峦天然氧吧，闹中取静';
+        }
+        // G. 其他泛海景单位
+        else if (
+          (text.includes('维港') || text.includes('海景') || text.includes('临海') ||
+           text.includes('海湾') || pname.includes('海') || pname.includes('维港')) &&
+          !text.includes('无海景') && !text.includes('无维港')
+        ) {
+          viewScore = 4;
+          viewDesc = '维港内海海景 / 视野舒缓';
+        }
+        // H. 繁华市区高层视野
+        else if (text.includes('高层') || text.includes('开阔')) {
+          viewScore = 3;
+          viewDesc = '高层开阔繁华城市景 / 狮子山景';
         }
 
         // 6. 租金回报 (Rental Yield)
@@ -2832,6 +2887,9 @@
         const verdictCardsHtml = projectScores.map((item, idx) => {
           const p = item.proj;
           const sc = item.scores;
+          const addr = (p.address || '').toLowerCase();
+          const pname = (p.name || '').toLowerCase();
+          const minP = p.min_price_wan || 1500;
           const text = ((p.mainland_selling_points || '') + ' ' + (p.reason || '')).toLowerCase();
 
           let typeClass = 'type-edu';
@@ -2839,26 +2897,40 @@
           let roleTag = '🎯 顶尖名校网与现楼确定性首选';
           let verdictDesc = '';
 
-          if (sc.capital.score >= 4 && sc.rental.score >= 4 && (p.min_price_wan || 1500) <= 1000) {
-            typeClass = 'type-roi';
-            tagClass = 'tag-roi';
-            roleTag = '💷 高资金效率与稳健现金流首选';
-            verdictDesc = `折实入场门槛相对亲民，首付压力极小。凭借成熟的租赁刚需与高实用率户型，租金回报率领先同区，以租养贷现金流极为健康，适合注重资金配置弹性、低门槛落脚或稳健收租的配置客。`;
-          } else if (sc.view.score >= 4 || text.includes('启德') || text.includes('跑道') || text.includes('滨水')) {
-            typeClass = 'type-sea';
-            tagClass = 'tag-sea';
-            roleTag = '🌟 维港滨水度假与资产成长首选';
-            verdictDesc = `坐拥跑道区一线滨水长廊与高规格国际度假会所，充分享受香港未来重点新城的长远规划与国际盛事红利，居住环境松弛舒适，适合看重家庭生活品质、度假圈层与中长线资产升值潜力的买家。`;
-          } else if ((p.min_price_wan || 0) > 3000 || text.includes('半山') || text.includes('大宅')) {
+          // 1. 传统名门与尊贵私密大宅 (海璇, 传统豪宅, 半山等)
+          if (minP >= 3000 || pname.includes('海璇') || text.includes('半山') || pname.includes('mount') || pname.includes('天鑄')) {
             typeClass = 'type-lux';
             tagClass = 'tag-lux';
             roleTag = '👑 传统名门血统与尊贵私密大宅首选';
-            verdictDesc = `稳坐香港传统豪宅腹地，全盘以大户型为主确保圈层纯粹，私家电梯入户私密性极高，不仅彰显家族名门底色，更能穿越经济周期抗跌保值，适合注重家族传承与大尺度居住气度的实力家庭。`;
-          } else {
+            verdictDesc = `稳坐香港一线地段与传统豪宅腹地，全盘以大户型为主确保圈层纯粹，私家电梯入户私密性极高，不仅彰显家族名门底色，更能穿越经济周期抗跌保值，适合注重家族传承与大尺度居住气度的实力家庭。`;
+          }
+          // 2. 跑道区一线滨水度假资产 (启德海湾, 维港湾畔, Miami Quay, 澐璟等)
+          else if (addr.includes('承豐') || addr.includes('承景') || pname.includes('海湾') || pname.includes('湾畔') || pname.includes('miami') || pname.includes('澐璟') || pname.includes('天泷') || pname.includes('维港1号') || pname.includes('双钻') || pname.includes('柏蔚森')) {
+            typeClass = 'type-sea';
+            tagClass = 'tag-sea';
+            roleTag = '🌟 维港滨水度假与资产成长首选';
+            verdictDesc = `坐拥启德跑道区一线维港海滨长廊，尊享极高规格的国际度假会所与开阔滨海视野。充分享受香港未来重点新城的长远规划与国际盛事红利，居住氛围松弛舒适，是兼顾品质生活与中长线资产升值潜力的优选。`;
+          }
+          // 3. 启德城中心都会地标与体育园 (The Henley, Henley Park, Monaco, 天玺天等)
+          else if (addr.includes('沐泰街') || pname.includes('henley') || pname.includes('monaco') || addr.includes('協調道')) {
+            typeClass = 'type-roi';
+            tagClass = 'tag-roi';
+            roleTag = '🏆 启德都会核心与体育园活力生活首选';
+            verdictDesc = `坐落启德城中心核心地脉，直面启德体育园世界级地标全景，近享都会顶级商业配套与极速轨交出行。科技智能与意式奢装兼备，租客承接力高，兼顾品质生活格调与稳健资产流动性。`;
+          }
+          // 4. 顶尖名校网与学区资产 (何文田、九龙塘、中西区名校网)
+          else if ((p.school_net || '').includes('34') || (p.school_net || '').includes('41') || (p.school_net || '').includes('11') || pname.includes('瑜一') || pname.includes('傲玟')) {
             typeClass = 'type-edu';
             tagClass = 'tag-edu';
             roleTag = '🎯 顶尖名校网与现楼确定性首选';
             verdictDesc = `占据全港拔尖率顶尖的名校网护城河，配合实景现楼所见即所得，彻底消除期房等待与延期风险，对于急需为子女锁定优质学位、即买即住即刻落户的家庭而言，是高确定性的资产硬通货。`;
+          }
+          // 5. 亲民上车与稳健现金流 (其余高资金效率项目)
+          else {
+            typeClass = 'type-roi';
+            tagClass = 'tag-roi';
+            roleTag = '💷 高资金效率与稳健现金流首选';
+            verdictDesc = `折实入场门槛相对亲民，首付压力极小。凭借成熟的租赁刚需与高实用率户型，租金回报率领先同区，以租养贷现金流极为健康，适合注重资金配置弹性、低门槛落脚或稳健收租的配置客。`;
           }
 
           return `
