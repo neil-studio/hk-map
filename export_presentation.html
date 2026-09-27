@@ -1091,6 +1091,140 @@
     }
 
     /* =========================================================================
+       PAGE: FINAL VERDICT (全案横向综合对比与最终决策建议)
+       ========================================================================= */
+    .verdict-layout {
+      padding: 14px 36px 12px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      overflow: hidden;
+    }
+    .verdict-sec-title {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .verdict-sec-subtitle {
+      font-size: 0.68rem;
+      color: var(--slate-500);
+      font-weight: normal;
+    }
+    .verdict-matrix-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .verdict-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.72rem;
+    }
+    .verdict-table th {
+      background: #F8FAFC;
+      color: var(--slate-800);
+      padding: 6px 10px;
+      font-weight: 800;
+      border-bottom: 1.5px solid #CBD5E1;
+      text-align: left;
+    }
+    .verdict-table th.proj-head {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      text-align: center;
+      font-size: 0.75rem;
+    }
+    .verdict-table td {
+      padding: 5px 10px;
+      border-bottom: 1px solid #E2E8F0;
+      color: var(--slate-700);
+      vertical-align: middle;
+    }
+    .verdict-table td.dim-label {
+      font-weight: 700;
+      color: var(--slate-900);
+      white-space: nowrap;
+      background: #FAFAFA;
+      width: 110px;
+    }
+    .verdict-table td.dim-crit {
+      font-size: 0.65rem;
+      color: var(--slate-500);
+      line-height: 1.35;
+      width: 165px;
+      border-right: 1px solid #E2E8F0;
+    }
+    .verdict-table td.proj-score-cell {
+      text-align: center;
+      line-height: 1.35;
+    }
+    .score-stars {
+      color: #D97706;
+      font-size: 0.84rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+    .score-desc {
+      font-size: 0.65rem;
+      color: var(--slate-600);
+    }
+    .verdict-cards-container {
+      display: grid;
+      gap: 10px;
+      flex: 1;
+    }
+    .verdict-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      border-left: 4px solid var(--primary);
+    }
+    .verdict-card.type-edu { border-left-color: #D97706; background: #FFFDF7; }
+    .verdict-card.type-sea { border-left-color: #0284C7; background: #F0F9FF; }
+    .verdict-card.type-roi { border-left-color: #16A34A; background: #F0FDF4; }
+    .verdict-card.type-lux { border-left-color: #7C3AED; background: #FAF5FF; }
+    .verdict-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3px;
+    }
+    .verdict-card-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .tag-edu { background: #FEF3C7; color: #B45309; }
+    .tag-sea { background: #E0F2FE; color: #0369A1; }
+    .tag-roi { background: #DCFCE7; color: #15803D; }
+    .tag-lux { background: #F3E8FF; color: #6D28D9; }
+    .verdict-card-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      font-family: 'Noto Serif SC', serif;
+    }
+    .verdict-card-desc {
+      font-size: 0.72rem;
+      color: var(--slate-700);
+      line-height: 1.45;
+    }
+
+    /* =========================================================================
        PRINT SPECIFICATIONS (@media print)
        ========================================================================= */
     @media print {
@@ -1887,8 +2021,8 @@
       }
       const numCompPages = compChunks.length;
 
-      // 页面计算：封面(1) + 需求(1) + 商圈(numDistrictPages) + 宏观地图(1) + 横向对比(numCompPages) + 单盘(projects.length) + 封底(1)
-      const totalPages = 2 + numDistrictPages + 1 + numCompPages + projects.length + 1;
+      // 页面计算：封面(1) + 需求(1) + 商圈(numDistrictPages) + 宏观地图(1) + 横向对比(numCompPages) + 单盘(projects.length) + 决策建议(1) + 封底(1)
+      const totalPages = 2 + numDistrictPages + 1 + numCompPages + projects.length + 1 + 1;
       document.getElementById('page-stat-badge').textContent = `共 ${projects.length} 个推荐楼盘 / ${totalPages} 页`;
 
       // ----------------------------------------------------
@@ -2527,6 +2661,245 @@
         `;
         root.appendChild(pPage);
       });
+
+      // ----------------------------------------------------
+      // PAGE: 全案综合横向比选与最终决策建议 (Final Verdict Page)
+      // ----------------------------------------------------
+      function calcProjectScores(p) {
+        const text = ((p.mainland_selling_points || '') + ' ' + (p.reason || '')).toLowerCase();
+        const pname = (p.name || '').toLowerCase();
+
+        // 1. 资金门槛 (Capital Threshold)
+        let capScore = 3, capDesc = '核心区主流总价';
+        const minP = p.min_price_wan || 1500;
+        if (minP <= 800) { capScore = 5; capDesc = `首付1成约 $${Math.round(minP * 0.1)}万起，门槛极亲民`; }
+        else if (minP <= 1500) { capScore = 4; capDesc = '首付约1-2成，中产改善极易入手'; }
+        else if (minP <= 3000) { capScore = 3; capDesc = '核心区高品质改善总价门槛'; }
+        else if (minP <= 6000) { capScore = 2; capDesc = '高净值名门大宅总价段'; }
+        else { capScore = 1; capDesc = '顶级资产门槛，筛选极高净值买家'; }
+
+        // 2. 名校教育 (School Net)
+        let eduScore = 2, eduDesc = '常规成熟学区，可配合私立补充';
+        const sNet = (p.school_net || p.primary_school_net || '') + ' ' + text;
+        if (sNet.includes('41')) { eduScore = 5; eduDesc = '41校网全港天花板 (喇沙/拔萃/玛利诺)'; }
+        else if (sNet.includes('34')) { eduScore = 5; eduDesc = '34校网全港顶尖名校网 (协恩/陈瑞祺)'; }
+        else if (sNet.includes('11') || sNet.includes('12')) { eduScore = 4; eduDesc = '港岛第一梯队名校网 (中西区/湾仔)'; }
+        else if (sNet.includes('35') || sNet.includes('18') || sNet.includes('31') || sNet.includes('32') || sNet.includes('40')) {
+          eduScore = 3; eduDesc = '核心区成熟公立校网';
+        }
+
+        // 3. 轨道通勤 (Transit & Commute)
+        let traScore = 2, traDesc = '步行稍远或需短途接驳';
+        const mtr = p.nearest_mtr;
+        const isNegMtr = text.includes('不是地铁') || text.includes('并非传统意义上的港铁') || text.includes('并非铁路上盖') || text.includes('不是港铁');
+        const isPosMtr = (text.includes('纯正铁路上盖') || text.includes('纯正港铁上盖') || text.includes('铁路上盖') || text.includes('地铁上盖')) && !isNegMtr;
+        
+        if (isPosMtr || (mtr && mtr.walk_time_min <= 3)) {
+          traScore = 5; traDesc = `纯正地铁上盖 / 步行约${mtr?.walk_time_min || 2}分，风雨无阻`;
+        } else if (mtr && mtr.walk_time_min <= 7) {
+          traScore = 4; traDesc = `步行约${mtr.walk_time_min}分直达港铁`;
+        } else if (mtr && mtr.walk_time_min <= 12) {
+          traScore = 3; traDesc = `步行约${mtr.walk_time_min}分可达港铁`;
+        } else {
+          traScore = 2; traDesc = '需短途接驳至地铁站';
+        }
+
+        // 4. 现楼确定性 (Delivery Certainty)
+        let cerScore = 3, cerDesc = '在建工程稳定有序';
+        const cDate = (p.completion_date || '') + ' ' + text;
+        if (cDate.includes('现楼') || cDate.includes('即买即住')) {
+          cerScore = 5; cerDesc = '实景现楼所见即所得，零交楼风险';
+        } else if (cDate.includes('2025')) {
+          cerScore = 4; cerDesc = '准现楼即将落成，周期清晰';
+        } else if (cDate.includes('2026')) {
+          cerScore = 3; cerDesc = '预计2026年交付，分期付款灵活';
+        } else {
+          cerScore = 2; cerDesc = '中远期预售楼花，建设周期较长';
+        }
+
+        // 5. 景观视野 (View & Living Environment)
+        let viewScore = 2, viewDesc = '繁华市区成熟街景';
+        const isNegSea = text.includes('无开阔') || text.includes('无维港') || text.includes('毫无海景') || text.includes('无海景') || text.includes('不具备维港') || text.includes('无一线');
+        const isSea = (text.includes('维港') || text.includes('海景') || text.includes('临海') || text.includes('海湾') || pname.includes('海')) && !isNegSea;
+        
+        if (isSea) {
+          if (text.includes('一线') || text.includes('前排临海') || text.includes('全海景') || text.includes('跑道区大型滨水')) {
+            viewScore = 5; viewDesc = '一线维港海滨长廊开阔海景';
+          } else {
+            viewScore = 4; viewDesc = '维港内海海景 / 视野舒缓';
+          }
+        } else if (text.includes('半山') || text.includes('山景')) {
+          viewScore = 4; viewDesc = '背靠翠绿山峦天然氧吧，闹中取静';
+        } else if (isNegSea) {
+          viewScore = 3; viewDesc = '高层开阔繁华城市景 / 狮子山景';
+        }
+
+        // 6. 租金回报 (Rental Yield)
+        let renScore = 3, renDesc = '租客承接力良好';
+        if (capScore >= 4 && eduScore >= 4) {
+          renScore = 5; renDesc = '预估回报率约 4.0%~4.5%，名校陪读极抢手';
+        } else if (traScore >= 4 || text.includes('启德') || text.includes('何文田')) {
+          renScore = 4; renDesc = '预估回报率约 3.6%~4.0%，高薪白领流动性强';
+        } else if (minP > 3000) {
+          renScore = 2; renDesc = '预估回报率约 2.2%~2.8%，主打长期资产保值';
+        }
+
+        return {
+          capital: { score: capScore, desc: capDesc },
+          education: { score: eduScore, desc: eduDesc },
+          transit: { score: traScore, desc: traDesc },
+          certainty: { score: cerScore, desc: cerDesc },
+          view: { score: viewScore, desc: viewDesc },
+          rental: { score: renScore, desc: renDesc }
+        };
+      }
+
+      function renderFinalVerdictPage(projects, pageNum, totalPages, client) {
+        const pageEl = document.createElement('div');
+        pageEl.className = 'pdf-page verdict-page';
+
+        // 选取参与对比的项目 (保证 A4 横版排版美观度)
+        const targetProjs = projects.slice(0, 4);
+
+        // 计算各项目的 6 维度量化评分
+        const projectScores = targetProjs.map(p => ({
+          proj: p,
+          scores: calcProjectScores(p)
+        }));
+
+        const DIMENSIONS = [
+          { key: 'capital', label: '💷 资金门槛', crit: '首付起步门槛与上车亲和力' },
+          { key: 'education', label: '🎓 名校教育', crit: '公立顶尖校网与拔尖升学护城河' },
+          { key: 'transit', label: '🚇 轨道通勤', crit: '港铁步行接驳与核心CBD通达时效' },
+          { key: 'certainty', label: '🏅 现楼确定性', crit: '实景所见即所得，规避期房交付风险' },
+          { key: 'view', label: '🌊 景观环境', crit: '维港海景/半山生态等稀缺自然资源' },
+          { key: 'rental', label: '📈 租金回报', crit: '片区租务流动性与年化净现金流防守' }
+        ];
+
+        const tableRowsHtml = DIMENSIONS.map(dim => {
+          const scoreCells = projectScores.map(item => {
+            const sObj = item.scores[dim.key];
+            const starStr = '★'.repeat(sObj.score) + '☆'.repeat(5 - sObj.score);
+            return `
+              <td class="proj-score-cell">
+                <div class="score-stars">${starStr}</div>
+                <div class="score-desc">${sObj.desc}</div>
+              </td>
+            `;
+          }).join('');
+
+          return `
+            <tr>
+              <td class="dim-label">${dim.label}</td>
+              <td class="dim-crit">${dim.crit}</td>
+              ${scoreCells}
+            </tr>
+          `;
+        }).join('');
+
+        const verdictCardsHtml = projectScores.map((item, idx) => {
+          const p = item.proj;
+          const sc = item.scores;
+          const text = ((p.mainland_selling_points || '') + ' ' + (p.reason || '')).toLowerCase();
+
+          let typeClass = 'type-edu';
+          let tagClass = 'tag-edu';
+          let roleTag = '🎯 顶尖名校网与现楼确定性首选';
+          let verdictDesc = '';
+
+          if (sc.capital.score >= 4 && sc.rental.score >= 4 && (p.min_price_wan || 1500) <= 1000) {
+            typeClass = 'type-roi';
+            tagClass = 'tag-roi';
+            roleTag = '💷 高资金效率与稳健现金流首选';
+            verdictDesc = `折实入场门槛相对亲民，首付压力极小。凭借成熟的租赁刚需与高实用率户型，租金回报率领先同区，以租养贷现金流极为健康，适合注重资金配置弹性、低门槛落脚或稳健收租的配置客。`;
+          } else if (sc.view.score >= 4 || text.includes('启德') || text.includes('跑道') || text.includes('滨水')) {
+            typeClass = 'type-sea';
+            tagClass = 'tag-sea';
+            roleTag = '🌟 维港滨水度假与资产成长首选';
+            verdictDesc = `坐拥跑道区一线滨水长廊与高规格国际度假会所，充分享受香港未来重点新城的长远规划与国际盛事红利，居住环境松弛舒适，适合看重家庭生活品质、度假圈层与中长线资产升值潜力的买家。`;
+          } else if ((p.min_price_wan || 0) > 3000 || text.includes('半山') || text.includes('大宅')) {
+            typeClass = 'type-lux';
+            tagClass = 'tag-lux';
+            roleTag = '👑 传统名门血统与尊贵私密大宅首选';
+            verdictDesc = `稳坐香港传统豪宅腹地，全盘以大户型为主确保圈层纯粹，私家电梯入户私密性极高，不仅彰显家族名门底色，更能穿越经济周期抗跌保值，适合注重家族传承与大尺度居住气度的实力家庭。`;
+          } else {
+            typeClass = 'type-edu';
+            tagClass = 'tag-edu';
+            roleTag = '🎯 顶尖名校网与现楼确定性首选';
+            verdictDesc = `占据全港拔尖率顶尖的名校网护城河，配合实景现楼所见即所得，彻底消除期房等待与延期风险，对于急需为子女锁定优质学位、即买即住即刻落户的家庭而言，是高确定性的资产硬通货。`;
+          }
+
+          return `
+            <div class="verdict-card ${typeClass}">
+              <div class="verdict-card-head">
+                <div class="verdict-card-title">
+                  <span style="color:#00889A; margin-right:4px;">#${idx + 1}</span> ${p.name}
+                </div>
+                <span class="verdict-card-tag ${tagClass}">${roleTag}</span>
+              </div>
+              <div class="verdict-card-desc">
+                <strong>【顾问选房指引】</strong>${verdictDesc}
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        pageEl.innerHTML = `
+          <div class="page-header">
+            <div class="page-header-left">
+              <span class="page-header-title">全案综合横向比选与顾问决策建议</span>
+              <span class="page-header-badge">THE FINAL VERDICT · 综合决策收尾</span>
+            </div>
+            <img src="landma_logo.png" class="page-header-logo" alt="Logo">
+          </div>
+
+          <div class="verdict-layout">
+            <!-- 上半部：量化打分矩阵 -->
+            <div>
+              <div class="verdict-sec-title">
+                <span>📊 入选推荐项目 6 大核心决策维度客观量化打分 (5星制)</span>
+                <span class="verdict-sec-subtitle">* 评分基于项目备案售价、法定校网、实测地铁距离及交楼形态等物理参数客观推导</span>
+              </div>
+              <div class="verdict-matrix-card">
+                <table class="verdict-table">
+                  <thead>
+                    <tr>
+                      <th>考核维度</th>
+                      <th>判定口径与标准说明</th>
+                      ${targetProjs.map(p => `<th class="proj-head">${p.name}</th>`).join('')}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${tableRowsHtml}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 下半部：终极选房决策结论 -->
+            <div style="flex:1; display:flex; flex-direction:column; min-height:0;">
+              <div class="verdict-sec-title" style="margin-bottom:6px;">
+                <span>💡 蓝玛置业专家终极选房决策结论 (精准对号入座)</span>
+                <span class="verdict-sec-subtitle">根据项目王牌优势与客群置业权重分类匹配</span>
+              </div>
+              <div class="verdict-cards-container">
+                ${verdictCardsHtml}
+              </div>
+            </div>
+          </div>
+
+          <div class="page-footer">
+            <span>蓝玛国际 LANDMA GLOBAL · 客户定制方案</span>
+            <span>第 ${pageNum} 页 / 共 ${totalPages} 页</span>
+          </div>
+        `;
+
+        return pageEl;
+      }
+
+      const verdictPageNum = projectPageStartNum + projects.length + 1;
+      const verdictPage = renderFinalVerdictPage(projects, verdictPageNum, totalPages, client);
+      root.appendChild(verdictPage);
 
       // ----------------------------------------------------
       // PAGE FINAL: 品牌封底 (Closing Page)
