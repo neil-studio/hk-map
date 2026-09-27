@@ -2082,6 +2082,15 @@
         return dStr;
       }
 
+      function formatCompletionDate(dateStr) {
+        if (!dateStr) return '现楼';
+        const s = String(dateStr).trim();
+        if (s.includes('现楼') || s.includes('即买即住') || s.includes('详见项目资料')) {
+          return '现楼';
+        }
+        return s;
+      }
+
       function getSalesFallbackForLayout(proj, catKey) {
         if (!proj || !proj.sales_control_summary) return null;
         const m = proj.sales_control_summary.find(s => normalizeLayoutKey(s.layout) === catKey);
@@ -2106,6 +2115,8 @@
           let displayPrice = tx.price;
           if (!displayPrice || displayPrice === '暂无') {
             displayPrice = '招标成交';
+          } else if (displayPrice.includes('待定') || displayPrice.includes('详见价单')) {
+            displayPrice = '待定';
           } else if (!displayPrice.startsWith('$')) {
             displayPrice = '$' + displayPrice;
           }
@@ -2125,7 +2136,10 @@
             return `<div><span class="comp-cell-highlight">${fb.sqft || ''}</span></div><div class="comp-cell-sub" style="color:#d97706; font-weight:600;">在售招标中</div>`;
           }
           let fbPrice = fb.price;
-          if (fbPrice && !fbPrice.startsWith('$') && (fbPrice.includes('万') || fbPrice.includes('亿'))) {
+          if (!fbPrice || fbPrice.includes('待定') || fbPrice.includes('详见价单')) {
+            return `<div>${fb.sqft ? `<span class="comp-cell-highlight">${fb.sqft}</span> · ` : ''}<span class="comp-cell-price">待定</span></div><div class="comp-cell-sub">(在售参考)</div>`;
+          }
+          if (!fbPrice.startsWith('$') && (fbPrice.includes('万') || fbPrice.includes('亿'))) {
             fbPrice = '$' + fbPrice;
           }
           return `<div><span class="comp-cell-highlight">${fb.sqft || ''}</span> · <span class="comp-cell-price">${fbPrice}</span></div><div class="comp-cell-sub">(在售参考)</div>`;
@@ -2271,8 +2285,11 @@
                       <td><strong>${p.name}</strong></td>
                       <td>${p.main_area || p.region} · ${p.micro_district || p.district}</td>
                       <td>${p.developer || '品牌发展商'}</td>
-                      <td>🚇 ${p.nearest_mtr?.nearest_mtr_cn || '地铁沿线'}</td>
-                      <td style="color:#2563EB; font-weight:700;">${p.total_price_desc || (p.min_price_wan ? p.min_price_wan + '万起' : '详见销控')}</td>
+                      <td style="color:#2563EB; font-weight:700;">${
+                        (p.total_price_desc && (p.total_price_desc.includes('待定') || p.total_price_desc.includes('详见价单')))
+                          ? '待定'
+                          : (p.total_price_desc || (p.min_price_wan ? p.min_price_wan + '万起' : '待定'))
+                      }</td>
                     </tr>
                   `).join('')}
                 </tbody>
@@ -2379,7 +2396,7 @@
                     <td class="dim-col">落成时间</td>
                     ${chunkProjects.map(p => `
                       <td>
-                        <strong>${p.completion_date || '现楼发售 (即买即住)'}</strong>
+                        <strong>${formatCompletionDate(p.completion_date)}</strong>
                       </td>
                     `).join('')}
                   </tr>
@@ -2507,6 +2524,10 @@
                   const onSalePart = (s.on_sale_count !== undefined) 
                     ? `<span style="font-size:0.68rem; color:#16a34a; font-weight:600; margin-left:2px;">(在售${s.on_sale_count})</span>` 
                     : '';
+                  const pRange = s.price_range || '';
+                  const isPending = pRange.includes('待定') || pRange.includes('详见价单');
+                  const displayPRange = isPending ? '待定' : pRange;
+                  const color = pRange === '招标' ? '#d97706' : (isPending ? '#64748b' : '#16a34a');
                   return `
                   <tr>
                     <td><strong>${s.layout}</strong></td>
@@ -2515,7 +2536,7 @@
                       ${onSalePart}
                     </td>
                     <td>${s.sqft_range}</td>
-                    <td style="font-weight:700; color:${s.price_range === '招标' ? '#d97706' : '#16a34a'};">${s.price_range}</td>
+                    <td style="font-weight:700; color:${color};">${displayPRange}</td>
                   </tr>
                 `;}).join('')}
               </tbody>
@@ -2592,7 +2613,7 @@
                 <div class="proj-name-cn">${proj.name}</div>
                 <div class="proj-meta-chips">
                   <span class="meta-chip primary">🏗️ 发展商：${proj.developer || '品牌发展商'}</span>
-                  <span class="meta-chip">📅 落成日期：${proj.completion_date || '现楼发售'}</span>
+                  <span class="meta-chip">📅 落成日期：${formatCompletionDate(proj.completion_date)}</span>
                   ${proj.school_net ? `<span class="meta-chip">🏫 校网：${proj.school_net}</span>` : ''}
                   <span class="meta-chip" style="color:#16A34A; background:#F0FDF4; border-color:#BBF7D0;">
                     🚇 ${mtr ? mtr.nearest_mtr_cn + '站 (步行' + mtr.dist_walk_m + '米/' + mtr.walk_time_min + '分)' : '地铁沿线'}

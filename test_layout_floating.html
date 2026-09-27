@@ -2657,7 +2657,7 @@ function applyFilters() {
         <div class="popup-row">📍 区域地址：<strong>${proj.main_area || proj.region} - ${proj.micro_district || proj.district} ${proj.address ? '(' + proj.address + ')' : ''}</strong></div>
         ${proj.school_net ? `<div class="popup-row">🏫 所属校网：<strong style="color:#d97706;">${proj.school_net}</strong></div>` : ''}
         ${proj.developer ? `<div class="popup-row">🏗️ 开发商：<strong>${proj.developer}</strong></div>` : ''}
-        <div class="popup-row">💷 价格描述：<strong style="color:#2563eb;">${proj.total_price_desc || (proj.min_price_wan ? proj.min_price_wan + '万起' : '详见价单')}</strong></div>
+        <div class="popup-row">💷 价格描述：<strong style="color:#2563eb;">${(proj.total_price_desc && (proj.total_price_desc.includes('待定') || proj.total_price_desc.includes('详见价单'))) ? '待定' : (proj.total_price_desc || (proj.min_price_wan ? proj.min_price_wan + '万起' : '待定'))}</strong></div>
         ${distKmStr ? `<div class="popup-row">📏 锚点距离：<strong style="color:#dc2626;">距 ${activeAnchorLandmark.name.split(' ')[0]} ${distKmStr}</strong></div>` : ''}
         ${salesProgressHtml}
         ${popupMtrRow}
