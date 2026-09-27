@@ -1504,10 +1504,21 @@
   }
   .comp-selling-points {
     text-align: left;
-    font-size: 0.66rem;
+    font-size: 0.67rem;
     line-height: 1.35;
-    color: var(--slate-700);
+    color: var(--slate-800);
     padding: 1px 0;
+  }
+  .comp-sp-item {
+    margin-bottom: 3px;
+    line-height: 1.35;
+  }
+  .comp-sp-item:last-child {
+    margin-bottom: 0;
+  }
+  .comp-sp-item strong {
+    color: #1e293b;
+    font-weight: 700;
   }
   .comp-footer-banner {
     margin-top: 5px;
@@ -2442,21 +2453,33 @@
                   <tr>
                     <td class="dim-col">核心特色卖点</td>
                     ${chunkProjects.map(p => {
-                      let pts = [];
+                      let rawPts = [];
                       if (p.selling_points) {
-                        pts = p.selling_points.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
+                        rawPts = p.selling_points.split('\n').filter(s => s.trim().length > 0);
                       } else if (p.reason) {
-                        pts = p.reason.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
+                        rawPts = p.reason.split('\n').filter(s => s.trim().length > 0);
                       } else if (p.mainland_selling_points) {
-                        pts = p.mainland_selling_points.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
+                        rawPts = p.mainland_selling_points.split('\n').filter(s => s.trim().length > 0);
                       }
-                      if (pts.length === 0) {
-                        pts = [`${p.micro_district || p.district}核心地脉，优质人居环境。`];
+
+                      // 选项 A：提取冒号前核心主题金句（12-16字），字字提纲挈领且绝不腰斩截断
+                      let titles = rawPts.slice(0, 2).map(pt => {
+                        let clean = pt.replace(/^\d+[\.、]\s*/, '').trim();
+                        if (clean.includes('：')) {
+                          clean = clean.split('：')[0].trim();
+                        } else if (clean.includes(':')) {
+                          clean = clean.split(':')[0].trim();
+                        }
+                        return clean;
+                      }).filter(s => s.length > 0);
+
+                      if (titles.length === 0) {
+                        titles = [`${p.micro_district || p.district}核心地脉·优质人居`];
                       }
                       return `
                         <td>
                           <div class="comp-selling-points">
-                            ${pts.map(pt => `<div>• ${pt.replace(/^\d+[\.、]\s*/, '').slice(0, 42)}</div>`).join('')}
+                            ${titles.map(t => `<div class="comp-sp-item">• <strong>${t}</strong></div>`).join('')}
                           </div>
                         </td>
                       `;
