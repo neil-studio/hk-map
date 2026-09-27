@@ -29,6 +29,29 @@ if not os.path.exists(BASE_INFO_FILE) or not os.access(BASE_INFO_FILE, os.R_OK):
     else:
         BASE_INFO_FILE = os.path.join(BASE_DIR, "楼盘基础信息库.xlsx")
 
+SELLING_POINTS_FILE = os.path.join(SANDBOX_DIR, "楼盘卖点.xlsx")
+
+def load_selling_points():
+    sp_map = {}
+    if not os.path.exists(SELLING_POINTS_FILE):
+        return sp_map
+    try:
+        wb = openpyxl.load_workbook(SELLING_POINTS_FILE, data_only=True)
+        ws = wb.active
+        t_chars = '號峯滙敍灣瓏鑽鑄賢譽啟璽維奧滶蘊匯悅寶應羅壽淺徑賓園華遠藍語區築緹瀧澐雙鑽閣揚晉凱島輝臺連東紅臺豐環學區萬濱嶺軒廣場頭門閣薈'
+        s_chars = '号峰汇叙湾珑钻铸贤誉启玺维奥滶蕴汇悦宝应罗寿浅径宾园华远蓝语区筑缇泷沄双钻阁扬晋凯岛辉台连东红台丰环学区万滨岭轩广场头门阁荟'
+        trans = str.maketrans(t_chars, s_chars)
+        for r in list(ws.iter_rows(values_only=True))[1:]:
+            if r and r[0] and r[1]:
+                pn = str(r[0]).strip()
+                sp = str(r[1]).strip()
+                norm_pn = pn.translate(trans).replace(' ', '').replace('　', '').replace('．', '.').lower()
+                sp_map[pn] = sp
+                sp_map[norm_pn] = sp
+    except Exception as e:
+        print("读取 楼盘卖点.xlsx 异常:", e)
+    return sp_map
+
 KNOWN_DEVELOPERS = [
     ("新鸿基地产", ["新鸿基地产", "新鸿基", "SHKP", "Sun Hung Kai"]),
     ("恒基兆业地产", ["恒基兆业", "恒基地产", "恒基", "Henderson"]),
@@ -416,19 +439,37 @@ def main():
         '花语海第2期': ('34校网', '九龙城区校网'),
     }
 
-    print("3️⃣ 整合发展商、落成日期、校网归属、在售明细、最近成交记录、精准价格区间与套数统计...")
+    print("3️⃣ 整合发展商、落成日期、校网归属、楼盘卖点、在售明细、最近成交记录、精准价格区间与套数统计...")
+    selling_points_map = load_selling_points()
+    t_chars = '號峯滙敍灣瓏鑽鑄賢譽啟璽維奧滶蘊匯悅寶應羅壽淺徑賓園華遠藍語區築緹瀧澐雙鑽閣揚晉凱島輝臺連東紅臺豐環學區萬濱嶺軒廣場頭門閣薈'
+    s_chars = '号峰汇叙湾珑钻铸贤誉启玺维奥滶蕴汇悦宝应罗寿浅径宾园华远蓝语区筑缇泷沄双钻阁扬晋凯岛辉台连东红台丰环学区万滨岭轩广场头门阁荟'
+    trans = str.maketrans(t_chars, s_chars)
+
     tx_attached = 0
     price_attached = 0
+    sp_attached = 0
     for p in projects:
         pname = p["name"].strip()
         dj_p = data_json_map.get(pname, {})
+
+        # 匹配核心特色卖点
+        sp_text = selling_points_map.get(pname)
+        if not sp_text:
+            norm_name = pname.translate(trans).replace(' ', '').replace('　', '').replace('．', '.').lower()
+            sp_text = selling_points_map.get(norm_name)
+        if sp_text:
+            p["selling_points"] = sp_text
+            sp_attached += 1
+            if not p.get("mainland_selling_points"):
+                p["mainland_selling_points"] = sp_text
         
-        full_text = " ".join([
+        full_text = " ".join(filter(None, [
+            p.get("selling_points", ""),
             p.get("mainland_selling_points", ""),
             p.get("reason", ""),
             dj_p.get("mainland_selling_points", ""),
             dj_p.get("reason", "")
-        ])
+        ]))
 
         p["developer"] = extract_developer(full_text)
         p["completion_date"] = extract_completion_date(full_text)
@@ -536,7 +577,7 @@ def main():
             else:
                 p["excel_min_price_desc"] = "招标发售 / 详见价单"
 
-    print(f"4️⃣ 保存更新至 {COORDS_FILE} (共 {len(projects)} 个楼盘，挂载最近成交数据 {tx_attached} 个)...")
+    print(f"4️⃣ 保存更新至 {COORDS_FILE} (共 {len(projects)} 个楼盘，挂载楼盘卖点 {sp_attached} 个，挂载最近成交数据 {tx_attached} 个)...")
     with open(COORDS_FILE, "w", encoding="utf-8") as f:
         json.dump(projects, f, ensure_ascii=False, indent=2)
     print("🎉 数据升级完成！")

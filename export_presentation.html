@@ -2443,7 +2443,9 @@
                     <td class="dim-col">核心特色卖点</td>
                     ${chunkProjects.map(p => {
                       let pts = [];
-                      if (p.reason) {
+                      if (p.selling_points) {
+                        pts = p.selling_points.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
+                      } else if (p.reason) {
                         pts = p.reason.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
                       } else if (p.mainland_selling_points) {
                         pts = p.mainland_selling_points.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
@@ -2494,7 +2496,9 @@
 
         // 提取 2 条核心亮点
         let highlights = [];
-        if (proj.reason) {
+        if (proj.selling_points) {
+          highlights = proj.selling_points.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
+        } else if (proj.reason) {
           highlights = proj.reason.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
         } else if (proj.mainland_selling_points) {
           highlights = proj.mainland_selling_points.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
@@ -2690,7 +2694,7 @@
         const addr = (p.address || '').toLowerCase();
         const pname = (p.name || '').toLowerCase();
         const district = ((p.district || '') + ' ' + (p.micro_district || '')).toLowerCase();
-        const text = ((p.mainland_selling_points || '') + ' ' + (p.reason || '')).toLowerCase();
+        const text = ((p.selling_points || '') + ' ' + (p.mainland_selling_points || '') + ' ' + (p.reason || '')).toLowerCase();
 
         // 1. 资金门槛 (Capital Threshold) - 按内地客户常规按揭3成首付测算
         let capScore = 3, capDesc = '核心区主流总价';
@@ -2890,7 +2894,7 @@
           const addr = (p.address || '').toLowerCase();
           const pname = (p.name || '').toLowerCase();
           const minP = p.min_price_wan || 1500;
-          const text = ((p.mainland_selling_points || '') + ' ' + (p.reason || '')).toLowerCase();
+          const text = ((p.selling_points || '') + ' ' + (p.mainland_selling_points || '') + ' ' + (p.reason || '')).toLowerCase();
 
           let typeClass = 'type-edu';
           let tagClass = 'tag-edu';
