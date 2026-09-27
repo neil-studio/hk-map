@@ -1446,6 +1446,16 @@
       <label>🏫 核心诉求重点</label>
       <input type="text" class="form-input" id="client-focus" placeholder="例如：34/41顶尖名校网、轨交直通中环、资产传承">
     </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+      <div class="form-field">
+        <label>👔 置业顾问姓名</label>
+        <input type="text" class="form-input" id="advisor-name" placeholder="例如：Nikki 冯艺">
+      </div>
+      <div class="form-field">
+        <label>📞 顾问联系电话</label>
+        <input type="text" class="form-input" id="advisor-phone" placeholder="例如：13810540908">
+      </div>
+    </div>
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closeExportModal()">取消</button>
       <button class="btn-export-main" style="background: linear-gradient(135deg, #00889A, #00B4D8);" onclick="triggerPdfPrint()">🚀 生成高清 PDF 方案</button>
@@ -3218,26 +3228,7 @@ function openExportModal() {
 
   const districtStr = Array.from(districts).join(' / ') || '九龙/港岛核心优质区域';
 
-  // 默认值填充
-  if (!document.getElementById('client-name').value) {
-    document.getElementById('client-name').value = '尊贵客户';
-  }
-  document.getElementById('client-budget').value = budgetStr;
-  document.getElementById('client-district').value = districtStr;
-  if (!document.getElementById('client-layout').value) {
-    document.getElementById('client-layout').value = '2房至3房套房 / 4房大宅';
-  }
-  if (!document.getElementById('client-sqft').value) {
-    document.getElementById('client-sqft').value = '600 - 1500 平方呎';
-  }
-  if (!document.getElementById('client-focus').value) {
-    document.getElementById('client-focus').value = '34/41顶尖名校网、轨交直通中环、资产保值传承';
-  }
-  const clientIntroEl = document.getElementById('client-intro');
-  if (clientIntroEl && !clientIntroEl.value) {
-    clientIntroEl.value = `根据您的预算与核心置业诉求，为您精选${selectedList.length}个全港核心楼盘。方案综合考量了交通轨交、名校教育护城河及真实销控在售房源，供您深度决策参考。`;
-  }
-
+  // 按照指示：需求表单中默认预填全部为空，仅通过 placeholder 提示
   document.getElementById('export-modal').classList.add('open');
 }
 
@@ -3252,6 +3243,9 @@ function triggerPdfPrint() {
     return;
   }
 
+  const advisorName = document.getElementById('advisor-name') ? document.getElementById('advisor-name').value.trim() : '';
+  const advisorPhone = document.getElementById('advisor-phone') ? document.getElementById('advisor-phone').value.trim() : '';
+
   const clientPayload = {
     name: document.getElementById('client-name').value.trim() || '尊贵客户',
     budget: document.getElementById('client-budget').value.trim() || '详见方案明细',
@@ -3264,6 +3258,12 @@ function triggerPdfPrint() {
 
   const payload = {
     client: clientPayload,
+    advisor: {
+      name: advisorName,
+      phone: advisorPhone
+    },
+    advisorName: advisorName,
+    advisorPhone: advisorPhone,
     projects: selectedList,
     dateStr: new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
   };

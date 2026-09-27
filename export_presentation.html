@@ -1043,6 +1043,53 @@
       line-height: 1.8;
     }
 
+    /* 封底专属置业顾问名片卡 */
+    .closing-advisor-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 14px 32px;
+      margin: 26px auto 16px auto;
+      max-width: 580px;
+      width: 100%;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .closing-advisor-tag {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: #90E0EF;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .closing-advisor-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 1.02rem;
+      color: #FFFFFF;
+    }
+    .closing-advisor-row strong {
+      color: #FFFFFF;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .closing-advisor-row .advisor-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
     /* =========================================================================
        PRINT SPECIFICATIONS (@media print)
        ========================================================================= */
@@ -1789,6 +1836,9 @@
       }
 
       const { client, projects, dateStr } = exportData;
+      const advisor = exportData.advisor || (client && client.advisor) || {};
+      const advisorName = (advisor.name || exportData.advisorName || '').trim();
+      const advisorPhone = (advisor.phone || exportData.advisorPhone || '').trim();
       const root = document.getElementById('presentation-root');
       root.innerHTML = '';
 
@@ -2266,7 +2316,7 @@
             <!-- 底部名片横幅 -->
             <div class="comp-footer-banner">
               <span>💎 <strong>蓝玛国际专属置业顾问服务</strong>：全程陪同实地考察、销控余货精准核算、专享发展商专属置业礼遇</span>
-              <span>📞 专属联络顾问：Nikki 冯艺 · 13810540908</span>
+              <span>${(advisorName || advisorPhone) ? `📞 专属联络顾问：${[advisorName, advisorPhone].filter(Boolean).join(' · ')}` : '📞 蓝玛国际 VIP 专属顾问咨询通道已开启'}</span>
             </div>
           </div>
 
@@ -2483,11 +2533,23 @@
       // ----------------------------------------------------
       const closingPage = document.createElement('div');
       closingPage.className = 'pdf-page closing-page';
+      
+      const advisorCardHtml = (advisorName || advisorPhone) ? `
+        <div class="closing-advisor-card">
+          <div class="closing-advisor-tag">蓝玛国际 · 专属置业顾问</div>
+          <div class="closing-advisor-row">
+            ${advisorName ? `<span class="advisor-item">👤 顾问姓名：<strong>${advisorName}</strong></span>` : ''}
+            ${advisorPhone ? `<span class="advisor-item">📞 联络电话：<strong>${advisorPhone}</strong></span>` : ''}
+          </div>
+        </div>
+      ` : '';
+
       closingPage.innerHTML = `
         <img src="landma_logo.png" class="closing-logo-top" alt="LANDMA Logo">
         <div class="closing-main-text">
           <div class="closing-big-slogan">阅世界 · 置未来</div>
           <div class="closing-sub-slogan">GLOBAL VISION · TIMELESS ASSETS</div>
+          ${advisorCardHtml}
         </div>
         <div class="closing-brand-box">
           <strong style="color:#fff; font-size:0.95rem;">藍瑪國際 LANDMA GLOBAL</strong><br>
