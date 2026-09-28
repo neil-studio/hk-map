@@ -3839,15 +3839,106 @@ function toggleMtrRoute(pName) {
   }
 }
 
+function getProjectMobilityProfile(proj) {
+  const mtr = proj.nearest_mtr;
+  if (!mtr) {
+    return {
+      isWalkable: false,
+      envTag: `📍 位于 ${proj.region || ''} · ${proj.district || ''}`,
+      transitDesc: '生活与商业配套便利，专属私密人居',
+      btnText: '🚗 查看车行路线',
+      summaryTag: '🚘 尊贵车行生活圈'
+    };
+  }
+
+  const walkMin = Number(mtr.walk_time_min) || 0;
+  const walkM = Number(mtr.dist_walk_m) || 0;
+
+  // 判定是否属于舒适地铁步行圈 (<= 12分钟 且 <= 1000米)
+  if (walkMin <= 12 && walkM <= 1000) {
+    return {
+      isWalkable: true,
+      stationName: `${mtr.nearest_mtr_cn}站`,
+      lines: mtr.nearest_mtr_lines,
+      walkMin: walkMin,
+      walkM: walkM,
+      btnText: '🚶 绘制步行导航线',
+      summaryTag: `🚇 距 ${mtr.nearest_mtr_cn}站 约 ${walkMin} 分钟 (${walkM}米)`
+    };
+  }
+
+  // > 12分钟 或 > 1000米：启动方案 B 板块定制
+  const name = proj.name || '';
+  const d = (proj.district || '').trim();
+  const md = (proj.micro_district || '').trim();
+  const reg = (proj.region || '').trim();
+  const combined = `${name} ${d} ${md} ${reg}`;
+
+  // 1. 启德跑道区
+  if (combined.includes('跑道') || name.includes('天泷') || name.includes('天玺．海') || name.includes('柏蔚森') || name.includes('沄璟') || name.includes('Double Coast') || name.includes('Miami Quay') || name.includes('启德海湾')) {
+    return {
+      isWalkable: false,
+      envTag: '🌊 全景维港海滨长廊 · 滨海半岛都会豪宅',
+      transitDesc: '城巴极速接驳启德站 (车程约4分) · 规划绿色运输系统',
+      btnText: '🚗 查看半岛车行接驳动线',
+      summaryTag: '🌊 滨海半岛 · 穿梭直达启德站'
+    };
+  }
+
+  // 2. 九龙塘 / 笔架山 / 何文田半山
+  if (combined.includes('笔架山') || combined.includes('九龙塘') || combined.includes('何文田') || combined.includes('又一村') || name.includes('缇外') || name.includes('The Monet') || name.includes('博峰') || name.includes('傲玟') || name.includes('名钻') || name.includes('明寓') || name.includes('耀爵台')) {
+    return {
+      isWalkable: false,
+      envTag: '🌲 九龙传统低密尊贵纯住区 · 绿荫环抱极度私密',
+      transitDesc: '私家车/专线小巴约 3~5 分钟直达九龙塘/何文田双铁枢纽',
+      btnText: '🚗 查看名门低密车行动线',
+      summaryTag: '🌲 低密半山 · 专车3~5分达双铁'
+    };
+  }
+
+  // 3. 港岛半山 / 渣甸山 / 跑马地 / 大坑
+  if (combined.includes('半山') || combined.includes('渣甸山') || combined.includes('跑马地') || combined.includes('大坑') || combined.includes('山顶') || name.includes('大学阁') || name.includes('帝汇豪庭') || name.includes('宝峰')) {
+    return {
+      isWalkable: false,
+      envTag: '👑 港岛半山百年名门文脉 · 居高临下俯瞰维港天际线',
+      transitDesc: '私家车/专线小巴约 5~8 分钟直通中环/金钟 CBD 核心',
+      btnText: '🚗 查看半山极速车行动线',
+      summaryTag: '👑 尊贵半山 · 约5~8分达中环'
+    };
+  }
+
+  // 4. 港岛南区 / 浅水湾 / 寿臣山 / 赤柱 / 薄扶林
+  if (combined.includes('寿臣山') || combined.includes('浅水湾') || combined.includes('深水湾') || combined.includes('赤柱') || combined.includes('薄扶林') || combined.includes('南区') || combined.includes('石澳') || combined.includes('大潭') || name.includes('寿臣山15号') || name.includes('Shouson Peak') || name.includes('Mount Pokfulam')) {
+    return {
+      isWalkable: false,
+      envTag: '🏖️ 全港顶级依山面海独立屋圈 · 隐贵私家桃源',
+      transitDesc: '专属车行穿越南区极速直达黄竹坑枢纽或中环',
+      btnText: '🚗 查看南区海湾车行动线',
+      summaryTag: '🏖️ 依山面海 · 专车极速达黄竹坑/中环'
+    };
+  }
+
+  // 5. 兜底通用
+  return {
+    isWalkable: false,
+    envTag: '🏙️ 成熟静谧品质人居 · 生活与商业氛围醇熟',
+    transitDesc: `周边专线小巴/城巴约 3~5 分钟直达 ${mtr.nearest_mtr_cn || '邻近'} 港铁站`,
+    btnText: '🚗 查看周边快捷车行动线',
+    summaryTag: `🚘 快捷车行约3~5分达港铁`
+  };
+}
+
 function updateCornerRouteBtnState(pName, isDrawn) {
   const btn = document.getElementById(`btn-corner-route-${pName}`);
   if (btn) {
     if (isDrawn) {
       btn.classList.add('active');
-      btn.innerHTML = '✕ 清除步行轨迹';
+      btn.innerHTML = '✕ 清除路线';
     } else {
       btn.classList.remove('active');
-      btn.innerHTML = '🚶 绘制步行导航线';
+      const proj = projectsData.find(p => p.name === pName);
+      const mob = proj ? getProjectMobilityProfile(proj) : null;
+      btn.innerHTML = mob ? mob.btnText : '🚶 绘制路线';
     }
   }
 }
@@ -3916,28 +4007,38 @@ function showProjectFloatingCard(name) {
     `;
   }
 
-  // 核心交通与步行导航 (全卡核心，精简直达)
-  let mtrHtml = '';
+  // 核心交通与出行特征 (智能识别地铁舒适圈 vs 方案B高端生活圈)
+  const mobility = getProjectMobilityProfile(proj);
   const isLineDrawn = currentRouteLine && currentRouteProjName === proj.name;
-  if (mtr) {
+
+  let mtrHtml = '';
+  if (mobility.isWalkable) {
     mtrHtml = `
       <div class="corner-mtr-card">
         <div class="corner-mtr-station">
-          <span class="mtr-station-name">🚇 ${mtr.nearest_mtr_cn}站</span>
-          <span class="mtr-lines-badge">${mtr.nearest_mtr_lines}</span>
+          <span class="mtr-station-name">🚇 ${mobility.stationName}</span>
+          <span class="mtr-lines-badge">${mobility.lines}</span>
         </div>
         <div class="corner-mtr-walk">
-          ⏱️ 步行约 <strong>${mtr.walk_time_min}</strong> 分钟 · <strong>${mtr.dist_walk_m}</strong> 米
+          ⏱️ 步行约 <strong>${mobility.walkMin}</strong> 分钟 · <strong>${mobility.walkM}</strong> 米
         </div>
         <button id="btn-corner-route-${proj.name}" class="btn-corner-route ${isLineDrawn ? 'active' : ''}" onclick="toggleMtrRoute('${proj.name}')">
-          ${isLineDrawn ? '✕ 清除步行轨迹' : '🚶 绘制步行导航线'}
+          ${isLineDrawn ? '✕ 清除路线' : mobility.btnText}
         </button>
       </div>
     `;
   } else {
     mtrHtml = `
-      <div class="corner-nomtr-box">
-        📍 位于 ${proj.region} · ${proj.district} ${proj.address ? '(' + proj.address + ')' : ''}
+      <div class="corner-mtr-card" style="background:#f8fafc; border-color:#cbd5e1;">
+        <div style="font-size:0.75rem; color:#1e3a8a; font-weight:800; line-height:1.4;">
+          ${mobility.envTag}
+        </div>
+        <div style="font-size:0.73rem; color:#475569; margin-top:3px; line-height:1.45;">
+          🚘 ${mobility.transitDesc}
+        </div>
+        <button id="btn-corner-route-${proj.name}" class="btn-corner-route ${isLineDrawn ? 'active' : ''}" style="background:#2563eb;" onclick="toggleMtrRoute('${proj.name}')">
+          ${isLineDrawn ? '✕ 清除路线' : mobility.btnText}
+        </button>
       </div>
     `;
   }
@@ -4177,15 +4278,15 @@ function renderInsightsContent() {
       `;
     }
 
-    const mtr = proj.nearest_mtr;
-    const mtrWalkStr = mtr ? `🚇 距 ${mtr.nearest_mtr_cn}站 约 ${mtr.walk_time_min} 分钟 (${mtr.dist_walk_m}米)` : '';
+    const mob = getProjectMobilityProfile(proj);
+    const mtrSummaryPill = mob.summaryTag ? `<span class="insights-pill" style="background:#f1f5f9; color:#334155;">${mob.summaryTag}</span>` : '';
 
     bodyEl.innerHTML = `
       <div class="insights-proj-summary">
         <span class="insights-pill" style="background:#eff6ff; color:#1e40af;">🏠 ${proj.property_type_desc || (proj.property_type === 'forward' ? '期房' : '现房')}</span>
         ${proj.developer ? `<span class="insights-pill" style="background:#f0fdf4; color:#166534;">🏗️ ${proj.developer}</span>` : ''}
         ${proj.school_net ? `<span class="insights-pill" style="background:#fffbeb; color:#b45309;">🏫 ${proj.school_net}</span>` : ''}
-        ${mtrWalkStr ? `<span class="insights-pill" style="background:#f1f5f9; color:#334155;">${mtrWalkStr}</span>` : ''}
+        ${mtrSummaryPill}
       </div>
       <div style="font-size:0.84rem; font-weight:800; color:#0f172a; margin-bottom:2px;">
         ✨ 项目核心价值点提炼：
@@ -4248,13 +4349,17 @@ function copyInsightsContent() {
   let text = '';
   if (currentInsightsTab === 'highlights') {
     let spText = proj.selling_points || proj.mainland_selling_points || '';
-    const mtr = proj.nearest_mtr;
-    const mtrStr = mtr ? `${mtr.nearest_mtr_cn}站 (步行约${mtr.walk_time_min}分钟)` : '';
+    const mob = getProjectMobilityProfile(proj);
 
     text += `【${proj.name} - 核心特色卖点】\n`;
     text += `📍 区域：${proj.main_area || proj.region} · ${proj.micro_district || proj.district}\n`;
     if (proj.min_price_wan) text += `💰 价格：约$${proj.min_price_wan}万起\n`;
-    if (mtrStr) text += `🚇 交通：${mtrStr}\n`;
+    if (mob.isWalkable) {
+      text += `🚇 交通：${mob.stationName} (步行约${mob.walkMin}分钟)\n`;
+    } else {
+      text += `🌲 地段特色：${mob.envTag}\n`;
+      text += `🚘 交通出行：${mob.transitDesc}\n`;
+    }
     if (proj.school_net) text += `🏫 校网：${proj.school_net}\n`;
     if (proj.developer) text += `🏗️ 发展商：${proj.developer}\n\n`;
     text += `✨ 核心特色亮点：\n`;
