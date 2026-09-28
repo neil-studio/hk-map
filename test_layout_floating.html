@@ -1261,71 +1261,75 @@
     border-top: 1px solid #f1f5f9;
   }
 
-  /* 🏙️/✨ 商圈介绍与项目卖点双按钮组 */
-  .corner-insights-actions {
-    display: flex;
-    gap: 6px;
+  /* ✨ 统一的楼盘特色与商圈解读按键 */
+  .btn-insight-unified {
+    width: 100%;
     margin-top: 7px;
-  }
-  .btn-insight {
-    flex: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    padding: 6px 8px;
+    padding: 6px 10px;
+    background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
     border-radius: 6px;
-    font-size: 0.72rem;
+    font-size: 0.74rem;
     font-weight: 700;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     transition: all 0.2s;
-    white-space: nowrap;
-    text-decoration: none;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 3px rgba(30, 64, 175, 0.08);
   }
-  .btn-insight.district {
-    background: #eff6ff;
-    color: #1d4ed8;
-    border: 1px solid #bfdbfe;
-  }
-  .btn-insight.district:hover {
-    background: #dbeafe;
+  .btn-insight-unified:hover {
+    background: linear-gradient(135deg, #dbeafe 0%, #dcfce7 100%);
     border-color: #93c5fd;
     transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(29, 78, 216, 0.15);
+    box-shadow: 0 3px 8px rgba(30, 64, 175, 0.15);
   }
-  .btn-insight.highlights {
-    background: #fffbeb;
-    color: #b45309;
-    border: 1px solid #fde68a;
-  }
-  .btn-insight.highlights:hover {
-    background: #fef3c7;
-    border-color: #fcd34d;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(180, 83, 9, 0.15);
+  .btn-insight-unified.active {
+    background: #1e40af;
+    color: #ffffff;
+    border-color: #1e40af;
+    box-shadow: 0 2px 6px rgba(30, 64, 175, 0.3);
   }
 
-  /* 🏙️/✨ 空间区位与楼盘价值深度看板 Modal 样式 */
-  .insights-modal-card {
-    max-width: 540px !important;
-    width: 92vw;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.28);
+  /* 🏙️/✨ 空间区位与楼盘价值深度悬浮面板 (位于右下角卡片正上方) */
+  .insights-top-panel {
+    position: fixed;
+    right: 20px;
+    bottom: 220px;
+    width: 320px;
+    max-width: calc(100vw - 40px);
+    max-height: calc(100vh - 290px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(203, 213, 225, 0.9);
+    border-radius: 14px;
+    box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.22), 0 4px 12px -2px rgba(15, 23, 42, 0.08);
+    z-index: 1045;
     display: flex;
     flex-direction: column;
-    max-height: 85vh;
-    padding: 0 !important;
     overflow: hidden;
+    transform: translateY(14px) scale(0.96);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+  }
+  .insights-top-panel.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
   }
   .insights-header {
-    padding: 16px 20px 12px 20px;
+    padding: 12px 14px 10px 14px;
     border-bottom: 1px solid #e2e8f0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 10px;
     background: #f8fafc;
   }
   .insights-title-group {
@@ -1395,24 +1399,24 @@
   .insights-tabs-bar {
     display: flex;
     background: #f1f5f9;
-    padding: 6px 16px;
+    padding: 4px 10px;
     border-bottom: 1px solid #e2e8f0;
-    gap: 8px;
+    gap: 6px;
   }
   .insights-tab-btn {
     flex: 1;
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 6px 8px;
+    border-radius: 6px;
     border: none;
     background: transparent;
     color: #64748b;
-    font-size: 0.82rem;
+    font-size: 0.76rem;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 4px;
     transition: all 0.2s;
   }
   .insights-tab-btn:hover {
@@ -1421,16 +1425,16 @@
   .insights-tab-btn.active {
     background: #ffffff;
     color: #1e3a8a;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   }
 
   .insights-body-scroll {
-    padding: 18px 20px;
+    padding: 12px 14px;
     overflow-y: auto;
-    max-height: calc(85vh - 150px);
+    max-height: calc(100vh - 350px);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     box-sizing: border-box;
   }
 
@@ -2405,39 +2409,37 @@
 <!-- 🗺️ 右下角悬浮楼盘空间情报卡 (Floating Corner Intelligence Card) -->
 <div id="project-corner-card" class="project-corner-card"></div>
 
-<!-- 🏙️/✨ 空间区位与楼盘价值深度看板 Modal (Project Insights Modal) -->
-<div class="modal-overlay" id="project-insights-modal" onclick="closeProjectInsightsModal(event)">
-  <div class="modal-card insights-modal-card" onclick="event.stopPropagation()">
-    <div class="insights-header">
-      <div class="insights-title-group">
-        <div class="insights-main-title">
-          <span id="insights-title">必嘉坊·迎汇</span>
-          <span id="insights-badge" class="corner-tag price" style="font-size:0.7rem;">约$387万起</span>
-        </div>
-        <div class="insights-sub-title" id="insights-subtitle">📍 九龙中 · 红磡及黄埔</div>
+<!-- 🏙️/✨ 空间区位与楼盘价值深度悬浮面板 (位于右下角卡片正上方) -->
+<div id="project-insights-panel" class="insights-top-panel">
+  <div class="insights-header">
+    <div class="insights-title-group">
+      <div class="insights-main-title">
+        <span id="insights-title">必嘉坊·迎汇</span>
+        <span id="insights-badge" class="corner-tag price" style="font-size:0.68rem;">约$387万起</span>
       </div>
-      <div class="insights-header-actions">
-        <button class="btn-insights-copy" onclick="copyInsightsContent()" title="复制当前解读文案到剪贴板，方便发送给客户">
-          📋 复制文案
-        </button>
-        <button class="insights-close-btn" onclick="closeProjectInsightsModal()" title="关闭">✕</button>
-      </div>
+      <div class="insights-sub-title" id="insights-subtitle">📍 九龙中 · 红磡及黄埔</div>
     </div>
-    
-    <!-- Tab 切换栏 -->
-    <div class="insights-tabs-bar">
-      <button class="insights-tab-btn active" id="tab-btn-highlights" onclick="switchInsightsTab('highlights')">
-        ✨ 楼盘核心卖点
+    <div class="insights-header-actions">
+      <button class="btn-insights-copy" onclick="copyInsightsContent()" title="复制当前解读文案到剪贴板，方便发送给客户">
+        📋 复制
       </button>
-      <button class="insights-tab-btn" id="tab-btn-district" onclick="switchInsightsTab('district')">
-        🏙️ 核心商圈概况
-      </button>
+      <button class="insights-close-btn" onclick="closeProjectInsightsPanel()" title="收起解读">✕</button>
     </div>
+  </div>
+  
+  <!-- Tab 切换栏 -->
+  <div class="insights-tabs-bar">
+    <button class="insights-tab-btn active" id="tab-btn-highlights" onclick="switchInsightsTab('highlights')">
+      ✨ 核心卖点
+    </button>
+    <button class="insights-tab-btn" id="tab-btn-district" onclick="switchInsightsTab('district')">
+      🏙️ 商圈概况
+    </button>
+  </div>
 
-    <!-- 内容滚动视口 -->
-    <div class="insights-body-scroll" id="insights-content-body">
-      <!-- 动态渲染卖点或商圈内容 -->
-    </div>
+  <!-- 内容滚动视口 -->
+  <div class="insights-body-scroll" id="insights-content-body">
+    <!-- 动态渲染卖点或商圈内容 -->
   </div>
 </div>
 
@@ -3855,6 +3857,7 @@ function closeProjectFloatingCard() {
   if (cardContainer) {
     cardContainer.classList.remove('active');
   }
+  closeProjectInsightsPanel();
   activeSelectedProjName = null;
   clearMtrRouteLine();
   document.querySelectorAll('.proj-pin-box.active').forEach(el => el.classList.remove('active'));
@@ -3964,23 +3967,24 @@ function showProjectFloatingCard(name) {
     ${anchorDistHtml}
     <div class="corner-card-body">
       ${mtrHtml}
-      <div class="corner-insights-actions">
-        <button class="btn-insight district" onclick="openProjectInsightsModal('${proj.name}', 'district')">
-          🏙️ 商圈介绍
-        </button>
-        <button class="btn-insight highlights" onclick="openProjectInsightsModal('${proj.name}', 'highlights')">
-          ✨ 项目卖点
-        </button>
-      </div>
+      <button id="btn-toggle-insights" class="btn-insight-unified" onclick="toggleProjectInsightsPanel('${proj.name}')">
+        ✨ 楼盘特色与商圈解读
+      </button>
     </div>
     ${adminHtml}
   `;
 
   cardContainer.classList.add('active');
+
+  // 如果上方解读面板已经打开，自动同步刷新为当前选中项目
+  const panel = document.getElementById('project-insights-panel');
+  if (panel && panel.classList.contains('active')) {
+    openProjectInsightsPanel(proj.name, currentInsightsTab || 'highlights');
+  }
 }
 
 /* =========================================================================
-   🏙️/✨ 空间区位与楼盘价值深度看板交互逻辑 (Project & District Insights)
+   🏙️/✨ 空间区位与楼盘价值深度悬浮面板交互逻辑 (Project & District Insights)
    ========================================================================= */
 let currentInsightsProj = null;
 let currentInsightsTab = 'highlights';
@@ -4070,14 +4074,25 @@ function findDistrictData(p) {
   return null;
 }
 
-function openProjectInsightsModal(pName, initialTab = 'highlights') {
+function toggleProjectInsightsPanel(pName) {
+  const panel = document.getElementById('project-insights-panel');
+  if (panel && panel.classList.contains('active') && currentInsightsProj && currentInsightsProj.name === pName) {
+    closeProjectInsightsPanel();
+  } else {
+    openProjectInsightsPanel(pName);
+  }
+}
+
+function openProjectInsightsPanel(pName, initialTab = 'highlights') {
   const proj = projectsData.find(p => p.name === pName);
   if (!proj) return;
 
   currentInsightsProj = proj;
   currentInsightsTab = initialTab;
 
-  const modal = document.getElementById('project-insights-modal');
+  const panel = document.getElementById('project-insights-panel');
+  const cornerCard = document.getElementById('project-corner-card');
+  const btn = document.getElementById('btn-toggle-insights');
   const titleEl = document.getElementById('insights-title');
   const badgeEl = document.getElementById('insights-badge');
   const subEl = document.getElementById('insights-subtitle');
@@ -4088,19 +4103,25 @@ function openProjectInsightsModal(pName, initialTab = 'highlights') {
     badgeEl.textContent = pTxt;
   }
   if (subEl) {
-    subEl.textContent = `📍 ${proj.main_area || proj.region} · ${proj.micro_district || proj.district} ${proj.address ? '(' + proj.address + ')' : ''}`;
+    subEl.textContent = `📍 ${proj.main_area || proj.region} · ${proj.micro_district || proj.district}`;
+  }
+
+  // 动态根据下方情报卡高度定位其顶部，留出 10px 间距
+  if (cornerCard && panel) {
+    const cardH = cornerCard.offsetHeight || 170;
+    panel.style.bottom = `${cardH + 34}px`;
   }
 
   switchInsightsTab(initialTab);
-  if (modal) modal.classList.add('open');
+  if (panel) panel.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
-function closeProjectInsightsModal(e) {
-  if (e && e.target && e.target !== e.currentTarget && !e.target.classList.contains('insights-close-btn')) {
-    return;
-  }
-  const modal = document.getElementById('project-insights-modal');
-  if (modal) modal.classList.remove('open');
+function closeProjectInsightsPanel() {
+  const panel = document.getElementById('project-insights-panel');
+  const btn = document.getElementById('btn-toggle-insights');
+  if (panel) panel.classList.remove('active');
+  if (btn) btn.classList.remove('active');
 }
 
 function switchInsightsTab(tabName) {
