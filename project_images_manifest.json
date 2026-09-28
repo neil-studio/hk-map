@@ -1,1 +1,44 @@
-{}
+{
+  "Park College": {
+    "original": "images/projects/original/park college/park college.jpg",
+    "thumb": "images/projects/thumb/Park College.webp",
+    "width": 608,
+    "height": 456,
+    "aspect_ratio": 1.333
+  },
+  "The Monet 第1期": {
+    "original": "images/projects/original/the monet/the monet.png",
+    "thumb": "images/projects/thumb/The Monet 第1期.webp",
+    "width": 1080,
+    "height": 720,
+    "aspect_ratio": 1.5
+  },
+  "The Monet 第2期": {
+    "original": "images/projects/original/the monet/the monet.png",
+    "thumb": "images/projects/thumb/The Monet 第2期.webp",
+    "width": 1080,
+    "height": 720,
+    "aspect_ratio": 1.5
+  },
+  "The Monet 第3期": {
+    "original": "images/projects/original/the monet/the monet.png",
+    "thumb": "images/projects/thumb/The Monet 第3期.webp",
+    "width": 1080,
+    "height": 720,
+    "aspect_ratio": 1.5
+  },
+  "博峰": {
+    "original": "images/projects/original/博峰/博峰.png",
+    "thumb": "images/projects/thumb/博峰.webp",
+    "width": 1184,
+    "height": 1298,
+    "aspect_ratio": 0.912
+  },
+  "缇外": {
+    "original": "images/projects/original/缇外/缇外.png",
+    "thumb": "images/projects/thumb/缇外.webp",
+    "width": 1800,
+    "height": 1316,
+    "aspect_ratio": 1.368
+  }
+}
