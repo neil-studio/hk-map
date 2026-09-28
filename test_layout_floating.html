@@ -1261,6 +1261,275 @@
     border-top: 1px solid #f1f5f9;
   }
 
+  /* 🏙️/✨ 商圈介绍与项目卖点双按钮组 */
+  .corner-insights-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 7px;
+  }
+  .btn-insight {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .btn-insight.district {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+  }
+  .btn-insight.district:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(29, 78, 216, 0.15);
+  }
+  .btn-insight.highlights {
+    background: #fffbeb;
+    color: #b45309;
+    border: 1px solid #fde68a;
+  }
+  .btn-insight.highlights:hover {
+    background: #fef3c7;
+    border-color: #fcd34d;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(180, 83, 9, 0.15);
+  }
+
+  /* 🏙️/✨ 空间区位与楼盘价值深度看板 Modal 样式 */
+  .insights-modal-card {
+    max-width: 540px !important;
+    width: 92vw;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.28);
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+  .insights-header {
+    padding: 16px 20px 12px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #f8fafc;
+  }
+  .insights-title-group {
+    flex: 1;
+    min-width: 0;
+  }
+  .insights-main-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.3;
+  }
+  .insights-sub-title {
+    font-size: 0.76rem;
+    color: #64748b;
+    margin-top: 3px;
+  }
+  .insights-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-insights-copy {
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #334155;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.15s;
+  }
+  .btn-insights-copy:hover {
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+  }
+  .insights-close-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+  }
+  .insights-close-btn:hover {
+    background: #fee2e2;
+    color: #ef4444;
+    border-color: #fca5a5;
+  }
+
+  .insights-tabs-bar {
+    display: flex;
+    background: #f1f5f9;
+    padding: 6px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    gap: 8px;
+  }
+  .insights-tab-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s;
+  }
+  .insights-tab-btn:hover {
+    color: #1e3a8a;
+  }
+  .insights-tab-btn.active {
+    background: #ffffff;
+    color: #1e3a8a;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+
+  .insights-body-scroll {
+    padding: 18px 20px;
+    overflow-y: auto;
+    max-height: calc(85vh - 150px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
+  }
+
+  /* 卖点列表卡片 */
+  .highlight-card-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .highlight-card-item .item-num {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    font-size: 0.72rem;
+    font-weight: 800;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .highlight-card-item .item-text {
+    font-size: 0.82rem;
+    color: #1e293b;
+    line-height: 1.55;
+    font-weight: 500;
+  }
+
+  /* 楼盘卖点顶部档案条 */
+  .insights-proj-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #e2e8f0;
+    margin-bottom: 4px;
+  }
+  .insights-pill {
+    font-size: 0.74rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #f1f5f9;
+    color: #334155;
+    font-weight: 600;
+  }
+
+  /* 商圈详情样式 */
+  .district-positioning-box {
+    background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+    border-left: 4px solid #2563eb;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    line-height: 1.55;
+  }
+  .district-section {
+    margin-top: 4px;
+  }
+  .district-section-title {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .district-section-content {
+    font-size: 0.78rem;
+    color: #334155;
+    line-height: 1.6;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .facility-row {
+    font-size: 0.78rem;
+    color: #334155;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 7px 10px;
+    border-radius: 6px;
+    line-height: 1.45;
+    margin-bottom: 5px;
+  }
+  .facility-row strong {
+    color: #1e40af;
+  }
+
   /* 缩放按钮置于右上角避让导航栏和右下卡片 */
   .leaflet-top.leaflet-right {
     top: 68px !important;
@@ -2136,6 +2405,42 @@
 <!-- 🗺️ 右下角悬浮楼盘空间情报卡 (Floating Corner Intelligence Card) -->
 <div id="project-corner-card" class="project-corner-card"></div>
 
+<!-- 🏙️/✨ 空间区位与楼盘价值深度看板 Modal (Project Insights Modal) -->
+<div class="modal-overlay" id="project-insights-modal" onclick="closeProjectInsightsModal(event)">
+  <div class="modal-card insights-modal-card" onclick="event.stopPropagation()">
+    <div class="insights-header">
+      <div class="insights-title-group">
+        <div class="insights-main-title">
+          <span id="insights-title">必嘉坊·迎汇</span>
+          <span id="insights-badge" class="corner-tag price" style="font-size:0.7rem;">约$387万起</span>
+        </div>
+        <div class="insights-sub-title" id="insights-subtitle">📍 九龙中 · 红磡及黄埔</div>
+      </div>
+      <div class="insights-header-actions">
+        <button class="btn-insights-copy" onclick="copyInsightsContent()" title="复制当前解读文案到剪贴板，方便发送给客户">
+          📋 复制文案
+        </button>
+        <button class="insights-close-btn" onclick="closeProjectInsightsModal()" title="关闭">✕</button>
+      </div>
+    </div>
+    
+    <!-- Tab 切换栏 -->
+    <div class="insights-tabs-bar">
+      <button class="insights-tab-btn active" id="tab-btn-highlights" onclick="switchInsightsTab('highlights')">
+        ✨ 楼盘核心卖点
+      </button>
+      <button class="insights-tab-btn" id="tab-btn-district" onclick="switchInsightsTab('district')">
+        🏙️ 核心商圈概况
+      </button>
+    </div>
+
+    <!-- 内容滚动视口 -->
+    <div class="insights-body-scroll" id="insights-content-body">
+      <!-- 动态渲染卖点或商圈内容 -->
+    </div>
+  </div>
+</div>
+
 <!-- PDF Modal -->
 <div class="modal-overlay" id="export-modal">
   <div class="modal-card" style="max-width: 520px;">
@@ -2221,6 +2526,7 @@
 <div id="toast-notify" class="toast-notification"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="hk_districts_data.js"></script>
 <script>
 let landmarksData = [], mtrStationsData = [], projectsData = [];
 let map, currentAnchorMarker, currentRadiusCircle, activeAnchorLandmark = null;
@@ -3658,11 +3964,322 @@ function showProjectFloatingCard(name) {
     ${anchorDistHtml}
     <div class="corner-card-body">
       ${mtrHtml}
+      <div class="corner-insights-actions">
+        <button class="btn-insight district" onclick="openProjectInsightsModal('${proj.name}', 'district')">
+          🏙️ 商圈介绍
+        </button>
+        <button class="btn-insight highlights" onclick="openProjectInsightsModal('${proj.name}', 'highlights')">
+          ✨ 项目卖点
+        </button>
+      </div>
     </div>
     ${adminHtml}
   `;
 
   cardContainer.classList.add('active');
+}
+
+/* =========================================================================
+   🏙️/✨ 空间区位与楼盘价值深度看板交互逻辑 (Project & District Insights)
+   ========================================================================= */
+let currentInsightsProj = null;
+let currentInsightsTab = 'highlights';
+
+function findDistrictData(p) {
+  if (!window.HK_DISTRICTS_DATA || !Array.isArray(window.HK_DISTRICTS_DATA)) return null;
+  const dList = window.HK_DISTRICTS_DATA;
+  const md = (p.micro_district || '').trim();
+  const d = (p.district || '').trim();
+
+  // 1. 精确匹配 micro_district
+  if (md) {
+    const direct = dList.find(item => item.name === md || item.name.includes(md) || md.includes(item.name));
+    if (direct) return direct;
+  }
+
+  // 2. 常用关键字与别名表映射
+  const aliasMap = {
+    '笔架山': '石硖尾及又一村',
+    '西南九龙': '南昌及西九龙海滨',
+    '启德': '启德城中心 (AIRSIDE/天玺) / 启德跑道区',
+    '何文田': '何文田及加多利山',
+    '九龙塘': '九龙塘低密度豪宅区 / 广播道及毕架山',
+    '黄竹坑': '黄竹坑及深湾',
+    '深湾': '黄竹坑及深湾',
+    '香港仔': '鸭脷洲 (海怡半岛及鸭脷洲大街)',
+    '鸭脷洲': '鸭脷洲 (海怡半岛及鸭脷洲大街)',
+    '坚尼地城': '坚尼地城 (Kennedy Town)',
+    '西营盘': '西营盘及石塘咀 / 上环',
+    '上环': '西营盘及石塘咀 / 上环',
+    '中半山': '中半山 (Mid-Levels Central)',
+    '西半山': '西半山 (Mid-Levels West)',
+    '东半山': '东半山 (Mid-Levels East)',
+    '山顶': '山顶 (The Peak)',
+    '跑马地': '跑马地及黄泥涌',
+    '大坑': '大坑及渣甸山',
+    '渣甸山': '大坑及渣甸山',
+    '湾仔': '湾仔核心区',
+    '北角': '北角核心及炮台山',
+    '鲗鱼涌': '鲗鱼涌及太古',
+    '太古': '鲗鱼涌及太古',
+    '西湾河': '西湾河 / 筲箕湾及阿公岩',
+    '筲箕湾': '西湾河 / 筲箕湾及阿公岩',
+    '浅水湾': '浅水湾及舂磡角',
+    '深水湾': '深水湾',
+    '寿臣山': '寿臣山',
+    '大潭': '大潭及红山半岛',
+    '红山半岛': '大潭及红山半岛',
+    '赤柱': '赤柱及黄麻角',
+    '薄扶林': '薄扶林',
+    '石澳': '石澳、大浪湾及鹤咀',
+    '九龙站': '九龙站及柯士甸',
+    '柯士甸': '九龙站及柯士甸',
+    '尖沙咀': '尖沙咀核心及尖东',
+    '尖东': '尖沙咀核心及尖东',
+    '南昌': '南昌及西九龙海滨',
+    '旺角': '旺角及太子',
+    '太子': '旺角及太子',
+    '油麻地': '油麻地及佐敦',
+    '佐敦': '油麻地及佐敦',
+    '石硖尾': '石硖尾及又一村',
+    '又一村': '石硖尾及又一村',
+    '土瓜湾': '马头角及土瓜湾',
+    '马头角': '马头角及土瓜湾',
+    '红磡': '红磡及黄埔',
+    '黄埔': '红磡及黄埔',
+    '日出康城': '将军澳南及日出康城',
+    '将军澳': '将军澳南及日出康城'
+  };
+
+  if (d && aliasMap[d]) {
+    const found = dList.find(item => item.name === aliasMap[d]);
+    if (found) return found;
+  }
+  if (md && aliasMap[md]) {
+    const found = dList.find(item => item.name === aliasMap[md]);
+    if (found) return found;
+  }
+
+  // 3. 子串模糊匹配
+  for (const item of dList) {
+    if ((d && item.name.includes(d)) || (md && item.name.includes(md)) || (item.short_name && (d.includes(item.short_name) || md.includes(item.short_name)))) {
+      return item;
+    }
+  }
+
+  return null;
+}
+
+function openProjectInsightsModal(pName, initialTab = 'highlights') {
+  const proj = projectsData.find(p => p.name === pName);
+  if (!proj) return;
+
+  currentInsightsProj = proj;
+  currentInsightsTab = initialTab;
+
+  const modal = document.getElementById('project-insights-modal');
+  const titleEl = document.getElementById('insights-title');
+  const badgeEl = document.getElementById('insights-badge');
+  const subEl = document.getElementById('insights-subtitle');
+
+  if (titleEl) titleEl.textContent = proj.name;
+  if (badgeEl) {
+    let pTxt = proj.min_price_wan ? `约$${proj.min_price_wan}万起` : (proj.sell_status === 'coming_soon' ? '即将发售' : '招标');
+    badgeEl.textContent = pTxt;
+  }
+  if (subEl) {
+    subEl.textContent = `📍 ${proj.main_area || proj.region} · ${proj.micro_district || proj.district} ${proj.address ? '(' + proj.address + ')' : ''}`;
+  }
+
+  switchInsightsTab(initialTab);
+  if (modal) modal.classList.add('open');
+}
+
+function closeProjectInsightsModal(e) {
+  if (e && e.target && e.target !== e.currentTarget && !e.target.classList.contains('insights-close-btn')) {
+    return;
+  }
+  const modal = document.getElementById('project-insights-modal');
+  if (modal) modal.classList.remove('open');
+}
+
+function switchInsightsTab(tabName) {
+  currentInsightsTab = tabName;
+  const tabH = document.getElementById('tab-btn-highlights');
+  const tabD = document.getElementById('tab-btn-district');
+
+  if (tabH && tabD) {
+    if (tabName === 'highlights') {
+      tabH.classList.add('active');
+      tabD.classList.remove('active');
+    } else {
+      tabD.classList.add('active');
+      tabH.classList.remove('active');
+    }
+  }
+
+  renderInsightsContent();
+}
+
+function renderInsightsContent() {
+  const bodyEl = document.getElementById('insights-content-body');
+  if (!bodyEl || !currentInsightsProj) return;
+
+  const proj = currentInsightsProj;
+
+  if (currentInsightsTab === 'highlights') {
+    // 渲染楼盘核心卖点
+    let spText = proj.selling_points || proj.mainland_selling_points || '';
+    let items = [];
+
+    if (spText) {
+      const lines = spText.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+      lines.forEach(line => {
+        const clean = line.replace(/^[0-9]+[、\.．\s]+/, '').trim();
+        if (clean) items.push(clean);
+      });
+    }
+
+    let itemsHtml = '';
+    if (items.length > 0) {
+      itemsHtml = items.map((item, idx) => `
+        <div class="highlight-card-item">
+          <div class="item-num">${idx + 1}</div>
+          <div class="item-text">${item}</div>
+        </div>
+      `).join('');
+    } else {
+      itemsHtml = `
+        <div style="text-align:center; padding:30px 10px; color:#94a3b8; font-size:0.82rem;">
+          🔍 暂未录入该项目独立特色卖点，请参考上方【核心商圈概况】深度解读
+        </div>
+      `;
+    }
+
+    const mtr = proj.nearest_mtr;
+    const mtrWalkStr = mtr ? `🚇 距 ${mtr.nearest_mtr_cn}站 约 ${mtr.walk_time_min} 分钟 (${mtr.dist_walk_m}米)` : '';
+
+    bodyEl.innerHTML = `
+      <div class="insights-proj-summary">
+        <span class="insights-pill" style="background:#eff6ff; color:#1e40af;">🏠 ${proj.property_type_desc || (proj.property_type === 'forward' ? '期房' : '现房')}</span>
+        ${proj.developer ? `<span class="insights-pill" style="background:#f0fdf4; color:#166534;">🏗️ ${proj.developer}</span>` : ''}
+        ${proj.school_net ? `<span class="insights-pill" style="background:#fffbeb; color:#b45309;">🏫 ${proj.school_net}</span>` : ''}
+        ${mtrWalkStr ? `<span class="insights-pill" style="background:#f1f5f9; color:#334155;">${mtrWalkStr}</span>` : ''}
+      </div>
+      <div style="font-size:0.84rem; font-weight:800; color:#0f172a; margin-bottom:2px;">
+        ✨ 项目核心价值点提炼：
+      </div>
+      ${itemsHtml}
+    `;
+  } else {
+    // 渲染商圈介绍
+    const dist = findDistrictData(proj);
+    if (!dist) {
+      bodyEl.innerHTML = `
+        <div style="text-align:center; padding:30px 10px; color:#94a3b8; font-size:0.82rem;">
+          📍 该项目所属商圈深度资料整理中，敬请期待
+        </div>
+      `;
+      return;
+    }
+
+    let facHtml = '';
+    if (dist.facilities && Array.isArray(dist.facilities)) {
+      facHtml = dist.facilities.map(f => `
+        <div class="facility-row">
+          <strong>🔹 ${f.label}：</strong>${f.text}
+        </div>
+      `).join('');
+    }
+
+    bodyEl.innerHTML = `
+      <div class="district-positioning-box">
+        “${dist.positioning || '香港核心都会与成熟人居板块'}”
+      </div>
+      <div class="district-section">
+        <div class="district-section-title">🏛️ 板块历史与人文底蕴</div>
+        <div class="district-section-content">${dist.history || '详见商圈资料'}</div>
+      </div>
+      <div class="district-section">
+        <div class="district-section-title">🏙️ 发展现状与居住客群</div>
+        <div class="district-section-content">${dist.current_status || '详见商圈资料'}</div>
+      </div>
+      ${facHtml ? `
+        <div class="district-section">
+          <div class="district-section-title">🌟 核心顶配矩阵</div>
+          <div class="district-facilities-grid">${facHtml}</div>
+        </div>
+      ` : ''}
+      ${dist.future ? `
+        <div class="district-section">
+          <div class="district-section-title">🚀 未来规划利好与升值动能</div>
+          <div class="district-section-content" style="background:#f0fdf4; border-color:#bbf7d0; color:#14532d;">${dist.future}</div>
+        </div>
+      ` : ''}
+    `;
+  }
+}
+
+function copyInsightsContent() {
+  if (!currentInsightsProj) return;
+  const proj = currentInsightsProj;
+
+  let text = '';
+  if (currentInsightsTab === 'highlights') {
+    let spText = proj.selling_points || proj.mainland_selling_points || '';
+    const mtr = proj.nearest_mtr;
+    const mtrStr = mtr ? `${mtr.nearest_mtr_cn}站 (步行约${mtr.walk_time_min}分钟)` : '';
+
+    text += `【${proj.name} - 核心特色卖点】\n`;
+    text += `📍 区域：${proj.main_area || proj.region} · ${proj.micro_district || proj.district}\n`;
+    if (proj.min_price_wan) text += `💰 价格：约$${proj.min_price_wan}万起\n`;
+    if (mtrStr) text += `🚇 交通：${mtrStr}\n`;
+    if (proj.school_net) text += `🏫 校网：${proj.school_net}\n`;
+    if (proj.developer) text += `🏗️ 发展商：${proj.developer}\n\n`;
+    text += `✨ 核心特色亮点：\n`;
+    text += spText || '优质推荐一手新盘，交通与生活配套完善。';
+    text += `\n\n（来源：香港一手新盘全景地图）`;
+  } else {
+    const dist = findDistrictData(proj);
+    text += `【${dist ? dist.name : (proj.micro_district || proj.district)} - 核心商圈概况】\n`;
+    if (dist && dist.positioning) text += `🏙️ 板块定位：${dist.positioning}\n\n`;
+    if (dist && dist.current_status) text += `🌟 发展现状：${dist.current_status}\n\n`;
+    if (dist && dist.facilities) {
+      text += `🏛️ 核心配套：\n`;
+      dist.facilities.forEach(f => {
+        text += `• ${f.label}：${f.text}\n`;
+      });
+      text += `\n`;
+    }
+    if (dist && dist.future) text += `🚀 未来规划：${dist.future}\n\n`;
+    text += `（来源：香港一手新盘全景地图）`;
+  }
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast("📋 解读文案已成功复制到剪贴板！");
+    }).catch(() => {
+      fallbackCopy(text);
+    });
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+    showToast("📋 解读文案已成功复制到剪贴板！");
+  } catch (e) {
+    showToast("⚠️ 复制失败，请手动选择复制");
+  }
+  document.body.removeChild(ta);
 }
 
 function applyFilters() {
