@@ -2673,7 +2673,7 @@ function initMap() {
   });
 }
 
-const MAP_DATA_VERSION = '20260928_developer_v1';
+const MAP_DATA_VERSION = '20260928_noroutebtn_v1';
 
 async function loadData() {
   console.time('⚡ 核心地图首屏瞬时直出');
@@ -4053,9 +4053,6 @@ function showProjectFloatingCard(name) {
         <div style="font-size:0.73rem; color:#475569; margin-top:3px; line-height:1.45;">
           🚘 ${mobility.transitDesc}
         </div>
-        <button id="btn-corner-route-${proj.name}" class="btn-corner-route ${isLineDrawn ? 'active' : ''}" style="background:#2563eb;" onclick="toggleMtrRoute('${proj.name}')">
-          ${isLineDrawn ? '✕ 清除路线' : mobility.btnText}
-        </button>
       </div>
     `;
   }
