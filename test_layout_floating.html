@@ -389,6 +389,24 @@
     font-weight: 600;
   }
 
+  .filter-select-mini {
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    font-size: 0.78rem;
+    color: #1e293b;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+  }
+  .filter-select-mini:hover,
+  .filter-select-mini:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+  }
+
   .custom-num-input {
     width: 80px;
     padding: 4px 8px;
@@ -1418,7 +1436,8 @@
     </div>
 
     <div class="header-btn-group">
-      <button class="btn-layer-toggle active" id="btn-toggle-mtr" onclick="toggleMtrLayer()" title="显示/隐藏港铁站点标记">🚇 港铁</button>
+      <button class="btn-layer-toggle active" id="btn-toggle-mtr" onclick="toggleMtrLayer()" title="显示/隐藏港铁站点标记">🚇 港铁站</button>
+      <button class="btn-layer-toggle active" id="btn-toggle-mtr-lines" onclick="toggleMtrLinesLayer()" title="显示/隐藏港铁10条线路轨迹">🛤️ 港铁线</button>
       <div class="layer-btn-wrapper">
         <button class="btn-layer-toggle active" id="btn-toggle-school" onclick="toggleFamousSchoolsLayer()" title="显示/隐藏重点名校与大学标记">
           🏫 名校
@@ -1471,15 +1490,17 @@
 
   <!-- Expandable Filter Bar -->
   <div class="expandable-filter-box" id="filter-expand-box">
-    <div class="filter-group-item" id="price-chips">
+    <div class="filter-group-item">
       <span>💷 价格预算：</span>
-      <div class="filter-chip-mini active" data-price="all">不限</div>
-      <div class="filter-chip-mini" data-price="1000-down">1000万以内</div>
-      <div class="filter-chip-mini" data-price="1000-2000">1000-2000万</div>
-      <div class="filter-chip-mini" data-price="2000-5000">2000-5000万</div>
-      <div class="filter-chip-mini" data-price="5000-10000">5000-1亿</div>
-      <div class="filter-chip-mini" data-price="10000-up">1亿以上</div>
-      <div class="filter-chip-mini" data-price="tender">待定/招标</div>
+      <select class="filter-select-mini" id="price-select" onchange="onPriceSelectChange(this.value)">
+        <option value="all">不限预算</option>
+        <option value="1000-down">1000万以内</option>
+        <option value="1000-2000">1000-2000万</option>
+        <option value="2000-5000">2000-5000万</option>
+        <option value="5000-10000">5000-1亿</option>
+        <option value="10000-up">1亿以上</option>
+        <option value="tender">待定/招标</option>
+      </select>
     </div>
 
     <div class="filter-group-item">
@@ -1604,6 +1625,7 @@ let microDistrictsLayer = null;
 let currentRouteLine = null;
 let selectedNames = new Set();
 let isMtrLayerVisible = true;
+let isMtrLinesLayerVisible = true;
 let isFamousSchoolsLayerVisible = true;
 let isShoppingMallsLayerVisible = true;
 let isAdminMode = false;
@@ -2077,14 +2099,25 @@ function toggleMtrLayer() {
   const btn = document.getElementById('btn-toggle-mtr');
   if (isMtrLayerVisible) {
     map.removeLayer(mtrStationsLayer);
-    if (mtrLinesLayer) map.removeLayer(mtrLinesLayer);
     isMtrLayerVisible = false;
-    btn.classList.remove('active');
+    if (btn) btn.classList.remove('active');
   } else {
     map.addLayer(mtrStationsLayer);
-    if (mtrLinesLayer) map.addLayer(mtrLinesLayer);
     isMtrLayerVisible = true;
-    btn.classList.add('active');
+    if (btn) btn.classList.add('active');
+  }
+}
+
+function toggleMtrLinesLayer() {
+  const btn = document.getElementById('btn-toggle-mtr-lines');
+  if (isMtrLinesLayerVisible) {
+    if (mtrLinesLayer) map.removeLayer(mtrLinesLayer);
+    isMtrLinesLayerVisible = false;
+    if (btn) btn.classList.remove('active');
+  } else {
+    if (mtrLinesLayer) map.addLayer(mtrLinesLayer);
+    isMtrLinesLayerVisible = true;
+    if (btn) btn.classList.add('active');
   }
 }
 
@@ -2513,19 +2546,18 @@ function toggleDrawer() {
   d.style.transform = d.style.transform ? '' : 'translateY(calc(100% - 46px))';
 }
 
-function setupFilterEvents() {
-  document.querySelectorAll('#price-chips .filter-chip-mini').forEach(chip => {
-    chip.addEventListener('click', () => {
-      document.querySelectorAll('#price-chips .filter-chip-mini').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      filterState.priceChip = chip.dataset.price;
-      document.getElementById('p-min').value = '';
-      document.getElementById('p-max').value = '';
-      filterState.minPrice = null; filterState.maxPrice = null;
-      applyFilters();
-    });
-  });
+function onPriceSelectChange(val) {
+  filterState.priceChip = val;
+  const pMin = document.getElementById('p-min');
+  const pMax = document.getElementById('p-max');
+  if (pMin) pMin.value = '';
+  if (pMax) pMax.value = '';
+  filterState.minPrice = null;
+  filterState.maxPrice = null;
+  applyFilters();
+}
 
+function setupFilterEvents() {
   document.querySelectorAll('#status-chips .filter-chip-mini').forEach(chip => {
     chip.addEventListener('click', () => {
       document.querySelectorAll('#status-chips .filter-chip-mini').forEach(c => c.classList.remove('active'));
@@ -2553,7 +2585,9 @@ function onCustomPriceInput() {
   filterState.maxPrice = isNaN(maxV) ? null : maxV;
 
   if (filterState.minPrice !== null || filterState.maxPrice !== null) {
-    document.querySelectorAll('#price-chips .filter-chip-mini').forEach(c => c.classList.remove('active'));
+    const pSel = document.getElementById('price-select');
+    if (pSel) pSel.value = 'all';
+    filterState.priceChip = 'all';
   }
   applyFilters();
 }
@@ -3094,9 +3128,8 @@ function resetConflictingFilters(p) {
     const pMax = document.getElementById('p-max');
     if (pMin) pMin.value = '';
     if (pMax) pMax.value = '';
-    document.querySelectorAll('#price-chips .filter-chip-mini').forEach(c => {
-      c.classList.toggle('active', c.dataset.price === 'all');
-    });
+    const pSel = document.getElementById('price-select');
+    if (pSel) pSel.value = 'all';
     changed = true;
   }
 
