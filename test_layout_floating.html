@@ -575,6 +575,14 @@
     background: #fffaf5;
   }
 
+  .card-v2.card-highlight {
+    border-color: #ea580c !important;
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.4), 0 8px 24px rgba(234, 88, 12, 0.25) !important;
+    background: #fff7ed !important;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
   .card-v2-main {
     display: flex;
     gap: 11px;
@@ -1936,7 +1944,7 @@ let isAdminMode = false;
 
 let projectMarkersLayer, districtClustersLayer, mtrStationsLayer, mtrLinesLayer, famousSchoolsLayer, shoppingMallsLayer;
 let activeDistrictCluster = null;
-const DISTRICT_CLUSTER_ZOOM_THRESHOLD = 13;
+const DISTRICT_CLUSTER_ZOOM_THRESHOLD = 16;
 let mtrLinesData = null;
 const POI_EXPAND_ZOOM = 15;
 let markersByName = {};
@@ -2925,14 +2933,28 @@ function focusDistrict(dName, projs) {
   activeDistrictCluster = dName;
   if (projs && projs.length > 0) {
     if (projs.length === 1) {
-      map.flyTo([projs[0].lat, projs[0].lng], 15, { duration: 0.8 });
+      map.flyTo([projs[0].lat, projs[0].lng], 16, { duration: 0.8 });
     } else {
       const bounds = L.latLngBounds(projs.map(p => [p.lat, p.lng]));
-      map.fitBounds(bounds, { padding: [80, 80], maxZoom: 15, duration: 0.8 });
+      map.fitBounds(bounds, { padding: [80, 80], maxZoom: 16, duration: 0.8 });
     }
   }
   openDrawer();
   applyFilters();
+}
+
+function scrollToProjectCard(name) {
+  openDrawer();
+  const card = document.querySelector(`.card-v2[data-proj-name="${CSS.escape(name)}"]`);
+  if (card) {
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.classList.remove('card-highlight');
+    void card.offsetWidth; // 触发 reflow 重新播放动画
+    card.classList.add('card-highlight');
+    setTimeout(() => {
+      card.classList.remove('card-highlight');
+    }, 2200);
+  }
 }
 
 function clearDistrictFilter() {
@@ -3277,13 +3299,15 @@ function applyFilters() {
 
     const isSelected = selectedNames.has(proj.name);
     const mtr = proj.nearest_mtr;
-    let mtrHtml = '';
-    if (mtr) {
-      const walkTime = mtr.walk_time_min || 5;
-      mtrHtml = `<span class="v2-action-mtr" title="${mtr.nearest_mtr_cn}站 (${mtr.nearest_mtr_lines}) · 步行约${walkTime}分钟">🚇 ${mtr.nearest_mtr_cn} ⏱️${walkTime}分</span>`;
-    }
 
     const salesUrl = `https://neil-studio.github.io/hk/sales.html?project=${encodeURIComponent(proj.name)}`;
+    const hasIntro = !!(proj.intro_url && String(proj.intro_url).trim().startsWith('http'));
+    const introUrl = hasIntro ? String(proj.intro_url).trim() : '';
+
+    const drawerIntroBtn = hasIntro
+      ? `<a href="${introUrl}" target="_blank" onclick="event.stopPropagation()" class="v2-action-link" style="color:#0284c7; background:#f0f9ff; border-color:#bae6fd;" title="查看官方楼盘介绍">📖 楼盘介绍</a>`
+      : `<button disabled onclick="event.stopPropagation()" class="v2-action-link" style="color:#94a3b8; background:#f8fafc; border-color:#e2e8f0; cursor:not-allowed; opacity:0.65;" title="暂无楼盘介绍">📖 楼盘介绍</button>`;
+
     const hasMarketing = proj.has_marketing_materials === true && !!(proj.marketing_url && String(proj.marketing_url).trim().startsWith('http'));
     const marketingUrl = hasMarketing ? proj.marketing_url.trim() : '';
 
@@ -3324,6 +3348,7 @@ function applyFilters() {
 
     const card = document.createElement('div');
     card.className = `card-v2 ${isSelected ? 'selected' : ''}`;
+    card.setAttribute('data-proj-name', proj.name);
     card.innerHTML = `
       <div class="card-v2-main">
         <div class="card-v2-cover">
@@ -3357,7 +3382,7 @@ function applyFilters() {
         <a href="${salesUrl}" target="_blank" onclick="event.stopPropagation()" class="v2-action-link" title="查看销控网格图">
           🏢 销控网格
         </a>
-        ${mtrHtml}
+        ${drawerIntroBtn}
         ${drawerMarketingBtn}
       </div>
     `;
@@ -3385,6 +3410,11 @@ function applyFilters() {
       });
       const marker = L.marker([proj.lat, proj.lng], { icon: mIcon });
       marker._pName = proj.name;
+
+      // 🎯 点击地图项目标记，左侧列表联动自动平滑跳转定位并高亮光晕
+      marker.on('click', () => {
+        scrollToProjectCard(proj.name);
+      });
 
       let popupMtrRow = '';
       if (mtr) {
