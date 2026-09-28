@@ -416,103 +416,394 @@
     outline: none;
   }
 
-  /* Floating Slide-out Drawer Panel (Bottom-Left) */
+  /* Floating Slide-out Drawer Panel (Left-side with Collapsible Tab) */
   .floating-drawer {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    width: 420px;
-    max-height: calc(100vh - 140px);
-    z-index: 90;
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(15,23,42,0.18);
+    top: 92px;
+    bottom: 16px;
+    left: 16px;
+    width: 410px;
+    max-height: calc(100vh - 110px);
+    z-index: 95;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.16);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: visible;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .floating-drawer.collapsed {
+    transform: translateX(calc(-100% - 24px));
+  }
+
+  /* 抽屉右侧边缘悬挂的三角形触发按键 */
+  .drawer-toggle-tab {
+    position: absolute;
+    top: 14px;
+    right: -28px;
+    width: 28px;
+    height: 48px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.2s ease;
+    user-select: none;
+  }
+
+  .drawer-toggle-tab:hover {
+    background: #f8fafc;
+    width: 32px;
+    right: -32px;
+  }
+
+  .drawer-toggle-tab .toggle-arrow {
+    font-size: 13px;
+    color: #475569;
+    font-weight: 900;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    line-height: 1;
   }
 
   .drawer-header {
-    padding: 12px 18px;
-    border-bottom: 1px solid var(--glass-border);
+    padding: 12px 16px 8px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: #ffffff;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .drawer-header-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255,255,255,0.7);
   }
 
-  .drawer-title {
-    font-size: 0.92rem;
+  .drawer-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .drawer-title-text {
+    font-size: 0.95rem;
     font-weight: 700;
-    color: var(--brand-primary);
+    color: #0f172a;
   }
 
-  .drawer-list-scroll {
-    padding: 12px 14px;
-    overflow-y: auto;
-    max-height: 520px;
+  .count-highlight {
+    color: #ea580c;
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 0 2px;
   }
 
-  .card-float {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 12px 14px;
-    margin-bottom: 10px;
-    border: 1px solid #e2e8f0;
+  .active-district-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #ffedd5;
+    color: #c2410c;
+    border: 1px solid #fdba74;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.2s;
   }
 
-  .card-float:hover {
-    border-color: #2563eb;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(37,99,235,0.1);
+  .active-district-tag:hover {
+    background: #fed7aa;
   }
 
-  .card-float.selected {
-    border-color: #d97706;
-    background: #fffbeb;
+  .active-district-tag .tag-close {
+    font-size: 0.7rem;
+    font-weight: 900;
+    margin-left: 2px;
   }
 
-  .card-float-top {
+  .drawer-disclaimer-text {
+    font-size: 0.68rem;
+    color: #94a3b8;
+    line-height: 1.35;
+  }
+
+  .drawer-list-scroll {
+    padding: 10px 12px;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  /* 紧凑专业版项目卡片 (Card V2) */
+  .card-v2 {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 9px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .card-v2:hover {
+    border-color: #f97316;
+    box-shadow: 0 6px 18px rgba(234, 88, 12, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .card-v2.selected {
+    border-color: #ea580c;
+    background: #fffaf5;
+  }
+
+  .card-v2-main {
+    display: flex;
+    gap: 11px;
+    align-items: stretch;
+  }
+
+  /* 左侧黑金质感封面 */
+  .card-v2-cover {
+    width: 74px;
+    min-width: 74px;
+    height: 72px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
+    flex-shrink: 0;
+  }
+
+  .card-v2-cover .cover-text {
+    color: #f8fafc;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    word-break: break-word;
+  }
+
+  /* 右侧主体信息 */
+  .card-v2-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+  }
+
+  .card-v2-row1 {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    gap: 6px;
   }
 
-  .card-float-title {
+  .card-v2-title {
     font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--brand-primary);
-  }
-
-  .status-tag-sale {
-    background: var(--color-sale-bg);
-    color: var(--color-sale-fg);
-    font-weight: 700;
-    font-size: 0.7rem;
-    padding: 2px 7px;
-    border-radius: 4px;
-  }
-
-  .status-tag-priced {
-    background: var(--color-priced-bg);
-    color: var(--color-priced-fg);
-    font-weight: 600;
-    font-size: 0.7rem;
-    padding: 2px 7px;
-    border-radius: 4px;
-  }
-
-  .card-float-price {
-    font-size: 0.92rem;
     font-weight: 800;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-v2-row2 {
+    font-size: 0.74rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-v2-dev {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #475569;
+  }
+
+  .card-v2-row3 {
+    font-size: 0.74rem;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+    white-space: nowrap;
+  }
+
+  .card-v2-row3 strong {
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .card-v2-sep {
+    color: #cbd5e1;
+    font-size: 0.7rem;
+  }
+
+  .card-v2-row4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 3px;
+  }
+
+  .card-v2-status {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    line-height: 1.2;
+  }
+
+  .card-v2-status.sale {
+    color: #ea580c;
+    border: 1px solid #fdba74;
+    background: #fff7ed;
+  }
+
+  .card-v2-status.coming {
+    color: #64748b;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+  }
+
+  .card-v2-status.soldout {
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+    background: #fef2f2;
+  }
+
+  .card-v2-price {
+    font-size: 0.95rem;
+    font-weight: 900;
+    color: #ea580c;
+    letter-spacing: -0.2px;
+  }
+
+  .card-v2-price .price-unit {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 1px;
+  }
+
+  .card-v2-price.tender {
+    font-size: 0.86rem;
+    font-weight: 800;
+    color: #ea580c;
+  }
+
+  /* 底部操作快捷栏 (极简药丸) */
+  .card-v2-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed #f1f5f9;
+    margin-top: 1px;
+  }
+
+  .v2-action-link {
+    flex: 1;
+    text-align: center;
+    background: #f8fafc;
     color: #2563eb;
-    margin-top: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .v2-action-link:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+  }
+
+  .v2-action-mtr {
+    font-size: 0.68rem;
+    color: #475569;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+  }
+
+  /* 远视角商圈项目数聚合气泡 (District Cluster Pill) */
+  .district-cluster-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    padding: 4px 6px 4px 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translate(-50%, -50%);
+    user-select: none;
+  }
+
+  .district-cluster-pill:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    border-color: #ea580c;
+  }
+
+  .district-cluster-pill .cluster-dname {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.2px;
+  }
+
+  .district-cluster-pill .cluster-dcount {
+    margin-left: 8px;
+    background: #ea580c;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 6px;
+    line-height: 1.2;
   }
 
   /* MTR Info Box in Drawer Card */
@@ -1521,9 +1812,22 @@
 
 <!-- Floating Slide-out Drawer Panel -->
 <div class="floating-drawer" id="floating-drawer">
+  <!-- 抽屉右侧边缘悬挂的三角形触发按键 -->
+  <div class="drawer-toggle-tab" id="drawer-toggle-tab" onclick="toggleDrawer()" title="折叠/展开项目列表">
+    <span class="drawer-toggle-icon" id="drawer-toggle-icon">◀</span>
+  </div>
+
   <div class="drawer-header">
-    <div class="drawer-title">匹配新盘列表 (<span id="count-num">0</span>)</div>
-    <span style="font-size:0.75rem; color:#64748b; cursor:pointer;" onclick="toggleDrawer()">▼ 折叠/展平</span>
+    <div class="drawer-header-main">
+      <div class="drawer-title-row">
+        <span class="drawer-title-text">共找到 <strong id="count-num" class="count-highlight">0</strong> 个新盘</span>
+        <span id="active-district-tag" class="active-district-tag" style="display:none;" onclick="clearDistrictFilter()" title="点击清除商圈筛选，返回全港">
+          <span id="active-district-name"></span>
+          <span class="tag-close">✕ 返回全港</span>
+        </span>
+      </div>
+    </div>
+    <div class="drawer-disclaimer-text">*伙数、出售中、已售伙数及折实价等资料供参考，一切以发展商最新公布为准。</div>
   </div>
 
   <div class="drawer-list-scroll" id="drawer-list"></div>
@@ -1630,7 +1934,9 @@ let isFamousSchoolsLayerVisible = true;
 let isShoppingMallsLayerVisible = true;
 let isAdminMode = false;
 
-let projectMarkersLayer, mtrStationsLayer, mtrLinesLayer, famousSchoolsLayer, shoppingMallsLayer;
+let projectMarkersLayer, districtClustersLayer, mtrStationsLayer, mtrLinesLayer, famousSchoolsLayer, shoppingMallsLayer;
+let activeDistrictCluster = null;
+const DISTRICT_CLUSTER_ZOOM_THRESHOLD = 13;
 let mtrLinesData = null;
 const POI_EXPAND_ZOOM = 15;
 let markersByName = {};
@@ -1725,6 +2031,7 @@ function initMap() {
 
   // 🚇 港铁线路轨迹层（置于楼盘项目之下，作为高质感交通骨架底图）
   mtrLinesLayer = L.layerGroup().addTo(map);
+  districtClustersLayer = L.layerGroup().addTo(map);
   projectMarkersLayer = L.layerGroup().addTo(map);
   mtrStationsLayer = L.layerGroup().addTo(map);
   famousSchoolsLayer = L.layerGroup().addTo(map);
@@ -1740,6 +2047,10 @@ function initMap() {
     }
     if (isFamousSchoolsLayerVisible) {
       renderFamousSchoolsMarkers();
+    }
+    // 动态在商圈聚合视图与单盘精细视图之间平滑切换
+    if (typeof refreshMapDisplayMode === 'function') {
+      refreshMapDisplayMode();
     }
   });
 }
@@ -2543,7 +2854,108 @@ function toggleExpandFilters() {
 
 function toggleDrawer() {
   const d = document.getElementById('floating-drawer');
-  d.style.transform = d.style.transform ? '' : 'translateY(calc(100% - 46px))';
+  const icon = document.getElementById('drawer-toggle-icon');
+  if (!d) return;
+  const isCollapsed = d.classList.toggle('collapsed');
+  if (icon) {
+    icon.textContent = isCollapsed ? '▶' : '◀';
+  }
+}
+
+function openDrawer() {
+  const d = document.getElementById('floating-drawer');
+  const icon = document.getElementById('drawer-toggle-icon');
+  if (d && d.classList.contains('collapsed')) {
+    d.classList.remove('collapsed');
+    if (icon) icon.textContent = '◀';
+  }
+}
+
+function closeDrawer() {
+  const d = document.getElementById('floating-drawer');
+  const icon = document.getElementById('drawer-toggle-icon');
+  if (d && !d.classList.contains('collapsed')) {
+    d.classList.add('collapsed');
+    if (icon) icon.textContent = '▶';
+  }
+}
+
+// 远视角商圈项目聚合与聚焦下钻系统
+let currentFilteredProjects = [];
+
+function renderDistrictClusters(filteredList) {
+  if (!districtClustersLayer) return;
+  districtClustersLayer.clearLayers();
+
+  const groups = {};
+  filteredList.forEach(p => {
+    const dName = p.district || p.micro_district || p.region || '其他';
+    if (!groups[dName]) groups[dName] = [];
+    groups[dName].push(p);
+  });
+
+  Object.keys(groups).forEach(dName => {
+    const projs = groups[dName];
+    if (!projs || projs.length === 0) return;
+
+    const avgLat = projs.reduce((s, p) => s + p.lat, 0) / projs.length;
+    const avgLng = projs.reduce((s, p) => s + p.lng, 0) / projs.length;
+
+    const clusterIcon = L.divIcon({
+      className: 'd-cluster-marker',
+      html: `
+        <div class="district-cluster-pill" title="点击放大查看 ${dName} 的 ${projs.length} 个新盘">
+          <span class="cluster-dname">${dName}</span>
+          <span class="cluster-dcount">${projs.length}</span>
+        </div>
+      `,
+      iconSize: null
+    });
+
+    const marker = L.marker([avgLat, avgLng], { icon: clusterIcon });
+    marker.on('click', () => {
+      focusDistrict(dName, projs);
+    });
+
+    districtClustersLayer.addLayer(marker);
+  });
+}
+
+function focusDistrict(dName, projs) {
+  activeDistrictCluster = dName;
+  if (projs && projs.length > 0) {
+    if (projs.length === 1) {
+      map.flyTo([projs[0].lat, projs[0].lng], 15, { duration: 0.8 });
+    } else {
+      const bounds = L.latLngBounds(projs.map(p => [p.lat, p.lng]));
+      map.fitBounds(bounds, { padding: [80, 80], maxZoom: 15, duration: 0.8 });
+    }
+  }
+  openDrawer();
+  applyFilters();
+}
+
+function clearDistrictFilter() {
+  activeDistrictCluster = null;
+  map.flyTo([22.3150, 114.1750], 12, { duration: 0.8 });
+  applyFilters();
+}
+
+function refreshMapDisplayMode() {
+  const currentZoom = map.getZoom();
+  const isFarView = (currentZoom < DISTRICT_CLUSTER_ZOOM_THRESHOLD) && !activeDistrictCluster && !activeAnchorLandmark && !filterState.searchKeyword;
+
+  if (isFarView) {
+    if (projectMarkersLayer) projectMarkersLayer.clearLayers();
+    if (currentFilteredProjects && currentFilteredProjects.length > 0) {
+      renderDistrictClusters(currentFilteredProjects);
+    }
+  } else {
+    if (districtClustersLayer) districtClustersLayer.clearLayers();
+    if (projectMarkersLayer && projectMarkersLayer.getLayers().length === 0 && currentFilteredProjects && currentFilteredProjects.length > 0) {
+      applyFilters();
+    }
+  }
 }
 
 function onPriceSelectChange(val) {
@@ -2755,7 +3167,8 @@ function drawMtrRouteLine(pLat, pLng, mLat, mLng, pName, mName) {
 function applyFilters() {
   const list = document.getElementById('drawer-list');
   list.innerHTML = '';
-  projectMarkersLayer.clearLayers();
+  if (projectMarkersLayer) projectMarkersLayer.clearLayers();
+  if (districtClustersLayer) districtClustersLayer.clearLayers();
   markersByName = {};
 
   let filtered = projectsData.filter(proj => {
@@ -2796,6 +3209,12 @@ function applyFilters() {
       }
     }
 
+    // 商圈下钻聚焦筛选
+    if (activeDistrictCluster) {
+      const pDist = proj.district || proj.micro_district || proj.region;
+      if (pDist !== activeDistrictCluster) return false;
+    }
+
     // 若选定了微型商圈/片区，过滤出该片区楼盘
     if (activeAnchorDistrict) {
       const pDist = proj.micro_district || proj.district;
@@ -2825,8 +3244,30 @@ function applyFilters() {
     });
   }
 
-  document.getElementById('count-num').textContent = filtered.length;
+  currentFilteredProjects = filtered;
 
+  // 更新左侧面板标题与商圈激活标签
+  document.getElementById('count-num').textContent = filtered.length;
+  const activeTagEl = document.getElementById('active-district-tag');
+  const activeNameEl = document.getElementById('active-district-name');
+  if (activeTagEl && activeNameEl) {
+    if (activeDistrictCluster) {
+      activeTagEl.style.display = 'inline-flex';
+      activeNameEl.textContent = '📍 ' + activeDistrictCluster;
+    } else {
+      activeTagEl.style.display = 'none';
+    }
+  }
+
+  // 远视角 vs 近视角地图标记控制
+  const currentZoom = map.getZoom();
+  const isFarView = (currentZoom < DISTRICT_CLUSTER_ZOOM_THRESHOLD) && !activeDistrictCluster && !activeAnchorLandmark && !filterState.searchKeyword;
+
+  if (isFarView) {
+    renderDistrictClusters(filtered);
+  }
+
+  // 渲染左侧全新紧凑型新盘卡片 (Card V2)
   filtered.forEach(proj => {
     let distKmStr = '';
     if (activeAnchorLandmark) {
@@ -2839,68 +3280,91 @@ function applyFilters() {
     let mtrHtml = '';
     if (mtr) {
       const walkTime = mtr.walk_time_min || 5;
-      const badgeClass = walkTime <= 5 ? 'mtr-time-hot' : (walkTime <= 10 ? 'mtr-time-mid' : 'mtr-time-normal');
-      mtrHtml = `
-        <div class="card-mtr-info">
-          <div class="card-mtr-tag" title="${mtr.nearest_mtr_cn}站 (${mtr.nearest_mtr_lines})">
-            🚇 <strong>${mtr.nearest_mtr_cn}站</strong> <span style="color:#64748b; font-size:0.68rem;">(${mtr.nearest_mtr_lines})</span>
-          </div>
-          <div class="card-mtr-dist">
-            <span class="mtr-time-badge ${badgeClass}">⏱️ 步行约${walkTime}分</span>
-            <span class="mtr-meters">(${mtr.dist_walk_m}米)</span>
-          </div>
-        </div>
-      `;
+      mtrHtml = `<span class="v2-action-mtr" title="${mtr.nearest_mtr_cn}站 (${mtr.nearest_mtr_lines}) · 步行约${walkTime}分钟">🚇 ${mtr.nearest_mtr_cn} ⏱️${walkTime}分</span>`;
     }
 
     const salesUrl = `https://neil-studio.github.io/hk/sales.html?project=${encodeURIComponent(proj.name)}`;
-
-    const hasIntro = !!(proj.intro_url && String(proj.intro_url).trim().startsWith('http'));
     const hasMarketing = proj.has_marketing_materials === true && !!(proj.marketing_url && String(proj.marketing_url).trim().startsWith('http'));
-    const marketingUrl = (proj.marketing_url && String(proj.marketing_url).trim().startsWith('http')) ? proj.marketing_url.trim() : '';
+    const marketingUrl = hasMarketing ? proj.marketing_url.trim() : '';
 
     const drawerMarketingBtn = hasMarketing
-      ? `<a href="${marketingUrl}" target="_blank" onclick="event.stopPropagation()" style="flex:1; text-align:center; background:#f0fdf4; color:#16a34a; font-size:0.72rem; font-weight:700; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #bbf7d0; transition:all 0.2s; white-space:nowrap;">📂 营销网盘</a>`
-      : `<button disabled onclick="event.stopPropagation()" title="暂无营销资料" style="flex:1; text-align:center; background:#f1f5f9; color:#94a3b8; font-size:0.72rem; font-weight:600; padding:5px 8px; border-radius:6px; border:1px solid #e2e8f0; cursor:not-allowed; opacity:0.65; white-space:nowrap;">📂 营销网盘</button>`;
+      ? `<a href="${marketingUrl}" target="_blank" onclick="event.stopPropagation()" class="v2-action-link" style="color:#16a34a; background:#f0fdf4; border-color:#bbf7d0;" title="打开营销网盘资料">📂 资料</a>`
+      : '';
+
+    // 规模与去化数据计算 (增加楼栋数展示)
+    const towerCount = proj.tower_count || proj.building_count || (proj.total_units > 100 ? '多座' : '1座');
+    const towerStr = typeof towerCount === 'number' ? `${towerCount}座` : `${towerCount}`;
+    const unitsStr = proj.total_units ? `${proj.total_units}伙` : '-伙';
+    const saleCountStr = (proj.sale_units !== undefined && proj.sale_units !== null) ? proj.sale_units : '-';
+    const soldCountStr = (proj.sold_units !== undefined && proj.sold_units !== null) ? proj.sold_units : '-';
+
+    // 价格与起步价
+    let priceDisplayHtml = '';
+    if (proj.min_price_wan && proj.min_price_wan > 0) {
+      priceDisplayHtml = `<span class="card-v2-price">约$${Number(proj.min_price_wan).toLocaleString()}万<span class="price-unit">起*</span></span>`;
+    } else if (proj.sell_status === 'coming_soon') {
+      priceDisplayHtml = `<span class="card-v2-price tender">即将发售</span>`;
+    } else {
+      priceDisplayHtml = `<span class="card-v2-price tender">招标项目</span>`;
+    }
+
+    // 状态标签
+    let statusClass = 'sale';
+    let statusText = proj.sell_status_cn || '出售中';
+    if (proj.sell_status === 'coming_soon') {
+      statusClass = 'coming';
+    } else if (proj.sold_units && proj.total_units && proj.sold_units / proj.total_units >= 0.85) {
+      statusClass = 'soldout';
+      statusText = '即将售罄';
+    }
+
+    // 封面简称
+    let shortName = proj.name.replace(/第[0-9A-Za-z]+期/g, '').replace(/[A-Za-z0-9\s·\.]+/g, '').slice(0, 4);
+    if (!shortName) shortName = proj.name.slice(0, 4);
 
     const card = document.createElement('div');
-    card.className = `card-float ${isSelected ? 'selected' : ''}`;
+    card.className = `card-v2 ${isSelected ? 'selected' : ''}`;
     card.innerHTML = `
-      <div class="card-float-top">
-        <div>
-          <span class="card-float-title">${proj.name}</span>
-          <span style="font-size:0.72rem; color:#64748b; margin-left:6px;">📍 ${proj.main_area || proj.region} · ${proj.micro_district || proj.district}</span>
+      <div class="card-v2-main">
+        <div class="card-v2-cover">
+          <span class="cover-text">${shortName}</span>
+          <span class="cover-sub">${proj.district || proj.region}</span>
         </div>
-        <input type="checkbox" class="card-checkbox" ${isSelected ? 'checked' : ''} onclick="toggleSelect(event, '${proj.name}')">
+        <div class="card-v2-body">
+          <div class="card-v2-row1">
+            <span class="card-v2-title" title="${proj.name}">${proj.name}</span>
+            <input type="checkbox" class="card-checkbox" ${isSelected ? 'checked' : ''} onclick="toggleSelect(event, '${proj.name}')" title="加入客户推荐方案">
+          </div>
+          <div class="card-v2-row2">
+            <span>${proj.district || proj.region}</span>
+            <span class="card-v2-sep">｜</span>
+            <span class="card-v2-dev" title="${proj.developer || '香港品牌发展商'}">${proj.developer || '香港品牌发展商'}</span>
+          </div>
+          <div class="card-v2-row3">
+            <span><strong>${towerStr}</strong> · <strong>${unitsStr}</strong></span>
+            <span class="card-v2-sep">｜</span>
+            <span>出售中 <strong>${saleCountStr}</strong></span>
+            <span class="card-v2-sep">｜</span>
+            <span>已售 <strong>${soldCountStr}</strong></span>
+          </div>
+          <div class="card-v2-row4">
+            <span class="card-v2-status ${statusClass}">${statusText}</span>
+            ${priceDisplayHtml}
+          </div>
+        </div>
       </div>
-      <div style="margin-top:6px; background:rgba(241,245,249,0.7); padding:6px 8px; border-radius:6px; font-size:0.76rem;">
-        <div style="display:flex; justify-content:space-between; align-items:center; color:#0f172a;">
-          <span>📘 基础表参考价:</span>
-          <span style="font-weight:700; color:#2563eb;">${proj.basic_price_desc || "售價待定"}</span>
-        </div>
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:3px; color:#0f172a;">
-          <span>🟢 在售实时最低:</span>
-          <span style="font-weight:700; color:#16a34a;">${proj.excel_min_price_desc || (proj.sell_status === "on_sale" ? "在售暂无单独标价" : "未开售")}</span>
-        </div>
-      </div>
-      ${mtrHtml}
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px; flex-wrap:wrap; gap:4px;">
-        <div style="display:flex; gap:4px; align-items:center;">
-          <span class="${proj.sell_status === 'on_sale' ? 'status-tag-sale' : 'status-tag-priced'}">${proj.sell_status_cn}</span>
-          ${proj.primary_school_net ? `<span style="background:#fef3c7; color:#92400e; font-size:0.68rem; font-weight:700; padding:1px 6px; border-radius:4px; border:1px solid #fde68a;">🏫 ${proj.primary_school_net}</span>` : ''}
-        </div>
-        ${distKmStr ? `<span class="card-dist-badge">📍 距${activeAnchorLandmark.name.split(' ')[0]} ${distKmStr}</span>` : ''}
-      </div>
-      <div style="margin-top:8px; display:flex; gap:6px; align-items:center;">
-        <a href="${salesUrl}" target="_blank" onclick="event.stopPropagation()" style="flex:1; text-align:center; background:#eff6ff; color:#2563eb; font-size:0.72rem; font-weight:700; padding:5px 8px; border-radius:6px; text-decoration:none; border:1px solid #bfdbfe; transition:all 0.2s; white-space:nowrap;">
-          🏢 正式版销控 &rarr;
+      <div class="card-v2-actions">
+        <a href="${salesUrl}" target="_blank" onclick="event.stopPropagation()" class="v2-action-link" title="查看销控网格图">
+          🏢 销控网格
         </a>
+        ${mtrHtml}
         ${drawerMarketingBtn}
       </div>
     `;
 
     card.addEventListener('click', (e) => {
       if (e.target.classList.contains('card-checkbox') || e.target.tagName === 'A' || e.target.closest('a')) return;
+      // 点击卡片直接滑翔定位，并确保若抽屉遮挡时聚焦
       map.flyTo([proj.lat, proj.lng], 16, { duration: 0.8 });
       setTimeout(() => {
         if (markersByName[proj.name]) {
@@ -2911,84 +3375,87 @@ function applyFilters() {
 
     list.appendChild(card);
 
-    const mColor = proj.sell_status === 'on_sale' ? '#16a34a' : '#2563eb';
-    const mIcon = L.divIcon({
-      className: 'p-marker',
-      html: `<div class="proj-pin-box" style="background:${mColor}; color:#fff;" title="${proj.name}">${proj.name}</div>`,
-      iconSize: null
-    });
-    const marker = L.marker([proj.lat, proj.lng], { icon: mIcon });
-    marker._pName = proj.name;
+    // 如果非远视角，或者处于单盘视角，则向地图添加单盘标记
+    if (!isFarView) {
+      const mColor = proj.sell_status === 'on_sale' ? '#16a34a' : '#2563eb';
+      const mIcon = L.divIcon({
+        className: 'p-marker',
+        html: `<div class="proj-pin-box" style="background:${mColor}; color:#fff;" title="${proj.name}">${proj.name}</div>`,
+        iconSize: null
+      });
+      const marker = L.marker([proj.lat, proj.lng], { icon: mIcon });
+      marker._pName = proj.name;
 
-    let popupMtrRow = '';
-    if (mtr) {
-      popupMtrRow = `
-        <div class="popup-mtr-box">
-          <div>🚇 <strong>最近港铁：</strong><span id="pop-st-${proj.name}">${mtr.nearest_mtr_cn}</span>站 (${mtr.nearest_mtr_lines})</div>
-          <div style="margin-top:2px;">⏱️ 步行通勤：约 <strong><span id="pop-time-${proj.name}">${mtr.walk_time_min}</span> 分钟</strong> (实际步行 <strong><span id="pop-dist-${proj.name}">${mtr.dist_walk_m}</span> 米</strong>)</div>
-          <button class="btn-link-mtr" onclick="drawMtrRouteLine(${proj.lat}, ${proj.lng}, ${mtr.nearest_mtr_lat}, ${mtr.nearest_mtr_lng}, '${proj.name}', '${mtr.nearest_mtr_cn}')">
-            🚶 显示真实步行导航轨迹
-          </button>
+      let popupMtrRow = '';
+      if (mtr) {
+        popupMtrRow = `
+          <div class="popup-mtr-box">
+            <div>🚇 <strong>最近港铁：</strong><span id="pop-st-${proj.name}">${mtr.nearest_mtr_cn}</span>站 (${mtr.nearest_mtr_lines})</div>
+            <div style="margin-top:2px;">⏱️ 步行通勤：约 <strong><span id="pop-time-${proj.name}">${mtr.walk_time_min}</span> 分钟</strong> (实际步行 <strong><span id="pop-dist-${proj.name}">${mtr.dist_walk_m}</span> 米</strong>)</div>
+            <button class="btn-link-mtr" onclick="drawMtrRouteLine(${proj.lat}, ${proj.lng}, ${mtr.nearest_mtr_lat}, ${mtr.nearest_mtr_lng}, '${proj.name}', '${mtr.nearest_mtr_cn}')">
+              🚶 显示真实步行导航轨迹
+            </button>
+          </div>
+        `;
+      }
+
+      let salesProgressHtml = '';
+      if (proj.sales_stats) {
+        const st = proj.sales_stats;
+        const rate = st.sold_rate || 0;
+        salesProgressHtml = `
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:6px 10px; margin:6px 0;">
+            <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:3px;">
+              <span><strong>📊 去化率: ${rate}%</strong> (已售 ${st.sold} / 总数 ${st.total} 伙)</span>
+              <span style="color:#16a34a; font-weight:700;">在售 ${st.sale} 伙</span>
+            </div>
+            <div style="height:5px; background:#e2e8f0; border-radius:3px; overflow:hidden;">
+              <div style="height:100%; width:${Math.min(rate, 100)}%; background:linear-gradient(90deg, #2563eb, #16a34a); border-radius:3px;"></div>
+            </div>
+          </div>
+        `;
+      }
+
+      const hasIntro = !!(proj.intro_url && String(proj.intro_url).trim().startsWith('http'));
+      const popupIntroBtn = hasIntro
+        ? `<a href="${proj.intro_url.trim()}" target="_blank" rel="noopener noreferrer" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#eff6ff; color:#2563eb; font-size:11px; font-weight:700; padding:6px 8px; border-radius:6px; text-decoration:none; border:1px solid #bfdbfe; white-space:nowrap; transition:all 0.2s;">📖 楼盘介绍</a>`
+        : `<button disabled title="暂无楼盘介绍" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#f1f5f9; color:#94a3b8; font-size:11px; font-weight:600; padding:6px 8px; border-radius:6px; border:1px solid #e2e8f0; cursor:not-allowed; opacity:0.65; white-space:nowrap;">📖 楼盘介绍</button>`;
+
+      const popupMarketingBtn = hasMarketing
+        ? `<a href="${marketingUrl}" target="_blank" rel="noopener noreferrer" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#ecfdf5; color:#047857; font-size:11px; font-weight:700; padding:6px 8px; border-radius:6px; text-decoration:none; border:1px solid #a7f3d0; white-space:nowrap; transition:all 0.2s;">📂 资料网盘</a>`
+        : `<button disabled title="暂无营销资料" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#f1f5f9; color:#94a3b8; font-size:11px; font-weight:600; padding:6px 8px; border-radius:6px; border:1px solid #e2e8f0; cursor:not-allowed; opacity:0.65; white-space:nowrap;">📂 资料网盘</button>`;
+
+      const popupHTML = `
+        <div class="custom-popup">
+          <div class="popup-title">${proj.name}</div>
+          <div class="popup-row">📍 区域地址：<strong>${proj.main_area || proj.region} - ${proj.micro_district || proj.district} ${proj.address ? '(' + proj.address + ')' : ''}</strong></div>
+          ${proj.school_net ? `<div class="popup-row">🏫 所属校网：<strong style="color:#d97706;">${proj.school_net}</strong></div>` : ''}
+          ${proj.developer ? `<div class="popup-row">🏗️ 开发商：<strong>${proj.developer}</strong></div>` : ''}
+          <div class="popup-row">💷 价格描述：<strong style="color:#2563eb;">${(proj.total_price_desc && (proj.total_price_desc.includes('待定') || proj.total_price_desc.includes('详见价单'))) ? '待定' : (proj.total_price_desc || (proj.min_price_wan ? proj.min_price_wan + '万起' : '待定'))}</strong></div>
+          ${distKmStr ? `<div class="popup-row">📏 锚点距离：<strong style="color:#dc2626;">距 ${activeAnchorLandmark.name.split(' ')[0]} ${distKmStr}</strong></div>` : ''}
+          ${salesProgressHtml}
+          ${popupMtrRow}
+          <div style="margin-top:10px; padding-top:8px; border-top:1px solid #e2e8f0; display:flex; flex-direction:column; gap:6px;">
+            <a href="${salesUrl}" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:6px; background:#1e3a8a; color:#ffffff; font-size:12px; font-weight:700; padding:7px 12px; border-radius:8px; text-decoration:none; box-shadow:0 2px 6px rgba(30,58,138,0.25); white-space:nowrap;">
+              🏢 打开正式版【销控网格】&rarr;
+            </a>
+            <div style="display:flex; gap:6px;">
+              ${popupIntroBtn}
+              ${popupMarketingBtn}
+            </div>
+          </div>
+          ${isAdminMode ? `
+            <div class="popup-edit-toolbar" style="margin-top:6px;">
+              <button class="btn-tool-ors" onclick="openCoordModal('${proj.name}')">✏️ 手动修改坐标/门牌 (管理权限)</button>
+            </div>
+          ` : ''}
+          <div class="popup-row" style="margin-top:8px; font-size:11px; color:#64748b;">${proj.reason || '优质推荐一手新盘'}</div>
         </div>
       `;
+      marker.bindPopup(popupHTML);
+      projectMarkersLayer.addLayer(marker);
+      markersByName[proj.name] = marker;
     }
-
-    let salesProgressHtml = '';
-    if (proj.sales_stats) {
-      const st = proj.sales_stats;
-      const rate = st.sold_rate || 0;
-      salesProgressHtml = `
-        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:6px 10px; margin:6px 0;">
-          <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:3px;">
-            <span><strong>📊 去化率: ${rate}%</strong> (已售 ${st.sold} / 总数 ${st.total} 伙)</span>
-            <span style="color:#16a34a; font-weight:700;">在售 ${st.sale} 伙</span>
-          </div>
-          <div style="height:5px; background:#e2e8f0; border-radius:3px; overflow:hidden;">
-            <div style="height:100%; width:${Math.min(rate, 100)}%; background:linear-gradient(90deg, #2563eb, #16a34a); border-radius:3px;"></div>
-          </div>
-        </div>
-      `;
-    }
-
-    const popupIntroBtn = hasIntro
-      ? `<a href="${proj.intro_url.trim()}" target="_blank" rel="noopener noreferrer" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#eff6ff; color:#2563eb; font-size:11px; font-weight:700; padding:6px 8px; border-radius:6px; text-decoration:none; border:1px solid #bfdbfe; white-space:nowrap; transition:all 0.2s;">📖 楼盘介绍</a>`
-      : `<button disabled title="暂无楼盘介绍" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#f1f5f9; color:#94a3b8; font-size:11px; font-weight:600; padding:6px 8px; border-radius:6px; border:1px solid #e2e8f0; cursor:not-allowed; opacity:0.65; white-space:nowrap;">📖 楼盘介绍</button>`;
-
-    const popupMarketingBtn = hasMarketing
-      ? `<a href="${marketingUrl}" target="_blank" rel="noopener noreferrer" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#ecfdf5; color:#047857; font-size:11px; font-weight:700; padding:6px 8px; border-radius:6px; text-decoration:none; border:1px solid #a7f3d0; white-space:nowrap; transition:all 0.2s;">📂 资料网盘</a>`
-      : `<button disabled title="暂无营销资料" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#f1f5f9; color:#94a3b8; font-size:11px; font-weight:600; padding:6px 8px; border-radius:6px; border:1px solid #e2e8f0; cursor:not-allowed; opacity:0.65; white-space:nowrap;">📂 资料网盘</button>`;
-
-    const popupHTML = `
-      <div class="custom-popup">
-        <div class="popup-title">${proj.name}</div>
-        <div class="popup-row">📍 区域地址：<strong>${proj.main_area || proj.region} - ${proj.micro_district || proj.district} ${proj.address ? '(' + proj.address + ')' : ''}</strong></div>
-        ${proj.school_net ? `<div class="popup-row">🏫 所属校网：<strong style="color:#d97706;">${proj.school_net}</strong></div>` : ''}
-        ${proj.developer ? `<div class="popup-row">🏗️ 开发商：<strong>${proj.developer}</strong></div>` : ''}
-        <div class="popup-row">💷 价格描述：<strong style="color:#2563eb;">${(proj.total_price_desc && (proj.total_price_desc.includes('待定') || proj.total_price_desc.includes('详见价单'))) ? '待定' : (proj.total_price_desc || (proj.min_price_wan ? proj.min_price_wan + '万起' : '待定'))}</strong></div>
-        ${distKmStr ? `<div class="popup-row">📏 锚点距离：<strong style="color:#dc2626;">距 ${activeAnchorLandmark.name.split(' ')[0]} ${distKmStr}</strong></div>` : ''}
-        ${salesProgressHtml}
-        ${popupMtrRow}
-        <div style="margin-top:10px; padding-top:8px; border-top:1px solid #e2e8f0; display:flex; flex-direction:column; gap:6px;">
-          <a href="${salesUrl}" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:6px; background:#1e3a8a; color:#ffffff; font-size:12px; font-weight:700; padding:7px 12px; border-radius:8px; text-decoration:none; box-shadow:0 2px 6px rgba(30,58,138,0.25); white-space:nowrap;">
-            🏢 打开正式版【销控网格】&rarr;
-          </a>
-          <div style="display:flex; gap:6px;">
-            ${popupIntroBtn}
-            ${popupMarketingBtn}
-          </div>
-        </div>
-        ${isAdminMode ? `
-          <div class="popup-edit-toolbar" style="margin-top:6px;">
-            <button class="btn-tool-ors" onclick="openCoordModal('${proj.name}')">✏️ 手动修改坐标/门牌 (管理权限)</button>
-          </div>
-        ` : ''}
-        <div class="popup-row" style="margin-top:8px; font-size:11px; color:#64748b;">${proj.reason || '优质推荐一手新盘'}</div>
-      </div>
-    `;
-    marker.bindPopup(popupHTML);
-    projectMarkersLayer.addLayer(marker);
-    markersByName[proj.name] = marker;
-
   });
 }
 
@@ -3145,6 +3612,14 @@ function resetConflictingFilters(p) {
   if (activeAnchorLandmark) {
     const d = getDistanceKm(activeAnchorLandmark.lat, activeAnchorLandmark.lng, p.lat, p.lng);
     if (d > 1.5) anchorConflict = true;
+  }
+
+  if (activeDistrictCluster) {
+    const pDist = p.district || p.micro_district || p.region;
+    if (pDist !== activeDistrictCluster) {
+      activeDistrictCluster = null;
+      changed = true;
+    }
   }
 
   if (anchorConflict) {
