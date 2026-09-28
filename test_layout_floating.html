@@ -682,41 +682,78 @@
     box-shadow: 0 4px 14px rgba(0,0,0,0.35);
   }
 
-  /* MTR Station Marker Pin Styling */
+  /* 🚇 MTR Station Marker Pin Styling (Zoom >= 15 完整展开形态) */
   .mtr-pin {
     background: #ffffff;
-    border: 2px solid #007dc5;
+    border: 1.5px solid #C8102E;
     border-radius: 14px;
-    padding: 2px 7px;
+    padding: 2px 7px 2px 4px;
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.22);
     white-space: nowrap;
     cursor: pointer;
     position: absolute;
     left: 0;
     top: 0;
     transform: translate(-50%, -50%);
-    transition: transform 0.2s;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s;
   }
   .mtr-pin:hover {
     transform: translate(-50%, -50%) scale(1.08);
     z-index: 9999 !important;
+    box-shadow: 0 5px 14px rgba(200, 16, 46, 0.35);
   }
   .mtr-pin-logo {
-    background: #007dc5;
+    background: #C8102E;
     color: #ffffff;
-    font-size: 8px;
-    font-weight: 900;
-    padding: 1px 3px;
-    border-radius: 3px;
-    letter-spacing: 0.5px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .mtr-pin-logo svg {
+    width: 13px;
+    height: 11px;
+    display: block;
   }
   .mtr-pin-text {
     font-size: 10.5px;
     font-weight: 700;
     color: #0f172a;
+  }
+
+  /* 🚇 极简港铁微标（Zoom < 15 模式：经典红底 MTR 官方双弧白标） */
+  .mtr-dot-pin {
+    width: 22px;
+    height: 22px;
+    background: #C8102E;
+    border: 1.5px solid #ffffff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(200, 16, 46, 0.45);
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+  }
+  .mtr-dot-pin:hover {
+    transform: translate(-50%, -50%) scale(1.25);
+    z-index: 9999 !important;
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.6);
+  }
+  .mtr-dot-svg {
+    width: 15px;
+    height: 12px;
+    display: block;
   }
 
   /* MTR Station Popup */
@@ -793,28 +830,36 @@
     color: #4c1d95;
   }
 
-  /* 🏫 Mini-Pin 轻量学校微标样式（用于远景及中景防重叠） */
-  .school-pin.mini-pin {
-    padding: 2px 5px;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(124, 58, 237, 0.2);
+  /* 🎓 极简名校微标（Zoom < 15 模式：精致紫色学士帽） */
+  .school-dot-pin {
+    width: 22px;
+    height: 22px;
+    background: #7c3aed;
+    border: 1.5px solid #ffffff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(124, 58, 237, 0.45);
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
   }
-  .school-pin.mini-pin .school-pin-text {
-    display: none;
-  }
-  .school-pin.mini-pin:hover {
-    padding: 2px 7px;
-  }
-  .school-pin.mini-pin:hover .school-pin-text {
-    display: inline;
+  .school-dot-pin:hover {
+    transform: translate(-50%, -50%) scale(1.25);
+    z-index: 9999 !important;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.65);
   }
 
   /* Shopping Mall Marker Pin Styling */
   .mall-pin {
     background: #ffffff;
-    border: 2px solid #ea580c;
+    border: 1.5px solid #ea580c;
     border-radius: 14px;
-    padding: 2px 7px;
+    padding: 2px 7px 2px 5px;
     display: inline-flex;
     align-items: center;
     gap: 4px;
@@ -830,7 +875,7 @@
   .mall-pin:hover {
     transform: translate(-50%, -50%) scale(1.08);
     z-index: 9999 !important;
-    box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
+    box-shadow: 0 5px 14px rgba(234, 88, 12, 0.35);
   }
   .mall-pin-logo {
     background: #ea580c;
@@ -847,20 +892,44 @@
     color: #7c2d12;
   }
 
-  /* 🛍️ Mini-Pin 轻量微标样式（用于远景及中景防重叠） */
-  .mall-pin.mini-pin {
-    padding: 2px 5px;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(234, 88, 12, 0.2);
+  /* 🛍️ 极简商场地标微标（Zoom < 15 模式：精致橙色购物袋） */
+  .mall-dot-pin {
+    width: 22px;
+    height: 22px;
+    background: #ea580c;
+    border: 1.5px solid #ffffff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(234, 88, 12, 0.45);
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
   }
-  .mall-pin.mini-pin .mall-pin-text {
-    display: none;
+  .mall-dot-pin:hover {
+    transform: translate(-50%, -50%) scale(1.25);
+    z-index: 9999 !important;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.65);
   }
-  .mall-pin.mini-pin:hover {
-    padding: 2px 7px;
+
+  /* 🎈 高质感悬浮 Tooltip 样式 */
+  .leaflet-tooltip.custom-poi-tooltip {
+    background: rgba(15, 23, 42, 0.92);
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 9px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(4px);
   }
-  .mall-pin.mini-pin:hover .mall-pin-text {
-    display: inline;
+  .leaflet-tooltip.custom-poi-tooltip::before {
+    border-top-color: rgba(15, 23, 42, 0.92) !important;
   }
 
   /* School & Mall Popups */
@@ -1511,7 +1580,9 @@ let isFamousSchoolsLayerVisible = true;
 let isShoppingMallsLayerVisible = true;
 let isAdminMode = false;
 
-let projectMarkersLayer, mtrStationsLayer, famousSchoolsLayer, shoppingMallsLayer;
+let projectMarkersLayer, mtrStationsLayer, mtrLinesLayer, famousSchoolsLayer, shoppingMallsLayer;
+let mtrLinesData = null;
+const POI_EXPAND_ZOOM = 15;
 let markersByName = {};
 
 let filterState = {
@@ -1602,13 +1673,18 @@ function initMap() {
     maxZoom: 19, attribution: '&copy; OpenStreetMap &copy; CARTO'
   }).addTo(map);
 
+  // 🚇 港铁线路轨迹层（置于楼盘项目之下，作为高质感交通骨架底图）
+  mtrLinesLayer = L.layerGroup().addTo(map);
   projectMarkersLayer = L.layerGroup().addTo(map);
   mtrStationsLayer = L.layerGroup().addTo(map);
   famousSchoolsLayer = L.layerGroup().addTo(map);
   shoppingMallsLayer = L.layerGroup().addTo(map);
 
-  // 🛍️/🏫 监听地图缩放级别变化，自适应动态调整商场与名校展示密度与形态 (防密集扎堆)
+  // 🛍️/🏫/🚇 监听地图缩放级别变化，自适应动态调整港铁、商场与名校展示密度与形态 (防密集扎堆)
   map.on('zoomend', () => {
+    if (isMtrLayerVisible) {
+      renderMtrMarkers();
+    }
     if (isShoppingMallsLayerVisible) {
       renderShoppingMallsMarkers();
     }
@@ -1618,7 +1694,7 @@ function initMap() {
   });
 }
 
-const MAP_DATA_VERSION = '20260923_walk_fix';
+const MAP_DATA_VERSION = '20260928_mtr_lines_v1';
 
 async function loadData() {
   console.time('⚡ 地图数据并发加载耗时');
@@ -1643,10 +1719,11 @@ async function loadData() {
   };
 
   try {
-    const [resGeo, resLandmarks, resMtr, resCoords, prodData] = await Promise.all([
+    const [resGeo, resLandmarks, resMtr, resMtrLines, resCoords, prodData] = await Promise.all([
       fetch('hong_kong_micro_districts.geojson?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => { console.error('GeoJSON加载异常:', e); return null; }),
       fetch('hk_landmarks.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null),
       fetch('hk_mtr_stations.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null),
+      fetch('hk_mtr_lines.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null),
       fetch('hk_project_coords.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null),
       fetchProdSales()
     ]);
@@ -1662,6 +1739,10 @@ async function loadData() {
       mtrStationsData = resMtr;
     } else if (landmarksData) {
       mtrStationsData = landmarksData.filter(x => x.category === 'mtr');
+    }
+    if (resMtrLines) {
+      mtrLinesData = resMtrLines;
+      renderMtrLines();
     }
     if (resCoords) {
       // 按照用户指示排除特定项目 (如 33清水湾第1期)
@@ -1805,28 +1886,117 @@ function getDisplayPinName(fullName) {
   return clean || fullName;
 }
 
+function renderMtrLines() {
+  mtrLinesLayer.clearLayers();
+  if (!mtrLinesData || !mtrLinesData.length || !map) return;
+
+  mtrLinesData.forEach(line => {
+    const color = line.color || '#007dc5';
+
+    // 1. 底衬光晕线（白色微透明，让深色轨道线在浅色底图上更加立体鲜明）
+    const casing = L.polyline(line.coords, {
+      color: '#ffffff',
+      weight: 5.5,
+      opacity: 0.65,
+      lineCap: 'round',
+      lineJoin: 'round',
+      smoothFactor: 1.0,
+      interactive: false
+    });
+    mtrLinesLayer.addLayer(casing);
+
+    // 2. 主轨道线
+    const poly = L.polyline(line.coords, {
+      color: color,
+      weight: 3.5,
+      opacity: 0.88,
+      lineCap: 'round',
+      lineJoin: 'round',
+      smoothFactor: 1.0
+    });
+    poly.bindTooltip(`🚇 港鐵 ${line.name} (${line.name_en})`, { sticky: true, opacity: 0.9, className: 'custom-poi-tooltip' });
+    mtrLinesLayer.addLayer(poly);
+
+    // 3. 支线
+    if (line.branches && line.branches.length) {
+      line.branches.forEach(br => {
+        const brCasing = L.polyline(br.coords, {
+          color: '#ffffff',
+          weight: 5,
+          opacity: 0.6,
+          lineCap: 'round',
+          lineJoin: 'round',
+          interactive: false
+        });
+        mtrLinesLayer.addLayer(brCasing);
+
+        const brPoly = L.polyline(br.coords, {
+          color: color,
+          weight: 3,
+          opacity: 0.85,
+          lineCap: 'round',
+          lineJoin: 'round',
+          dashArray: '5, 5'
+        });
+        brPoly.bindTooltip(`🚇 港鐵 ${line.name} · ${br.name}`, { sticky: true, opacity: 0.9, className: 'custom-poi-tooltip' });
+        mtrLinesLayer.addLayer(brPoly);
+      });
+    }
+  });
+}
+
 function renderMtrMarkers() {
   mtrStationsLayer.clearLayers();
-  if (!mtrStationsData || !mtrStationsData.length) return;
+  if (!mtrStationsData || !mtrStationsData.length || !map) return;
+
+  const currentZoom = map.getZoom();
+  const isMini = currentZoom < POI_EXPAND_ZOOM;
 
   mtrStationsData.forEach(st => {
     const mainLine = (st.lines || st.line || '').split('/')[0];
     const color = LINE_COLORS[mainLine] || st.color || '#007dc5';
     const cName = st.station_name_cn || st.name.split(' ')[0].replace('站', '').trim();
 
-    const mtrIcon = L.divIcon({
-      className: 'custom-mtr-icon',
-      html: `
-        <div class="mtr-pin" style="border-color: ${color};" title="${st.name}">
-          <span class="mtr-pin-logo" style="background: ${color};">MTR</span>
+    let iconHtml;
+    if (isMini) {
+      iconHtml = `
+        <div class="mtr-dot-pin" title="${st.name}">
+          <svg viewBox="0 0 65 52" class="mtr-dot-svg">
+            <ellipse cx="33" cy="26" rx="32" ry="26" fill="#C8102E" />
+            <path d="M 33,8 V 44 M 21,9 A 12,12 0 0 0 45,9 M 21,43 A 12,12 0 0 1 45,43" stroke="white" stroke-width="6" stroke-linecap="round" fill="none" />
+          </svg>
+        </div>
+      `;
+    } else {
+      iconHtml = `
+        <div class="mtr-pin" title="${st.name}">
+          <span class="mtr-pin-logo">
+            <svg viewBox="0 0 65 52">
+              <ellipse cx="33" cy="26" rx="32" ry="26" fill="#C8102E" />
+              <path d="M 33,8 V 44 M 21,9 A 12,12 0 0 0 45,9 M 21,43 A 12,12 0 0 1 45,43" stroke="white" stroke-width="6" stroke-linecap="round" fill="none" />
+            </svg>
+          </span>
           <span class="mtr-pin-text">${cName}</span>
         </div>
-      `,
+      `;
+    }
+
+    const mtrIcon = L.divIcon({
+      className: 'custom-mtr-icon',
+      html: iconHtml,
       iconSize: [0, 0],
       iconAnchor: [0, 0]
     });
 
     const marker = L.marker([st.lat, st.lng], { icon: mtrIcon });
+
+    if (isMini) {
+      marker.bindTooltip(`🚇 ${cName}站 (${st.lines || '港鐵'})`, {
+        direction: 'top',
+        offset: [0, -14],
+        className: 'custom-poi-tooltip'
+      });
+    }
 
     const nearbyCount = projectsData ? projectsData.filter(p => {
       return getDistanceKm(st.lat, st.lng, p.lat, p.lng) <= 1.5;
@@ -1853,10 +2023,12 @@ function toggleMtrLayer() {
   const btn = document.getElementById('btn-toggle-mtr');
   if (isMtrLayerVisible) {
     map.removeLayer(mtrStationsLayer);
+    if (mtrLinesLayer) map.removeLayer(mtrLinesLayer);
     isMtrLayerVisible = false;
     btn.classList.remove('active');
   } else {
     map.addLayer(mtrStationsLayer);
+    if (mtrLinesLayer) map.addLayer(mtrLinesLayer);
     isMtrLayerVisible = true;
     btn.classList.add('active');
   }
@@ -1874,6 +2046,7 @@ function renderFamousSchoolsMarkers() {
   if (!landmarksData || !landmarksData.length || !map) return;
 
   const currentZoom = map.getZoom();
+  const isMini = currentZoom < POI_EXPAND_ZOOM;
   const schools = landmarksData.filter(x => x.category === 'famous_school' || x.category === 'university');
 
   schools.forEach(sch => {
@@ -1888,7 +2061,6 @@ function renderFamousSchoolsMarkers() {
     const isUniv = sch.category === 'university';
     const tag = isUniv ? '大学' : (isInter ? '国际' : (sch.sub_type === 'primary' ? '小学' : '名校'));
     const color = isUniv ? '#1d4ed8' : (isInter ? '#6d28d9' : '#7c3aed');
-    const isMini = currentZoom <= 13;
 
     let badgeText = '', badgeBg = '#f5f3ff', badgeColor = '#6d28d9', badgeBorder = '#ddd6fe';
     if (isUniv) {
@@ -1910,19 +2082,38 @@ function renderFamousSchoolsMarkers() {
       badgeBg = '#fffbeb'; badgeColor = '#b45309'; badgeBorder = '#fde68a';
     }
 
-    const icon = L.divIcon({
-      className: 'custom-school-icon',
-      html: `
-        <div class="school-pin ${isMini ? 'mini-pin' : ''}" style="border-color: ${color};" title="${sch.name}">
+    let iconHtml;
+    if (isMini) {
+      iconHtml = `
+        <div class="school-dot-pin" style="background: ${color};" title="${sch.name}">
+          <span style="font-size:12px; line-height:1;">🎓</span>
+        </div>
+      `;
+    } else {
+      iconHtml = `
+        <div class="school-pin" style="border-color: ${color};" title="${sch.name}">
           <span class="school-pin-logo" style="background: ${color};">${tag}</span>
           <span class="school-pin-text">${cName}</span>
         </div>
-      `,
+      `;
+    }
+
+    const icon = L.divIcon({
+      className: 'custom-school-icon',
+      html: iconHtml,
       iconSize: [0, 0],
       iconAnchor: [0, 0]
     });
 
     const marker = L.marker([sch.lat, sch.lng], { icon });
+
+    if (isMini) {
+      marker.bindTooltip(`🎓 ${sch.name}`, {
+        direction: 'top',
+        offset: [0, -14],
+        className: 'custom-poi-tooltip'
+      });
+    }
 
     const nearbyCount = projectsData ? projectsData.filter(p => {
       return getDistanceKm(sch.lat, sch.lng, p.lat, p.lng) <= 1.5;
@@ -1981,6 +2172,7 @@ function renderShoppingMallsMarkers() {
   if (!landmarksData || !landmarksData.length || !map) return;
 
   const currentZoom = map.getZoom();
+  const isMini = currentZoom < POI_EXPAND_ZOOM;
   const malls = landmarksData.filter(x => x.category === 'shopping_mall');
 
   malls.forEach(mall => {
@@ -1992,21 +2184,39 @@ function renderShoppingMallsMarkers() {
 
     const cName = getDisplayPinName(mall.name);
     const color = '#ea580c';
-    const isMini = currentZoom <= 13;
 
-    const icon = L.divIcon({
-      className: 'custom-mall-icon',
-      html: `
-        <div class="mall-pin ${isMini ? 'mini-pin' : ''}" style="border-color: ${color};" title="${mall.name}">
+    let iconHtml;
+    if (isMini) {
+      iconHtml = `
+        <div class="mall-dot-pin" style="background: ${color};" title="${mall.name}">
+          <span style="font-size:11px; line-height:1;">🛍️</span>
+        </div>
+      `;
+    } else {
+      iconHtml = `
+        <div class="mall-pin" style="border-color: ${color};" title="${mall.name}">
           <span class="mall-pin-logo" style="background: ${color};">商场</span>
           <span class="mall-pin-text">${cName}</span>
         </div>
-      `,
+      `;
+    }
+
+    const icon = L.divIcon({
+      className: 'custom-mall-icon',
+      html: iconHtml,
       iconSize: [0, 0],
       iconAnchor: [0, 0]
     });
 
     const marker = L.marker([mall.lat, mall.lng], { icon });
+
+    if (isMini) {
+      marker.bindTooltip(`🛍️ ${mall.name}`, {
+        direction: 'top',
+        offset: [0, -14],
+        className: 'custom-poi-tooltip'
+      });
+    }
 
     const nearbyCount = projectsData ? projectsData.filter(p => {
       return getDistanceKm(mall.lat, mall.lng, p.lat, p.lng) <= 1.5;
