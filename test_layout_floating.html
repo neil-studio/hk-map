@@ -1793,21 +1793,41 @@ async function loadData() {
   applyFilters();
 }
 
+function getMicroDistrictStyle(feature) {
+  const isSelected = activeAnchorDistrict && feature.properties && feature.properties.micro_district === activeAnchorDistrict;
+  if (isSelected) {
+    return {
+      color: '#2563eb',       // 选中商圈高亮深蓝
+      weight: 2.5,
+      opacity: 0.95,
+      dashArray: null,        // 实线加粗
+      fillColor: '#3b82f6',
+      fillOpacity: 0.16       // 专属柔和蓝底
+    };
+  }
+  return {
+    color: '#64748b',         // 冷石板灰（Slate Gray）方案 A
+    weight: 1.2,
+    opacity: activeAnchorDistrict ? 0.25 : 0.55, // 若有选中商圈，其余进一步淡化衬托
+    dashArray: '5, 5',        // 经典行政/商圈规划虚线
+    fillColor: (feature.properties && feature.properties.color) || '#3b82f6',
+    fillOpacity: activeAnchorDistrict ? 0.02 : 0.04
+  };
+}
+
+function updateMicroDistrictsStyle() {
+  if (microDistrictsLayer && microDistrictsLayer.setStyle) {
+    microDistrictsLayer.setStyle(getMicroDistrictStyle);
+  }
+}
+
 function renderMicroDistrictsLayer() {
   if (!microDistrictsGeoJSON || !map) return;
   if (microDistrictsLayer) map.removeLayer(microDistrictsLayer);
 
   microDistrictsLayer = L.geoJSON(microDistrictsGeoJSON, {
     interactive: false, // 关键：鼠标交互直接穿透至底层楼盘 Marker
-    style: function(feature) {
-      return {
-        color: '#e11d48',       // 规划红线
-        weight: 1.2,
-        opacity: 0.75,
-        fillColor: (feature.properties && feature.properties.color) || '#3b82f6',
-        fillOpacity: 0.08       // 低透明度半透明底色
-      };
-    },
+    style: getMicroDistrictStyle,
     onEachFeature: function(feature, layer) {
       const name = feature.properties && feature.properties.micro_district;
       if (name) {
@@ -2662,6 +2682,7 @@ function onAnchorSelect(type) {
     }
   }
 
+  updateMicroDistrictsStyle();
   applyFilters();
 }
 
@@ -3106,6 +3127,7 @@ function resetConflictingFilters(p) {
     if (currentAnchorMarker) { map.removeLayer(currentAnchorMarker); currentAnchorMarker = null; }
     if (currentRadiusCircle) { map.removeLayer(currentRadiusCircle); currentRadiusCircle = null; }
     if (currentRouteLine) { map.removeLayer(currentRouteLine); currentRouteLine = null; }
+    updateMicroDistrictsStyle();
     changed = true;
   }
 
