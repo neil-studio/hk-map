@@ -2673,43 +2673,24 @@ function initMap() {
   });
 }
 
-const MAP_DATA_VERSION = '20260928_mtr_lines_v1';
+const MAP_DATA_VERSION = '20260928_fast_render_v2';
 
 async function loadData() {
-  console.time('⚡ 地图数据并发加载耗时');
-
-  const fetchProdSales = async () => {
-    const endpoints = [
-      './data.json',
-      '../../价单_正式版/data.json',
-      'https://neil-studio.github.io/hk/data.json?v=' + MAP_DATA_VERSION
-    ];
-    for (const url of endpoints) {
-      try {
-        const resp = await fetch(url);
-        if (resp.ok) {
-          const prodData = await resp.json();
-          console.log('✅ 成功直连正式版销控数据:', url);
-          return prodData;
-        }
-      } catch(e) {}
-    }
-    return null;
-  };
+  console.time('⚡ 核心地图首屏瞬时直出');
 
   try {
-    const [resGeo, resLandmarks, resMtr, resMtrLines, resCoords, prodData] = await Promise.all([
-      fetch('hong_kong_micro_districts.geojson?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => { console.error('GeoJSON加载异常:', e); return null; }),
-      fetch('hk_landmarks.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null),
+    // 1. 核心首屏关键链路：并行获取渲染地图所必需的坐标、港铁、地标数据（轻量本地 JSON，毫秒级直出）
+    const [resCoords, resMtr, resMtrLines, resLandmarks] = await Promise.all([
+      fetch('hk_project_coords.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => { console.error('楼盘坐标加载异常:', e); return null; }),
       fetch('hk_mtr_stations.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null),
       fetch('hk_mtr_lines.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null),
-      fetch('hk_project_coords.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null),
-      fetchProdSales()
+      fetch('hk_landmarks.json?v=' + MAP_DATA_VERSION).then(r => r.ok ? r.json() : null).catch(e => null)
     ]);
 
-    if (resGeo) {
-      microDistrictsGeoJSON = resGeo;
-      renderMicroDistrictsLayer();
+    if (resCoords) {
+      // 按照用户指示排除特定项目 (如 33清水湾第1期)
+      const EXCLUDE_PROJECTS = ['33清水湾第1期'];
+      projectsData = resCoords.filter(p => !EXCLUDE_PROJECTS.includes(p.name));
     }
     if (resLandmarks) {
       landmarksData = resLandmarks;
@@ -2723,25 +2704,61 @@ async function loadData() {
       mtrLinesData = resMtrLines;
       renderMtrLines();
     }
-    if (resCoords) {
-      // 按照用户指示排除特定项目 (如 33清水湾第1期)
-      const EXCLUDE_PROJECTS = ['33清水湾第1期'];
-      projectsData = resCoords.filter(p => !EXCLUDE_PROJECTS.includes(p.name));
-    }
-    if (prodData && prodData.projects) {
-      mergeProductionSales(prodData);
-    }
+
+    // ⚡ 核心数据到位，立刻渲染所有楼盘与图层，彻底告别地图空白卡顿！
+    populateSelects();
+    renderMtrMarkers();
+    renderFamousSchoolsMarkers();
+    renderShoppingMallsMarkers();
+    applyFilters();
+    console.timeEnd('⚡ 核心地图首屏瞬时直出');
   } catch(err) {
-    console.error('地图数据初始化加载异常:', err);
+    console.error('地图核心数据首屏初始化异常:', err);
   }
 
-  console.timeEnd('⚡ 地图数据并发加载耗时');
+  // 2. 第二阶段（无感异步加载）：商圈规划微板块面层 GeoJSON（后台异步获取后叠加，不阻塞首屏）
+  fetch('hong_kong_micro_districts.geojson?v=' + MAP_DATA_VERSION)
+    .then(r => r.ok ? r.json() : null)
+    .then(resGeo => {
+      if (resGeo) {
+        microDistrictsGeoJSON = resGeo;
+        renderMicroDistrictsLayer();
+      }
+    })
+    .catch(e => { console.warn('GeoJSON异步加载异常:', e); });
 
-  populateSelects();
-  renderMtrMarkers();
-  renderFamousSchoolsMarkers();
-  renderShoppingMallsMarkers();
-  applyFilters();
+  // 3. 第三阶段（静默后台同步）：正式版全量销控数据（后台静默校准与更新，无感平滑合并）
+  syncProductionSalesInBackground();
+}
+
+async function syncProductionSalesInBackground() {
+  const syncEl = document.getElementById('liveSyncText');
+  const endpoints = [
+    './data.json?v=' + MAP_DATA_VERSION,
+    '../../价单_正式版/data.json?v=' + MAP_DATA_VERSION,
+    'https://neil-studio.github.io/hk/data.json?v=' + MAP_DATA_VERSION
+  ];
+
+  let prodData = null;
+  for (const url of endpoints) {
+    try {
+      const resp = await fetch(url);
+      if (resp.ok) {
+        prodData = await resp.json();
+        console.log('✅ 成功直连正式版销控数据:', url);
+        break;
+      }
+    } catch(e) {}
+  }
+
+  if (prodData && prodData.projects) {
+    mergeProductionSales(prodData);
+    if (activeSelectedProjName) {
+      showProjectFloatingCard(activeSelectedProjName);
+    }
+  } else if (syncEl && (!syncEl.innerHTML || syncEl.innerHTML.includes('...'))) {
+    syncEl.innerHTML = `🟢 预置数据就绪`;
+  }
 }
 
 function getMicroDistrictStyle(feature) {

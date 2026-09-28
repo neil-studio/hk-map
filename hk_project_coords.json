@@ -320,7 +320,9 @@
       "Park College"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1-E8815wUrMYioPYEjK8PePcaJVeZRqNL",
+    "has_marketing_materials": true
   },
   {
     "name": "The Monet 第1期",
@@ -759,7 +761,9 @@
       "3座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/11Wwchi7Xzx2-Eys3oUCkuM1YEkd_oz2U",
+    "has_marketing_materials": false
   },
   {
     "name": "The Monet 第2期",
@@ -1157,7 +1161,9 @@
       "1座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/11Wwchi7Xzx2-Eys3oUCkuM1YEkd_oz2U",
+    "has_marketing_materials": false
   },
   {
     "name": "The Monet 第3期",
@@ -1555,7 +1561,9 @@
       "5座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/11Wwchi7Xzx2-Eys3oUCkuM1YEkd_oz2U",
+    "has_marketing_materials": false
   },
   {
     "name": "博峰",
@@ -1958,7 +1966,10 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://docs.qq.com/doc/DT1RUQVFTVU1WaUdX?aidPos=list&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&opennew=1",
+    "marketing_url": "https://drive.google.com/drive/folders/1F8bmNHvyNklcV7Qd7GWjug5IWl83TXVG",
+    "has_marketing_materials": true
   },
   {
     "name": "喇沙汇",
@@ -2870,7 +2881,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1lqMEg_nKnfOZzXxOdMJ4ypoun5gi4_zU",
+    "has_marketing_materials": false
   },
   {
     "name": "缇外",
@@ -3414,7 +3427,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1CPP2vfzRfVRxgogi4rFZNf4LTgQ9FqNm",
+    "has_marketing_materials": false
   },
   {
     "name": "天玺",
@@ -3635,7 +3650,10 @@
       "皇钻玺"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/gq5rfgq7CW_fpvQULN0kCA",
+    "marketing_url": "https://drive.google.com/drive/folders/1mLTE7DTLPVqTpkTgZZR_W0pIIBXPx5UX",
+    "has_marketing_materials": true
   },
   {
     "name": "128 Waterloo",
@@ -4006,7 +4024,10 @@
       "128 Waterloo"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/qZQ5E3nW37DIUsbawo3MsQ",
+    "marketing_url": "https://drive.google.com/drive/folders/1XALe4TpeTvK5Rl-fwIpCuSA-swBc0Bct",
+    "has_marketing_materials": false
   },
   {
     "name": "Prince Central",
@@ -4253,7 +4274,10 @@
       "Prince Central"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/llVURag0bAOPa2t-L9DaGg",
+    "marketing_url": "https://drive.google.com/drive/folders/1TNKwJAnwrcerwAjdU7WcCjT4njGg53ic",
+    "has_marketing_materials": false
   },
   {
     "name": "VAU Residence",
@@ -4534,7 +4558,9 @@
       "VAU Residence"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1xK0Y6--v6NFAd64ec81IsHvwOU7o978u",
+    "has_marketing_materials": false
   },
   {
     "name": "st. george's mansions",
@@ -4798,7 +4824,10 @@
       "3座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/TduYFdx6ptZiI3fEV-ehqA",
+    "marketing_url": "https://drive.google.com/drive/folders/18Lrj1PWjseyChiIwl-HuvbISFJiJageO",
+    "has_marketing_materials": false
   },
   {
     "name": "傲玟",
@@ -5172,7 +5201,10 @@
       "7座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/Amoxa5UYYut6zrXWHKof8A",
+    "marketing_url": "https://drive.google.com/drive/folders/1Zb0Enqr7190sc47XLpyonqQQoRUNyzLF",
+    "has_marketing_materials": true
   },
   {
     "name": "名钻",
@@ -5470,7 +5502,10 @@
       "名钻"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/6C7-tfJPOEwwkT53E8tSug",
+    "marketing_url": "https://drive.google.com/drive/folders/1jQmpJ8bpzqQ_9eZuh6Q2PNhSboDFlRSX",
+    "has_marketing_materials": false
   },
   {
     "name": "天铸 (第2期)",
@@ -5688,7 +5723,9 @@
       "5座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1MY7xUhBWuA0UDIDTKBV4Gjf1mGdGpnrE",
+    "has_marketing_materials": false
   },
   {
     "name": "太子道西233号",
@@ -5914,7 +5951,9 @@
       "太子道西233号"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1Pc3C3G5JC-E5JDpATioM5F_gXWi8WQc8",
+    "has_marketing_materials": false
   },
   {
     "name": "明寓",
@@ -6177,7 +6216,10 @@
       "明寓"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://docs.qq.com/doc/DT1ZJUnNmcEdzbkVI?isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&opennew=1",
+    "marketing_url": "https://drive.google.com/drive/folders/1cr7GejHEOsdZzNGYIfbYaN1RlRETR-TY",
+    "has_marketing_materials": true
   },
   {
     "name": "朗贤峰第IIA期",
@@ -6376,7 +6418,10 @@
       "3座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (即将发售)"
+    "property_type_desc": "期房 (即将发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/amVaRSmBYdUgZttfojL9XQ",
+    "marketing_url": "https://drive.google.com/drive/folders/1d4rCfRqCnZnSkaxGAGWwAhczZ7tHOsnJ",
+    "has_marketing_materials": false
   },
   {
     "name": "朗贤峰第IIB期",
@@ -6623,7 +6668,10 @@
       "6B座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (即将发售)"
+    "property_type_desc": "期房 (即将发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/togd9-12gl9Gr0RegHgvRQ",
+    "marketing_url": "https://drive.google.com/drive/folders/1d4rCfRqCnZnSkaxGAGWwAhczZ7tHOsnJ",
+    "has_marketing_materials": false
   },
   {
     "name": "瑜一第IC期",
@@ -6823,7 +6871,9 @@
       "5B座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2025年入伙)"
+    "property_type_desc": "期房 (预计2025年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/1p9Rn4K1Ky-Zbwyf2ujadlRs5X_s5ANDq",
+    "has_marketing_materials": true
   },
   {
     "name": "瑜一．天海",
@@ -7027,7 +7077,9 @@
       "2B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1p9Rn4K1Ky-Zbwyf2ujadlRs5X_s5ANDq",
+    "has_marketing_materials": true
   },
   {
     "name": "耀爵台",
@@ -7376,7 +7428,9 @@
       "耀爵台"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1QVASef4NgiRPOja90MKZRd_mT2ECEd2E",
+    "has_marketing_materials": false
   },
   {
     "name": "芳菲",
@@ -7617,7 +7671,10 @@
       "芳菲"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/OJ9vz7SOa5avNe-_ZHZ2mA",
+    "marketing_url": "https://drive.google.com/drive/folders/19dhZpkmfRTtQxD24--7KAZ-78dIsf1NS",
+    "has_marketing_materials": false
   },
   {
     "name": "誉林",
@@ -7890,7 +7947,10 @@
       "誉林"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/MyYF7MSQKSbYvJu170szhw",
+    "marketing_url": "https://drive.google.com/drive/folders/1G6FA74pDS-iFQNeTEYUI71nkr2lXenws",
+    "has_marketing_materials": false
   },
   {
     "name": "隆敍",
@@ -8242,7 +8302,9 @@
       "隆敍"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1k3SfPTeJe8ctDz0FBQclWJsuBQ_Gp5IN",
+    "has_marketing_materials": false
   },
   {
     "name": "Double Coast I",
@@ -8782,7 +8844,10 @@
       "5座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/4HI8tFK5TMLbCyF1smEx5g",
+    "marketing_url": "https://drive.google.com/drive/folders/1NdR9fJNrc2n5QT7uqePLKtipQkjB-9zC",
+    "has_marketing_materials": false
   },
   {
     "name": "Double Coast III",
@@ -9339,7 +9404,10 @@
       "1B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/jIV0osc25yVWXwbGSMQ4lQ",
+    "marketing_url": "https://drive.google.com/drive/folders/1NdR9fJNrc2n5QT7uqePLKtipQkjB-9zC",
+    "has_marketing_materials": false
   },
   {
     "name": "Henley Park",
@@ -9605,7 +9673,9 @@
       "低座D座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/16A5B1YrCIWmGUASoSzWKg8H1Yi7724-B",
+    "has_marketing_materials": true
   },
   {
     "name": "Miami Quay I",
@@ -10215,7 +10285,10 @@
       "3座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/I2PgM5Hk8Zw2DoOgIS6OmA",
+    "marketing_url": "https://drive.google.com/drive/folders/1hM-nhX_dTzNNeqOCLUCqqumB1sUrnCHX",
+    "has_marketing_materials": false
   },
   {
     "name": "Miami Quay II",
@@ -10825,7 +10898,10 @@
       "8座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/hhHndkmahWNvu-9x5q1JNA",
+    "marketing_url": "https://drive.google.com/drive/folders/1hM-nhX_dTzNNeqOCLUCqqumB1sUrnCHX",
+    "has_marketing_materials": false
   },
   {
     "name": "Monaco Marine",
@@ -11061,7 +11137,10 @@
       "低座D"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/5qRUCsPLsUESX7RLqTQOrA",
+    "marketing_url": "https://drive.google.com/drive/folders/12Y7o-rY2fGNYlcODYO3zHTTYZ8xaKKqK",
+    "has_marketing_materials": false
   },
   {
     "name": "Monaco One",
@@ -11289,7 +11368,9 @@
       "2B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/12Y7o-rY2fGNYlcODYO3zHTTYZ8xaKKqK",
+    "has_marketing_materials": false
   },
   {
     "name": "Monaco 第1期",
@@ -11529,7 +11610,9 @@
       "2B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/15gGvkreAlc3TFUeEVBIL5RH6hYtXumda",
+    "has_marketing_materials": false
   },
   {
     "name": "The Henley I",
@@ -11782,7 +11865,10 @@
       "低座D座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/GJ_V87pKjiZllbMH6a6agw",
+    "marketing_url": "https://drive.google.com/drive/folders/1aCIiZKo4cvZg3asGk5saUQZ0UhEC8EbI",
+    "has_marketing_materials": true
   },
   {
     "name": "The Henley II",
@@ -12015,7 +12101,10 @@
       "1座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/GJ_V87pKjiZllbMH6a6agw",
+    "marketing_url": "https://drive.google.com/drive/folders/1aCIiZKo4cvZg3asGk5saUQZ0UhEC8EbI",
+    "has_marketing_materials": true
   },
   {
     "name": "The Henley III",
@@ -12272,7 +12361,10 @@
       "3B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/GJ_V87pKjiZllbMH6a6agw",
+    "marketing_url": "https://drive.google.com/drive/folders/1aCIiZKo4cvZg3asGk5saUQZ0UhEC8EbI",
+    "has_marketing_materials": true
   },
   {
     "name": "启德海湾 1",
@@ -12799,7 +12891,10 @@
       "2C座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/onH2-RR8Lk96kQ4BEaekbA",
+    "marketing_url": "https://drive.google.com/drive/folders/1_qE2J4cg5FkOXtcRvrlHNOIcfppmEVAY",
+    "has_marketing_materials": false
   },
   {
     "name": "启德海湾 2",
@@ -13253,7 +13348,9 @@
       "1C座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2025年入伙)"
+    "property_type_desc": "期房 (预计2025年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/1_qE2J4cg5FkOXtcRvrlHNOIcfppmEVAY",
+    "has_marketing_materials": false
   },
   {
     "name": "天泷",
@@ -13800,7 +13897,10 @@
       "Harbour Mansion"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/GzQds678eO0iXOBkJVVRzw",
+    "marketing_url": "https://drive.google.com/drive/folders/1JB3TGwFZf0RPHQuVOYfXF8vBOWJpQ2g4",
+    "has_marketing_materials": false
   },
   {
     "name": "天玺．天",
@@ -14055,7 +14155,9 @@
       "6座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1kcW7FKhbsBnxS67Sl5jXu9lPGVLqe3k2",
+    "has_marketing_materials": true
   },
   {
     "name": "天玺．天第2期",
@@ -14300,7 +14402,9 @@
       "2座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1kcW7FKhbsBnxS67Sl5jXu9lPGVLqe3k2",
+    "has_marketing_materials": true
   },
   {
     "name": "天玺．海第1期",
@@ -14855,7 +14959,9 @@
       "Mansion 2"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1GfFR_eN5l-7kJigBQcIlfJOlD6WZ8RtW",
+    "has_marketing_materials": true
   },
   {
     "name": "天玺．海第2A期",
@@ -15374,7 +15480,9 @@
       "7座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1GfFR_eN5l-7kJigBQcIlfJOlD6WZ8RtW",
+    "has_marketing_materials": true
   },
   {
     "name": "天玺．海第2B期",
@@ -15901,7 +16009,9 @@
       "9座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1GfFR_eN5l-7kJigBQcIlfJOlD6WZ8RtW",
+    "has_marketing_materials": true
   },
   {
     "name": "柏蔚森 I",
@@ -16452,7 +16562,9 @@
       "6座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1zU1G6oBVUZZE8YRp1FgfQqyuUDRt1uWl",
+    "has_marketing_materials": false
   },
   {
     "name": "柏蔚森 II",
@@ -16971,7 +17083,9 @@
       "3座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1zU1G6oBVUZZE8YRp1FgfQqyuUDRt1uWl",
+    "has_marketing_materials": false
   },
   {
     "name": "柏蔚森 III",
@@ -17508,7 +17622,9 @@
       "1座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1zU1G6oBVUZZE8YRp1FgfQqyuUDRt1uWl",
+    "has_marketing_materials": false
   },
   {
     "name": "沄璟",
@@ -18116,7 +18232,10 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/Wp3AbPAWcKZCDFTmBGhSlQ",
+    "marketing_url": "https://drive.google.com/drive/folders/16UEdptlrMwCU8WY9FazQvV4p7mwgWhrp",
+    "has_marketing_materials": false
   },
   {
     "name": "维港1号",
@@ -18587,7 +18706,10 @@
     "selling_points": "1、启德跑道区首发大型地标住宅承丰道21号：中国海外倾力打造，位处启德跑道区核心海滨龙头位置，部分单位饱览开扬九龙湾畔游艇海景及维港内海。\n2、现代国际滨海度假建筑美学与高规格精装：全盘规划两座高座大厦及多栋低座大宅，配备多元化临海住客会所设施，户型方正高效，全屋精装品牌考究。\n3、跑道区千亿市政配套与成熟高实用空间：紧邻未来启德水岸长廊与都会公园，兼享启德CBD2长远规划红利，入场总价极具性价比，适合高品质自住与收租。",
     "tower_count": 1,
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/Z-tJctJ0FFSlT-T7lIIJsw",
+    "marketing_url": "https://drive.google.com/drive/folders/147u3GivfS6y8wAgwHth6OO0HUwJ96mAC",
+    "has_marketing_materials": false
   },
   {
     "name": "维港．双钻",
@@ -19102,7 +19224,10 @@
       "2B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/xxByE9aKmHfUbbGd3it8Lw",
+    "marketing_url": "https://drive.google.com/drive/folders/1-ua4J5GlAVBP3OICcc-y7Upf9boI9lWZ",
+    "has_marketing_materials": false
   },
   {
     "name": "维港．湾畔第1A期",
@@ -19728,7 +19853,10 @@
       "1C座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/nfXNBkYfT6-VWfoL7Zw8JA",
+    "marketing_url": "https://drive.google.com/drive/folders/1Xkr_miH6ZUXpIEtlqr-7IV2EQgOr_MET",
+    "has_marketing_materials": false
   },
   {
     "name": "维港．湾畔第1B期",
@@ -20274,7 +20402,10 @@
       "2B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/nfXNBkYfT6-VWfoL7Zw8JA",
+    "marketing_url": "https://drive.google.com/drive/folders/1Xkr_miH6ZUXpIEtlqr-7IV2EQgOr_MET",
+    "has_marketing_materials": false
   },
   {
     "name": "维港．湾畔第2B期",
@@ -20791,7 +20922,10 @@
       "5B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/nfXNBkYfT6-VWfoL7Zw8JA",
+    "marketing_url": "https://drive.google.com/drive/folders/1Xkr_miH6ZUXpIEtlqr-7IV2EQgOr_MET",
+    "has_marketing_materials": false
   },
   {
     "name": "本木",
@@ -21000,7 +21134,9 @@
       "本木"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1AGB_nDyZAs2EaCofpWjh59Kalb6sLAtz",
+    "has_marketing_materials": false
   },
   {
     "name": "The Boundary",
@@ -21337,7 +21473,9 @@
       "The Boundary"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2025年入伙)"
+    "property_type_desc": "期房 (预计2025年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/1-kCMD6ngPBQJEGwbbfZAU5vfIKv22Gt2",
+    "has_marketing_materials": false
   },
   {
     "name": "Upper Prince",
@@ -21539,7 +21677,10 @@
       "Upper Prince"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2026年入伙)"
+    "property_type_desc": "期房 (预计2026年入伙)",
+    "intro_url": "https://mp.weixin.qq.com/s/zbzd8BXIqfsn-pCjlabZ2Q",
+    "marketing_url": "https://drive.google.com/drive/folders/1WTFWmv-LEG7QvmyxXJQ-RgeABYu_YKL5",
+    "has_marketing_materials": false
   },
   {
     "name": "利奥坊．凯岸",
@@ -21878,7 +22019,9 @@
       "2座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1XKsSPa0UpM34-FHnWdJ5--WNI-YYiJJw",
+    "has_marketing_materials": false
   },
   {
     "name": "利奥坊．壹隅",
@@ -22197,7 +22340,9 @@
     "selling_points": "1、西九龙核心大角咀大型艺文商业街区：恒基兆业精心策划的七期大型综合市区更新版图，自设逾十万呎艺文商业步行街，潮流餐饮与休闲配套完善。\n2、步行至奥运站及旺角站双轨立体交通：步行轻松接驳港铁奥运站（东涌线）与旺角站，1站达香港站中环金融区，极速切换尖沙咀及西九龙高铁站。\n3、年轻新贵极度追捧的高收益投资盘：主打轻奢高实用都会户型，全屋智能化配置与艺术主题会所，深受西九龙及中环高薪年轻精英青睐，租金回报率全港领先。",
     "tower_count": 1,
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1XKsSPa0UpM34-FHnWdJ5--WNI-YYiJJw",
+    "has_marketing_materials": false
   },
   {
     "name": "利奥坊．曦岸",
@@ -22593,7 +22738,9 @@
       "2座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1XKsSPa0UpM34-FHnWdJ5--WNI-YYiJJw",
+    "has_marketing_materials": false
   },
   {
     "name": "映居",
@@ -22964,7 +23111,9 @@
       "映居"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2025年入伙)"
+    "property_type_desc": "期房 (预计2025年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/1QwAUiAsOb5DiYKWFypEJhOPx0jbULTbQ",
+    "has_marketing_materials": false
   },
   {
     "name": "原舍",
@@ -23257,7 +23406,9 @@
       "原舍"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2028年入伙)"
+    "property_type_desc": "期房 (预计2028年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/1lGE8oGJPUP8ogxlTY9ZyVEdhdKuBbfee",
+    "has_marketing_materials": false
   },
   {
     "name": "Beacon Peak 第1期",
@@ -23900,7 +24051,9 @@
       "7座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/12LpHCJMi99AYKeAdcuTtAU6-NWewQl69",
+    "has_marketing_materials": false
   },
   {
     "name": "滶蕴",
@@ -24296,7 +24449,9 @@
       "滶蕴"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1vokmRxzt5aOUxUQ5ZKHEkvapa-fSJM4h",
+    "has_marketing_materials": false
   },
   {
     "name": "The Haddon",
@@ -24613,7 +24768,10 @@
       "The Haddon"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2025年入伙)"
+    "property_type_desc": "期房 (预计2025年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT3dTRUNNWUJqR25D",
+    "marketing_url": "https://drive.google.com/drive/folders/1z8JU_-fogb6qoKAbcylfartMUjDx_iWX",
+    "has_marketing_materials": true
   },
   {
     "name": "必嘉坊．曦汇",
@@ -24910,7 +25068,10 @@
       "必嘉坊．曦汇"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://docs.qq.com/doc/DT1p5aW1CdFhWWmRw",
+    "marketing_url": "https://drive.google.com/drive/folders/1b1HIa7IOGiAFtkyjcWqw6Xhjcd3RLJ8N",
+    "has_marketing_materials": true
   },
   {
     "name": "必嘉坊．迎汇",
@@ -25231,7 +25392,10 @@
       "必嘉坊．迎汇"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://docs.qq.com/doc/DT1ZZcmZha2JocHBi",
+    "marketing_url": "https://drive.google.com/drive/folders/1b1HIa7IOGiAFtkyjcWqw6Xhjcd3RLJ8N",
+    "has_marketing_materials": true
   },
   {
     "name": "悦麓",
@@ -25481,7 +25645,9 @@
       "悦麓"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2025年入伙)"
+    "property_type_desc": "期房 (预计2025年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/1rgxaNMlCCUnQNEbc3IO7emHvJrsUxvgI",
+    "has_marketing_materials": false
   },
   {
     "name": "首岸第1期",
@@ -25787,7 +25953,10 @@
       "2座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT25nRVZFenVySVN5",
+    "marketing_url": "https://drive.google.com/drive/folders/1JVo3tHd99Csobiac28ZeFPFte9unDXcg",
+    "has_marketing_materials": true
   },
   {
     "name": "首岸第2期",
@@ -26053,7 +26222,10 @@
       "3座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT25nRVZFenVySVN5",
+    "marketing_url": "https://drive.google.com/drive/folders/1JVo3tHd99Csobiac28ZeFPFte9unDXcg",
+    "has_marketing_materials": true
   },
   {
     "name": "首岸第3期",
@@ -26351,7 +26523,10 @@
       "1座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT25nRVZFenVySVN5",
+    "marketing_url": "https://drive.google.com/drive/folders/1JVo3tHd99Csobiac28ZeFPFte9unDXcg",
+    "has_marketing_materials": true
   },
   {
     "name": "首岸第4期",
@@ -26629,7 +26804,10 @@
       "5座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT25nRVZFenVySVN5",
+    "marketing_url": "https://drive.google.com/drive/folders/1JVo3tHd99Csobiac28ZeFPFte9unDXcg",
+    "has_marketing_materials": true
   },
   {
     "name": "首汇",
@@ -26989,7 +27167,10 @@
       "首汇"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2026年入伙)"
+    "property_type_desc": "期房 (预计2026年入伙)",
+    "intro_url": "https://mp.weixin.qq.com/s/szPavdQWMLhrGXT5nBjMwQ",
+    "marketing_url": "https://drive.google.com/drive/folders/1rqghcwztmFTJK2d4NFZS7acWDN4iu8ES",
+    "has_marketing_materials": true
   },
   {
     "name": "叡璟I",
@@ -27351,7 +27532,10 @@
       "3B座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2028年入伙)"
+    "property_type_desc": "期房 (预计2028年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT2huamNmQ1VodkV3",
+    "marketing_url": "https://drive.google.com/drive/folders/1sa8atOcN3i7GVaCQWMsE0bHAHdeEigOM",
+    "has_marketing_materials": true
   },
   {
     "name": "汇玺III",
@@ -27603,7 +27787,10 @@
       "皇钻汇"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/VsfJpWOc9oHVe3PsQAGuSA",
+    "marketing_url": "https://drive.google.com/drive/folders/1IYkbgVt38GLQE0OE7d62KFcf2XS3nT4F",
+    "has_marketing_materials": false
   },
   {
     "name": "维港汇 III",
@@ -28004,7 +28191,9 @@
       "2座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1kESOSr4A55-PY3JZAXIXMnGL5sB3Uxkf",
+    "has_marketing_materials": false
   },
   {
     "name": "南首",
@@ -28219,7 +28408,9 @@
       "南首"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2025年入伙)"
+    "property_type_desc": "期房 (预计2025年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/1JHcCJW_K4CQd5bCYtlEa_yqtTSrYsIdz",
+    "has_marketing_materials": false
   },
   {
     "name": "壹沐第1期",
@@ -28457,7 +28648,10 @@
       "1座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT1JHV1BUdFdIVkNK",
+    "marketing_url": "https://drive.google.com/drive/folders/1X-N8_IB0sjm88cvbZyLXlyC-AXSu3XHr",
+    "has_marketing_materials": true
   },
   {
     "name": "壹沐第2期",
@@ -28709,7 +28903,10 @@
       "2座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT1JHV1BUdFdIVkNK",
+    "marketing_url": "https://drive.google.com/drive/folders/1X-N8_IB0sjm88cvbZyLXlyC-AXSu3XHr",
+    "has_marketing_materials": true
   },
   {
     "name": "文曜",
@@ -28992,7 +29189,9 @@
       "文曜"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/15v2b5RABAHXfay5dVVfo0V0iU7IJuXuP",
+    "has_marketing_materials": false
   },
   {
     "name": "瑧博",
@@ -29183,7 +29382,9 @@
       "瑧博"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/1M2dxcsAuYDCV2bLeBxrmFk5zDreOR4xC",
+    "has_marketing_materials": false
   },
   {
     "name": "101 Kings Road",
@@ -29401,7 +29602,9 @@
       "101 Kings Road"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1ceCfhU9m7W2aiIrdqYBlnHT7hlge_s4a",
+    "has_marketing_materials": false
   },
   {
     "name": "君誉峰",
@@ -29559,7 +29762,9 @@
       "君誉峰"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1bcSHwxixo1VLWxZYJjJDijxI3hO3Mw_3",
+    "has_marketing_materials": false
   },
   {
     "name": "嘉居．天后",
@@ -29730,7 +29935,9 @@
       "嘉居．天后"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1BOLXAHVzO5o58bWet7WYQ1ykdk9Dgt1Z",
+    "has_marketing_materials": false
   },
   {
     "name": "柏蔚山",
@@ -30043,7 +30250,9 @@
       "3座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1rXPo5xLPWDXLSLm9l1sW1SLeVR8o_2B3",
+    "has_marketing_materials": false
   },
   {
     "name": "海璇",
@@ -30323,7 +30532,9 @@
       "6座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1oOy89DqbHlzYnGTLOJ7QOLmRk031bCmd",
+    "has_marketing_materials": false
   },
   {
     "name": "海璇 II",
@@ -30529,7 +30740,9 @@
       "3座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1oOy89DqbHlzYnGTLOJ7QOLmRk031bCmd",
+    "has_marketing_materials": false
   },
   {
     "name": "海璇 II (第2B-3期)",
@@ -30735,7 +30948,9 @@
       "3座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1oOy89DqbHlzYnGTLOJ7QOLmRk031bCmd",
+    "has_marketing_materials": false
   },
   {
     "name": "雅盈峰",
@@ -31113,7 +31328,10 @@
       "雅盈峰"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/NBJlj0i8X6NDg5Vn9mtDrQ",
+    "marketing_url": "https://drive.google.com/drive/folders/1PPilh0MiM0LAIaPRdar4Oa_l03RG38Fz",
+    "has_marketing_materials": false
   },
   {
     "name": "Central Peak I",
@@ -31667,7 +31885,10 @@
       "Everex II"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/cksPbfRZE7_1we_2R_ukug",
+    "marketing_url": "https://drive.google.com/drive/folders/1tEhKNRDxG2r6vMG6hySJJdLuUFTPqQO-",
+    "has_marketing_materials": false
   },
   {
     "name": "Central Peak II",
@@ -32201,7 +32422,10 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/VT_LjCJEx1hWiIOaVN4idw",
+    "marketing_url": "https://drive.google.com/drive/folders/1tEhKNRDxG2r6vMG6hySJJdLuUFTPqQO-",
+    "has_marketing_materials": false
   },
   {
     "name": "21 Borrett Road 第1期",
@@ -32720,7 +32944,10 @@
       "6号及7号"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/VmQyJcQGbvVcW-k0xFJBWg",
+    "marketing_url": "https://drive.google.com/drive/folders/1-cq0AnDZIbxCyCUr_3mE7t53ehmOGW09",
+    "has_marketing_materials": true
   },
   {
     "name": "Mount Pokfulam",
@@ -33187,7 +33414,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1uyCAXV5KJo_TYMaCy7JR0esnu8xjDwb8",
+    "has_marketing_materials": false
   },
   {
     "name": "Upper Central",
@@ -33562,7 +33791,10 @@
       "Upper Central"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/vXLROkitnuD4QrJfNV4gww",
+    "marketing_url": "https://drive.google.com/drive/folders/1W1jrmoYtypggz_w9mlC54C01bHphRIWU",
+    "has_marketing_materials": false
   },
   {
     "name": "大学阁",
@@ -33922,7 +34154,9 @@
       "3座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1_Dgoxf_aB4hk6oUIKnPMJtlzIwWYmrcA",
+    "has_marketing_materials": false
   },
   {
     "name": "天御第1期",
@@ -34307,7 +34541,10 @@
       "2座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/lQ9w_8rG0XR774PUPjX69Q",
+    "marketing_url": "https://drive.google.com/drive/folders/1Wfdj_v5_ojp3PAU80ywsR-tVlZHpcIAu",
+    "has_marketing_materials": true
   },
   {
     "name": "天御第2期",
@@ -34697,7 +34934,10 @@
       "1座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/lQ9w_8rG0XR774PUPjX69Q",
+    "marketing_url": "https://drive.google.com/drive/folders/1Wfdj_v5_ojp3PAU80ywsR-tVlZHpcIAu",
+    "has_marketing_materials": true
   },
   {
     "name": "宝峰",
@@ -35060,7 +35300,9 @@
       "宝峰"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1_HsCMc_MvnqNIUOmfKGbxzlZSckHMJN4",
+    "has_marketing_materials": false
   },
   {
     "name": "帝汇豪庭",
@@ -35537,7 +35779,9 @@
       "帝汇豪庭"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1XuS1s74rjaTEn93RBdzq0R3KAEMESoNP",
+    "has_marketing_materials": false
   },
   {
     "name": "应天",
@@ -36083,7 +36327,9 @@
       "8号及9号"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1-cq0AnDZIbxCyCUr_3mE7t53ehmOGW09",
+    "has_marketing_materials": true
   },
   {
     "name": "罗便臣道80号",
@@ -36338,7 +36584,9 @@
       "2座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1fnpg6eTCTpSupVfEFwjpQW63r4sBuOeE",
+    "has_marketing_materials": false
   },
   {
     "name": "Kennedy 38",
@@ -36556,7 +36804,10 @@
       "Kennedy 38"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/0ve1rF7HEmjfmQRCmYUUNw",
+    "marketing_url": "https://drive.google.com/drive/folders/1qdNDykKTaLY5AF0yCrG9pLmolRiV0yXh",
+    "has_marketing_materials": false
   },
   {
     "name": "吉喆",
@@ -36733,7 +36984,9 @@
       "吉喆"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2025年入伙)"
+    "property_type_desc": "期房 (预计2025年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/1lJTSNVJPX4yqz3X8kt-auucVFUNNsw5P",
+    "has_marketing_materials": false
   },
   {
     "name": "海嵎",
@@ -36991,7 +37244,10 @@
       "海嵎"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/rYa3L7Lgon18GjnXos0Hng",
+    "marketing_url": "https://drive.google.com/drive/folders/1urBmkVODyuR1RWUcXNIOjF6iNJJ-jWtn",
+    "has_marketing_materials": false
   },
   {
     "name": "皇府湾",
@@ -38106,7 +38362,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/131uUNJ_G2IyV0MqRTwO2RBLOc8KdoVZj",
+    "has_marketing_materials": false
   },
   {
     "name": "寿臣山15号",
@@ -38453,7 +38711,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/18B5bv6iNbUBzQ1VBwfd9NM9cTYTbDLKN",
+    "has_marketing_materials": false
   },
   {
     "name": "No.3 Repulse Bay Road",
@@ -39076,7 +39336,9 @@
       "浅水湾道3号"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1uFBcQxP1KP_fJwocmcJ6ZHy0eXpwTBja",
+    "has_marketing_materials": false
   },
   {
     "name": "Shouson Peak",
@@ -39365,7 +39627,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1JAENMQmkzhcZZTq1ByeDbtZN04ohW3Fu",
+    "has_marketing_materials": false
   },
   {
     "name": "浅水湾108",
@@ -39937,7 +40201,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1WcYleVKHc7-R4AXuNhqtcL9D_N539QCV",
+    "has_marketing_materials": false
   },
   {
     "name": "深水湾径8号",
@@ -40453,7 +40719,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1sxEj0DnQvchO-tRmzxt5caxtwdqBBdiy",
+    "has_marketing_materials": false
   },
   {
     "name": "Mount Nicholson I",
@@ -41488,7 +41756,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1xzeGEy3AKPe9hYF_P_XibruQEgQ2NgW5",
+    "has_marketing_materials": false
   },
   {
     "name": "Mount Nicholson II",
@@ -42521,7 +42791,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1xzeGEy3AKPe9hYF_P_XibruQEgQ2NgW5",
+    "has_marketing_materials": false
   },
   {
     "name": "Twelve Peaks",
@@ -43482,7 +43754,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/15sAUzgjvhfsk2dcg3-Um8wFFmCV05dJm",
+    "has_marketing_materials": false
   },
   {
     "name": "宾吉道3号",
@@ -44425,7 +44699,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1GNwzOtt8Kp6cJR44Nmaq7vslB302dZ0f",
+    "has_marketing_materials": false
   },
   {
     "name": "海德园第1期",
@@ -44746,7 +45022,10 @@
       "3座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2025年入伙)"
+    "property_type_desc": "期房 (预计2025年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT3VBYUNtRkVPaGNR",
+    "marketing_url": "https://drive.google.com/drive/folders/1_55XXbl_HFRwp4IrE6UabpS2Jflhfvnn",
+    "has_marketing_materials": true
   },
   {
     "name": "峻誉．渣甸山",
@@ -45300,7 +45579,10 @@
       "2座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/72C8dW-QBWxXyrppMHRfUw",
+    "marketing_url": "https://drive.google.com/drive/folders/1u1tkTUIFgOHJa782b9tmdCJfBLcoKlB6",
+    "has_marketing_materials": true
   },
   {
     "name": "皇第",
@@ -45943,7 +46225,9 @@
       "皇第"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1UhLAFCj55u-BoP8c2G0j2pHiG5_diHin",
+    "has_marketing_materials": false
   },
   {
     "name": "Woodis",
@@ -46312,7 +46596,10 @@
       "Woodis"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/ENTpZ6iO0V2vaIG1nuFZWg",
+    "marketing_url": "https://drive.google.com/drive/folders/1DlhJTvQ2r4Iol9CpDS7EMe9LV7JgXpdw",
+    "has_marketing_materials": false
   },
   {
     "name": "活道1号",
@@ -46829,7 +47116,9 @@
       "One Eighty"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1UG4plzTh-K6qFgGHhi38W8zuhC8wlIOX",
+    "has_marketing_materials": false
   },
   {
     "name": "傲华",
@@ -47046,7 +47335,9 @@
       "傲华"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1xhKMrIG6SW2yn1pDN62hzT0f08k_MT79",
+    "has_marketing_materials": false
   },
   {
     "name": "远晴",
@@ -47389,7 +47680,9 @@
       "远晴"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1B7V3eB9skHAIoO_bREJrh5go5XpJb8gc",
+    "has_marketing_materials": false
   },
   {
     "name": "Victoria Coast",
@@ -47864,7 +48157,9 @@
       "B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1AnAdnfH53ypmdylEal0iRQv4d5ZY6qw3",
+    "has_marketing_materials": true
   },
   {
     "name": "15 Western Street",
@@ -48091,7 +48386,9 @@
       "15 Western Street"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (即将发售)"
+    "property_type_desc": "期房 (即将发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1FRQ45J01YXPNViZDuu9HyiCXRDg2VQul",
+    "has_marketing_materials": false
   },
   {
     "name": "42 Tung St.",
@@ -48370,7 +48667,9 @@
       "42 Tung St."
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1BGeVzfRKP_gmQE2KvnFI9C6LW0SwkCaK",
+    "has_marketing_materials": false
   },
   {
     "name": "50 Stanley Village Road",
@@ -50001,7 +50300,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1RwHdEb3TwziHvkfsQyuLHwOUOuRkNdtt",
+    "has_marketing_materials": false
   },
   {
     "name": "One Stanley",
@@ -52193,7 +52494,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1vjRYWn5WUOv3h5A0NiweNMCuteQmqy-8",
+    "has_marketing_materials": false
   },
   {
     "name": "Solace",
@@ -53344,7 +53647,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1jNLKSYsgjV1DM95nQQnaIuSuabsWR0Zr",
+    "has_marketing_materials": true
   },
   {
     "name": "海天径 1号, 舂磡角道 44, 46, 48, 50号",
@@ -54390,7 +54695,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/13ttNXx90i-X5kebo0h1hNV5eyQH_aZ7l",
+    "has_marketing_materials": true
   },
   {
     "name": "环角道7号、9号及11号",
@@ -55539,7 +55846,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1NKCECOy4o_TLS9JZjlbbpLqnHXpktcdX",
+    "has_marketing_materials": false
   },
   {
     "name": "339 Tai Hang Road",
@@ -56237,7 +56546,9 @@
       "B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1isjoZuIYlSj_0C84JrsMaaDpCiaWy2oO",
+    "has_marketing_materials": false
   },
   {
     "name": "Blue Coast",
@@ -56407,7 +56718,9 @@
       "2B座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2025年入伙)"
+    "property_type_desc": "期房 (预计2025年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/111FTbwb2wtmkD7qO69Qooiu4x1WdwnEM",
+    "has_marketing_materials": false
   },
   {
     "name": "Blue Coast II",
@@ -56543,7 +56856,9 @@
       "5座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2025年入伙)"
+    "property_type_desc": "期房 (预计2025年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/111FTbwb2wtmkD7qO69Qooiu4x1WdwnEM",
+    "has_marketing_materials": false
   },
   {
     "name": "Deep Water South 第6A期",
@@ -56685,7 +57000,10 @@
       "2C座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/T6H_dEJZrFoV8g2sr_DnUQ",
+    "marketing_url": "https://drive.google.com/drive/folders/1rPHj7MKl2C4zKzXUTFuLOs0vUIiYKUAx",
+    "has_marketing_materials": true
   },
   {
     "name": "Deep Water South 第6B期",
@@ -56812,7 +57130,10 @@
       "1B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/T6H_dEJZrFoV8g2sr_DnUQ",
+    "marketing_url": "https://drive.google.com/drive/folders/1rPHj7MKl2C4zKzXUTFuLOs0vUIiYKUAx",
+    "has_marketing_materials": true
   },
   {
     "name": "PORTO",
@@ -56992,7 +57313,9 @@
       "PORTO"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1mV7fnDMsT_qz-R1kjUuIDI9lkKiXG7UT",
+    "has_marketing_materials": false
   },
   {
     "name": "弦岸",
@@ -57206,7 +57529,9 @@
       "弦岸"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1g4mI6LRKqI7hU3YcIJLPpY0gVNzzwgI_",
+    "has_marketing_materials": false
   },
   {
     "name": "扬海",
@@ -57455,7 +57780,9 @@
       "2B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1Q3l3YoLjrGlKxI4O2rblYqE6lWPIqMEx",
+    "has_marketing_materials": false
   },
   {
     "name": "晋环",
@@ -57681,7 +58008,9 @@
       "2B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1z0F5uCkwm-jRV-tzNp6P56ERlxJPyJUt",
+    "has_marketing_materials": false
   },
   {
     "name": "海盈山第4A期",
@@ -57886,7 +58215,10 @@
       "2B座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/aJi1JUQhOf2VPOQh2bZF7w",
+    "marketing_url": "https://drive.google.com/drive/folders/19OLCvFmuIERoE0rPQKME-8zYG5Br2EOe",
+    "has_marketing_materials": true
   },
   {
     "name": "海盈山第4B期",
@@ -58085,7 +58417,9 @@
       "1C座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/19OLCvFmuIERoE0rPQKME-8zYG5Br2EOe",
+    "has_marketing_materials": true
   },
   {
     "name": "滶晨 II",
@@ -58280,7 +58614,10 @@
       "2座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2026年入伙)"
+    "property_type_desc": "期房 (预计2026年入伙)",
+    "intro_url": "https://mp.weixin.qq.com/s/bUxWEIM7Nm0x0zByqbS6Ww",
+    "marketing_url": "https://drive.google.com/drive/folders/1u4TMWsOcApc7vZfwZONBS8Io_Ix4jW3n",
+    "has_marketing_materials": true
   },
   {
     "name": "璟南",
@@ -58559,7 +58896,9 @@
       "璟南"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1E0P941BPiNF_xOFyRmGmPmwiyE9mL_IU",
+    "has_marketing_materials": false
   },
   {
     "name": "逸南",
@@ -58701,7 +59040,9 @@
       "逸南"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1LkiiqstiTYtBxCGy4rkAPnH8jHXfI3pd",
+    "has_marketing_materials": false
   },
   {
     "name": "君豪峰",
@@ -58879,7 +59220,9 @@
       "君豪峰"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1bbfPyOl1IhEA_gwQPw0_l-5bB5e9QOxS",
+    "has_marketing_materials": false
   },
   {
     "name": "凯玥",
@@ -59090,7 +59433,10 @@
       "8座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "intro_url": "https://mp.weixin.qq.com/s/xdjqO7MSlCRDR9SX8Nbe6Q",
+    "marketing_url": "https://drive.google.com/drive/folders/1tkEBiV_wOB8PcfySinukSEaL4J-SZsUm",
+    "has_marketing_materials": false
   },
   {
     "name": "Eight Kwai Fong Happy Valley",
@@ -59504,7 +59850,9 @@
       "Eight Kwai Fong Happy Valley"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1jjesCACLonBhNBW1ifmPm5F3lW2nKX0_",
+    "has_marketing_materials": false
   },
   {
     "name": "蓝塘道23-39号",
@@ -59913,7 +60261,9 @@
       "独立屋销控表"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/19K9pMHeJSGFHPYL4NEqMdgqozsvTSaG2",
+    "has_marketing_materials": false
   },
   {
     "name": "滶晨",
@@ -60139,7 +60489,10 @@
       "1B座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2026年入伙)"
+    "property_type_desc": "期房 (预计2026年入伙)",
+    "intro_url": "https://mp.weixin.qq.com/s/pAjQ2cUrjulCAtypfsdfJA",
+    "marketing_url": "https://drive.google.com/drive/folders/1u4TMWsOcApc7vZfwZONBS8Io_Ix4jW3n",
+    "has_marketing_materials": true
   },
   {
     "name": "花语海第1期",
@@ -60550,7 +60903,9 @@
     "selling_points": "1、启德跑道区承丰道16号海滨前排新地标：由嘉华国际、会德丰地产及中国海外合资打造，位处跑道区海滨核心，部分单位饱览开阔维多利亚港一线水岸风光。\n2、法式浪漫水岸风情设计与高品质精装：融汇现代法式花园度假美学，全盘规划涵盖多元化实用户型，配备豪华住客专属会所，营造惬意舒心的海滨生活。\n3、启德千亿CBD2规划红利与高性价比入市：紧邻启德海滨长廊与未来都会公园，兼享跑道区高阶水岸圈层与启德核心商圈红利，自住与投资潜力突出。",
     "tower_count": 1,
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/1z723MjO_bKQuUmIidoohimKWjSxooqHQ",
+    "has_marketing_materials": false
   },
   {
     "name": "花语海第2期",
@@ -61069,7 +61424,9 @@
     "selling_points": "1、启德跑道区承丰道16号海滨前排新地标：由嘉华国际、会德丰地产及中国海外合资打造，位处跑道区海滨核心，部分单位饱览开阔维多利亚港一线水岸风光。\n2、法式浪漫水岸风情设计与高品质精装：融汇现代法式花园度假美学，全盘规划涵盖多元化实用户型，配备豪华住客专属会所，营造惬意舒心的海滨生活。\n3、启德千亿CBD2规划红利与高性价比入市：紧邻启德海滨长廊与未来都会公园，兼享跑道区高阶水岸圈层与启德核心商圈红利，自住与投资潜力突出。",
     "tower_count": 1,
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "marketing_url": "https://drive.google.com/drive/folders/1z723MjO_bKQuUmIidoohimKWjSxooqHQ",
+    "has_marketing_materials": false
   },
   {
     "name": "Elize Park",
@@ -61220,7 +61577,9 @@
     "selling_points": "1、旺角核心洗衣街地段步入太子及旺角东双铁：坐落洗衣街181号核心地段，步行约3-5分钟直达港铁太子站与旺角东站，畅达全港各核心CBD及高铁西九龙站。\n2、乐风集团高定精装智能化都会精品住宅：现楼交付品质所见即所得，全屋引入德国高端厨卫品牌与全方位智能家居控制系统，户型方正实用，居住质感精致典雅。\n3、顶尖34名校网黄金护城河与高租金回报：坐拥全港第一梯队的九龙34小学名校网与九龙城中学校网，周边生活商圈成熟完备，租客承接力极强，租金收益稳健居高。",
     "tower_count": 1,
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/search?q=Elize%20Park",
+    "has_marketing_materials": false
   },
   {
     "name": "维港汇 I",
@@ -61561,7 +61920,9 @@
       "2座"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1kESOSr4A55-PY3JZAXIXMnGL5sB3Uxkf",
+    "has_marketing_materials": false
   },
   {
     "name": "St. George's Mansions",
@@ -62955,7 +63316,9 @@
     "selling_points": "1、港岛大潭白笔山道18号经典滨海独立洋房：坐落港岛南区著名半岛白笔山道，三面临海，背靠苍翠山峦，直面大潭湾一线壮丽开阔海景，私密清幽。\n2、欧陆度假风情独栋大宅配私家花园泳池：每座洋房建筑极具欧陆海滨度假风范，拥有专属绿意花园、私人泳池及独立车位，空间尺度恢宏通透。\n3、老牌顶豪圈层与顶级国际学校辐射圈：紧邻香港国际学校（HKIS），数十年来汇聚城中知名富豪、跨国高管与两地名流，是极具代表性的南区传家物业。",
     "tower_count": 1,
     "property_type": "forward",
-    "property_type_desc": "期房 (即将发售)"
+    "property_type_desc": "期房 (即将发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1J6rC1F3dpyhcY4atrQBg5ZUPmj4CvZ0e",
+    "has_marketing_materials": false
   },
   {
     "name": "红山半岛 - B区",
@@ -64062,7 +64425,9 @@
     "selling_points": "1、港岛大潭白笔山道18号经典滨海独立洋房：坐落港岛南区著名半岛白笔山道，三面临海，背靠苍翠山峦，直面大潭湾一线壮丽开阔海景，私密清幽。\n2、欧陆度假风情独栋大宅配私家花园泳池：每座洋房建筑极具欧陆海滨度假风范，拥有专属绿意花园、私人泳池及独立车位，空间尺度恢宏通透。\n3、老牌顶豪圈层与顶级国际学校辐射圈：紧邻香港国际学校（HKIS），数十年来汇聚城中知名富豪、跨国高管与两地名流，是极具代表性的南区传家物业。",
     "tower_count": 1,
     "property_type": "forward",
-    "property_type_desc": "期房 (即将发售)"
+    "property_type_desc": "期房 (即将发售)",
+    "marketing_url": "https://drive.google.com/drive/folders/1J6rC1F3dpyhcY4atrQBg5ZUPmj4CvZ0e",
+    "has_marketing_materials": false
   },
   {
     "name": "泓璟",
@@ -64178,7 +64543,9 @@
       "泓璟"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/search?q=type%3Afolder%20parent%3A15tRwSlG1VTOKuEyj-H131zpNK6v6MY04%20%22%E4%B9%9D%E9%BE%99-%E4%BD%95%E6%96%87%E7%94%B0-%E6%B3%93%E7%92%9F%22",
+    "has_marketing_materials": false
   },
   {
     "name": "海德园第2期",
@@ -64286,7 +64653,9 @@
       "1B座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "marketing_url": "https://drive.google.com/drive/search?q=type%3Afolder%20parent%3A15tRwSlG1VTOKuEyj-H131zpNK6v6MY04%20%22%E6%B8%AF%E5%B2%9B-%E6%9F%B4%E6%B9%BE-%E6%B5%B7%E5%BE%B7%E5%9B%AD%22",
+    "has_marketing_materials": false
   },
   {
     "name": "叡璟II",
@@ -64377,7 +64746,10 @@
       "5B座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2028年入伙)"
+    "property_type_desc": "期房 (预计2028年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT0ZTR2dJVFpucnhJ?opennew=1",
+    "marketing_url": "https://drive.google.com/drive/folders/1sa8atOcN3i7GVaCQWMsE0bHAHdeEigOM",
+    "has_marketing_materials": true
   },
   {
     "name": "映汇",
@@ -64516,7 +64888,10 @@
       "映汇"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2026年入伙)"
+    "property_type_desc": "期房 (预计2026年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT0Vod0FMcVpidkNM?aidPos=list&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&aidPos=list&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&opennew=1",
+    "marketing_url": "https://drive.google.com/drive/folders/1IUe2H8xJOWK11-OIH8xzWsrVrz5vuOZo",
+    "has_marketing_materials": true
   },
   {
     "name": "肇辉台6号",
@@ -64609,7 +64984,9 @@
       "肇辉台6号"
     ],
     "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
+    "property_type_desc": "现房 (现楼发售)",
+    "marketing_url": "https://drive.google.com/drive/search?q=type%3Afolder%20parent%3A15tRwSlG1VTOKuEyj-H131zpNK6v6MY04%20%22%E6%B8%AF%E5%B2%9B-%E5%8D%8A%E5%B1%B1%E5%8C%BA%E4%B8%9C%E9%83%A8-%E8%82%87%E8%BE%89%E5%8F%B06%E5%8F%B7%22",
+    "has_marketing_materials": false
   },
   {
     "name": "海瑅湾 I",
@@ -64766,7 +65143,10 @@
       "2B座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT0JwQmxNUkdJbmFn",
+    "marketing_url": "https://drive.google.com/drive/folders/1HOnx36Osdu6cW8jxlj9ZRtom34PYCgqY?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
+    "has_marketing_materials": true
   },
   {
     "name": "海瑅湾 II",
@@ -64915,6 +65295,9 @@
       "5B座"
     ],
     "property_type": "forward",
-    "property_type_desc": "期房 (预计2027年入伙)"
+    "property_type_desc": "期房 (预计2027年入伙)",
+    "intro_url": "https://docs.qq.com/doc/DT0JwQmxNUkdJbmFn",
+    "marketing_url": "https://drive.google.com/drive/folders/1HOnx36Osdu6cW8jxlj9ZRtom34PYCgqY?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
+    "has_marketing_materials": true
   }
 ]
