@@ -1051,6 +1051,233 @@
     z-index: 9999 !important;
     box-shadow: 0 4px 14px rgba(0,0,0,0.35);
   }
+  .proj-pin-box.active {
+    transform: translate(-50%, -50%) scale(1.18);
+    box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px #2563eb, 0 8px 22px rgba(37, 99, 235, 0.5) !important;
+    z-index: 9999 !important;
+  }
+
+  /* 🗺️ 右下角悬浮楼盘空间情报卡 (Floating Corner Intelligence Card) */
+  .project-corner-card {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    width: 320px;
+    max-width: calc(100vw - 40px);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(203, 213, 225, 0.85);
+    border-radius: 14px;
+    box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.2), 0 4px 12px -2px rgba(15, 23, 42, 0.08);
+    z-index: 1050;
+    padding: 13px 15px;
+    transform: translateY(20px) scale(0.96);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.26s ease;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+  }
+  .project-corner-card.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .corner-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .corner-header-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .corner-title {
+    font-size: 1.02rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .corner-tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+  }
+  .corner-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+  .corner-tag.ready {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+  }
+  .corner-tag.forward {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+  }
+  .corner-tag.price {
+    background: #f8fafc;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+  }
+  .corner-tag.school {
+    background: #fffbeb;
+    color: #b45309;
+    border: 1px solid #fde68a;
+  }
+  .corner-close-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.15s;
+    margin-top: -2px;
+  }
+  .corner-close-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    transform: scale(1.08);
+  }
+
+  .corner-anchor-row {
+    font-size: 0.74rem;
+    color: #dc2626;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-bottom: 7px;
+  }
+  .corner-anchor-row .highlight-dist {
+    font-weight: 800;
+  }
+
+  .corner-card-body {
+    margin-top: 4px;
+  }
+
+  .corner-mtr-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .corner-mtr-station {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-size: 0.8rem;
+  }
+  .mtr-station-name {
+    font-weight: 800;
+    color: #065f46;
+  }
+  .mtr-lines-badge {
+    font-size: 0.68rem;
+    color: #047857;
+    background: rgba(255,255,255,0.85);
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid #a7f3d0;
+  }
+  .corner-mtr-walk {
+    font-size: 0.74rem;
+    color: #334155;
+    margin-top: 2px;
+  }
+  .corner-mtr-walk strong {
+    color: #0f172a;
+  }
+
+  .btn-corner-route {
+    width: 100%;
+    padding: 6px 10px;
+    background: #16a34a;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px rgba(22, 163, 74, 0.25);
+  }
+  .btn-corner-route:hover {
+    background: #15803d;
+    box-shadow: 0 3px 8px rgba(22, 163, 74, 0.35);
+  }
+  .btn-corner-route.active {
+    background: #dc2626;
+    box-shadow: 0 2px 5px rgba(220, 38, 38, 0.25);
+  }
+  .btn-corner-route.active:hover {
+    background: #b91c1c;
+  }
+
+  .corner-nomtr-box {
+    font-size: 0.75rem;
+    color: #64748b;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 7px 9px;
+  }
+
+  .corner-admin-box {
+    margin-top: 7px;
+    padding-top: 7px;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  /* 缩放按钮置于右上角避让导航栏和右下卡片 */
+  .leaflet-top.leaflet-right {
+    top: 68px !important;
+    right: 14px !important;
+  }
+
+  @media (max-width: 768px) {
+    .project-corner-card {
+      right: 12px;
+      left: 12px;
+      bottom: 12px;
+      width: auto;
+      max-width: none;
+      padding: 10px 12px;
+      border-radius: 12px;
+    }
+  }
 
   /* 🚇 MTR Station Marker Pin Styling (Zoom >= 15 完整展开形态) */
   .mtr-pin {
@@ -1906,6 +2133,9 @@
   <div class="drawer-list-scroll" id="drawer-list"></div>
 </div>
 
+<!-- 🗺️ 右下角悬浮楼盘空间情报卡 (Floating Corner Intelligence Card) -->
+<div id="project-corner-card" class="project-corner-card"></div>
+
 <!-- PDF Modal -->
 <div class="modal-overlay" id="export-modal">
   <div class="modal-card" style="max-width: 520px;">
@@ -2000,6 +2230,8 @@ let districtBoundsMap = {};
 let microDistrictsGeoJSON = null;
 let microDistrictsLayer = null;
 let currentRouteLine = null;
+let currentRouteProjName = null;
+let activeSelectedProjName = null;
 let selectedNames = new Set();
 let isMtrLayerVisible = true;
 let isMtrLinesLayerVisible = true;
@@ -2096,7 +2328,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function initMap() {
   map = L.map('map', { zoomControl: false }).setView([22.3150, 114.1750], 12);
-  L.control.zoom({ position: 'bottomright' }).addTo(map);
+  L.control.zoom({ position: 'topright' }).addTo(map);
+
+  // 点击地图底图空白处，平滑关闭右下角悬浮情报卡
+  map.on('click', () => {
+    closeProjectFloatingCard();
+  });
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2agc_1_eee20b45a89c95d86e5610c5', {
     maxZoom: 19, attribution: '&copy; OpenStreetMap &copy; CARTO'
@@ -3251,8 +3488,16 @@ function getDistanceKm(lat1, lon1, lat2, lon2) {
   return R * c;
 }
 
+function clearMtrRouteLine() {
+  if (currentRouteLine) {
+    map.removeLayer(currentRouteLine);
+    currentRouteLine = null;
+    currentRouteProjName = null;
+  }
+}
+
 function drawMtrRouteLine(pLat, pLng, mLat, mLng, pName, mName) {
-  if (currentRouteLine) map.removeLayer(currentRouteLine);
+  clearMtrRouteLine();
 
   const proj = projectsData.find(p => p.name === pName);
   let coords = [];
@@ -3269,7 +3514,155 @@ function drawMtrRouteLine(pLat, pLng, mLat, mLng, pName, mName) {
     opacity: 0.9
   }).addTo(map);
 
+  currentRouteProjName = pName;
   map.fitBounds(currentRouteLine.getBounds(), { padding: [80, 80] });
+}
+
+function toggleMtrRoute(pName) {
+  if (currentRouteLine && currentRouteProjName === pName) {
+    clearMtrRouteLine();
+    updateCornerRouteBtnState(pName, false);
+  } else {
+    const proj = projectsData.find(p => p.name === pName);
+    if (!proj || !proj.nearest_mtr) return;
+    const mtr = proj.nearest_mtr;
+    drawMtrRouteLine(proj.lat, proj.lng, mtr.nearest_mtr_lat, mtr.nearest_mtr_lng, proj.name, mtr.nearest_mtr_cn);
+    updateCornerRouteBtnState(pName, true);
+  }
+}
+
+function updateCornerRouteBtnState(pName, isDrawn) {
+  const btn = document.getElementById(`btn-corner-route-${pName}`);
+  if (btn) {
+    if (isDrawn) {
+      btn.classList.add('active');
+      btn.innerHTML = '✕ 清除步行轨迹';
+    } else {
+      btn.classList.remove('active');
+      btn.innerHTML = '🚶 绘制步行导航线';
+    }
+  }
+}
+
+function closeProjectFloatingCard() {
+  const cardContainer = document.getElementById('project-corner-card');
+  if (cardContainer) {
+    cardContainer.classList.remove('active');
+  }
+  activeSelectedProjName = null;
+  clearMtrRouteLine();
+  document.querySelectorAll('.proj-pin-box.active').forEach(el => el.classList.remove('active'));
+}
+
+function showProjectFloatingCard(name) {
+  const proj = projectsData.find(p => p.name === name);
+  if (!proj) return;
+
+  activeSelectedProjName = name;
+
+  // 更新地图上楼盘标记的激活光晕
+  document.querySelectorAll('.proj-pin-box').forEach(el => {
+    if (el.getAttribute('title') === name) {
+      el.classList.add('active');
+    } else {
+      el.classList.remove('active');
+    }
+  });
+
+  const cardContainer = document.getElementById('project-corner-card');
+  if (!cardContainer) return;
+
+  const mtr = proj.nearest_mtr;
+  const isForward = proj.property_type === 'forward' || proj.is_coming_soon;
+  const propTypeBadge = isForward
+    ? `<span class="corner-tag forward" title="${proj.property_type_desc || '期房'}">⏳ 期房</span>`
+    : `<span class="corner-tag ready" title="${proj.property_type_desc || '现房'}">🏠 现房</span>`;
+
+  // 价格徽章
+  let priceHtml = '';
+  if (proj.min_price_wan && proj.min_price_wan > 0) {
+    priceHtml = `<span class="corner-tag price">约$${Number(proj.min_price_wan).toLocaleString()}万起</span>`;
+  } else if (proj.sell_status === 'coming_soon') {
+    priceHtml = `<span class="corner-tag price">即将发售</span>`;
+  } else {
+    priceHtml = `<span class="corner-tag price">招标</span>`;
+  }
+
+  // 校网徽章 (若有)
+  let schoolHtml = '';
+  if (proj.school_net) {
+    const netShort = proj.school_net.split('/')[0].trim();
+    schoolHtml = `<span class="corner-tag school" title="${proj.school_net}">🏫 ${netShort}</span>`;
+  }
+
+  // 锚点地标距离 (若当前选中了锚点)
+  let anchorDistHtml = '';
+  if (activeAnchorLandmark) {
+    const dKm = getDistanceKm(proj.lat, proj.lng, activeAnchorLandmark.lat, activeAnchorLandmark.lng);
+    const dStr = dKm < 1 ? `${Math.round(dKm * 1000)}米` : `${dKm.toFixed(1)}公里`;
+    anchorDistHtml = `
+      <div class="corner-anchor-row">
+        📏 距 <strong>${activeAnchorLandmark.name.split(' ')[0]}</strong> 约 <span class="highlight-dist">${dStr}</span>
+      </div>
+    `;
+  }
+
+  // 核心交通与步行导航 (全卡核心，精简直达)
+  let mtrHtml = '';
+  const isLineDrawn = currentRouteLine && currentRouteProjName === proj.name;
+  if (mtr) {
+    mtrHtml = `
+      <div class="corner-mtr-card">
+        <div class="corner-mtr-station">
+          <span class="mtr-station-name">🚇 ${mtr.nearest_mtr_cn}站</span>
+          <span class="mtr-lines-badge">${mtr.nearest_mtr_lines}</span>
+        </div>
+        <div class="corner-mtr-walk">
+          ⏱️ 步行约 <strong>${mtr.walk_time_min}</strong> 分钟 · <strong>${mtr.dist_walk_m}</strong> 米
+        </div>
+        <button id="btn-corner-route-${proj.name}" class="btn-corner-route ${isLineDrawn ? 'active' : ''}" onclick="toggleMtrRoute('${proj.name}')">
+          ${isLineDrawn ? '✕ 清除步行轨迹' : '🚶 绘制步行导航线'}
+        </button>
+      </div>
+    `;
+  } else {
+    mtrHtml = `
+      <div class="corner-nomtr-box">
+        📍 位于 ${proj.region} · ${proj.district} ${proj.address ? '(' + proj.address + ')' : ''}
+      </div>
+    `;
+  }
+
+  // 管理员权限操作按键 (若管理员模式)
+  let adminHtml = '';
+  if (isAdminMode) {
+    adminHtml = `
+      <div class="corner-admin-box">
+        <button class="btn-tool-ors" onclick="openCoordModal('${proj.name}')">✏️ 手动修改坐标/门牌</button>
+      </div>
+    `;
+  }
+
+  cardContainer.innerHTML = `
+    <div class="corner-card-header">
+      <div class="corner-header-info">
+        <div class="corner-title" title="${proj.name}">${proj.name}</div>
+        <div class="corner-tags-row">
+          ${propTypeBadge}
+          ${priceHtml}
+          ${schoolHtml}
+        </div>
+      </div>
+      <button class="corner-close-btn" onclick="closeProjectFloatingCard()" title="关闭情报卡">✕</button>
+    </div>
+    ${anchorDistHtml}
+    <div class="corner-card-body">
+      ${mtrHtml}
+    </div>
+    ${adminHtml}
+  `;
+
+  cardContainer.classList.add('active');
 }
 
 function applyFilters() {
@@ -3489,9 +3882,7 @@ function applyFilters() {
       // 点击卡片直接滑翔定位，并确保若抽屉遮挡时聚焦
       map.flyTo([proj.lat, proj.lng], 16, { duration: 0.8 });
       setTimeout(() => {
-        if (markersByName[proj.name]) {
-          markersByName[proj.name].openPopup();
-        }
+        showProjectFloatingCard(proj.name);
       }, 850);
     });
 
@@ -3508,86 +3899,13 @@ function applyFilters() {
       const marker = L.marker([proj.lat, proj.lng], { icon: mIcon });
       marker._pName = proj.name;
 
-      // 🎯 点击地图项目标记，左侧列表联动自动平滑跳转定位并高亮光晕
-      marker.on('click', () => {
+      // 🎯 点击地图项目标记，弹出右下角空间情报卡，同时左侧列表联动自动平滑跳转定位并高亮
+      marker.on('click', (e) => {
+        if (e && e.originalEvent) e.originalEvent.stopPropagation();
         scrollToProjectCard(proj.name);
+        showProjectFloatingCard(proj.name);
       });
 
-      let popupMtrRow = '';
-      if (mtr) {
-        popupMtrRow = `
-          <div class="popup-mtr-box">
-            <div>🚇 <strong>最近港铁：</strong><span id="pop-st-${proj.name}">${mtr.nearest_mtr_cn}</span>站 (${mtr.nearest_mtr_lines})</div>
-            <div style="margin-top:2px;">⏱️ 步行通勤：约 <strong><span id="pop-time-${proj.name}">${mtr.walk_time_min}</span> 分钟</strong> (实际步行 <strong><span id="pop-dist-${proj.name}">${mtr.dist_walk_m}</span> 米</strong>)</div>
-            <button class="btn-link-mtr" onclick="drawMtrRouteLine(${proj.lat}, ${proj.lng}, ${mtr.nearest_mtr_lat}, ${mtr.nearest_mtr_lng}, '${proj.name}', '${mtr.nearest_mtr_cn}')">
-              🚶 显示真实步行导航轨迹
-            </button>
-          </div>
-        `;
-      }
-
-      let salesProgressHtml = '';
-      if (proj.sales_stats) {
-        const st = proj.sales_stats;
-        const rate = st.sold_rate || 0;
-        salesProgressHtml = `
-          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:6px 10px; margin:6px 0;">
-            <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:3px;">
-              <span><strong>📊 去化率: ${rate}%</strong> (已售 ${st.sold} / 总数 ${st.total} 伙)</span>
-              <span style="color:#16a34a; font-weight:700;">在售 ${st.sale} 伙</span>
-            </div>
-            <div style="height:5px; background:#e2e8f0; border-radius:3px; overflow:hidden;">
-              <div style="height:100%; width:${Math.min(rate, 100)}%; background:linear-gradient(90deg, #2563eb, #16a34a); border-radius:3px;"></div>
-            </div>
-          </div>
-        `;
-      }
-
-      const hasIntro = !!(proj.intro_url && String(proj.intro_url).trim().startsWith('http'));
-      const popupIntroBtn = hasIntro
-        ? `<a href="${proj.intro_url.trim()}" target="_blank" rel="noopener noreferrer" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#eff6ff; color:#2563eb; font-size:11px; font-weight:700; padding:6px 8px; border-radius:6px; text-decoration:none; border:1px solid #bfdbfe; white-space:nowrap; transition:all 0.2s;">📖 楼盘介绍</a>`
-        : `<button disabled title="暂无楼盘介绍" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#f1f5f9; color:#94a3b8; font-size:11px; font-weight:600; padding:6px 8px; border-radius:6px; border:1px solid #e2e8f0; cursor:not-allowed; opacity:0.65; white-space:nowrap;">📖 楼盘介绍</button>`;
-
-      const popupMarketingBtn = hasMarketing
-        ? `<a href="${marketingUrl}" target="_blank" rel="noopener noreferrer" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#ecfdf5; color:#047857; font-size:11px; font-weight:700; padding:6px 8px; border-radius:6px; text-decoration:none; border:1px solid #a7f3d0; white-space:nowrap; transition:all 0.2s;">📂 资料网盘</a>`
-        : `<button disabled title="暂无营销资料" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#f1f5f9; color:#94a3b8; font-size:11px; font-weight:600; padding:6px 8px; border-radius:6px; border:1px solid #e2e8f0; cursor:not-allowed; opacity:0.65; white-space:nowrap;">📂 资料网盘</button>`;
-
-      const popPropBadge = isForward
-        ? `<span class="badge-prop-type forward" style="margin-left:6px;">⏳ 期房</span>`
-        : `<span class="badge-prop-type ready" style="margin-left:6px;">🏠 现房</span>`;
-
-      const popupHTML = `
-        <div class="custom-popup">
-          <div class="popup-title" style="display:flex; align-items:center; justify-content:space-between;">
-            <span>${proj.name}</span>
-            ${popPropBadge}
-          </div>
-          <div class="popup-row">📍 区域地址：<strong>${proj.main_area || proj.region} - ${proj.micro_district || proj.district} ${proj.address ? '(' + proj.address + ')' : ''}</strong></div>
-          <div class="popup-row">🏠 交付状态：<strong style="color:${isForward ? '#2563eb' : '#059669'};">${proj.property_type_desc || (isForward ? '期房' : '现房 (现楼发售)')}</strong></div>
-          ${proj.school_net ? `<div class="popup-row">🏫 所属校网：<strong style="color:#d97706;">${proj.school_net}</strong></div>` : ''}
-          ${proj.developer ? `<div class="popup-row">🏗️ 开发商：<strong>${proj.developer}</strong></div>` : ''}
-          <div class="popup-row">💷 价格描述：<strong style="color:#2563eb;">${(proj.total_price_desc && (proj.total_price_desc.includes('待定') || proj.total_price_desc.includes('详见价单'))) ? '待定' : (proj.total_price_desc || (proj.min_price_wan ? proj.min_price_wan + '万起' : '待定'))}</strong></div>
-          ${distKmStr ? `<div class="popup-row">📏 锚点距离：<strong style="color:#dc2626;">距 ${activeAnchorLandmark.name.split(' ')[0]} ${distKmStr}</strong></div>` : ''}
-          ${salesProgressHtml}
-          ${popupMtrRow}
-          <div style="margin-top:10px; padding-top:8px; border-top:1px solid #e2e8f0; display:flex; flex-direction:column; gap:6px;">
-            <a href="${salesUrl}" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:6px; background:#1e3a8a; color:#ffffff; font-size:12px; font-weight:700; padding:7px 12px; border-radius:8px; text-decoration:none; box-shadow:0 2px 6px rgba(30,58,138,0.25); white-space:nowrap;">
-              🏢 打开正式版【销控网格】&rarr;
-            </a>
-            <div style="display:flex; gap:6px;">
-              ${popupIntroBtn}
-              ${popupMarketingBtn}
-            </div>
-          </div>
-          ${isAdminMode ? `
-            <div class="popup-edit-toolbar" style="margin-top:6px;">
-              <button class="btn-tool-ors" onclick="openCoordModal('${proj.name}')">✏️ 手动修改坐标/门牌 (管理权限)</button>
-            </div>
-          ` : ''}
-          <div class="popup-row" style="margin-top:8px; font-size:11px; color:#64748b;">${proj.reason || '优质推荐一手新盘'}</div>
-        </div>
-      `;
-      marker.bindPopup(popupHTML);
       projectMarkersLayer.addLayer(marker);
       markersByName[proj.name] = marker;
     }
@@ -3625,7 +3943,7 @@ function onProjectSearchInput(val) {
       const p = matched[0];
       map.flyTo([p.lat, p.lng], 16, { duration: 0.8 });
       setTimeout(() => {
-        if (markersByName[p.name]) markersByName[p.name].openPopup();
+        showProjectFloatingCard(p.name);
       }, 850);
     }
   }
@@ -3891,9 +4209,7 @@ function selectProjectSuggestion(name) {
 
   map.flyTo([p.lat, p.lng], 16, { duration: 0.8 });
   setTimeout(() => {
-    if (markersByName[p.name]) {
-      markersByName[p.name].openPopup();
-    }
+    showProjectFloatingCard(p.name);
   }, 850);
 }
 
