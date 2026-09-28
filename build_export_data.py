@@ -444,6 +444,29 @@ def main():
     }
 
     print("3️⃣ 整合发展商、落成日期、校网归属、楼盘卖点、在售明细、最近成交记录、精准价格区间与套数统计...")
+    def load_project_completion_dates():
+        excel_path = "/Users/nb/google/Antigravity/工作/运营/楼盘字典/项目列表.xlsx"
+        if not os.path.exists(excel_path):
+            return {}
+        try:
+            wb = openpyxl.load_workbook(excel_path, read_only=True)
+            ws = wb["项目列表"]
+            rows = list(ws.iter_rows(values_only=True))
+            headers = rows[0]
+            idx_date = headers.index("落成日期")
+            idx_name = headers.index("新盘名称\n（中文）")
+            res = {}
+            for r in rows[1:]:
+                nm = str(r[idx_name] or "").strip()
+                dt = str(r[idx_date] or "").strip()
+                if dt and dt != "None":
+                    res[nm] = dt
+            return res
+        except Exception as e:
+            print("读取项目列表.xlsx落成日期异常:", e)
+            return {}
+
+    project_completion_map = load_project_completion_dates()
     selling_points_map = load_selling_points()
     t_chars = '號峯滙敍灣瓏鑽鑄賢譽啟璽維奧滶蘊匯悅寶應羅壽淺徑賓園華遠藍語區築緹瀧澐雙鑽閣揚晉凱島輝臺連東紅臺豐環學區萬濱嶺軒廣場頭門閣薈'
     s_chars = '号峰汇叙湾珑钻铸贤誉启玺维奥滶蕴汇悦宝应罗寿浅径宾园华远蓝语区筑缇泷沄双钻阁扬晋凯岛辉台连东红台丰环学区万滨岭轩广场头门阁荟'
@@ -476,7 +499,50 @@ def main():
         ]))
 
         p["developer"] = extract_developer(full_text)
-        p["completion_date"] = extract_completion_date(full_text)
+        comp_date = extract_completion_date(full_text)
+        dt_excel = project_completion_map.get(pname)
+        if not dt_excel:
+            for k, v in project_completion_map.items():
+                if k in pname or pname in k:
+                    dt_excel = v
+                    break
+
+        is_ready_explicit = any(k in full_text for k in ['现楼发售', '现楼实景', '现楼交付', '即买即住', '即买即收租'])
+        is_forward = False
+        pt_desc = "现房 (现楼发售)"
+        comp_date = "现楼发售 (即买即住)"
+
+        if is_ready_explicit:
+            is_forward = False
+            pt_desc = "现房 (现楼发售)"
+            comp_date = "现楼发售 (即买即住)"
+        elif dt_excel:
+            m = re.search(r"20(2[5-9]|3[0-9])", dt_excel)
+            if m:
+                yr = int("20" + m.group(1))
+                is_forward = True
+                pt_desc = f"期房 (预计{yr}年入伙)"
+                comp_date = f"预计{yr}年入伙"
+            else:
+                is_forward = False
+                pt_desc = f"现房 (现楼发售)"
+                comp_date = f"现楼 ({dt_excel})"
+        elif p.get("is_coming_soon"):
+            is_forward = True
+            pt_desc = "期房 (即将发售)"
+            comp_date = "即将发售"
+        elif any(k in full_text for k in ['预售楼花', '楼花发售', '一手楼花']):
+            is_forward = True
+            pt_desc = "期房 (楼花)"
+            comp_date = "预售楼花"
+        else:
+            is_forward = False
+            pt_desc = "现房 (现楼发售)"
+            comp_date = "现楼发售 (即买即住)"
+
+        p["completion_date"] = comp_date
+        p["property_type"] = "forward" if is_forward else "ready"
+        p["property_type_desc"] = pt_desc
 
         # 匹配校网归属
         sn_info = None

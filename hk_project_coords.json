@@ -318,7 +318,9 @@
     "tower_count": 1,
     "tower_names": [
       "Park College"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "The Monet 第1期",
@@ -755,7 +757,9 @@
     "tower_names": [
       "2座",
       "3座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "The Monet 第2期",
@@ -1151,7 +1155,9 @@
     "tower_count": 1,
     "tower_names": [
       "1座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "The Monet 第3期",
@@ -1547,7 +1553,9 @@
     "tower_count": 1,
     "tower_names": [
       "5座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "博峰",
@@ -1948,7 +1956,9 @@
       "住宅大楼 - 东翼",
       "住宅大楼 - 西翼",
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "喇沙汇",
@@ -2225,7 +2235,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [],
     "recent_transactions": [],
     "main_area": "九龙西北（深水埗区）",
@@ -2239,7 +2249,9 @@
     "has_price_data": false,
     "building_count": 1,
     "selling_points": "1、九龙塘41名校网黄金教育护城河：坐落传统低密豪宅腹地喇沙利道，与传统顶级名校喇沙书院、喇沙小学仅一步之遥，坐拥全港最拔尖的九龙41名校网，教育资产含金量极高。\n2、纯正独立洋房大宅尊享私密圈层：全盘仅规划极少量珍罕纯大户型洋房规制，独享私家花园、独立车位与私家泳池，出入尊贵隐秘，空间尺度阔绰恢宏。\n3、传世半山地脉与家族资产极强抗跌力：地处九龙塘老牌传统豪宅核心区，区域供地极度断供，极具稀缺性与家族代际传承价值，长线资产抗跌与保值属性出众。",
-    "tower_count": 1
+    "tower_count": 1,
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "皇廷汇",
@@ -2813,7 +2825,7 @@
       }
     },
     "developer": "信和置业",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (30/10/2013)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -2856,7 +2868,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "缇外",
@@ -3398,7 +3412,9 @@
       "5座",
       "6座",
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "天玺",
@@ -3506,7 +3522,7 @@
       }
     },
     "developer": "新鸿基地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -3617,7 +3633,9 @@
       "月钻玺",
       "海钻玺",
       "皇钻玺"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "128 Waterloo",
@@ -3851,7 +3869,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (2021-05-11 00:00:00)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -3986,7 +4004,9 @@
     "tower_count": 1,
     "tower_names": [
       "128 Waterloo"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Prince Central",
@@ -4112,7 +4132,7 @@
       }
     },
     "developer": "新鸿基地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (30/09/2021)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -4231,7 +4251,9 @@
     "tower_count": 1,
     "tower_names": [
       "Prince Central"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "VAU Residence",
@@ -4405,7 +4427,7 @@
       }
     },
     "developer": "万科香港",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (2023-10-03 00:00:00)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -4510,7 +4532,9 @@
     "tower_count": 1,
     "tower_names": [
       "VAU Residence"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "st. george's mansions",
@@ -4772,7 +4796,9 @@
       "1座",
       "2座",
       "3座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "傲玟",
@@ -5144,7 +5170,9 @@
       "5座",
       "6座",
       "7座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "名钻",
@@ -5440,7 +5468,9 @@
     "tower_count": 1,
     "tower_names": [
       "名钻"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "天铸 (第2期)",
@@ -5586,7 +5616,7 @@
       }
     },
     "developer": "新鸿基地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -5656,7 +5686,9 @@
       "2座",
       "3座",
       "5座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "太子道西233号",
@@ -5880,7 +5912,9 @@
     "tower_count": 1,
     "tower_names": [
       "太子道西233号"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "明寓",
@@ -6141,7 +6175,9 @@
     "tower_count": 1,
     "tower_names": [
       "明寓"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "朗贤峰第IIA期",
@@ -6247,7 +6283,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "即将发售",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -6338,7 +6374,9 @@
       "1座",
       "2座",
       "3座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (即将发售)"
   },
   {
     "name": "朗贤峰第IIB期",
@@ -6484,7 +6522,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "即将发售",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -6583,7 +6621,9 @@
       "5B座",
       "6A座",
       "6B座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (即将发售)"
   },
   {
     "name": "瑜一第IC期",
@@ -6713,7 +6753,7 @@
       }
     },
     "developer": "华懋集团",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2025年入伙",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -6781,7 +6821,9 @@
     "tower_names": [
       "5A座",
       "5B座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2025年入伙)"
   },
   {
     "name": "瑜一．天海",
@@ -6883,7 +6925,7 @@
       }
     },
     "developer": "华懋集团",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (25/11/2024)",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -6983,7 +7025,9 @@
       "1B座",
       "2A座",
       "2B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "耀爵台",
@@ -7279,7 +7323,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -7330,7 +7374,9 @@
     "tower_count": 1,
     "tower_names": [
       "耀爵台"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "芳菲",
@@ -7569,7 +7615,9 @@
     "tower_count": 1,
     "tower_names": [
       "芳菲"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "誉林",
@@ -7840,7 +7888,9 @@
     "tower_count": 1,
     "tower_names": [
       "誉林"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "隆敍",
@@ -8190,7 +8240,9 @@
     "tower_count": 1,
     "tower_names": [
       "隆敍"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Double Coast I",
@@ -8620,7 +8672,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -8728,7 +8780,9 @@
     "tower_names": [
       "3座",
       "5座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Double Coast III",
@@ -9162,7 +9216,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -9283,7 +9337,9 @@
     "tower_names": [
       "1A座",
       "1B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Henley Park",
@@ -9547,7 +9603,9 @@
       "低座B座",
       "低座C座",
       "低座D座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Miami Quay I",
@@ -10155,7 +10213,9 @@
       "1座",
       "2座",
       "3座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Miami Quay II",
@@ -10763,7 +10823,9 @@
       "5座",
       "6座",
       "8座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Monaco Marine",
@@ -10901,7 +10963,7 @@
       }
     },
     "developer": "会德丰地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -10997,7 +11059,9 @@
       "低座B",
       "低座C",
       "低座D"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Monaco One",
@@ -11139,7 +11203,7 @@
       }
     },
     "developer": "会德丰地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -11223,7 +11287,9 @@
     "tower_names": [
       "2A座",
       "2B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Monaco 第1期",
@@ -11361,7 +11427,7 @@
       }
     },
     "developer": "会德丰地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (21/04/2022)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -11461,7 +11527,9 @@
     "tower_names": [
       "2A座",
       "2B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "The Henley I",
@@ -11603,7 +11671,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -11712,7 +11780,9 @@
       "低座B座",
       "低座C座",
       "低座D座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "The Henley II",
@@ -11854,7 +11924,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -11943,7 +12013,9 @@
     "tower_count": 1,
     "tower_names": [
       "1座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "The Henley III",
@@ -12085,7 +12157,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -12198,7 +12270,9 @@
     "tower_names": [
       "3A座",
       "3B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "启德海湾 1",
@@ -12632,7 +12706,7 @@
       }
     },
     "developer": "会德丰地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -12723,7 +12797,9 @@
       "2A座",
       "2B座",
       "2C座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "启德海湾 2",
@@ -13077,7 +13153,7 @@
       }
     },
     "developer": "会德丰地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2025年入伙",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -13175,7 +13251,9 @@
       "1A座",
       "1B座",
       "1C座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2025年入伙)"
   },
   {
     "name": "天泷",
@@ -13720,7 +13798,9 @@
       "7座",
       "8座",
       "Harbour Mansion"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "天玺．天",
@@ -13973,7 +14053,9 @@
       "3座",
       "5座",
       "6座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "天玺．天第2期",
@@ -14216,7 +14298,9 @@
     "tower_names": [
       "1座",
       "2座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "天玺．海第1期",
@@ -14769,7 +14853,9 @@
       "6座",
       "Mansion 1",
       "Mansion 2"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "天玺．海第2A期",
@@ -15286,7 +15372,9 @@
     "tower_count": 1,
     "tower_names": [
       "7座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "天玺．海第2B期",
@@ -15811,7 +15899,9 @@
       "8座",
       "9A座",
       "9座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "柏蔚森 I",
@@ -16360,7 +16450,9 @@
     "tower_names": [
       "5座",
       "6座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "柏蔚森 II",
@@ -16877,7 +16969,9 @@
     "tower_names": [
       "2座",
       "3座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "柏蔚森 III",
@@ -17412,7 +17506,9 @@
     "tower_count": 1,
     "tower_names": [
       "1座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "沄璟",
@@ -18018,7 +18114,9 @@
       "6座",
       "8座",
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "维港1号",
@@ -18472,7 +18570,7 @@
       }
     },
     "developer": "中国海外发展",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [],
     "recent_transactions": [],
     "address": "承豐道21號",
@@ -18487,7 +18585,9 @@
     "has_price_data": false,
     "building_count": 1,
     "selling_points": "1、启德跑道区首发大型地标住宅承丰道21号：中国海外倾力打造，位处启德跑道区核心海滨龙头位置，部分单位饱览开扬九龙湾畔游艇海景及维港内海。\n2、现代国际滨海度假建筑美学与高规格精装：全盘规划两座高座大厦及多栋低座大宅，配备多元化临海住客会所设施，户型方正高效，全屋精装品牌考究。\n3、跑道区千亿市政配套与成熟高实用空间：紧邻未来启德水岸长廊与都会公园，兼享启德CBD2长远规划红利，入场总价极具性价比，适合高品质自住与收租。",
-    "tower_count": 1
+    "tower_count": 1,
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "维港．双钻",
@@ -18877,7 +18977,7 @@
       }
     },
     "developer": "中国海外发展",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -19000,7 +19100,9 @@
       "1B座",
       "2A座",
       "2B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "维港．湾畔第1A期",
@@ -19526,7 +19628,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -19624,7 +19726,9 @@
       "1A座",
       "1B座",
       "1C座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "维港．湾畔第1B期",
@@ -20094,7 +20198,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -20168,7 +20272,9 @@
     "tower_names": [
       "2A座",
       "2B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "维港．湾畔第2B期",
@@ -20618,7 +20724,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (15/10/2024)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -20683,7 +20789,9 @@
     "tower_names": [
       "5A座",
       "5B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "本木",
@@ -20785,7 +20893,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (2021-08-04 00:00:00)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -20890,7 +20998,9 @@
     "tower_count": 1,
     "tower_names": [
       "本木"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "The Boundary",
@@ -21192,7 +21302,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2025年入伙",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -21225,7 +21335,9 @@
     "tower_count": 1,
     "tower_names": [
       "The Boundary"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2025年入伙)"
   },
   {
     "name": "Upper Prince",
@@ -21361,7 +21473,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2026年入伙",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -21425,7 +21537,9 @@
     "tower_count": 1,
     "tower_names": [
       "Upper Prince"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2026年入伙)"
   },
   {
     "name": "利奥坊．凯岸",
@@ -21671,7 +21785,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (30/12/2019)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -21762,7 +21876,9 @@
     "tower_count": 1,
     "tower_names": [
       "2座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "利奥坊．壹隅",
@@ -22064,7 +22180,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [],
     "recent_transactions": [],
     "address": "深旺道5號",
@@ -22079,7 +22195,9 @@
     "has_price_data": false,
     "building_count": 1,
     "selling_points": "1、西九龙核心大角咀大型艺文商业街区：恒基兆业精心策划的七期大型综合市区更新版图，自设逾十万呎艺文商业步行街，潮流餐饮与休闲配套完善。\n2、步行至奥运站及旺角站双轨立体交通：步行轻松接驳港铁奥运站（东涌线）与旺角站，1站达香港站中环金融区，极速切换尖沙咀及西九龙高铁站。\n3、年轻新贵极度追捧的高收益投资盘：主打轻奢高实用都会户型，全屋智能化配置与艺术主题会所，深受西九龙及中环高薪年轻精英青睐，租金回报率全港领先。",
-    "tower_count": 1
+    "tower_count": 1,
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "利奥坊．曦岸",
@@ -22381,7 +22499,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (22/12/2021)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -22473,7 +22591,9 @@
     "tower_names": [
       "1座",
       "2座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "映居",
@@ -22799,7 +22919,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2025年入伙",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -22842,7 +22962,9 @@
     "tower_count": 1,
     "tower_names": [
       "映居"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2025年入伙)"
   },
   {
     "name": "原舍",
@@ -23060,7 +23182,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼发售 (即买即住)",
+    "completion_date": "预计2028年入伙",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -23133,7 +23255,9 @@
     "tower_count": 1,
     "tower_names": [
       "原舍"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2028年入伙)"
   },
   {
     "name": "Beacon Peak 第1期",
@@ -23774,7 +23898,9 @@
       "5座",
       "6座",
       "7座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "滶蕴",
@@ -24168,7 +24294,9 @@
     "tower_count": 1,
     "tower_names": [
       "滶蕴"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "The Haddon",
@@ -24394,7 +24522,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2025年入伙",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -24483,7 +24611,9 @@
     "tower_count": 1,
     "tower_names": [
       "The Haddon"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2025年入伙)"
   },
   {
     "name": "必嘉坊．曦汇",
@@ -24681,7 +24811,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -24778,7 +24908,9 @@
     "tower_count": 1,
     "tower_names": [
       "必嘉坊．曦汇"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "必嘉坊．迎汇",
@@ -24992,7 +25124,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -25097,7 +25229,9 @@
     "tower_count": 1,
     "tower_names": [
       "必嘉坊．迎汇"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "悦麓",
@@ -25279,7 +25413,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2025年入伙",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -25345,7 +25479,9 @@
     "tower_count": 1,
     "tower_names": [
       "悦麓"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2025年入伙)"
   },
   {
     "name": "首岸第1期",
@@ -25583,7 +25719,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -25649,7 +25785,9 @@
     "tower_count": 1,
     "tower_names": [
       "2座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   },
   {
     "name": "首岸第2期",
@@ -25887,7 +26025,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [
       {
         "layout": "null房",
@@ -25913,7 +26051,9 @@
     "tower_count": 1,
     "tower_names": [
       "3座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   },
   {
     "name": "首岸第3期",
@@ -26143,7 +26283,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -26209,7 +26349,9 @@
     "tower_count": 1,
     "tower_names": [
       "1座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   },
   {
     "name": "首岸第4期",
@@ -26419,7 +26561,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -26485,7 +26627,9 @@
     "tower_count": 1,
     "tower_names": [
       "5座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   },
   {
     "name": "首汇",
@@ -26731,7 +26875,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2026年入伙",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -26843,7 +26987,9 @@
     "tower_count": 1,
     "tower_names": [
       "首汇"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2026年入伙)"
   },
   {
     "name": "叡璟I",
@@ -27113,7 +27259,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2028年入伙",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -27203,7 +27349,9 @@
     "tower_names": [
       "3A座",
       "3B座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2028年入伙)"
   },
   {
     "name": "汇玺III",
@@ -27321,7 +27469,7 @@
       }
     },
     "developer": "新鸿基地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -27453,7 +27601,9 @@
       "8座",
       "彗钻汇",
       "皇钻汇"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "维港汇 III",
@@ -27852,7 +28002,9 @@
       "1A座",
       "1B座",
       "2座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "南首",
@@ -27990,7 +28142,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2025年入伙",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -28065,7 +28217,9 @@
     "tower_count": 1,
     "tower_names": [
       "南首"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2025年入伙)"
   },
   {
     "name": "壹沐第1期",
@@ -28219,7 +28373,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -28301,7 +28455,9 @@
     "tower_count": 1,
     "tower_names": [
       "1座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   },
   {
     "name": "壹沐第2期",
@@ -28455,7 +28611,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -28551,7 +28707,9 @@
     "tower_count": 1,
     "tower_names": [
       "2座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   },
   {
     "name": "文曜",
@@ -28832,7 +28990,9 @@
     "tower_count": 1,
     "tower_names": [
       "文曜"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "瑧博",
@@ -28946,7 +29106,7 @@
       }
     },
     "developer": "新世界发展",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -29021,7 +29181,9 @@
     "tower_count": 1,
     "tower_names": [
       "瑧博"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   },
   {
     "name": "101 Kings Road",
@@ -29147,7 +29309,7 @@
       }
     },
     "developer": "太古地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -29237,7 +29399,9 @@
     "tower_count": 1,
     "tower_names": [
       "101 Kings Road"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "君誉峰",
@@ -29311,7 +29475,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -29393,7 +29557,9 @@
     "tower_count": 1,
     "tower_names": [
       "君誉峰"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "嘉居．天后",
@@ -29503,7 +29669,7 @@
       }
     },
     "developer": "英皇国际",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -29562,7 +29728,9 @@
     "tower_count": 1,
     "tower_names": [
       "嘉居．天后"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "柏蔚山",
@@ -29780,7 +29948,7 @@
       }
     },
     "developer": "新世界发展",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -29873,7 +30041,9 @@
       "1座",
       "2座",
       "3座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "海璇",
@@ -30011,7 +30181,7 @@
       }
     },
     "developer": "新鸿基地产",
-    "completion_date": "现楼发售 (即买即住)",
+    "completion_date": "现楼 (31/07/2018)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -30151,7 +30321,9 @@
       "5A座",
       "5座",
       "6座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "海璇 II",
@@ -30281,7 +30453,7 @@
       }
     },
     "developer": "新鸿基地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (2021-11-02 00:00:00)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -30355,7 +30527,9 @@
     "tower_names": [
       "3A座",
       "3座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "海璇 II (第2B-3期)",
@@ -30485,7 +30659,7 @@
       }
     },
     "developer": "新鸿基地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (2021-11-02 00:00:00)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -30559,7 +30733,9 @@
     "tower_names": [
       "3A座",
       "3座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "雅盈峰",
@@ -30935,7 +31111,9 @@
     "tower_count": 1,
     "tower_names": [
       "雅盈峰"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Central Peak I",
@@ -31417,7 +31595,7 @@
       }
     },
     "developer": "新鸿基地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -31487,7 +31665,9 @@
       "Alpex III",
       "Everex I",
       "Everex II"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Central Peak II",
@@ -32019,7 +32199,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "21 Borrett Road 第1期",
@@ -32469,7 +32651,7 @@
       }
     },
     "developer": "长实集团",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -32536,7 +32718,9 @@
       "1号及2号",
       "3号及5号",
       "6号及7号"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Mount Pokfulam",
@@ -33001,7 +33185,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Upper Central",
@@ -33315,7 +33501,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -33374,7 +33560,9 @@
     "tower_count": 1,
     "tower_names": [
       "Upper Central"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "大学阁",
@@ -33664,7 +33852,7 @@
       }
     },
     "developer": "华懋集团",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (18/10/2019)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -33732,7 +33920,9 @@
       "1座",
       "2座",
       "3座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "天御第1期",
@@ -34115,7 +34305,9 @@
     "tower_count": 1,
     "tower_names": [
       "2座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "天御第2期",
@@ -34503,7 +34695,9 @@
     "tower_count": 1,
     "tower_names": [
       "1座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "宝峰",
@@ -34864,7 +35058,9 @@
     "tower_count": 1,
     "tower_names": [
       "宝峰"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "帝汇豪庭",
@@ -35250,7 +35446,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -35339,7 +35535,9 @@
     "tower_count": 1,
     "tower_names": [
       "帝汇豪庭"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "应天",
@@ -35883,7 +36081,9 @@
     "tower_names": [
       "10号及11号",
       "8号及9号"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "罗便臣道80号",
@@ -36069,7 +36269,7 @@
       }
     },
     "developer": "南丰集团",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (25/08/2001)",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -36136,7 +36336,9 @@
     "tower_names": [
       "1座",
       "2座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Kennedy 38",
@@ -36352,7 +36554,9 @@
     "tower_count": 1,
     "tower_names": [
       "Kennedy 38"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "吉喆",
@@ -36436,7 +36640,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2025年入伙",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -36527,7 +36731,9 @@
     "tower_count": 1,
     "tower_names": [
       "吉喆"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2025年入伙)"
   },
   {
     "name": "海嵎",
@@ -36783,7 +36989,9 @@
     "tower_count": 1,
     "tower_names": [
       "海嵎"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "皇府湾",
@@ -37853,7 +38061,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (25/11/1998)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -37896,7 +38104,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "寿臣山15号",
@@ -38241,7 +38451,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "No.3 Repulse Bay Road",
@@ -38819,7 +39031,7 @@
       }
     },
     "developer": "新世界发展",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (30/07/1997)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -38862,7 +39074,9 @@
     "tower_count": 1,
     "tower_names": [
       "浅水湾道3号"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Shouson Peak",
@@ -39106,7 +39320,7 @@
       }
     },
     "developer": "新鸿基地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (17/01/2012)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -39149,7 +39363,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "浅水湾108",
@@ -39693,7 +39909,7 @@
       }
     },
     "developer": "英皇国际",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (20/10/2017)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -39719,7 +39935,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "深水湾径8号",
@@ -40165,7 +40383,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (26/01/2018)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -40233,7 +40451,9 @@
       "1座",
       "2座",
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Mount Nicholson I",
@@ -41207,7 +41427,7 @@
       }
     },
     "developer": "南丰集团",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (2015-12-10 00:00:00)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -41266,7 +41486,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Mount Nicholson II",
@@ -42244,7 +42466,7 @@
       }
     },
     "developer": "南丰集团",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (18/02/2016)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -42297,7 +42519,9 @@
       "A座",
       "B座",
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Twelve Peaks",
@@ -43197,7 +43421,7 @@
       }
     },
     "developer": "新鸿基地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (2012-09-05 00:00:00)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -43256,7 +43480,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "宾吉道3号",
@@ -44164,7 +44390,7 @@
       }
     },
     "developer": "太古地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (2008-09-04 00:00:00)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -44197,7 +44423,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "海德园第1期",
@@ -44443,7 +44671,7 @@
       }
     },
     "developer": "太古地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2025年入伙",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -44516,7 +44744,9 @@
     "tower_names": [
       "2座",
       "3座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2025年入伙)"
   },
   {
     "name": "峻誉．渣甸山",
@@ -45068,7 +45298,9 @@
     "tower_names": [
       "1座",
       "2座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "皇第",
@@ -45642,7 +45874,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (28/06/2018)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -45709,7 +45941,9 @@
     "tower_count": 1,
     "tower_names": [
       "皇第"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Woodis",
@@ -45987,7 +46221,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -46076,7 +46310,9 @@
     "tower_count": 1,
     "tower_names": [
       "Woodis"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "活道1号",
@@ -46354,7 +46590,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (20/12/2023)",
     "sales_control_summary": [],
     "recent_transactions": [],
     "address": "活道1號",
@@ -46369,7 +46605,9 @@
     "has_price_data": false,
     "building_count": 1,
     "selling_points": "1、港岛湾仔活道1号核心枢纽成熟地段：华人置业与市建局合作打造的经典地标，步行约6-8分钟即达港铁湾仔站，数分钟直通金钟、中环及铜锣湾。\n2、现代高品质大厦配备全方位住客会所：外观典雅大气，全盘规划多样化实用户型，配置高规格厨卫用料与完善健身房、室外泳池等休闲会所设施。\n3、顶尖12名校网与湾仔成熟商圈高租金：划入名校林立的湾仔区12校网，周边商业成熟、跨国名企聚集，高薪白领租客群体庞大，租金回报与保值抗跌力极佳。",
-    "tower_count": 1
+    "tower_count": 1,
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "One Eighty",
@@ -46589,7 +46827,9 @@
     "tower_count": 1,
     "tower_names": [
       "One Eighty"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "傲华",
@@ -46804,7 +47044,9 @@
     "tower_count": 1,
     "tower_names": [
       "傲华"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "远晴",
@@ -47145,7 +47387,9 @@
     "tower_count": 1,
     "tower_names": [
       "远晴"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Victoria Coast",
@@ -47618,7 +47862,9 @@
     "tower_names": [
       "A座",
       "B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "15 Western Street",
@@ -47752,7 +47998,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "即将发售",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -47843,7 +48089,9 @@
     "tower_count": 1,
     "tower_names": [
       "15 Western Street"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (即将发售)"
   },
   {
     "name": "42 Tung St.",
@@ -48061,7 +48309,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -48120,7 +48368,9 @@
     "tower_count": 1,
     "tower_names": [
       "42 Tung St."
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "50 Stanley Village Road",
@@ -49690,7 +49940,7 @@
       }
     },
     "developer": "信和置业",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -49749,7 +49999,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "One Stanley",
@@ -51939,7 +52191,9 @@
       "8座",
       "9座",
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Solace",
@@ -53045,7 +53299,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (13/06/2023)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -53088,7 +53342,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "海天径 1号, 舂磡角道 44, 46, 48, 50号",
@@ -54132,7 +54388,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "环角道7号、9号及11号",
@@ -55254,7 +55512,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -55279,7 +55537,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "339 Tai Hang Road",
@@ -55915,7 +56175,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -55975,7 +56235,9 @@
     "tower_names": [
       "A座",
       "B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Blue Coast",
@@ -56065,7 +56327,7 @@
       }
     },
     "developer": "长实集团",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2025年入伙",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -56143,7 +56405,9 @@
       "1B座",
       "2A座",
       "2B座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2025年入伙)"
   },
   {
     "name": "Blue Coast II",
@@ -56201,7 +56465,7 @@
       }
     },
     "developer": "长实集团",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2025年入伙",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -56277,7 +56541,9 @@
     "tower_names": [
       "3座",
       "5座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2025年入伙)"
   },
   {
     "name": "Deep Water South 第6A期",
@@ -56335,7 +56601,7 @@
       }
     },
     "developer": "会德丰地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -56417,7 +56683,9 @@
       "2A座",
       "2B座",
       "2C座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Deep Water South 第6B期",
@@ -56475,7 +56743,7 @@
       }
     },
     "developer": "会德丰地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -56542,7 +56810,9 @@
     "tower_names": [
       "1A座",
       "1B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "PORTO",
@@ -56640,7 +56910,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -56720,7 +56990,9 @@
     "tower_count": 1,
     "tower_names": [
       "PORTO"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "弦岸",
@@ -56866,7 +57138,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (30/09/2024)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -56932,7 +57204,9 @@
     "tower_count": 1,
     "tower_names": [
       "弦岸"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "扬海",
@@ -57078,7 +57352,7 @@
       }
     },
     "developer": "信和置业",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -57179,7 +57453,9 @@
       "1B座",
       "2A座",
       "2B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "晋环",
@@ -57293,7 +57569,7 @@
       }
     },
     "developer": "路劲地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "3 房",
@@ -57403,7 +57679,9 @@
       "1B座",
       "2A座",
       "2B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "海盈山第4A期",
@@ -57509,7 +57787,7 @@
       }
     },
     "developer": "信和置业",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (24/11/2024)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -57606,7 +57884,9 @@
     "tower_names": [
       "2A座",
       "2B座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "海盈山第4B期",
@@ -57712,7 +57992,7 @@
       }
     },
     "developer": "信和置业",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -57803,7 +58083,9 @@
       "1A座",
       "1B座",
       "1C座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "滶晨 II",
@@ -57905,7 +58187,7 @@
       }
     },
     "developer": "新世界发展",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2026年入伙",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -57996,7 +58278,9 @@
     "tower_count": 1,
     "tower_names": [
       "2座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2026年入伙)"
   },
   {
     "name": "璟南",
@@ -58273,7 +58557,9 @@
     "tower_count": 1,
     "tower_names": [
       "璟南"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "逸南",
@@ -58347,7 +58633,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (30/09/2022)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -58413,7 +58699,9 @@
     "tower_count": 1,
     "tower_names": [
       "逸南"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "君豪峰",
@@ -58507,7 +58795,7 @@
       }
     },
     "developer": "恒基兆业地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (18/04/2019)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -58589,7 +58877,9 @@
     "tower_count": 1,
     "tower_names": [
       "君豪峰"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "凯玥",
@@ -58798,7 +59088,9 @@
       "5座",
       "6座",
       "8座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "Eight Kwai Fong Happy Valley",
@@ -59160,7 +59452,7 @@
       }
     },
     "developer": "新世界发展",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼 (18/03/2015)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -59210,7 +59502,9 @@
     "tower_count": 1,
     "tower_names": [
       "Eight Kwai Fong Happy Valley"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "蓝塘道23-39号",
@@ -59536,7 +59830,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -59617,7 +59911,9 @@
     "tower_count": 1,
     "tower_names": [
       "独立屋销控表"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "滶晨",
@@ -59751,7 +60047,7 @@
       }
     },
     "developer": "新世界发展",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2026年入伙",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -59841,7 +60137,9 @@
     "tower_names": [
       "1A座",
       "1B座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2026年入伙)"
   },
   {
     "name": "花语海第1期",
@@ -60235,7 +60533,7 @@
       }
     },
     "developer": "会德丰地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [],
     "recent_transactions": [],
     "address": "承豐道16號",
@@ -60250,7 +60548,9 @@
     "has_price_data": false,
     "building_count": 1,
     "selling_points": "1、启德跑道区承丰道16号海滨前排新地标：由嘉华国际、会德丰地产及中国海外合资打造，位处跑道区海滨核心，部分单位饱览开阔维多利亚港一线水岸风光。\n2、法式浪漫水岸风情设计与高品质精装：融汇现代法式花园度假美学，全盘规划涵盖多元化实用户型，配备豪华住客专属会所，营造惬意舒心的海滨生活。\n3、启德千亿CBD2规划红利与高性价比入市：紧邻启德海滨长廊与未来都会公园，兼享跑道区高阶水岸圈层与启德核心商圈红利，自住与投资潜力突出。",
-    "tower_count": 1
+    "tower_count": 1,
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   },
   {
     "name": "花语海第2期",
@@ -60752,7 +61052,7 @@
       }
     },
     "developer": "会德丰地产",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [],
     "recent_transactions": [],
     "address": "承豐道16號",
@@ -60767,7 +61067,9 @@
     "has_price_data": false,
     "building_count": 1,
     "selling_points": "1、启德跑道区承丰道16号海滨前排新地标：由嘉华国际、会德丰地产及中国海外合资打造，位处跑道区海滨核心，部分单位饱览开阔维多利亚港一线水岸风光。\n2、法式浪漫水岸风情设计与高品质精装：融汇现代法式花园度假美学，全盘规划涵盖多元化实用户型，配备豪华住客专属会所，营造惬意舒心的海滨生活。\n3、启德千亿CBD2规划红利与高性价比入市：紧邻启德海滨长廊与未来都会公园，兼享跑道区高阶水岸圈层与启德核心商圈红利，自住与投资潜力突出。",
-    "tower_count": 1
+    "tower_count": 1,
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   },
   {
     "name": "Elize Park",
@@ -60916,7 +61218,9 @@
     "has_price_data": false,
     "building_count": 1,
     "selling_points": "1、旺角核心洗衣街地段步入太子及旺角东双铁：坐落洗衣街181号核心地段，步行约3-5分钟直达港铁太子站与旺角东站，畅达全港各核心CBD及高铁西九龙站。\n2、乐风集团高定精装智能化都会精品住宅：现楼交付品质所见即所得，全屋引入德国高端厨卫品牌与全方位智能家居控制系统，户型方正实用，居住质感精致典雅。\n3、顶尖34名校网黄金护城河与高租金回报：坐拥全港第一梯队的九龙34小学名校网与九龙城中学校网，周边生活商圈成熟完备，租客承接力极强，租金收益稳健居高。",
-    "tower_count": 1
+    "tower_count": 1,
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "维港汇 I",
@@ -61255,7 +61559,9 @@
       "1A座",
       "1B座",
       "2座"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "St. George's Mansions",
@@ -61456,7 +61762,9 @@
     "has_price_data": false,
     "building_count": 1,
     "selling_points": "1、何文田加多利山百年名门显赫地段：坐落九龙传统顶级富豪腹地嘉道理道24A号，信和置业与中电集团联袂打造，出入皆为香港老牌名流世家，具备极高的历史文化沉淀。\n2、世界级建筑大师Robert A.M. Stern操刀：由纽约顶奢豪宅大师亲自设计，全石材古典优雅立面，全盘仅175伙纯大宅，户户私家电梯大堂，空间格局恢宏大气，用料奢华绝伦。\n3、拔尖34名校网护航与现楼传世藏品：地处九龙34小学及九龙城中学顶级名校网，现楼交付即刻入伙，兼备极致私密性与城市中心便利，是极具家族代际传承意义的艺术孤品。",
-    "tower_count": 1
+    "tower_count": 1,
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "红山半岛 - C区",
@@ -62630,7 +62938,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "即将发售",
     "sales_control_summary": [],
     "recent_transactions": [],
     "address": "白筆山道18號",
@@ -62645,7 +62953,9 @@
     "has_price_data": false,
     "building_count": 1,
     "selling_points": "1、港岛大潭白笔山道18号经典滨海独立洋房：坐落港岛南区著名半岛白笔山道，三面临海，背靠苍翠山峦，直面大潭湾一线壮丽开阔海景，私密清幽。\n2、欧陆度假风情独栋大宅配私家花园泳池：每座洋房建筑极具欧陆海滨度假风范，拥有专属绿意花园、私人泳池及独立车位，空间尺度恢宏通透。\n3、老牌顶豪圈层与顶级国际学校辐射圈：紧邻香港国际学校（HKIS），数十年来汇聚城中知名富豪、跨国高管与两地名流，是极具代表性的南区传家物业。",
-    "tower_count": 1
+    "tower_count": 1,
+    "property_type": "forward",
+    "property_type_desc": "期房 (即将发售)"
   },
   {
     "name": "红山半岛 - B区",
@@ -63735,7 +64045,7 @@
       }
     },
     "developer": "香港品牌发展商",
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "即将发售",
     "sales_control_summary": [],
     "recent_transactions": [],
     "address": "白筆山道18號",
@@ -63750,7 +64060,9 @@
     "has_price_data": false,
     "building_count": 1,
     "selling_points": "1、港岛大潭白笔山道18号经典滨海独立洋房：坐落港岛南区著名半岛白笔山道，三面临海，背靠苍翠山峦，直面大潭湾一线壮丽开阔海景，私密清幽。\n2、欧陆度假风情独栋大宅配私家花园泳池：每座洋房建筑极具欧陆海滨度假风范，拥有专属绿意花园、私人泳池及独立车位，空间尺度恢宏通透。\n3、老牌顶豪圈层与顶级国际学校辐射圈：紧邻香港国际学校（HKIS），数十年来汇聚城中知名富豪、跨国高管与两地名流，是极具代表性的南区传家物业。",
-    "tower_count": 1
+    "tower_count": 1,
+    "property_type": "forward",
+    "property_type_desc": "期房 (即将发售)"
   },
   {
     "name": "泓璟",
@@ -63809,7 +64121,7 @@
       }
     },
     "building_count": 1,
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "现楼发售 (即买即住)",
     "sales_control_summary": [
       {
         "layout": "开放式",
@@ -63864,7 +64176,9 @@
     "tower_count": 1,
     "tower_names": [
       "泓璟"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "海德园第2期",
@@ -63923,7 +64237,7 @@
       }
     },
     "building_count": 2,
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [
       {
         "layout": "2 房",
@@ -63970,7 +64284,9 @@
     "tower_names": [
       "1A座",
       "1B座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   },
   {
     "name": "叡璟II",
@@ -64029,7 +64345,7 @@
       }
     },
     "building_count": 2,
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2028年入伙",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -64059,7 +64375,9 @@
     "tower_names": [
       "5A座",
       "5B座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2028年入伙)"
   },
   {
     "name": "映汇",
@@ -64118,7 +64436,7 @@
       }
     },
     "building_count": 1,
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2026年入伙",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -64196,7 +64514,9 @@
     "tower_count": 1,
     "tower_names": [
       "映汇"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2026年入伙)"
   },
   {
     "name": "肇辉台6号",
@@ -64255,7 +64575,7 @@
       }
     },
     "building_count": 1,
-    "completion_date": "现楼发售 (即买即住)",
+    "completion_date": "现楼 (26/01/2010)",
     "sales_control_summary": [
       {
         "layout": "4 房",
@@ -64287,7 +64607,9 @@
     "tower_count": 1,
     "tower_names": [
       "肇辉台6号"
-    ]
+    ],
+    "property_type": "ready",
+    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "海瑅湾 I",
@@ -64346,7 +64668,7 @@
       }
     },
     "building_count": 4,
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -64442,7 +64764,9 @@
       "1B座",
       "2A座",
       "2B座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   },
   {
     "name": "海瑅湾 II",
@@ -64501,7 +64825,7 @@
       }
     },
     "building_count": 3,
-    "completion_date": "现楼 / 详见项目资料",
+    "completion_date": "预计2027年入伙",
     "sales_control_summary": [
       {
         "layout": "1 房",
@@ -64589,6 +64913,8 @@
       "3B座",
       "5A座",
       "5B座"
-    ]
+    ],
+    "property_type": "forward",
+    "property_type_desc": "期房 (预计2027年入伙)"
   }
 ]

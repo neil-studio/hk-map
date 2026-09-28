@@ -58,116 +58,78 @@
     background: #0f172a;
   }
 
-  /* Fullscreen Map */
+  /* Fullscreen Map under Top Navbar */
   #map {
     position: absolute;
-    inset: 0;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 1;
   }
 
-  /* Glassmorphism Floating Header Bar */
-  .floating-header {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    right: 16px;
-    z-index: 100;
-    background: var(--glass-bg);
+  /* 🌟 Fixed Top Navbar (置顶菜单栏 · 56px 通栏) */
+  .top-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 12px 20px;
-    box-shadow: 0 10px 30px rgba(15,23,42,0.12);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .header-main-row {
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+    padding: 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    width: 100%;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
   }
 
   .brand-logo {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: 800;
     color: var(--brand-primary);
     white-space: nowrap;
     flex-shrink: 0;
-  }
-
-  .three-anchors-row {
-    display: flex;
-    gap: 8px;
-    flex: 1 1 auto;
-    min-width: 0;
-    align-items: center;
-  }
-
-  .anchor-select-glass {
-    flex: 1 1 135px;
-    min-width: 115px;
-    max-width: 165px;
-    padding: 7px 20px 7px 9px;
-    border-radius: 8px;
-    border: 1px solid #cbd5e1;
-    background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") no-repeat right 6px center/11px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    font-size: 0.75rem;
-    font-weight: 600;
-    outline: none;
-    color: var(--text-primary);
-    cursor: pointer;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    transition: all 0.15s ease;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-
-  .anchor-select-glass:hover {
-    border-color: #94a3b8;
-    background-color: #f8fafc;
-  }
-
-  .anchor-select-glass:focus {
-    border-color: var(--brand-accent);
-    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+    user-select: none;
   }
 
   /* 🔍 Search Box Styling */
   .search-box-wrapper {
     position: relative;
-    flex: 1.1 1 150px;
-    min-width: 135px;
-    max-width: 220px;
+    width: 220px;
     display: flex;
     align-items: center;
   }
 
   .search-input-glass {
     width: 100%;
-    padding: 7px 24px 7px 24px;
+    padding: 6.5px 24px 6.5px 26px;
     border-radius: 8px;
     border: 1px solid #cbd5e1;
-    background: #ffffff;
-    font-size: 0.75rem;
+    background: #f8fafc;
+    font-size: 0.76rem;
     font-weight: 600;
     outline: none;
     color: var(--text-primary);
     transition: all 0.2s ease;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
   }
 
   .search-input-glass:focus {
+    background: #ffffff;
     border-color: var(--brand-accent);
     box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
   }
@@ -214,14 +176,14 @@
     top: calc(100% + 6px);
     left: 0;
     right: 0;
-    min-width: 250px;
+    min-width: 280px;
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(15,23,42,0.15);
-    max-height: 280px;
+    max-height: 320px;
     overflow-y: auto;
-    z-index: 500;
+    z-index: 1200;
     display: none;
     padding: 4px 0;
   }
@@ -269,58 +231,186 @@
     font-weight: 600;
   }
 
-  .header-btn-group {
+  /* Center Controls */
+  .navbar-center {
     display: flex;
     align-items: center;
+    gap: 8px;
+    flex: 1 1 auto;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .navbar-filter-select {
+    padding: 6.5px 22px 6.5px 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") no-repeat right 7px center/11px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 0.76rem;
+    font-weight: 600;
+    outline: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    max-width: 170px;
+  }
+
+  .navbar-filter-select:hover {
+    border-color: #94a3b8;
+    background-color: #f8fafc;
+  }
+
+  .navbar-filter-select:focus {
+    border-color: var(--brand-accent);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  }
+
+  /* 🏠 房产类型胶囊组 (全部 | 现房 | 期房) */
+  .prop-type-pill-group {
+    display: inline-flex;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 2px;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  .prop-type-btn {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    padding: 4.5px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .prop-type-btn:hover {
+    color: #1e293b;
+  }
+
+  .prop-type-btn.active {
+    background: #ffffff;
+    color: #2563eb;
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Right Action Center */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  /* 🌐 图层控制下拉菜单 */
+  .layer-control-wrapper {
+    position: relative;
+  }
+
+  .btn-layer-dropdown {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 6.5px 12px;
+    border-radius: 8px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-layer-dropdown:hover, .btn-layer-dropdown.open {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #1d4ed8;
+  }
+
+  .dropdown-caret {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    transition: transform 0.2s;
+  }
+
+  .btn-layer-dropdown.open .dropdown-caret {
+    transform: rotate(180deg);
+  }
+
+  .layer-dropdown-panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 215px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.14);
+    padding: 10px 12px;
+    display: none;
+    flex-direction: column;
     gap: 6px;
-    flex-shrink: 0;
-    white-space: nowrap;
-    margin-left: auto;
+    z-index: 1200;
   }
 
-  .btn-layer-toggle {
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    padding: 6.5px 10px;
-    border-radius: 8px;
-    font-size: 0.76rem;
-    font-weight: 600;
-    cursor: pointer;
-    color: #334155;
+  .layer-dropdown-panel.open {
+    display: flex;
+  }
+
+  .layer-panel-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .layer-checkbox-item {
     display: flex;
     align-items: center;
-    gap: 4px;
-    transition: all 0.15s;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .btn-layer-toggle.active {
-    background: #eff6ff;
-    border-color: #3b82f6;
-    color: #1d4ed8;
-    font-weight: 700;
-  }
-
-  .btn-filter-toggle {
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    padding: 6.5px 11px;
-    border-radius: 8px;
+    justify-content: space-between;
     font-size: 0.76rem;
     font-weight: 600;
+    color: #1e293b;
     cursor: pointer;
-    color: #334155;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: all 0.15s;
+    padding: 5px 6px;
+    border-radius: 6px;
+    transition: background 0.15s;
+    user-select: none;
   }
 
-  .btn-filter-toggle.active {
-    background: #eff6ff;
-    border-color: #3b82f6;
-    color: #1d4ed8;
-    font-weight: 700;
+  .layer-checkbox-item:hover {
+    background: #f8fafc;
+  }
+
+  .layer-chk-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .layer-chk-left input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: #2563eb;
+    width: 14px;
+    height: 14px;
   }
 
   .btn-export-main {
@@ -354,83 +444,46 @@
     box-shadow: none;
   }
 
-  /* Expandable Advanced Filter Drawer */
-  .expandable-filter-box {
-    display: none;
-    padding-top: 10px;
-    border-top: 1px solid rgba(226,232,240,0.8);
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .expandable-filter-box.open { display: flex; }
-
-  .filter-group-item {
-    display: flex;
+  /* 🏷️ 现房与期房卡片徽章 */
+  .badge-prop-type {
+    font-size: 0.65rem;
+    padding: 1.5px 5px;
+    border-radius: 4px;
+    font-weight: 700;
+    white-space: nowrap;
+    display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.78rem;
+    gap: 2px;
+  }
+  .badge-prop-type.ready {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+  }
+  .badge-prop-type.forward {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
   }
 
-  .filter-chip-mini {
-    padding: 4px 10px;
-    border-radius: 6px;
-    border: 1px solid #cbd5e1;
-    background: #fff;
-    font-size: 0.76rem;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .filter-chip-mini.active {
-    background: #2563eb;
-    color: #fff;
-    border-color: #2563eb;
-    font-weight: 600;
-  }
-
-  .filter-select-mini {
-    padding: 3px 8px;
-    border-radius: 6px;
-    border: 1px solid #cbd5e1;
-    background: #ffffff;
-    font-size: 0.78rem;
-    color: #1e293b;
-    font-weight: 600;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.2s;
-  }
-  .filter-select-mini:hover,
-  .filter-select-mini:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
-  }
-
-  .custom-num-input {
-    width: 80px;
-    padding: 4px 8px;
-    border-radius: 6px;
-    border: 1px solid #cbd5e1;
-    font-size: 0.76rem;
-    outline: none;
-  }
-
-  /* Floating Slide-out Drawer Panel (Left-side with Collapsible Tab) */
+  /* Left-side Drawer Panel (从 56px 顶栏向下贴合延伸) */
   .floating-drawer {
     position: absolute;
-    top: 92px;
-    bottom: 16px;
-    left: 16px;
+    top: 56px;
+    bottom: 0;
+    left: 0;
     width: 410px;
-    max-height: calc(100vh - 110px);
-    z-index: 95;
+    max-height: calc(100vh - 56px);
+    z-index: 950;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(226, 232, 240, 0.9);
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.16);
+    border-right: 1px solid rgba(226, 232, 240, 0.9);
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-radius: 0;
+    box-shadow: 4px 0 24px rgba(15, 23, 42, 0.08);
     display: flex;
     flex-direction: column;
     overflow: visible;
@@ -438,7 +491,7 @@
   }
 
   .floating-drawer.collapsed {
-    transform: translateX(calc(-100% - 24px));
+    transform: translateX(-100%);
   }
 
   /* 抽屉右侧边缘悬挂的三角形触发按键 */
@@ -1529,48 +1582,36 @@
     opacity: 1;
   }
 
-  /* 📱 Responsive Breakpoints for Floating Header */
-  @media (max-width: 1400px) {
-    .floating-header {
-      padding: 10px 16px;
-    }
+  /* 📱 Responsive Breakpoints for Top Navbar */
+  @media (max-width: 1200px) {
     .brand-logo {
-      font-size: 0.98rem;
-    }
-    .anchor-select-glass {
-      min-width: 108px;
-      padding: 6px 18px 6px 7px;
-      font-size: 0.72rem;
+      font-size: 0.92rem;
     }
     .search-box-wrapper {
-      min-width: 125px;
+      width: 180px;
     }
-    .search-input-glass {
+    .navbar-filter-select {
+      max-width: 135px;
       font-size: 0.72rem;
-      padding: 6px 22px;
+      padding: 5px 18px 5px 8px;
     }
-    .btn-layer-toggle, .btn-filter-toggle {
+    .prop-type-btn {
+      padding: 4px 8px;
       font-size: 0.72rem;
-      padding: 6px 8px;
     }
     .btn-export-main {
-      font-size: 0.75rem;
-      padding: 6px 11px;
+      font-size: 0.74rem;
+      padding: 6px 10px;
     }
   }
 
-  @media (max-width: 1160px) {
-    .header-main-row {
-      flex-wrap: wrap;
-      gap: 8px;
+  @media (max-width: 900px) {
+    .search-box-wrapper {
+      display: none;
     }
-    .three-anchors-row {
-      order: 3;
-      flex: 1 1 100%;
-      width: 100%;
-    }
-    .header-btn-group {
-      margin-left: auto;
+    .top-navbar {
+      padding: 0 10px;
+      gap: 6px;
     }
   }
   /* 🔒 专属访问密码保护门 (Password Gate: nb8888) - 100% 物理拦截 */
@@ -1708,115 +1749,139 @@
 <!-- Fullscreen Map Container -->
 <div id="map"></div>
 
-<!-- Glassmorphism Floating Header Control Center -->
-<div class="floating-header">
-  <div class="header-main-row">
-    <div class="brand-logo" title="香港一手新盘地图 (数据已实时直连)">
-      <span>🇭🇰 香港一手新盘地图</span>
+<!-- 🌟 Fixed Top Navbar Control Center (贴顶沉稳通栏) -->
+<header class="top-navbar">
+  <!-- Left: Brand Logo & Omnisearch -->
+  <div class="navbar-left">
+    <div class="brand-logo" title="香港一手新盘全景地图">
+      <span>🇭🇰 香港一手新盘全景地图</span>
     </div>
 
-    <!-- 3 Dropdown Anchors + Search Box -->
-    <div class="three-anchors-row">
-      <select class="anchor-select-glass" id="anchor-school" onchange="onAnchorSelect('school')" title="按重点学区、八大高校或名校筛选定位">
-        <option value="">🎓 重点学区/名校...</option>
-      </select>
-      <select class="anchor-select-glass" id="anchor-mtr" onchange="onAnchorSelect('mtr')" title="按全港 98 个港铁站点筛选定位">
-        <option value="">🚇 全线港铁站点...</option>
-      </select>
-      <select class="anchor-select-glass" id="anchor-district" onchange="onAnchorSelect('district')" title="按法定豪宅商圈或核心商场筛选定位">
-        <option value="">🏙️ 核心商圈/商场...</option>
-      </select>
-      <div class="search-box-wrapper" id="search-box-wrapper">
-        <span class="search-icon">🔍</span>
-        <input type="text" class="search-input-glass" id="project-search-input" placeholder="搜索楼盘项目..." autocomplete="off" oninput="onProjectSearchInput(this.value)" onkeydown="onProjectSearchKeydown(event)" onfocus="onProjectSearchFocus()">
-        <button class="search-clear-btn" id="search-clear-btn" onclick="clearProjectSearch()" title="清空搜索">✕</button>
-        <div class="search-suggestions" id="search-suggestions"></div>
-      </div>
+    <!-- 智能综合搜索框 (支持楼盘、地铁站、名校、商圈) -->
+    <div class="search-box-wrapper" id="search-box-wrapper">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-input-glass" id="project-search-input" placeholder="搜索新盘/车站/名校/商圈..." autocomplete="off" oninput="onProjectSearchInput(this.value)" onkeydown="onProjectSearchKeydown(event)" onfocus="onProjectSearchFocus()">
+      <button class="search-clear-btn" id="search-clear-btn" onclick="clearProjectSearch()" title="清空搜索">✕</button>
+      <div class="search-suggestions" id="search-suggestions"></div>
     </div>
+  </div>
 
-    <div class="header-btn-group">
-      <button class="btn-layer-toggle active" id="btn-toggle-mtr" onclick="toggleMtrLayer()" title="显示/隐藏港铁站点标记">🚇 港铁站</button>
-      <button class="btn-layer-toggle active" id="btn-toggle-mtr-lines" onclick="toggleMtrLinesLayer()" title="显示/隐藏港铁10条线路轨迹">🛤️ 港铁线</button>
-      <div class="layer-btn-wrapper">
-        <button class="btn-layer-toggle active" id="btn-toggle-school" onclick="toggleFamousSchoolsLayer()" title="显示/隐藏重点名校与大学标记">
-          🏫 名校
-          <span class="info-bubble" title="查看名校评选标准" onclick="event.stopPropagation(); toggleSchoolTooltip();">ℹ️</span>
-        </button>
-        <div class="school-standard-tooltip" id="school-tooltip">
-          <div class="tooltip-header">
-            <span class="tooltip-title">🏫 重点名校精选收录标准</span>
-            <span class="tooltip-badge">45 所核心名门</span>
+  <!-- Center: 3 Primary Property Filters (三大核心买房筛选) -->
+  <div class="navbar-center">
+    <!-- 核心商圈下拉定位 -->
+    <select class="navbar-filter-select" id="anchor-district" onchange="onAnchorSelect('district')" title="按法定豪宅商圈或核心商场筛选定位">
+      <option value="">🏙️ 核心商圈/商场...</option>
+    </select>
+
+    <!-- 隐藏于DOM内部的学区与港铁select，确保内部JS联动不受影响 -->
+    <select id="anchor-school" style="display:none;" onchange="onAnchorSelect('school')">
+      <option value="">🎓 重点学区/名校...</option>
+    </select>
+    <select id="anchor-mtr" style="display:none;" onchange="onAnchorSelect('mtr')">
+      <option value="">🚇 全线港铁站点...</option>
+    </select>
+
+    <!-- 价格预算下拉筛选 -->
+    <select class="navbar-filter-select" id="price-select" onchange="onPriceSelectChange(this.value)" title="按置业预算筛选">
+      <option value="all">💰 全部预算</option>
+      <option value="1000-down">💰 1000万以内</option>
+      <option value="1000-2000">💰 1000 - 2000万</option>
+      <option value="2000-5000">💰 2000 - 5000万</option>
+      <option value="5000-10000">💰 5000万 - 1亿</option>
+      <option value="10000-up">💰 1亿以上</option>
+      <option value="tender">💰 待定 / 招标</option>
+    </select>
+
+    <!-- 🏠 房产类型：全部 | 现房 | 期房 -->
+    <div class="prop-type-pill-group" id="prop-type-filter" title="房产交付类型筛选">
+      <button type="button" class="prop-type-btn active" data-type="all">全部</button>
+      <button type="button" class="prop-type-btn" data-type="ready">🏠 现房</button>
+      <button type="button" class="prop-type-btn" data-type="forward">⏳ 期房</button>
+    </div>
+  </div>
+
+  <!-- Right: Layer Control Dropdown & Export Button -->
+  <div class="navbar-right">
+    <!-- 图层控制下拉菜单 -->
+    <div class="layer-control-wrapper" id="layer-control-wrapper">
+      <button class="btn-layer-dropdown" id="btn-layer-dropdown" onclick="toggleLayerMenu(event)" title="地图图层开关">
+        <span>🌐 地图图层</span>
+        <span class="dropdown-caret">▾</span>
+      </button>
+      <div class="layer-dropdown-panel" id="layer-dropdown-panel">
+        <div class="layer-panel-title">底图辅助图层</div>
+        <label class="layer-checkbox-item">
+          <div class="layer-chk-left">
+            <input type="checkbox" id="chk-layer-mtr" checked onchange="toggleMtrLayer()">
+            <span>🚇 港铁站点</span>
           </div>
-          <div class="tooltip-body">
-            <div class="tooltip-item">
-              <span class="tooltip-icon">👑</span>
-              <div>
-                <strong>顶尖神校 (状元摇篮)</strong>
-                <p>圣保罗男女、拔萃男/女、喇沙等全港 DSE/IB 状元名门</p>
-              </div>
+        </label>
+        <label class="layer-checkbox-item">
+          <div class="layer-chk-left">
+            <input type="checkbox" id="chk-layer-mtr-lines" checked onchange="toggleMtrLinesLayer()">
+            <span>🛤️ 港铁10条线路</span>
+          </div>
+        </label>
+        <label class="layer-checkbox-item">
+          <div class="layer-chk-left">
+            <input type="checkbox" id="chk-layer-school" checked onchange="toggleFamousSchoolsLayer()">
+            <span>🏫 45所重点名校</span>
+          </div>
+          <span class="info-bubble" title="查看45所名校收录标准" onclick="event.stopPropagation(); toggleSchoolTooltip();">ℹ️</span>
+        </label>
+        <label class="layer-checkbox-item">
+          <div class="layer-chk-left">
+            <input type="checkbox" id="chk-layer-mall" checked onchange="toggleShoppingMallsLayer()">
+            <span>🛍️ 核心商场圈</span>
+          </div>
+        </label>
+      </div>
+
+      <!-- 名校收录标准气泡弹窗 -->
+      <div class="school-standard-tooltip" id="school-tooltip">
+        <div class="tooltip-header">
+          <span class="tooltip-title">🏫 重点名校精选收录标准</span>
+          <span class="tooltip-badge">45 所核心名门</span>
+        </div>
+        <div class="tooltip-body">
+          <div class="tooltip-item">
+            <span class="tooltip-icon">👑</span>
+            <div>
+              <strong>顶尖神校 (状元摇篮)</strong>
+              <p>圣保罗男女、拔萃男/女、喇沙等全港 DSE/IB 状元名门</p>
             </div>
-            <div class="tooltip-item">
-              <span class="tooltip-icon">🏫</span>
-              <div>
-                <strong>黄金名校网龙头</strong>
-                <p>11、12、34、41 四大豪宅学区核心龙头公立/资助小学</p>
-              </div>
+          </div>
+          <div class="tooltip-item">
+            <span class="tooltip-icon">🏫</span>
+            <div>
+              <strong>黄金名校网龙头</strong>
+              <p>11、12、34、41 四大豪宅学区核心龙头公立/资助小学</p>
             </div>
-            <div class="tooltip-item">
-              <span class="tooltip-icon">🌍</span>
-              <div>
-                <strong>顶奢国际学校</strong>
-                <p>汉基、德瑞、弘立、哈罗、HKIS 等高净值专才首选</p>
-              </div>
+          </div>
+          <div class="tooltip-item">
+            <span class="tooltip-icon">🌍</span>
+            <div>
+              <strong>顶奢国际学校</strong>
+              <p>汉基、德瑞、弘立、哈罗、HKIS 等高净值专才首选</p>
             </div>
-            <div class="tooltip-item">
-              <span class="tooltip-icon">🎓</span>
-              <div>
-                <strong>知名高等学府</strong>
-                <p>港大、中大、科大、理大等高校 1.5km 优质租住生活圈</p>
-              </div>
+          </div>
+          <div class="tooltip-item">
+            <span class="tooltip-icon">🎓</span>
+            <div>
+              <strong>知名高等学府</strong>
+              <p>港大、中大、科大、理大等高校 1.5km 优质租住生活圈</p>
             </div>
           </div>
         </div>
       </div>
-      <button class="btn-layer-toggle active" id="btn-toggle-mall" onclick="toggleShoppingMallsLayer()" title="显示/隐藏大型商场标记">🛍️ 商场</button>
-      <button class="btn-filter-toggle" id="btn-filter-toggle" onclick="toggleExpandFilters()" title="展开/收起预算与状态筛选面板">⚙️ 筛选</button>
-      <button class="btn-export-main" id="btn-export" onclick="openExportModal()" disabled>
-        📄 导出方案 (<span id="selected-count">0</span>)
-      </button>
     </div>
+
+    <!-- 导出方案主按钮 -->
+    <button class="btn-export-main" id="btn-export" onclick="openExportModal()" disabled>
+      📄 导出方案 (<span id="selected-count">0</span>)
+    </button>
   </div>
-
-  <!-- Expandable Filter Bar -->
-  <div class="expandable-filter-box" id="filter-expand-box">
-    <div class="filter-group-item">
-      <span>💷 价格预算：</span>
-      <select class="filter-select-mini" id="price-select" onchange="onPriceSelectChange(this.value)">
-        <option value="all">不限预算</option>
-        <option value="1000-down">1000万以内</option>
-        <option value="1000-2000">1000-2000万</option>
-        <option value="2000-5000">2000-5000万</option>
-        <option value="5000-10000">5000-1亿</option>
-        <option value="10000-up">1亿以上</option>
-        <option value="tender">待定/招标</option>
-      </select>
-    </div>
-
-    <div class="filter-group-item">
-      <span>自定义区间 (万)：</span>
-      <input type="number" class="custom-num-input" id="p-min" placeholder="最低" oninput="onCustomPriceInput()">
-      <span>-</span>
-      <input type="number" class="custom-num-input" id="p-max" placeholder="最高" oninput="onCustomPriceInput()">
-    </div>
-
-    <div class="filter-group-item" id="status-chips">
-      <span>🏗️ 状态：</span>
-      <div class="filter-chip-mini active" data-status="all">全部</div>
-      <div class="filter-chip-mini" data-status="on_sale">出售中</div>
-      <div class="filter-chip-mini" data-status="coming_soon">即將發售</div>
-    </div>
-  </div>
-</div>
+</header>
 
 <!-- Floating Slide-out Drawer Panel -->
 <div class="floating-drawer" id="floating-drawer">
@@ -1950,7 +2015,7 @@ const POI_EXPAND_ZOOM = 16;
 let markersByName = {};
 
 let filterState = {
-  priceChip: 'all', minPrice: null, maxPrice: null, status: 'all', searchKeyword: ''
+  priceChip: 'all', minPrice: null, maxPrice: null, propType: 'all', searchKeyword: ''
 };
 
 const LINE_COLORS = {
@@ -2414,29 +2479,39 @@ function renderMtrMarkers() {
   });
 }
 
+function toggleLayerMenu(e) {
+  if (e) e.stopPropagation();
+  const panel = document.getElementById('layer-dropdown-panel');
+  const btn = document.getElementById('btn-layer-dropdown');
+  if (panel) {
+    panel.classList.toggle('open');
+    if (btn) btn.classList.toggle('open', panel.classList.contains('open'));
+  }
+}
+
 function toggleMtrLayer() {
-  const btn = document.getElementById('btn-toggle-mtr');
+  const chk = document.getElementById('chk-layer-mtr');
   if (isMtrLayerVisible) {
-    map.removeLayer(mtrStationsLayer);
+    if (mtrStationsLayer) map.removeLayer(mtrStationsLayer);
     isMtrLayerVisible = false;
-    if (btn) btn.classList.remove('active');
+    if (chk) chk.checked = false;
   } else {
-    map.addLayer(mtrStationsLayer);
+    if (mtrStationsLayer) map.addLayer(mtrStationsLayer);
     isMtrLayerVisible = true;
-    if (btn) btn.classList.add('active');
+    if (chk) chk.checked = true;
   }
 }
 
 function toggleMtrLinesLayer() {
-  const btn = document.getElementById('btn-toggle-mtr-lines');
+  const chk = document.getElementById('chk-layer-mtr-lines');
   if (isMtrLinesLayerVisible) {
     if (mtrLinesLayer) map.removeLayer(mtrLinesLayer);
     isMtrLinesLayerVisible = false;
-    if (btn) btn.classList.remove('active');
+    if (chk) chk.checked = false;
   } else {
     if (mtrLinesLayer) map.addLayer(mtrLinesLayer);
     isMtrLinesLayerVisible = true;
-    if (btn) btn.classList.add('active');
+    if (chk) chk.checked = true;
   }
 }
 
@@ -2558,15 +2633,15 @@ function toggleSchoolTooltip() {
 }
 
 function toggleFamousSchoolsLayer() {
-  const btn = document.getElementById('btn-toggle-school');
+  const chk = document.getElementById('chk-layer-school');
   if (isFamousSchoolsLayerVisible) {
-    map.removeLayer(famousSchoolsLayer);
+    if (famousSchoolsLayer) map.removeLayer(famousSchoolsLayer);
     isFamousSchoolsLayerVisible = false;
-    btn.classList.remove('active');
+    if (chk) chk.checked = false;
   } else {
-    map.addLayer(famousSchoolsLayer);
+    if (famousSchoolsLayer) map.addLayer(famousSchoolsLayer);
     isFamousSchoolsLayerVisible = true;
-    btn.classList.add('active');
+    if (chk) chk.checked = true;
   }
 }
 
@@ -2655,15 +2730,15 @@ function renderShoppingMallsMarkers() {
 }
 
 function toggleShoppingMallsLayer() {
-  const btn = document.getElementById('btn-toggle-mall');
+  const chk = document.getElementById('chk-layer-mall');
   if (isShoppingMallsLayerVisible) {
-    map.removeLayer(shoppingMallsLayer);
+    if (shoppingMallsLayer) map.removeLayer(shoppingMallsLayer);
     isShoppingMallsLayerVisible = false;
-    btn.classList.remove('active');
+    if (chk) chk.checked = false;
   } else {
-    map.addLayer(shoppingMallsLayer);
+    if (shoppingMallsLayer) map.addLayer(shoppingMallsLayer);
     isShoppingMallsLayerVisible = true;
-    btn.classList.add('active');
+    if (chk) chk.checked = true;
   }
 }
 
@@ -2992,21 +3067,32 @@ function onPriceSelectChange(val) {
 }
 
 function setupFilterEvents() {
-  document.querySelectorAll('#status-chips .filter-chip-mini').forEach(chip => {
-    chip.addEventListener('click', () => {
-      document.querySelectorAll('#status-chips .filter-chip-mini').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      filterState.status = chip.dataset.status;
+  // 🏠 现房/期房 胶囊按钮点击事件
+  document.querySelectorAll('#prop-type-filter .prop-type-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#prop-type-filter .prop-type-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterState.propType = btn.dataset.type;
       applyFilters();
     });
   });
 
-  // 点击外部自动收起名校收录标准气泡
+  // 点击外部自动收起图层控制面板和名校收录标准气泡
   document.addEventListener('click', (e) => {
-    const tip = document.getElementById('school-tooltip');
-    const wrapper = document.querySelector('.layer-btn-wrapper');
-    if (tip && wrapper && !wrapper.contains(e.target)) {
-      tip.classList.remove('open');
+    const layerWrapper = document.getElementById('layer-control-wrapper');
+    if (layerWrapper && !layerWrapper.contains(e.target)) {
+      const panel = document.getElementById('layer-dropdown-panel');
+      const btn = document.getElementById('btn-layer-dropdown');
+      if (panel) panel.classList.remove('open');
+      if (btn) btn.classList.remove('open');
+      const tip = document.getElementById('school-tooltip');
+      if (tip) tip.classList.remove('open');
+    }
+
+    const searchWrapper = document.getElementById('search-box-wrapper');
+    if (searchWrapper && !searchWrapper.contains(e.target)) {
+      const sug = document.getElementById('search-suggestions');
+      if (sug) sug.classList.remove('open');
     }
   });
 }
@@ -3194,7 +3280,11 @@ function applyFilters() {
   markersByName = {};
 
   let filtered = projectsData.filter(proj => {
-    if (filterState.status !== 'all' && proj.sell_status !== filterState.status) return false;
+    // 🏠 现房/期房 过滤 (全部 | 现房 | 期房)
+    if (filterState.propType && filterState.propType !== 'all') {
+      const pType = proj.property_type || (proj.is_coming_soon ? 'forward' : 'ready');
+      if (pType !== filterState.propType) return false;
+    }
 
     // 🔍 关键词搜索过滤 (支持项目名、大区、商圈、开发商、地址)
     if (filterState.searchKeyword) {
@@ -3342,6 +3432,12 @@ function applyFilters() {
       statusText = '即将售罄';
     }
 
+    // 现房 / 期房 专属微型徽章
+    const isForward = proj.property_type === 'forward' || proj.is_coming_soon;
+    const propTypeBadge = isForward
+      ? `<span class="badge-prop-type forward" title="${proj.property_type_desc || '期房'}">⏳ 期房</span>`
+      : `<span class="badge-prop-type ready" title="${proj.property_type_desc || '现房'}">🏠 现房</span>`;
+
     // 封面简称
     let shortName = proj.name.replace(/第[0-9A-Za-z]+期/g, '').replace(/[A-Za-z0-9\s·\.]+/g, '').slice(0, 4);
     if (!shortName) shortName = proj.name.slice(0, 4);
@@ -3374,6 +3470,7 @@ function applyFilters() {
           </div>
           <div class="card-v2-row4">
             <span class="card-v2-status ${statusClass}">${statusText}</span>
+            ${propTypeBadge}
             ${priceDisplayHtml}
           </div>
         </div>
@@ -3455,10 +3552,18 @@ function applyFilters() {
         ? `<a href="${marketingUrl}" target="_blank" rel="noopener noreferrer" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#ecfdf5; color:#047857; font-size:11px; font-weight:700; padding:6px 8px; border-radius:6px; text-decoration:none; border:1px solid #a7f3d0; white-space:nowrap; transition:all 0.2s;">📂 资料网盘</a>`
         : `<button disabled title="暂无营销资料" style="flex:1; display:flex; align-items:center; justify-content:center; gap:4px; background:#f1f5f9; color:#94a3b8; font-size:11px; font-weight:600; padding:6px 8px; border-radius:6px; border:1px solid #e2e8f0; cursor:not-allowed; opacity:0.65; white-space:nowrap;">📂 资料网盘</button>`;
 
+      const popPropBadge = isForward
+        ? `<span class="badge-prop-type forward" style="margin-left:6px;">⏳ 期房</span>`
+        : `<span class="badge-prop-type ready" style="margin-left:6px;">🏠 现房</span>`;
+
       const popupHTML = `
         <div class="custom-popup">
-          <div class="popup-title">${proj.name}</div>
+          <div class="popup-title" style="display:flex; align-items:center; justify-content:space-between;">
+            <span>${proj.name}</span>
+            ${popPropBadge}
+          </div>
           <div class="popup-row">📍 区域地址：<strong>${proj.main_area || proj.region} - ${proj.micro_district || proj.district} ${proj.address ? '(' + proj.address + ')' : ''}</strong></div>
+          <div class="popup-row">🏠 交付状态：<strong style="color:${isForward ? '#2563eb' : '#059669'};">${proj.property_type_desc || (isForward ? '期房' : '现房 (现楼发售)')}</strong></div>
           ${proj.school_net ? `<div class="popup-row">🏫 所属校网：<strong style="color:#d97706;">${proj.school_net}</strong></div>` : ''}
           ${proj.developer ? `<div class="popup-row">🏗️ 开发商：<strong>${proj.developer}</strong></div>` : ''}
           <div class="popup-row">💷 价格描述：<strong style="color:#2563eb;">${(proj.total_price_desc && (proj.total_price_desc.includes('待定') || proj.total_price_desc.includes('详见价单'))) ? '待定' : (proj.total_price_desc || (proj.min_price_wan ? proj.min_price_wan + '万起' : '待定'))}</strong></div>
@@ -3543,32 +3648,51 @@ function updateSearchSuggestions(kw) {
   }
 
   const lowerKw = kw.toLowerCase();
-  const matches = projectsData.filter(p => {
+  
+  // 1. 楼盘项目匹配
+  const matches = (projectsData || []).filter(p => {
     const nameM = p.name && p.name.toLowerCase().includes(lowerKw);
     const distM = (p.micro_district && p.micro_district.toLowerCase().includes(lowerKw)) || (p.district && p.district.toLowerCase().includes(lowerKw));
     const regM = (p.main_area && p.main_area.toLowerCase().includes(lowerKw)) || (p.region && p.region.toLowerCase().includes(lowerKw));
     const devM = p.developer && p.developer.toLowerCase().includes(lowerKw);
-    const addrM = p.address && p.address.toLowerCase().includes(lowerKw);
-    return nameM || distM || regM || devM || addrM;
-  }).slice(0, 8);
+    return nameM || distM || regM || devM;
+  }).slice(0, 6);
 
-  if (matches.length === 0) {
-    sug.innerHTML = '<div style="padding:10px 14px; font-size:0.75rem; color:#94a3b8; text-align:center;">未找到匹配楼盘</div>';
+  // 2. 港铁站点匹配
+  const mtrMatches = (mtrStationsData || []).filter(s => s.name && s.name.toLowerCase().includes(lowerKw)).slice(0, 3);
+
+  // 3. 重点名校匹配
+  const schoolMatches = (landmarksData || []).filter(l => 
+    (l.category === 'famous_school' || l.category === 'university') && 
+    l.name && l.name.toLowerCase().includes(lowerKw)
+  ).slice(0, 3);
+
+  // 4. 商圈片区匹配
+  const districtMatches = Object.keys(districtBoundsMap || {}).filter(d => d.toLowerCase().includes(lowerKw)).slice(0, 2);
+
+  if (matches.length === 0 && mtrMatches.length === 0 && schoolMatches.length === 0 && districtMatches.length === 0) {
+    sug.innerHTML = '<div style="padding:10px 14px; font-size:0.75rem; color:#94a3b8; text-align:center;">未找到匹配项目或地标</div>';
     sug.classList.add('open');
     return;
   }
 
   let html = '';
+
+  // 渲染匹配楼盘
   matches.forEach(p => {
     const isSale = p.sell_status === 'on_sale';
     const statusBg = isSale ? '#f0fdf4' : '#eff6ff';
     const statusColor = isSale ? '#16a34a' : '#2563eb';
     const priceText = p.excel_min_price_desc || p.basic_price_desc || (p.min_price_wan ? `${p.min_price_wan}万起` : '价单待查');
+    const isForward = p.property_type === 'forward' || p.is_coming_soon;
+    const ptBadge = isForward
+      ? '<span style="font-size:0.65rem; color:#2563eb; background:#eff6ff; padding:1px 4px; border-radius:3px; margin-left:4px; font-weight:700;">⏳期房</span>'
+      : '<span style="font-size:0.65rem; color:#059669; background:#ecfdf5; padding:1px 4px; border-radius:3px; margin-left:4px; font-weight:700;">🏠现房</span>';
 
     html += `
       <div class="search-item" onclick="selectProjectSuggestion('${p.name.replace(/'/g, "\\'")}')">
         <div class="search-item-title">
-          <span>🏢 ${p.name}</span>
+          <span>🏢 ${p.name} ${ptBadge}</span>
           <span class="search-item-badge" style="background:${statusBg}; color:${statusColor};">${p.sell_status_cn}</span>
         </div>
         <div class="search-item-desc">
@@ -3578,18 +3702,90 @@ function updateSearchSuggestions(kw) {
     `;
   });
 
+  // 渲染匹配港铁站
+  mtrMatches.forEach(st => {
+    html += `
+      <div class="search-item" onclick="selectMtrSuggestion('${st.id || st.name}')">
+        <div class="search-item-title">
+          <span>🚇 港铁 ${st.name}站</span>
+          <span class="search-item-badge" style="background:#e0f2fe; color:#0369a1;">轨道枢纽</span>
+        </div>
+        <div class="search-item-desc">
+          📍 ${st.lines ? st.lines.join(' · ') : '全港港铁站点'} | 点击自动飞跃定位并辐射周边楼盘
+        </div>
+      </div>
+    `;
+  });
+
+  // 渲染匹配重点名校
+  schoolMatches.forEach(sch => {
+    const isUniv = sch.category === 'university';
+    const badgeText = isUniv ? '知名学府' : '重点名校';
+    const badgeColor = isUniv ? '#1d4ed8' : '#7c3aed';
+    const badgeBg = isUniv ? '#eff6ff' : '#f5f3ff';
+    html += `
+      <div class="search-item" onclick="selectSchoolSuggestion('${sch.id}')">
+        <div class="search-item-title">
+          <span>${isUniv ? '🎓' : '🏫'} ${sch.name}</span>
+          <span class="search-item-badge" style="background:${badgeBg}; color:${badgeColor};">${badgeText}</span>
+        </div>
+        <div class="search-item-desc">
+          📍 ${sch.region || ''} ${sch.district || ''} | 点击辐射周边 1.5km 优质一手新盘
+        </div>
+      </div>
+    `;
+  });
+
+  // 渲染匹配商圈片区
+  districtMatches.forEach(dist => {
+    html += `
+      <div class="search-item" onclick="selectDistrictSuggestion('${dist}')">
+        <div class="search-item-title">
+          <span>🏙️ 商圈片区：${dist}</span>
+          <span class="search-item-badge" style="background:#f1f5f9; color:#475569;">核心商圈</span>
+        </div>
+        <div class="search-item-desc">
+          📍 点击漫游并高亮该商圈法定归属一手楼盘
+        </div>
+      </div>
+    `;
+  });
+
   sug.innerHTML = html;
   sug.classList.add('open');
+}
+
+function selectMtrSuggestion(stId) {
+  focusMtrStation(stId);
+  const sug = document.getElementById('search-suggestions');
+  if (sug) sug.classList.remove('open');
+}
+
+function selectSchoolSuggestion(schId) {
+  focusFamousSchool(schId);
+  const sug = document.getElementById('search-suggestions');
+  if (sug) sug.classList.remove('open');
+}
+
+function selectDistrictSuggestion(dist) {
+  activeDistrictCluster = dist;
+  if (districtBoundsMap[dist]) {
+    map.fitBounds(districtBoundsMap[dist], { padding: [50, 50], maxZoom: 15 });
+  }
+  applyFilters();
+  const sug = document.getElementById('search-suggestions');
+  if (sug) sug.classList.remove('open');
 }
 
 function resetConflictingFilters(p) {
   let changed = false;
 
-  // 1. 状态筛选冲突处理：若当前筛选了特定状态（如 on_sale），但目标楼盘不符（如 coming_soon），自动将状态切回“全部”
-  if (filterState.status !== 'all' && p.sell_status && filterState.status !== p.sell_status) {
-    filterState.status = 'all';
-    document.querySelectorAll('#status-chips .filter-chip-mini').forEach(c => {
-      c.classList.toggle('active', c.dataset.status === 'all');
+  // 1. 现房/期房 筛选冲突处理：若当前筛选了特定类型，但目标楼盘不符，自动将筛选重置为“全部”
+  const pType = p.property_type || (p.is_coming_soon ? 'forward' : 'ready');
+  if (filterState.propType !== 'all' && pType !== filterState.propType) {
+    filterState.propType = 'all';
+    document.querySelectorAll('#prop-type-filter .prop-type-btn').forEach(c => {
+      c.classList.toggle('active', c.dataset.type === 'all');
     });
     changed = true;
   }
