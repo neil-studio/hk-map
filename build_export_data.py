@@ -107,7 +107,19 @@ def fmt_uprice(u):
     except:
         return str(u)
 
-def extract_developer(text):
+def extract_developer(pname="", text="", dev_map=None):
+    if dev_map:
+        if pname and pname in dev_map:
+            return dev_map[pname]
+        t_chars = '號峯滙敍灣瓏鑽鑄賢譽啟璽維奧滶蘊匯悅寶應羅壽淺徑賓園華遠藍語區築緹瀧澐雙鑽閣揚晉凱島輝臺連東紅臺豐環學區萬濱嶺軒廣場頭門閣薈'
+        s_chars = '号峰汇叙湾珑钻铸贤誉启玺维奥滶蕴汇悦宝应罗寿浅径宾园华远蓝语区筑缇泷沄双钻阁扬晋凯岛辉台连东红台丰环学区万滨岭轩广场头门阁荟'
+        trans = str.maketrans(t_chars, s_chars)
+        norm_pn = pname.translate(trans).replace(' ', '').replace('　', '').replace('．', '.').replace('·', '.').lower()
+        if norm_pn in dev_map:
+            return dev_map[norm_pn]
+        for k, v in dev_map.items():
+            if k and (k == norm_pn or k in norm_pn or norm_pn in k):
+                return v
     if not text:
         return "香港品牌发展商"
     for canonical, aliases in KNOWN_DEVELOPERS:
@@ -117,7 +129,7 @@ def extract_developer(text):
     m = re.search(r"由([^\s，。、（]+?)(?:倾力|重磅|精心)?(?:打造|发展|兴建|营建|推出)", text)
     if m:
         dev = m.group(1).replace("**", "").strip()
-        if len(dev) <= 12:
+        if len(dev) <= 20:
             return dev
     return "香港品牌发展商"
 
@@ -466,7 +478,208 @@ def main():
             print("读取项目列表.xlsx落成日期异常:", e)
             return {}
 
+    def load_project_developers():
+        verified_devs = {
+            # 启德 / 九龙东
+            'Double Coast I': '中国海外 / 会德丰 / 恒基兆业 / 新世界',
+            'Double Coast III': '中国海外 / 会德丰 / 恒基兆业 / 新世界',
+            'Miami Quay I': '新世界 / 会德丰 / 恒基兆业 / 帝国集团',
+            'Miami Quay II': '新世界 / 会德丰 / 恒基兆业 / 帝国集团',
+            '天泷': '恒基兆业 / 中国海外 / 华懋集团 / 帝国集团 / 新世界 / 会德丰',
+            '柏蔚森 I': '新世界 / 远东发展',
+            '柏蔚森 II': '新世界 / 远东发展',
+            '柏蔚森 III': '新世界 / 远东发展',
+            '启德海湾 1': '嘉华国际 / 会德丰 / 中国海外',
+            '启德海湾 2': '嘉华国际 / 会德丰 / 中国海外',
+            '天玺．天': '新鸿基地产',
+            '天玺．天第2期': '新鸿基地产',
+            '天玺．海第1期': '新鸿基地产',
+            '天玺．海第2A期': '新鸿基地产',
+            '天玺．海第2B期': '新鸿基地产',
+            '维港1号': '中国海外',
+            '维港．双钻': '中国海外',
+            '维港．湾畔第1A期': '中国海外 / 恒基兆业 / 九龙仓 / 嘉华国际',
+            '维港．湾畔第1B期': '中国海外 / 恒基兆业 / 九龙仓 / 嘉华国际',
+            '维港．湾畔第2B期': '中国海外 / 恒基兆业 / 九龙仓 / 嘉华国际',
+            '沄璟': '华润置地 / 保利置业',
+            'The Henley I': '恒基兆业',
+            'The Henley II': '恒基兆业',
+            'The Henley III': '恒基兆业',
+            'Henley Park': '恒基兆业',
+            'Monaco 第1期': '会德丰',
+            'Monaco One': '会德丰',
+            'Monaco Marine': '会德丰',
+            
+            # 红磡 / 何文田 / 土瓜湾 / 西九龙
+            '必嘉坊．曦汇': '恒基兆业',
+            '必嘉坊．迎汇': '恒基兆业',
+            '首岸第1期': '恒基兆业 / 希慎兴业 / 帝国集团',
+            '首岸第2期': '恒基兆业 / 希慎兴业 / 帝国集团',
+            '首岸第3期': '恒基兆业 / 希慎兴业 / 帝国集团',
+            '首岸第4期': '恒基兆业 / 希慎兴业 / 帝国集团',
+            '首汇': '恒基兆业',
+            'The Haddon': '恒基兆业',
+            '映汇': '恒基兆业',
+            '壹沐第1期': '恒基兆业',
+            '壹沐第2期': '恒基兆业',
+            '南首': '恒基兆业',
+            '文曜': '建灏地产',
+            '瑧博': '新世界',
+            '朗贤峰第IIA期': '鹰君集团 / 港铁',
+            '朗贤峰第IIB期': '鹰君集团 / 港铁',
+            '瑜一第IC期': '华懋集团 / 港铁',
+            '瑜一．天海': '华懋集团 / 港铁',
+            '维港汇 I': '会德丰 / 信和置业 / 嘉华国际 / 世茂 / 爪哇集团',
+            '维港汇 III': '会德丰 / 信和置业 / 嘉华国际 / 世茂 / 爪哇集团',
+            '汇玺III': '新鸿基地产 / 港铁',
+            '天玺': '新鸿基地产',
+            'st. george\'s mansions': '中电集团 / 信和',
+            'St. George\'s Mansions': '中电集团 / 信和',
+            '傲玟': '高银',
+            '名钻': '益兆集团',
+            '128 Waterloo': '莱蒙国际 / 俊和',
+            'Prince Central': '新鸿基地产',
+            '太子道西233号': '新鸿基地产 / 会德丰',
+            '天铸 (第2期)': '新鸿基地产',
+            '明寓': '佳明',
+            '耀爵台': '光大控股 / 柏汇国际',
+            '芳菲': '协成行',
+            '誉林': '永义国际',
+            '隆敍': '志德投资',
+            'The Boundary': '乐风集团',
+            'Upper Prince': '乐风集团',
+            '利奥坊．凯岸': '恒基兆业',
+            '利奥坊．壹隅': '恒基兆业',
+            '利奥坊．曦岸': '恒基兆业',
+            '本木': '恒基兆业',
+            '映居': '建灏地产 / 市建局',
+            '原舍': '东立地产',
+            'VAU Residence': '万科香港',
+            '悦麓': 'TKS LTD.',
+            '叡璟I': '华润置地',
+            '叡璟II': '华润置地',
+            '泓璟': '辉宇国际',
+            'Elize Park': '乐风集团',
+            
+            # 九龙塘 / 笔架山 / 又一村
+            '缇外': '嘉里建设',
+            '皇廷汇': '天滙地产',
+            '喇沙汇': '汉国置业',
+            'Park College': '兴胜创建 / TPG',
+            'Beacon Peak 第1期': '世茂集团',
+            '滶蕴': '新世界发展',
+
+            # 港岛 - 中半山 / 西半山 / 湾仔 / 铜锣湾
+            '雅盈峰': '盈大地产 / 资本策略',
+            '21 Borrett Road 第1期': '长江实业',
+            'Upper Central': '禹洲集团',
+            '大学阁': '华懋集团',
+            '天御第1期': '恒基兆业 / 新世界',
+            '天御第2期': '恒基兆业 / 新世界',
+            '宝峰': '泛海国际 / 资本策略 / 德祥地产',
+            '帝汇豪庭': '恒基兆业',
+            '应天': '长江实业',
+            '罗便臣道80号': '南丰集团',
+            'Kennedy 38': '新鸿基 / 会德丰 / 恒基兆业',
+            '吉喆': '上海商业银行',
+            '海嵎': '永义国际',
+            'Woodis': '恒基兆业',
+            '活道1号': '盈信控股',
+            '15 Western Street': '万科香港',
+            '42 Tung St.': 'The Development Studio',
+            '肇辉台6号': '嘉华国际',
+
+            # 港岛 - 跑马地 / 渣甸山 / 东区
+            'Eight Kwai Fong Happy Valley': '远中集团',
+            '蓝塘道23-39号': '恒隆地产',
+            '皇第': '泛海国际 / 尚家生活 / 高富诺',
+            '峻誉．渣甸山': '中信泰富',
+            '339 Tai Hang Road': '丽新发展',
+            '101 Kings Road': '宏安地产',
+            '君誉峰': '恒基兆业',
+            '嘉居．天后': '嘉华国际',
+            '柏蔚山': '新世界 / 培新集团',
+            '海璇': '新鸿基地产',
+            '海璇 II': '新鸿基地产',
+            '海璇 II (第2B-3期)': '新鸿基地产',
+            '海德园第1期': '太古地产',
+            '海德园第2期': '太古地产',
+            '君豪峰': '恒基兆业',
+            'One Eighty': '三顺 / 日联',
+            '傲华': '协成行',
+            '远晴': '协成行',
+
+            # 港岛 - 黄竹坑 / 香港仔 / 鸭脷洲 / 薄扶林
+            '晋环': '路劲地产 / 平安不动产 / 港铁',
+            '扬海': '嘉里建设 / 信和置业 / 太古地产 / 港铁',
+            '海盈山第4A期': '嘉里建设 / 信和置业 / 太古地产 / 港铁',
+            '海盈山第4B期': '嘉里建设 / 信和置业 / 太古地产 / 港铁',
+            '滶晨': '新世界 / 帝国集团 / 资本策略 / 丽新发展 / 港铁',
+            '滶晨 II': '新世界 / 帝国集团 / 资本策略 / 丽新发展 / 港铁',
+            'Deep Water South 第6A期': '会德丰 / 港铁',
+            'Deep Water South 第6B期': '会德丰 / 港铁',
+            'Blue Coast': '长江实业 / 港铁',
+            'Blue Coast II': '长江实业 / 港铁',
+            '花语海第1期': '长江实业 / 港铁',
+            '花语海第2期': '长江实业 / 港铁',
+            '凯玥': '龙光集团 / 合景泰富',
+            'PORTO': '宏安地产',
+            '弦岸': '庄士机构',
+            '璟南': '大昌地产',
+            '逸南': '恒基兆业',
+            'Victoria Coast': '华懋集团',
+            'Mount Pokfulam': '宏安地产 / 锦华地产',
+
+            # 港岛 - 寿臣山 / 浅水湾 / 赤柱 / 大潭
+            '寿臣山15号': '英皇国际 / 中渝置地 / 明发集团 / 尚家生活',
+            '深水湾径8号': '南丰集团 / 丰资源',
+            'No.3 Repulse Bay Road': '新鸿基地产',
+            'Shouson Peak': '新鸿基地产',
+            '浅水湾108': '大昌集团',
+            '皇府湾': '新鸿基地产',
+            'Twelve Peaks': '新鸿基地产',
+            '宾吉道3号': '大昌集团',
+            'Mount Nicholson I': '九龙仓 / 南丰集团',
+            'Mount Nicholson II': '九龙仓 / 南丰集团',
+            'Central Peak I': '新鸿基地产',
+            'Central Peak II': '新鸿基地产',
+            '博峰': '丽新集团',
+            '50 Stanley Village Road': '新鸿基地产',
+            'One Stanley': '建灏地产',
+            'Solace': '东立地产',
+            '海天径 1号, 舂磡角道 44, 46, 48, 50号': '信德集团',
+            '环角道7号、9号及11号': '培新集团',
+            '红山半岛 - B区': '信和 / 华懋集团 / 亚证地产',
+            '红山半岛 - C区': '信和 / 华懋集团 / 亚证地产',
+
+            # 其他
+            'The Monet 第1期': '会德丰',
+            'The Monet 第2期': '会德丰',
+            'The Monet 第3期': '会德丰',
+            '海瑅湾 I': '信和置业 / 嘉里建设 / 嘉华国际 / 招商置地 / 港铁',
+            '海瑅湾 II': '信和置业 / 嘉里建设 / 嘉华国际 / 招商置地 / 港铁',
+        }
+        res = dict(verified_devs)
+        excel_path = "/Users/nb/google/Antigravity/工作/运营/楼盘字典/项目列表.xlsx"
+        if os.path.exists(excel_path):
+            try:
+                wb = openpyxl.load_workbook(excel_path, read_only=True)
+                ws = wb["项目列表"]
+                rows = list(ws.iter_rows(values_only=True))
+                headers = rows[0]
+                idx_dev = headers.index("开发商")
+                idx_name = headers.index("新盘名称\n（中文）")
+                for r in rows[1:]:
+                    nm = str(r[idx_name] or "").strip()
+                    dv = str(r[idx_dev] or "").strip()
+                    if nm and dv and dv != "None" and nm not in res:
+                        res[nm] = dv
+            except Exception as e:
+                print("读取项目列表.xlsx开发商异常:", e)
+        return res
+
     project_completion_map = load_project_completion_dates()
+    project_developer_map = load_project_developers()
     selling_points_map = load_selling_points()
     t_chars = '號峯滙敍灣瓏鑽鑄賢譽啟璽維奧滶蘊匯悅寶應羅壽淺徑賓園華遠藍語區築緹瀧澐雙鑽閣揚晉凱島輝臺連東紅臺豐環學區萬濱嶺軒廣場頭門閣薈'
     s_chars = '号峰汇叙湾珑钻铸贤誉启玺维奥滶蕴汇悦宝应罗寿浅径宾园华远蓝语区筑缇泷沄双钻阁扬晋凯岛辉台连东红台丰环学区万滨岭轩广场头门阁荟'
@@ -498,7 +711,7 @@ def main():
             dj_p.get("reason", "")
         ]))
 
-        p["developer"] = extract_developer(full_text)
+        p["developer"] = extract_developer(pname, full_text, project_developer_map)
         comp_date = extract_completion_date(full_text)
         dt_excel = project_completion_map.get(pname)
         if not dt_excel:
