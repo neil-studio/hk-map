@@ -1672,42 +1672,6 @@
     height: 9px;
   }
 
-  /* MTR Station Popup */
-  .mtr-popup {
-    min-width: 220px;
-    font-family: 'Noto Sans SC', sans-serif;
-  }
-  .mtr-popup-title {
-    font-size: 0.95rem;
-    font-weight: 800;
-    color: #1e3a8a;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  .mtr-popup-lines {
-    display: inline-block;
-    background: #f1f5f9;
-    color: #334155;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    margin: 4px 0 8px 0;
-  }
-  .btn-focus-mtr {
-    width: 100%;
-    padding: 6px 10px;
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.76rem;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 6px;
-  }
-
   /* Famous School Marker Pin Styling */
   .school-pin {
     background: #ffffff;
@@ -1840,9 +1804,6 @@
     font-weight: 700;
     color: #7c2d12;
   }
-    z-index: 9999 !important;
-    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.65);
-  }
 
   /* 🎈 高质感悬浮 Tooltip 样式 */
   .leaflet-tooltip.custom-poi-tooltip {
@@ -1860,9 +1821,88 @@
     border-top-color: rgba(15, 23, 42, 0.92) !important;
   }
 
+  /* MTR Station Popup */
+  .mtr-popup {
+    min-width: 240px;
+    max-width: 290px;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  .mtr-popup-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    line-height: 1.3;
+  }
+  .mtr-popup-lines {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #334155;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    margin: 4px 0 6px 0;
+  }
+  .mtr-popup-desc {
+    background: #f8fafc;
+    border-left: 2.5px solid #0284c7;
+    color: #334155;
+    padding: 5px 8px;
+    border-radius: 0 5px 5px 0;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    margin-top: 4px;
+  }
+
+  /* 统一 POI 标签与说明样式 */
+  .poi-tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 5px 0 6px 0;
+  }
+  .poi-tag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 7px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    line-height: 1.3;
+  }
+  .poi-type-explain {
+    background: #f8fafc;
+    border-left: 2.5px solid #6366f1;
+    color: #475569;
+    font-size: 11px;
+    line-height: 1.45;
+    padding: 4px 8px;
+    border-radius: 0 4px 4px 0;
+    margin: 5px 0 6px 0;
+  }
+  .school-popup-desc, .mall-popup-desc {
+    background: #f8fafc;
+    border-left: 2.5px solid #8b5cf6;
+    color: #334155;
+    padding: 5px 8px;
+    border-radius: 0 5px 5px 0;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    margin-top: 4px;
+  }
+  .mall-popup-desc {
+    border-left-color: #ea580c;
+  }
+
   /* School & Mall Popups */
   .school-popup, .mall-popup {
-    min-width: 230px;
+    min-width: 250px;
+    max-width: 300px;
     font-family: 'Noto Sans SC', sans-serif;
   }
   .school-popup-title {
@@ -1872,6 +1912,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    line-height: 1.3;
   }
   .mall-popup-title {
     font-size: 0.95rem;
@@ -1880,40 +1921,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-  }
-  .school-popup-desc, .mall-popup-desc {
-    display: inline-block;
-    background: #f8fafc;
-    color: #475569;
-    padding: 3px 6px;
-    border-radius: 4px;
-    font-size: 0.72rem;
-    line-height: 1.4;
-    margin: 4px 0 8px 0;
-  }
-  .btn-focus-school {
-    width: 100%;
-    padding: 6px 10px;
-    background: linear-gradient(135deg, #6d28d9, #7c3aed);
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.76rem;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 6px;
-  }
-  .btn-focus-mall {
-    width: 100%;
-    padding: 6px 10px;
-    background: linear-gradient(135deg, #c2410c, #ea580c);
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.76rem;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 6px;
+    line-height: 1.3;
   }
 
   /* Tooltip Container & Info Bubble (Option 1) */
@@ -3055,20 +3063,16 @@ function renderMtrMarkers() {
       });
     }
 
-    const nearbyCount = projectsData ? projectsData.filter(p => {
-      return getDistanceKm(st.lat, st.lng, p.lat, p.lng) <= 1.5;
-    }).length : 0;
-
     const popupContent = `
       <div class="mtr-popup">
-        <div class="mtr-popup-title">🚇 ${cName}站 ${st.station_name_en ? '(' + st.station_name_en + ')' : ''}</div>
+        <div class="mtr-popup-title">🚇 ${cName}站 ${st.station_name_en ? '<span style="font-size:0.8rem; font-weight:600; color:#64748b; margin-left:3px;">(' + st.station_name_en + ')</span>' : ''}</div>
         <div class="mtr-popup-lines" style="border-left: 3px solid ${color}; padding-left: 6px;">
           ${st.lines || st.line || '港铁线'}
         </div>
-        <div style="font-size:0.76rem; color:#475569; margin-top:4px;">
-          📍 1.5km 辐射圈在售一手新盘：<strong style="color:#2563eb;">${nearbyCount} 个</strong>
+        <div class="mtr-popup-desc">
+          📍 枢纽定位：${isInterchange ? '多线交汇换乘核心枢纽站' : '港铁沿线核心交通站点'}<br>
+          ✨ 便捷连通全港各区生活圈与核心商业区
         </div>
-        <button class="btn-focus-mtr" onclick="focusMtrStation('${st.id}')">🎯 辐射筛选该站周边楼盘</button>
       </div>
     `;
     marker.bindPopup(popupContent);
@@ -3197,26 +3201,38 @@ function renderFamousSchoolsMarkers() {
       });
     }
 
-    const nearbyCount = projectsData ? projectsData.filter(p => {
-      return getDistanceKm(sch.lat, sch.lng, p.lat, p.lng) <= 1.5;
-    }).length : 0;
+    const schType = sch.school_type || (isUniv ? '公立大学' : (isInter ? '国际' : (sch.sub_type === 'primary' ? '小学' : '名校')));
+    const schTypeDesc = sch.school_type_desc || '';
+    const schLevel = sch.school_level || (isUniv ? '高等教育 (本科/硕博)' : (sch.sub_type === 'primary' ? '小学阶段' : '中学阶段'));
+    const schFeature = sch.school_feature || sch.highlight || '香港重点知名学校';
+
+    let typeBg = '#eff6ff', typeColor = '#1d4ed8', typeBorder = '#bfdbfe';
+    if (schType === '直资') {
+      typeBg = '#fef3c7'; typeColor = '#92400e'; typeBorder = '#fde68a';
+    } else if (schType === '私立') {
+      typeBg = '#fdf2f8'; typeColor = '#9d174d'; typeBorder = '#fbcfe8';
+    } else if (schType === '国际') {
+      typeBg = '#f3e8ff'; typeColor = '#6b21a8'; typeBorder = '#e9d5ff';
+    } else if (schType === '官立') {
+      typeBg = '#ecfdf5'; typeColor = '#065f46'; typeBorder = '#a7f3d0';
+    } else if (schType === '津贴') {
+      typeBg = '#eff6ff'; typeColor = '#1e40af'; typeBorder = '#bfdbfe';
+    } else if (schType === '公立大学') {
+      typeBg = '#f0fdf4'; typeColor = '#166534'; typeBorder = '#bbf7d0';
+    }
 
     const popupContent = `
       <div class="school-popup">
         <div class="school-popup-title">${isUniv ? '🎓' : '🏫'} ${sch.name}</div>
-        <div style="margin: 4px 0 6px 0;">
-          <span style="display:inline-block; padding: 2px 8px; font-size: 10.5px; font-weight: 700; border-radius: 4px; background: ${badgeBg}; color: ${badgeColor}; border: 1px solid ${badgeBorder};">
-            ${badgeText}
-          </span>
+        <div class="poi-tags-row">
+          <span class="poi-tag-badge" style="background:${typeBg}; color:${typeColor}; border:1px solid ${typeBorder};">🏷️ ${schType}</span>
+          <span class="poi-tag-badge" style="background:#f8fafc; color:#334155; border:1px solid #e2e8f0;">📚 ${schLevel}</span>
         </div>
+        ${schTypeDesc ? `<div class="poi-type-explain">💡 <strong>${schType}</strong>：${schTypeDesc}</div>` : ''}
         <div class="school-popup-desc">
-          📍 ${sch.region} · ${sch.district}<br>
-          ✨ ${sch.highlight || '香港重点知名学校'}
+          📍 ${sch.region || ''} · ${sch.district || ''}<br>
+          ✨ ${schFeature}
         </div>
-        <div style="font-size:0.76rem; color:#475569; margin-top:2px;">
-          📍 1.5km 辐射圈在售一手新盘：<strong style="color:${color};">${nearbyCount} 个</strong>
-        </div>
-        <button class="btn-focus-school" onclick="focusFamousSchool('${sch.id}')">🎯 辐射筛选该校周边楼盘 (1.5km)</button>
       </div>
     `;
     marker.bindPopup(popupContent);
@@ -3304,21 +3320,30 @@ function renderShoppingMallsMarkers() {
       });
     }
 
-    const nearbyCount = projectsData ? projectsData.filter(p => {
-      return getDistanceKm(mall.lat, mall.lng, p.lat, p.lng) <= 1.5;
-    }).length : 0;
+    const mallLevel = mall.mall_level || (mall.tier === 1 ? '全港顶奢旗舰' : '区域枢纽旗舰');
+    const mallScale = mall.mall_scale || '大型商业综合体';
+    const mallFeature = mall.mall_feature || mall.highlight || '香港核心大型购物商场';
+
+    let levelBg = '#fff7ed', levelColor = '#c2410c', levelBorder = '#fed7aa';
+    if (mallLevel.includes('顶奢')) {
+      levelBg = '#fdf4ff'; levelColor = '#86198f'; levelBorder = '#f5d0fe';
+    } else if (mallLevel.includes('艺术') || mallLevel.includes('潮流')) {
+      levelBg = '#eff6ff'; levelColor = '#1d4ed8'; levelBorder = '#bfdbfe';
+    } else if (mallLevel.includes('滨海') || mallLevel.includes('街区')) {
+      levelBg = '#f0fdfa'; levelColor = '#0f766e'; levelBorder = '#ccfbf1';
+    }
 
     const popupContent = `
       <div class="mall-popup">
         <div class="mall-popup-title">🛍️ ${mall.name}</div>
+        <div class="poi-tags-row">
+          <span class="poi-tag-badge" style="background:${levelBg}; color:${levelColor}; border:1px solid ${levelBorder};">🏷️ ${mallLevel}</span>
+          <span class="poi-tag-badge" style="background:#fff7ed; color:#ea580c; border:1px solid #fed7aa;">📐 规模：${mallScale}</span>
+        </div>
         <div class="mall-popup-desc">
-          📍 ${mall.region} · ${mall.district}<br>
-          ✨ ${mall.highlight || '香港核心大型购物商场'}
+          📍 ${mall.region || ''} · ${mall.district || ''}<br>
+          ✨ ${mallFeature}
         </div>
-        <div style="font-size:0.76rem; color:#475569; margin-top:2px;">
-          📍 1.5km 辐射圈在售一手新盘：<strong style="color:#ea580c;">${nearbyCount} 个</strong>
-        </div>
-        <button class="btn-focus-mall" onclick="focusShoppingMall('${mall.id}')">🎯 辐射筛选商场周边楼盘 (1.5km)</button>
       </div>
     `;
     marker.bindPopup(popupContent);
