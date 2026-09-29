@@ -3063,11 +3063,30 @@ function renderMtrMarkers() {
       });
     }
 
+    const MTR_LINE_COLORS = {
+      '港島綫': '#007dc5',
+      '荃灣綫': '#e2231a',
+      '觀塘綫': '#00ab4e',
+      '將軍澳綫': '#a35eb5',
+      '南港島綫': '#b5bd00',
+      '東鐵綫': '#53b7e8',
+      '屯馬綫': '#923011',
+      '東涌綫': '#f3901d',
+      '機場快綫': '#007078',
+      '迪士尼綫': '#f15082',
+      '輕鐵': '#d39800'
+    };
+
+    const lineBadgesHtml = lines.map(ln => {
+      const bg = MTR_LINE_COLORS[ln] || color;
+      return `<span style="display:inline-flex; align-items:center; background:${bg}; color:#ffffff; padding:2px 7px; border-radius:4px; font-size:11px; font-weight:700; margin-right:4px; margin-bottom:3px; box-shadow:0 1px 3px rgba(0,0,0,0.12);">🚇 ${ln}</span>`;
+    }).join('');
+
     const popupContent = `
       <div class="mtr-popup">
         <div class="mtr-popup-title">🚇 ${cName}站 ${st.station_name_en ? '<span style="font-size:0.8rem; font-weight:600; color:#64748b; margin-left:3px;">(' + st.station_name_en + ')</span>' : ''}</div>
-        <div class="mtr-popup-lines" style="border-left: 3px solid ${color}; padding-left: 6px;">
-          ${st.lines || st.line || '港铁线'}
+        <div style="margin: 6px 0 5px 0; display:flex; flex-wrap:wrap;">
+          ${lineBadgesHtml}
         </div>
         <div class="mtr-popup-desc">
           📍 枢纽定位：${isInterchange ? '多线交汇换乘核心枢纽站' : '港铁沿线核心交通站点'}<br>
@@ -3205,6 +3224,8 @@ function renderFamousSchoolsMarkers() {
     const schTypeDesc = sch.school_type_desc || '';
     const schLevel = sch.school_level || (isUniv ? '高等教育 (本科/硕博)' : (sch.sub_type === 'primary' ? '小学阶段' : '中学阶段'));
     const schFeature = sch.school_feature || sch.highlight || '香港重点知名学校';
+    const schGender = sch.gender || '男女校';
+    const schCurriculum = sch.curriculum || '';
 
     let typeBg = '#eff6ff', typeColor = '#1d4ed8', typeBorder = '#bfdbfe';
     if (schType === '直资') {
@@ -3221,13 +3242,23 @@ function renderFamousSchoolsMarkers() {
       typeBg = '#f0fdf4'; typeColor = '#166534'; typeBorder = '#bbf7d0';
     }
 
+    let genderBg = '#f8fafc', genderColor = '#475569', genderBorder = '#e2e8f0';
+    let genderEmoji = '👫';
+    if (schGender.includes('男')) {
+      genderEmoji = '👦'; genderBg = '#eff6ff'; genderColor = '#1d4ed8'; genderBorder = '#bfdbfe';
+    } else if (schGender.includes('女')) {
+      genderEmoji = '👧'; genderBg = '#fdf2f8'; genderColor = '#be185d'; genderBorder = '#fbcfe8';
+    }
+
     const popupContent = `
       <div class="school-popup">
         <div class="school-popup-title">${isUniv ? '🎓' : '🏫'} ${sch.name}</div>
         <div class="poi-tags-row">
           <span class="poi-tag-badge" style="background:${typeBg}; color:${typeColor}; border:1px solid ${typeBorder};">🏷️ ${schType}</span>
+          <span class="poi-tag-badge" style="background:${genderBg}; color:${genderColor}; border:1px solid ${genderBorder};">${genderEmoji} ${schGender}</span>
           <span class="poi-tag-badge" style="background:#f8fafc; color:#334155; border:1px solid #e2e8f0;">📚 ${schLevel}</span>
         </div>
+        ${schCurriculum ? `<div style="font-size:11px; color:#312e81; background:#e0e7ff; border:1px solid #c7d2fe; padding:3px 8px; border-radius:4px; margin-bottom:5px; font-weight:600; line-height:1.4;">🎓 <strong>课程出口</strong>：${schCurriculum}</div>` : ''}
         ${schTypeDesc ? `<div class="poi-type-explain">💡 <strong>${schType}</strong>：${schTypeDesc}</div>` : ''}
         <div class="school-popup-desc">
           📍 ${sch.region || ''} · ${sch.district || ''}<br>
