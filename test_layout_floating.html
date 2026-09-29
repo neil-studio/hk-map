@@ -2920,13 +2920,15 @@ function mergeProductionSales(prodData) {
 function getDisplayPinName(fullName) {
   if (!fullName) return '';
   let clean = fullName.trim();
-  clean = clean.replace(/\(The Landmark\)/i, '')
+  clean = clean.replace(/西九龙高铁站上盖商业地标.*/i, '西九高铁地标')
+               .replace(/启德体育园零售馆.*/i, '体育园零售馆')
+               .replace(/双子汇.*/i, '启德双子汇')
+               .replace(/\(The Landmark\)/i, '')
                .replace(/\(国际金融中心商场\)/i, '')
                .replace(/\(人文艺术购物馆\)/i, '')
                .replace(/\(港岛南岸商场\)/i, '')
                .replace(/\(创纪之城五期\)/i, '')
                .replace(/\(启德旗舰\)/i, '')
-               .replace(/\(The Twins \/ 启德SOGO\)/i, 'SOGO')
                .replace(/\(Pacific Place\)/i, '')
                .replace(/\(Times Square\)/i, '')
                .replace(/\(Hysan Place\)/i, '')
@@ -2937,6 +2939,7 @@ function getDisplayPinName(fullName) {
                .replace(/\(Elements\)/i, '')
                .replace(/\(Langham Place\)/i, '')
                .replace(/\(Festival Walk\)/i, '')
+               .replace(/中学附属小学/g, '附小')
                .replace(/附属小学/g, '附小')
                .replace(/Primary Division/gi, '附小')
                .replace(/Junior School/gi, '附小')
