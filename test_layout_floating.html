@@ -1827,8 +1827,8 @@
 
   /* MTR Station Popup */
   .mtr-popup {
-    min-width: 240px;
-    max-width: 290px;
+    min-width: 160px;
+    max-width: 280px;
     font-family: 'Noto Sans SC', sans-serif;
   }
   .mtr-popup-title {
@@ -2715,7 +2715,7 @@ function initMap() {
   });
 }
 
-const MAP_DATA_VERSION = '20260929_monet_fix_v2';
+const MAP_DATA_VERSION = '20260929_clean_mtr_popup';
 
 async function loadData() {
   console.time('⚡ 核心地图首屏瞬时直出');
@@ -3090,14 +3090,10 @@ function renderMtrMarkers() {
     }).join('');
 
     const popupContent = `
-      <div class="mtr-popup">
+      <div class="mtr-popup" style="padding: 2px 0;">
         <div class="mtr-popup-title">🚇 ${cName}站 ${st.station_name_en ? '<span style="font-size:0.8rem; font-weight:600; color:#64748b; margin-left:3px;">(' + st.station_name_en + ')</span>' : ''}</div>
-        <div style="margin: 6px 0 5px 0; display:flex; flex-wrap:wrap;">
+        <div style="margin-top: 6px; display:flex; flex-wrap:wrap; gap:4px;">
           ${lineBadgesHtml}
-        </div>
-        <div class="mtr-popup-desc">
-          📍 枢纽定位：${isInterchange ? '多线交汇换乘核心枢纽站' : '港铁沿线核心交通站点'}<br>
-          ✨ 便捷连通全港各区生活圈与核心商业区
         </div>
       </div>
     `;
