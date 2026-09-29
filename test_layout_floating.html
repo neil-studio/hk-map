@@ -3691,14 +3691,6 @@ function scrollToProjectCard(name) {
   }
 }
 
-function focusProjectOnMap(name) {
-  const p = projectsData.find(x => x.name === name);
-  if (!p) return;
-  map.flyTo([p.lat, p.lng], Math.max(map.getZoom(), 16), { duration: 0.6 });
-  scrollToProjectCard(name);
-  showProjectFloatingCard(name);
-}
-
 function clearDistrictFilter() {
   activeDistrictCluster = null;
   map.flyTo([22.3150, 114.1750], 12, { duration: 0.8 });
@@ -4101,27 +4093,6 @@ function showProjectFloatingCard(name) {
     });
   }
 
-  // 🎯 智能识别同项目其他分期（例如 Central Peak I 与 II、朗贤峰各期、天玺各期等）
-  const baseName = proj.name.replace(/(第?[0-9一二三四五六七八九]+期|[IVXLCDM]+期?|\s*[1-9]$)/gi, '').trim();
-  const siblingProjs = baseName.length >= 2 
-    ? projectsData.filter(p => p.name !== proj.name && (p.name.startsWith(baseName) || baseName.startsWith(p.name)))
-    : [];
-
-  let siblingHtml = '';
-  if (siblingProjs.length > 0) {
-    const allSiblings = [proj, ...siblingProjs].sort((a, b) => a.name.localeCompare(b.name));
-    const siblingBtns = allSiblings.map(sp => {
-      const isCur = sp.name === proj.name;
-      return `<button onclick="focusProjectOnMap('${sp.name}')" style="padding:2px 7px; font-size:11px; font-weight:700; border-radius:4px; border:1px solid ${isCur ? '#2563eb' : '#cbd5e1'}; background:${isCur ? '#2563eb' : '#ffffff'}; color:${isCur ? '#ffffff' : '#475569'}; cursor:pointer; margin-right:4px; margin-bottom:2px; box-shadow:0 1px 2px rgba(0,0,0,0.06); transition:all 0.15s ease;">${isCur ? '✓ ' : ''}${sp.name}</button>`;
-    }).join('');
-    siblingHtml = `
-      <div style="background:#f1f5f9; padding:5px 8px; border-radius:6px; margin:6px 0 4px 0; font-size:11px; border-left:3px solid #3b82f6;">
-        <span style="font-weight:700; color:#1e293b; display:block; margin-bottom:3px;">🏘️ 本项目分期一键切换：</span>
-        <div style="display:flex; flex-wrap:wrap; gap:2px;">${siblingBtns}</div>
-      </div>
-    `;
-  }
-
   const cardContainer = document.getElementById('project-corner-card');
   if (!cardContainer) return;
 
@@ -4215,7 +4186,6 @@ function showProjectFloatingCard(name) {
       </div>
       <button class="corner-close-btn" onclick="closeProjectFloatingCard()" title="关闭情报卡">✕</button>
     </div>
-    ${siblingHtml}
     ${anchorDistHtml}
     <div class="corner-card-body">
       ${mtrHtml}
