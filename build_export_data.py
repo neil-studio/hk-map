@@ -821,45 +821,10 @@ def main():
             p["excel_min_price_desc"] = pb["desc"]
             price_attached += 1
         else:
-            # 兜底：优先从文本描述中提取具体数值，其次根据 price_tier 设定
-            tier = p.get("price_tier") or dj_p.get("price_tier", "")
-            p_desc = " ".join(filter(None, [
-                p.get("total_price_desc"),
-                dj_p.get("total_price_desc"),
-                p.get("basic_price_desc"),
-                dj_p.get("basic_price_desc")
-            ]))
-            
-            min_w, max_w = None, None
-            if p_desc:
-                m_yi = re.search(r'(\d+(?:\.\d+)?)\s*亿', p_desc)
-                m_wan = re.search(r'(\d+(?:\.\d+)?)\s*万', p_desc)
-                if m_yi:
-                    val_w = float(m_yi.group(1)) * 10000
-                    min_w, max_w = round(val_w * 0.95, 2), round(val_w * 1.3, 2)
-                elif m_wan:
-                    val_w = float(m_wan.group(1))
-                    min_w, max_w = round(val_w * 0.95, 2), round(val_w * 1.3, 2)
-            
-            if min_w is None:
-                if tier in ["1000-down", "1000万以内"]:
-                    min_w, max_w = 0, 1000
-                elif tier in ["1000-2000", "1000-2000万"]:
-                    min_w, max_w = 1000, 2000
-                elif tier in ["2000-5000", "2000-5000万"]:
-                    min_w, max_w = 2000, 5000
-                elif tier in ["5000-10000", "5000-1亿"]:
-                    min_w, max_w = 5000, 10000
-                elif tier in ["10000+", "10000-up", "1亿以上"]:
-                    min_w, max_w = 10000, 99999
-            
-            p["min_price_wan"] = min_w
-            p["max_price_wan"] = max_w
-            p["has_price_data"] = (min_w is not None)
-            if p["has_price_data"]:
-                price_attached += 1
-                p["excel_min_price_desc"] = f"预估约: ${int(min_w)}万 - ${int(max_w)}万"
-            elif p.get("sell_status") == "coming_soon":
+            p["min_price_wan"] = None
+            p["max_price_wan"] = None
+            p["has_price_data"] = False
+            if p.get("sell_status") == "coming_soon" or p.get("is_coming_soon"):
                 p["excel_min_price_desc"] = "即将发售 / 待定"
             else:
                 p["excel_min_price_desc"] = "招标发售 / 详见价单"
