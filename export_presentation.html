@@ -3657,37 +3657,56 @@
           });
         });
 
-        // 1. 先绘制 1.5km 配套标记点 (底层纯图标，不显示名称)
+        // 1. 先绘制 1.5km 配套标记点 (带精致胶囊标签，与推荐楼盘重叠时智能避让)
         nearbyPOIsMap.forEach(poi => {
+          // 检查该配套是否与任意推荐项目极其接近 (< 180米)
+          let minProjDist = 9999;
+          projects.forEach(p => {
+            if (p.lat && p.lng) {
+              const d = distFn(p.lat, p.lng, poi.lat, poi.lng);
+              if (d < minProjDist) minProjDist = d;
+            }
+          });
+
+          // 如果与项目极其贴近 (如 瑜一与何文田站仅相距80-130米)，向下偏移24px避免被项目大绿牌完全遮挡
+          const isNearProject = minProjDist <= 180;
+          const pinAnchorY = isNearProject ? 34 : 11;
+
+          const cleanName = poi.name.replace(/\s*\([^)]*\)/g, '').trim();
+
           if (poi.category === 'mtr') {
             const mtrIcon = L.divIcon({
               className: 'overview-mtr-pin',
               html: `
-                <div style="width:22px; height:22px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(196,18,48,0.45); border:1.5px solid #fff;">
-                  <svg viewBox="0 0 24 24" width="22" height="22" style="display:block;" fill="#C41230">
-                    <path d="M11.987 1.913c-1.9 0-3.693.321-5.298.883C2.756 4.268 0 7.826 0 12c0 4.147 2.756 7.706 6.689 9.204 1.632.562 3.425.883 5.325.883a16.74 16.74 0 0 0 5.27-.856C21.217 19.759 24 16.174 24 12.027V12c0-4.174-2.783-7.732-6.716-9.204a16.295 16.295 0 0 0-5.297-.883zM10.89 5.257h2.167v3.827c1.525-.402 2.702-1.766 2.782-3.399l2.168.027c-.16 2.73-2.22 4.95-4.897 5.378v1.793c2.676.428 4.736 2.675 4.924 5.404l-2.167.028c-.08-1.633-1.258-2.997-2.783-3.425v3.853h-2.167V14.89a3.775 3.775 0 0 0-2.81 3.425l-2.167-.028a5.868 5.868 0 0 1 4.923-5.404v-1.766C8.187 10.716 6.1 8.468 5.94 5.74l2.167-.027A3.711 3.711 0 0 0 10.89 9.11Z"/>
-                  </svg>
+                <div style="display:inline-flex; align-items:center; gap:3px; background:rgba(255,255,255,0.96); padding:2px 6px 2px 3px; border-radius:12px; box-shadow:0 2px 6px rgba(196,18,48,0.35); border:1px solid #FCA5A5; white-space:nowrap;">
+                  <div style="width:16px; height:16px; border-radius:50%; background:#C41230; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="#fff" style="display:block;">
+                      <path d="M11.987 1.913c-1.9 0-3.693.321-5.298.883C2.756 4.268 0 7.826 0 12c0 4.147 2.756 7.706 6.689 9.204 1.632.562 3.425.883 5.325.883a16.74 16.74 0 0 0 5.27-.856C21.217 19.759 24 16.174 24 12.027V12c0-4.174-2.783-7.732-6.716-9.204a16.295 16.295 0 0 0-5.297-.883zM10.89 5.257h2.167v3.827c1.525-.402 2.702-1.766 2.782-3.399l2.168.027c-.16 2.73-2.22 4.95-4.897 5.378v1.793c2.676.428 4.736 2.675 4.924 5.404l-2.167.028c-.08-1.633-1.258-2.997-2.783-3.425v3.853h-2.167V14.89a3.775 3.775 0 0 0-2.81 3.425l-2.167-.028a5.868 5.868 0 0 1 4.923-5.404v-1.766C8.187 10.716 6.1 8.468 5.94 5.74l2.167-.027A3.711 3.711 0 0 0 10.89 9.11Z"/>
+                    </svg>
+                  </div>
+                  <span style="font-size:10px; font-weight:700; color:#991B1B;">${cleanName}</span>
                 </div>
               `,
-              iconSize: [24, 24],
-              iconAnchor: [12, 12]
+              iconAnchor: [12, pinAnchorY]
             });
-            L.marker([poi.lat, poi.lng], { icon: mtrIcon, zIndexOffset: 200 }).addTo(mapOverview);
+            L.marker([poi.lat, poi.lng], { icon: mtrIcon, zIndexOffset: isNearProject ? 1500 : 300 }).addTo(mapOverview);
             group.push([poi.lat, poi.lng]);
           } else if (poi.category === 'shopping_mall') {
             const mallIcon = L.divIcon({
               className: 'overview-mall-pin',
               html: `
-                <div style="width:22px; height:22px; border-radius:50%; background:#EA580C; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(234,88,12,0.45); border:1.5px solid #fff;">
-                  <svg viewBox="0 0 24 24" width="12" height="12" fill="#fff" style="display:block;">
-                    <path d="M16 6V4a4 4 0 0 0-8 0v2H4a1 1 0 0 0-1 1v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1h-4ZM10 4a2 2 0 0 1 4 0v2h-4V4Zm9 16H5V8h3v2a1 1 0 0 0 2 0V8h4v2a1 1 0 0 0 2 0V8h3v12Z"/>
-                  </svg>
+                <div style="display:inline-flex; align-items:center; gap:3px; background:rgba(255,255,255,0.96); padding:2px 6px 2px 3px; border-radius:12px; box-shadow:0 2px 6px rgba(234,88,12,0.35); border:1px solid #FDBA74; white-space:nowrap;">
+                  <div style="width:16px; height:16px; border-radius:50%; background:#EA580C; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                    <svg viewBox="0 0 24 24" width="10" height="10" fill="#fff" style="display:block;">
+                      <path d="M16 6V4a4 4 0 0 0-8 0v2H4a1 1 0 0 0-1 1v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1h-4ZM10 4a2 2 0 0 1 4 0v2h-4V4Zm9 16H5V8h3v2a1 1 0 0 0 2 0V8h4v2a1 1 0 0 0 2 0V8h3v12Z"/>
+                    </svg>
+                  </div>
+                  <span style="font-size:10px; font-weight:700; color:#C2410C;">${cleanName}</span>
                 </div>
               `,
-              iconSize: [24, 24],
-              iconAnchor: [12, 12]
+              iconAnchor: [12, pinAnchorY]
             });
-            L.marker([poi.lat, poi.lng], { icon: mallIcon, zIndexOffset: 300 }).addTo(mapOverview);
+            L.marker([poi.lat, poi.lng], { icon: mallIcon, zIndexOffset: isNearProject ? 1400 : 350 }).addTo(mapOverview);
             group.push([poi.lat, poi.lng]);
           }
         });
@@ -3749,6 +3768,20 @@
         if (group.length > 0) {
           mapOverview.fitBounds(L.latLngBounds(group), { padding: [35, 35] });
         }
+
+        // 强保地图容器尺寸自适应，解决跨页渲染和字体缩放时导致的视口偏差
+        setTimeout(() => {
+          mapOverview.invalidateSize();
+          if (group.length > 0) {
+            mapOverview.fitBounds(L.latLngBounds(group), { padding: [35, 35] });
+          }
+        }, 150);
+        setTimeout(() => {
+          mapOverview.invalidateSize();
+          if (group.length > 0) {
+            mapOverview.fitBounds(L.latLngBounds(group), { padding: [35, 35] });
+          }
+        }, 400);
       }
 
       // 2. 初始化各单盘微观导航地图 (Single Project Maps)
