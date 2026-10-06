@@ -1018,6 +1018,36 @@
   .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
   .btn-cancel { padding: 8px 16px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; font-size: 0.82rem; cursor: pointer; }
 
+  /* Export Layout Selector Styling */
+  .export-layout-btn-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .export-layout-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1.5px solid #CBD5E1;
+    background: #F8FAFC;
+    color: #475569;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .export-layout-btn:hover {
+    border-color: #94A3B8;
+    background: #F1F5F9;
+  }
+  .export-layout-btn.active {
+    background: #0284C7;
+    color: #FFFFFF;
+    border-color: #0284C7;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
+  }
+
   /* Popup Info Window Styling */
   .custom-popup { min-width: 250px; font-family: 'Noto Sans SC', sans-serif; }
   .popup-title { font-size: 0.98rem; font-weight: 700; color: #1e3a8a; margin-bottom: 6px; }
@@ -2506,9 +2536,28 @@
         <input type="text" class="form-input" id="client-district" placeholder="例如：九龙塘 / 何文田 / 启德">
       </div>
     </div>
+
+    <!-- 🎯 方案展示户型前置选项 (可多选) -->
+    <div class="form-field" style="margin-bottom:12px; background:#F8FAFC; border:1px solid #E2E8F0; padding:10px 12px; border-radius:8px;">
+      <label style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+        <span style="font-weight:700; color:#0F172A;">🎯 方案呈现户型范围 (前置多选)</span>
+        <span style="font-size:0.72rem; color:#0284C7; font-weight:700; cursor:pointer;" onclick="toggleAllExportLayouts()">全选 / 反选</span>
+      </label>
+      <div class="export-layout-btn-group" id="export-layout-group">
+        <button type="button" class="export-layout-btn active" data-layout="开放式" onclick="toggleExportLayoutBtn(this)">开间</button>
+        <button type="button" class="export-layout-btn active" data-layout="1房" onclick="toggleExportLayoutBtn(this)">1房</button>
+        <button type="button" class="export-layout-btn active" data-layout="2房" onclick="toggleExportLayoutBtn(this)">2房</button>
+        <button type="button" class="export-layout-btn active" data-layout="3房" onclick="toggleExportLayoutBtn(this)">3房</button>
+        <button type="button" class="export-layout-btn active" data-layout="4房+" onclick="toggleExportLayoutBtn(this)">4房及以上</button>
+      </div>
+      <div style="font-size:0.68rem; color:#64748B; margin-top:5px; line-height:1.4;">
+        * 横向综合对比矩阵及各单盘专页将严格按所选户型过滤展示数据与最新成交
+      </div>
+    </div>
+
     <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
       <div class="form-field">
-        <label>🏠 意向户型规格</label>
+        <label>🏠 意向户型规格 (文字描述)</label>
         <input type="text" class="form-input" id="client-layout" placeholder="例如：2房至3房套房 / 4房大宅">
       </div>
       <div class="form-field">
@@ -5447,6 +5496,33 @@ function closeExportModal() {
   document.getElementById('export-modal').classList.remove('open');
 }
 
+function toggleExportLayoutBtn(btn) {
+  btn.classList.toggle('active');
+  const activeBtns = document.querySelectorAll('#export-layout-group .export-layout-btn.active');
+  if (activeBtns.length === 0) {
+    btn.classList.add('active'); // 至少保留一个户型
+  }
+}
+
+function toggleAllExportLayouts() {
+  const btns = document.querySelectorAll('#export-layout-group .export-layout-btn');
+  const allActive = Array.from(btns).every(b => b.classList.contains('active'));
+  btns.forEach(b => {
+    if (allActive) {
+      b.classList.remove('active');
+    } else {
+      b.classList.add('active');
+    }
+  });
+  const activeBtns = document.querySelectorAll('#export-layout-group .export-layout-btn.active');
+  if (activeBtns.length === 0) {
+    btns.forEach(b => {
+      const l = b.dataset.layout;
+      if (l === '2房' || l === '3房') b.classList.add('active');
+    });
+  }
+}
+
 function triggerPdfPrint() {
   const selectedList = projectsData.filter(p => selectedNames.has(p.name));
   if (selectedList.length === 0) {
@@ -5457,15 +5533,36 @@ function triggerPdfPrint() {
   const advisorName = document.getElementById('advisor-name') ? document.getElementById('advisor-name').value.trim() : '';
   const advisorPhone = document.getElementById('advisor-phone') ? document.getElementById('advisor-phone').value.trim() : '';
 
+  const activeLayoutBtns = document.querySelectorAll('#export-layout-group .export-layout-btn.active');
+  const selectedLayouts = Array.from(activeLayoutBtns).map(b => b.dataset.layout);
+
+  const clientLayoutInput = document.getElementById('client-layout');
+  let finalLayoutStr = clientLayoutInput ? clientLayoutInput.value.trim() : '';
+  if (!finalLayoutStr) {
+    if (selectedLayouts.length === 5) {
+      finalLayoutStr = '全户型规划 (开间至4房+)';
+    } else {
+      finalLayoutStr = selectedLayouts.map(k => k === '开放式' ? '开间' : (k === '4房+' ? '4房及以上' : k)).join('、');
+    }
+  }
+
   const clientPayload = {
     name: document.getElementById('client-name').value.trim() || '尊贵客户',
     budget: document.getElementById('client-budget').value.trim() || '详见方案明细',
     district: document.getElementById('client-district').value.trim() || '九龙/港岛核心区',
-    layout: document.getElementById('client-layout').value.trim() || '2房 - 4房大宅',
+    layout: finalLayoutStr,
     sqftRange: document.getElementById('client-sqft').value.trim() || '600 - 1500 呎',
     coreFocus: document.getElementById('client-focus').value.trim() || '名校学区 / 轨交枢纽 / 资产保值',
     intro: document.getElementById('client-intro') ? document.getElementById('client-intro').value.trim() : ''
   };
+
+  const imgManifest = window.projectImagesManifest || {};
+  selectedList.forEach(p => {
+    const imgInfo = imgManifest[p.name];
+    if (imgInfo && imgInfo.thumb) {
+      p.photo_url = imgInfo.thumb;
+    }
+  });
 
   const payload = {
     client: clientPayload,
@@ -5476,6 +5573,7 @@ function triggerPdfPrint() {
     advisorName: advisorName,
     advisorPhone: advisorPhone,
     projects: selectedList,
+    selectedLayouts: selectedLayouts.length > 0 ? selectedLayouts : ['开放式', '1房', '2房', '3房', '4房+'],
     dateStr: new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
   };
 
