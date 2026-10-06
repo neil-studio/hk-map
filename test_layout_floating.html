@@ -5580,8 +5580,8 @@ function triggerPdfPrint() {
   localStorage.setItem('landma_export_payload', JSON.stringify(payload));
   closeExportModal();
 
-  // 打开专属 PDF 方案生成窗口
-  window.open('export_presentation.html', '_blank');
+  // 打开专属 PDF 方案生成窗口 (强防浏览器缓存)
+  window.open('export_presentation.html?v=' + Date.now(), '_blank');
 }
 </script>
 </body>
