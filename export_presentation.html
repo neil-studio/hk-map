@@ -912,65 +912,232 @@
     }
 
     /* =========================================================================
-       PAGE 4+: SINGLE PROJECT DETAIL (单盘档案与实景配套)
+       PAGE 4+: SINGLE PROJECT DETAIL (方案一：顶部震撼双画卷 + 底部全维深度研报)
        ========================================================================= */
     .project-detail-layout {
-      padding: 10px 36px 6px 36px;
-      display: grid;
-      grid-template-columns: 1.35fr 1fr;
-      gap: 16px;
+      padding: 10px 32px 10px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
       flex: 1;
       overflow: hidden;
     }
-    .proj-left-col {
+
+    /* 顶部导航与项目基础信息条 */
+    .proj-title-bar-wide {
       display: flex;
-      flex-direction: column;
-      gap: 6px;
-      overflow: hidden;
-    }
-    .proj-title-bar {
-      margin-bottom: 2px;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2px;
+      border-bottom: 1.5px solid #E2E8F0;
     }
     .proj-name-cn {
       font-family: 'Noto Serif SC', serif;
-      font-size: 1.40rem;
+      font-size: 1.42rem;
       font-weight: 900;
       color: var(--slate-900);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
-    .proj-meta-chips {
+    .proj-meta-chips-wide {
       display: flex;
       gap: 6px;
-      flex-wrap: wrap;
-      margin-top: 3px;
+      align-items: center;
     }
     .meta-chip {
       background: #F1F5F9;
-      border: 1px solid #E2E8F0;
+      border: 1px solid #CBD5E1;
       color: var(--slate-700);
-      padding: 2px 6px;
+      padding: 2.5px 8px;
       border-radius: 4px;
       font-size: 0.68rem;
       font-weight: 600;
+      white-space: nowrap;
     }
     .meta-chip.primary {
       background: var(--primary-light);
       color: var(--primary-dark);
       border-color: #B2E7EF;
     }
+    .meta-chip.success {
+      background: #F0FDF4;
+      color: #166534;
+      border-color: #BBF7D0;
+    }
 
-    /* Dual Tables (Sales Control In-Stock & Recent Transactions) */
+    /* 顶部双宽屏震撼画卷 (Hero Image 50% + Micro/Meso Map 50%) */
+    .proj-hero-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      height: 252px;
+      min-height: 252px;
+    }
+
+    /* 震撼楼盘大图画框 */
+    .proj-visual-box-hero {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #CBD5E1;
+      background: #0B132B;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      height: 100%;
+    }
+    .proj-visual-box-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .proj-visual-placeholder-hero {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0B1E28 0%, #1E293B 55%, #004D5A 100%);
+      color: #fff;
+      text-align: center;
+      padding: 14px;
+    }
+    .proj-visual-tag-hero {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      color: #38BDF8;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 5px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      z-index: 2;
+    }
+    .proj-visual-bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.90) 0%, rgba(15, 23, 42, 0.45) 70%, transparent 100%);
+      padding: 12px 14px 7px 14px;
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      z-index: 2;
+    }
+    .proj-visual-desc-main {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #F8FAFC;
+      letter-spacing: 0.3px;
+    }
+    .proj-visual-desc-sub {
+      font-size: 0.64rem;
+      color: #94A3B8;
+      margin-top: 1px;
+    }
+
+    /* 宽画幅周边全景配套地图 */
+    .proj-map-box-hero {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #CBD5E1;
+      height: 100%;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+    .proj-map-frame-hero {
+      width: 100%;
+      height: 100%;
+    }
+    .proj-map-floating-infobar {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(187, 247, 208, 0.9);
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.68rem;
+      color: #166534;
+      z-index: 500;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* 中间紧凑型核心经营与规划指标条 */
+    .proj-kpi-bar-dense {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 5px 14px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+      align-items: center;
+    }
+    .proj-kpi-cell {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .proj-kpi-cell:not(:last-child) {
+      border-right: 1px solid #F1F5F9;
+      padding-right: 8px;
+    }
+    .proj-kpi-cell-label {
+      font-size: 0.64rem;
+      color: var(--slate-500);
+      font-weight: 600;
+      margin-bottom: 1px;
+    }
+    .proj-kpi-cell-val {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      white-space: nowrap;
+    }
+    .proj-kpi-cell-val.highlight {
+      color: #0284C7;
+    }
+
+    /* 底部三列矩阵深度研报档案 (彻底充实版面，消灭空白) */
+    .proj-dossier-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.35fr 1.15fr;
+      gap: 12px;
+      flex: 1;
+      overflow: hidden;
+    }
+    .proj-dossier-col {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      overflow: hidden;
+    }
+
     .data-card-box {
       border: 1px solid #E2E8F0;
       border-radius: 6px;
       overflow: hidden;
       background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
     .data-card-header {
       background: #F8FAFC;
-      padding: 3.5px 10px;
+      padding: 4px 10px;
       font-size: 0.72rem;
       font-weight: 800;
       color: var(--slate-900);
@@ -982,7 +1149,7 @@
     .data-card-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.68rem;
+      font-size: 0.67rem;
     }
     .data-card-table th {
       background: #F1F5F9;
@@ -991,168 +1158,73 @@
       font-weight: 700;
       text-align: left;
       border-bottom: 1px solid #E2E8F0;
+      white-space: nowrap;
     }
     .data-card-table td {
       padding: 3px 6px;
       border-top: 1px solid #F8FAFC;
       color: var(--slate-800);
+      white-space: nowrap;
     }
     .data-card-table tr:hover { background: #FAFAFA; }
 
-    .price-tender-tag {
-      background: #FEF3C7;
-      color: #92400E;
-      padding: 1px 5px;
-      border-radius: 3px;
-      font-weight: 800;
-      font-size: 0.66rem;
-    }
-    .price-val-tag {
-      color: #2563EB;
-      font-weight: 700;
-    }
-
-    /* Bullet Points */
-    .proj-highlights-box {
+    /* 顾问精评与核心生活圈复合卡片 */
+    .proj-analysis-box {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
       border-radius: 6px;
-      padding: 6px 10px;
+      padding: 7px 11px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
     }
-    .proj-highlights-title {
+    .proj-analysis-title {
       font-size: 0.74rem;
       font-weight: 800;
       color: var(--primary-dark);
-      margin-bottom: 3px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .highlight-item {
-      font-size: 0.68rem;
+      font-size: 0.67rem;
       line-height: 1.45;
       color: var(--slate-700);
-      margin-bottom: 2px;
+      margin-bottom: 3.5px;
       display: flex;
       gap: 5px;
     }
-    .highlight-item:last-child { margin-bottom: 0; }
-
-    /* Right Column: Visual Showcase + Micro Map + POIs + KPIs */
-    .proj-right-col {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .proj-visual-box {
-      height: 155px;
-      border-radius: 8px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid #CBD5E1;
-      background: #0F172A;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    .proj-visual-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .proj-visual-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #0F172A 0%, #1E293B 55%, #00606D 100%);
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-    }
-    .proj-visual-tag {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background: rgba(15, 23, 42, 0.82);
-      backdrop-filter: blur(6px);
-      color: #38BDF8;
-      font-size: 0.66rem;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 4px;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      z-index: 2;
-    }
-    .proj-map-frame {
-      height: 135px;
-      min-height: 135px;
-      border-radius: 6px;
-      border: 1px solid #CBD5E1;
-      overflow: hidden;
-      position: relative;
-    }
-    .map-mtr-infobar {
-      background: #F0FDF4;
-      border: 1px solid #BBF7D0;
-      padding: 4px 8px;
-      border-radius: 5px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.68rem;
-      color: #166534;
-    }
-    .proj-poi-bar {
+    .proj-poi-capsule-list {
       background: #F8FAFC;
       border: 1px solid #E2E8F0;
       border-radius: 5px;
-      padding: 4px 8px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.65rem;
-      color: #334155;
+      padding: 5px 8px;
+      margin-top: 4px;
     }
-    .proj-poi-item {
+    .proj-poi-capsule-header {
+      font-size: 0.64rem;
+      font-weight: 700;
+      color: var(--slate-700);
+      margin-bottom: 3px;
+    }
+    .proj-poi-capsules {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .proj-poi-capsule-tag {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      padding: 1.5px 6px;
+      border-radius: 3px;
+      font-size: 0.63rem;
+      color: #334155;
       display: inline-flex;
       align-items: center;
       gap: 3px;
-    }
-    .proj-kpi-summary-bar {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 6px;
-      padding: 6px 10px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1.25fr;
-      gap: 6px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
-      align-items: center;
-    }
-    .proj-kpi-item {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .proj-kpi-item:not(:last-child) {
-      border-right: 1px solid #F1F5F9;
-      padding-right: 6px;
-    }
-    .proj-kpi-label {
-      font-size: 0.65rem;
-      color: var(--slate-500);
       font-weight: 600;
-      margin-bottom: 1px;
-    }
-    .proj-kpi-val {
-      font-size: 0.82rem;
-      font-weight: 800;
-      color: var(--slate-900);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .proj-kpi-val.highlight {
-      color: #2563EB;
     }
     .badge-unit-count {
       display: inline-block;
@@ -2442,7 +2514,9 @@
             results.push({
               name: lm.name,
               category: lm.category || 'landmark',
-              dist_m: d
+              dist_m: d,
+              lat: lm.lat,
+              lng: lm.lng
             });
           }
         });
@@ -3270,75 +3344,143 @@
           </div>
 
           <div class="project-detail-layout">
-            <!-- Left Column: Dual Tables & Highlights -->
-            <div class="proj-left-col">
-              <div class="proj-title-bar">
-                <div class="proj-name-cn">${proj.name}</div>
-                <div class="proj-meta-chips">
-                  <span class="meta-chip primary">🏗️ 发展商：${proj.developer || '品牌发展商'}</span>
-                  <span class="meta-chip">📅 落成日期：${compDateStr}</span>
-                  ${proj.school_net ? `<span class="meta-chip">🏫 校网：${proj.school_net}</span>` : ''}
-                  <span class="meta-chip" style="color:#16A34A; background:#F0FDF4; border-color:#BBF7D0;">
-                    🚇 ${mtr ? mtr.nearest_mtr_cn + '站 (步行' + mtr.dist_walk_m + '米/' + mtr.walk_time_min + '分)' : '地铁沿线'}
-                  </span>
-                </div>
+            <!-- 1. 顶部宽幅项目身份条 -->
+            <div class="proj-title-bar-wide">
+              <div class="proj-name-cn">
+                <span>${proj.name}</span>
+                <span style="font-size:0.75rem; font-weight:700; color:#0284C7; background:#E0F2FE; border:1px solid #BAE6FD; padding:2px 8px; border-radius:4px;">${proj.micro_district || proj.district || '核心板块'}</span>
               </div>
-
-              <!-- 1. 在售未售房源 -->
-              <div class="data-card-box">
-                <div class="data-card-header">
-                  <span>📊 项目实时一手在售房源 <span style="font-size:0.66rem; color:#0284C7; font-weight:700;">(${selectedLayoutLabelStr})</span></span>
-                  <span style="font-size:0.66rem; color:#64748b;">实时一手数据</span>
-                </div>
-                ${salesTableHtml}
-              </div>
-
-              <!-- 2. 最近真实成交记录 (每户型最新2套) -->
-              <div class="data-card-box">
-                <div class="data-card-header">
-                  <span>📈 各户型最近一手真实成交参考 <span style="font-size:0.66rem; color:#16A34A; font-weight:700;">(${selectedLayoutLabelStr})</span></span>
-                  <span style="font-size:0.66rem; color:#16A34A; font-weight:700;">官方成交记录册</span>
-                </div>
-                ${txTableHtml}
-              </div>
-
-              <!-- 3. 顾问核心精评 -->
-              <div class="proj-highlights-box">
-                <div class="proj-highlights-title">💎 置业顾问精要点评</div>
-                ${highlights.map(h => `
-                  <div class="highlight-item">
-                    <span>•</span>
-                    <div>${h.replace(/^\d+[\.、]\s*/, '')}</div>
-                  </div>
-                `).join('')}
+              <div class="proj-meta-chips-wide">
+                <span class="meta-chip primary">🏗️ 发展商：${proj.developer || '知名品牌发展商'}</span>
+                <span class="meta-chip">📅 落成：${compDateStr}</span>
+                ${proj.school_net ? `<span class="meta-chip">🏫 校网：${proj.school_net}</span>` : ''}
+                <span class="meta-chip success">
+                  🚇 ${mtr ? mtr.nearest_mtr_cn + '站 (步行' + mtr.dist_walk_m + '米/' + mtr.walk_time_min + '分)' : '地铁沿线'}
+                </span>
               </div>
             </div>
 
-            <!-- Right Column: Visual Showcase + Micro Route Map + POIs + KPI Bar -->
-            <div class="proj-right-col">
-              ${visualHtml}
-              <div id="proj-map-${idx}" class="proj-map-frame"></div>
-              <div class="map-mtr-infobar">
-                <span>🚇 <strong>${mtr?.nearest_mtr_cn || '港铁'}站</strong> 人行道步行导航</span>
-                <span>🚶 实际步行约 <strong>${mtr?.dist_walk_m || 500} 米</strong> · 约 <strong>${mtr?.walk_time_min || 6} 分钟</strong></span>
+            <!-- 2. 顶部双宽屏震撼画卷 (Hero Image 50% + Meso Map 50%) -->
+            <div class="proj-hero-showcase">
+              <!-- 左侧：震撼楼盘大图画框 -->
+              <div class="proj-visual-box-hero">
+                ${photoUrl ? `
+                  <img src="${photoUrl}" alt="${proj.name}">
+                ` : `
+                  <div class="proj-visual-placeholder-hero">
+                    <div style="font-size:2.4rem; margin-bottom:6px;">🏛️</div>
+                    <div style="font-weight:900; font-size:1.15rem; letter-spacing:0.5px; color:#F8FAFC;">${proj.name}</div>
+                    <div style="font-size:0.75rem; color:#94A3B8; margin-top:3px;">${proj.developer || '香港品牌发展商'} · 蓝玛全景严选地标</div>
+                  </div>
+                `}
+                <span class="proj-visual-tag-hero">${visualTag}</span>
+                <div class="proj-visual-bottom-bar">
+                  <div>
+                    <div class="proj-visual-desc-main">${proj.name} · 全景实拍档案</div>
+                    <div class="proj-visual-desc-sub">${proj.address ? '📍 ' + proj.address : (proj.main_area || proj.region) + ' · 核心地标名邸'}</div>
+                  </div>
+                  <div style="font-size:0.68rem; font-weight:700; color:#38BDF8;">LANDMA VERIFIED ✓</div>
+                </div>
               </div>
-              ${poiHtml}
-              <div class="proj-kpi-summary-bar">
-                <div class="proj-kpi-item">
-                  <div class="proj-kpi-label">🏢 规划楼栋</div>
-                  <div class="proj-kpi-val">${buildingCount} 栋</div>
+
+              <!-- 右侧：全景生活圈与轨交通勤微观/宏观大地图 -->
+              <div class="proj-map-box-hero">
+                <div id="proj-map-${idx}" class="proj-map-frame-hero"></div>
+                <div class="proj-map-floating-infobar">
+                  <span>🚇 <strong>${mtr?.nearest_mtr_cn || '港铁'}站</strong> 步行导航</span>
+                  <span>🚶 实际步行约 <strong>${mtr?.dist_walk_m || 500} 米</strong> · 约 <strong>${mtr?.walk_time_min || 6} 分钟</strong></span>
                 </div>
-                <div class="proj-kpi-item">
-                  <div class="proj-kpi-label">🏠 项目总伙数</div>
-                  <div class="proj-kpi-val">${totalUnitsStr}</div>
+              </div>
+            </div>
+
+            <!-- 3. 中间紧凑型经营与核心规划指标条 -->
+            <div class="proj-kpi-bar-dense">
+              <div class="proj-kpi-cell">
+                <div class="proj-kpi-cell-label">🏢 规划楼栋</div>
+                <div class="proj-kpi-cell-val">${buildingCount} 栋</div>
+              </div>
+              <div class="proj-kpi-cell">
+                <div class="proj-kpi-cell-label">🏠 项目总伙数</div>
+                <div class="proj-kpi-cell-val">${totalUnitsStr}</div>
+              </div>
+              <div class="proj-kpi-cell">
+                <div class="proj-kpi-cell-label">📈 整体去化率</div>
+                <div class="proj-kpi-cell-val highlight">${soldRateStr}</div>
+              </div>
+              <div class="proj-kpi-cell">
+                <div class="proj-kpi-cell-label">🔑 交付周期</div>
+                <div class="proj-kpi-cell-val" style="color:#0284C7;">${compDateStr}</div>
+              </div>
+              <div class="proj-kpi-cell">
+                <div class="proj-kpi-cell-label">💰 实用呎价参考</div>
+                <div class="proj-kpi-cell-val" style="color:#16A34A;">${proj.sqft_price_desc || '详见价单'}</div>
+              </div>
+            </div>
+
+            <!-- 4. 底部三列矩阵深度研报档案 (彻底充实版面，消灭空白) -->
+            <div class="proj-dossier-grid">
+              <!-- 列 1: 实时在售房源销控 -->
+              <div class="proj-dossier-col">
+                <div class="data-card-box">
+                  <div class="data-card-header">
+                    <span>📊 实时在售一手房源 <span style="font-size:0.65rem; color:#0284C7; font-weight:700;">(${selectedLayoutLabelStr})</span></span>
+                    <span style="font-size:0.64rem; color:#64748b;">实时销控</span>
+                  </div>
+                  <div style="flex:1; overflow:hidden;">
+                    ${salesTableHtml}
+                  </div>
                 </div>
-                <div class="proj-kpi-item">
-                  <div class="proj-kpi-label">📈 当前去化率</div>
-                  <div class="proj-kpi-val highlight">${soldRateStr}</div>
+              </div>
+
+              <!-- 列 2: 官方一手真实成交记录 -->
+              <div class="proj-dossier-col">
+                <div class="data-card-box">
+                  <div class="data-card-header">
+                    <span>📈 最近一手真实成交参考 <span style="font-size:0.65rem; color:#16A34A; font-weight:700;">(${selectedLayoutLabelStr})</span></span>
+                    <span style="font-size:0.64rem; color:#16A34A; font-weight:700;">一手成交记录册</span>
+                  </div>
+                  <div style="flex:1; overflow:hidden;">
+                    ${txTableHtml}
+                  </div>
                 </div>
-                <div class="proj-kpi-item">
-                  <div class="proj-kpi-label">🔑 交付周期</div>
-                  <div class="proj-kpi-val" style="font-size:0.75rem; color:#0284C7;">${compDateStr}</div>
+              </div>
+
+              <!-- 列 3: 置业顾问核心精评与生活圈全维配套 -->
+              <div class="proj-dossier-col">
+                <div class="proj-analysis-box">
+                  <div>
+                    <div class="proj-analysis-title">
+                      <span>💎 置业顾问专业研判</span>
+                      <span style="font-size:0.63rem; color:#0284C7; font-weight:600;">核心资产买点</span>
+                    </div>
+                    <div style="margin-bottom:6px;">
+                      ${highlights.map(h => `
+                        <div class="highlight-item">
+                          <span style="color:#0284C7; font-weight:800;">•</span>
+                          <div>${h.replace(/^\d+[\.、]\s*/, '')}</div>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+
+                  <!-- 15分钟核心生活圈胶囊群 (彻底丰富右下角) -->
+                  <div class="proj-poi-capsule-list">
+                    <div class="proj-poi-capsule-header">📍 15分钟高质生活圈（商场/名校/地标）：</div>
+                    <div class="proj-poi-capsules">
+                      ${nearbyPOIs && nearbyPOIs.length > 0 ? nearbyPOIs.map(poi => {
+                        let icon = '🏛️';
+                        if (poi.category === 'school' || poi.category === 'university') icon = '🏫';
+                        else if (poi.category === 'mall') icon = '🛍️';
+                        else if (poi.category === 'hospital') icon = '🏥';
+                        else if (poi.category === 'park') icon = '🌳';
+                        return `<span class="proj-poi-capsule-tag">${icon} <strong>${poi.name.split('(')[0].trim()}</strong> 约${poi.dist_m}米</span>`;
+                      }).join('') : `
+                        <span class="proj-poi-capsule-tag">🛍️ 核心商圈高端商场 约500米</span>
+                        <span class="proj-poi-capsule-tag">🏫 知名中小学名校网 步行直达</span>
+                        <span class="proj-poi-capsule-tag">🌳 市政优质休闲公园 紧密相邻</span>
+                      `}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3841,7 +3983,50 @@
           }).addTo(mapSingle);
         }
 
-        mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [50, 50] });
+        // 绘制周边核心地标与生活圈配套 (商场、重点学校、公园地标)
+        const nearbyPOIsForMap = getNearbyPOIs(p, window.allLandmarksData || []);
+        if (nearbyPOIsForMap && nearbyPOIsForMap.length > 0) {
+          nearbyPOIsForMap.forEach(poi => {
+            if (!poi.lat || !poi.lng) return;
+            boundsCoords.push([poi.lat, poi.lng]);
+            let catColor = '#D97706';
+            let catIcon = '🛍️';
+            if (poi.category === 'school' || poi.category === 'university') {
+              catColor = '#7C3AED';
+              catIcon = '🏫';
+            } else if (poi.category === 'park') {
+              catColor = '#059669';
+              catIcon = '🌳';
+            } else if (poi.category === 'hospital') {
+              catColor = '#DC2626';
+              catIcon = '🏥';
+            }
+
+            const poiPin = L.divIcon({
+              className: 'poi-pin-single',
+              html: `
+                <div style="background:#FFFFFF; color:${catColor}; padding:2.5px 7px; border-radius:10px; font-size:10px; font-weight:700; box-shadow:0 2px 6px rgba(0,0,0,0.22); border:1.5px solid ${catColor}; white-space:nowrap; display:inline-flex; align-items:center; gap:3px;">
+                  <span>${catIcon}</span>
+                  <span>${poi.name.split('(')[0].trim()}</span>
+                </div>
+              `,
+              iconSize: [80, 20],
+              iconAnchor: [40, 10]
+            });
+            L.marker([poi.lat, poi.lng], { icon: poiPin }).addTo(mapSingle);
+          });
+        }
+
+        mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
+
+        setTimeout(() => {
+          mapSingle.invalidateSize();
+          mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
+        }, 150);
+        setTimeout(() => {
+          mapSingle.invalidateSize();
+          mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
+        }, 400);
       });
     }
   </script>
