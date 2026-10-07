@@ -2533,7 +2533,7 @@
       }
 
       function getNearbyPOIs(proj, allLandmarks) {
-        if (!proj.lat || !proj.lng || !allLandmarks || allLandmarks.length === 0) return [];
+        if (!proj.lat || !proj.lng || !allLandmarks || !Array.isArray(allLandmarks) || allLandmarks.length === 0) return [];
         const results = [];
         allLandmarks.forEach(lm => {
           if (!lm.lat || !lm.lng) return;
@@ -2571,6 +2571,7 @@
         }
         return picked;
       }
+      window.getNearbyPOIs = getNearbyPOIs;
 
       function getProjectTradeoff(p, idx, total) {
         const addr = (p.address || '').toLowerCase();
@@ -3230,6 +3231,86 @@
           ].slice(0, maxHighlights);
         }
 
+        // 1. 销控在售户型表格 (严格按选定户型过滤)
+        let salesTableHtml = '';
+        if (sales && sales.length > 0) {
+          salesTableHtml = `
+            <table class="data-card-table">
+              <thead>
+                <tr>
+                  <th>户型</th>
+                  <th>待售房源</th>
+                  <th>面积段</th>
+                  <th>总价区间</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${sales.map(s => {
+                  const onSalePart = (s.on_sale_count !== undefined) 
+                    ? `<span style="font-size:0.68rem; color:#16a34a; font-weight:600; margin-left:2px;">(在售${s.on_sale_count})</span>` 
+                    : '';
+                  const pRange = s.price_range || '';
+                  const isPending = pRange.includes('待定') || pRange.includes('详见价单');
+                  const displayPRange = isPending ? '待定' : pRange;
+                  const color = pRange === '招标' ? '#d97706' : (isPending ? '#64748b' : '#16a34a');
+                  return `
+                  <tr>
+                    <td><strong>${s.layout}</strong></td>
+                    <td>
+                      <span class="badge-unit-count">${s.unsold_count} 伙</span>
+                      ${onSalePart}
+                    </td>
+                    <td>${s.sqft_range}</td>
+                    <td style="font-weight:700; color:${color};">${displayPRange}</td>
+                  </tr>
+                `;}).join('')}
+              </tbody>
+            </table>
+          `;
+        } else {
+          salesTableHtml = `<div style="padding:14px; font-size:0.72rem; color:#94a3b8; text-align:center;">该项目暂无所选户型 (${selectedLayoutLabelStr}) 待售房源</div>`;
+        }
+
+        // 2. 最近真实成交表格 (严格按选定户型过滤)
+        let txTableHtml = '';
+        if (recentTx && recentTx.length > 0) {
+          txTableHtml = `
+            <table class="data-card-table">
+              <thead>
+                <tr>
+                  <th style="width:15%;">户型</th>
+                  <th style="width:25%;">成交单位</th>
+                  <th style="width:16%;">面积</th>
+                  <th style="width:17%;">折实总价</th>
+                  <th style="width:14%;">实用呎价</th>
+                  <th style="width:13%;">成交日期</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${recentTx.slice(0, 6).map(t => `
+                  <tr>
+                    <td><strong>${t.layout}</strong></td>
+                    <td style="color:#0F172A; font-weight:600;">${t.unit_name}</td>
+                    <td>${t.sqft}</td>
+                    <td style="color:#16A34A; font-weight:700;">${t.price}</td>
+                    <td style="color:#475569; font-size:0.66rem;">${t.unit_price}</td>
+                    <td style="color:#64748B; font-size:0.65rem;">${t.date}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          `;
+        } else {
+          txTableHtml = `
+            <div style="padding:14px 10px; font-size:0.68rem; color:#64748B; text-align:center;">
+              该项目暂无所选户型 (${selectedLayoutLabelStr}) 一手公开真实成交记录
+            </div>
+          `;
+        }
+
+        // 周边配套 POI 提取
+        const nearbyPOIs = getNearbyPOIs(proj, window.allLandmarksData || []);
+
         let dossierBottomHtml = '';
         if (isContentSparse) {
           // 上下排列模式：左栏上下堆叠两张数据表，右栏展开顾问深度研判与高质生活圈
@@ -3370,83 +3451,6 @@
           `;
         }
 
-        // 1. 销控在售户型表格 (严格按选定户型过滤)
-        let salesTableHtml = '';
-        if (sales && sales.length > 0) {
-          salesTableHtml = `
-            <table class="data-card-table">
-              <thead>
-                <tr>
-                  <th>户型</th>
-                  <th>待售房源</th>
-                  <th>面积段</th>
-                  <th>总价区间</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${sales.map(s => {
-                  const onSalePart = (s.on_sale_count !== undefined) 
-                    ? `<span style="font-size:0.68rem; color:#16a34a; font-weight:600; margin-left:2px;">(在售${s.on_sale_count})</span>` 
-                    : '';
-                  const pRange = s.price_range || '';
-                  const isPending = pRange.includes('待定') || pRange.includes('详见价单');
-                  const displayPRange = isPending ? '待定' : pRange;
-                  const color = pRange === '招标' ? '#d97706' : (isPending ? '#64748b' : '#16a34a');
-                  return `
-                  <tr>
-                    <td><strong>${s.layout}</strong></td>
-                    <td>
-                      <span class="badge-unit-count">${s.unsold_count} 伙</span>
-                      ${onSalePart}
-                    </td>
-                    <td>${s.sqft_range}</td>
-                    <td style="font-weight:700; color:${color};">${displayPRange}</td>
-                  </tr>
-                `;}).join('')}
-              </tbody>
-            </table>
-          `;
-        } else {
-          salesTableHtml = `<div style="padding:14px; font-size:0.72rem; color:#94a3b8; text-align:center;">该项目暂无所选户型 (${selectedLayoutLabelStr}) 待售房源</div>`;
-        }
-
-        // 2. 最近真实成交表格 (严格按选定户型过滤)
-        let txTableHtml = '';
-        if (recentTx && recentTx.length > 0) {
-          txTableHtml = `
-            <table class="data-card-table">
-              <thead>
-                <tr>
-                  <th style="width:15%;">户型</th>
-                  <th style="width:25%;">成交单位</th>
-                  <th style="width:16%;">面积</th>
-                  <th style="width:17%;">折实总价</th>
-                  <th style="width:14%;">实用呎价</th>
-                  <th style="width:13%;">成交日期</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${recentTx.slice(0, 6).map(t => `
-                  <tr>
-                    <td><strong>${t.layout}</strong></td>
-                    <td style="color:#0F172A; font-weight:600;">${t.unit_name}</td>
-                    <td>${t.sqft}</td>
-                    <td style="color:#16A34A; font-weight:700;">${t.price}</td>
-                    <td style="color:#475569; font-size:0.66rem;">${t.unit_price}</td>
-                    <td style="color:#64748B; font-size:0.65rem;">${t.date}</td>
-                  </tr>
-                `).join('')}
-              </tbody>
-            </table>
-          `;
-        } else {
-          txTableHtml = `
-            <div style="padding:14px 10px; font-size:0.68rem; color:#64748B; text-align:center;">
-              该项目暂无所选户型 (${selectedLayoutLabelStr}) 一手公开真实成交记录
-            </div>
-          `;
-        }
-
         // 3. 项目核心KPI指标计算 (楼栋数、总伙数、去化率)
         const buildingCount = proj.building_count || proj.towers || 1;
         const totalUnitsVal = proj.total_units || 0;
@@ -3476,43 +3480,6 @@
           visualTag = '🌊 维港一线';
         } else {
           visualTag = '🌟 地标名邸';
-        }
-
-        const visualHtml = photoUrl ? `
-          <div class="proj-visual-box">
-            <img src="${photoUrl}" alt="${proj.name}">
-            <span class="proj-visual-tag">${visualTag}</span>
-          </div>
-        ` : `
-          <div class="proj-visual-box">
-            <div class="proj-visual-placeholder">
-              <div style="font-size:1.6rem; margin-bottom:2px;">🏛️</div>
-              <div style="font-weight:800; font-size:0.88rem; letter-spacing:0.5px; color:#F8FAFC;">${proj.name}</div>
-              <div style="font-size:0.66rem; color:#94A3B8;">${proj.developer || '香港品牌发展商'} · 蓝玛全景严选</div>
-            </div>
-            <span class="proj-visual-tag">${visualTag}</span>
-          </div>
-        `;
-
-        // 15分钟生活圈
-        const nearbyPOIs = getNearbyPOIs(proj, window.allLandmarksData || []);
-        let poiHtml = '';
-        if (nearbyPOIs && nearbyPOIs.length > 0) {
-          poiHtml = `
-            <div class="proj-poi-bar">
-              <span style="font-weight:700; color:#0F172A; white-space:nowrap; margin-right:4px;">📍 核心生活圈：</span>
-              <div style="display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end;">
-                ${nearbyPOIs.map(poi => {
-                  let icon = '🏛️';
-                  if (poi.category === 'school' || poi.category === 'university') icon = '🏫';
-                  else if (poi.category === 'mall') icon = '🛍️';
-                  else if (poi.category === 'hospital') icon = '🏥';
-                  else if (poi.category === 'park') icon = '🌳';
-                  return `<span class="proj-poi-item">${icon} <strong>${poi.name.split('(')[0].trim()}</strong> (约${poi.dist_m}米)</span>`;
-                }).join('')}
-              </div>
-            </div>
-          `;
         }
 
         pPage.innerHTML = `
@@ -3872,31 +3839,32 @@
 
     function initPresentationMaps(projects) {
       // 1. 初始化全局地图 (Overview Map)
-      const overviewContainer = document.getElementById('overview-map');
-      if (overviewContainer && projects.length > 0) {
-        const mapOverview = L.map('overview-map', { zoomControl: false, attributionControl: false });
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2agc_1_eee20b45a89c95d86e5610c5', {
-          maxZoom: 18
-        }).addTo(mapOverview);
+      try {
+        const overviewContainer = document.getElementById('overview-map');
+        if (overviewContainer && projects.length > 0) {
+          const mapOverview = L.map('overview-map', { zoomControl: false, attributionControl: false });
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2agc_1_eee20b45a89c95d86e5610c5', {
+            maxZoom: 18
+          }).addTo(mapOverview);
 
-        const group = [];
-        const landmarksData = window.allLandmarksData || [];
-        const distFn = window.getDistMeters || function(lat1, lon1, lat2, lon2) {
-          const R = 6371000;
-          const dLat = (lat2 - lat1) * Math.PI / 180;
-          const dLon = (lon2 - lon1) * Math.PI / 180;
-          const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
-          return Math.round(R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
-        };
+          const group = [];
+          const landmarksData = Array.isArray(window.allLandmarksData) ? window.allLandmarksData : [];
+          const distFn = window.getDistMeters || function(lat1, lon1, lat2, lon2) {
+            const R = 6371000;
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            return Math.round(R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+          };
 
-        const nearbyPOIsMap = new Map();
+          const nearbyPOIsMap = new Map();
 
-        // 收集各推荐项目周边 1.5km 范围内的港铁站与高能级地标商场
-        projects.forEach(p => {
-          if (!p.lat || !p.lng) return;
-          landmarksData.forEach(lm => {
+          // 收集各推荐项目周边 1.5km 范围内的港铁站与高能级地标商场
+          projects.forEach(p => {
+            if (!p.lat || !p.lng) return;
+            landmarksData.forEach(lm => {
             if (!lm.lat || !lm.lng) return;
             const cat = lm.category;
             if (cat === 'mtr' || cat === 'shopping_mall') {
@@ -4043,108 +4011,116 @@
           }
         }, 400);
       }
+    } catch (overviewErr) {
+      console.error('Error initializing overview map:', overviewErr);
+    }
 
       // 2. 初始化各单盘微观导航地图 (Single Project Maps)
       projects.forEach((p, idx) => {
-        const mapDiv = document.getElementById(`proj-map-${idx}`);
-        if (!mapDiv || !p.lat || !p.lng) return;
+        try {
+          const mapDiv = document.getElementById(`proj-map-${idx}`);
+          if (!mapDiv || !p.lat || !p.lng) return;
 
-        const mapSingle = L.map(`proj-map-${idx}`, { zoomControl: false, attributionControl: false });
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2agc_1_eee20b45a89c95d86e5610c5', {
-          maxZoom: 19
-        }).addTo(mapSingle);
+          const mapSingle = L.map(`proj-map-${idx}`, { zoomControl: false, attributionControl: false });
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2agc_1_eee20b45a89c95d86e5610c5', {
+            maxZoom: 19
+          }).addTo(mapSingle);
 
-        // 楼盘标记
-        const projIcon = L.divIcon({
-          className: 'proj-pin-single',
-          html: `
-            <div style="background:#2563EB; color:#fff; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:800; box-shadow:0 4px 10px rgba(37,99,235,0.4); border:2px solid #fff; white-space:nowrap;">
-              🏢 ${p.name}
-            </div>
-          `,
-          iconSize: [100, 26],
-          iconAnchor: [50, 13]
-        });
-        L.marker([p.lat, p.lng], { icon: projIcon }).addTo(mapSingle);
-
-        const mtr = p.nearest_mtr;
-        const boundsCoords = [[p.lat, p.lng]];
-
-        if (mtr && mtr.nearest_mtr_lat && mtr.nearest_mtr_lng) {
-          // 港铁站标记
-          const mtrIcon = L.divIcon({
-            className: 'mtr-pin-single',
+          // 楼盘标记
+          const projIcon = L.divIcon({
+            className: 'proj-pin-single',
             html: `
-              <div style="background:#007DC5; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px; font-weight:700; box-shadow:0 2px 6px rgba(0,0,0,0.3); border:1.5px solid #fff; white-space:nowrap;">
-                🚇 ${mtr.nearest_mtr_cn}站
+              <div style="background:#2563EB; color:#fff; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:800; box-shadow:0 4px 10px rgba(37,99,235,0.4); border:2px solid #fff; white-space:nowrap;">
+                🏢 ${p.name}
               </div>
             `,
-            iconSize: [80, 22],
-            iconAnchor: [40, 11]
+            iconSize: [100, 26],
+            iconAnchor: [50, 13]
           });
-          L.marker([mtr.nearest_mtr_lat, mtr.nearest_mtr_lng], { icon: mtrIcon }).addTo(mapSingle);
-          boundsCoords.push([mtr.nearest_mtr_lat, mtr.nearest_mtr_lng]);
+          L.marker([p.lat, p.lng], { icon: projIcon }).addTo(mapSingle);
 
-          // 绘制人行道真实轨迹
-          let lineCoords = [];
-          if (mtr.route_geometry && mtr.route_geometry.coordinates) {
-            lineCoords = mtr.route_geometry.coordinates.map(c => [c[1], c[0]]);
-          } else {
-            lineCoords = [[p.lat, p.lng], [mtr.nearest_mtr_lat, mtr.nearest_mtr_lng]];
-          }
+          const mtr = p.nearest_mtr;
+          const boundsCoords = [[p.lat, p.lng]];
 
-          L.polyline(lineCoords, {
-            color: '#16A34A',
-            weight: 4,
-            dashArray: '8, 6',
-            opacity: 0.95
-          }).addTo(mapSingle);
-        }
-
-        // 绘制周边核心地标与生活圈配套 (商场、重点学校、公园地标)
-        const nearbyPOIsForMap = getNearbyPOIs(p, window.allLandmarksData || []);
-        if (nearbyPOIsForMap && nearbyPOIsForMap.length > 0) {
-          nearbyPOIsForMap.forEach(poi => {
-            if (!poi.lat || !poi.lng) return;
-            boundsCoords.push([poi.lat, poi.lng]);
-            let catColor = '#D97706';
-            let catIcon = '🛍️';
-            if (poi.category === 'school' || poi.category === 'university') {
-              catColor = '#7C3AED';
-              catIcon = '🏫';
-            } else if (poi.category === 'park') {
-              catColor = '#059669';
-              catIcon = '🌳';
-            } else if (poi.category === 'hospital') {
-              catColor = '#DC2626';
-              catIcon = '🏥';
-            }
-
-            const poiPin = L.divIcon({
-              className: 'poi-pin-single',
+          if (mtr && mtr.nearest_mtr_lat && mtr.nearest_mtr_lng) {
+            // 港铁站标记
+            const mtrIcon = L.divIcon({
+              className: 'mtr-pin-single',
               html: `
-                <div style="background:#FFFFFF; color:${catColor}; padding:2.5px 7px; border-radius:10px; font-size:10px; font-weight:700; box-shadow:0 2px 6px rgba(0,0,0,0.22); border:1.5px solid ${catColor}; white-space:nowrap; display:inline-flex; align-items:center; gap:3px;">
-                  <span>${catIcon}</span>
-                  <span>${poi.name.split('(')[0].trim()}</span>
+                <div style="background:#007DC5; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px; font-weight:700; box-shadow:0 2px 6px rgba(0,0,0,0.3); border:1.5px solid #fff; white-space:nowrap;">
+                  🚇 ${mtr.nearest_mtr_cn}站
                 </div>
               `,
-              iconSize: [80, 20],
-              iconAnchor: [40, 10]
+              iconSize: [80, 22],
+              iconAnchor: [40, 11]
             });
-            L.marker([poi.lat, poi.lng], { icon: poiPin }).addTo(mapSingle);
-          });
+            L.marker([mtr.nearest_mtr_lat, mtr.nearest_mtr_lng], { icon: mtrIcon }).addTo(mapSingle);
+            boundsCoords.push([mtr.nearest_mtr_lat, mtr.nearest_mtr_lng]);
+
+            // 绘制人行道真实轨迹
+            let lineCoords = [];
+            if (mtr.route_geometry && mtr.route_geometry.coordinates) {
+              lineCoords = mtr.route_geometry.coordinates.map(c => [c[1], c[0]]);
+            } else {
+              lineCoords = [[p.lat, p.lng], [mtr.nearest_mtr_lat, mtr.nearest_mtr_lng]];
+            }
+
+            L.polyline(lineCoords, {
+              color: '#16A34A',
+              weight: 4,
+              dashArray: '8, 6',
+              opacity: 0.95
+            }).addTo(mapSingle);
+          }
+
+          // 绘制周边核心地标与生活圈配套 (商场、重点学校、公园地标)
+          const poiFn = window.getNearbyPOIs || (typeof getNearbyPOIs === 'function' ? getNearbyPOIs : null);
+          const nearbyPOIsForMap = poiFn ? poiFn(p, window.allLandmarksData || []) : [];
+          if (nearbyPOIsForMap && nearbyPOIsForMap.length > 0) {
+            nearbyPOIsForMap.forEach(poi => {
+              if (!poi.lat || !poi.lng) return;
+              boundsCoords.push([poi.lat, poi.lng]);
+              let catColor = '#D97706';
+              let catIcon = '🛍️';
+              if (poi.category === 'school' || poi.category === 'university') {
+                catColor = '#7C3AED';
+                catIcon = '🏫';
+              } else if (poi.category === 'park') {
+                catColor = '#059669';
+                catIcon = '🌳';
+              } else if (poi.category === 'hospital') {
+                catColor = '#DC2626';
+                catIcon = '🏥';
+              }
+
+              const poiPin = L.divIcon({
+                className: 'poi-pin-single',
+                html: `
+                  <div style="background:#FFFFFF; color:${catColor}; padding:2.5px 7px; border-radius:10px; font-size:10px; font-weight:700; box-shadow:0 2px 6px rgba(0,0,0,0.22); border:1.5px solid ${catColor}; white-space:nowrap; display:inline-flex; align-items:center; gap:3px;">
+                    <span>${catIcon}</span>
+                    <span>${poi.name.split('(')[0].trim()}</span>
+                  </div>
+                `,
+                iconSize: [80, 20],
+                iconAnchor: [40, 10]
+              });
+              L.marker([poi.lat, poi.lng], { icon: poiPin }).addTo(mapSingle);
+            });
+          }
+
+          mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
+
+          setTimeout(() => {
+            mapSingle.invalidateSize();
+            mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
+          }, 150);
+          setTimeout(() => {
+            mapSingle.invalidateSize();
+            mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
+          }, 400);
+        } catch (mapErr) {
+          console.error(`Error initializing map for project ${idx}:`, mapErr);
         }
-
-        mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
-
-        setTimeout(() => {
-          mapSingle.invalidateSize();
-          mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
-        }, 150);
-        setTimeout(() => {
-          mapSingle.invalidateSize();
-          mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
-        }, 400);
       });
     }
   </script>
