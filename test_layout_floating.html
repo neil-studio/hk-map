@@ -5559,8 +5559,8 @@ function triggerPdfPrint() {
   const imgManifest = window.projectImagesManifest || {};
   selectedList.forEach(p => {
     const imgInfo = imgManifest[p.name];
-    if (imgInfo && imgInfo.thumb) {
-      p.photo_url = imgInfo.thumb;
+    if (imgInfo) {
+      p.photo_url = imgInfo.original || imgInfo.thumb;
     }
   });
 

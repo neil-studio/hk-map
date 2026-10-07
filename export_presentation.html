@@ -15,8 +15,11 @@
       }
     })();
   </script>
-  <!-- Leaflet CSS -->
+  <!-- Leaflet CSS & JS & Carto CDN Preconnect -->
+  <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin />
+  <link rel="dns-prefetch" href="https://basemaps.cartocdn.com" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -975,20 +978,38 @@
       min-height: 252px;
     }
 
-    /* 震撼楼盘大图画框 */
+    /* 震撼楼盘大图画框：智能自适应无损画质与高奢暗调氛围背景 */
     .proj-visual-box-hero {
       position: relative;
       border-radius: 8px;
       overflow: hidden;
       border: 1px solid #CBD5E1;
-      background: #0B132B;
+      background: #090E17;
       box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
       height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .proj-visual-box-hero img {
+    .proj-visual-bg-blur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center;
+      filter: blur(14px) brightness(0.42);
+      transform: scale(1.15);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .proj-visual-img-main {
+      position: relative;
+      z-index: 2;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
     .proj-visual-placeholder-hero {
@@ -1111,7 +1132,7 @@
       color: #0284C7;
     }
 
-    /* 底部三列矩阵深度研报档案 (彻底充实版面，消灭空白) */
+    /* 底部深度研报档案：智能自适应双模式（内容少时上下叠放数据卡+展开深度评析；内容多时三列工整矩阵） */
     .proj-dossier-grid {
       display: grid;
       grid-template-columns: 1.05fr 1.35fr 1.15fr;
@@ -1119,10 +1140,20 @@
       flex: 1;
       overflow: hidden;
     }
+    .proj-dossier-grid.layout-stacked {
+      grid-template-columns: 1.15fr 1fr;
+      gap: 12px;
+    }
     .proj-dossier-col {
       display: flex;
       flex-direction: column;
       gap: 6px;
+      overflow: hidden;
+    }
+    .proj-dossier-col.stacked-data-col {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
       overflow: hidden;
     }
 
@@ -1875,9 +1906,6 @@
     <!-- Dynamic Pages Injected by JS -->
   </div>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
   <script>
     // 🔒 专属访问密码保护门 (Password Gate: nb8888)
     function initSiteAuth() {
@@ -2367,8 +2395,8 @@
         window.allLandmarksData = landmarksResp || [];
 
         projects.forEach(p => {
-          if (!p.photo_url && window.projectImagesManifest[p.name]) {
-            p.photo_url = window.projectImagesManifest[p.name].thumb || window.projectImagesManifest[p.name].original;
+          if (window.projectImagesManifest && window.projectImagesManifest[p.name]) {
+            p.photo_url = window.projectImagesManifest[p.name].original || window.projectImagesManifest[p.name].thumb;
           }
         });
       } catch (e) {
@@ -2510,10 +2538,14 @@
         allLandmarks.forEach(lm => {
           if (!lm.lat || !lm.lng) return;
           const d = getDistMeters(proj.lat, proj.lng, lm.lat, lm.lng);
-          if (d <= 2500) {
+          if (d <= 3000) {
+            let cat = lm.category || 'landmark';
+            if (cat === 'shopping_mall') cat = 'mall';
+            else if (cat === 'famous_school' || cat === 'university' || cat === 'school_net') cat = 'school';
             results.push({
               name: lm.name,
-              category: lm.category || 'landmark',
+              category: cat,
+              rawCategory: lm.category,
               dist_m: d,
               lat: lm.lat,
               lng: lm.lng
@@ -2522,15 +2554,17 @@
         });
         results.sort((a, b) => a.dist_m - b.dist_m);
         const picked = [];
-        const catSeen = new Set();
+        const catSeen = new Map();
+        // 优先在商场、名校、地标中各取代表性配套
         for (const item of results) {
-          if (!catSeen.has(item.category) && picked.length < 3) {
-            catSeen.add(item.category);
+          const cCount = catSeen.get(item.category) || 0;
+          if (cCount < 2 && picked.length < 4) {
+            catSeen.set(item.category, cCount + 1);
             picked.push(item);
           }
         }
         for (const item of results) {
-          if (picked.length >= 3) break;
+          if (picked.length >= 4) break;
           if (!picked.some(p => p.name === item.name)) {
             picked.push(item);
           }
@@ -3174,20 +3208,166 @@
         const sales = rawSales.filter(s => selectedLayouts.includes(normalizeLayoutKey(s.layout)));
         const recentTx = rawRecentTx.filter(t => selectedLayouts.includes(normalizeLayoutKey(t.layout)));
 
-        // 提取 2 条核心亮点
+        // 判断两张表内容是否稀疏（若销控+成交总行数 <= 5，则启用左右双大栏上下排列，避免横向过度留白）
+        const isContentSparse = (sales.length + recentTx.length) <= 5;
+        const gridClass = isContentSparse ? 'proj-dossier-grid layout-stacked' : 'proj-dossier-grid';
+
+        // 提取亮点：当排版为上下叠放时，置业顾问点评展示 3~4 条，充分展示地段与圈层价值
+        const maxHighlights = isContentSparse ? 4 : 2;
         let highlights = [];
         if (proj.selling_points) {
-          highlights = proj.selling_points.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
+          highlights = proj.selling_points.split('\n').filter(s => s.trim().length > 0).slice(0, maxHighlights);
         } else if (proj.reason) {
-          highlights = proj.reason.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
+          highlights = proj.reason.split('\n').filter(s => s.trim().length > 0).slice(0, maxHighlights);
         } else if (proj.mainland_selling_points) {
-          highlights = proj.mainland_selling_points.split('\n').filter(s => s.trim().length > 0).slice(0, 2);
+          highlights = proj.mainland_selling_points.split('\n').filter(s => s.trim().length > 0).slice(0, maxHighlights);
         }
         if (highlights.length === 0) {
           highlights = [
             `1. 坐落于${proj.main_area || proj.region} - ${proj.micro_district || proj.district}核心板块，享受顶级城市配套与优质居住环境。`,
-            `2. 紧邻港铁${mtr?.nearest_mtr_cn || ''}站，轨交通勤极其高效，往返中环及跨境出行便捷。`
-          ];
+            `2. 紧邻港铁${mtr?.nearest_mtr_cn || ''}站，轨交通勤极其高效，往返中环及跨境出行便捷。`,
+            `3. 发展商严苛品质把控，建筑用料考究，纯粹高端居住圈层与资产抗跌性强。`
+          ].slice(0, maxHighlights);
+        }
+
+        let dossierBottomHtml = '';
+        if (isContentSparse) {
+          // 上下排列模式：左栏上下堆叠两张数据表，右栏展开顾问深度研判与高质生活圈
+          dossierBottomHtml = `
+            <div class="${gridClass}">
+              <!-- 左栏：上下堆叠数据卡片 (紧凑饱满) -->
+              <div class="proj-dossier-col stacked-data-col">
+                <div class="data-card-box">
+                  <div class="data-card-header">
+                    <span>📊 实时在售一手房源 <span style="font-size:0.65rem; color:#0284C7; font-weight:700;">(${selectedLayoutLabelStr})</span></span>
+                    <span style="font-size:0.64rem; color:#64748b;">实时销控</span>
+                  </div>
+                  <div style="flex:1; overflow:hidden;">
+                    ${salesTableHtml}
+                  </div>
+                </div>
+
+                <div class="data-card-box">
+                  <div class="data-card-header">
+                    <span>📈 最近一手真实成交参考 <span style="font-size:0.65rem; color:#16A34A; font-weight:700;">(${selectedLayoutLabelStr})</span></span>
+                    <span style="font-size:0.64rem; color:#16A34A; font-weight:700;">一手成交记录册</span>
+                  </div>
+                  <div style="flex:1; overflow:hidden;">
+                    ${txTableHtml}
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右栏：置业顾问深度研判与生活圈全维配套 -->
+              <div class="proj-dossier-col">
+                <div class="proj-analysis-box">
+                  <div>
+                    <div class="proj-analysis-title">
+                      <span>💎 置业顾问专业研判</span>
+                      <span style="font-size:0.63rem; color:#0284C7; font-weight:600;">核心资产买点</span>
+                    </div>
+                    <div style="margin-bottom:6px;">
+                      ${highlights.map(h => `
+                        <div class="highlight-item">
+                          <span style="color:#0284C7; font-weight:800;">•</span>
+                          <div>${h.replace(/^\d+[\.、]\s*/, '')}</div>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+
+                  <!-- 15分钟核心生活圈胶囊群 -->
+                  <div class="proj-poi-capsule-list">
+                    <div class="proj-poi-capsule-header">📍 15分钟高质生活圈（商场/名校/地标）：</div>
+                    <div class="proj-poi-capsules">
+                      ${nearbyPOIs && nearbyPOIs.length > 0 ? nearbyPOIs.map(poi => {
+                        let icon = '🏛️';
+                        if (poi.category === 'school') icon = '🏫';
+                        else if (poi.category === 'mall') icon = '🛍️';
+                        else if (poi.category === 'hospital') icon = '🏥';
+                        else if (poi.category === 'park') icon = '🌳';
+                        return `<span class="proj-poi-capsule-tag">${icon} <strong>${poi.name.split('(')[0].trim()}</strong> 约${poi.dist_m}米</span>`;
+                      }).join('') : `
+                        <span class="proj-poi-capsule-tag">🛍️ 核心商圈高端商场 约500米</span>
+                        <span class="proj-poi-capsule-tag">🏫 知名中小学名校网 步行直达</span>
+                        <span class="proj-poi-capsule-tag">🌳 市政优质休闲公园 紧密相邻</span>
+                      `}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          // 内容较多时保持经典三列工整矩阵
+          dossierBottomHtml = `
+            <div class="${gridClass}">
+              <!-- 列 1: 实时在售房源销控 -->
+              <div class="proj-dossier-col">
+                <div class="data-card-box">
+                  <div class="data-card-header">
+                    <span>📊 实时在售一手房源 <span style="font-size:0.65rem; color:#0284C7; font-weight:700;">(${selectedLayoutLabelStr})</span></span>
+                    <span style="font-size:0.64rem; color:#64748b;">实时销控</span>
+                  </div>
+                  <div style="flex:1; overflow:hidden;">
+                    ${salesTableHtml}
+                  </div>
+                </div>
+              </div>
+
+              <!-- 列 2: 官方一手真实成交记录 -->
+              <div class="proj-dossier-col">
+                <div class="data-card-box">
+                  <div class="data-card-header">
+                    <span>📈 最近一手真实成交参考 <span style="font-size:0.65rem; color:#16A34A; font-weight:700;">(${selectedLayoutLabelStr})</span></span>
+                    <span style="font-size:0.64rem; color:#16A34A; font-weight:700;">一手成交记录册</span>
+                  </div>
+                  <div style="flex:1; overflow:hidden;">
+                    ${txTableHtml}
+                  </div>
+                </div>
+              </div>
+
+              <!-- 列 3: 置业顾问核心精评与生活圈全维配套 -->
+              <div class="proj-dossier-col">
+                <div class="proj-analysis-box">
+                  <div>
+                    <div class="proj-analysis-title">
+                      <span>💎 置业顾问专业研判</span>
+                      <span style="font-size:0.63rem; color:#0284C7; font-weight:600;">核心资产买点</span>
+                    </div>
+                    <div style="margin-bottom:6px;">
+                      ${highlights.map(h => `
+                        <div class="highlight-item">
+                          <span style="color:#0284C7; font-weight:800;">•</span>
+                          <div>${h.replace(/^\d+[\.、]\s*/, '')}</div>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+
+                  <!-- 15分钟核心生活圈胶囊群 -->
+                  <div class="proj-poi-capsule-list">
+                    <div class="proj-poi-capsule-header">📍 15分钟高质生活圈（商场/名校/地标）：</div>
+                    <div class="proj-poi-capsules">
+                      ${nearbyPOIs && nearbyPOIs.length > 0 ? nearbyPOIs.map(poi => {
+                        let icon = '🏛️';
+                        if (poi.category === 'school') icon = '🏫';
+                        else if (poi.category === 'mall') icon = '🛍️';
+                        else if (poi.category === 'hospital') icon = '🏥';
+                        else if (poi.category === 'park') icon = '🌳';
+                        return `<span class="proj-poi-capsule-tag">${icon} <strong>${poi.name.split('(')[0].trim()}</strong> 约${poi.dist_m}米</span>`;
+                      }).join('') : `
+                        <span class="proj-poi-capsule-tag">🛍️ 核心商圈高端商场 约500米</span>
+                        <span class="proj-poi-capsule-tag">🏫 知名中小学名校网 步行直达</span>
+                        <span class="proj-poi-capsule-tag">🌳 市政优质休闲公园 紧密相邻</span>
+                      `}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
         }
 
         // 1. 销控在售户型表格 (严格按选定户型过滤)
@@ -3280,8 +3460,10 @@
           soldRateStr = `${rateNum}% <span style="font-size:0.65rem; font-weight:normal; color:#64748B;">(${soldUnitsVal}/${totalUnitsVal}伙)</span>`;
         }
 
-        // 实景展示
-        const photoUrl = proj.photo_url || (window.projectImagesManifest && window.projectImagesManifest[proj.name]?.thumb);
+        // 实景展示 (优先使用高清原图，兼顾自动比例自适应)
+        const photoUrl = (window.projectImagesManifest && window.projectImagesManifest[proj.name]?.original) 
+          || proj.photo_url 
+          || (window.projectImagesManifest && window.projectImagesManifest[proj.name]?.thumb);
         let visualTag = '🏛️ 实景现楼';
         const compDateStr = formatCompletionDate(proj.completion_date);
         if (compDateStr.includes('现楼') || compDateStr.includes('即买')) {
@@ -3365,7 +3547,8 @@
               <!-- 左侧：震撼楼盘大图画框 -->
               <div class="proj-visual-box-hero">
                 ${photoUrl ? `
-                  <img src="${photoUrl}" alt="${proj.name}">
+                  <div class="proj-visual-bg-blur" style="background-image: url('${photoUrl}');"></div>
+                  <img src="${photoUrl}" class="proj-visual-img-main" alt="${proj.name}">
                 ` : `
                   <div class="proj-visual-placeholder-hero">
                     <div style="font-size:2.4rem; margin-bottom:6px;">🏛️</div>
@@ -3417,73 +3600,8 @@
               </div>
             </div>
 
-            <!-- 4. 底部三列矩阵深度研报档案 (彻底充实版面，消灭空白) -->
-            <div class="proj-dossier-grid">
-              <!-- 列 1: 实时在售房源销控 -->
-              <div class="proj-dossier-col">
-                <div class="data-card-box">
-                  <div class="data-card-header">
-                    <span>📊 实时在售一手房源 <span style="font-size:0.65rem; color:#0284C7; font-weight:700;">(${selectedLayoutLabelStr})</span></span>
-                    <span style="font-size:0.64rem; color:#64748b;">实时销控</span>
-                  </div>
-                  <div style="flex:1; overflow:hidden;">
-                    ${salesTableHtml}
-                  </div>
-                </div>
-              </div>
-
-              <!-- 列 2: 官方一手真实成交记录 -->
-              <div class="proj-dossier-col">
-                <div class="data-card-box">
-                  <div class="data-card-header">
-                    <span>📈 最近一手真实成交参考 <span style="font-size:0.65rem; color:#16A34A; font-weight:700;">(${selectedLayoutLabelStr})</span></span>
-                    <span style="font-size:0.64rem; color:#16A34A; font-weight:700;">一手成交记录册</span>
-                  </div>
-                  <div style="flex:1; overflow:hidden;">
-                    ${txTableHtml}
-                  </div>
-                </div>
-              </div>
-
-              <!-- 列 3: 置业顾问核心精评与生活圈全维配套 -->
-              <div class="proj-dossier-col">
-                <div class="proj-analysis-box">
-                  <div>
-                    <div class="proj-analysis-title">
-                      <span>💎 置业顾问专业研判</span>
-                      <span style="font-size:0.63rem; color:#0284C7; font-weight:600;">核心资产买点</span>
-                    </div>
-                    <div style="margin-bottom:6px;">
-                      ${highlights.map(h => `
-                        <div class="highlight-item">
-                          <span style="color:#0284C7; font-weight:800;">•</span>
-                          <div>${h.replace(/^\d+[\.、]\s*/, '')}</div>
-                        </div>
-                      `).join('')}
-                    </div>
-                  </div>
-
-                  <!-- 15分钟核心生活圈胶囊群 (彻底丰富右下角) -->
-                  <div class="proj-poi-capsule-list">
-                    <div class="proj-poi-capsule-header">📍 15分钟高质生活圈（商场/名校/地标）：</div>
-                    <div class="proj-poi-capsules">
-                      ${nearbyPOIs && nearbyPOIs.length > 0 ? nearbyPOIs.map(poi => {
-                        let icon = '🏛️';
-                        if (poi.category === 'school' || poi.category === 'university') icon = '🏫';
-                        else if (poi.category === 'mall') icon = '🛍️';
-                        else if (poi.category === 'hospital') icon = '🏥';
-                        else if (poi.category === 'park') icon = '🌳';
-                        return `<span class="proj-poi-capsule-tag">${icon} <strong>${poi.name.split('(')[0].trim()}</strong> 约${poi.dist_m}米</span>`;
-                      }).join('') : `
-                        <span class="proj-poi-capsule-tag">🛍️ 核心商圈高端商场 约500米</span>
-                        <span class="proj-poi-capsule-tag">🏫 知名中小学名校网 步行直达</span>
-                        <span class="proj-poi-capsule-tag">🌳 市政优质休闲公园 紧密相邻</span>
-                      `}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!-- 4. 底部深度研报档案 (智能自适应上下排列或三列矩阵) -->
+            ${dossierBottomHtml}
           </div>
 
           <div class="page-footer">
