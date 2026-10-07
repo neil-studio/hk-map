@@ -21,18 +21,43 @@ os.makedirs(THUMB_DIR, exist_ok=True)
 
 SUPPORTED_EXTS = ('.jpg', '.jpeg', '.png', '.webp', '.bmp', '.heic', '.tif', '.tiff')
 
+DATA_FILE = os.path.join(SANDBOX_DIR, "data.json")
+
+# 明确的别名与特殊规则映射表
+EXPLICIT_FOLDER_MAP = {
+    "128 walter": ["128 Waterloo"],
+    "天玺": ["天玺"],  # 仅限九龙站天玺，不扩散到启德天玺．天/天玺．海
+    "st. george's mansions": ["St. George's Mansions", "st. george's mansions"],
+}
+
 def load_all_project_names():
-    if not os.path.exists(COORDS_FILE):
-        return []
-    try:
-        with open(COORDS_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        return [p["name"] for p in data if "name" in p]
-    except Exception as e:
-        print("读取 hk_project_coords.json 异常:", e)
-        return []
+    names = set()
+    if os.path.exists(COORDS_FILE):
+        try:
+            with open(COORDS_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            for p in data:
+                if "name" in p:
+                    names.add(p["name"])
+        except Exception as e:
+            print("读取 hk_project_coords.json 异常:", e)
+    if os.path.exists(DATA_FILE):
+        try:
+            with open(DATA_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            for p in data.get("projects", []):
+                if "name" in p:
+                    names.add(p["name"])
+        except Exception as e:
+            print("读取 data.json 异常:", e)
+    return sorted(list(names))
 
 def match_projects(candidate_name, all_projects):
+    c_lower = candidate_name.strip().lower()
+    for exp_k, exp_targets in EXPLICIT_FOLDER_MAP.items():
+        if exp_k.lower() == c_lower:
+            return exp_targets
+
     c_clean = candidate_name.replace(' ', '').replace('_', '').replace('-', '').replace('·', '').replace('．', '').lower()
     matches = []
     # 1. 精确匹配
