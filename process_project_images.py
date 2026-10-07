@@ -13,11 +13,13 @@ from PIL import Image, ImageOps
 SANDBOX_DIR = os.path.dirname(os.path.abspath(__file__))
 ORIGINAL_DIR = os.path.join(SANDBOX_DIR, "images", "projects", "original")
 THUMB_DIR = os.path.join(SANDBOX_DIR, "images", "projects", "thumb")
+HD_DIR = os.path.join(SANDBOX_DIR, "images", "projects", "hd")
 MANIFEST_FILE = os.path.join(SANDBOX_DIR, "project_images_manifest.json")
 COORDS_FILE = os.path.join(SANDBOX_DIR, "hk_project_coords.json")
 
 os.makedirs(ORIGINAL_DIR, exist_ok=True)
 os.makedirs(THUMB_DIR, exist_ok=True)
+os.makedirs(HD_DIR, exist_ok=True)
 
 SUPPORTED_EXTS = ('.jpg', '.jpeg', '.png', '.webp', '.bmp', '.heic', '.tif', '.tiff')
 
@@ -130,11 +132,18 @@ def process_images():
                 else:
                     img = img.convert("RGB")
 
-                # 生成缩略图：最大边长 360px，比例完整保留
+                # 1. 生成极速缩略图：最大边长 360px (用于弹窗等微型视图)
                 thumb_img = img.copy()
-                max_edge = 360
-                if max(w, h) > max_edge:
-                    thumb_img.thumbnail((max_edge, max_edge), Image.Resampling.LANCZOS)
+                max_thumb_edge = 360
+                if max(w, h) > max_thumb_edge:
+                    thumb_img.thumbnail((max_thumb_edge, max_thumb_edge), Image.Resampling.LANCZOS)
+
+                # 2. 生成全高清优化大图 (HD)：最大边长 1600px，保留顶级视觉震撼力但体积压缩 90%+
+                hd_img = img.copy()
+                max_hd_edge = 1600
+                if max(w, h) > max_hd_edge:
+                    hd_img.thumbnail((max_hd_edge, max_hd_edge), Image.Resampling.LANCZOS)
+                hd_w, hd_h = hd_img.size
 
                 orig_rel = os.path.relpath(orig_path, SANDBOX_DIR)
                 orig_size_kb = os.path.getsize(orig_path) / 1024
@@ -145,15 +154,23 @@ def process_images():
                     thumb_img.save(thumb_dest, "WEBP", quality=85, method=6)
                     thumb_size_kb = os.path.getsize(thumb_dest) / 1024
 
+                    hd_filename = f"{proj_name}.webp"
+                    hd_dest = os.path.join(HD_DIR, hd_filename)
+                    hd_img.save(hd_dest, "WEBP", quality=88, method=6)
+                    hd_size_kb = os.path.getsize(hd_dest) / 1024
+
                     manifest[proj_name] = {
                         "original": orig_rel,
+                        "hd": f"images/projects/hd/{hd_filename}",
                         "thumb": f"images/projects/thumb/{thumb_filename}",
                         "width": w,
                         "height": h,
+                        "hd_width": hd_w,
+                        "hd_height": hd_h,
                         "aspect_ratio": round(w / h, 3)
                     }
                     processed_count += 1
-                    print(f"  ✅ 映射楼盘 [{proj_name}]: {w}x{h} ({orig_size_kb:.1f} KB) ➔ 缩略图 ({thumb_size_kb:.1f} KB)")
+                    print(f"  ✅ 映射楼盘 [{proj_name}]: 原图 {w}x{h} ({orig_size_kb:.1f} KB) ➔ HD大图 {hd_w}x{hd_h} ({hd_size_kb:.1f} KB) ➔ 缩略图 ({thumb_size_kb:.1f} KB)")
 
         except Exception as e:
             print(f"  ❌ 处理图片失败 [{orig_path}]: {e}")
@@ -161,7 +178,7 @@ def process_images():
     with open(MANIFEST_FILE, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
-    print(f"\n🎉 处理完毕！共生成 {processed_count} 个楼盘封面映射，已更新索引至 project_images_manifest.json")
+    print(f"\n🎉 处理完毕！共生成 {processed_count} 个楼盘高清与缩略图映射，已更新索引至 project_images_manifest.json")
 
 if __name__ == "__main__":
     process_images()

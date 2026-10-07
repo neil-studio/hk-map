@@ -2396,7 +2396,10 @@
 
         projects.forEach(p => {
           if (window.projectImagesManifest && window.projectImagesManifest[p.name]) {
-            p.photo_url = window.projectImagesManifest[p.name].original || window.projectImagesManifest[p.name].thumb;
+            const m = window.projectImagesManifest[p.name];
+            p.photo_hd = m.hd || m.original || m.thumb;
+            p.photo_thumb = m.thumb || m.hd || m.original;
+            p.photo_url = p.photo_hd;
           }
         });
       } catch (e) {
@@ -3027,7 +3030,7 @@
                   <tr>
                     <th class="dim-col" style="height:92px;">对比项目</th>
                     ${chunkProjects.map((p, pIdx) => {
-                      const photoThumb = p.photo_url || (window.projectImagesManifest && window.projectImagesManifest[p.name]?.thumb);
+                      const photoThumb = p.photo_thumb || (window.projectImagesManifest && window.projectImagesManifest[p.name]?.thumb) || p.photo_url;
                       const visualHtml = photoThumb 
                         ? `<div class="comp-proj-visual"><img src="${photoThumb}" alt="${p.name}"></div>`
                         : `
@@ -3464,10 +3467,10 @@
           soldRateStr = `${rateNum}% <span style="font-size:0.65rem; font-weight:normal; color:#64748B;">(${soldUnitsVal}/${totalUnitsVal}伙)</span>`;
         }
 
-        // 实景展示 (优先使用高清原图，兼顾自动比例自适应)
-        const photoUrl = (window.projectImagesManifest && window.projectImagesManifest[proj.name]?.original) 
-          || proj.photo_url 
-          || (window.projectImagesManifest && window.projectImagesManifest[proj.name]?.thumb);
+        // 实景展示 (优先使用 1600px 优化 HD 大图，背景使用 20KB 极速缩略图虚化，兼顾毫秒级加载与顶级画质)
+        const photoManifest = window.projectImagesManifest && window.projectImagesManifest[proj.name];
+        const photoHd = photoManifest?.hd || photoManifest?.original || proj.photo_hd || proj.photo_url || photoManifest?.thumb;
+        const photoThumb = photoManifest?.thumb || proj.photo_thumb || photoHd;
         let visualTag = '🏛️ 实景现楼';
         const compDateStr = formatCompletionDate(proj.completion_date);
         if (compDateStr.includes('现楼') || compDateStr.includes('即买')) {
@@ -3511,11 +3514,11 @@
 
             <!-- 2. 顶部双宽屏震撼画卷 (Hero Image 50% + Meso Map 50%) -->
             <div class="proj-hero-showcase">
-              <!-- 左侧：震撼楼盘大图画框 -->
+              <!-- 左侧：震撼楼盘大图画框 (背景毛玻璃采用20KB缩略图秒出，前景图加载高清HD) -->
               <div class="proj-visual-box-hero">
-                ${photoUrl ? `
-                  <div class="proj-visual-bg-blur" style="background-image: url('${photoUrl}');"></div>
-                  <img src="${photoUrl}" class="proj-visual-img-main" alt="${proj.name}">
+                ${photoHd ? `
+                  <div class="proj-visual-bg-blur" style="background-image: url('${photoThumb}');"></div>
+                  <img src="${photoHd}" class="proj-visual-img-main" alt="${proj.name}" loading="eager" decoding="async">
                 ` : `
                   <div class="proj-visual-placeholder-hero">
                     <div style="font-size:2.4rem; margin-bottom:6px;">🏛️</div>

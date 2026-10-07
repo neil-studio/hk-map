@@ -1,275 +1,392 @@
 {
   "128 Waterloo": {
     "original": "images/projects/original/128 walter/128 waterloo.jpg",
+    "hd": "images/projects/hd/128 Waterloo.webp",
     "thumb": "images/projects/thumb/128 Waterloo.webp",
     "width": 1382,
     "height": 1630,
+    "hd_width": 1357,
+    "hd_height": 1600,
     "aspect_ratio": 0.848
   },
   "Deep Water South 第6A期": {
     "original": "images/projects/original/Deep Water south/deep water south.png",
+    "hd": "images/projects/hd/Deep Water South 第6A期.webp",
     "thumb": "images/projects/thumb/Deep Water South 第6A期.webp",
     "width": 1162,
     "height": 1454,
+    "hd_width": 1162,
+    "hd_height": 1454,
     "aspect_ratio": 0.799
   },
   "Deep Water South 第6B期": {
     "original": "images/projects/original/Deep Water south/deep water south.png",
+    "hd": "images/projects/hd/Deep Water South 第6B期.webp",
     "thumb": "images/projects/thumb/Deep Water South 第6B期.webp",
     "width": 1162,
     "height": 1454,
+    "hd_width": 1162,
+    "hd_height": 1454,
     "aspect_ratio": 0.799
   },
   "Double Coast I": {
     "original": "images/projects/original/Double coast/double coast.png",
+    "hd": "images/projects/hd/Double Coast I.webp",
     "thumb": "images/projects/thumb/Double Coast I.webp",
     "width": 1080,
     "height": 1316,
+    "hd_width": 1080,
+    "hd_height": 1316,
     "aspect_ratio": 0.821
   },
   "Double Coast III": {
     "original": "images/projects/original/Double coast/double coast.png",
+    "hd": "images/projects/hd/Double Coast III.webp",
     "thumb": "images/projects/thumb/Double Coast III.webp",
     "width": 1080,
     "height": 1316,
+    "hd_width": 1080,
+    "hd_height": 1316,
     "aspect_ratio": 0.821
   },
   "Henley Park": {
     "original": "images/projects/original/henley park/henley park.jpg",
+    "hd": "images/projects/hd/Henley Park.webp",
     "thumb": "images/projects/thumb/Henley Park.webp",
     "width": 1200,
     "height": 864,
+    "hd_width": 1200,
+    "hd_height": 864,
     "aspect_ratio": 1.389
   },
   "Miami Quay I": {
     "original": "images/projects/original/miami quay/miami quay.jpg",
+    "hd": "images/projects/hd/Miami Quay I.webp",
     "thumb": "images/projects/thumb/Miami Quay I.webp",
     "width": 1256,
     "height": 912,
+    "hd_width": 1256,
+    "hd_height": 912,
     "aspect_ratio": 1.377
   },
   "Miami Quay II": {
     "original": "images/projects/original/miami quay/miami quay.jpg",
+    "hd": "images/projects/hd/Miami Quay II.webp",
     "thumb": "images/projects/thumb/Miami Quay II.webp",
     "width": 1256,
     "height": 912,
+    "hd_width": 1256,
+    "hd_height": 912,
     "aspect_ratio": 1.377
   },
   "Monaco Marine": {
     "original": "images/projects/original/monaco/monaco.jpg",
+    "hd": "images/projects/hd/Monaco Marine.webp",
     "thumb": "images/projects/thumb/Monaco Marine.webp",
     "width": 900,
     "height": 1200,
+    "hd_width": 900,
+    "hd_height": 1200,
     "aspect_ratio": 0.75
   },
   "Monaco One": {
     "original": "images/projects/original/monaco/monaco.jpg",
+    "hd": "images/projects/hd/Monaco One.webp",
     "thumb": "images/projects/thumb/Monaco One.webp",
     "width": 900,
     "height": 1200,
+    "hd_width": 900,
+    "hd_height": 1200,
     "aspect_ratio": 0.75
   },
   "Monaco 第1期": {
     "original": "images/projects/original/monaco/monaco.jpg",
+    "hd": "images/projects/hd/Monaco 第1期.webp",
     "thumb": "images/projects/thumb/Monaco 第1期.webp",
     "width": 900,
     "height": 1200,
+    "hd_width": 900,
+    "hd_height": 1200,
     "aspect_ratio": 0.75
   },
   "Park College": {
     "original": "images/projects/original/park college/park college.jpg",
+    "hd": "images/projects/hd/Park College.webp",
     "thumb": "images/projects/thumb/Park College.webp",
     "width": 608,
     "height": 456,
+    "hd_width": 608,
+    "hd_height": 456,
     "aspect_ratio": 1.333
   },
   "Prince Central": {
     "original": "images/projects/original/prince central/prince central.png",
+    "hd": "images/projects/hd/Prince Central.webp",
     "thumb": "images/projects/thumb/Prince Central.webp",
     "width": 779,
     "height": 1064,
+    "hd_width": 779,
+    "hd_height": 1064,
     "aspect_ratio": 0.732
   },
   "St. George's Mansions": {
     "original": "images/projects/original/st. george's mansions/st. george's mansions.jpg",
+    "hd": "images/projects/hd/St. George's Mansions.webp",
     "thumb": "images/projects/thumb/St. George's Mansions.webp",
     "width": 1080,
     "height": 1440,
+    "hd_width": 1080,
+    "hd_height": 1440,
     "aspect_ratio": 0.75
   },
   "st. george's mansions": {
     "original": "images/projects/original/st. george's mansions/st. george's mansions.jpg",
+    "hd": "images/projects/hd/st. george's mansions.webp",
     "thumb": "images/projects/thumb/st. george's mansions.webp",
     "width": 1080,
     "height": 1440,
+    "hd_width": 1080,
+    "hd_height": 1440,
     "aspect_ratio": 0.75
   },
   "The Henley I": {
     "original": "images/projects/original/the henley/the henley.jpg",
+    "hd": "images/projects/hd/The Henley I.webp",
     "thumb": "images/projects/thumb/The Henley I.webp",
     "width": 3436,
     "height": 1950,
+    "hd_width": 1600,
+    "hd_height": 908,
     "aspect_ratio": 1.762
   },
   "The Henley II": {
     "original": "images/projects/original/the henley/the henley.jpg",
+    "hd": "images/projects/hd/The Henley II.webp",
     "thumb": "images/projects/thumb/The Henley II.webp",
     "width": 3436,
     "height": 1950,
+    "hd_width": 1600,
+    "hd_height": 908,
     "aspect_ratio": 1.762
   },
   "The Henley III": {
     "original": "images/projects/original/the henley/the henley.jpg",
+    "hd": "images/projects/hd/The Henley III.webp",
     "thumb": "images/projects/thumb/The Henley III.webp",
     "width": 3436,
     "height": 1950,
+    "hd_width": 1600,
+    "hd_height": 908,
     "aspect_ratio": 1.762
   },
   "The Monet 第1期": {
     "original": "images/projects/original/the monet/the monet.png",
+    "hd": "images/projects/hd/The Monet 第1期.webp",
     "thumb": "images/projects/thumb/The Monet 第1期.webp",
     "width": 1080,
     "height": 720,
+    "hd_width": 1080,
+    "hd_height": 720,
     "aspect_ratio": 1.5
   },
   "The Monet 第2期": {
     "original": "images/projects/original/the monet/the monet.png",
+    "hd": "images/projects/hd/The Monet 第2期.webp",
     "thumb": "images/projects/thumb/The Monet 第2期.webp",
     "width": 1080,
     "height": 720,
+    "hd_width": 1080,
+    "hd_height": 720,
     "aspect_ratio": 1.5
   },
   "The Monet 第3期": {
     "original": "images/projects/original/the monet/the monet.png",
+    "hd": "images/projects/hd/The Monet 第3期.webp",
     "thumb": "images/projects/thumb/The Monet 第3期.webp",
     "width": 1080,
     "height": 720,
+    "hd_width": 1080,
+    "hd_height": 720,
     "aspect_ratio": 1.5
   },
   "傲玟": {
     "original": "images/projects/original/傲玟/傲玟.jpg",
+    "hd": "images/projects/hd/傲玟.webp",
     "thumb": "images/projects/thumb/傲玟.webp",
     "width": 1280,
     "height": 959,
+    "hd_width": 1280,
+    "hd_height": 959,
     "aspect_ratio": 1.335
   },
   "博峰": {
     "original": "images/projects/original/博峰/博峰.png",
+    "hd": "images/projects/hd/博峰.webp",
     "thumb": "images/projects/thumb/博峰.webp",
     "width": 1184,
     "height": 1298,
+    "hd_width": 1184,
+    "hd_height": 1298,
     "aspect_ratio": 0.912
   },
   "叡璟I": {
     "original": "images/projects/original/叡璟/叡璟.png",
+    "hd": "images/projects/hd/叡璟I.webp",
     "thumb": "images/projects/thumb/叡璟I.webp",
     "width": 1880,
     "height": 1136,
+    "hd_width": 1600,
+    "hd_height": 967,
     "aspect_ratio": 1.655
   },
   "叡璟II": {
     "original": "images/projects/original/叡璟/叡璟.png",
+    "hd": "images/projects/hd/叡璟II.webp",
     "thumb": "images/projects/thumb/叡璟II.webp",
     "width": 1880,
     "height": 1136,
+    "hd_width": 1600,
+    "hd_height": 967,
     "aspect_ratio": 1.655
   },
   "名钻": {
     "original": "images/projects/original/名钻/名钻.jpg",
+    "hd": "images/projects/hd/名钻.webp",
     "thumb": "images/projects/thumb/名钻.webp",
     "width": 1280,
     "height": 2157,
+    "hd_width": 949,
+    "hd_height": 1600,
     "aspect_ratio": 0.593
   },
   "天玺": {
     "original": "images/projects/original/天玺/天玺.jpg",
+    "hd": "images/projects/hd/天玺.webp",
     "thumb": "images/projects/thumb/天玺.webp",
     "width": 984,
     "height": 1560,
+    "hd_width": 984,
+    "hd_height": 1560,
     "aspect_ratio": 0.631
   },
   "太子道西233号": {
     "original": "images/projects/original/太子道西233号/太子道西233号.jpg",
+    "hd": "images/projects/hd/太子道西233号.webp",
     "thumb": "images/projects/thumb/太子道西233号.webp",
     "width": 1080,
     "height": 2182,
+    "hd_width": 792,
+    "hd_height": 1600,
     "aspect_ratio": 0.495
   },
   "明寓": {
     "original": "images/projects/original/明寓/已粘贴 2026-10-06 下午7.01.17.tiff",
+    "hd": "images/projects/hd/明寓.webp",
     "thumb": "images/projects/thumb/明寓.webp",
     "width": 843,
     "height": 1264,
+    "hd_width": 843,
+    "hd_height": 1264,
     "aspect_ratio": 0.667
   },
   "滶蕴": {
     "original": "images/projects/original/滶蕴/滶蕴.png",
+    "hd": "images/projects/hd/滶蕴.webp",
     "thumb": "images/projects/thumb/滶蕴.webp",
     "width": 1586,
     "height": 1300,
+    "hd_width": 1586,
+    "hd_height": 1300,
     "aspect_ratio": 1.22
   },
   "瑜一第IC期": {
     "original": "images/projects/original/瑜一/瑜一.png",
+    "hd": "images/projects/hd/瑜一第IC期.webp",
     "thumb": "images/projects/thumb/瑜一第IC期.webp",
     "width": 1920,
     "height": 1080,
+    "hd_width": 1600,
+    "hd_height": 900,
     "aspect_ratio": 1.778
   },
   "瑜一．天海": {
     "original": "images/projects/original/瑜一/瑜一.png",
+    "hd": "images/projects/hd/瑜一．天海.webp",
     "thumb": "images/projects/thumb/瑜一．天海.webp",
     "width": 1920,
     "height": 1080,
+    "hd_width": 1600,
+    "hd_height": 900,
     "aspect_ratio": 1.778
   },
   "皇璇": {
     "original": "images/projects/original/皇璇/皇璇.png",
+    "hd": "images/projects/hd/皇璇.webp",
     "thumb": "images/projects/thumb/皇璇.webp",
     "width": 1222,
     "height": 2154,
+    "hd_width": 908,
+    "hd_height": 1600,
     "aspect_ratio": 0.567
   },
   "缇外": {
     "original": "images/projects/original/缇外/缇外.png",
+    "hd": "images/projects/hd/缇外.webp",
     "thumb": "images/projects/thumb/缇外.webp",
     "width": 1800,
     "height": 1316,
+    "hd_width": 1600,
+    "hd_height": 1170,
     "aspect_ratio": 1.368
   },
   "誉林": {
     "original": "images/projects/original/誉林/誉林.png",
+    "hd": "images/projects/hd/誉林.webp",
     "thumb": "images/projects/thumb/誉林.webp",
     "width": 1219,
     "height": 1552,
+    "hd_width": 1219,
+    "hd_height": 1552,
     "aspect_ratio": 0.785
   },
   "首岸第1期": {
     "original": "images/projects/original/首岸/首岸.png",
+    "hd": "images/projects/hd/首岸第1期.webp",
     "thumb": "images/projects/thumb/首岸第1期.webp",
     "width": 1080,
     "height": 1826,
+    "hd_width": 946,
+    "hd_height": 1600,
     "aspect_ratio": 0.591
   },
   "首岸第2期": {
     "original": "images/projects/original/首岸/首岸.png",
+    "hd": "images/projects/hd/首岸第2期.webp",
     "thumb": "images/projects/thumb/首岸第2期.webp",
     "width": 1080,
     "height": 1826,
+    "hd_width": 946,
+    "hd_height": 1600,
     "aspect_ratio": 0.591
   },
   "首岸第3期": {
     "original": "images/projects/original/首岸/首岸.png",
+    "hd": "images/projects/hd/首岸第3期.webp",
     "thumb": "images/projects/thumb/首岸第3期.webp",
     "width": 1080,
     "height": 1826,
+    "hd_width": 946,
+    "hd_height": 1600,
     "aspect_ratio": 0.591
   },
   "首岸第4期": {
     "original": "images/projects/original/首岸/首岸.png",
+    "hd": "images/projects/hd/首岸第4期.webp",
     "thumb": "images/projects/thumb/首岸第4期.webp",
     "width": 1080,
     "height": 1826,
+    "hd_width": 946,
+    "hd_height": 1600,
     "aspect_ratio": 0.591
   }
 }
