@@ -4566,8 +4566,8 @@
     "name": "st. george's mansions",
     "region": "九龙",
     "district": "何文田",
-    "lat": 22.316475,
-    "lng": 114.176052,
+    "lat": 22.321226,
+    "lng": 114.176685,
     "sell_status": "on_sale",
     "sell_status_cn": "出售中",
     "is_coming_soon": false,
@@ -4585,7 +4585,7 @@
     "reason": "",
     "mainland_selling_points": "1、何文田加多利山百年名门显赫地段：坐落九龙传统顶级富豪腹地嘉道理道24A号，信和置业与中电集团联袂打造，出入皆为香港老牌名流世家，具备极高的历史文化沉淀。\n2、世界级建筑大师Robert A.M. Stern操刀：由纽约顶奢豪宅大师亲自设计，全石材古典优雅立面，全盘仅175伙纯大宅，户户私家电梯大堂，空间格局恢宏大气，用料奢华绝伦。\n3、拔尖34名校网护航与现楼传世藏品：地处九龙34小学及九龙城中学顶级名校网，现楼交付即刻入伙，兼备极致私密性与城市中心便利，是极具家族代际传承意义的艺术孤品。",
     "nearest_mtr": {
-      "nearest_mtr_id": "mtr_mongkokeast",
+      "nearest_mtr_id": "mtr_mong_kok_east",
       "nearest_mtr_name": "旺角東站 (東鐵綫)",
       "nearest_mtr_cn": "旺角東",
       "nearest_mtr_en": "Mong Kok East",
@@ -4827,7 +4827,8 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/TduYFdx6ptZiI3fEV-ehqA",
     "marketing_url": "https://drive.google.com/drive/folders/18Lrj1PWjseyChiIwl-HuvbISFJiJageO",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "address": "嘉道理道24A號"
   },
   {
     "name": "傲玟",
@@ -61923,209 +61924,6 @@
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1kESOSr4A55-PY3JZAXIXMnGL5sB3Uxkf",
     "has_marketing_materials": false
-  },
-  {
-    "name": "St. George's Mansions",
-    "region": "九龙",
-    "district": "何文田",
-    "lat": 22.321226,
-    "lng": 114.176685,
-    "sell_status": "on_sale",
-    "sell_status_cn": "出售中",
-    "is_coming_soon": false,
-    "price_tier": "",
-    "total_units": 175,
-    "sale_units": 12,
-    "sold_units": 162,
-    "priced_units": 12,
-    "pending_units": 1,
-    "basic_price_desc": "",
-    "excel_min_price_desc": "招标发售 / 详见价单",
-    "min_price_wan": null,
-    "sqft_price_desc": "呎價待定",
-    "main_layout": "",
-    "reason": "全新即將發售新盤",
-    "mainland_selling_points": "1、何文田加多利山百年名门显赫地段：坐落九龙传统顶级富豪腹地嘉道理道24A号，信和置业与中电集团联袂打造，出入皆为香港老牌名流世家，具备极高的历史文化沉淀。\n2、世界级建筑大师Robert A.M. Stern操刀：由纽约顶奢豪宅大师亲自设计，全石材古典优雅立面，全盘仅175伙纯大宅，户户私家电梯大堂，空间格局恢宏大气，用料奢华绝伦。\n3、拔尖34名校网护航与现楼传世藏品：地处九龙34小学及九龙城中学顶级名校网，现楼交付即刻入伙，兼备极致私密性与城市中心便利，是极具家族代际传承意义的艺术孤品。",
-    "nearest_mtr": {
-      "nearest_mtr_id": "mtr_mong_kok_east",
-      "nearest_mtr_name": "旺角東站 (東鐵綫)",
-      "nearest_mtr_cn": "旺角東",
-      "nearest_mtr_en": "Mong Kok East",
-      "nearest_mtr_lines": "東鐵綫",
-      "nearest_mtr_lat": 22.3221,
-      "nearest_mtr_lng": 114.1722,
-      "dist_straight_m": 471,
-      "dist_walk_m": 724,
-      "walk_time_min": 8.7,
-      "route_geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            114.176729,
-            22.321127
-          ],
-          [
-            114.176495,
-            22.321038
-          ],
-          [
-            114.176517,
-            22.32099
-          ],
-          [
-            114.176542,
-            22.320937
-          ],
-          [
-            114.175958,
-            22.320702
-          ],
-          [
-            114.175832,
-            22.320656
-          ],
-          [
-            114.1758,
-            22.320646
-          ],
-          [
-            114.175669,
-            22.320612
-          ],
-          [
-            114.174666,
-            22.320391
-          ],
-          [
-            114.174057,
-            22.320275
-          ],
-          [
-            114.173957,
-            22.320276
-          ],
-          [
-            114.173868,
-            22.320245
-          ],
-          [
-            114.173836,
-            22.32024
-          ],
-          [
-            114.173766,
-            22.32021
-          ],
-          [
-            114.173688,
-            22.320205
-          ],
-          [
-            114.173627,
-            22.320197
-          ],
-          [
-            114.173619,
-            22.320185
-          ],
-          [
-            114.17329,
-            22.32013
-          ],
-          [
-            114.172764,
-            22.320041
-          ],
-          [
-            114.172741,
-            22.320102
-          ],
-          [
-            114.172679,
-            22.320262
-          ],
-          [
-            114.172671,
-            22.320282
-          ],
-          [
-            114.172663,
-            22.320303
-          ],
-          [
-            114.172594,
-            22.320486
-          ],
-          [
-            114.172568,
-            22.320551
-          ],
-          [
-            114.172629,
-            22.320573
-          ],
-          [
-            114.17248,
-            22.32099
-          ],
-          [
-            114.172416,
-            22.321062
-          ],
-          [
-            114.172196,
-            22.321644
-          ],
-          [
-            114.172265,
-            22.32166
-          ],
-          [
-            114.172323,
-            22.321691
-          ],
-          [
-            114.172369,
-            22.321732
-          ],
-          [
-            114.172396,
-            22.321816
-          ],
-          [
-            114.172415,
-            22.322079
-          ],
-          [
-            114.172289,
-            22.322096
-          ],
-          [
-            114.172204,
-            22.322115
-          ]
-        ]
-      }
-    },
-    "developer": "中电集团 / 信和",
-    "completion_date": "现楼发售 (即买即住)",
-    "sales_control_summary": [],
-    "recent_transactions": [],
-    "address": "嘉道理道24A號",
-    "main_area": "九龙中（九龙城/何文田）",
-    "micro_district": "何文田及加多利山",
-    "micro_district_en": "Ho Man Tin & Kadoorie Hill",
-    "plan_id": "OZP-S-K7-24",
-    "primary_school_net": "34校网",
-    "secondary_school_net": "九龍城校网",
-    "school_net": "34校网 / 九龍城校网",
-    "max_price_wan": null,
-    "has_price_data": false,
-    "building_count": 1,
-    "selling_points": "1、何文田加多利山百年名门显赫地段：坐落九龙传统顶级富豪腹地嘉道理道24A号，信和置业与中电集团联袂打造，出入皆为香港老牌名流世家，具备极高的历史文化沉淀。\n2、世界级建筑大师Robert A.M. Stern操刀：由纽约顶奢豪宅大师亲自设计，全石材古典优雅立面，全盘仅175伙纯大宅，户户私家电梯大堂，空间格局恢宏大气，用料奢华绝伦。\n3、拔尖34名校网护航与现楼传世藏品：地处九龙34小学及九龙城中学顶级名校网，现楼交付即刻入伙，兼备极致私密性与城市中心便利，是极具家族代际传承意义的艺术孤品。",
-    "tower_count": 1,
-    "property_type": "ready",
-    "property_type_desc": "现房 (现楼发售)"
   },
   {
     "name": "红山半岛 - C区",
