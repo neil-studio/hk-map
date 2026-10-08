@@ -2341,8 +2341,8 @@
   <!-- Center: 3 Primary Property Filters (三大核心买房筛选) -->
   <div class="navbar-center">
     <!-- 核心商圈下拉定位 -->
-    <select class="navbar-filter-select" id="anchor-district" onchange="onAnchorSelect('district')" title="按法定豪宅商圈或核心商场筛选定位">
-      <option value="">🏙️ 核心商圈/商场...</option>
+    <select class="navbar-filter-select" id="anchor-district" onchange="onAnchorSelect('district')" title="按核心商圈筛选定位">
+      <option value="">🏙️ 核心商圈...</option>
     </select>
 
     <!-- 隐藏于DOM内部的学区与港铁select，确保内部JS联动不受影响 -->
@@ -3462,7 +3462,7 @@ function populateSelects() {
   // 清空除默认项外的 option
   sSchool.innerHTML = '<option value="">🎓 重点学区/名校...</option>';
   sMtr.innerHTML = '<option value="">🚇 全线港铁站点 (98站)...</option>';
-  sDistrict.innerHTML = '<option value="">🏙️ 核心商圈/商场...</option>';
+  sDistrict.innerHTML = '<option value="">🏙️ 核心商圈...</option>';
 
   // 1. 🏫 香港官方小学校网分组 (法定精准归属)
   const schoolNetGroup = document.createElement('optgroup');
@@ -3618,19 +3618,6 @@ function populateSelects() {
     });
     sDistrict.appendChild(optgroup);
   });
-
-  // 🛍️ 大型旗舰商场分组 (1.5km生活圈)
-  const mallGroup = document.createElement('optgroup');
-  mallGroup.label = '🛍️ 核心大型旗舰商场 (1.5km生活圈)';
-  landmarksData.forEach(lm => {
-    if (lm.category === 'shopping_mall') {
-      const opt = document.createElement('option');
-      opt.value = lm.id;
-      opt.textContent = `${lm.name} (${lm.region}·${lm.district})`;
-      mallGroup.appendChild(opt);
-    }
-  });
-  sDistrict.appendChild(mallGroup);
 }
 
 function toggleExpandFilters() {
@@ -3900,44 +3887,22 @@ function onAnchorSelect(type) {
   } else if (type === 'district') {
     sSchool.value = ''; sMtr.value = '';
     activeAnchorSchoolNet = null;
+    activeAnchorLandmark = null;
     const selectedDistrict = sDistrict.value;
     if (selectedDistrict) {
-      if (selectedDistrict.startsWith('mall_')) {
-        const lm = landmarksData.find(x => x.id === selectedDistrict);
-        activeAnchorLandmark = lm;
-        activeAnchorDistrict = null;
-        if (lm) {
-          currentRadiusCircle = L.circle([lm.lat, lm.lng], {
-            radius: 1500, color: '#ea580c', fillColor: '#f97316', fillOpacity: 0.08, weight: 2, dashArray: '6,6'
-          }).addTo(map);
-
-          map.fitBounds(currentRadiusCircle.getBounds(), { padding: [50, 50] });
-
-          const icon = L.divIcon({
-            className: 'anchor-pin',
-            html: `<div style="background:#ea580c; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:bold; box-shadow:0 4px 12px rgba(234,88,12,0.4); border:2px solid #fff; white-space:nowrap;">🛍️ ${lm.name} (1.5km圈)</div>`,
-            iconSize: null
-          });
-          currentAnchorMarker = L.marker([lm.lat, lm.lng], { icon }).addTo(map);
-          showToast(`🛍️ 已定位商场【${lm.name}】1.5km 购物生活圈`);
-        }
-      } else {
-        activeAnchorLandmark = null;
-        activeAnchorDistrict = selectedDistrict;
-        const bounds = districtBoundsMap[selectedDistrict];
-        if (bounds) {
-          map.fitBounds(bounds, {
-            padding: [40, 40],
-            maxZoom: 15,
-            animate: true,
-            duration: 1.0
-          });
-        }
-        showToast(`🏙️ 已聚焦商圈【${selectedDistrict}】`);
+      activeAnchorDistrict = selectedDistrict;
+      const bounds = districtBoundsMap[selectedDistrict];
+      if (bounds) {
+        map.fitBounds(bounds, {
+          padding: [40, 40],
+          maxZoom: 15,
+          animate: true,
+          duration: 1.0
+        });
       }
+      showToast(`🏙️ 已聚焦商圈【${selectedDistrict}】`);
     } else {
       activeAnchorDistrict = null;
-      activeAnchorLandmark = null;
     }
   }
 
