@@ -148,13 +148,22 @@ def process_images():
                 orig_rel = os.path.relpath(orig_path, SANDBOX_DIR)
                 orig_size_kb = os.path.getsize(orig_path) / 1024
 
+                # 规范化文件名映射，防止大小写敏感系统 (Linux/GitHub Pages) 404
+                CANONICAL_NAME_MAP = {
+                    "st. george's mansions": "St. George's Mansions",
+                    "St. George's Mansions": "St. George's Mansions",
+                    "park college": "Park College",
+                    "Park College": "Park College",
+                }
+
                 for proj_name in matched:
-                    thumb_filename = f"{proj_name}.webp"
+                    canonical_name = CANONICAL_NAME_MAP.get(proj_name, proj_name)
+                    thumb_filename = f"{canonical_name}.webp"
                     thumb_dest = os.path.join(THUMB_DIR, thumb_filename)
                     thumb_img.save(thumb_dest, "WEBP", quality=85, method=6)
                     thumb_size_kb = os.path.getsize(thumb_dest) / 1024
 
-                    hd_filename = f"{proj_name}.webp"
+                    hd_filename = f"{canonical_name}.webp"
                     hd_dest = os.path.join(HD_DIR, hd_filename)
                     hd_img.save(hd_dest, "WEBP", quality=88, method=6)
                     hd_size_kb = os.path.getsize(hd_dest) / 1024

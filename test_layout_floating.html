@@ -2764,7 +2764,18 @@ function initMap() {
   });
 }
 
-const MAP_DATA_VERSION = '20261008_hx_yl';
+const MAP_DATA_VERSION = '20261008_st_george_img';
+
+function getProjectImageInfo(projName) {
+  if (!projName) return null;
+  const manifest = window.projectImagesManifest || {};
+  if (manifest[projName]) return manifest[projName];
+  const lower = projName.toLowerCase();
+  for (const k in manifest) {
+    if (k.toLowerCase() === lower) return manifest[k];
+  }
+  return null;
+}
 
 async function loadData() {
   console.time('⚡ 核心地图首屏瞬时直出');
@@ -4718,8 +4729,7 @@ function applyFilters() {
       </div>
     `;
 
-    const imgManifest = window.projectImagesManifest || {};
-    const imgInfo = imgManifest[proj.name];
+    const imgInfo = getProjectImageInfo(proj.name);
     if (imgInfo && imgInfo.thumb) {
       coverHtml = `
         <div class="card-v2-cover has-image" title="${proj.name}">
@@ -5521,9 +5531,8 @@ function triggerPdfPrint() {
     intro: document.getElementById('client-intro') ? document.getElementById('client-intro').value.trim() : ''
   };
 
-  const imgManifest = window.projectImagesManifest || {};
   selectedList.forEach(p => {
-    const imgInfo = imgManifest[p.name];
+    const imgInfo = getProjectImageInfo(p.name);
     if (imgInfo) {
       p.photo_url = imgInfo.original || imgInfo.thumb;
     }
