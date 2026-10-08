@@ -141,8 +141,8 @@
   },
   "st. george's mansions": {
     "original": "images/projects/original/st. george's mansions/st. george's mansions.jpg",
-    "hd": "images/projects/hd/St. George's Mansions.webp",
-    "thumb": "images/projects/thumb/St. George's Mansions.webp",
+    "hd": "images/projects/hd/st. george's mansions.webp",
+    "thumb": "images/projects/thumb/st. george's mansions.webp",
     "width": 1080,
     "height": 1440,
     "hd_width": 1080,
@@ -348,6 +348,16 @@
     "hd_width": 1219,
     "hd_height": 1552,
     "aspect_ratio": 0.785
+  },
+  "逸里1号": {
+    "original": "images/projects/original/逸里1号/逸里1号.png",
+    "hd": "images/projects/hd/逸里1号.webp",
+    "thumb": "images/projects/thumb/逸里1号.webp",
+    "width": 787,
+    "height": 442,
+    "hd_width": 787,
+    "hd_height": 442,
+    "aspect_ratio": 1.781
   },
   "首岸第1期": {
     "original": "images/projects/original/首岸/首岸.png",
