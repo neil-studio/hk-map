@@ -597,6 +597,175 @@
     line-height: 1.35;
   }
 
+  /* 🌟 吸顶已选项目胶囊栏 (Selected Tray) */
+  .drawer-selected-bar {
+    margin-top: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    animation: fadeInSlideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes fadeInSlideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .drawer-selected-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .selected-bar-title {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    user-select: none;
+  }
+
+  .selected-count-badge {
+    background: #ea580c;
+    color: #ffffff;
+    font-size: 0.66rem;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 10px;
+    line-height: 1.2;
+  }
+
+  .selected-bar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-selected-clear {
+    background: none;
+    border: none;
+    font-size: 0.7rem;
+    color: #64748b;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: all 0.15s;
+    user-select: none;
+  }
+
+  .btn-selected-clear:hover {
+    color: #dc2626;
+    background: #fee2e2;
+  }
+
+  .btn-selected-export {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2.5px 8px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(37,99,235,0.25);
+    transition: all 0.15s;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .btn-selected-export:hover {
+    background: linear-gradient(135deg, #172554, #1d4ed8);
+    transform: translateY(-0.5px);
+  }
+
+  .drawer-selected-chips-scroll {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: thin;
+  }
+
+  .drawer-selected-chips-scroll::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .drawer-selected-chips-scroll::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+
+  .selected-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 2.5px 7px 2.5px 9px;
+    flex-shrink: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .selected-chip:hover {
+    border-color: #f97316;
+    box-shadow: 0 2px 6px rgba(234, 88, 12, 0.15);
+  }
+
+  .chip-name {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.15s;
+  }
+
+  .chip-name:hover {
+    color: #ea580c;
+  }
+
+  .chip-remove-btn {
+    background: #f1f5f9;
+    border: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.15s;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .chip-remove-btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+  }
+
   .drawer-list-scroll {
     padding: 10px 12px;
     overflow-y: auto;
@@ -2473,6 +2642,21 @@
       </div>
     </div>
     <div class="drawer-disclaimer-text">*伙数、出售中、已售伙数及折实价等资料供参考，一切以发展商最新公布为准。</div>
+
+    <!-- 🌟 吸顶已选项目胶囊栏 (动态展开) -->
+    <div class="drawer-selected-bar" id="drawer-selected-bar" style="display:none;">
+      <div class="drawer-selected-bar-header">
+        <div class="selected-bar-title">
+          <span>📌 已勾选</span>
+          <span class="selected-count-badge" id="drawer-selected-count">0</span>
+        </div>
+        <div class="selected-bar-actions">
+          <button type="button" class="btn-selected-clear" onclick="clearAllSelected(event)" title="清空全部已选">清空</button>
+          <button type="button" class="btn-selected-export" onclick="openExportModal()" title="立即导出客户方案">📄 导出</button>
+        </div>
+      </div>
+      <div class="drawer-selected-chips-scroll" id="drawer-selected-chips"></div>
+    </div>
   </div>
 
   <div class="drawer-list-scroll" id="drawer-list"></div>
@@ -2764,7 +2948,7 @@ function initMap() {
   });
 }
 
-const MAP_DATA_VERSION = '20261008_st_george_img';
+const MAP_DATA_VERSION = '20261009_selected_chips';
 
 function getProjectImageInfo(projName) {
   if (!projName) return null;
@@ -4554,6 +4738,7 @@ function fallbackCopy(text) {
 }
 
 function applyFilters() {
+  renderSelectedBar();
   const list = document.getElementById('drawer-list');
   list.innerHTML = '';
   if (projectMarkersLayer) projectMarkersLayer.clearLayers();
@@ -5425,14 +5610,73 @@ function showToast(msg) {
   }, 3500);
 }
 
+// 🌟 吸顶已选项目胶囊栏交互控制
+function renderSelectedBar() {
+  const bar = document.getElementById('drawer-selected-bar');
+  const chipsContainer = document.getElementById('drawer-selected-chips');
+  const countBadge = document.getElementById('drawer-selected-count');
+  if (!bar || !chipsContainer) return;
+
+  const count = selectedNames.size;
+  if (count === 0) {
+    bar.style.display = 'none';
+    chipsContainer.innerHTML = '';
+    return;
+  }
+
+  bar.style.display = 'block';
+  if (countBadge) countBadge.textContent = count;
+
+  let html = '';
+  selectedNames.forEach(name => {
+    html += `
+      <div class="selected-chip" title="点击定位：${name}">
+        <span class="chip-name" onclick="locateSelectedProject('${name}')">${name}</span>
+        <button type="button" class="chip-remove-btn" onclick="removeSelectedProject(event, '${name}')" title="移除 ${name}">✕</button>
+      </div>
+    `;
+  });
+  chipsContainer.innerHTML = html;
+}
+
+function syncSelectionState() {
+  const count = selectedNames.size;
+  const countEl = document.getElementById('selected-count');
+  if (countEl) countEl.textContent = count;
+  const exportBtn = document.getElementById('btn-export');
+  if (exportBtn) exportBtn.disabled = count === 0;
+
+  renderSelectedBar();
+  applyFilters();
+}
+
 function toggleSelect(e, name) {
-  e.stopPropagation();
+  if (e && e.stopPropagation) e.stopPropagation();
   if (selectedNames.has(name)) selectedNames.delete(name);
   else selectedNames.add(name);
 
-  document.getElementById('selected-count').textContent = selectedNames.size;
-  document.getElementById('btn-export').disabled = selectedNames.size === 0;
-  applyFilters();
+  syncSelectionState();
+}
+
+function removeSelectedProject(e, name) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  selectedNames.delete(name);
+  syncSelectionState();
+}
+
+function clearAllSelected(e) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  selectedNames.clear();
+  syncSelectionState();
+}
+
+function locateSelectedProject(name) {
+  const proj = projectsData.find(p => p.name === name);
+  if (proj) {
+    map.flyTo([proj.lat, proj.lng], 16, { duration: 0.8 });
+    showProjectFloatingCard(name);
+  }
+  scrollToProjectCard(name);
 }
 
 function openExportModal() {
