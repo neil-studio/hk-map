@@ -3201,7 +3201,38 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function initMap() {
-  map = L.map('map', { zoomControl: false }).setView([22.3150, 114.1750], 12);
+  // 🎯 缩放体验优化：保持鼠标滚轮大步长 (1.0 级) 不变，屏幕右上角 +- 按键支持 0.25 级超细腻微调
+  if (L.Map && L.Map.ScrollWheelZoom) {
+    L.Map.ScrollWheelZoom.prototype._performZoom = function () {
+      var map = this._map,
+          zoom = map.getZoom(),
+          wheelSnap = 1; // 鼠标滚轮固定以 1.0 级整步长缩放
+
+      map._stop();
+
+      var d2 = this._delta / (this._map.options.wheelPxPerZoomLevel * 4),
+          d3 = 4 * Math.log(2 / (1 + Math.exp(-Math.abs(d2)))) / Math.LN2,
+          d4 = Math.ceil(d3 / wheelSnap) * wheelSnap,
+          delta = map._limitZoom(zoom + (this._delta > 0 ? d4 : -d4)) - zoom;
+
+      this._delta = 0;
+      this._startTime = null;
+
+      if (!delta) { return; }
+
+      if (map.options.scrollWheelZoom === 'center') {
+        map.setZoom(zoom + delta);
+      } else {
+        map.setZoomAround(this._lastMousePos, zoom + delta);
+      }
+    };
+  }
+
+  map = L.map('map', {
+    zoomControl: false,
+    zoomSnap: 0.25,
+    zoomDelta: 0.25
+  }).setView([22.3150, 114.1750], 12);
   L.control.zoom({ position: 'topright' }).addTo(map);
 
   // 点击地图底图空白处，平滑关闭右下角悬浮情报卡
