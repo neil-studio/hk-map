@@ -411,6 +411,14 @@ def main():
         except Exception as e:
             print("读取 data.json 异常:", e)
 
+    # 自动过滤已从正式版下架/售罄的项目（保持与正式版完全一致）
+    if data_json_map:
+        initial_len = len(projects)
+        projects = [p for p in projects if p["name"].strip() in data_json_map]
+        if len(projects) < initial_len:
+            removed_count = initial_len - len(projects)
+            print(f"🗑️ 已自动同步下线/过滤 {removed_count} 个正式版已售罄项目")
+
     school_net_map = {}
     if os.path.exists(BASE_INFO_FILE):
         try:

@@ -1,4 +1,14 @@
 {
+  "101 Kings Road": {
+    "original": "images/projects/original/101 Kings Road/101 Kings Road.png",
+    "hd": "images/projects/hd/101 Kings Road.webp",
+    "thumb": "images/projects/thumb/101 Kings Road.webp",
+    "width": 547,
+    "height": 730,
+    "hd_width": 547,
+    "hd_height": 730,
+    "aspect_ratio": 0.749
+  },
   "128 Waterloo": {
     "original": "images/projects/original/128 walter/128 waterloo.jpg",
     "hd": "images/projects/hd/128 Waterloo.webp",
@@ -9,6 +19,16 @@
     "hd_height": 1600,
     "aspect_ratio": 0.848
   },
+  "21 Borrett Road 第1期": {
+    "original": "images/projects/original/21 Borrett Road 第1期/21 Borrett Road 第1期.png",
+    "hd": "images/projects/hd/21 Borrett Road 第1期.webp",
+    "thumb": "images/projects/thumb/21 Borrett Road 第1期.webp",
+    "width": 1354,
+    "height": 1662,
+    "hd_width": 1303,
+    "hd_height": 1600,
+    "aspect_ratio": 0.815
+  },
   "Beacon Peak 第1期": {
     "original": "images/projects/original/Beacon Peak/Beacon Peak.png",
     "hd": "images/projects/hd/Beacon Peak 第1期.webp",
@@ -18,6 +38,26 @@
     "hd_width": 1600,
     "hd_height": 1104,
     "aspect_ratio": 1.449
+  },
+  "Central Peak I": {
+    "original": "images/projects/original/Central Peak/Central Peak.png",
+    "hd": "images/projects/hd/Central Peak I.webp",
+    "thumb": "images/projects/thumb/Central Peak I.webp",
+    "width": 2880,
+    "height": 1220,
+    "hd_width": 1600,
+    "hd_height": 678,
+    "aspect_ratio": 2.361
+  },
+  "Central Peak II": {
+    "original": "images/projects/original/Central Peak/Central Peak.png",
+    "hd": "images/projects/hd/Central Peak II.webp",
+    "thumb": "images/projects/thumb/Central Peak II.webp",
+    "width": 2880,
+    "height": 1220,
+    "hd_width": 1600,
+    "hd_height": 678,
+    "aspect_ratio": 2.361
   },
   "Deep Water South 第6A期": {
     "original": "images/projects/original/Deep Water south/deep water south.png",
@@ -58,6 +98,56 @@
     "hd_width": 1080,
     "hd_height": 1316,
     "aspect_ratio": 0.821
+  },
+  "Kennedy 38": {
+    "original": "images/projects/original/Kennedy 38/Kennedy 38.png",
+    "hd": "images/projects/hd/Kennedy 38.webp",
+    "thumb": "images/projects/thumb/Kennedy 38.webp",
+    "width": 1080,
+    "height": 1142,
+    "hd_width": 1080,
+    "hd_height": 1142,
+    "aspect_ratio": 0.946
+  },
+  "Mount Pokfulam": {
+    "original": "images/projects/original/Mount Pokfulam/Mount Pokfulam.png",
+    "hd": "images/projects/hd/Mount Pokfulam.webp",
+    "thumb": "images/projects/thumb/Mount Pokfulam.webp",
+    "width": 2532,
+    "height": 1254,
+    "hd_width": 1600,
+    "hd_height": 792,
+    "aspect_ratio": 2.019
+  },
+  "No.3 Repulse Bay Road": {
+    "original": "images/projects/original/No.3 Repulse Bay Road/No.3 Repulse Bay Road.jpg",
+    "hd": "images/projects/hd/No.3 Repulse Bay Road.webp",
+    "thumb": "images/projects/thumb/No.3 Repulse Bay Road.webp",
+    "width": 524,
+    "height": 787,
+    "hd_width": 524,
+    "hd_height": 787,
+    "aspect_ratio": 0.666
+  },
+  "Shouson Peak": {
+    "original": "images/projects/original/Shouson Peak/Shouson Peak.png",
+    "hd": "images/projects/hd/Shouson Peak.webp",
+    "thumb": "images/projects/thumb/Shouson Peak.webp",
+    "width": 1920,
+    "height": 1080,
+    "hd_width": 1600,
+    "hd_height": 900,
+    "aspect_ratio": 1.778
+  },
+  "Upper Central": {
+    "original": "images/projects/original/Upper Central/Upper Central.png",
+    "hd": "images/projects/hd/Upper Central.webp",
+    "thumb": "images/projects/thumb/Upper Central.webp",
+    "width": 1920,
+    "height": 3141,
+    "hd_width": 978,
+    "hd_height": 1600,
+    "aspect_ratio": 0.611
   },
   "VAU Residence": {
     "original": "images/projects/original/VAU Residence/VAU Residence.jpg",
@@ -369,6 +459,36 @@
     "hd_height": 920,
     "aspect_ratio": 1.5
   },
+  "大学阁": {
+    "original": "images/projects/original/大学阁/大学阁.jpg",
+    "hd": "images/projects/hd/大学阁.webp",
+    "thumb": "images/projects/thumb/大学阁.webp",
+    "width": 794,
+    "height": 787,
+    "hd_width": 794,
+    "hd_height": 787,
+    "aspect_ratio": 1.009
+  },
+  "天御第1期": {
+    "original": "images/projects/original/天御/天御.jpg",
+    "hd": "images/projects/hd/天御第1期.webp",
+    "thumb": "images/projects/thumb/天御第1期.webp",
+    "width": 1200,
+    "height": 1600,
+    "hd_width": 1200,
+    "hd_height": 1600,
+    "aspect_ratio": 0.75
+  },
+  "天御第2期": {
+    "original": "images/projects/original/天御/天御.jpg",
+    "hd": "images/projects/hd/天御第2期.webp",
+    "thumb": "images/projects/thumb/天御第2期.webp",
+    "width": 1200,
+    "height": 1600,
+    "hd_width": 1200,
+    "hd_height": 1600,
+    "aspect_ratio": 0.75
+  },
   "天泷": {
     "original": "images/projects/original/天泷/天泷.png",
     "hd": "images/projects/hd/天泷.webp",
@@ -448,6 +568,46 @@
     "hd_width": 792,
     "hd_height": 1600,
     "aspect_ratio": 0.495
+  },
+  "宝峰": {
+    "original": "images/projects/original/宝峰/宝峰.png",
+    "hd": "images/projects/hd/宝峰.webp",
+    "thumb": "images/projects/thumb/宝峰.webp",
+    "width": 1024,
+    "height": 550,
+    "hd_width": 1024,
+    "hd_height": 550,
+    "aspect_ratio": 1.862
+  },
+  "寿臣山15号": {
+    "original": "images/projects/original/寿臣山15号/寿臣山15号.png",
+    "hd": "images/projects/hd/寿臣山15号.webp",
+    "thumb": "images/projects/thumb/寿臣山15号.webp",
+    "width": 1440,
+    "height": 810,
+    "hd_width": 1440,
+    "hd_height": 810,
+    "aspect_ratio": 1.778
+  },
+  "帝汇豪庭": {
+    "original": "images/projects/original/帝汇豪庭/帝汇豪庭.jpg",
+    "hd": "images/projects/hd/帝汇豪庭.webp",
+    "thumb": "images/projects/thumb/帝汇豪庭.webp",
+    "width": 787,
+    "height": 525,
+    "hd_width": 787,
+    "hd_height": 525,
+    "aspect_ratio": 1.499
+  },
+  "应天": {
+    "original": "images/projects/original/应天/21 Borrett Road 第1期.png",
+    "hd": "images/projects/hd/应天.webp",
+    "thumb": "images/projects/thumb/应天.webp",
+    "width": 1354,
+    "height": 1662,
+    "hd_width": 1303,
+    "hd_height": 1600,
+    "aspect_ratio": 0.815
   },
   "明寓": {
     "original": "images/projects/original/明寓/已粘贴 2026-10-06 下午7.01.17.tiff",
@@ -549,6 +709,16 @@
     "hd_height": 864,
     "aspect_ratio": 1.416
   },
+  "海嵎": {
+    "original": "images/projects/original/海嵎/海嵎.tiff",
+    "hd": "images/projects/hd/海嵎.webp",
+    "thumb": "images/projects/thumb/海嵎.webp",
+    "width": 864,
+    "height": 1234,
+    "hd_width": 864,
+    "hd_height": 1234,
+    "aspect_ratio": 0.7
+  },
   "海德园第1期": {
     "original": "images/projects/original/海德园/海德园.png",
     "hd": "images/projects/hd/海德园第1期.webp",
@@ -568,6 +738,26 @@
     "hd_width": 1600,
     "hd_height": 1200,
     "aspect_ratio": 1.333
+  },
+  "海璇": {
+    "original": "images/projects/original/海璇/海璇.jpg",
+    "hd": "images/projects/hd/海璇.webp",
+    "thumb": "images/projects/thumb/海璇.webp",
+    "width": 1182,
+    "height": 787,
+    "hd_width": 1182,
+    "hd_height": 787,
+    "aspect_ratio": 1.502
+  },
+  "深水湾径8号": {
+    "original": "images/projects/original/深水湾径8号/深水湾径8号.jpg",
+    "hd": "images/projects/hd/深水湾径8号.webp",
+    "thumb": "images/projects/thumb/深水湾径8号.webp",
+    "width": 788,
+    "height": 631,
+    "hd_width": 788,
+    "hd_height": 631,
+    "aspect_ratio": 1.249
   },
   "滶蕴": {
     "original": "images/projects/original/滶蕴/滶蕴.png",
@@ -598,6 +788,16 @@
     "hd_width": 1600,
     "hd_height": 900,
     "aspect_ratio": 1.778
+  },
+  "皇府湾": {
+    "original": "images/projects/original/皇府湾/皇府湾.png",
+    "hd": "images/projects/hd/皇府湾.webp",
+    "thumb": "images/projects/thumb/皇府湾.webp",
+    "width": 4032,
+    "height": 3024,
+    "hd_width": 1600,
+    "hd_height": 1200,
+    "aspect_ratio": 1.333
   },
   "皇璇": {
     "original": "images/projects/original/皇璇/皇璇.png",
@@ -679,6 +879,16 @@
     "hd_height": 1170,
     "aspect_ratio": 1.368
   },
+  "罗便臣道80号": {
+    "original": "images/projects/original/罗便臣道80号/罗便臣道80号.png",
+    "hd": "images/projects/hd/罗便臣道80号.webp",
+    "thumb": "images/projects/thumb/罗便臣道80号.webp",
+    "width": 2704,
+    "height": 3600,
+    "hd_width": 1202,
+    "hd_height": 1600,
+    "aspect_ratio": 0.751
+  },
   "誉林": {
     "original": "images/projects/original/誉林/誉林.png",
     "hd": "images/projects/hd/誉林.webp",
@@ -698,6 +908,16 @@
     "hd_width": 787,
     "hd_height": 442,
     "aspect_ratio": 1.781
+  },
+  "雅盈峰": {
+    "original": "images/projects/original/雅盈峰/雅盈峰.jpg",
+    "hd": "images/projects/hd/雅盈峰.webp",
+    "thumb": "images/projects/thumb/雅盈峰.webp",
+    "width": 1080,
+    "height": 1350,
+    "hd_width": 1080,
+    "hd_height": 1350,
+    "aspect_ratio": 0.8
   },
   "首岸第1期": {
     "original": "images/projects/original/首岸/首岸.png",
