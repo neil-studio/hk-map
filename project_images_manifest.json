@@ -9,6 +9,16 @@
     "hd_height": 1600,
     "aspect_ratio": 0.848
   },
+  "Beacon Peak 第1期": {
+    "original": "images/projects/original/Beacon Peak/Beacon Peak.png",
+    "hd": "images/projects/hd/Beacon Peak 第1期.webp",
+    "thumb": "images/projects/thumb/Beacon Peak 第1期.webp",
+    "width": 1920,
+    "height": 1325,
+    "hd_width": 1600,
+    "hd_height": 1104,
+    "aspect_ratio": 1.449
+  },
   "Deep Water South 第6A期": {
     "original": "images/projects/original/Deep Water south/deep water south.png",
     "hd": "images/projects/hd/Deep Water South 第6A期.webp",
@@ -48,6 +58,16 @@
     "hd_width": 1080,
     "hd_height": 1316,
     "aspect_ratio": 0.821
+  },
+  "VAU Residence": {
+    "original": "images/projects/original/VAU Residence/VAU Residence.jpg",
+    "hd": "images/projects/hd/VAU Residence.webp",
+    "thumb": "images/projects/thumb/VAU Residence.webp",
+    "width": 1080,
+    "height": 1057,
+    "hd_width": 1080,
+    "hd_height": 1057,
+    "aspect_ratio": 1.022
   },
   "Henley Park": {
     "original": "images/projects/original/henley park/henley park.jpg",
@@ -149,6 +169,16 @@
     "hd_height": 1440,
     "aspect_ratio": 0.75
   },
+  "The Boundary": {
+    "original": "images/projects/original/the boundary/the boundary.tiff",
+    "hd": "images/projects/hd/The Boundary.webp",
+    "thumb": "images/projects/thumb/The Boundary.webp",
+    "width": 896,
+    "height": 1195,
+    "hd_width": 896,
+    "hd_height": 1195,
+    "aspect_ratio": 0.75
+  },
   "The Henley I": {
     "original": "images/projects/original/the henley/the henley.jpg",
     "hd": "images/projects/hd/The Henley I.webp",
@@ -219,6 +249,36 @@
     "hd_height": 959,
     "aspect_ratio": 1.335
   },
+  "利奥坊．凯岸": {
+    "original": "images/projects/original/利奥坊/利奥坊.tiff",
+    "hd": "images/projects/hd/利奥坊．凯岸.webp",
+    "thumb": "images/projects/thumb/利奥坊．凯岸.webp",
+    "width": 843,
+    "height": 1264,
+    "hd_width": 843,
+    "hd_height": 1264,
+    "aspect_ratio": 0.667
+  },
+  "利奥坊．壹隅": {
+    "original": "images/projects/original/利奥坊/利奥坊.tiff",
+    "hd": "images/projects/hd/利奥坊．壹隅.webp",
+    "thumb": "images/projects/thumb/利奥坊．壹隅.webp",
+    "width": 843,
+    "height": 1264,
+    "hd_width": 843,
+    "hd_height": 1264,
+    "aspect_ratio": 0.667
+  },
+  "利奥坊．曦岸": {
+    "original": "images/projects/original/利奥坊/利奥坊.tiff",
+    "hd": "images/projects/hd/利奥坊．曦岸.webp",
+    "thumb": "images/projects/thumb/利奥坊．曦岸.webp",
+    "width": 843,
+    "height": 1264,
+    "hd_width": 843,
+    "hd_height": 1264,
+    "aspect_ratio": 0.667
+  },
   "博峰": {
     "original": "images/projects/original/博峰/博峰.png",
     "hd": "images/projects/hd/博峰.webp",
@@ -228,6 +288,16 @@
     "hd_width": 1184,
     "hd_height": 1298,
     "aspect_ratio": 0.912
+  },
+  "原舍": {
+    "original": "images/projects/original/原舍/原舍.png",
+    "hd": "images/projects/hd/原舍.webp",
+    "thumb": "images/projects/thumb/原舍.webp",
+    "width": 960,
+    "height": 1432,
+    "hd_width": 960,
+    "hd_height": 1432,
+    "aspect_ratio": 0.67
   },
   "叡璟I": {
     "original": "images/projects/original/叡璟/叡璟.png",
@@ -259,6 +329,56 @@
     "hd_height": 1600,
     "aspect_ratio": 0.593
   },
+  "启德海湾 1": {
+    "original": "images/projects/original/启德海湾/启德海湾.tiff",
+    "hd": "images/projects/hd/启德海湾 1.webp",
+    "thumb": "images/projects/thumb/启德海湾 1.webp",
+    "width": 2728,
+    "height": 1536,
+    "hd_width": 1600,
+    "hd_height": 901,
+    "aspect_ratio": 1.776
+  },
+  "启德海湾 2": {
+    "original": "images/projects/original/启德海湾/启德海湾.tiff",
+    "hd": "images/projects/hd/启德海湾 2.webp",
+    "thumb": "images/projects/thumb/启德海湾 2.webp",
+    "width": 2728,
+    "height": 1536,
+    "hd_width": 1600,
+    "hd_height": 901,
+    "aspect_ratio": 1.776
+  },
+  "壹沐第1期": {
+    "original": "images/projects/original/壹沐/壹沐.png",
+    "hd": "images/projects/hd/壹沐第1期.webp",
+    "thumb": "images/projects/thumb/壹沐第1期.webp",
+    "width": 1380,
+    "height": 920,
+    "hd_width": 1380,
+    "hd_height": 920,
+    "aspect_ratio": 1.5
+  },
+  "壹沐第2期": {
+    "original": "images/projects/original/壹沐/壹沐.png",
+    "hd": "images/projects/hd/壹沐第2期.webp",
+    "thumb": "images/projects/thumb/壹沐第2期.webp",
+    "width": 1380,
+    "height": 920,
+    "hd_width": 1380,
+    "hd_height": 920,
+    "aspect_ratio": 1.5
+  },
+  "天泷": {
+    "original": "images/projects/original/天泷/天泷.png",
+    "hd": "images/projects/hd/天泷.webp",
+    "thumb": "images/projects/thumb/天泷.webp",
+    "width": 2000,
+    "height": 1325,
+    "hd_width": 1600,
+    "hd_height": 1060,
+    "aspect_ratio": 1.509
+  },
   "天玺": {
     "original": "images/projects/original/天玺/天玺.jpg",
     "hd": "images/projects/hd/天玺.webp",
@@ -268,6 +388,56 @@
     "hd_width": 984,
     "hd_height": 1560,
     "aspect_ratio": 0.631
+  },
+  "天玺．天": {
+    "original": "images/projects/original/天玺．天/天玺．天.png",
+    "hd": "images/projects/hd/天玺．天.webp",
+    "thumb": "images/projects/thumb/天玺．天.webp",
+    "width": 1280,
+    "height": 1719,
+    "hd_width": 1191,
+    "hd_height": 1600,
+    "aspect_ratio": 0.745
+  },
+  "天玺．海第1期": {
+    "original": "images/projects/original/天玺．海/天玺.海.jpg",
+    "hd": "images/projects/hd/天玺．海第1期.webp",
+    "thumb": "images/projects/thumb/天玺．海第1期.webp",
+    "width": 1575,
+    "height": 1181,
+    "hd_width": 1575,
+    "hd_height": 1181,
+    "aspect_ratio": 1.334
+  },
+  "天玺．海第2A期": {
+    "original": "images/projects/original/天玺．海/天玺.海.jpg",
+    "hd": "images/projects/hd/天玺．海第2A期.webp",
+    "thumb": "images/projects/thumb/天玺．海第2A期.webp",
+    "width": 1575,
+    "height": 1181,
+    "hd_width": 1575,
+    "hd_height": 1181,
+    "aspect_ratio": 1.334
+  },
+  "天玺．海第2B期": {
+    "original": "images/projects/original/天玺．海/天玺.海.jpg",
+    "hd": "images/projects/hd/天玺．海第2B期.webp",
+    "thumb": "images/projects/thumb/天玺．海第2B期.webp",
+    "width": 1575,
+    "height": 1181,
+    "hd_width": 1575,
+    "hd_height": 1181,
+    "aspect_ratio": 1.334
+  },
+  "天铸 (第2期)": {
+    "original": "images/projects/original/天铸/天铸.png",
+    "hd": "images/projects/hd/天铸 (第2期).webp",
+    "thumb": "images/projects/thumb/天铸 (第2期).webp",
+    "width": 2780,
+    "height": 1504,
+    "hd_width": 1600,
+    "hd_height": 866,
+    "aspect_ratio": 1.848
   },
   "太子道西233号": {
     "original": "images/projects/original/太子道西233号/太子道西233号.jpg",
@@ -288,6 +458,116 @@
     "hd_width": 843,
     "hd_height": 1264,
     "aspect_ratio": 0.667
+  },
+  "映居": {
+    "original": "images/projects/original/映居/映居.png",
+    "hd": "images/projects/hd/映居.webp",
+    "thumb": "images/projects/thumb/映居.webp",
+    "width": 2052,
+    "height": 1516,
+    "hd_width": 1600,
+    "hd_height": 1182,
+    "aspect_ratio": 1.354
+  },
+  "朗贤峰第IIA期": {
+    "original": "images/projects/original/朗贤峰/朗贤峰.jpg",
+    "hd": "images/projects/hd/朗贤峰第IIA期.webp",
+    "thumb": "images/projects/thumb/朗贤峰第IIA期.webp",
+    "width": 1080,
+    "height": 1253,
+    "hd_width": 1080,
+    "hd_height": 1253,
+    "aspect_ratio": 0.862
+  },
+  "朗贤峰第IIB期": {
+    "original": "images/projects/original/朗贤峰/朗贤峰.jpg",
+    "hd": "images/projects/hd/朗贤峰第IIB期.webp",
+    "thumb": "images/projects/thumb/朗贤峰第IIB期.webp",
+    "width": 1080,
+    "height": 1253,
+    "hd_width": 1080,
+    "hd_height": 1253,
+    "aspect_ratio": 0.862
+  },
+  "本木": {
+    "original": "images/projects/original/本木/本木.png",
+    "hd": "images/projects/hd/本木.webp",
+    "thumb": "images/projects/thumb/本木.webp",
+    "width": 1968,
+    "height": 1458,
+    "hd_width": 1600,
+    "hd_height": 1185,
+    "aspect_ratio": 1.35
+  },
+  "柏蔚森 I": {
+    "original": "images/projects/original/柏蔚森/柏蔚森.png",
+    "hd": "images/projects/hd/柏蔚森 I.webp",
+    "thumb": "images/projects/thumb/柏蔚森 I.webp",
+    "width": 1920,
+    "height": 1440,
+    "hd_width": 1600,
+    "hd_height": 1200,
+    "aspect_ratio": 1.333
+  },
+  "柏蔚森 II": {
+    "original": "images/projects/original/柏蔚森/柏蔚森.png",
+    "hd": "images/projects/hd/柏蔚森 II.webp",
+    "thumb": "images/projects/thumb/柏蔚森 II.webp",
+    "width": 1920,
+    "height": 1440,
+    "hd_width": 1600,
+    "hd_height": 1200,
+    "aspect_ratio": 1.333
+  },
+  "柏蔚森 III": {
+    "original": "images/projects/original/柏蔚森/柏蔚森.png",
+    "hd": "images/projects/hd/柏蔚森 III.webp",
+    "thumb": "images/projects/thumb/柏蔚森 III.webp",
+    "width": 1920,
+    "height": 1440,
+    "hd_width": 1600,
+    "hd_height": 1200,
+    "aspect_ratio": 1.333
+  },
+  "汇玺III": {
+    "original": "images/projects/original/汇玺/汇玺.tiff",
+    "hd": "images/projects/hd/汇玺III.webp",
+    "thumb": "images/projects/thumb/汇玺III.webp",
+    "width": 1258,
+    "height": 848,
+    "hd_width": 1258,
+    "hd_height": 848,
+    "aspect_ratio": 1.483
+  },
+  "沄璟": {
+    "original": "images/projects/original/沄璟/沄璟.png",
+    "hd": "images/projects/hd/沄璟.webp",
+    "thumb": "images/projects/thumb/沄璟.webp",
+    "width": 1223,
+    "height": 864,
+    "hd_width": 1223,
+    "hd_height": 864,
+    "aspect_ratio": 1.416
+  },
+  "海德园第1期": {
+    "original": "images/projects/original/海德园/海德园.png",
+    "hd": "images/projects/hd/海德园第1期.webp",
+    "thumb": "images/projects/thumb/海德园第1期.webp",
+    "width": 1920,
+    "height": 1440,
+    "hd_width": 1600,
+    "hd_height": 1200,
+    "aspect_ratio": 1.333
+  },
+  "海德园第2期": {
+    "original": "images/projects/original/海德园/海德园.png",
+    "hd": "images/projects/hd/海德园第2期.webp",
+    "thumb": "images/projects/thumb/海德园第2期.webp",
+    "width": 1920,
+    "height": 1440,
+    "hd_width": 1600,
+    "hd_height": 1200,
+    "aspect_ratio": 1.333
   },
   "滶蕴": {
     "original": "images/projects/original/滶蕴/滶蕴.png",
@@ -328,6 +608,66 @@
     "hd_width": 908,
     "hd_height": 1600,
     "aspect_ratio": 0.567
+  },
+  "维港．双钻": {
+    "original": "images/projects/original/维港.双钻/维港.双钻.png",
+    "hd": "images/projects/hd/维港．双钻.webp",
+    "thumb": "images/projects/thumb/维港．双钻.webp",
+    "width": 1280,
+    "height": 960,
+    "hd_width": 1280,
+    "hd_height": 960,
+    "aspect_ratio": 1.333
+  },
+  "维港．湾畔第1A期": {
+    "original": "images/projects/original/维港.湾畔/维港.湾畔.png",
+    "hd": "images/projects/hd/维港．湾畔第1A期.webp",
+    "thumb": "images/projects/thumb/维港．湾畔第1A期.webp",
+    "width": 1904,
+    "height": 1020,
+    "hd_width": 1600,
+    "hd_height": 857,
+    "aspect_ratio": 1.867
+  },
+  "维港．湾畔第1B期": {
+    "original": "images/projects/original/维港.湾畔/维港.湾畔.png",
+    "hd": "images/projects/hd/维港．湾畔第1B期.webp",
+    "thumb": "images/projects/thumb/维港．湾畔第1B期.webp",
+    "width": 1904,
+    "height": 1020,
+    "hd_width": 1600,
+    "hd_height": 857,
+    "aspect_ratio": 1.867
+  },
+  "维港．湾畔第2B期": {
+    "original": "images/projects/original/维港.湾畔/维港.湾畔.png",
+    "hd": "images/projects/hd/维港．湾畔第2B期.webp",
+    "thumb": "images/projects/thumb/维港．湾畔第2B期.webp",
+    "width": 1904,
+    "height": 1020,
+    "hd_width": 1600,
+    "hd_height": 857,
+    "aspect_ratio": 1.867
+  },
+  "维港汇 I": {
+    "original": "images/projects/original/维港汇/维港汇.png",
+    "hd": "images/projects/hd/维港汇 I.webp",
+    "thumb": "images/projects/thumb/维港汇 I.webp",
+    "width": 2500,
+    "height": 1665,
+    "hd_width": 1600,
+    "hd_height": 1066,
+    "aspect_ratio": 1.502
+  },
+  "维港汇 III": {
+    "original": "images/projects/original/维港汇/维港汇.png",
+    "hd": "images/projects/hd/维港汇 III.webp",
+    "thumb": "images/projects/thumb/维港汇 III.webp",
+    "width": 2500,
+    "height": 1665,
+    "hd_width": 1600,
+    "hd_height": 1066,
+    "aspect_ratio": 1.502
   },
   "缇外": {
     "original": "images/projects/original/缇外/缇外.png",
@@ -398,5 +738,15 @@
     "hd_width": 946,
     "hd_height": 1600,
     "aspect_ratio": 0.591
+  },
+  "首汇": {
+    "original": "images/projects/original/首汇/首汇.png",
+    "hd": "images/projects/hd/首汇.webp",
+    "thumb": "images/projects/thumb/首汇.webp",
+    "width": 1164,
+    "height": 1598,
+    "hd_width": 1164,
+    "hd_height": 1598,
+    "aspect_ratio": 0.728
   }
 }

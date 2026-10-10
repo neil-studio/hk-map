@@ -30,6 +30,8 @@ EXPLICIT_FOLDER_MAP = {
     "128 walter": ["128 Waterloo"],
     "天玺": ["天玺"],  # 仅限九龙站天玺，不扩散到启德天玺．天/天玺．海
     "st. george's mansions": ["St. George's Mansions", "st. george's mansions"],
+    "维港.双钻": ["维港．双钻"],
+    "维港.湾畔": ["维港．湾畔第1A期", "维港．湾畔第1B期", "维港．湾畔第2B期"],
 }
 
 def load_all_project_names():
@@ -60,11 +62,11 @@ def match_projects(candidate_name, all_projects):
         if exp_k.lower() == c_lower:
             return exp_targets
 
-    c_clean = candidate_name.replace(' ', '').replace('_', '').replace('-', '').replace('·', '').replace('．', '').lower()
+    c_clean = candidate_name.replace(' ', '').replace('_', '').replace('-', '').replace('·', '').replace('．', '').replace('.', '').lower()
     matches = []
     # 1. 精确匹配
     for p in all_projects:
-        p_clean = p.replace(' ', '').replace('_', '').replace('-', '').replace('·', '').replace('．', '').lower()
+        p_clean = p.replace(' ', '').replace('_', '').replace('-', '').replace('·', '').replace('．', '').replace('.', '').lower()
         if p_clean == c_clean:
             matches.append(p)
     if matches:
@@ -72,7 +74,7 @@ def match_projects(candidate_name, all_projects):
 
     # 2. 包含匹配 (例如 the monet 匹配 The Monet 第1期, The Monet 第2期...)
     for p in all_projects:
-        p_clean = p.replace(' ', '').replace('_', '').replace('-', '').replace('·', '').replace('．', '').lower()
+        p_clean = p.replace(' ', '').replace('_', '').replace('-', '').replace('·', '').replace('．', '').replace('.', '').lower()
         if c_clean in p_clean:
             matches.append(p)
     if matches:
@@ -80,7 +82,7 @@ def match_projects(candidate_name, all_projects):
 
     # 3. 反向包含匹配
     for p in all_projects:
-        p_clean = p.replace(' ', '').replace('_', '').replace('-', '').replace('·', '').replace('．', '').lower()
+        p_clean = p.replace(' ', '').replace('_', '').replace('-', '').replace('·', '').replace('．', '').replace('.', '').lower()
         if p_clean in c_clean:
             matches.append(p)
     return matches
