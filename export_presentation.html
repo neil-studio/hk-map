@@ -1095,6 +1095,254 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
+    /* 地图单盘专页 Marker 图标样式 (严格对齐地图网站主站官方样式) */
+    .leaflet-marker-icon.custom-school-icon,
+    .leaflet-marker-icon.custom-mall-icon,
+    .leaflet-marker-icon.custom-mtr-icon,
+    .leaflet-marker-icon.custom-park-icon,
+    .leaflet-marker-icon.custom-proj-icon {
+      background: transparent !important;
+      border: none !important;
+      overflow: visible !important;
+    }
+
+    /* 🏢 楼盘项目气泡 (对齐主站 .proj-pin-box) */
+    .proj-pin-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3.5px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      box-shadow: 0 3px 10px rgba(37, 99, 235, 0.45);
+      border: 1.5px solid #ffffff;
+      white-space: nowrap;
+      line-height: 1.2;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      background: #2563EB;
+      color: #ffffff;
+      z-index: 1000;
+    }
+
+    /* 🚇 港铁站 Marker (严格对齐主站红白 MTR 官方标准) */
+    .mtr-pin {
+      background: #ffffff;
+      border: 1.5px solid #C8102E;
+      border-radius: 14px;
+      padding: 2px 7px 2px 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 2px 7px rgba(0,0,0,0.22);
+      white-space: nowrap;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      z-index: 800;
+    }
+    .mtr-pin-logo {
+      background: #C8102E;
+      color: #ffffff;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .mtr-pin-logo svg {
+      width: 12px;
+      height: 10px;
+      display: block;
+    }
+    .mtr-pin-text {
+      font-size: 10px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .mtr-dot-pin {
+      width: 14px;
+      height: 14px;
+      background: #C8102E;
+      border: 1.5px solid #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      z-index: 800;
+    }
+    .mtr-dot-pin svg {
+      width: 10px;
+      height: 8px;
+      display: block;
+    }
+
+    /* 🛍️ 商场 Marker (对齐主站 .mall-pin / .mall-dot-pin) */
+    .mall-pin {
+      background: #ffffff;
+      border: 1.5px solid #ea580c;
+      border-radius: 14px;
+      padding: 1.5px 6px 1.5px 3.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3.5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+      white-space: nowrap;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      z-index: 500;
+    }
+    .mall-pin-logo {
+      background: #ea580c;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .mall-pin-text {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #431407;
+    }
+    .mall-dot-pin {
+      width: 13px;
+      height: 13px;
+      background: #ea580c;
+      border: 1.5px solid #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      z-index: 500;
+    }
+
+    /* 🏫 名校 Marker (对齐主站 .school-pin / .school-dot-pin) */
+    .school-pin {
+      background: #ffffff;
+      border: 1.5px solid #7c3aed;
+      border-radius: 14px;
+      padding: 1.5px 6px 1.5px 3.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3.5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+      white-space: nowrap;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      z-index: 500;
+    }
+    .school-pin-logo {
+      background: #7c3aed;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .school-pin-text {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #1e1b4b;
+    }
+    .school-dot-pin {
+      width: 13px;
+      height: 13px;
+      background: #7c3aed;
+      border: 1.5px solid #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      z-index: 500;
+    }
+
+    /* 🌳 公园/地标 Marker (对齐主站 .park-pin / .park-dot-pin) */
+    .park-pin {
+      background: #ffffff;
+      border: 1.5px solid #059669;
+      border-radius: 14px;
+      padding: 1.5px 6px 1.5px 3.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3.5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+      white-space: nowrap;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      z-index: 500;
+    }
+    .park-pin-logo {
+      background: #059669;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .park-pin-text {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #064e3b;
+    }
+    .park-dot-pin {
+      width: 13px;
+      height: 13px;
+      background: #059669;
+      border: 1.5px solid #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      z-index: 500;
+    }
+
+    /* 纯白矢量剪影 SVG 图标样式 */
+    .poi-white-svg {
+      width: 8.5px;
+      height: 8.5px;
+      display: block;
+      fill: #ffffff;
+    }
+
     /* 中间紧凑型核心经营与规划指标条 */
     .proj-kpi-bar-dense {
       background: #FFFFFF;
@@ -3506,9 +3754,22 @@
                 <span class="meta-chip primary">🏗️ 发展商：${proj.developer || '知名品牌发展商'}</span>
                 <span class="meta-chip">📅 落成：${compDateStr}</span>
                 ${proj.school_net ? `<span class="meta-chip">🏫 校网：${proj.school_net}</span>` : ''}
-                <span class="meta-chip success">
-                  🚇 ${mtr ? mtr.nearest_mtr_cn + '站 (步行' + mtr.dist_walk_m + '米/' + mtr.walk_time_min + '分)' : '地铁沿线'}
-                </span>
+                ${(() => {
+                  const walkMin = Number(mtr?.walk_time_min) || 99;
+                  const walkM = Number(mtr?.dist_walk_m) || 9999;
+                  const isRunway = (proj.micro_district || '').includes('跑道') || (proj.address || '').includes('承') || (proj.name || '').includes('Coast') || (proj.name || '').includes('柏蔚森') || (proj.name || '').includes('天泷');
+                  if (mtr) {
+                    if (walkMin <= 12 && walkM <= 1000) {
+                      return `<span class="meta-chip success">🚇 ${mtr.nearest_mtr_cn}站 (步行${walkM}米/${walkMin}分)</span>`;
+                    } else if (isRunway) {
+                      return `<span class="meta-chip primary">🚌 启德跑道专线巴士/穿梭 (约5-8分达启德站)</span>`;
+                    } else {
+                      return `<span class="meta-chip primary">🚘 专车/巴士便捷接驳 (约3-5分达${mtr.nearest_mtr_cn}站)</span>`;
+                    }
+                  } else {
+                    return `<span class="meta-chip">🚘 尊贵车行生活圈</span>`;
+                  }
+                })()}
               </div>
             </div>
 
@@ -3536,13 +3797,9 @@
                 </div>
               </div>
 
-              <!-- 右侧：全景生活圈与轨交通勤微观/宏观大地图 -->
+              <!-- 右侧：全景生活圈与轨交通勤微观/宏观大地图 (完整展示无浮动栏遮挡) -->
               <div class="proj-map-box-hero">
                 <div id="proj-map-${idx}" class="proj-map-frame-hero"></div>
-                <div class="proj-map-floating-infobar">
-                  <span>🚇 <strong>${mtr?.nearest_mtr_cn || '港铁'}站</strong> 步行导航</span>
-                  <span>🚶 实际步行约 <strong>${mtr?.dist_walk_m || 500} 米</strong> · 约 <strong>${mtr?.walk_time_min || 6} 分钟</strong></span>
-                </div>
               </div>
             </div>
 
@@ -4018,109 +4275,156 @@
       console.error('Error initializing overview map:', overviewErr);
     }
 
-      // 2. 初始化各单盘微观导航地图 (Single Project Maps)
+      // 2. 初始化各单盘微观导航地图 (Single Project Maps - 严格对齐地图网站标准规范)
       projects.forEach((p, idx) => {
         try {
           const mapDiv = document.getElementById(`proj-map-${idx}`);
           if (!mapDiv || !p.lat || !p.lng) return;
 
-          const mapSingle = L.map(`proj-map-${idx}`, { zoomControl: false, attributionControl: false });
+          const mapSingle = L.map(`proj-map-${idx}`, { zoomControl: false, attributionControl: false }).setView([p.lat, p.lng], 15);
           L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2agc_1_eee20b45a89c95d86e5610c5', {
             maxZoom: 19
           }).addTo(mapSingle);
 
-          // 楼盘标记
+          // 1. 本案楼盘标记 (严格对齐地图主站 .proj-pin-box 气泡样式)
           const projIcon = L.divIcon({
-            className: 'proj-pin-single',
-            html: `
-              <div style="background:#2563EB; color:#fff; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:800; box-shadow:0 4px 10px rgba(37,99,235,0.4); border:2px solid #fff; white-space:nowrap;">
-                🏢 ${p.name}
-              </div>
-            `,
-            iconSize: [100, 26],
-            iconAnchor: [50, 13]
+            className: 'custom-proj-icon',
+            html: `<div class="proj-pin-box" title="${p.name}">${p.name}</div>`,
+            iconSize: [0, 0],
+            iconAnchor: [0, 0]
           });
-          L.marker([p.lat, p.lng], { icon: projIcon }).addTo(mapSingle);
+          L.marker([p.lat, p.lng], { icon: projIcon, zIndexOffset: 2000 }).addTo(mapSingle);
 
           const mtr = p.nearest_mtr;
-          const boundsCoords = [[p.lat, p.lng]];
-
+          let mtrDist = 9999;
           if (mtr && mtr.nearest_mtr_lat && mtr.nearest_mtr_lng) {
-            // 港铁站标记
-            const mtrIcon = L.divIcon({
-              className: 'mtr-pin-single',
-              html: `
-                <div style="background:#007DC5; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px; font-weight:700; box-shadow:0 2px 6px rgba(0,0,0,0.3); border:1.5px solid #fff; white-space:nowrap;">
-                  🚇 ${mtr.nearest_mtr_cn}站
-                </div>
-              `,
-              iconSize: [80, 22],
-              iconAnchor: [40, 11]
-            });
-            L.marker([mtr.nearest_mtr_lat, mtr.nearest_mtr_lng], { icon: mtrIcon }).addTo(mapSingle);
-            boundsCoords.push([mtr.nearest_mtr_lat, mtr.nearest_mtr_lng]);
+            mtrDist = getDistMeters(p.lat, p.lng, mtr.nearest_mtr_lat, mtr.nearest_mtr_lng);
+            const cName = mtr.nearest_mtr_cn || mtr.station_name_cn || '港铁';
+            
+            // 港铁站标记 (严格使用地图网站官方红底白标 SVG 图标，不使用 🚇 emoji)
+            const mtrSvg = `
+              <svg viewBox="0 0 65 52">
+                <ellipse cx="33" cy="26" rx="32" ry="26" fill="#C8102E" />
+                <path d="M 33,8 V 44 M 21,9 A 12,12 0 0 0 45,9 M 21,43 A 12,12 0 0 1 45,43" stroke="white" stroke-width="6" stroke-linecap="round" fill="none" />
+              </svg>
+            `;
 
-            // 绘制人行道真实轨迹
-            let lineCoords = [];
-            if (mtr.route_geometry && mtr.route_geometry.coordinates) {
-              lineCoords = mtr.route_geometry.coordinates.map(c => [c[1], c[0]]);
+            // 若极其靠近项目 (<140米)，使用微标避免字贴字重叠，否则使用主站经典 .mtr-pin
+            let mtrHtml = '';
+            if (mtrDist < 140) {
+              mtrHtml = `<div class="mtr-dot-pin" title="${cName}站">${mtrSvg}</div>`;
             } else {
-              lineCoords = [[p.lat, p.lng], [mtr.nearest_mtr_lat, mtr.nearest_mtr_lng]];
+              mtrHtml = `
+                <div class="mtr-pin" title="${cName}站">
+                  <span class="mtr-pin-logo">${mtrSvg}</span>
+                  <span class="mtr-pin-text">${cName}站</span>
+                </div>
+              `;
             }
 
-            L.polyline(lineCoords, {
-              color: '#16A34A',
-              weight: 4,
-              dashArray: '8, 6',
-              opacity: 0.95
-            }).addTo(mapSingle);
+            const mtrIcon = L.divIcon({
+              className: 'custom-mtr-icon',
+              html: mtrHtml,
+              iconSize: [0, 0],
+              iconAnchor: [0, 0]
+            });
+            L.marker([mtr.nearest_mtr_lat, mtr.nearest_mtr_lng], { icon: mtrIcon, zIndexOffset: 1500 }).addTo(mapSingle);
           }
 
-          // 绘制周边核心地标与生活圈配套 (商场、重点学校、公园地标)
+          // 2. 绘制周边核心地标 (商场、重点学校、公园) - 优先选取最具代表性的 2~3 个，避免视觉拥挤
           const poiFn = window.getNearbyPOIs || (typeof getNearbyPOIs === 'function' ? getNearbyPOIs : null);
-          const nearbyPOIsForMap = poiFn ? poiFn(p, window.allLandmarksData || []) : [];
+          const nearbyPOIsForMap = poiFn ? (poiFn(p, window.allLandmarksData || []).slice(0, 3)) : [];
+
           if (nearbyPOIsForMap && nearbyPOIsForMap.length > 0) {
             nearbyPOIsForMap.forEach(poi => {
               if (!poi.lat || !poi.lng) return;
-              boundsCoords.push([poi.lat, poi.lng]);
-              let catColor = '#D97706';
-              let catIcon = '🛍️';
-              if (poi.category === 'school' || poi.category === 'university') {
-                catColor = '#7C3AED';
-                catIcon = '🏫';
-              } else if (poi.category === 'park') {
-                catColor = '#059669';
-                catIcon = '🌳';
-              } else if (poi.category === 'hospital') {
-                catColor = '#DC2626';
-                catIcon = '🏥';
+              const dToProj = getDistMeters(p.lat, p.lng, poi.lat, poi.lng);
+              const dToMtr = (mtr && mtr.nearest_mtr_lat) ? getDistMeters(mtr.nearest_mtr_lat, mtr.nearest_mtr_lng, poi.lat, poi.lng) : 9999;
+              
+              // 防重叠策略：若离项目 < 220米 或 离地铁站 < 150米，使用主站官方 dot-pin 极简微标，否则使用完整 pin
+              const isDense = (dToProj < 220 || dToMtr < 150);
+              const rawName = poi.name.split('(')[0].replace(/（.*?）/g, '').trim();
+              const displayName = rawName.length > 7 ? rawName.slice(0, 6) + '..' : rawName;
+
+              let cat = poi.category;
+              let pinClass = 'custom-mall-icon';
+              let iconHtml = '';
+
+              if (cat === 'school' || cat === 'university') {
+                pinClass = 'custom-school-icon';
+                const schoolSvg = `<svg viewBox="0 0 24 24" class="poi-white-svg"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>`;
+                if (isDense) {
+                  iconHtml = `<div class="school-dot-pin" title="${rawName}">${schoolSvg}</div>`;
+                } else {
+                  iconHtml = `
+                    <div class="school-pin" title="${rawName}">
+                      <span class="school-pin-logo">${schoolSvg}</span>
+                      <span class="school-pin-text">${displayName}</span>
+                    </div>
+                  `;
+                }
+              } else if (cat === 'park') {
+                pinClass = 'custom-park-icon';
+                const parkSvg = `<svg viewBox="0 0 24 24" class="poi-white-svg"><path d="M17 12h2L12 2 5.05 12H7l-3.9 6h6.92v4h3.96v-4H21z"/></svg>`;
+                if (isDense) {
+                  iconHtml = `<div class="park-dot-pin" title="${rawName}">${parkSvg}</div>`;
+                } else {
+                  iconHtml = `
+                    <div class="park-pin" title="${rawName}">
+                      <span class="park-pin-logo">${parkSvg}</span>
+                      <span class="park-pin-text">${displayName}</span>
+                    </div>
+                  `;
+                }
+              } else {
+                // 默认商场 / shopping mall
+                pinClass = 'custom-mall-icon';
+                const mallSvg = `<svg viewBox="0 0 24 24" class="poi-white-svg"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/></svg>`;
+                if (isDense) {
+                  iconHtml = `<div class="mall-dot-pin" title="${rawName}">${mallSvg}</div>`;
+                } else {
+                  iconHtml = `
+                    <div class="mall-pin" title="${rawName}">
+                      <span class="mall-pin-logo">${mallSvg}</span>
+                      <span class="mall-pin-text">${displayName}</span>
+                    </div>
+                  `;
+                }
               }
 
-              const poiPin = L.divIcon({
-                className: 'poi-pin-single',
-                html: `
-                  <div style="background:#FFFFFF; color:${catColor}; padding:2.5px 7px; border-radius:10px; font-size:10px; font-weight:700; box-shadow:0 2px 6px rgba(0,0,0,0.22); border:1.5px solid ${catColor}; white-space:nowrap; display:inline-flex; align-items:center; gap:3px;">
-                    <span>${catIcon}</span>
-                    <span>${poi.name.split('(')[0].trim()}</span>
-                  </div>
-                `,
-                iconSize: [80, 20],
-                iconAnchor: [40, 10]
+              const poiIcon = L.divIcon({
+                className: pinClass,
+                html: iconHtml,
+                iconSize: [0, 0],
+                iconAnchor: [0, 0]
               });
-              L.marker([poi.lat, poi.lng], { icon: poiPin }).addTo(mapSingle);
+              L.marker([poi.lat, poi.lng], { icon: poiIcon, zIndexOffset: 500 }).addTo(mapSingle);
             });
           }
 
-          mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
+          // 3. 视野与范围计算 (保证以项目为中心覆盖 1.5~2km 中观商圈尺度，彻底解决原先 maxZoom: 17 狭窄局促的问题)
+          const deltaLat = 0.0075; // 纬度约 830 米
+          const deltaLng = 0.0085; // 经度约 870 米
+          const viewBounds = L.latLngBounds(
+            [p.lat - deltaLat, p.lng - deltaLng],
+            [p.lat + deltaLat, p.lng + deltaLng]
+          );
+
+          // 适度将港铁站纳入视野边界
+          if (mtr && mtr.nearest_mtr_lat && mtr.nearest_mtr_lng) {
+            viewBounds.extend(L.latLng(mtr.nearest_mtr_lat, mtr.nearest_mtr_lng));
+          }
+
+          mapSingle.fitBounds(viewBounds, { padding: [20, 20], maxZoom: 15.5 });
 
           setTimeout(() => {
             mapSingle.invalidateSize();
-            mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
-          }, 150);
+            mapSingle.fitBounds(viewBounds, { padding: [20, 20], maxZoom: 15.5 });
+          }, 200);
           setTimeout(() => {
             mapSingle.invalidateSize();
-            mapSingle.fitBounds(L.latLngBounds(boundsCoords), { padding: [45, 45], maxZoom: 17 });
-          }, 400);
+            mapSingle.fitBounds(viewBounds, { padding: [20, 20], maxZoom: 15.5 });
+          }, 600);
         } catch (mapErr) {
           console.error(`Error initializing map for project ${idx}:`, mapErr);
         }
