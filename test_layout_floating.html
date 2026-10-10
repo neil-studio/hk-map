@@ -271,6 +271,285 @@
     box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
   }
 
+  /* 🏙️ 自定义商圈二级级联下拉组件 (Cascading Dropdown) */
+  .custom-cascade-dropdown {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .navbar-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    height: 31px;
+    padding: 0 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    font-size: 0.76rem;
+    font-weight: 600;
+    outline: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    max-width: 175px;
+    min-width: 125px;
+    box-sizing: border-box;
+  }
+
+  .navbar-filter-btn:hover {
+    border-color: #94a3b8;
+    background-color: #f8fafc;
+  }
+
+  .navbar-filter-btn.active, .navbar-filter-btn:focus-visible {
+    border-color: var(--brand-accent);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  }
+
+  .navbar-filter-btn .btn-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    text-align: left;
+  }
+
+  .navbar-filter-btn .dropdown-arrow {
+    font-size: 10px;
+    color: #64748b;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .navbar-filter-btn.active .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  /* 一级主菜单面板 (8大板块) */
+  .cascade-menu-panel {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    min-width: 250px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(15,23,42,0.16);
+    z-index: 1250;
+    display: none;
+    padding: 6px 0;
+    user-select: none;
+  }
+
+  .cascade-menu-panel.open {
+    display: block;
+    animation: cascadeFadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes cascadeFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .cascade-reset-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .cascade-reset-item:hover {
+    background: #f8fafc;
+    color: #0f172a;
+  }
+
+  /* 一级大区域条目容器与行 */
+  .cascade-area-item {
+    position: relative;
+  }
+
+  .cascade-area-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+    font-size: 0.77rem;
+    font-weight: 600;
+    color: #1e293b;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .cascade-area-item:hover > .cascade-area-row,
+  .cascade-area-item.active > .cascade-area-row {
+    background: #eff6ff;
+    color: #1d4ed8;
+  }
+
+  .cascade-area-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .cascade-area-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .cascade-count-badge {
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 1.5px 6.5px;
+    border-radius: 12px;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+  }
+
+  .cascade-area-item:hover .cascade-count-badge {
+    background: #dbeafe;
+    color: #1d4ed8;
+  }
+
+  .cascade-arrow-right {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    transition: transform 0.15s ease, color 0.15s ease;
+  }
+
+  .cascade-area-item:hover .cascade-arrow-right {
+    color: #1d4ed8;
+    transform: translateX(2px);
+  }
+
+  /* 二级子菜单面板 (鼠标悬停右侧滑出) */
+  .cascade-submenu {
+    position: absolute;
+    top: -6px;
+    left: 100%;
+    min-width: 250px;
+    max-height: 420px;
+    overflow-y: auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(15,23,42,0.18);
+    display: none;
+    padding: 6px 0;
+    z-index: 1260;
+  }
+
+  /* 悬停无缝衔接防掉触点桥梁 */
+  .cascade-submenu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -8px;
+    width: 10px;
+  }
+
+  .cascade-submenu.pop-left::before {
+    left: auto;
+    right: -8px;
+    width: 10px;
+  }
+
+  .cascade-area-item:hover > .cascade-submenu {
+    display: block;
+    animation: cascadeFadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cascade-submenu.pop-left {
+    left: auto;
+    right: 100%;
+  }
+
+  .cascade-sub-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 14px 7px 14px;
+    font-size: 0.70rem;
+    font-weight: 700;
+    color: #64748b;
+    border-bottom: 1px solid #f1f5f9;
+    margin-bottom: 3px;
+    background: #f8fafc;
+  }
+
+  .cascade-sub-all {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7.5px 14px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2563eb;
+    cursor: pointer;
+    border-bottom: 1px dashed #e2e8f0;
+    background: #ffffff;
+    transition: background 0.15s;
+  }
+
+  .cascade-sub-all:hover {
+    background: #eff6ff;
+  }
+
+  .cascade-sub-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7.5px 14px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #334155;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .cascade-sub-item:hover {
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 600;
+  }
+
+  .cascade-sub-item.active {
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-weight: 700;
+  }
+
+  .cascade-sub-item .sub-count,
+  .cascade-sub-all .sub-count {
+    font-size: 0.68rem;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 1.5px 6.5px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+
+  .cascade-sub-item:hover .sub-count,
+  .cascade-sub-item.active .sub-count {
+    background: #bfdbfe;
+    color: #1e40af;
+  }
+
   /* 🏠 房产类型胶囊组 (全部 | 现房 | 期房) */
   .prop-type-pill-group {
     display: inline-flex;
@@ -2331,10 +2610,10 @@
     .search-box-wrapper {
       width: 180px;
     }
-    .navbar-filter-select {
+    .navbar-filter-select, .navbar-filter-btn {
       max-width: 135px;
       font-size: 0.72rem;
-      padding: 5px 18px 5px 8px;
+      padding: 5px 8px;
     }
     .prop-type-btn {
       padding: 4px 8px;
@@ -2509,8 +2788,17 @@
 
   <!-- Center: 3 Primary Property Filters (三大核心买房筛选) -->
   <div class="navbar-center">
-    <!-- 核心商圈下拉定位 -->
-    <select class="navbar-filter-select" id="anchor-district" onchange="onAnchorSelect('district')" title="按核心商圈筛选定位">
+    <!-- 核心商圈二级级联下拉定位 -->
+    <div class="custom-cascade-dropdown" id="district-cascade-dropdown">
+      <button type="button" class="navbar-filter-btn" id="district-dropdown-btn" onclick="toggleDistrictDropdown(event)" title="按核心商圈筛选定位">
+        <span class="btn-text" id="district-dropdown-label">🏙️ 核心商圈...</span>
+        <span class="dropdown-arrow">▾</span>
+      </button>
+      <div class="cascade-menu-panel" id="district-cascade-menu"></div>
+    </div>
+
+    <!-- 隐藏于DOM内部的商圈、学区与港铁select，确保内部JS联动不受影响 -->
+    <select id="anchor-district" style="display:none;" onchange="onAnchorSelect('district')">
       <option value="">🏙️ 核心商圈...</option>
     </select>
 
@@ -2809,6 +3097,7 @@ let landmarksData = [], mtrStationsData = [], projectsData = [];
 let map, currentAnchorMarker, currentRadiusCircle, activeAnchorLandmark = null;
 let activeAnchorSchoolNet = null;
 let activeAnchorDistrict = null;
+let activeAnchorMainArea = null;
 let districtBoundsMap = {};
 let microDistrictsGeoJSON = null;
 let microDistrictsLayer = null;
@@ -3644,7 +3933,8 @@ function toggleShoppingMallsLayer() {
 
 function focusShoppingMall(mallId) {
   const sDistrict = document.getElementById('anchor-district');
-  sDistrict.value = mallId;
+  if (sDistrict) sDistrict.value = mallId;
+  updateDistrictDropdownLabel(`🏙️ ${mallId}`);
   onAnchorSelect('district');
   map.closePopup();
 }
@@ -3813,7 +4103,185 @@ function populateSelects() {
     });
     sDistrict.appendChild(optgroup);
   });
+
+  // 🏙️ 渲染顶栏核心商圈二级飞出级联菜单
+  renderDistrictCascadeMenu(districtGroups, districtCounts, sortedAreas, iconMap);
 }
+
+// ==========================================
+// 🏙️ 核心商圈二级级联下拉组件逻辑 (Cascading Dropdown)
+// ==========================================
+
+function renderDistrictCascadeMenu(districtGroups, districtCounts, sortedAreas, iconMap) {
+  const menu = document.getElementById('district-cascade-menu');
+  if (!menu) return;
+
+  let html = `
+    <div class="cascade-reset-item" onclick="onSelectCascadeDistrict('', '🏙️ 核心商圈...')">
+      <span>🌐 全部核心商圈 (清除筛选)</span>
+      <span style="font-size:11px; color:#94a3b8; font-weight:700;">重置</span>
+    </div>
+  `;
+
+  sortedAreas.forEach(mainArea => {
+    const microList = Array.from(districtGroups[mainArea] || []).sort((a, b) => {
+      return (districtCounts[b] || 0) - (districtCounts[a] || 0);
+    });
+    const totalProjInArea = microList.reduce((sum, md) => sum + (districtCounts[md] || 0), 0);
+    const icon = iconMap[mainArea] || '📍';
+
+    html += `
+      <div class="cascade-area-item" onmouseenter="onCascadeItemHover(this)">
+        <div class="cascade-area-row" data-area="${encodeURIComponent(mainArea)}" data-icon="${icon}" data-count="${totalProjInArea}" onclick="handleCascadeMainAreaClick(event, this)">
+          <div class="cascade-area-left">
+            <span>${icon}</span>
+            <span>${mainArea}</span>
+          </div>
+          <div class="cascade-area-right">
+            <span class="cascade-count-badge">${totalProjInArea}盘</span>
+            <span class="cascade-arrow-right">›</span>
+          </div>
+        </div>
+        <div class="cascade-submenu">
+          <div class="cascade-sub-header">
+            <span>${icon} ${mainArea}</span>
+            <span style="font-size:10px; color:#94a3b8; font-weight:normal;">共 ${totalProjInArea} 盘</span>
+          </div>
+          <div class="cascade-sub-all" data-area="${encodeURIComponent(mainArea)}" data-icon="${icon}" data-count="${totalProjInArea}" onclick="handleCascadeMainAreaClick(event, this)">
+            <span>📍 查看该大区全部项目</span>
+            <span class="sub-count">${totalProjInArea}盘</span>
+          </div>
+    `;
+
+    microList.forEach(md => {
+      const count = districtCounts[md] || 0;
+      const isAct = (activeAnchorDistrict === md);
+      html += `
+        <div class="cascade-sub-item ${isAct ? 'active' : ''}" data-district="${encodeURIComponent(md)}" onclick="handleCascadeDistrictClick(event, this)">
+          <span>${md}</span>
+          <span class="sub-count">${count}盘</span>
+        </div>
+      `;
+    });
+
+    html += `
+        </div>
+      </div>
+    `;
+  });
+
+  menu.innerHTML = html;
+}
+
+function toggleDistrictDropdown(e) {
+  if (e) e.stopPropagation();
+  const menu = document.getElementById('district-cascade-menu');
+  const btn = document.getElementById('district-dropdown-btn');
+  if (!menu || !btn) return;
+  const isOpen = menu.classList.toggle('open');
+  btn.classList.toggle('active', isOpen);
+}
+
+function closeDistrictDropdown() {
+  const menu = document.getElementById('district-cascade-menu');
+  const btn = document.getElementById('district-dropdown-btn');
+  if (menu) menu.classList.remove('open');
+  if (btn) btn.classList.remove('active');
+}
+
+function onCascadeItemHover(el) {
+  const sub = el.querySelector('.cascade-submenu');
+  if (!sub) return;
+  const rect = el.getBoundingClientRect();
+  // 智能防溢出：若右侧距离屏幕边缘不足 260px，二级菜单自动反向向左展开
+  if (rect.right + 260 > window.innerWidth) {
+    sub.classList.add('pop-left');
+  } else {
+    sub.classList.remove('pop-left');
+  }
+}
+
+function handleCascadeMainAreaClick(e, el) {
+  if (e) e.stopPropagation();
+  const area = decodeURIComponent(el.getAttribute('data-area') || '');
+  const icon = el.getAttribute('data-icon') || '🏙️';
+  onSelectCascadeMainArea(area, `${icon} ${area}`);
+}
+
+function handleCascadeDistrictClick(e, el) {
+  if (e) e.stopPropagation();
+  const dist = decodeURIComponent(el.getAttribute('data-district') || '');
+  onSelectCascadeDistrict(dist, `🏙️ ${dist}`);
+}
+
+function updateDistrictDropdownLabel(text, fullTitle) {
+  const lbl = document.getElementById('district-dropdown-label');
+  const btn = document.getElementById('district-dropdown-btn');
+  const displayVal = text || '🏙️ 核心商圈...';
+  if (lbl) lbl.textContent = displayVal;
+  if (btn) btn.title = fullTitle || (displayVal !== '🏙️ 核心商圈...' ? `当前商圈：${displayVal}` : '按核心商圈筛选定位');
+}
+
+function onSelectCascadeMainArea(mainArea, label) {
+  closeDistrictDropdown();
+  activeAnchorDistrict = null;
+  activeAnchorSchoolNet = null;
+  activeAnchorLandmark = null;
+  activeAnchorMainArea = mainArea;
+
+  const sDistrict = document.getElementById('anchor-district');
+  if (sDistrict) sDistrict.value = '';
+
+  const sSchool = document.getElementById('anchor-school');
+  const sMtr = document.getElementById('anchor-mtr');
+  if (sSchool) sSchool.value = '';
+  if (sMtr) sMtr.value = '';
+
+  if (currentAnchorMarker) { map.removeLayer(currentAnchorMarker); currentAnchorMarker = null; }
+  if (currentRadiusCircle) { map.removeLayer(currentRadiusCircle); currentRadiusCircle = null; }
+  if (currentRouteLine) { map.removeLayer(currentRouteLine); currentRouteLine = null; }
+
+  updateDistrictDropdownLabel(label || `🏙️ ${mainArea}`);
+
+  // 缩放聚焦至该大区内全部项目
+  const matched = projectsData.filter(p => (p.main_area || '其他大区') === mainArea);
+  if (matched.length > 0) {
+    const bounds = L.latLngBounds(matched.map(p => [p.lat, p.lng]));
+    map.fitBounds(bounds, {
+      padding: [40, 40],
+      maxZoom: 14,
+      animate: true,
+      duration: 1.0
+    });
+    showToast(`🏙️ 已聚焦大区【${mainArea}】（共 ${matched.length} 盘）`);
+  }
+
+  updateMicroDistrictsStyle();
+  applyFilters();
+}
+
+function onSelectCascadeDistrict(dist, label) {
+  closeDistrictDropdown();
+  activeAnchorMainArea = null;
+  const sDistrict = document.getElementById('anchor-district');
+  if (sDistrict) sDistrict.value = dist;
+  updateDistrictDropdownLabel(dist ? (label || `🏙️ ${dist}`) : '🏙️ 核心商圈...');
+  onAnchorSelect('district');
+}
+
+// 点击外部空白区域自动收起核心商圈二级菜单
+document.addEventListener('click', function(e) {
+  const container = document.getElementById('district-cascade-dropdown');
+  if (container && !container.contains(e.target)) {
+    closeDistrictDropdown();
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeDistrictDropdown();
+  }
+});
 
 function toggleExpandFilters() {
   const box = document.getElementById('filter-expand-box');
@@ -4011,6 +4479,8 @@ function onAnchorSelect(type) {
   if (type === 'school') {
     sMtr.value = ''; sDistrict.value = '';
     activeAnchorDistrict = null;
+    activeAnchorMainArea = null;
+    updateDistrictDropdownLabel('🏙️ 核心商圈...');
     const id = sSchool.value;
     if (id) {
       if (id.startsWith('net_')) {
@@ -4056,7 +4526,9 @@ function onAnchorSelect(type) {
   } else if (type === 'mtr') {
     sSchool.value = ''; sDistrict.value = '';
     activeAnchorDistrict = null;
+    activeAnchorMainArea = null;
     activeAnchorSchoolNet = null;
+    updateDistrictDropdownLabel('🏙️ 核心商圈...');
     const id = sMtr.value;
     if (id) {
       const st = mtrStationsData.find(x => x.id === id);
@@ -4083,9 +4555,11 @@ function onAnchorSelect(type) {
     sSchool.value = ''; sMtr.value = '';
     activeAnchorSchoolNet = null;
     activeAnchorLandmark = null;
+    activeAnchorMainArea = null;
     const selectedDistrict = sDistrict.value;
     if (selectedDistrict) {
       activeAnchorDistrict = selectedDistrict;
+      updateDistrictDropdownLabel(`🏙️ ${selectedDistrict}`);
       const bounds = districtBoundsMap[selectedDistrict];
       if (bounds) {
         map.fitBounds(bounds, {
@@ -4094,10 +4568,17 @@ function onAnchorSelect(type) {
           animate: true,
           duration: 1.0
         });
+      } else {
+        const matched = projectsData.filter(p => (p.micro_district || p.district) === selectedDistrict);
+        if (matched.length > 0) {
+          const b = L.latLngBounds(matched.map(p => [p.lat, p.lng]));
+          map.fitBounds(b, { padding: [50, 50], maxZoom: 15, animate: true, duration: 1.0 });
+        }
       }
       showToast(`🏙️ 已聚焦商圈【${selectedDistrict}】`);
     } else {
       activeAnchorDistrict = null;
+      updateDistrictDropdownLabel('🏙️ 核心商圈...');
     }
   }
 
@@ -4793,6 +5274,12 @@ function applyFilters() {
       if (pDist !== activeDistrictCluster) return false;
     }
 
+    // 若选定了大区域（大区级整体筛选）
+    if (activeAnchorMainArea) {
+      const pArea = proj.main_area || '其他大区';
+      if (pArea !== activeAnchorMainArea) return false;
+    }
+
     // 若选定了微型商圈/片区，过滤出该片区楼盘
     if (activeAnchorDistrict) {
       const pDist = proj.micro_district || proj.district;
@@ -5183,6 +5670,9 @@ function selectSchoolSuggestion(schId) {
 
 function selectDistrictSuggestion(dist) {
   activeDistrictCluster = dist;
+  updateDistrictDropdownLabel(`🏙️ ${dist}`);
+  const sDistrict = document.getElementById('anchor-district');
+  if (sDistrict) sDistrict.value = dist;
   if (districtBoundsMap[dist]) {
     map.fitBounds(districtBoundsMap[dist], { padding: [50, 50], maxZoom: 15 });
   }
@@ -5242,6 +5732,10 @@ function resetConflictingFilters(p) {
 
   // 3. 商圈/学区/港铁锚点冲突处理：清除区域性锁定，保证全局视野
   let anchorConflict = false;
+  if (activeAnchorMainArea) {
+    const pArea = p.main_area || '其他大区';
+    if (pArea !== activeAnchorMainArea) anchorConflict = true;
+  }
   if (activeAnchorDistrict) {
     const pDist = p.micro_district || p.district;
     if (pDist !== activeAnchorDistrict) anchorConflict = true;
@@ -5264,6 +5758,7 @@ function resetConflictingFilters(p) {
 
   if (anchorConflict) {
     activeAnchorDistrict = null;
+    activeAnchorMainArea = null;
     activeAnchorSchoolNet = null;
     activeAnchorLandmark = null;
     const sSchool = document.getElementById('anchor-school');
@@ -5272,6 +5767,7 @@ function resetConflictingFilters(p) {
     if (sSchool) sSchool.value = '';
     if (sMtr) sMtr.value = '';
     if (sDistrict) sDistrict.value = '';
+    updateDistrictDropdownLabel('🏙️ 核心商圈...');
     if (currentAnchorMarker) { map.removeLayer(currentAnchorMarker); currentAnchorMarker = null; }
     if (currentRadiusCircle) { map.removeLayer(currentRadiusCircle); currentRadiusCircle = null; }
     if (currentRouteLine) { map.removeLayer(currentRouteLine); currentRouteLine = null; }
