@@ -2075,13 +2075,20 @@
   }
   .comp-commute-item {
     text-align: left;
-    font-size: 0.68rem;
-    line-height: 1.35;
+    font-size: 0.63rem;
+    line-height: 1.45;
     padding: 1px 0;
-    color: var(--slate-700);
+    color: #334155;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.2px;
   }
-  .comp-commute-item strong {
-    color: var(--slate-900);
+  .comp-commute-sep {
+    color: #CBD5E1;
+    margin: 0 4px;
+    font-weight: 300;
   }
   .comp-selling-points {
     text-align: left;
@@ -2924,48 +2931,48 @@
 
       function getStationCommuteMetrics(stName) {
         const s = (stName || '').trim();
-        let cbd = '2-4站达中环/金钟';
-        let xrl = '高铁 2-3站';
+        let cbd = '2-4站达核心';
+        let xrl = '2-3站';
 
         const stationMap = {
-          '堅尼地城': { cbd: '4站直达中环', xrl: '高铁 5站' },
-          '香港大學': { cbd: '3站直达中环', xrl: '高铁 4站' },
-          '西營盤': { cbd: '2站直达中环', xrl: '高铁 3站' },
-          '上環': { cbd: '1站直达中环', xrl: '高铁 2站' },
-          '中環': { cbd: '核心直达', xrl: '高铁 1站直达' },
-          '金鐘': { cbd: '核心枢纽', xrl: '高铁 2站直达' },
-          '灣仔': { cbd: '1站直达金钟', xrl: '高铁 3站' },
-          '銅鑼灣': { cbd: '2站直达金钟', xrl: '高铁 4站' },
-          '天后': { cbd: '3站直达金钟', xrl: '高铁 5站' },
-          '炮台山': { cbd: '4站直达金钟', xrl: '高铁 5站' },
-          '北角': { cbd: '5站直达金钟', xrl: '高铁 6站' },
-          '鰂魚涌': { cbd: '6站直达金钟', xrl: '高铁 7站' },
-          '西灣河': { cbd: '8站直达中环', xrl: '高铁 9站' },
-          '筲箕灣': { cbd: '9站直达中环', xrl: '高铁 10站' },
-          '柴灣': { cbd: '12站直达中环', xrl: '高铁 13站' },
-          '黃竹坑': { cbd: '2站直通金钟', xrl: '高铁 4站' },
-          '海洋公園': { cbd: '1站直通金钟', xrl: '高铁 3站' },
-          '利東': { cbd: '3站直通金钟', xrl: '高铁 5站' },
-          '海怡半島': { cbd: '4站直通金钟', xrl: '高铁 6站' },
-          '九龍': { cbd: '1站直达中环', xrl: '高铁直通' },
-          '柯士甸': { cbd: '2站直通金钟', xrl: '高铁上盖直通' },
-          '南昌': { cbd: '2站直达中环', xrl: '高铁 1站直达' },
-          '佐敦': { cbd: '2站过海达金钟', xrl: '高铁 1站直达' },
-          '油麻地': { cbd: '3站过海达金钟', xrl: '高铁 1站' },
-          '旺角': { cbd: '4站过海达金钟', xrl: '高铁 2站' },
-          '旺角東': { cbd: '2站直通金钟', xrl: '高铁 2站' },
-          '太子': { cbd: '5站过海达金钟', xrl: '高铁 3站' },
-          '深水埗': { cbd: '6站过海达金钟', xrl: '高铁 3站' },
-          '長沙灣': { cbd: '7站过海达金钟', xrl: '高铁 4站' },
-          '荔枝角': { cbd: '8站过海达金钟', xrl: '高铁 4站' },
-          '紅磡': { cbd: '1站过海直通金钟', xrl: '高铁 1站直达' },
-          '何文田': { cbd: '2站直通金钟', xrl: '高铁 2站直达' },
-          '啟德': { cbd: '4站过海达金钟', xrl: '高铁 4站直达' },
-          '宋皇臺': { cbd: '3站过海达金钟', xrl: '高铁 3站直达' },
-          '土瓜灣': { cbd: '3站过海达金钟', xrl: '高铁 2站直达' },
-          '九龍塘': { cbd: '3站直达金钟', xrl: '高铁 3站' },
-          '牛頭角': { cbd: '6站达中区', xrl: '高铁 6站' },
-          '康城': { cbd: '7站达中环', xrl: '高铁 8站' }
+          '堅尼地城': { cbd: '4站达中环', xrl: '5站' },
+          '香港大學': { cbd: '3站达中环', xrl: '4站' },
+          '西營盤': { cbd: '2站达中环', xrl: '3站' },
+          '上環': { cbd: '1站达中环', xrl: '2站' },
+          '中環': { cbd: '中环直达', xrl: '1站' },
+          '金鐘': { cbd: '金钟直达', xrl: '2站' },
+          '灣仔': { cbd: '1站达金钟', xrl: '3站' },
+          '銅鑼灣': { cbd: '2站达金钟', xrl: '4站' },
+          '天后': { cbd: '3站达金钟', xrl: '5站' },
+          '炮台山': { cbd: '4站达金钟', xrl: '5站' },
+          '北角': { cbd: '5站达金钟', xrl: '6站' },
+          '鰂魚涌': { cbd: '6站达金钟', xrl: '7站' },
+          '西灣河': { cbd: '8站达中环', xrl: '9站' },
+          '筲箕灣': { cbd: '9站达中环', xrl: '10站' },
+          '柴灣': { cbd: '12站达中环', xrl: '13站' },
+          '黃竹坑': { cbd: '2站达金钟', xrl: '4站' },
+          '海洋公園': { cbd: '1站达金钟', xrl: '3站' },
+          '利東': { cbd: '3站达金钟', xrl: '5站' },
+          '海怡半島': { cbd: '4站达金钟', xrl: '6站' },
+          '九龍': { cbd: '1站达中环', xrl: '直通' },
+          '柯士甸': { cbd: '2站达金钟', xrl: '上盖直达' },
+          '南昌': { cbd: '2站达中环', xrl: '1站' },
+          '佐敦': { cbd: '2站达金钟', xrl: '1站' },
+          '油麻地': { cbd: '3站达金钟', xrl: '1站' },
+          '旺角': { cbd: '4站达金钟', xrl: '2站' },
+          '旺角東': { cbd: '2站达金钟', xrl: '2站' },
+          '太子': { cbd: '5站达金钟', xrl: '3站' },
+          '深水埗': { cbd: '6站达金钟', xrl: '3站' },
+          '長沙灣': { cbd: '7站达金钟', xrl: '4站' },
+          '荔枝角': { cbd: '8站达金钟', xrl: '4站' },
+          '紅磡': { cbd: '1站达金钟', xrl: '1站' },
+          '何文田': { cbd: '2站达金钟', xrl: '2站' },
+          '啟德': { cbd: '4站达金钟', xrl: '4站' },
+          '宋皇臺': { cbd: '3站达金钟', xrl: '3站' },
+          '土瓜灣': { cbd: '3站达金钟', xrl: '2站' },
+          '九龍塘': { cbd: '3站达金钟', xrl: '3站' },
+          '牛頭角': { cbd: '6站达中区', xrl: '6站' },
+          '康城': { cbd: '7站达中环', xrl: '8站' }
         };
 
         if (stationMap[s]) {
@@ -2982,24 +2989,24 @@
       function getBorderPortDriveTime(p) {
         const d = (typeof getCleanDistrict === 'function') ? getCleanDistrict(p) : (p.micro_district || p.district || '');
         if (d.includes('西南九龙') || d.includes('南昌') || d.includes('奥运') || d.includes('九龙站') || d.includes('柯士甸')) {
-          return '深圳湾口岸约 28分';
+          return '深圳湾口岸 28分';
         }
         if (d.includes('中环') || d.includes('上环') || d.includes('坚尼地城') || d.includes('西半山') || d.includes('西营盘')) {
-          return '深圳湾口岸约 35分';
+          return '深圳湾口岸 35分';
         }
         if (d.includes('黄竹坑') || d.includes('香港仔') || d.includes('鸭脷洲') || d.includes('浅水湾') || d.includes('寿臣山') || d.includes('赤柱') || d.includes('深水湾')) {
-          return '深圳湾口岸约 38分';
+          return '深圳湾口岸 38分';
         }
         if (d.includes('九龙塘') || d.includes('笔架山') || d.includes('何文田') || d.includes('石硖尾') || d.includes('又一村')) {
-          return '皇岗口岸约 28分';
+          return '皇岗口岸 28分';
         }
         if (d.includes('启德城中心') || d.includes('启德跑道区') || d.includes('红磡') || d.includes('土瓜湾') || d.includes('马头角')) {
-          return '皇岗口岸约 32分';
+          return '皇岗口岸 32分';
         }
         if (d.includes('北角') || d.includes('鲗鱼涌') || d.includes('太古') || d.includes('柴湾') || d.includes('筲箕湾') || d.includes('大坑') || d.includes('渣甸山') || d.includes('跑马地')) {
-          return '皇岗口岸约 35分';
+          return '皇岗口岸 35分';
         }
-        return '深圳湾口岸约 32分';
+        return '深圳湾口岸 32分';
       }
 
       function getPoiIcon(poi) {
@@ -3493,23 +3500,24 @@
                       const isLuxuryNoMtr = walkMin >= 20 || walkM >= 2500;
 
                       let line1Html = '';
+                      const walkMinInt = Math.max(1, Math.round(walkMin));
                       if (walkMin <= 12 && walkM <= 1000) {
-                        line1Html = `${getMtrLogoSvg()} 步行约 <strong>${walkM}米 (${walkMin}分)</strong> 到${mtr?.nearest_mtr_cn || '港铁'}站`;
+                        line1Html = `${getMtrLogoSvg()} 步行约 ${walkM}米 (${walkMinInt}分) 到${mtr?.nearest_mtr_cn || '港铁'}站`;
                       } else if (isRunway) {
-                        line1Html = `🚌 城巴/小巴专线约 <strong>5-8 分钟</strong>直达港铁启德站`;
+                        line1Html = `🚌 跑道穿梭巴士约 5-8分 直达启德站`;
                       } else if (isLuxuryNoMtr) {
-                        line1Html = `🚘 专属私家车队/专车约 <strong>6-8 分钟</strong>直通都会核心`;
+                        line1Html = `🚘 专属车队约 6-8分 接驳核心港铁`;
                       } else if (walkM <= 1800) {
-                        line1Html = `🚌 专线小巴约 <strong>3-5 分钟</strong>直达${mtr?.nearest_mtr_cn || '港铁'}站`;
+                        line1Html = `🚌 专线小巴约 3-5分 直达${mtr?.nearest_mtr_cn || '港铁'}站`;
                       } else {
-                        line1Html = `🚘 私家车/计程车约 <strong>6-10 分钟</strong>便捷接驳${mtr?.nearest_mtr_cn || '港铁'}站`;
+                        line1Html = `🚘 私家车约 6-10分 便捷接驳${mtr?.nearest_mtr_cn || '港铁'}站`;
                       }
 
                       return `
                         <td>
-                          <div class="comp-commute-item" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${line1Html}</div>
-                          <div class="comp-commute-item">💼 港铁 <strong>${commuteMetrics.cbd}</strong> ｜ 🚅 <strong>${commuteMetrics.xrl}</strong></div>
-                          <div class="comp-commute-item">✈️ 机场约 <strong>${airportMin}分</strong> ｜ 🚘 <strong>${borderStr}*</strong></div>
+                          <div class="comp-commute-item">${line1Html}</div>
+                          <div class="comp-commute-item">💼 港铁 ${commuteMetrics.cbd}<span class="comp-commute-sep">|</span>🚅 高铁 ${commuteMetrics.xrl}</div>
+                          <div class="comp-commute-item">✈️ 机场约 ${airportMin}分<span class="comp-commute-sep">|</span>🚘 ${borderStr}*</div>
                         </td>
                       `;
                     }).join('')}
@@ -3553,7 +3561,7 @@
 
             <!-- 底部名片横幅 -->
             <div class="comp-footer-banner">
-              <span>💎 <strong>蓝玛国际专属置业顾问服务</strong>：全程实勘·定制规划·资产落地 <span style="font-size:0.62rem; color:#94A3B8; font-weight:normal; margin-left:8px;">(* 机场自驾基于日常干线顺畅路况基准测算)</span></span>
+              <span>💎 <strong>蓝玛国际专属置业顾问服务</strong>：全程实勘·定制规划·资产落地 <span style="font-size:0.62rem; color:#94A3B8; font-weight:normal; margin-left:8px;">(* 机场及陆路口岸行车时长基于日常顺畅路况基准测算)</span></span>
               <span>${(advisorName || advisorPhone) ? `📞 专属联络顾问：${[advisorName, advisorPhone].filter(Boolean).join(' · ')}` : '📞 蓝玛国际 VIP 专属顾问咨询通道已开启'}</span>
             </div>
           </div>
