@@ -1975,11 +1975,11 @@
     height: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    font-size: 0.71rem;
+    font-size: 0.70rem;
   }
   .comp-table th, .comp-table td {
     border: 1px solid #E2E8F0;
-    padding: 4px 6px;
+    padding: 4px 4px;
     vertical-align: middle;
     text-align: center;
     line-height: 1.35;
@@ -2692,10 +2692,19 @@
       }
       const numDistrictPages = districtPageChunks.length;
 
-      // 计算横向对比页数：每页最多放 5 个项目
+      // 计算横向对比页数：支持单页最多放 6 个项目；超出 6 个时启用智能对半均分算法（杜绝孤立落单）
       const compChunks = [];
-      for (let i = 0; i < projects.length; i += 5) {
-        compChunks.push(projects.slice(i, i + 5));
+      const totalCompProjects = projects.length;
+      if (totalCompProjects <= 6) {
+        // ≤6 个项目完整容纳在单页内横向对比，视觉饱满且无需翻页
+        compChunks.push(projects);
+      } else {
+        // >6 个项目时，计算最均衡的分页数（每页均分约 3~5 个，杜绝单列落单）
+        const numPages = Math.ceil(totalCompProjects / 5);
+        const perPage = Math.ceil(totalCompProjects / numPages);
+        for (let i = 0; i < totalCompProjects; i += perPage) {
+          compChunks.push(projects.slice(i, i + perPage));
+        }
       }
       const numCompPages = compChunks.length;
 
@@ -2929,6 +2938,15 @@
         const m = dStr.match(/(\d{4})[-/.](\d{1,2})/);
         if (m) {
           return `${m[1].slice(-2)}年${m[2].padStart(2, '0')}月`;
+        }
+        return dStr;
+      }
+
+      function formatTxMonth(dStr) {
+        if (!dStr) return '-';
+        const m = String(dStr).match(/(\d{4})[-/.](\d{1,2})/);
+        if (m) {
+          return `${m[1]}-${m[2].padStart(2, '0')}`;
         }
         return dStr;
       }
@@ -3513,12 +3531,12 @@
             <table class="data-card-table">
               <thead>
                 <tr>
-                  <th style="width:15%;">户型</th>
-                  <th style="width:25%;">成交单位</th>
-                  <th style="width:16%;">面积</th>
+                  <th style="width:14%;">户型</th>
+                  <th style="width:24%;">成交单位</th>
+                  <th style="width:14%;">面积</th>
                   <th style="width:17%;">折实总价</th>
-                  <th style="width:14%;">实用呎价</th>
-                  <th style="width:13%;">成交日期</th>
+                  <th style="width:15%;">实用呎价</th>
+                  <th style="width:16%;">成交月份</th>
                 </tr>
               </thead>
               <tbody>
@@ -3529,7 +3547,7 @@
                     <td>${t.sqft}</td>
                     <td style="color:#16A34A; font-weight:700;">${t.price}</td>
                     <td style="color:#475569; font-size:0.66rem;">${t.unit_price}</td>
-                    <td style="color:#64748B; font-size:0.65rem;">${t.date}</td>
+                    <td style="color:#64748B; font-size:0.65rem; white-space:nowrap; font-weight:600;">${formatTxMonth(t.date)}</td>
                   </tr>
                 `).join('')}
               </tbody>
