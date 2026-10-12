@@ -464,6 +464,19 @@
       white-space: nowrap;
       display: inline-block;
     }
+    .tradeoff-district-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #DBEAFE;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.68rem;
+      white-space: nowrap;
+    }
 
     /* =========================================================================
        PAGE 3: DISTRICT PROFILE (核心商圈深度解析)
@@ -974,8 +987,21 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      height: 252px;
-      min-height: 252px;
+      height: 304px;
+      min-height: 304px;
+    }
+
+    .proj-hero-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .proj-hero-right-col {
+      height: 100%;
+      min-height: 0;
     }
 
     /* 震撼楼盘大图画框：智能自适应无损画质与高奢暗调氛围背景 */
@@ -986,7 +1012,8 @@
       border: 1px solid #CBD5E1;
       background: #090E17;
       box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
-      height: 100%;
+      flex: 1;
+      min-height: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1348,12 +1375,14 @@
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
       border-radius: 6px;
-      padding: 5px 14px;
+      padding: 4px 12px;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.02);
       align-items: center;
+      height: 48px;
+      box-sizing: border-box;
     }
     .proj-kpi-cell {
       display: flex;
@@ -2665,6 +2694,17 @@
         console.warn('Load ancillary export data error:', e);
       }
 
+      // 0.1 同商圈聚合排序：按 区域（港岛/九龙）-> 核心商圈 -> 项目名称 稳定聚合，同商圈项目排在一起
+      projects.sort((a, b) => {
+        const areaA = (a.main_area || a.region || '').includes('港岛') ? 1 : 2;
+        const areaB = (b.main_area || b.region || '').includes('港岛') ? 1 : 2;
+        if (areaA !== areaB) return areaA - areaB;
+        const distA = getCleanDistrict(a);
+        const distB = getCleanDistrict(b);
+        if (distA !== distB) return distA.localeCompare(distB, 'zh-CN');
+        return (a.name || '').localeCompare(b.name || '', 'zh-CN');
+      });
+
       // 提取本方案所涉核心商圈及关联项目
       const districtMap = new Map();
       projects.forEach(p => {
@@ -2703,6 +2743,20 @@
       }
       const numDistrictPages = districtPageChunks.length;
 
+      // 计算需求与优劣势对比页数：支持单页最多放 6 个项目；超出 6 个时启用智能动态分页（杜绝溢出截断）
+      const reqChunks = [];
+      const totalReqProjects = projects.length;
+      if (totalReqProjects <= 6) {
+        reqChunks.push(projects);
+      } else {
+        const numPages = Math.ceil(totalReqProjects / 5);
+        const perPage = Math.ceil(totalReqProjects / numPages);
+        for (let i = 0; i < totalReqProjects; i += perPage) {
+          reqChunks.push(projects.slice(i, i + perPage));
+        }
+      }
+      const numReqPages = reqChunks.length;
+
       // 计算横向对比页数：支持单页最多放 6 个项目；超出 6 个时启用智能对半均分算法（杜绝孤立落单）
       const compChunks = [];
       const totalCompProjects = projects.length;
@@ -2719,8 +2773,8 @@
       }
       const numCompPages = compChunks.length;
 
-      // 页面计算（顺畅漏斗：封面(1) + 需求与权衡(1) + 宏观地图(1) + 横向对比(numCompPages) + 单盘档案(projects.length) + 商圈解析(numDistrictPages) + 决策落地(1) + 封底(1)）
-      const totalPages = 6 + numCompPages + projects.length + numDistrictPages;
+      // 页面计算（顺畅漏斗：封面(1) + 需求与权衡(numReqPages) + 宏观地图(1) + 横向对比(numCompPages) + 单盘档案(projects.length) + 商圈解析(numDistrictPages) + 决策落地(1) + 封底(1)）
+      const totalPages = 4 + numReqPages + numCompPages + projects.length + numDistrictPages;
       document.getElementById('page-stat-badge').textContent = `共 ${projects.length} 个推荐楼盘 / ${totalPages} 页`;
 
       // ----------------------------------------------------
@@ -2863,12 +2917,27 @@
           }
         }
 
+        // 提炼独家研判中的核心杀手锏卖点（从项目特色卖点库提炼首条精粹）
+        let pointHighlight = '';
+        const rawPts = (p.selling_points || p.reason || p.mainland_selling_points || '').split('\n').filter(s => s.trim().length > 0);
+        if (rawPts.length > 0) {
+          let clean = rawPts[0].replace(/^\d+[\.、]\s*/, '').trim();
+          if (clean.includes('：')) clean = clean.split('：')[0].trim();
+          else if (clean.includes(':')) clean = clean.split(':')[0].trim();
+          if (clean && clean.length <= 22) {
+            pointHighlight = clean;
+          }
+        }
+
         if (!pros) {
           const sNet = (p.school_net || p.primary_school_net || '');
           const cDate = (p.completion_date || '');
           const mtr = p.nearest_mtr;
           const walkMin = mtr ? Number(mtr.walk_time_min || 99) : 99;
           let prosList = [];
+          if (pointHighlight) {
+            prosList.push(pointHighlight);
+          }
           if (sNet.includes('41') || sNet.includes('34') || sNet.includes('11') || sNet.includes('12')) {
             prosList.push(`顶尖${sNet}名校网`);
           }
@@ -2876,13 +2945,15 @@
             prosList.push('现楼');
           }
           if (walkMin <= 4.0) {
-            prosList.push(`港铁${mtr?.nearest_mtr_cn || ''}站极速直达`);
+            prosList.push(`港铁${mtr?.nearest_mtr_cn || ''}站直达`);
           }
           if (prosList.length < 2) {
             if (p.developer) prosList.push(`${p.developer}精工品质`);
             else prosList.push('核心成熟生活圈');
           }
-          pros = prosList.slice(0, 2).join(' ｜ ');
+          pros = prosList.slice(0, 3).join(' ｜ ');
+        } else if (pointHighlight && !pros.includes(pointHighlight) && pros.length < 28) {
+          pros = `${pointHighlight} ｜ ${pros}`;
         }
 
         if (!cons) {
@@ -3179,108 +3250,138 @@
       root.appendChild(coverPage);
 
       // ----------------------------------------------------
-      // PAGE 2: 客户置业需求指标 & 核心命题权衡取舍 (Requirements & Trade-offs)
+      // PAGE 2+: 客户置业需求指标 & 核心命题权衡取舍 (Requirements & Trade-offs)
       // ----------------------------------------------------
-      const reqPage = document.createElement('div');
-      reqPage.className = 'pdf-page';
+      reqChunks.forEach((chunkProjects, chunkIdx) => {
+        const reqPage = document.createElement('div');
+        reqPage.className = 'pdf-page';
+        const reqPageNum = 2 + chunkIdx;
+        const isFirstReqPage = (chunkIdx === 0);
 
-      const tradeoffsRowsHtml = projects.map((p, pIdx) => {
-        const t = getProjectTradeoff(p, pIdx, projects.length);
-        let roleBg = '#FEF3C7', roleColor = '#B45309';
-        if (t.role.includes('自住型')) { roleBg = '#E0F2FE'; roleColor = '#0369A1'; }
-        else if (t.role.includes('投资型')) { roleBg = '#FEF3C7'; roleColor = '#B45309'; }
-        else if (t.role.includes('投资自住') || t.role.includes('兼顾')) { roleBg = '#DCFCE7'; roleColor = '#15803D'; }
+        let startGlobalIdx = 0;
+        for (let i = 0; i < chunkIdx; i++) {
+          startGlobalIdx += reqChunks[i].length;
+        }
 
-        return `
-          <tr>
-            <td style="font-weight:800; color:#0F172A;">
-              <span style="color:#00889A; margin-right:4px;">#${pIdx + 1}</span> ${p.name}
-            </td>
-            <td style="color:#475569;">${p.main_area || p.region} · ${p.developer || '品牌发展商'}</td>
-            <td class="tradeoff-badge-pro">✓ ${t.pros}</td>
-            <td class="tradeoff-badge-con">△ ${t.cons.replace(/\n/g, '<br>')}</td>
-            <td>
-              <span class="tradeoff-role-pill" style="background:${roleBg}; color:${roleColor};">${t.role}</span>
-            </td>
-          </tr>
+        const tradeoffsRowsHtml = chunkProjects.map((p, pIdx) => {
+          const globalIdx = startGlobalIdx + pIdx;
+          const t = getProjectTradeoff(p, globalIdx, projects.length);
+          let roleBg = '#FEF3C7', roleColor = '#B45309';
+          if (t.role.includes('自住型')) { roleBg = '#E0F2FE'; roleColor = '#0369A1'; }
+          else if (t.role.includes('投资型')) { roleBg = '#FEF3C7'; roleColor = '#B45309'; }
+          else if (t.role.includes('投资自住') || t.role.includes('兼顾')) { roleBg = '#DCFCE7'; roleColor = '#15803D'; }
+
+          const cleanDist = getCleanDistrict(p);
+
+          return `
+            <tr>
+              <td style="font-weight:800; color:#0F172A; width:18%;">
+                <span style="color:#00889A; margin-right:4px;">#${globalIdx + 1}</span> ${p.name}
+              </td>
+              <td style="width:16%;">
+                <div class="tradeoff-district-badge">📍 ${cleanDist}</div>
+                <div style="font-size:0.68rem; color:#64748B; margin-top:2px;">${p.developer || '香港品牌发展商'}</div>
+              </td>
+              <td class="tradeoff-badge-pro" style="width:28%;">✓ ${t.pros}</td>
+              <td class="tradeoff-badge-con" style="width:22%;">△ ${t.cons.replace(/\n/g, '<br>')}</td>
+              <td style="width:16%;">
+                <span class="tradeoff-role-pill" style="background:${roleBg}; color:${roleColor};">${t.role}</span>
+              </td>
+            </tr>
+          `;
+        }).join('');
+
+        let topContentHtml = '';
+        if (isFirstReqPage) {
+          topContentHtml = `
+            <!-- 上半部：客户置业需求指标 -->
+            <div class="profile-card-compact">
+              <div class="profile-card-header">
+                <div class="profile-card-title-main">🎯 尊贵客户置业需求指标清单</div>
+                <div class="profile-card-subtag">CUSTOMIZED CLIENT PROFILE</div>
+              </div>
+              <div class="req-item-box-compact">
+                <div class="req-cell-compact">
+                  <div class="req-cell-label">👤 客户尊称</div>
+                  <div class="req-cell-val">${client.name || '贵宾客户'}</div>
+                </div>
+                <div class="req-cell-compact">
+                  <div class="req-cell-label">💷 置业预算区间</div>
+                  <div class="req-cell-val" style="color:#0284C7;">${client.budget || '按精选方案匹配'}</div>
+                </div>
+                <div class="req-cell-compact">
+                  <div class="req-cell-label">📍 意向核心区域</div>
+                  <div class="req-cell-val">${client.district || '九龙/港岛核心优质地段'}</div>
+                </div>
+                <div class="req-cell-compact">
+                  <div class="req-cell-label">🏠 意向户型规格</div>
+                  <div class="req-cell-val">${client.layout || '2房 - 4房大宅'}</div>
+                </div>
+                <div class="req-cell-compact">
+                  <div class="req-cell-label">📏 面积段需求</div>
+                  <div class="req-cell-val">${client.sqftRange || '根据户型灵活配置'}</div>
+                </div>
+                <div class="req-cell-compact">
+                  <div class="req-cell-label">🏫 核心诉求权重</div>
+                  <div class="req-cell-val">${client.coreFocus || '名校学区 / 轨交枢纽 / 资产保值'}</div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        const subTitleBadge = isFirstReqPage 
+          ? (numReqPages > 1 ? `第 1 部分 · 涉及 ${chunkProjects.length} 个重点新盘` : `涉及 ${chunkProjects.length} 个重点新盘`)
+          : `第 ${chunkIdx + 1} 部分 · 涉及 ${chunkProjects.length} 个重点新盘`;
+
+        const pageTitle = isFirstReqPage
+          ? '客户置业需求档案与入选项目优劣势对比'
+          : '入选推荐项目全维优劣势深度权衡对比（续）';
+
+        reqPage.innerHTML = `
+          <div class="page-header">
+            <div class="page-header-left">
+              <span class="page-header-title">${pageTitle}</span>
+              <span class="page-header-badge">${subTitleBadge}</span>
+            </div>
+            <img src="landma_logo.png" class="page-header-logo" alt="Logo">
+          </div>
+
+          <div class="page-content-requirements">
+            ${topContentHtml}
+
+            <!-- 下半部：入选项目优劣势对比 -->
+            <div class="tradeoff-card-box">
+              <div class="tradeoff-header">
+                <div class="tradeoff-title">
+                  <span>⚖️ 入选项目优劣势客观权衡</span>
+                </div>
+                <div class="tradeoff-sub">结合客户资产配置诉求，客观审视各项目王牌优势与相对劣势</div>
+              </div>
+              <table class="tradeoff-table">
+                <thead>
+                  <tr>
+                    <th style="width:18%;">对比项目</th>
+                    <th style="width:16%;">商圈板块 · 发展商</th>
+                    <th style="width:28%;">核心王牌优势 (买点精粹)</th>
+                    <th style="width:22%;">劣势 (客观考量)</th>
+                    <th style="width:16%;">置业定位</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${tradeoffsRowsHtml}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="page-footer">
+            <span>蓝玛国际 LANDMA GLOBAL · 客户定制方案</span>
+            <span>第 ${reqPageNum} 页 / 共 ${totalPages} 页</span>
+          </div>
         `;
-      }).join('');
-
-      reqPage.innerHTML = `
-        <div class="page-header">
-          <div class="page-header-left">
-            <span class="page-header-title">客户置业需求档案与入选项目优劣势对比</span>
-            <span class="page-header-badge">CLIENT REQUIREMENTS & PROS / CONS</span>
-          </div>
-          <img src="landma_logo.png" class="page-header-logo" alt="Logo">
-        </div>
-
-        <div class="page-content-requirements">
-          <!-- 上半部：客户置业需求指标 -->
-          <div class="profile-card-compact">
-            <div class="profile-card-header">
-              <div class="profile-card-title-main">🎯 尊贵客户置业需求指标清单</div>
-              <div class="profile-card-subtag">CUSTOMIZED CLIENT PROFILE</div>
-            </div>
-            <div class="req-item-box-compact">
-              <div class="req-cell-compact">
-                <div class="req-cell-label">👤 客户尊称</div>
-                <div class="req-cell-val">${client.name || '贵宾客户'}</div>
-              </div>
-              <div class="req-cell-compact">
-                <div class="req-cell-label">💷 置业预算区间</div>
-                <div class="req-cell-val" style="color:#0284C7;">${client.budget || '按精选方案匹配'}</div>
-              </div>
-              <div class="req-cell-compact">
-                <div class="req-cell-label">📍 意向核心区域</div>
-                <div class="req-cell-val">${client.district || '九龙/港岛核心优质地段'}</div>
-              </div>
-              <div class="req-cell-compact">
-                <div class="req-cell-label">🏠 意向户型规格</div>
-                <div class="req-cell-val">${client.layout || '2房 - 4房大宅'}</div>
-              </div>
-              <div class="req-cell-compact">
-                <div class="req-cell-label">📏 面积段需求</div>
-                <div class="req-cell-val">${client.sqftRange || '根据户型灵活配置'}</div>
-              </div>
-              <div class="req-cell-compact">
-                <div class="req-cell-label">🏫 核心诉求权重</div>
-                <div class="req-cell-val">${client.coreFocus || '名校学区 / 轨交枢纽 / 资产保值'}</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 下半部：入选项目优劣势对比 -->
-          <div class="tradeoff-card-box">
-            <div class="tradeoff-header">
-              <div class="tradeoff-title">
-                <span>⚖️ 入选项目优劣势对比</span>
-              </div>
-              <div class="tradeoff-sub">客观审视各项目核心优势与相对劣势，实现家庭资产的最优匹配</div>
-            </div>
-            <table class="tradeoff-table">
-              <thead>
-                <tr>
-                  <th style="width:18%;">对比项目</th>
-                  <th style="width:16%;">地段与发展商</th>
-                  <th style="width:28%;">优势</th>
-                  <th style="width:22%;">劣势 (客观考量)</th>
-                  <th style="width:16%;">置业定位</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${tradeoffsRowsHtml}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="page-footer">
-          <span>蓝玛国际 LANDMA GLOBAL · 客户定制方案</span>
-          <span>第 2 页 / 共 ${totalPages} 页</span>
-        </div>
-      `;
-      root.appendChild(reqPage);
+        root.appendChild(reqPage);
+      });
 
       // ----------------------------------------------------
       // PAGE 3: 全局宏观地图与入选对照表 (Overview Map & Table)
@@ -3351,7 +3452,7 @@
 
         <div class="page-footer">
           <span>蓝玛国际 LANDMA GLOBAL · 客户定制方案</span>
-          <span>第 3 页 / 共 ${totalPages} 页</span>
+          <span>第 ${2 + numReqPages} 页 / 共 ${totalPages} 页</span>
         </div>
       `;
       root.appendChild(overviewPage);
@@ -3373,7 +3474,7 @@
       compChunks.forEach((chunkProjects, chunkIdx) => {
         const compPage = document.createElement('div');
         compPage.className = 'pdf-page comp-matrix-page';
-        const compPageNum = 4 + chunkIdx;
+        const compPageNum = 2 + numReqPages + 1 + chunkIdx;
 
         // 动态计算本次 chunkProjects 实际存在的房型行 (在已选定户型范围内)
         const activeLayouts = filteredCatOrder.filter(cat => {
@@ -3522,39 +3623,6 @@
                       `;
                     }).join('')}
                   </tr>
-
-                  <!-- 6. 核心特色卖点 -->
-                  <tr>
-                    <td class="dim-col">核心特色卖点</td>
-                    ${chunkProjects.map(p => {
-                      let rawPts = [];
-                      if (p.selling_points) {
-                        rawPts = p.selling_points.split('\n').filter(s => s.trim().length > 0);
-                      } else if (p.reason) {
-                        rawPts = p.reason.split('\n').filter(s => s.trim().length > 0);
-                      } else if (p.mainland_selling_points) {
-                        rawPts = p.mainland_selling_points.split('\n').filter(s => s.trim().length > 0);
-                      }
-
-                      let titles = rawPts.slice(0, 2).map(pt => {
-                        let clean = pt.replace(/^\d+[\.、]\s*/, '').trim();
-                        if (clean.includes('：')) clean = clean.split('：')[0].trim();
-                        else if (clean.includes(':')) clean = clean.split(':')[0].trim();
-                        return clean;
-                      }).filter(s => s.length > 0);
-
-                      if (titles.length === 0) {
-                        titles = [`${getCleanDistrict(p)}核心地脉·优质人居`];
-                      }
-                      return `
-                        <td>
-                          <div class="comp-selling-points">
-                            ${titles.map(t => `<div class="comp-sp-item">• <strong>${t}</strong></div>`).join('')}
-                          </div>
-                        </td>
-                      `;
-                    }).join('')}
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -3578,7 +3646,7 @@
       // ----------------------------------------------------
       // 每个项目的独立单盘专页 (Single Project Dossier)
       // ----------------------------------------------------
-      const projectPageStartNum = 3 + numCompPages;
+      const projectPageStartNum = 2 + numReqPages + numCompPages;
       projects.forEach((proj, idx) => {
         const pPage = document.createElement('div');
         pPage.className = 'pdf-page page-dossier';
@@ -3726,8 +3794,8 @@
                 <div class="proj-analysis-box">
                   <div>
                     <div class="proj-analysis-title">
-                      <span>💎 置业顾问专业研判</span>
-                      <span style="font-size:0.63rem; color:#0284C7; font-weight:600;">核心资产买点</span>
+                      <span>💎 蓝玛智库 · 核心投资价值深度研判</span>
+                      <span style="font-size:0.63rem; color:#0284C7; font-weight:600;">专家资产评析</span>
                     </div>
                     <div style="margin-bottom:6px;">
                       ${highlights.map(h => `
@@ -3792,8 +3860,8 @@
                 <div class="proj-analysis-box">
                   <div>
                     <div class="proj-analysis-title">
-                      <span>💎 置业顾问专业研判</span>
-                      <span style="font-size:0.63rem; color:#0284C7; font-weight:600;">核心资产买点</span>
+                      <span>💎 蓝玛智库 · 核心投资价值深度研判</span>
+                      <span style="font-size:0.63rem; color:#0284C7; font-weight:600;">专家资产评析</span>
                     </div>
                     <div style="margin-bottom:6px;">
                       ${highlights.map(h => `
@@ -3896,57 +3964,43 @@
               </div>
             </div>
 
-            <!-- 2. 顶部双宽屏震撼画卷 (Hero Image 50% + Meso Map 50%) -->
+            <!-- 2. 顶部双宽屏画卷 (左侧纯净图片+指标栏 与 右侧纵向延伸大地图 左右对齐) -->
             <div class="proj-hero-showcase">
-              <!-- 左侧：震撼楼盘大图画框 (背景毛玻璃采用20KB缩略图秒出，前景图加载高清HD) -->
-              <div class="proj-visual-box-hero">
-                ${photoHd ? `
-                  <div class="proj-visual-bg-blur" style="background-image: url('${photoThumb}');"></div>
-                  <img src="${photoHd}" class="proj-visual-img-main" alt="${proj.name}" loading="eager" decoding="async">
-                ` : `
-                  <div class="proj-visual-placeholder-hero">
-                    <div style="font-size:2.4rem; margin-bottom:6px;">🏛️</div>
-                    <div style="font-weight:900; font-size:1.15rem; letter-spacing:0.5px; color:#F8FAFC;">${proj.name}</div>
-                    <div style="font-size:0.75rem; color:#94A3B8; margin-top:3px;">${proj.developer || '香港品牌发展商'} · 蓝玛全景严选地标</div>
+              <!-- 左侧列：纯净大图 + 紧凑指标条 (等宽上下排列) -->
+              <div class="proj-hero-left-col">
+                <div class="proj-visual-box-hero">
+                  ${photoHd ? `
+                    <div class="proj-visual-bg-blur" style="background-image: url('${photoThumb}');"></div>
+                    <img src="${photoHd}" class="proj-visual-img-main" alt="${proj.name}" loading="eager" decoding="async">
+                  ` : `
+                    <div class="proj-visual-placeholder-hero">
+                      <div style="font-size:2.4rem; margin-bottom:6px;">🏛️</div>
+                      <div style="font-weight:900; font-size:1.15rem; letter-spacing:0.5px; color:#F8FAFC;">${proj.name}</div>
+                      <div style="font-size:0.75rem; color:#94A3B8; margin-top:3px;">${proj.developer || '香港品牌发展商'} · 蓝玛全景严选地标</div>
+                    </div>
+                  `}
+                </div>
+                <div class="proj-kpi-bar-dense">
+                  <div class="proj-kpi-cell">
+                    <div class="proj-kpi-cell-label">🏢 规划楼栋</div>
+                    <div class="proj-kpi-cell-val">${buildingCount} 栋</div>
                   </div>
-                `}
-                <span class="proj-visual-tag-hero">${visualTag}</span>
-                <div class="proj-visual-bottom-bar">
-                  <div>
-                    <div class="proj-visual-desc-main">${proj.name} · 全景实拍档案</div>
-                    <div class="proj-visual-desc-sub">${proj.address ? '📍 ' + proj.address : (proj.main_area || proj.region) + ' · 核心地标名邸'}</div>
+                  <div class="proj-kpi-cell">
+                    <div class="proj-kpi-cell-label">🏠 项目总伙数</div>
+                    <div class="proj-kpi-cell-val">${totalUnitsStr}</div>
                   </div>
-                  <div style="font-size:0.68rem; font-weight:700; color:#38BDF8;">LANDMA VERIFIED ✓</div>
+                  <div class="proj-kpi-cell">
+                    <div class="proj-kpi-cell-label">📈 整体去化率</div>
+                    <div class="proj-kpi-cell-val highlight">${soldRateStr}</div>
+                  </div>
                 </div>
               </div>
 
-              <!-- 右侧：全景生活圈与轨交通勤微观/宏观大地图 (完整展示无浮动栏遮挡) -->
-              <div class="proj-map-box-hero">
-                <div id="proj-map-${idx}" class="proj-map-frame-hero"></div>
-              </div>
-            </div>
-
-            <!-- 3. 中间紧凑型经营与核心规划指标条 -->
-            <div class="proj-kpi-bar-dense">
-              <div class="proj-kpi-cell">
-                <div class="proj-kpi-cell-label">🏢 规划楼栋</div>
-                <div class="proj-kpi-cell-val">${buildingCount} 栋</div>
-              </div>
-              <div class="proj-kpi-cell">
-                <div class="proj-kpi-cell-label">🏠 项目总伙数</div>
-                <div class="proj-kpi-cell-val">${totalUnitsStr}</div>
-              </div>
-              <div class="proj-kpi-cell">
-                <div class="proj-kpi-cell-label">📈 整体去化率</div>
-                <div class="proj-kpi-cell-val highlight">${soldRateStr}</div>
-              </div>
-              <div class="proj-kpi-cell">
-                <div class="proj-kpi-cell-label">🔑 交付周期</div>
-                <div class="proj-kpi-cell-val" style="color:#0284C7;">${compDateStr}</div>
-              </div>
-              <div class="proj-kpi-cell">
-                <div class="proj-kpi-cell-label">💰 实用呎价参考</div>
-                <div class="proj-kpi-cell-val" style="color:#16A34A;">${proj.sqft_price_desc || '详见价单'}</div>
+              <!-- 右侧列：全景生活圈与轨交通勤大地图 (向下垂直延伸填满整列) -->
+              <div class="proj-hero-right-col">
+                <div class="proj-map-box-hero">
+                  <div id="proj-map-${idx}" class="proj-map-frame-hero"></div>
+                </div>
               </div>
             </div>
 
