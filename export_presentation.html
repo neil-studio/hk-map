@@ -1474,7 +1474,24 @@
       color: var(--slate-800);
       white-space: nowrap;
     }
-    .data-card-table tr:hover { background: #FAFAFA; }
+    .sales-control-table {
+      table-layout: fixed;
+      width: 100%;
+    }
+    .sales-control-table th,
+    .sales-control-table td {
+      padding: 3px 2px;
+      overflow: hidden;
+    }
+    .sales-control-table .badge-unit-count {
+      padding: 1.5px 5px;
+      font-size: 0.68rem;
+    }
+    .sales-control-table td.price-val-cell {
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.15;
+    }
 
     /* 顾问精评与核心生活圈复合卡片 */
     .proj-analysis-box {
@@ -3335,8 +3352,8 @@
           : `第 ${chunkIdx + 1} 部分 · 涉及 ${chunkProjects.length} 个重点新盘`;
 
         const pageTitle = isFirstReqPage
-          ? '客户置业需求档案与入选项目优劣势对比'
-          : '入选推荐项目全维优劣势深度权衡对比（续）';
+          ? '客户置业需求档案与入选项目价值亮点权衡'
+          : '入选推荐项目全维价值亮点与客观权衡对比（续）';
 
         reqPage.innerHTML = `
           <div class="page-header">
@@ -3350,21 +3367,21 @@
           <div class="page-content-requirements">
             ${topContentHtml}
 
-            <!-- 下半部：入选项目优劣势对比 -->
+            <!-- 下半部：入选项目核心价值与客观权衡 -->
             <div class="tradeoff-card-box">
               <div class="tradeoff-header">
                 <div class="tradeoff-title">
-                  <span>⚖️ 入选项目优劣势客观权衡</span>
+                  <span>⚖️ 入选项目核心价值与客观权衡</span>
                 </div>
-                <div class="tradeoff-sub">结合客户资产配置诉求，客观审视各项目王牌优势与相对劣势</div>
+                <div class="tradeoff-sub">结合客户资产配置诉求，客观审视各项目核心价值亮点与置业权衡要素</div>
               </div>
               <table class="tradeoff-table">
                 <thead>
                   <tr>
                     <th style="width:18%;">对比项目</th>
                     <th style="width:16%;">商圈板块 · 发展商</th>
-                    <th style="width:28%;">核心王牌优势 (买点精粹)</th>
-                    <th style="width:22%;">劣势 (客观考量)</th>
+                    <th style="width:28%;">核心价值亮点</th>
+                    <th style="width:22%;">置业权衡要素</th>
                     <th style="width:16%;">置业定位</th>
                   </tr>
                 </thead>
@@ -3402,16 +3419,22 @@
             <div class="overview-map-legend">
               <div class="legend-item"><span class="legend-dot proj"></span> 推荐新盘</div>
               <div class="legend-item">
-                <span style="display:inline-flex; width:14px; height:14px; border-radius:50%; background:#fff; align-items:center; justify-content:center; margin-right:3px;">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="#C41230"><path d="M11.987 1.913c-1.9 0-3.693.321-5.298.883C2.756 4.268 0 7.826 0 12c0 4.147 2.756 7.706 6.689 9.204 1.632.562 3.425.883 5.325.883a16.74 16.74 0 0 0 5.27-.856C21.217 19.759 24 16.174 24 12.027V12c0-4.174-2.783-7.732-6.716-9.204a16.295 16.295 0 0 0-5.297-.883zM10.89 5.257h2.167v3.827c1.525-.402 2.702-1.766 2.782-3.399l2.168.027c-.16 2.73-2.22 4.95-4.897 5.378v1.793c2.676.428 4.736 2.675 4.924 5.404l-2.167.028c-.08-1.633-1.258-2.997-2.783-3.425v3.853h-2.167V14.89a3.775 3.775 0 0 0-2.81 3.425l-2.167-.028a5.868 5.868 0 0 1 4.923-5.404v-1.766C8.187 10.716 6.1 8.468 5.94 5.74l2.167-.027A3.711 3.711 0 0 0 10.89 9.11Z"/></svg>
+                <span style="display:inline-flex; width:14px; height:14px; border-radius:50%; background:#C41230; align-items:center; justify-content:center; margin-right:4px; border:1px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,0.25);">
+                  <svg viewBox="0 0 24 24" width="8" height="8" fill="#fff"><path d="M11.987 1.913c-1.9 0-3.693.321-5.298.883C2.756 4.268 0 7.826 0 12c0 4.147 2.756 7.706 6.689 9.204 1.632.562 3.425.883 5.325.883a16.74 16.74 0 0 0 5.27-.856C21.217 19.759 24 16.174 24 12.027V12c0-4.174-2.783-7.732-6.716-9.204a16.295 16.295 0 0 0-5.297-.883zM10.89 5.257h2.167v3.827c1.525-.402 2.702-1.766 2.782-3.399l2.168.027c-.16 2.73-2.22 4.95-4.897 5.378v1.793c2.676.428 4.736 2.675 4.924 5.404l-2.167.028c-.08-1.633-1.258-2.997-2.783-3.425v3.853h-2.167V14.89a3.775 3.775 0 0 0-2.81 3.425l-2.167-.028a5.868 5.868 0 0 1 4.923-5.404v-1.766C8.187 10.716 6.1 8.468 5.94 5.74l2.167-.027A3.711 3.711 0 0 0 10.89 9.11Z"/></svg>
                 </span>
-                港铁站 (1.5km)
+                港铁站
               </div>
               <div class="legend-item">
-                <span style="display:inline-flex; width:14px; height:14px; border-radius:50%; background:#EA580C; align-items:center; justify-content:center; margin-right:3px;">
-                  <svg viewBox="0 0 24 24" width="8" height="8" fill="#fff"><path d="M16 6V4a4 4 0 0 0-8 0v2H4a1 1 0 0 0-1 1v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1h-4ZM10 4a2 2 0 0 1 4 0v2h-4V4Zm9 16H5V8h3v2a1 1 0 0 0 2 0V8h4v2a1 1 0 0 0 2 0V8h3v12Z"/></svg>
+                <span style="display:inline-flex; width:14px; height:14px; border-radius:50%; background:#EA580C; align-items:center; justify-content:center; margin-right:4px; border:1px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,0.25);">
+                  <svg viewBox="0 0 24 24" width="7" height="7" fill="#fff"><path d="M16 6V4a4 4 0 0 0-8 0v2H4a1 1 0 0 0-1 1v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1h-4ZM10 4a2 2 0 0 1 4 0v2h-4V4Zm9 16H5V8h3v2a1 1 0 0 0 2 0V8h4v2a1 1 0 0 0 2 0V8h3v12Z"/></svg>
                 </span>
-                地标商场 (1.5km)
+                地标商场
+              </div>
+              <div class="legend-item">
+                <span style="display:inline-flex; width:14px; height:14px; border-radius:50%; background:#0284C7; align-items:center; justify-content:center; margin-right:4px; border:1px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,0.25);">
+                  <svg viewBox="0 0 24 24" width="7" height="7" fill="#fff"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                </span>
+                重点学校
               </div>
             </div>
           </div>
@@ -3693,13 +3716,13 @@
         let salesTableHtml = '';
         if (sales && sales.length > 0) {
           salesTableHtml = `
-            <table class="data-card-table">
+            <table class="data-card-table sales-control-table">
               <thead>
                 <tr>
-                  <th>户型</th>
-                  <th>待售房源</th>
-                  <th>面积段</th>
-                  <th>总价区间</th>
+                  <th style="width:14%;">户型</th>
+                  <th style="width:33%;">待售房源</th>
+                  <th style="width:25%;">面积段</th>
+                  <th style="width:28%;">总价区间</th>
                 </tr>
               </thead>
               <tbody>
@@ -3707,19 +3730,26 @@
                   const onSalePart = (s.on_sale_count !== undefined) 
                     ? `<span style="font-size:0.68rem; color:#16a34a; font-weight:600; margin-left:2px;">(在售${s.on_sale_count})</span>` 
                     : '';
-                  const pRange = s.price_range || '';
+                  const pRange = (s.price_range || '').trim();
                   const isPending = pRange.includes('待定') || pRange.includes('详见价单');
-                  const displayPRange = isPending ? '待定' : pRange;
+                  let displayPRange = '待定';
+                  if (!isPending) {
+                    displayPRange = pRange
+                      .replace(/\s*万\s*[-–~—至]\s*/g, '~')
+                      .replace(/\s*[-–—至]\s*/g, '~')
+                      .replace(/\s+/g, '');
+                  }
                   const color = pRange === '招标' ? '#d97706' : (isPending ? '#64748b' : '#16a34a');
+                  const cleanSqft = (s.sqft_range || '').replace(/\s*[-–—至]\s*/g, '~').replace(/\s+/g, '');
                   return `
                   <tr>
                     <td><strong>${s.layout}</strong></td>
                     <td>
-                      <span class="badge-unit-count">${s.unsold_count} 伙</span>
+                      <span class="badge-unit-count">${s.unsold_count}</span>
                       ${onSalePart}
                     </td>
-                    <td>${s.sqft_range}</td>
-                    <td style="font-weight:700; color:${color};">${displayPRange}</td>
+                    <td>${cleanSqft}</td>
+                    <td class="price-val-cell" style="font-weight:700; color:${color};">${displayPRange}</td>
                   </tr>
                 `;}).join('')}
               </tbody>
@@ -3802,8 +3832,7 @@
                 <div class="proj-analysis-box">
                   <div>
                     <div class="proj-analysis-title">
-                      <span>💎 蓝玛智库 · 核心投资价值深度研判</span>
-                      <span style="font-size:0.63rem; color:#0284C7; font-weight:600;">专家资产评析</span>
+                      <span>💎 蓝玛智库 · 核心投资价值</span>
                     </div>
                     <div style="margin-bottom:6px;">
                       ${highlights.map(h => `
@@ -3868,8 +3897,7 @@
                 <div class="proj-analysis-box">
                   <div>
                     <div class="proj-analysis-title">
-                      <span>💎 蓝玛智库 · 核心投资价值深度研判</span>
-                      <span style="font-size:0.63rem; color:#0284C7; font-weight:600;">专家资产评析</span>
+                      <span>💎 蓝玛智库 · 核心投资价值</span>
                     </div>
                     <div style="margin-bottom:6px;">
                       ${highlights.map(h => `
@@ -4315,20 +4343,21 @@
 
           const nearbyPOIsMap = new Map();
 
-          // 收集各推荐项目周边 1.5km 范围内的港铁站与高能级地标商场
+          // 收集各推荐项目周边 1.5km 范围内的港铁站、高能级地标商场与重点学校
           projects.forEach(p => {
             if (!p.lat || !p.lng) return;
             landmarksData.forEach(lm => {
             if (!lm.lat || !lm.lng) return;
             const cat = lm.category;
-            if (cat === 'mtr' || cat === 'shopping_mall') {
+            if (cat === 'mtr' || cat === 'shopping_mall' || cat === 'school' || cat === 'famous_school' || cat === 'university') {
               const d = distFn(p.lat, p.lng, lm.lat, lm.lng);
               if (d <= 1500) {
                 const key = lm.name;
                 if (!nearbyPOIsMap.has(key) || nearbyPOIsMap.get(key).dist > d) {
+                  const normCat = (cat === 'famous_school' || cat === 'university') ? 'school' : cat;
                   nearbyPOIsMap.set(key, {
                     name: lm.name,
-                    category: cat,
+                    category: normCat,
                     lat: lm.lat,
                     lng: lm.lng,
                     dist: d
@@ -4339,56 +4368,54 @@
           });
         });
 
-        // 1. 先绘制 1.5km 配套标记点 (带精致胶囊标签，与推荐楼盘重叠时智能避让)
+        // 1. 先绘制 1.5km 配套微型圆标标记点 (无文字标签，纯圆标展示，防止密集遮挡)
         nearbyPOIsMap.forEach(poi => {
-          // 检查该配套是否与任意推荐项目极其接近 (< 180米)
-          let minProjDist = 9999;
-          projects.forEach(p => {
-            if (p.lat && p.lng) {
-              const d = distFn(p.lat, p.lng, poi.lat, poi.lng);
-              if (d < minProjDist) minProjDist = d;
-            }
-          });
-
-          // 如果与项目极其贴近 (如 瑜一与何文田站仅相距80-130米)，向下偏移24px避免被项目大绿牌完全遮挡
-          const isNearProject = minProjDist <= 180;
-          const pinAnchorY = isNearProject ? 34 : 11;
-
           const cleanName = poi.name.replace(/\s*\([^)]*\)/g, '').trim();
 
           if (poi.category === 'mtr') {
             const mtrIcon = L.divIcon({
-              className: 'overview-mtr-pin',
+              className: 'overview-round-pin',
               html: `
-                <div style="display:inline-flex; align-items:center; gap:3px; background:rgba(255,255,255,0.96); padding:2px 6px 2px 3px; border-radius:12px; box-shadow:0 2px 6px rgba(196,18,48,0.35); border:1px solid #FCA5A5; white-space:nowrap;">
-                  <div style="width:16px; height:16px; border-radius:50%; background:#C41230; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                    <svg viewBox="0 0 24 24" width="12" height="12" fill="#fff" style="display:block;">
-                      <path d="M11.987 1.913c-1.9 0-3.693.321-5.298.883C2.756 4.268 0 7.826 0 12c0 4.147 2.756 7.706 6.689 9.204 1.632.562 3.425.883 5.325.883a16.74 16.74 0 0 0 5.27-.856C21.217 19.759 24 16.174 24 12.027V12c0-4.174-2.783-7.732-6.716-9.204a16.295 16.295 0 0 0-5.297-.883zM10.89 5.257h2.167v3.827c1.525-.402 2.702-1.766 2.782-3.399l2.168.027c-.16 2.73-2.22 4.95-4.897 5.378v1.793c2.676.428 4.736 2.675 4.924 5.404l-2.167.028c-.08-1.633-1.258-2.997-2.783-3.425v3.853h-2.167V14.89a3.775 3.775 0 0 0-2.81 3.425l-2.167-.028a5.868 5.868 0 0 1 4.923-5.404v-1.766C8.187 10.716 6.1 8.468 5.94 5.74l2.167-.027A3.711 3.711 0 0 0 10.89 9.11Z"/>
-                    </svg>
-                  </div>
-                  <span style="font-size:10px; font-weight:700; color:#991B1B;">${cleanName}</span>
+                <div style="width:18px; height:18px; border-radius:50%; background:#C41230; display:flex; align-items:center; justify-content:center; box-shadow:0 1px 4px rgba(196,18,48,0.45); border:1.5px solid #fff;" title="${cleanName}站">
+                  <svg viewBox="0 0 24 24" width="11" height="11" fill="#fff" style="display:block;">
+                    <path d="M11.987 1.913c-1.9 0-3.693.321-5.298.883C2.756 4.268 0 7.826 0 12c0 4.147 2.756 7.706 6.689 9.204 1.632.562 3.425.883 5.325.883a16.74 16.74 0 0 0 5.27-.856C21.217 19.759 24 16.174 24 12.027V12c0-4.174-2.783-7.732-6.716-9.204a16.295 16.295 0 0 0-5.297-.883zM10.89 5.257h2.167v3.827c1.525-.402 2.702-1.766 2.782-3.399l2.168.027c-.16 2.73-2.22 4.95-4.897 5.378v1.793c2.676.428 4.736 2.675 4.924 5.404l-2.167.028c-.08-1.633-1.258-2.997-2.783-3.425v3.853h-2.167V14.89a3.775 3.775 0 0 0-2.81 3.425l-2.167-.028a5.868 5.868 0 0 1 4.923-5.404v-1.766C8.187 10.716 6.1 8.468 5.94 5.74l2.167-.027A3.711 3.711 0 0 0 10.89 9.11Z"/>
+                  </svg>
                 </div>
               `,
-              iconAnchor: [12, pinAnchorY]
+              iconSize: [18, 18],
+              iconAnchor: [9, 9]
             });
-            L.marker([poi.lat, poi.lng], { icon: mtrIcon, zIndexOffset: isNearProject ? 1500 : 300 }).addTo(mapOverview);
+            L.marker([poi.lat, poi.lng], { icon: mtrIcon, zIndexOffset: 250 }).addTo(mapOverview);
             group.push([poi.lat, poi.lng]);
           } else if (poi.category === 'shopping_mall') {
             const mallIcon = L.divIcon({
-              className: 'overview-mall-pin',
+              className: 'overview-round-pin',
               html: `
-                <div style="display:inline-flex; align-items:center; gap:3px; background:rgba(255,255,255,0.96); padding:2px 6px 2px 3px; border-radius:12px; box-shadow:0 2px 6px rgba(234,88,12,0.35); border:1px solid #FDBA74; white-space:nowrap;">
-                  <div style="width:16px; height:16px; border-radius:50%; background:#EA580C; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                    <svg viewBox="0 0 24 24" width="10" height="10" fill="#fff" style="display:block;">
-                      <path d="M16 6V4a4 4 0 0 0-8 0v2H4a1 1 0 0 0-1 1v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1h-4ZM10 4a2 2 0 0 1 4 0v2h-4V4Zm9 16H5V8h3v2a1 1 0 0 0 2 0V8h4v2a1 1 0 0 0 2 0V8h3v12Z"/>
-                    </svg>
-                  </div>
-                  <span style="font-size:10px; font-weight:700; color:#C2410C;">${cleanName}</span>
+                <div style="width:18px; height:18px; border-radius:50%; background:#EA580C; display:flex; align-items:center; justify-content:center; box-shadow:0 1px 4px rgba(234,88,12,0.45); border:1.5px solid #fff;" title="${cleanName}">
+                  <svg viewBox="0 0 24 24" width="10" height="10" fill="#fff" style="display:block;">
+                    <path d="M16 6V4a4 4 0 0 0-8 0v2H4a1 1 0 0 0-1 1v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1h-4ZM10 4a2 2 0 0 1 4 0v2h-4V4Zm9 16H5V8h3v2a1 1 0 0 0 2 0V8h4v2a1 1 0 0 0 2 0V8h3v12Z"/>
+                  </svg>
                 </div>
               `,
-              iconAnchor: [12, pinAnchorY]
+              iconSize: [18, 18],
+              iconAnchor: [9, 9]
             });
-            L.marker([poi.lat, poi.lng], { icon: mallIcon, zIndexOffset: isNearProject ? 1400 : 350 }).addTo(mapOverview);
+            L.marker([poi.lat, poi.lng], { icon: mallIcon, zIndexOffset: 240 }).addTo(mapOverview);
+            group.push([poi.lat, poi.lng]);
+          } else if (poi.category === 'school') {
+            const schoolIcon = L.divIcon({
+              className: 'overview-round-pin',
+              html: `
+                <div style="width:18px; height:18px; border-radius:50%; background:#0284C7; display:flex; align-items:center; justify-content:center; box-shadow:0 1px 4px rgba(2,132,199,0.45); border:1.5px solid #fff;" title="${cleanName}">
+                  <svg viewBox="0 0 24 24" width="10" height="10" fill="#fff" style="display:block;">
+                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+                  </svg>
+                </div>
+              `,
+              iconSize: [18, 18],
+              iconAnchor: [9, 9]
+            });
+            L.marker([poi.lat, poi.lng], { icon: schoolIcon, zIndexOffset: 230 }).addTo(mapOverview);
             group.push([poi.lat, poi.lng]);
           }
         });

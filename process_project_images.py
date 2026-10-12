@@ -32,6 +32,8 @@ EXPLICIT_FOLDER_MAP = {
     "st. george's mansions": ["St. George's Mansions", "st. george's mansions"],
     "维港.双钻": ["维港．双钻"],
     "维港.湾畔": ["维港．湾畔第1A期", "维港．湾畔第1B期", "维港．湾畔第2B期"],
+    "blue coast": ["Blue Coast", "Blue Coast II"],
+    "滶晨": ["滶晨", "滶晨 II"],
 }
 
 def load_all_project_names():
