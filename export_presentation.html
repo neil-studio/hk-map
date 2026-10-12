@@ -1775,17 +1775,6 @@
       background: #FAFAFA;
       color: #0f172a;
     }
-    .verdict-route-banner {
-      background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
-      border: 1px solid #BBF7D0;
-      border-radius: 6px;
-      padding: 5px 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.67rem;
-      color: #166534;
-    }
 
     /* Executive Summary Mode (1-Page / Key Pages Only) */
     #presentation-root.summary-only-mode .page-dossier,
@@ -2862,7 +2851,7 @@
             prosList.push(`顶尖${sNet}名校网`);
           }
           if (cDate.includes('现楼') || cDate.includes('即买') || cDate.includes('现房')) {
-            prosList.push('现房即买即住/即收租');
+            prosList.push('现楼');
           }
           if (walkMin <= 4.0) {
             prosList.push(`港铁${mtr?.nearest_mtr_cn || ''}站极速直达`);
@@ -3375,20 +3364,25 @@
                         `;
                       } else if (isRunway) {
                         mtrLineHtml = `
-                          <div class="comp-commute-item">🚌 专线接驳约 <strong>5-8 分钟</strong>直达港铁启德站/宋皇台站</div>
+                          <div class="comp-commute-item">🚌 城巴/小巴专线约 <strong>5-8 分钟</strong>直达港铁启德站</div>
                           <div class="comp-commute-item">🚇 屯马线/东铁线贯通全港核心</div>
+                        `;
+                      } else if (walkM <= 1800) {
+                        mtrLineHtml = `
+                          <div class="comp-commute-item">🚌 专线小巴约 <strong>3-5 分钟</strong>直达${mtr?.nearest_mtr_cn || '港铁'}站</div>
+                          <div class="comp-commute-item">🚇 轨交干线高效通达都会枢纽</div>
                         `;
                       } else {
                         mtrLineHtml = `
-                          <div class="comp-commute-item">🚘 约 <strong>5-8 分钟车程</strong>便捷接驳${mtr?.nearest_mtr_cn || '核心港铁'}站</div>
-                          <div class="comp-commute-item">🚇 轨交干线高效通达都会枢纽</div>
+                          <div class="comp-commute-item">🚘 私家车/计程车约 <strong>6-10 分钟</strong>便捷接驳${mtr?.nearest_mtr_cn || '核心港铁'}站</div>
+                          <div class="comp-commute-item">🚇 核心干线快速通达都会CBD</div>
                         `;
                       }
 
                       return `
                         <td>
                           ${mtrLineHtml}
-                          <div class="comp-commute-item">🚗 开车直达香港国际机场约 <strong>${airportMin} 分钟</strong></div>
+                          <div class="comp-commute-item">🚗 开车直达香港国际机场约 <strong>${airportMin} 分钟*</strong></div>
                         </td>
                       `;
                     }).join('')}
@@ -3432,7 +3426,7 @@
 
             <!-- 底部名片横幅 -->
             <div class="comp-footer-banner">
-              <span>💎 <strong>蓝玛国际专属置业顾问服务</strong>：专属全程实勘、定制置业规划、精准资产落地</span>
+              <span>💎 <strong>蓝玛国际专属置业顾问服务</strong>：全程实勘·定制规划·资产落地 <span style="font-size:0.62rem; color:#94A3B8; font-weight:normal; margin-left:8px;">(* 机场自驾基于日常干线顺畅路况基准测算)</span></span>
               <span>${(advisorName || advisorPhone) ? `📞 专属联络顾问：${[advisorName, advisorPhone].filter(Boolean).join(' · ')}` : '📞 蓝玛国际 VIP 专属顾问咨询通道已开启'}</span>
             </div>
           </div>
@@ -3887,7 +3881,14 @@
           else if (tradeoff.role.includes('投资型')) { roleClass = 'tag-lux'; borderC = '#D97706'; }
           else if (tradeoff.role.includes('投资自住')) { roleClass = 'tag-edu'; borderC = '#16A34A'; }
 
-          const consBrief = (tradeoff.cons || '').replace(/【.*?】/g, '').replace(/；\n/g, '，');
+          let adviceText = '';
+          if (tradeoff.role.includes('自住型')) {
+            adviceText = `【终极置业指引】高净值家庭自住首选，享受低密静谧环境与纯粹圈层，推荐重点锁定大户型或开阔景观单元。`;
+          } else if (tradeoff.role.includes('投资型')) {
+            adviceText = `【终极置业指引】强流动性资产配置首选，紧邻轨交枢纽、租赁客群澎湃，推荐锁定中低总价高租售比户型。`;
+          } else {
+            adviceText = `【终极置业指引】家庭自住与资产保值平衡底仓，兼得商圈大盘综合配套与抗跌流通性，推荐主流2-3房家庭主力户型。`;
+          }
 
           return `
             <div class="verdict-card" style="border-left-color:${borderC};">
@@ -3903,8 +3904,8 @@
                 <span>🚇 ${p.nearest_mtr?.nearest_mtr_cn ? `近${p.nearest_mtr.nearest_mtr_cn}站` : '核心轨交'}</span>
               </div>
               <div class="verdict-card-desc">
-                <strong>【核心特质】</strong>${spTitle}。<br>
-                <strong>【顾问选房指引】</strong>${tradeoff.pros}。在置业决策中承担<strong>${tradeoff.role}</strong>分工${consBrief ? `；客观测算：${consBrief}` : ''}。
+                <div style="margin-bottom:3px;"><strong>【核心特质】</strong>${spTitle}。</div>
+                <div style="color:var(--slate-700);">${adviceText}</div>
               </div>
             </div>
           `;
@@ -3916,14 +3917,10 @@
         else if (targetProjs.length === 4) gridCols = 'repeat(2, 1fr)';
         else if (targetProjs.length === 3 || targetProjs.length >= 5) gridCols = 'repeat(3, 1fr)';
 
-        // 提取实地看房推荐动线
-        const routeDistricts = Array.from(new Set(targetProjs.map(p => p.micro_district || p.district || p.region)));
-        const routeStr = routeDistricts.join(' ➔ ');
-
         pageEl.innerHTML = `
           <div class="page-header">
             <div class="page-header-left">
-              <span class="page-header-title">全案综合置业决策建议与实地看房动线指南</span>
+              <span class="page-header-title">全案综合置业决策建议与置业财务速查指南</span>
               <span class="page-header-badge">THE FINAL VERDICT · 综合决策落地</span>
             </div>
             <img src="landma_logo.png" class="page-header-logo" alt="Logo">
@@ -4041,12 +4038,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-
-            <!-- 模块 3：实地考察推荐动线横幅 -->
-            <div class="verdict-route-banner">
-              <span>📍 <strong>蓝玛专属实地看房推荐动线</strong>：${routeStr}</span>
-              <span>🚘 <strong>VIP 置业礼遇</strong>：专属顾问专车全程陪同考察、实地核算实时销控、专享发展商专属优惠</span>
             </div>
           </div>
 
