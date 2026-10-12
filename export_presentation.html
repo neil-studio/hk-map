@@ -3038,11 +3038,11 @@
           '荔枝角': { cbd: '8站达金钟', xrl: '4站' },
           '紅磡': { cbd: '1站达金钟', xrl: '1站' },
           '何文田': { cbd: '2站达金钟', xrl: '2站' },
-          '啟德': { cbd: '4站达金钟', xrl: '4站' },
-          '宋皇臺': { cbd: '3站达金钟', xrl: '3站' },
-          '土瓜灣': { cbd: '3站达金钟', xrl: '2站' },
+          '啟德': { cbd: '4站达金钟/中环', xrl: '4站' },
+          '宋皇臺': { cbd: '3站达金钟/中环', xrl: '3站' },
+          '土瓜灣': { cbd: '3站达金钟/中环', xrl: '2站' },
           '九龍塘': { cbd: '3站达金钟', xrl: '3站' },
-          '牛頭角': { cbd: '6站达中区', xrl: '6站' },
+          '牛頭角': { cbd: '6站达中环', xrl: '6站' },
           '康城': { cbd: '7站达中环', xrl: '8站' }
         };
 
@@ -3594,18 +3594,26 @@
                       const mtr = p.nearest_mtr;
                       const airportMin = getAirportDriveTime(p);
                       const borderStr = getBorderPortDriveTime(p);
-                      const commuteMetrics = getStationCommuteMetrics(mtr?.nearest_mtr_cn);
                       const walkMin = Number(mtr?.walk_time_min) || 99;
                       const walkM = Number(mtr?.dist_walk_m) || 9999;
-                      const isRunway = (p.micro_district || '').includes('跑道') || (p.address || '').includes('承') || (p.name || '').includes('Coast') || (p.name || '').includes('柏蔚森') || (p.name || '').includes('天泷');
+                      const pName = (p.name || '').toLowerCase();
+                      const isRunway = (p.micro_district || '').includes('跑道') || 
+                                       (p.address || '').includes('承') || 
+                                       pName.includes('coast') || 
+                                       (p.name || '').includes('柏蔚森') || 
+                                       (p.name || '').includes('天泷') || 
+                                       pName.includes('miami') || 
+                                       (p.name || '').includes('启德海湾') || 
+                                       (p.name || '').includes('维港');
                       const isLuxuryNoMtr = walkMin >= 20 || walkM >= 2500;
+                      const commuteMetrics = getStationCommuteMetrics(isRunway ? '啟德' : mtr?.nearest_mtr_cn);
 
                       let line1Html = '';
                       const walkMinInt = Math.max(1, Math.round(walkMin));
-                      if (walkMin <= 12 && walkM <= 1000) {
-                        line1Html = `${getMtrLogoSvg()} 步行约 ${walkM}米 (${walkMinInt}分) 到${mtr?.nearest_mtr_cn || '港铁'}站`;
-                      } else if (isRunway) {
+                      if (isRunway) {
                         line1Html = `🚌 跑道穿梭巴士约 5-8分 直达启德站`;
+                      } else if (walkMin <= 12 && walkM <= 1000) {
+                        line1Html = `${getMtrLogoSvg()} 步行约 ${walkM}米 (${walkMinInt}分) 到${mtr?.nearest_mtr_cn || '港铁'}站`;
                       } else if (isLuxuryNoMtr) {
                         line1Html = `🚘 专属车队约 6-8分 接驳核心港铁`;
                       } else if (walkM <= 1800) {
@@ -3948,12 +3956,21 @@
                 ${(() => {
                   const walkMin = Number(mtr?.walk_time_min) || 99;
                   const walkM = Number(mtr?.dist_walk_m) || 9999;
-                  const isRunway = (proj.micro_district || '').includes('跑道') || (proj.address || '').includes('承') || (proj.name || '').includes('Coast') || (proj.name || '').includes('柏蔚森') || (proj.name || '').includes('天泷');
+                  const pName = (proj.name || '').toLowerCase();
+                  const isRunway = (proj.micro_district || '').includes('跑道') || 
+                                   (proj.address || '').includes('承') || 
+                                   pName.includes('coast') || 
+                                   (proj.name || '').includes('柏蔚森') || 
+                                   (proj.name || '').includes('天泷') || 
+                                   pName.includes('miami') || 
+                                   (proj.name || '').includes('启德海湾') || 
+                                   (proj.name || '').includes('维港');
+                  if (isRunway) {
+                    return `<span class="meta-chip primary">🚌 跑道穿梭巴士 (约5-8分直达启德站)</span>`;
+                  }
                   if (mtr) {
                     if (walkMin <= 12 && walkM <= 1000) {
                       return `<span class="meta-chip success">${getMtrLogoSvg()} ${mtr.nearest_mtr_cn}站 (步行${walkM}米/${walkMin}分)</span>`;
-                    } else if (isRunway) {
-                      return `<span class="meta-chip primary">🚌 启德跑道专线巴士/穿梭 (约5-8分达启德站)</span>`;
                     } else {
                       return `<span class="meta-chip primary">🚘 专车/巴士便捷接驳 (约3-5分达${mtr.nearest_mtr_cn}站)</span>`;
                     }
