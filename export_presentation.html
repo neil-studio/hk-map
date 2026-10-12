@@ -3516,7 +3516,7 @@
                       return `
                         <td>
                           <div class="comp-commute-item">${line1Html}</div>
-                          <div class="comp-commute-item">💼 港铁 ${commuteMetrics.cbd}<span class="comp-commute-sep">|</span>🚅 高铁 ${commuteMetrics.xrl}</div>
+                          <div class="comp-commute-item">${getMtrLogoSvg()} 港铁 ${commuteMetrics.cbd}<span class="comp-commute-sep">|</span>🚅 高铁 ${commuteMetrics.xrl}</div>
                           <div class="comp-commute-item">✈️ 机场约 ${airportMin}分<span class="comp-commute-sep">|</span>🚘 ${borderStr}*</div>
                         </td>
                       `;
