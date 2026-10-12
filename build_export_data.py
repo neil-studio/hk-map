@@ -30,6 +30,53 @@ if not os.path.exists(BASE_INFO_FILE) or not os.access(BASE_INFO_FILE, os.R_OK):
         BASE_INFO_FILE = os.path.join(BASE_DIR, "楼盘基础信息库.xlsx")
 
 SELLING_POINTS_FILE = os.path.join(SANDBOX_DIR, "楼盘卖点.xlsx")
+PROJECT_DESC_FILE = os.path.join(SANDBOX_DIR, "导出方案项目描述库.xlsx")
+
+def load_project_descriptions():
+    desc_map = {}
+    target_file = PROJECT_DESC_FILE if os.path.exists(PROJECT_DESC_FILE) else SELLING_POINTS_FILE
+    if not os.path.exists(target_file):
+        return desc_map
+    try:
+        wb = openpyxl.load_workbook(target_file, data_only=True)
+        ws = wb.active
+        t_chars = '號峯滙敍灣瓏鑽鑄賢譽啟璽維奧滶蘊匯悅寶應羅壽淺徑賓園華遠藍語區築緹瀧澐雙鑽閣揚晉凱島輝臺連東紅臺豐環學區萬濱嶺軒廣場頭門閣薈'
+        s_chars = '号峰汇叙湾珑钻铸贤誉启玺维奥滶蕴汇悦宝应罗寿浅径宾园华远蓝语区筑缇泷沄双钻阁扬晋凯岛辉台连东红台丰环学区万滨岭轩广场头门阁荟'
+        trans = str.maketrans(t_chars, s_chars)
+        rows = list(ws.iter_rows(values_only=True))
+        if len(rows) <= 1:
+            return desc_map
+        header = [str(c or '').strip() for c in rows[0]]
+        def get_col(kw):
+            for idx, h in enumerate(header):
+                if kw in h:
+                    return idx
+            return -1
+
+        idx_name = get_col('楼盘名称') if get_col('楼盘名称') != -1 else get_col('项目名称')
+        idx_pos = get_col('置业定位')
+        idx_sp = get_col('核心特色卖点') if get_col('核心特色卖点') != -1 else get_col('卖点')
+        idx_pros = get_col('核心优势')
+        idx_cons = get_col('客观考量') if get_col('客观考量') != -1 else get_col('相对劣势')
+        idx_comm = get_col('交通与通勤')
+
+        for r in rows[1:]:
+            if not r or idx_name == -1 or not r[idx_name]:
+                continue
+            pn = str(r[idx_name]).strip()
+            item = {
+                'property_positioning': str(r[idx_pos]).strip() if idx_pos != -1 and r[idx_pos] else '',
+                'selling_points': str(r[idx_sp]).strip() if idx_sp != -1 and r[idx_sp] else '',
+                'core_pros': str(r[idx_pros]).strip() if idx_pros != -1 and r[idx_pros] else '',
+                'quantified_cons': str(r[idx_cons]).strip() if idx_cons != -1 and r[idx_cons] else '',
+                'commute_guidance': str(r[idx_comm]).strip() if idx_comm != -1 and r[idx_comm] else ''
+            }
+            norm_pn = pn.translate(trans).replace(' ', '').replace('　', '').replace('．', '.').lower()
+            desc_map[pn] = item
+            desc_map[norm_pn] = item
+    except Exception as e:
+        print("读取 导出方案项目描述库.xlsx 异常:", e)
+    return desc_map
 
 def load_selling_points():
     sp_map = {}
@@ -689,6 +736,7 @@ def main():
     project_completion_map = load_project_completion_dates()
     project_developer_map = load_project_developers()
     selling_points_map = load_selling_points()
+    descriptions_map = load_project_descriptions()
     t_chars = '號峯滙敍灣瓏鑽鑄賢譽啟璽維奧滶蘊匯悅寶應羅壽淺徑賓園華遠藍語區築緹瀧澐雙鑽閣揚晉凱島輝臺連東紅臺豐環學區萬濱嶺軒廣場頭門閣薈'
     s_chars = '号峰汇叙湾珑钻铸贤誉启玺维奥滶蕴汇悦宝应罗寿浅径宾园华远蓝语区筑缇泷沄双钻阁扬晋凯岛辉台连东红台丰环学区万滨岭轩广场头门阁荟'
     trans = str.maketrans(t_chars, s_chars)
@@ -696,20 +744,42 @@ def main():
     tx_attached = 0
     price_attached = 0
     sp_attached = 0
+    desc_attached = 0
     for p in projects:
         pname = p["name"].strip()
         dj_p = data_json_map.get(pname, {})
 
-        # 匹配核心特色卖点
-        sp_text = selling_points_map.get(pname)
-        if not sp_text:
+        # 优先匹配全量可编辑描述库中的定位与卖点
+        desc_info = descriptions_map.get(pname)
+        if not desc_info:
             norm_name = pname.translate(trans).replace(' ', '').replace('　', '').replace('．', '.').lower()
-            sp_text = selling_points_map.get(norm_name)
-        if sp_text:
-            p["selling_points"] = sp_text
-            sp_attached += 1
-            if not p.get("mainland_selling_points"):
-                p["mainland_selling_points"] = sp_text
+            desc_info = descriptions_map.get(norm_name)
+        if desc_info:
+            if desc_info.get("property_positioning"):
+                p["property_positioning"] = desc_info["property_positioning"]
+            if desc_info.get("selling_points"):
+                p["selling_points"] = desc_info["selling_points"]
+                p["mainland_selling_points"] = desc_info["selling_points"]
+                sp_attached += 1
+            if desc_info.get("core_pros"):
+                p["core_pros"] = desc_info["core_pros"]
+            if desc_info.get("quantified_cons"):
+                p["quantified_cons"] = desc_info["quantified_cons"]
+            if desc_info.get("commute_guidance"):
+                p["commute_guidance"] = desc_info["commute_guidance"]
+            desc_attached += 1
+
+        # 若描述库未提供卖点则兜底原楼盘卖点.xlsx
+        if not p.get("selling_points"):
+            sp_text = selling_points_map.get(pname)
+            if not sp_text:
+                norm_name = pname.translate(trans).replace(' ', '').replace('　', '').replace('．', '.').lower()
+                sp_text = selling_points_map.get(norm_name)
+            if sp_text:
+                p["selling_points"] = sp_text
+                sp_attached += 1
+                if not p.get("mainland_selling_points"):
+                    p["mainland_selling_points"] = sp_text
         
         full_text = " ".join(filter(None, [
             p.get("selling_points", ""),

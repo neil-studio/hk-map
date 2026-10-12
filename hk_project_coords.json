@@ -20,7 +20,7 @@
     "sqft_price_desc": "",
     "main_layout": "",
     "reason": "1.\t九龙塘传统豪宅核心地脉（龙亭里8号），由会德丰地产（Wheelock Properties）倾力打造的低密顶奢大宅名作。\n2.\t纯正九龙区41传统顶级名校网，紧邻喇沙小学、拔萃小学、玛利诺修院学校（小学部）等全港天花板级名校，名校入读概率极高。\n3.\t极低密度低座奢华大宅规制，坐拥九龙塘独有的低密绿化环境与极致私密居住氛围，是内地HNWI为子女教育及家族资产配置的黄金标的。",
-    "mainland_selling_points": "核心定位：坐落于九龙塘龙亭里8号、由会德丰地产倾力重磅打造的“集九龙塘传统豪宅地脉、全港顶尖41校网教育资源、极致低密纯大宅规制与尊贵私密保障于一身的传统名门传世大宅”。\n一句话核心卖点——由会德丰地产打造，傲居九龙塘龙亭里8号，以纯正41校网天花板级名校资源、极低密度尊贵居住规制、九龙塘传统豪宅圈层，精准满足内地顶级高净值人群对子女顶级教育通路与家族名门资产配置的终极需求。\n对内地客户最有吸引力",
+    "mainland_selling_points": "1、九龙塘龙庭里8号超级豪宅巅峰之作：由九龙仓与会德丰地产倾力打造，坐落九龙塘传统豪门腹地龙庭里8号，全盘分3期发展仅规划133伙，出入皆为城中名门望族。\n2、背靠狮子山直面维港天际线震撼双景：项目依山而筑，背靠九龙象征狮子山，坐北向南高层单位远眺维多利亚港及港岛山顶山脊线，风水与景观皆属九龙半岛顶尖格局。\n3、现楼发售与顶尖41名校网黄金护城河：已届现楼免除期房等待风险，坐拥全港公认最强41小学名校网与九龙城中学网，法式莫奈花园艺术美学与名校代际资产价值兼得。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kowloon_tong",
       "nearest_mtr_name": "九龍塘站 (東鐵綫)",
@@ -438,7 +438,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/11Wwchi7Xzx2-Eys3oUCkuM1YEkd_oz2U",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖41校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁九龍塘站约1600米(约19分钟)，雨季建议接驳小巴",
+    "commute_guidance": "步行约 1600米 (19分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "The Monet 第2期",
@@ -838,7 +842,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/11Wwchi7Xzx2-Eys3oUCkuM1YEkd_oz2U",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖41校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁九龍塘站约1446米(约17分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共14伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1446米 (17分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "The Monet 第3期",
@@ -1238,7 +1246,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/11Wwchi7Xzx2-Eys3oUCkuM1YEkd_oz2U",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖41校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁九龍塘站约1446米(约17分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共46伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1446米 (17分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "博峰",
@@ -1653,7 +1665,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://docs.qq.com/doc/DT1RUQVFTVU1WaUdX?aidPos=list&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&opennew=1",
     "marketing_url": "https://drive.google.com/drive/folders/1F8bmNHvyNklcV7Qd7GWjug5IWl83TXVG",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖41校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁九龍塘站约1403米(约16分钟)，雨季建议接驳小巴",
+    "commute_guidance": "步行约 1403米 (16分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "皇廷汇",
@@ -2274,7 +2290,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1lqMEg_nKnfOZzXxOdMJ4ypoun5gi4_zU",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖41校网 / 九龙城区校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁天后站约2297米(约27分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共4伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 2297米 (27分钟) 直达港铁天后站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "缇外",
@@ -2297,7 +2317,7 @@
     "sqft_price_desc": "5万左右",
     "main_layout": "3466呎示范单位",
     "reason": "1.\t九龙半山龙驹道绝版顶峰地脉（龙驹道3号），由嘉里建设（Kerry Properties）倾力打造的香港“半山豪宅天花板”传世旗舰名作。\n2.\t全盘仅64伙纯超大户型规制（包含5伙超院型独栋洋房及59伙特大顶奢分层大宅），分层实用面积约3,400至8,500平方呎，洋房实用面积最高逾11,000平方呎，户户配专属私人升降机大堂。\n3.\t划入九龙40校网（深水埗区），周边紧邻英华小学、圣玛加利男女英文中小学等多所全港顶尖直资/私立名校；居高临下俯瞰九龙城繁华城景与笔架山翠绿山景，隐世私密性与地理气场无与伦比。",
-    "mainland_selling_points": "核心定位：坐落于九龙半山龙驹道3号、由嘉里建设倾力重磅打造的“集九龙半山绝版地脉、全盘仅64伙极致纯大宅规制、俯瞰九龙城景观与靠山抱绿视野、顶级私密保障于一身的香港家族传世级终极豪宅”。\n一句话核心卖点——由嘉里建设打造，傲居九龙半山龙驹道3号，以全盘仅64伙超大户型的极致稀缺性、俯瞰九龙城城景与笔架山环抱的独家气场、40校网及周边顶尖私立名校资源，精准满足内地顶级高净值人群对香港半山巅峰身份象征",
+    "mainland_selling_points": "1、九龙笔架山半山龙驹道超级豪宅巅峰：嘉里建设倾力打造的九龙半山殿堂级豪宅，地处龙驹道3号高地，全盘仅设64伙超大平层及院墅大宅，代表九龙乃至全港豪宅天花板。\n2、居高临下俯瞰九龙半岛与维港全景：地势高峻，无遮挡俯瞰整个九龙半岛全景天际线及维多利亚港，视野无比震撼，安保及物管达到元首级规格，出入皆两地顶级商界领袖。\n3、顶级工艺与极度稀缺的家族传家宝：单位实用面积由约3,400至逾11,000平方呎，空间恢弘考究，多次创下九龙分层尺价纪录，被公认为极具传世价值与收藏地位的稀缺硬通货。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kowloon_tong",
       "nearest_mtr_name": "長沙灣站 (荃灣綫)",
@@ -2820,7 +2840,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1CPP2vfzRfVRxgogi4rFZNf4LTgQ9FqNm",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 嘉里建设精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁長沙灣站约2210米(约26分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为40校网 / 深水埗校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 2210米 (26分钟) 直达港铁長沙灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "天玺",
@@ -3044,7 +3068,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/gq5rfgq7CW_fpvQULN0kCA",
     "marketing_url": "https://drive.google.com/drive/folders/1mLTE7DTLPVqTpkTgZZR_W0pIIBXPx5UX",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "港铁九龍站上盖/极速步行直达 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为31校网 / 油尖旺区校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 145米 (1分钟) 直达港铁九龍站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "128 Waterloo",
@@ -3418,7 +3446,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/qZQ5E3nW37DIUsbawo3MsQ",
     "marketing_url": "https://drive.google.com/drive/folders/1XALe4TpeTvK5Rl-fwIpCuSA-swBc0Bct",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁旺角東站约1070米(约12分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共110伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1070米 (12分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Prince Central",
@@ -3668,7 +3700,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/llVURag0bAOPa2t-L9DaGg",
     "marketing_url": "https://drive.google.com/drive/folders/1TNKwJAnwrcerwAjdU7WcCjT4njGg53ic",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 紧邻港铁旺角東站高效通勤",
+    "quantified_cons": "【社区】单幢式精致大厦(共101伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 482米 (5分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "VAU Residence",
@@ -3951,7 +3987,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1xK0Y6--v6NFAd64ec81IsHvwOU7o978u",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁旺角東站约606米(约7分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共165伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 606米 (7分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "st. george's mansions",
@@ -4219,7 +4259,11 @@
     "intro_url": "https://mp.weixin.qq.com/s/TduYFdx6ptZiI3fEV-ehqA",
     "marketing_url": "https://drive.google.com/drive/folders/18Lrj1PWjseyChiIwl-HuvbISFJiJageO",
     "has_marketing_materials": false,
-    "address": "嘉道理道24A號"
+    "address": "嘉道理道24A號",
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龙城区校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁旺角東站约724米(约8分钟)，雨季建议接驳小巴",
+    "commute_guidance": "步行约 724米 (8分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "傲玟",
@@ -4242,7 +4286,7 @@
     "sqft_price_desc": "2万起",
     "main_layout": "800多呎2房、1100-1400呎3房",
     "reason": "1、何文田性价比最高的新房单价22,000起，全大户型设计，圈子纯粹，700~1400尺，两到三房。稀缺私家电梯厅入户，何文田片区唯一3000W内能买到的千尺豪宅2、34小学校网，中学九龙城校网顶级名校资源。",
-    "mainland_selling_points": "核心定位：占据九龙核心豪宅地段何文田、以“纯大户型设计、顶奢装标与超高私隐”为特色的“九龙传统名门大宅”。\n一句话核心卖点——坐落于九龙传统豪宅区何文田高地，享有顶级34小学网与九龙城中学网的硬核教育资源，以罕见的全大户型纯粹圈层、一梯一户/一梯两户的极高私密性，以及现楼即买即住的实景优势，精准满足内地实力买家对子女教育、居住品质与家族传承的极致追求。\n对内地客户最有吸引力的六个卖点\n1. 稳坐九",
+    "mainland_selling_points": "1、何文田核心传统豪宅区现楼大宅：坐落九龙传统老牌豪宅常盛街17号，背靠何文田半山清幽环境，现楼发售，实景大宅所见即所得，出入皆为低调富豪与专业精英。\n2、全盘纯大户型设计与极高实用率：主打近900至逾2,500平方呎中大户型及复式大宅，全户型开间阔绰实用，楼底高旷，配设豪华住客双会所及室内恒温泳池，居住舒适度极高。\n3、34名校网加持与区域极高性价比：位处九龙34名校网核心圈，名校资源丰富；相较同区其他铁路上盖项目，单价具极强竞争力，是家庭自住与名校配置的优质选择。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_to_kwa_wan",
       "nearest_mtr_name": "土瓜灣站 (屯馬綫)",
@@ -4596,7 +4640,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/Amoxa5UYYut6zrXWHKof8A",
     "marketing_url": "https://drive.google.com/drive/folders/1Zb0Enqr7190sc47XLpyonqQQoRUNyzLF",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁土瓜灣站约1165米(约14分钟)，雨季建议接驳小巴",
+    "commute_guidance": "步行约 1165米 (14分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "名钻",
@@ -4619,7 +4667,7 @@
     "sqft_price_desc": "2.6万",
     "main_layout": "3房671呎(仅剩3套)",
     "reason": "1、34小学名校网，中学九龙城校网名校资源丰富，距离band1学校玛丽诺修书院，喇莎书院一路之隔。2、2000万内在何文田板块能买到的稀缺三房户型",
-    "mainland_selling_points": "核心定位：占据九龙太子道西核心地段、以“34顶尖名校网”和“中小型高实用率户型”为核心卖点的“低门槛名校陪读与刚需精品盘”。\n一句话核心卖点——坐落于太子道西266号核心地段，以全港顶级的34名校网为核心护城河，配合2梯6户的高效空间规划与中小型实用户型，以较低的总价门槛，精准满足内地家庭在港岛九龙核心区的子女教育落脚与高性价比自住需求。\n对内地客户最有吸引力的六个卖点\n1. 锁定全港顶尖34名校",
+    "mainland_selling_points": "1、太子道西266号传统豪宅名门腹地：坐落九龙传统老牌豪宅板块太子道西266号，周边林荫葱郁，阶层纯正静谧，出入皆为城中低调名流与专业人士。\n2、2梯6户高效空间与低门槛名校大宅：采用2梯6户私密高效规划，主打高实用率中小型户型，总价门槛在太子道西豪宅板块极具亲和力，减轻资金压力。\n3、顶尖34名校网陪读与刚需精品盘：坐拥全港最顶级的九龙34小学名校网与九龙城中学校网，步行可达多家名校，陪读及名校配置首选，二手市场流通性极强。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_mong_kok_east",
       "nearest_mtr_name": "旺角東站 (東鐵綫)",
@@ -4897,7 +4945,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/6C7-tfJPOEwwkT53E8tSug",
     "marketing_url": "https://drive.google.com/drive/folders/1jQmpJ8bpzqQ_9eZuh6Q2PNhSboDFlRSX",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁旺角東站约1030米(约12分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共80伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1030米 (12分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "天铸 (第2期)",
@@ -5117,7 +5169,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1MY7xUhBWuA0UDIDTKBV4Gjf1mGdGpnrE",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龙城区校网名校网 ｜ 紧邻港铁何文田站高效通勤",
+    "quantified_cons": "【房源】高楼层优质采光单位余货稀缺，推售现场需尽早锁定心仪朝向",
+    "commute_guidance": "步行约 459米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "太子道西233号",
@@ -5140,7 +5196,7 @@
     "sqft_price_desc": "4.8万",
     "main_layout": "顶层1465、1748呎各剩1套",
     "reason": "1、34小学名校网，中学九龙城校网名校资源丰富，距离band1学校玛丽诺修书院，喇莎书院一路之隔。2、新鸿基豪宅开发商打造的高端学区房，2300万买3房",
-    "mainland_selling_points": "核心定位：占据太子道西黄金名校地段、由顶级声誉开发商打造的“低密度、主打三至四房大尺度空间的高端名门大宅”。\n一句话核心卖点——由新鸿基地产与会德丰地产两大巨头倾力打造，坐落于太子道西传统豪宅腹地，以全盘仅75伙的低密规划、涵盖2房至4房的多元高质感户型（含私家泳池顶层特色大宅）、顶级34名校网加持，以及现楼即买即住的实景优势，精准收割内地高净值家庭对子女顶尖教育与品质自住的双重诉求。\n对内地客户",
+    "mainland_selling_points": "1、九龙顶尖34名校网黄金护城河：坐拥全港拔尖率顶尖的九龙34小学名校网与九龙城中学校网，与传统Band 1名校玛利诺修院学校、喇沙书院仅一路之隔，具备极高名校资产溢价。\n2、新鸿基 × 会德丰两大巨头打造：由全港口碑第一的新鸿基地产与豪宅专家会德丰地产联袂打造，全盘仅75伙低密规划，出入私密尊贵，户型开间阔绰通透，纯正名门大宅质感。\n3、传统豪宅地段与现楼即买即用：占据太子道西与加多利山老牌传统豪宅腹地，闹中取静且速达旺角东及太子双铁；现楼所见即所得，即买即住、即刻落户，免去期房等待风险。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_mong_kok_east",
       "nearest_mtr_name": "旺角東站 (東鐵綫)",
@@ -5345,7 +5401,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1Pc3C3G5JC-E5JDpATioM5F_gXWi8WQc8",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁旺角東站约740米(约8分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共75伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 740米 (8分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "明寓",
@@ -5611,7 +5671,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://docs.qq.com/doc/DT1ZJUnNmcEdzbkVI?isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&opennew=1",
     "marketing_url": "https://drive.google.com/drive/folders/1cr7GejHEOsdZzNGYIfbYaN1RlRETR-TY",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁旺角東站约1090米(约13分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共18伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1090米 (13分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "朗贤峰第IIA期",
@@ -5813,7 +5877,11 @@
     "property_type_desc": "期房 (即将发售)",
     "intro_url": "https://mp.weixin.qq.com/s/amVaRSmBYdUgZttfojL9XQ",
     "marketing_url": "https://drive.google.com/drive/folders/1d4rCfRqCnZnSkaxGAGWwAhczZ7tHOsnJ",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龙城区校网名校网 ｜ 紧邻港铁何文田站高效通勤",
+    "quantified_cons": "【交付】属预售楼花阶段(即将发售)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 386米 (4分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "朗贤峰第IIB期",
@@ -6063,7 +6131,11 @@
     "property_type_desc": "期房 (即将发售)",
     "intro_url": "https://mp.weixin.qq.com/s/togd9-12gl9Gr0RegHgvRQ",
     "marketing_url": "https://drive.google.com/drive/folders/1d4rCfRqCnZnSkaxGAGWwAhczZ7tHOsnJ",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龙城区校网名校网 ｜ 紧邻港铁何文田站高效通勤",
+    "quantified_cons": "【交付】属预售楼花阶段(即将发售)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 464米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "瑜一第IC期",
@@ -6086,7 +6158,7 @@
     "sqft_price_desc": "4.6万左右",
     "main_layout": "在售2套1515、1套1564呎",
     "reason": "1、何文田34名校网豪宅楼盘，双地铁上盖2分钟地铁到家，稀缺维多利亚港海景。                                                                     2、1500尺特色单位，带500多尺超大露台，总裁大平层超大尺度感横厅设计。",
-    "mainland_selling_points": "瑜一对内地客户最核心的定位：占据传统九龙核心地段、拥有顶级教育资源与无可复制交通优势的“硬通货”铁路上盖资产。\n一句话核心卖点——华懋与港铁联手打造、何文田站纯正铁路上盖豪宅，尊享传统九龙塘及九龙城区顶级校网，以极高资产流动性，精准满足内地高净值家庭对子女教育、高效出行及长期稳健资产配置的刚性需求。\n对内地客户最有吸引力的六个卖点\n1. 纯正铁路上盖，双线交汇的“绝对速度”\n瑜一直接建在港铁何文田",
+    "mainland_selling_points": "1、纯正铁路上盖双线枢纽极速通达：直接建于港铁何文田站正上方，专属升降机无缝直达地铁大堂，观塘线与屯马线十字交汇，2站直抵金钟金融圈，速通尖沙咀及西九高铁站。\n2、何文田拔尖34名校网教育硬通货：坐拥全港公认最强小学34校网及九龙城区名校圈，拔萃男书院、喇沙书院、玛利诺修院等顶尖名校环绕，极受重视子女精英教育的高净值家庭青睐。\n3、华懋与港铁联袂打造稀缺资产：港铁上盖向来是香港楼市的“保值硬通货”，小区配备独立双会所，户型涵盖1至4房，部分高层更可远眺维港景致，资产流通性与租金承接力全港顶尖。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_ho_man_tin",
       "nearest_mtr_name": "何文田站 (觀塘綫)",
@@ -6265,7 +6337,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2025年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/1p9Rn4K1Ky-Zbwyf2ujadlRs5X_s5ANDq",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 紧邻港铁何文田站高效通勤",
+    "quantified_cons": "【交付】属预售楼花阶段(2025年入伙)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 368米 (4分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "瑜一．天海",
@@ -6288,7 +6364,7 @@
     "sqft_price_desc": "4.6万左右",
     "main_layout": "在售2套1515、1套1564呎",
     "reason": "1、何文田34名校网豪宅楼盘，双地铁上盖2分钟地铁到家，稀缺维多利亚港海景。\n2、1500尺特色单位，带500多尺超大露台，总裁大平层超大尺度感横厅设计。",
-    "mainland_selling_points": "核心定位：占据传统九龙核心地段、拥有顶级教育资源与无可复制交通优势的“硬通货”铁路上盖资产。\n一句话核心卖点——华懋与港铁联手打造、何文田站纯正铁路上盖豪宅，尊享传统九龙塘及九龙城区顶级校网，以极高资产流动性，精准满足内地高净值家庭对子女教育、高效出行及长期稳健资产配置的刚性需求。\n对内地客户最有吸引力的六个卖点\n1. 纯正铁路上盖，双线交汇的“绝对速度”\n瑜一直接建在港铁何文田站之上，拥有专属的",
+    "mainland_selling_points": "1、纯正铁路上盖双线枢纽极速通达：直接建于港铁何文田站正上方，专属升降机无缝直达地铁大堂，观塘线与屯马线十字交汇，2站直抵金钟金融圈，速通尖沙咀及西九高铁站。\n2、何文田拔尖34名校网教育硬通货：坐拥全港公认最强小学34校网及九龙城区名校圈，拔萃男书院、喇沙书院、玛利诺修院等顶尖名校环绕，极受重视子女精英教育的高净值家庭青睐。\n3、华懋与港铁联袂打造稀缺资产：港铁上盖向来是香港楼市的“保值硬通货”，小区配备独立双会所，户型涵盖1至4房，部分高层更可远眺维港景致，资产流通性与租金承接力全港顶尖。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_ho_man_tin",
       "nearest_mtr_name": "何文田站 (觀塘綫)",
@@ -6471,7 +6547,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1p9Rn4K1Ky-Zbwyf2ujadlRs5X_s5ANDq",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 港铁何文田站上盖/极速步行直达",
+    "quantified_cons": "【房源】高楼层优质采光单位余货稀缺，推售现场需尽早锁定心仪朝向",
+    "commute_guidance": "步行约 292米 (3分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "耀爵台",
@@ -6822,7 +6902,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1QVASef4NgiRPOja90MKZRd_mT2ECEd2E",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龙城区校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁土瓜灣站约1115米(约13分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共14伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1115米 (13分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "芳菲",
@@ -7066,7 +7150,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/OJ9vz7SOa5avNe-_ZHZ2mA",
     "marketing_url": "https://drive.google.com/drive/folders/19dhZpkmfRTtQxD24--7KAZ-78dIsf1NS",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁旺角東站约554米(约6分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共71伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 554米 (6分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "誉林",
@@ -7089,7 +7177,7 @@
     "sqft_price_desc": "2.4万",
     "main_layout": "3房754呎（2套）",
     "reason": "1、34小学名校网，中学九龙城校网名校资源丰富，距离band1学校玛丽诺修书院，喇莎书院一路之隔。2、2000万内在何文田板块能买到的稀缺三房户型",
-    "mainland_selling_points": "核心定位：占据九龙何文田黄金地段、以“34顶尖名校网”和“高实用性中小型户型”为核心卖点的“低门槛名校陪读与市区精品现楼”。\n一句话核心卖点——坐落于何文田胜利道传统优质街区，由品牌房企永义国际倾力打造，以极致稀缺的34名校网加持、高实用率的1房至3房空间规划，以及现楼即买即住的实景优势，为内地买家提供了一个低总价门槛落脚九龙核心区、轻松锁定顶尖教育资源的高性价比选择。\n对内地客户最有吸引力的六个",
+    "mainland_selling_points": "1、窝打老道93号/太子道西交界传统豪宅核心：永义国际精心打造，坐落九龙传统老牌豪门地段窝打老道93号，周边名宅林立，人文底蕴深厚，出入尊崇。\n2、全盘低密精致大宅配专属尊贵会所：全盘仅规划数十伙精品及大户型住宅，空间布局方正通透，开间阔绰，全屋采用国际一流高端精装厨电，居住质感出众。\n3、顶尖34名校网加持与名校陪读核心标的：坐拥全港最抢手的九龙34小学名校网与九龙城中学网，步行即达拔萃男书院、玛利诺修院等名校，名校资产价值稳固。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_mong_kok_east",
       "nearest_mtr_name": "旺角東站 (東鐵綫)",
@@ -7342,7 +7430,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/MyYF7MSQKSbYvJu170szhw",
     "marketing_url": "https://drive.google.com/drive/folders/1G6FA74pDS-iFQNeTEYUI71nkr2lXenws",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁旺角東站约971米(约11分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共56伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 971米 (11分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "隆敍",
@@ -7696,7 +7788,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1k3SfPTeJe8ctDz0FBQclWJsuBQ_Gp5IN",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁宋皇臺站约1045米(约12分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共45伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1045米 (12分钟) 直达港铁宋皇臺站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Double Coast I",
@@ -8239,7 +8335,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/4HI8tFK5TMLbCyF1smEx5g",
     "marketing_url": "https://drive.google.com/drive/folders/1NdR9fJNrc2n5QT7uqePLKtipQkjB-9zC",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "Double Coast III",
@@ -8799,7 +8899,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/jIV0osc25yVWXwbGSMQ4lQ",
     "marketing_url": "https://drive.google.com/drive/folders/1NdR9fJNrc2n5QT7uqePLKtipQkjB-9zC",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "Henley Park",
@@ -8822,7 +8926,7 @@
     "sqft_price_desc": "3.6万左右",
     "main_layout": "3房937呎",
     "reason": "1.恒基兆业品质力作，现楼发售，“即买即住即收租”对资金占用低。\n2.紧邻启德体育园及车站广场，位置核心，步行至启德地铁站极便利。\n3.纯意式高定会所，引入高端智能家居配置，科技感与档次感兼备。",
-    "mainland_selling_points": "Henley Park对内地客户最核心的定位，不是“前排冲浪的海景盘”，而是：启德核心区内极罕见的现楼低密度“庄园式”奢装资产，兼顾高私隐度自住与极速收租效率。\n一句话核心卖点——恒基兆业打造、启德核心区罕有低密度水景庄园住宅，以“即买即住/即租”的现楼优势、对望启德体育园的黄金视角，以及延续The Henley的高定意式奢装，精准吸引追求高舒适度、低调内敛的内地高净值买家。\n对内地客户最有吸引力",
+    "mainland_selling_points": "1、启德城中心现楼发售即买即住即收租：位于启德核心区沐泰街8号，恒基兆业打造，现楼发售彻底规避等待周期，实景采光与交付品质看得见，即刻入住或出租获益。\n2、低密水岸生活与紧邻启德体育园：特设低座独栋住宅及高座大厦，紧邻启德体育园及启德河绿化长廊，步行数分钟直达港铁启德站及AIRSIDE地下购物街，动静相宜。\n3、精致智能化精装与极高租金承接力：引入高规格意式精装标准及全屋智能家居系统，配备豪华住客会所，深受启德金融外企白领及医疗专才青睐，租金回报与流动性突出。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kai_tak",
       "nearest_mtr_name": "啟德站 (屯馬綫)",
@@ -9067,7 +9171,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/16A5B1YrCIWmGUASoSzWKg8H1Yi7724-B",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "Miami Quay I",
@@ -9090,7 +9198,7 @@
     "sqft_price_desc": "2.1万左右",
     "main_layout": "2房459呎",
     "reason": "1.启德跑道区核心前排，享有极佳的维港或内海景观视野。\n2.主打高质素低密度度假风园林设计，居住环境在启德板块更具舒适感。\n3.由四大顶级发展商（会德丰、恒基、新世界、帝国）联手打造，品质与交楼标准有保障。",
-    "mainland_selling_points": "Miami Quay对内地客户最核心的定位，不是“顶级孤品豪宅”，而是：跑道区内极具性价比、兼顾国际化度假生活美学与优质内海景观的精致海景头等舱资产。\n一句话核心卖点——会德丰、恒基、新世界、中国海外四大巨头联手打造，跑道区极具地中海度假风情的精致临海社区，以现楼品质、高比例内海景及已兑现的体育园红利，满足内地中产与高净值家庭的身份落脚及资产配置。\n对内地客户最有吸引力的六个卖点\n1. 现楼发售，",
+    "mainland_selling_points": "1、启德跑道公园前排临海游艇景观：坐拥启德跑道区前排临海优势，大部分单位直面九龙湾畔开扬游艇海景及沿岸绿意公园，尽享迈阿密风情的临海水岸度假生活。\n2、四大头部发展商联袂打造品质住区：由会德丰、恒基兆业、新世界发展及帝国集团四大巨头强强联合，引入美式水岸度假度假村概念，配备豪华双会所及多项水上休闲运动主题设施。\n3、实用户型设计与高性价比入主跑道区：涵盖开放式至三房多元化户型，开间通透方正，空间利用率高，总价门槛在跑道区极具亲和力，兼顾年轻菁英轻奢自住与稳健租金收益。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_ngau_tau_kok",
       "nearest_mtr_name": "牛頭角站 (觀塘綫)",
@@ -9680,7 +9788,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/I2PgM5Hk8Zw2DoOgIS6OmA",
     "marketing_url": "https://drive.google.com/drive/folders/1hM-nhX_dTzNNeqOCLUCqqumB1sUrnCHX",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "Miami Quay II",
@@ -9703,7 +9815,7 @@
     "sqft_price_desc": "2.1万左右",
     "main_layout": "2房459呎",
     "reason": "1、启德跑道区最热销的楼盘之一，呎价2.1万起\n2、1000万左右买两房",
-    "mainland_selling_points": "核心定位：跑道区内极具性价比、兼顾国际化度假生活美学与优质内海景观的精致海景头等舱资产。\n\n一句话核心卖点——会德丰、恒基、新世界、中国海外四大巨头联手打造，跑道区极具地中海度假风情的精致临海社区，以现楼品质、高比例内海景及已兑现的体育园红利，满足内地中产与高净值家庭的身份落脚及资产配置。\n对内地客户最有吸引力的六个卖点\n1. 现楼发售，所见即所得，彻底消除异地购房焦虑\n相比于还在建的期房，Mia",
+    "mainland_selling_points": "1、启德跑道公园前排临海游艇景观：坐拥启德跑道区前排临海优势，大部分单位直面九龙湾畔开扬游艇海景及沿岸绿意公园，尽享迈阿密风情的临海水岸度假生活。\n2、四大头部发展商联袂打造品质住区：由会德丰、恒基兆业、新世界发展及帝国集团四大巨头强强联合，引入美式水岸度假度假村概念，配备豪华双会所及多项水上休闲运动主题设施。\n3、实用户型设计与高性价比入主跑道区：涵盖开放式至三房多元化户型，开间通透方正，空间利用率高，总价门槛在跑道区极具亲和力，兼顾年轻菁英轻奢自住与稳健租金收益。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_ngau_tau_kok",
       "nearest_mtr_name": "牛頭角站 (觀塘綫)",
@@ -10293,7 +10405,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/hhHndkmahWNvu-9x5q1JNA",
     "marketing_url": "https://drive.google.com/drive/folders/1hM-nhX_dTzNNeqOCLUCqqumB1sUrnCHX",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "Monaco Marine",
@@ -10532,7 +10648,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/5qRUCsPLsUESX7RLqTQOrA",
     "marketing_url": "https://drive.google.com/drive/folders/12Y7o-rY2fGNYlcODYO3zHTTYZ8xaKKqK",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "Monaco One",
@@ -10762,7 +10882,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/12Y7o-rY2fGNYlcODYO3zHTTYZ8xaKKqK",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "Monaco 第1期",
@@ -11004,7 +11128,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/15gGvkreAlc3TFUeEVBIL5RH6hYtXumda",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "The Henley I",
@@ -11027,7 +11155,7 @@
     "sqft_price_desc": "3万左右",
     "main_layout": "3房775呎",
     "reason": "1.启德无可争议的科技豪宅标杆，全屋多项国际大牌高定精装。\n2.景观极具震撼力，中高层单位可无遮挡俯瞰启德体育园及维港海景。\n3.针对高净值租客群体，该项目在整个启德区域的租金回报率与溢价能力名列前茅。",
-    "mainland_selling_points": "The Henley对内地客户最核心的定位，不是“性价比上车盘”，而是：启德核心区内极度稀缺、极具科技感与国际审美的“维港海景＋体育园地标”双头等舱资产。\n一句话核心卖点——恒基兆业倾力打造，紧邻启德体育园及城中河道的临海地标豪宅，以无可复制的前排维港外海景、意式奢华顶配交楼标准及高科技智能生活体系，精准收割内地实力新贵与金领阶层的审美与配置需求。\n对内地客户最有吸引力的六个卖点\n1. 紧邻已启用",
+    "mainland_selling_points": "1、启德城中心前排与双重视觉地标：紧邻启德体育园首排地标，中高层单位可无遮挡俯瞰世界级场馆与维港壮阔外海景，在家即享大型赛事盛况与维港烟花。\n2、恒基旗舰科技豪宅与顶奢高定：恒基兆业在启德的旗舰代表作，全屋重金引入意大利顶级奢华高定（LEMA智能步入式衣帽间、Snaidero厨柜等），配备逾3.2万呎奢华CLUB HENLEY双会所。\n3、成熟港铁商圈与极强资产流动性：步行约5-8分钟直达港铁启德站及大型地下街、AIRSIDE与双子汇SOGO商圈，兼得临海生活与无缝通勤，高端圈层租金溢价稳居板块前茅。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kai_tak",
       "nearest_mtr_name": "啟德站 (屯馬綫)",
@@ -11260,7 +11388,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/GJ_V87pKjiZllbMH6a6agw",
     "marketing_url": "https://drive.google.com/drive/folders/1aCIiZKo4cvZg3asGk5saUQZ0UhEC8EbI",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "The Henley II",
@@ -11283,7 +11415,7 @@
     "sqft_price_desc": "3万左右",
     "main_layout": "3房775呎",
     "reason": "1.启德无可争议的科技豪宅标杆，全屋多项国际大牌高定精装。\n2.景观极具震撼力，中高层单位可无遮挡俯瞰启德体育园及维港海景。\n3.针对高净值租客群体，该项目在整个启德区域的租金回报率与溢价能力名列前茅。",
-    "mainland_selling_points": "The Henley对内地客户最核心的定位，不是“性价比上车盘”，而是：启德核心区内极度稀缺、极具科技感与国际审美的“维港海景＋体育园地标”双头等舱资产。\n一句话核心卖点——恒基兆业倾力打造，紧邻启德体育园及城中河道的临海地标豪宅，以无可复制的前排维港外海景、意式奢华顶配交楼标准及高科技智能生活体系，精准收割内地实力新贵与金领阶层的审美与配置需求。\n对内地客户最有吸引力的六个卖点\n1. 紧邻已启用",
+    "mainland_selling_points": "1、启德城中心前排与双重视觉地标：紧邻启德体育园首排地标，中高层单位可无遮挡俯瞰世界级场馆与维港壮阔外海景，在家即享大型赛事盛况与维港烟花。\n2、恒基旗舰科技豪宅与顶奢高定：恒基兆业在启德的旗舰代表作，全屋重金引入意大利顶级奢华高定（LEMA智能步入式衣帽间、Snaidero厨柜等），配备逾3.2万呎奢华CLUB HENLEY双会所。\n3、成熟港铁商圈与极强资产流动性：步行约5-8分钟直达港铁启德站及大型地下街、AIRSIDE与双子汇SOGO商圈，兼得临海生活与无缝通勤，高端圈层租金溢价稳居板块前茅。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kai_tak",
       "nearest_mtr_name": "啟德站 (屯馬綫)",
@@ -11496,7 +11628,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/GJ_V87pKjiZllbMH6a6agw",
     "marketing_url": "https://drive.google.com/drive/folders/1aCIiZKo4cvZg3asGk5saUQZ0UhEC8EbI",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "The Henley III",
@@ -11519,7 +11655,7 @@
     "sqft_price_desc": "3万左右",
     "main_layout": "3房775呎",
     "reason": "1.启德无可争议的科技豪宅标杆，全屋多项国际大牌高定精装。\n2.景观极具震撼力，中高层单位可无遮挡俯瞰启德体育园及维港海景。\n3.针对高净值租客群体，该项目在整个启德区域的租金回报率与溢价能力名列前茅。",
-    "mainland_selling_points": "The Henley对内地客户最核心的定位，不是“性价比上车盘”，而是：启德核心区内极度稀缺、极具科技感与国际审美的“维港海景＋体育园地标”双头等舱资产。\n一句话核心卖点——恒基兆业倾力打造，紧邻启德体育园及城中河道的临海地标豪宅，以无可复制的前排维港外海景、意式奢华顶配交楼标准及高科技智能生活体系，精准收割内地实力新贵与金领阶层的审美与配置需求。\n对内地客户最有吸引力的六个卖点\n1. 紧邻已启用",
+    "mainland_selling_points": "1、启德城中心前排与双重视觉地标：紧邻启德体育园首排地标，中高层单位可无遮挡俯瞰世界级场馆与维港壮阔外海景，在家即享大型赛事盛况与维港烟花。\n2、恒基旗舰科技豪宅与顶奢高定：恒基兆业在启德的旗舰代表作，全屋重金引入意大利顶级奢华高定（LEMA智能步入式衣帽间、Snaidero厨柜等），配备逾3.2万呎奢华CLUB HENLEY双会所。\n3、成熟港铁商圈与极强资产流动性：步行约5-8分钟直达港铁启德站及大型地下街、AIRSIDE与双子汇SOGO商圈，兼得临海生活与无缝通勤，高端圈层租金溢价稳居板块前茅。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kai_tak",
       "nearest_mtr_name": "啟德站 (屯馬綫)",
@@ -11756,7 +11892,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/GJ_V87pKjiZllbMH6a6agw",
     "marketing_url": "https://drive.google.com/drive/folders/1aCIiZKo4cvZg3asGk5saUQZ0UhEC8EbI",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "启德海湾 1",
@@ -11779,7 +11919,7 @@
     "sqft_price_desc": "2.4万左右",
     "main_layout": "2房482呎带梗厨（4套）2c-b",
     "reason": "1.小户型即可有看海景单位2.入门门槛低3.所在区域未来有升值潜力",
-    "mainland_selling_points": "**启德海湾对内地客户最核心的定位，不是“顶级海景豪宅”，而是：以相对容易接受的总价，进入启德跑道区和维港滨水生活圈的一套新房资产。**\n## 一句话核心卖点——三大品牌开发商打造、启德跑道区大型滨水社区，以约600万港币起的门槛，兼顾香港自住、子女教育、身份落脚和长期资产配置。**\n\n对内地客户最有吸引力的六个卖点\n1. 启德板块中，总价门槛相对友好\n启德海湾2目前公开资料显示，折实入场价约**",
+    "mainland_selling_points": "1、启德跑道区核心海滨大型旗舰热销盘：由嘉华国际、会德丰地产及中国海外三大知名港资央企强强联手打造，位处跑道区海滨核心，屡创板块成交热潮，市场关注度极高。\n2、开扬维港及游艇会双重水岸景观视野：依水而建，部分中高层单位可饱览维多利亚港或内海游艇会开阔水岸风光，近距离享受启德海滨长廊与未来都会公园千亿级绿意配套。\n3、高实用率户型设计与极亲和入市门槛：主打一房至三房高实用率多元户型，空间规划高效方正，总价及首付门槛在启德跑道区极具竞争力，兼顾年轻家庭自住与高租金回报收益。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kowloon_bay",
       "nearest_mtr_name": "牛頭角站 (觀塘綫)",
@@ -12286,7 +12426,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/onH2-RR8Lk96kQ4BEaekbA",
     "marketing_url": "https://drive.google.com/drive/folders/1_qE2J4cg5FkOXtcRvrlHNOIcfppmEVAY",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龙城区校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "启德海湾 2",
@@ -12309,7 +12453,7 @@
     "sqft_price_desc": "2.4万左右",
     "main_layout": "2房429呎",
     "reason": "1、启德跑道区最热销的楼盘，单月成交200套左右尺价2.2万起2、1000万左右买两房，拥有15W平方尺花园会所全跑道区最大3、顶豪开发商会德丰央企中海联合开发质量有保障",
-    "mainland_selling_points": "核心定位：以相对容易接受的总价，进入启德跑道区和维港滨水生活圈的一套新房资产。\n\n一句话核心卖点——三大品牌开发商打造、启德跑道区大型滨水社区，以约600万港币起的门槛，兼顾香港自住、子女教育、身份落脚和长期资产配置。\n\n对内地客户最有吸引力的六个卖点\n1. 启德板块中，总价门槛相对友好\n启德海湾2目前公开资料显示，折实入场价约**561万港币起**；近期两房登记成交大致在**1,000万至1,4",
+    "mainland_selling_points": "1、启德跑道区核心海滨大型旗舰热销盘：由嘉华国际、会德丰地产及中国海外三大知名港资央企强强联手打造，位处跑道区海滨核心，屡创板块成交热潮，市场关注度极高。\n2、开扬维港及游艇会双重水岸景观视野：依水而建，部分中高层单位可饱览维多利亚港或内海游艇会开阔水岸风光，近距离享受启德海滨长廊与未来都会公园千亿级绿意配套。\n3、高实用率户型设计与极亲和入市门槛：主打一房至三房高实用率多元户型，空间规划高效方正，总价及首付门槛在启德跑道区极具竞争力，兼顾年轻家庭自住与高租金回报收益。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kowloon_bay",
       "nearest_mtr_name": "啟德站 (屯馬綫)",
@@ -12742,7 +12886,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2025年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/1_qE2J4cg5FkOXtcRvrlHNOIcfppmEVAY",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龙城区校网名校网 ｜ 一线维港海滨/开阔海湾稀缺视野",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "天泷",
@@ -12765,7 +12913,7 @@
     "sqft_price_desc": "3.5万起",
     "main_layout": "3房1000呎-1100呎、4房1100-1400呎",
     "reason": "1.\t启德跑道区临海维港前排（承丰道22号），由恒基兆业领衔、联合六大财团倾力打造的“Park Peninsula”地标天花板豪宅。\n2.\t纯正九龙城（34校网）顶级名校圈加持，约70%单位享无遮挡壮丽维港海景，近7成单位设私家升降机大堂。\n3.\t已现楼落成（高规交楼），融合游艇流线设计美学与高规私密安保，为启德跑道区极其稀缺的家族藏品级大宅。",
-    "mainland_selling_points": "天泷（The Knightsbridge）\n核心定位：坐落于启德跑道区 Park Peninsula 临海尊贵地段（承丰道22号）、由恒基兆业领衔六大龙头财团强强联手打造的“集绝版维港海景、独立私人电梯大堂与低密游艇美学于一身的跑道区旗舰豪宅藏品”。\n一句话核心卖点——由恒基兆业领衔六大财团倾力打造，坐落于启德跑道区前海龙头地段，以约70%单位俯瞰维多利亚港无敌海景、大户型专享私家升降机大堂的极致",
+    "mainland_selling_points": "1、启德跑道区龙头前排绝对一线临海地王：承丰道22号临海最前排地段，七成以上单位直面无遮挡维多利亚港一线震撼海景与璀璨烟花景，世界级天际线视野。\n2、六大头部财团联手与国际大师奢华精工：恒基、会德丰、华懋、新世界、中国海外及帝国集团合力打造，全盘主打三房及四房宏阔大宅，配备专属私梯大堂。\n3、逾7万呎顶奢临海会所「Club Knightsbridge」：配备50米户外泳池及海景宴会厅，用料奢华绝伦，为启德跑道区纯正顶奢豪宅标杆，资产传世属性极强。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_ngau_tau_kok",
       "nearest_mtr_name": "牛頭角站 (觀塘綫)",
@@ -13292,7 +13440,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/GzQds678eO0iXOBkJVVRzw",
     "marketing_url": "https://drive.google.com/drive/folders/1JB3TGwFZf0RPHQuVOYfXF8vBOWJpQ2g4",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "天玺．天",
@@ -13315,7 +13467,7 @@
     "sqft_price_desc": "4.2万左右",
     "main_layout": "2230呎及以上",
     "reason": "1、启德唯一全天候无缝连接港铁启德站新盘，新鸿基地标豪宅，基座直通AIRSIDE商场，7站到中环、6站达西九龙高铁站15分钟直达深圳，34校网Band 1名校环绕。\n2、呎价约4万起，现楼交楼配Miele厨电+3.2米层高+LDK设计，双会所逾10万呎含31楼空中无边际泳池及宴会厅。",
-    "mainland_selling_points": "启德发展区稀缺焦点，名流聚集区。",
+    "mainland_selling_points": "1、启德唯一全天候无缝直达地铁新盘：新鸿基地产在启德城中心的旗舰巅峰之作，住宅大堂全天候室内通道无缝直达港铁启德站及地下购物街，7站到中环、6站到高铁站。\n2、启德最高双子地标与基座商场直通：项目楼高耸立，为启德核心区最高天际住宅地标，基座直通大型商场AIRSIDE与双子汇SOGO，尽享启德千亿CBD2顶级商业繁华。\n3、新鸿基顶尖品牌口碑与综合体溢价：全港口碑第一开发商保驾护航，配备超高标准奢华会所，户型从开放式至四房涵盖全面，二手承接力与升值潜力在板块内稳居龙头地位。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kai_tak",
       "nearest_mtr_name": "啟德站 (屯馬綫)",
@@ -13549,7 +13701,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1kcW7FKhbsBnxS67Sl5jXu9lPGVLqe3k2",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 紧邻港铁啟德站高效通勤",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "天玺．天第2期",
@@ -13572,7 +13728,7 @@
     "sqft_price_desc": "4.2万左右",
     "main_layout": "2230呎及以上",
     "reason": "1、启德唯一全天候无缝连接港铁启德站新盘，新鸿基地标豪宅，基座直通AIRSIDE商场，7站到中环、6站达西九龙高铁站15分钟直达深圳，34校网Band 1名校环绕。\n2、呎价约4万起，现楼交楼配Miele厨电+3.2米层高+LDK设计，双会所逾10万呎含31楼空中无边际泳池及宴会厅。",
-    "mainland_selling_points": "核心定位：坐落于启德城中心绝对核心地段、由新鸿基地产打造的“无缝对接港铁启德站、集交通枢纽、旗舰商业与新鸿基顶级豪宅基因于一身的CBD2地标综合体大宅”。\n一句话核心卖点——由新鸿基地产倾力打造，坐落于启德城中心绝对龙头位置，以无缝连接港铁启德站的极致通勤、新鸿基“天玺”系天花板级的建筑与物管品质、传统34名校网及基座庞大商业配套，精准满足内地顶级高净值人群对家族资产配置、极致便利生活与前沿地标价",
+    "mainland_selling_points": "1、启德唯一全天候无缝直达地铁新盘：新鸿基地产在启德城中心的旗舰巅峰之作，住宅大堂全天候室内通道无缝直达港铁启德站及地下购物街，7站到中环、6站到高铁站。\n2、启德最高双子地标与基座商场直通：项目楼高耸立，为启德核心区最高天际住宅地标，基座直通大型商场AIRSIDE与双子汇SOGO，尽享启德千亿CBD2顶级商业繁华。\n3、新鸿基顶尖品牌口碑与综合体溢价：全港口碑第一开发商保驾护航，配备超高标准奢华会所，户型从开放式至四房涵盖全面，二手承接力与升值潜力在板块内稳居龙头地位。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kai_tak",
       "nearest_mtr_name": "啟德站 (屯馬綫)",
@@ -13796,7 +13952,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1kcW7FKhbsBnxS67Sl5jXu9lPGVLqe3k2",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 港铁啟德站上盖/极速步行直达",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "天玺．海第1期",
@@ -14353,7 +14513,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1GfFR_eN5l-7kJigBQcIlfJOlD6WZ8RtW",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "天玺．海第2A期",
@@ -14376,7 +14540,7 @@
     "sqft_price_desc": "4万左右",
     "main_layout": "1150、1124呎",
     "reason": "1、启德跑道区最前排半岛位，无遮挡一线维港海景+烟花景，低密度纯大户（七成四房）设私梯大堂，新鸿基现楼交楼配Gaggenau厨电及8万呎临海双会所含无边际泳池。\n2、呎价约4万起，34校网Band 1名校环绕",
-    "mainland_selling_points": "核心定位：坐落于启德跑道区维港前海龙头地段、由新鸿基地产打造的“集绝版一线海景、私家升降机体验与新鸿基顶级品质于一身的九龙东旗舰豪宅藏品”。\n一句话核心卖点——由新鸿基地产倾力打造，坐落于启德跑道前海最前排龙头地段，以无遮挡维多利亚港壮丽海景、绝大多数单位私家升降机大堂的极致尊贵、传统34名校网及新鸿基天花板级的豪宅品质，精准满足内地顶级高净值人群对家族资产配置、高私密居住与前沿地标资产的终极需求",
+    "mainland_selling_points": "1、启德跑道区最前排半岛位龙头地王：新鸿基地产在启德跑道区前端龙头半岛位打造的压轴顶奢大宅，户户大比例直面全无遮挡的一线维多利亚港海景及璀璨烟花景。\n2、低密纯大户型奢适规划与私梯大堂：全盘主打三房及四房宏阔大宅（四房占近七成），配备独立私人升降机大堂，层高与开间尺度极为震撼，出入皆为深港两地顶尖名流领袖。\n3、新鸿基现楼品质保障与奢华会所：新鸿基顶级工艺打造，现楼陆续交付所见即所得，配备逾8万呎临海奢华双会所「Club Wave」，在启德跑道区具备无可撼动的标杆领袖地位。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_ngau_tau_kok",
       "nearest_mtr_name": "牛頭角站 (觀塘綫)",
@@ -14874,7 +15038,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1GfFR_eN5l-7kJigBQcIlfJOlD6WZ8RtW",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "天玺．海第2B期",
@@ -15403,7 +15571,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1GfFR_eN5l-7kJigBQcIlfJOlD6WZ8RtW",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "柏蔚森 I",
@@ -15956,7 +16128,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1zU1G6oBVUZZE8YRp1FgfQqyuUDRt1uWl",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "柏蔚森 II",
@@ -16477,7 +16653,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1zU1G6oBVUZZE8YRp1FgfQqyuUDRt1uWl",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "柏蔚森 III",
@@ -17016,7 +17196,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1zU1G6oBVUZZE8YRp1FgfQqyuUDRt1uWl",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "沄璟",
@@ -17039,7 +17223,7 @@
     "sqft_price_desc": "6万起",
     "main_layout": "4套2088呎、4栋别墅4300、4800呎",
     "reason": "1.启德跑道区绝对的一线临海地头，超大比例单位直面全无遮挡的维港一线海景。\n2.定位纯正超级豪宅圈层，大户型设计，出入皆是高净值两地名流。\n3.聘请国际顶尖大师团队设计会所与建筑，用料奢华，资产传世属性极强。",
-    "mainland_selling_points": "澐璟对内地客户最核心的定位，不是“刚需改善盘”，也不是“入门级资产”，而是：全香港极具收藏价值、直面维港一线震撼海景的“家族传家宝”级顶奢大宅。\n一句话核心卖点——保利置业与华润置地两大实力央企强强联手，跑道区前排龙头位置的纯正一线临海超级豪宅，以绝无仅有的“正南向”维港全海景大户型规划、超高规格石材工艺，精准收割内地超高净值领袖与顶级家族的资产收藏需求。\n对内地客户最有吸引力的六个卖点\n1. 极",
+    "mainland_selling_points": "1、启德跑道区一线临海龙头：超大比例单位直面全无遮挡的维港一线壮阔海景。\n2、纯正顶级高净值圈层：定位纯正超级豪宅圈层，纯大户型设计，出入皆是两地名流。\n3、国际大师团队奢华高定：聘请国际顶尖大师团队设计会所与建筑，用料奢华，传世属性极强。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kowloon_bay",
       "nearest_mtr_name": "牛頭角站 (觀塘綫)",
@@ -17627,7 +17811,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/Wp3AbPAWcKZCDFTmBGhSlQ",
     "marketing_url": "https://drive.google.com/drive/folders/16UEdptlrMwCU8WY9FazQvV4p7mwgWhrp",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "维港1号",
@@ -18101,7 +18289,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/Z-tJctJ0FFSlT-T7lIIJsw",
     "marketing_url": "https://drive.google.com/drive/folders/147u3GivfS6y8wAgwHth6OO0HUwJ96mAC",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "维港．双钻",
@@ -18619,7 +18811,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/xxByE9aKmHfUbbGd3it8Lw",
     "marketing_url": "https://drive.google.com/drive/folders/1-ua4J5GlAVBP3OICcc-y7Upf9boI9lWZ",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "维港．湾畔第1A期",
@@ -19248,7 +19444,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/nfXNBkYfT6-VWfoL7Zw8JA",
     "marketing_url": "https://drive.google.com/drive/folders/1Xkr_miH6ZUXpIEtlqr-7IV2EQgOr_MET",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "维港．湾畔第1B期",
@@ -19797,7 +19997,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/nfXNBkYfT6-VWfoL7Zw8JA",
     "marketing_url": "https://drive.google.com/drive/folders/1Xkr_miH6ZUXpIEtlqr-7IV2EQgOr_MET",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "维港．湾畔第2B期",
@@ -20325,7 +20529,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/nfXNBkYfT6-VWfoL7Zw8JA",
     "marketing_url": "https://drive.google.com/drive/folders/1Xkr_miH6ZUXpIEtlqr-7IV2EQgOr_MET",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "本木",
@@ -20536,7 +20744,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1AGB_nDyZAs2EaCofpWjh59Kalb6sLAtz",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "港铁佐敦站上盖/极速步行直达 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为31校网 / 油尖旺区校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共172伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 163米 (2分钟) 直达港铁佐敦站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "The Boundary",
@@ -20900,7 +21112,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2025年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/1-kCMD6ngPBQJEGwbbfZAU5vfIKv22Gt2",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "乐风集团精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁深水埗站约836米(约10分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为32校网 / 油尖旺校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 836米 (10分钟) 直达港铁深水埗站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Upper Prince",
@@ -21105,7 +21321,11 @@
     "property_type_desc": "期房 (预计2026年入伙)",
     "intro_url": "https://mp.weixin.qq.com/s/zbzd8BXIqfsn-pCjlabZ2Q",
     "marketing_url": "https://drive.google.com/drive/folders/1WTFWmv-LEG7QvmyxXJQ-RgeABYu_YKL5",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "紧邻港铁太子站高效通勤 ｜ 乐风集团精工品质保障",
+    "quantified_cons": "【校网】所属公立校网为32校网 / 油尖旺区校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共139伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 345米 (4分钟) 直达港铁太子站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "利奥坊．凯岸",
@@ -21447,7 +21667,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1XKsSPa0UpM34-FHnWdJ5--WNI-YYiJJw",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 恒基兆业精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁奧運站约909米(约10分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为32校网 / 油尖旺校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 909米 (10分钟) 直达港铁奧運站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "利奥坊．曦岸",
@@ -21845,7 +22069,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1XKsSPa0UpM34-FHnWdJ5--WNI-YYiJJw",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 恒基兆业精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁奧運站约909米(约10分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为32校网 / 油尖旺校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 909米 (10分钟) 直达港铁奧運站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "映居",
@@ -22218,7 +22446,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2025年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/1QwAUiAsOb5DiYKWFypEJhOPx0jbULTbQ",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "建灏地产 / 市建局精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁旺角站约819米(约9分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为32校网 / 油尖旺校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 819米 (9分钟) 直达港铁旺角站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "原舍",
@@ -22241,7 +22473,7 @@
     "sqft_price_desc": "1.7万左右",
     "main_layout": "1房304呎",
     "reason": "1.\t九龙尖沙咀繁华核心绝版地脉，由 东立地产（Landrich Properties） 倾力打造的极其珍稀的前沿精品顶奢大宅名作。\n\t2.\t划入九龙31校网（油尖旺区），紧邻油麻地天主教小学、拔萃女书院（女拔）等多所全港顶尖百年名校；步行即达尖沙咀核心商圈（K11 MUSEA、海港城）及西九文化区。\n\t3.\t顶奢天花板级交楼装修规格与艺术设计，全盘配置国际一线顶级厨卫电器具与高定石材工艺，将尖沙咀繁华都市律动与高奢精品居所完美融合。",
-    "mainland_selling_points": "核心定位：隐于九龙西成熟市中心、真正实现“拎包入住”的五星级酒店资产，兼顾极低入门门槛与极高未来租金回报率。\n一句话核心卖点——东立地产倾力打造，油麻地核心地段纯正五星级酒店奢装期房，附赠全屋高定家私，以极低总价门槛与极致省心的“拎包入住/出租”体验，精准收割内地留学生、年轻专才的“身份落脚”与长线投资者。\n对内地客户最有吸引力的六个卖点\n1. 极致的总价友好度，全港核心市区“上车”的罕见超低门槛",
+    "mainland_selling_points": "1、九龙油麻地核心商圈全新精品住宅：东立地产倾心打造，位于油麻地德昌里22号，全盘仅84伙精品单幢住宅，地处九龙传统繁华腹地，餐饮、购物、娱乐与生活气息浓郁熟透。\n2、步行数分钟直达港铁油麻地站双线枢纽：紧邻油麻地站（观塘线/荃湾线十字交汇），数站速达旺角、尖沙咀及中环核心商业区，市区通勤极为高效便捷。\n3、总价门槛极亲民与高租金回报潜力：主打开放式至两房小户型，总价300余万起即可轻松上车入主九龙核心，租客群体庞大，空置率极低，是高收益租金回报投资的绝佳标的。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_yau_ma_tei",
       "nearest_mtr_name": "油麻地站 (荃灣綫)",
@@ -22513,7 +22745,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2028年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/1lGE8oGJPUP8ogxlTY9ZyVEdhdKuBbfee",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "东立地产精工品质保障",
+    "quantified_cons": "【校网】所属公立校网为31校网 / 油尖旺校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共84伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 509米 (6分钟) 直达港铁油麻地站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Beacon Peak 第1期",
@@ -22536,7 +22772,7 @@
     "sqft_price_desc": "2万左右起",
     "main_layout": "1200呎起3房",
     "reason": "1.九龙最传统、最纯正的九龙塘低密度超级豪宅片区，出入皆是名门望族，圈层极其显贵。\n2.依山而建，居高临下，不仅空气清新、私隐度极高，高层更可俯瞰九龙半岛全景。\n3.不到2万呎价购买3房单位，千呎单位仅需2000多万",
-    "mainland_selling_points": "Beacon Peak对内地客户最核心的定位是：立足九龙笔架山半山绿化带、主打低密度生态景致与大户型空间的“半山大型隐世高尚住宅”。\n一句话核心卖点——坐落于九龙半山延坪道9号，背靠狮子山郊野公园，以半山低密度的自然生态环境、大尺度户型规划以及相对半山核心区更具性价比的单价门槛，精准承接追求半山宁静居住体验与大空间的内地改善型及高净值客群。\n对内地客户最有吸引力的六个卖点\n1. 依托九龙半山延坪道",
+    "mainland_selling_points": "1、九龙半山延坪道依山临海豪宅新地标：依笔架山翠绿山峦而建，地势居高临下，俯瞰九龙半岛壮阔都会天际线及远眺维多利亚港海景，尽享闹市中难得的自然生态与宁静负离子。\n2、纯大户型奢适规划与逾2.5万呎豪华会所：主打三房至四房大单位及天际复式特色大宅，配备星级会所「CLUB BEACON」，室内恒温泳池、健身室、高端宴会厅等奢华设施一应俱全。\n3、现楼发售即买即享与高车位配比：现楼发售免除期房等待风险，车位配比充裕，车行数分钟直达九龙塘又一城商圈及快速连接主要干道，深受注重高品质生活与私密性买家青睐。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_cheung_sha_wan",
       "nearest_mtr_name": "長沙灣站 (荃灣綫)",
@@ -23158,7 +23394,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/12LpHCJMi99AYKeAdcuTtAU6-NWewQl69",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 世茂集团精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁長沙灣站约2071米(约24分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为40校网 / 深水埗校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 2071米 (24分钟) 直达港铁長沙灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "滶蕴",
@@ -23181,7 +23421,7 @@
     "sqft_price_desc": "4.2万起",
     "main_layout": "2185呎",
     "reason": "1.\t九龙又一村/石硖尾传统低密豪宅圈（玫瑰街28号），新世界“PAVILIA”顶级豪宅系列再力作。\n2.\t紧邻大型地标商场又一城（Festival Walk）与九龙塘港铁枢纽，出则繁华天际，入则隐逸静谧。\n3.\t低密度奢华大宅规划，融汇新世界独家工匠级建筑美学，为九龙核心区极度稀缺的纯正低密藏品。",
-    "mainland_selling_points": "核心定位：坐落于九龙又一村/石硖尾传统低密豪宅圈（玫瑰街28号）、由新世界发展打造的“兼具又一城极致繁华便利与纯正低密绿色官邸属性的‘PAVILIA’旗舰藏品大宅”。\n一句话核心卖点——由新世界发展倾力打造，坐落于九龙玫瑰街28号龙头地段，以继承“PAVILIA”天花板级的奢华工匠美学、踱步即达又一城与九龙塘站的极致便利、以及又一村极其稀缺的低密纯粹圈层，精准满足内地顶级高净值人群对家族资产配置、",
+    "mainland_selling_points": "1、九龙塘又一村低密传世尊贵名邸：坐落九龙塘传统豪门腹地玫瑰街28号，属于新世界顶级「PAVILIA COLLECTION」系列，全盘仅8层高低密度单幢大宅，出入皆名门望族。\n2、匠心定制大宅与特色复式大户：涵盖1房至5房大尺度多元空间，特别打造罕有特色复式大户，融汇新世界艺术美学与高定精工工艺，室内空间开阔通透，彰显家族尊贵气度。\n3、名校与交通兼备的核心区位优势：步行约7分钟即达港铁九龙塘双线枢纽站与大型商业地标「又一城」，邻近喇沙、玛利诺等名校及顶尖国际学校，繁华与低密清幽完美平衡。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kowloon_tong",
       "nearest_mtr_name": "九龍塘站 (東鐵綫)",
@@ -23556,7 +23796,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1vokmRxzt5aOUxUQ5ZKHEkvapa-fSJM4h",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 新世界发展精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁九龍塘站约1019米(约12分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为40校网 / 深水埗校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 1019米 (12分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "The Haddon",
@@ -23876,7 +24120,11 @@
     "property_type_desc": "期房 (预计2025年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT3dTRUNNWUJqR25D",
     "marketing_url": "https://drive.google.com/drive/folders/1z8JU_-fogb6qoKAbcylfartMUjDx_iWX",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "恒基兆业精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁何文田站约550米(约6分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为35校网 / 九龍城校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 550米 (6分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "必嘉坊．曦汇",
@@ -24176,7 +24424,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://docs.qq.com/doc/DT1p5aW1CdFhWWmRw",
     "marketing_url": "https://drive.google.com/drive/folders/1b1HIa7IOGiAFtkyjcWqw6Xhjcd3RLJ8N",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "紧邻港铁何文田站高效通勤 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为35校网 / 九龍城校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共324伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 414米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "必嘉坊．迎汇",
@@ -24500,7 +24752,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://docs.qq.com/doc/DT1ZZcmZha2JocHBi",
     "marketing_url": "https://drive.google.com/drive/folders/1b1HIa7IOGiAFtkyjcWqw6Xhjcd3RLJ8N",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "紧邻港铁何文田站高效通勤 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为35校网 / 九龍城校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共280伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 471米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "悦麓",
@@ -24752,7 +25008,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2025年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/1rgxaNMlCCUnQNEbc3IO7emHvJrsUxvgI",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "TKS LTD.精工品质保障",
+    "quantified_cons": "【校网】所属公立校网为35校网 / 九龍城校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共83伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 536米 (6分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "首岸第1期",
@@ -25054,7 +25314,11 @@
     "property_type_desc": "期房 (预计2027年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT25nRVZFenVySVN5",
     "marketing_url": "https://drive.google.com/drive/folders/1JVo3tHd99Csobiac28ZeFPFte9unDXcg",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "恒基兆业 / 希慎兴业 / 帝国集团精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁土瓜灣站约724米(约8分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为35校网 / 九龍城校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 724米 (8分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "首岸第2期",
@@ -25330,7 +25594,11 @@
     "property_type_desc": "期房 (预计2027年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT25nRVZFenVySVN5",
     "marketing_url": "https://drive.google.com/drive/folders/1JVo3tHd99Csobiac28ZeFPFte9unDXcg",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "恒基兆业 / 希慎兴业 / 帝国集团精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁土瓜灣站约724米(约8分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为35校网 / 九龍城校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 724米 (8分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "首岸第3期",
@@ -25631,7 +25899,11 @@
     "property_type_desc": "期房 (预计2027年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT25nRVZFenVySVN5",
     "marketing_url": "https://drive.google.com/drive/folders/1JVo3tHd99Csobiac28ZeFPFte9unDXcg",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "恒基兆业 / 希慎兴业 / 帝国集团精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁土瓜灣站约648米(约7分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为35校网 / 九龍城校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 648米 (7分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "首岸第4期",
@@ -25912,7 +26184,11 @@
     "property_type_desc": "期房 (预计2027年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT25nRVZFenVySVN5",
     "marketing_url": "https://drive.google.com/drive/folders/1JVo3tHd99Csobiac28ZeFPFte9unDXcg",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "恒基兆业 / 希慎兴业 / 帝国集团精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁土瓜灣站约598米(约7分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为35校网 / 九龍城校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 598米 (7分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "首汇",
@@ -26275,7 +26551,11 @@
     "property_type_desc": "期房 (预计2026年入伙)",
     "intro_url": "https://mp.weixin.qq.com/s/szPavdQWMLhrGXT5nBjMwQ",
     "marketing_url": "https://drive.google.com/drive/folders/1rqghcwztmFTJK2d4NFZS7acWDN4iu8ES",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "恒基兆业精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁何文田站约599米(约7分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为35校网 / 九龍城校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 599米 (7分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "叡璟I",
@@ -26640,7 +26920,11 @@
     "property_type_desc": "期房 (预计2028年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT2huamNmQ1VodkV3",
     "marketing_url": "https://drive.google.com/drive/folders/1sa8atOcN3i7GVaCQWMsE0bHAHdeEigOM",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "华润置地精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁荔枝角站约874米(约10分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为40校网 / 深水埗校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 874米 (10分钟) 直达港铁荔枝角站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "汇玺III",
@@ -26895,7 +27179,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/VsfJpWOc9oHVe3PsQAGuSA",
     "marketing_url": "https://drive.google.com/drive/folders/1IYkbgVt38GLQE0OE7d62KFcf2XS3nT4F",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 新鸿基地产 / 港铁精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁南昌站约571米(约6分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为40校网 / 深水埗校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 571米 (6分钟) 直达港铁南昌站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "维港汇 III",
@@ -27298,7 +27586,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1kESOSr4A55-PY3JZAXIXMnGL5sB3Uxkf",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 会德丰 / 信和置业 / 嘉华国际 / 世茂 / 爪哇集团精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁南昌站约1374米(约16分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为40校网 / 深水埗区校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 1374米 (16分钟) 直达港铁南昌站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "南首",
@@ -27515,7 +27807,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2025年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/1JHcCJW_K4CQd5bCYtlEa_yqtTSrYsIdz",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖41校网 / 九龍城校网名校网 ｜ 紧邻港铁宋皇臺站高效通勤",
+    "quantified_cons": "【社区】单幢式精致大厦(共313伙)，内部公用绿化及大型会所设施相对小巧 ；\n【交付】属预售楼花阶段(2025年入伙)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 406米 (4分钟) 直达港铁宋皇臺站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "壹沐第1期",
@@ -27756,7 +28052,11 @@
     "property_type_desc": "期房 (预计2027年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT1JHV1BUdFdIVkNK",
     "marketing_url": "https://drive.google.com/drive/folders/1X-N8_IB0sjm88cvbZyLXlyC-AXSu3XHr",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 紧邻港铁土瓜灣站高效通勤",
+    "quantified_cons": "【交付】属预售楼花阶段(2027年入伙)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 418米 (5分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "壹沐第2期",
@@ -28011,7 +28311,11 @@
     "property_type_desc": "期房 (预计2027年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT1JHV1BUdFdIVkNK",
     "marketing_url": "https://drive.google.com/drive/folders/1X-N8_IB0sjm88cvbZyLXlyC-AXSu3XHr",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 紧邻港铁土瓜灣站高效通勤",
+    "quantified_cons": "【交付】属预售楼花阶段(2027年入伙)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 421米 (5分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "文曜",
@@ -28296,7 +28600,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/15v2b5RABAHXfay5dVVfo0V0iU7IJuXuP",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖41校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁宋皇臺站约559米(约6分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共92伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 559米 (6分钟) 直达港铁宋皇臺站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "101 Kings Road",
@@ -28516,7 +28824,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1ceCfhU9m7W2aiIrdqYBlnHT7hlge_s4a",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "港铁炮台山站上盖/极速步行直达 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为14校网 / 東區校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共251伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 280米 (3分钟) 直达港铁炮台山站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "君誉峰",
@@ -28676,7 +28988,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1bcSHwxixo1VLWxZYJjJDijxI3hO3Mw_3",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "港铁北角站上盖/极速步行直达 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为14校网 / 東區校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共281伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 140米 (1分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "嘉居．天后",
@@ -28849,7 +29165,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1BOLXAHVzO5o58bWet7WYQ1ykdk9Dgt1Z",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖12校网 / 灣仔校网名校网 ｜ 港铁天后站上盖/极速步行直达",
+    "quantified_cons": "【社区】单幢式精致大厦(共74伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 282米 (3分钟) 直达港铁天后站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "柏蔚山",
@@ -29164,7 +29484,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1rXPo5xLPWDXLSLm9l1sW1SLeVR8o_2B3",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 新世界 / 培新集团精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁北角站约661米(约7分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为14校网 / 東區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 661米 (7分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "海璇",
@@ -29187,7 +29511,7 @@
     "sqft_price_desc": "6.4万起",
     "main_layout": "2100呎",
     "reason": "1.\t北角海傍绝版临海地基（渣华道133号），由新鸿基地产倾力打造的前排地标级顶奢住宅。\n2.\t户户直面维多利亚港无遮挡海景，自带奢华会所与大型商场，港铁北角站紧邻，生活与出行极其便利。\n3.\t划入港岛14校网，涵盖优质名校，兼具维港极致景观与强劲的租金收益与流动性。",
-    "mainland_selling_points": "核心定位：坐落于港岛北角前排海傍（渣华道133号）、由新鸿基地产重磅打造的“集绝版临海维港景观、新鸿基旗舰品质、大型商场/港铁上盖便利与强劲资产流动性于一身的港岛临海顶奢地标”。\n一句话核心卖点——由新鸿基地产倾力打造，傲居港岛临海第一排，以户户前临维多利亚港无遮挡海景、港铁北角站与基座北角汇（Harbour North）商场配套、新鸿基天花板级品质与强劲租金收益，精准满足内地顶级高净值人群对维港",
+    "mainland_selling_points": "1、港岛东一线临海绝版地王：北角核心临海前排龙头地段，户户大比例直面全无遮挡的壮阔维港海景，是港岛市区近年来极度罕见的一线临海顶级标杆。\n2、新鸿基顶奢旗舰与大户型纯正圈层：新鸿基地产倾力打造的港岛东“楼王”，配备近2.9万呎奢华私人会所「Club Vici」及60米室外泳池，主打纯正大户型与传世天际大宅，出入皆两地名流。\n3、1分钟即达北角站与自设大型商场：步行仅约1分钟直达港铁北角站（港岛线及将军澳线双线枢纽），基座无缝接驳约22万呎大型购物商场「北角汇」，集繁华商圈、一线海景与极致私密于一身。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_north_point",
       "nearest_mtr_name": "北角站 (港島綫)",
@@ -29446,7 +29770,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1oOy89DqbHlzYnGTLOJ7QOLmRk031bCmd",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "紧邻港铁北角站高效通勤 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为14校网 / 東區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 407米 (4分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "海璇 II",
@@ -29654,7 +29982,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1oOy89DqbHlzYnGTLOJ7QOLmRk031bCmd",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "紧邻港铁北角站高效通勤 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为14校网 / 東區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 306米 (3分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "海璇 II (第2B-3期)",
@@ -29862,7 +30194,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1oOy89DqbHlzYnGTLOJ7QOLmRk031bCmd",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "港铁北角站上盖/极速步行直达 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为14校网 / 東區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 274米 (3分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "雅盈峰",
@@ -29885,7 +30221,7 @@
     "sqft_price_desc": "6万以上",
     "main_layout": "1608呎仅剩4套、2520呎仅剩2套",
     "reason": "1.\t中环半山尊贵地段（己连拿利3号），盈大地产（贝沙湾缔造者）与资本策略倾力打造，享半山静谧与踱步即达CBD的黄金距离。\n2.\t纯正中西区（11校网）顶级名校圈，全盘大户型高私密规划，直面中环繁华天际线与动植物公园双重绿意景观。\n3.\t现楼品质呈现，融合盈大高端豪宅基因与资本策略高定美学，属于中环心腹地带极度稀缺的家族藏品级资产。",
-    "mainland_selling_points": "核心定位：坐落于中环半山核心尊贵地段、由盈大地产与资本策略联合打造的“兼具中环CBD极致便利与半山私人绿色官邸属性的顶级藏品大宅”。\n一句话核心卖点——由盈科大衍地产与资本策略强强联合打造，坐落于中环半山己连拿利3号龙头地段，以踱步即达中环CBD的黄金距离、继承贝沙湾基因的高定豪宅工艺、传统11名校网及中环天际线/公园双重景观，精准满足内地顶级高净值人群对家族资产传承、高私密居住与名校教育的终极需",
+    "mainland_selling_points": "1、中环半山己连拿利3号核心绝版地段：盈大地产与资本策略联合打造，位于中环半山核心地段，步行即可通过半山自动扶梯系统直达中环CBD，离尘不离城，静谧与繁华兼得。\n2、紧邻香港动植物公园尊享开阔双园景：项目毗邻香港动植物公园与香港公园，推窗即览繁茂绿意双园景致，在紧凑的中环核心区享有极其奢侈的自然生态视野。\n3、国际顶尖大师团队联袂设计精工品质：聘请丹下宪孝、傅厚民等国际大师亲自操刀建筑与室内美学，全盘仅99伙高定住宅，户型涵盖1至4房，极其吸引中环外资与金融高层买家。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_central",
       "nearest_mtr_name": "中環站 (港島綫)",
@@ -30243,7 +30579,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/NBJlj0i8X6NDg5Vn9mtDrQ",
     "marketing_url": "https://drive.google.com/drive/folders/1PPilh0MiM0LAIaPRdar4Oa_l03RG38Fz",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁中環站约734米(约8分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共99伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 734米 (8分钟) 直达港铁中環站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Central Peak I",
@@ -30800,7 +31140,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/cksPbfRZE7_1we_2R_ukug",
     "marketing_url": "https://drive.google.com/drive/folders/1tEhKNRDxG2r6vMG6hySJJdLuUFTPqQO-",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖12校网 / 灣仔校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁灣仔站约1708米(约20分钟)，雨季建议接驳小巴",
+    "commute_guidance": "步行约 1708米 (20分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Central Peak II",
@@ -30823,7 +31167,7 @@
     "sqft_price_desc": "10万左右",
     "main_layout": "4房3688呎",
     "reason": "1.\t东半山司徒拔道18号（近司徒拔道交界），新鸿基地产（SHKP）倾力打造的半山地标级顶奢豪宅。\n2.\t纯正12校网（湾仔区）顶级名校圈加持，全盘低密规划，主打大户型（实用面积约1,650–3,900+呎），圈层极其高阶纯粹。\n3.\t新鸿基顶级工匠品质与现楼呈现，坐拥东半山绿意山景与跑马地开扬视野，为港岛半山稀缺的家族传世藏品。",
-    "mainland_selling_points": "Central Peak\n核心定位：坐落于东半山司徒拔道尊贵地段（司徒拔道18号）、由新鸿基地产倾力打造的“集半山绝版地脉、12名校网优势、低密大户型规制与新鸿基天花板交楼品质于一身的家族传世级顶级豪宅”。\n一句话核心卖点——由新鸿基地产重磅打造，傲居东半山司徒拔道18号，以纯正12校网（圣保禄/玛利曼）黄金教育价值、低密大户型规划的极度稀缺性、新鸿基顶尖物业服务及已落成现楼的品质呈现，精准满足内",
+    "mainland_selling_points": "1、东半山司徒拔道18号低密显赫豪宅：新鸿基地产在港岛传统豪门腹地东半山倾力打造，全盘仅规划53伙分层大宅及独立洋房，被苍翠山峦环抱，私密安宁，尊贵非凡。\n2、新鸿基传世精工与大尺度纯正大宅：全盘以大户型为主，开间尺度极具大宅风范，配置高规格专属私人电梯大堂，用料考究奢华，会所设施极尽典雅，彰显极高身份象征。\n3、数分钟直抵中环铜锣湾核心商圈：居半山之巅，车行约5-8分钟快速直达湾仔、金钟、中环金融区及铜锣湾商圈，坐拥名牌校网，具备无可撼动的极高保值抗跌与收藏价值。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_wan_chai",
       "nearest_mtr_name": "灣仔站 (港島綫)",
@@ -31337,7 +31681,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/VT_LjCJEx1hWiIOaVN4idw",
     "marketing_url": "https://drive.google.com/drive/folders/1tEhKNRDxG2r6vMG6hySJJdLuUFTPqQO-",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖12校网 / 灣仔校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁灣仔站约1708米(约20分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共19伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1708米 (20分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "21 Borrett Road 第1期",
@@ -31851,7 +32199,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/VmQyJcQGbvVcW-k0xFJBWg",
     "marketing_url": "https://drive.google.com/drive/folders/1-cq0AnDZIbxCyCUr_3mE7t53ehmOGW09",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁金鐘站约1709米(约20分钟)，雨季建议接驳小巴",
+    "commute_guidance": "步行约 1709米 (20分钟) 直达港铁金鐘站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Mount Pokfulam",
@@ -31874,7 +32226,7 @@
     "sqft_price_desc": "4万以上",
     "main_layout": "共7套已售4套，目前在招标1套4810呎",
     "reason": "1.\t薄扶林薄扶林道86号绝版低密地基，由宏安地产（Wang On Properties）与锦华实业倾力打造的纯正独立洋房顶奢项目。\n2.\t全盘仅7座独栋独立洋房（实用约3,654至4,802平方呎），户户配备私人电梯、私家花园、天台、专属地下车库及私家游泳池。\n3.\t划入港岛18校网（南区），紧邻香港大学（HKU）、英基（ESF）及西岛中学（West Island School），极速直达中环与数码港，为极度私密的传世藏品。",
-    "mainland_selling_points": "核心定位：坐落于港岛薄扶林尊贵传统豪宅区（薄扶林道86号）、由宏安地产倾力打造的“集绝版低密地脉、全盘仅7座独栋洋房规制、户户独立私家泳池/电梯与人文学术氛围于一身的港岛家族传世级顶奢洋房”。\n一句话核心卖点——傲居港岛薄扶林道86号，以全盘仅7座独栋洋房的极度稀缺性、户户配私人泳池/私家电梯/花园/专属车库的尊贵规制、紧邻香港大学与顶级国际学校的人文底蕴，精准满足内地顶级高净值人群对港岛低密洋房",
+    "mainland_selling_points": "1、薄扶林道138号独立洋房顶奢地标：宏安地产与锦华地产联手打造，位于港岛南区传统豪宅地段薄扶林道，全盘仅规划7幢稀缺独立洋房，私隐度极高，出入皆名门领袖。\n2、户户配备私家花园、泳池及室内电梯：每幢独立大宅实用面积约3,710至4,760平方呎，配设独立私家花园、私人恒温泳池、三面采光设计及专属车库，尽享纯粹有天有地奢居。\n3、邻近港大与极速通达中西区核心：车行仅数分钟直达香港大学及中西区金融商圈，远眺西博寮海峡蔚蓝海景，兼享百年大学人文底蕴与南区天然静谧，为极珍罕的家族传承物业。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kennedy_town",
       "nearest_mtr_name": "香港大學站 (港島綫)",
@@ -32320,7 +32672,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1uyCAXV5KJo_TYMaCy7JR0esnu8xjDwb8",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁香港大學站约1152米(约13分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共7伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1152米 (13分钟) 直达港铁香港大學站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Upper Central",
@@ -32698,7 +33054,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/vXLROkitnuD4QrJfNV4gww",
     "marketing_url": "https://drive.google.com/drive/folders/1W1jrmoYtypggz_w9mlC54C01bHphRIWU",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁上環站约891米(约10分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共85伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 891米 (10分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "大学阁",
@@ -33060,7 +33420,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1_Dgoxf_aB4hk6oUIKnPMJtlzIwWYmrcA",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁香港大學站约1021米(约12分钟)，雨季建议接驳小巴",
+    "commute_guidance": "步行约 1021米 (12分钟) 直达港铁香港大學站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "天御第1期",
@@ -33083,7 +33447,7 @@
     "sqft_price_desc": "5.8万起",
     "main_layout": "4710呎",
     "reason": "1、稀缺性是豪宅的第一价值！绝版地段：中上方环，西半山核心\n2、尊享11校网名校圈。\n3、大师手笔： ACPV Architects全程设计，意式美学巅峰。\n4、最高达空间：全港数百尺复式户型，3.5-4米超高层高。\n5、圈层纯粹：仅172户，专为全球1%的家族定制。全形式入市，顶级资产配置首选！",
-    "mainland_selling_points": "核心定位：坐落于西半山尊贵核心地段（卫城道8号）、由恒基地产与新世界发展携手重磅打造、ACPV ARCHITECTS 大师操刀的“集半山绝版地脉、意大利顶奢设计艺术、11名校网优势与近中环扶梯便利于一身的家族传世级顶奢豪宅”。\n一句话核心卖点——由恒地与新世界强强联手打造，傲居西半山卫城道8号，以ACPV意大利大师高定建筑美学、纯正11校网（圣士提反/嘉诺撒圣心）黄金教育价值、邻近中环半山扶梯的极",
+    "mainland_selling_points": "1、地段稀缺：项目位于西半山豪宅区，区域供地极度稀缺，此项目属重建项目，如无拆迁，此区域几乎无地块供应。\n2、超大户型：项目以2000呎以上大单位为主，还有一层一户的大宅（36楼起 4,700+ 呎）及顶层三复式 11,200 呎等罕见大户。\n3、品牌保障 · 现楼交付：恒基＋新世界联手，前美丽台重建项目，已于2024年3月获批入伙纸，买的是真正现楼，风险可控。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_sheung_wan",
       "nearest_mtr_name": "上環站 (港島綫)",
@@ -33448,7 +33812,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/lQ9w_8rG0XR774PUPjX69Q",
     "marketing_url": "https://drive.google.com/drive/folders/1Wfdj_v5_ojp3PAU80ywsR-tVlZHpcIAu",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁上環站约947米(约11分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共106伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 947米 (11分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "天御第2期",
@@ -33841,7 +34209,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/lQ9w_8rG0XR774PUPjX69Q",
     "marketing_url": "https://drive.google.com/drive/folders/1Wfdj_v5_ojp3PAU80ywsR-tVlZHpcIAu",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁上環站约947米(约11分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共66伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 947米 (11分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "宝峰",
@@ -33864,7 +34236,7 @@
     "sqft_price_desc": "4万起",
     "main_layout": "3775、4143呎",
     "reason": "1.\t半山宝珊道23号绝版顶峰地基（Highline 宝峰），由泛海国际倾力打造的西半山云端低密顶级豪宅。\n2.\t全盘仅16伙奢华大宅（实用约2,215至7,263平方呎），户户大面积玻璃幕墙俯瞰维港及半山翠绿山景，极度私密稀缺。\n3.\t划入纯正11校网（港岛中西区），极速直达中环CBD，为港岛半山极其罕见的世家传承级隐世藏品。",
-    "mainland_selling_points": "核心定位：坐落于西半山宝珊道顶峰尊贵地段（宝珊道23号）、由泛海国际倾力打造的“集半山云端绝版地脉、全盘仅16伙极度稀缺规制、维港/山景双重极致视野与11名校网优势于一身的家族传世级顶奢豪宅”。\n一句话核心卖点——由泛海国际重磅打造，傲居西半山宝珊道23号顶峰，以全盘仅16伙极度尊贵纯粹的奢华大宅规制、俯瞰维港天际线与半山翠绿山景的震撼视野、纯正11校网与极速直达中环CBD的便利，精准满足内地顶级",
+    "mainland_selling_points": "1、西半山宝珊道23号极低密16席传世大宅：位于西半山宝珊道极高私密地段，泛海国际、资本策略及德祥地产联合打造，全盘仅规划16个单位，专为极少数超级财富家族定制。\n2、超大宏阔尺度与高层俯瞰维港天际线：实用面积达3,773至7,263平方呎，户型为三房至五房全套房设计，配私人电梯大堂，高层单位居高临下尽览维多利亚港开扬壮丽海景。\n3、港岛11名校网与半山百年贵胄圈层：坐拥全港公认顶尖的中西区11名校网，邻近香港大学，地处半山传统豪宅腹地，自然绿意与城市核心近在咫尺，家族世代珍藏首选。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_sai_ying_pun",
       "nearest_mtr_name": "香港大學站 (港島綫)",
@@ -34206,7 +34578,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1_HsCMc_MvnqNIUOmfKGbxzlZSckHMJN4",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁香港大學站约1241米(约14分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共16伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1241米 (14分钟) 直达港铁香港大學站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "帝汇豪庭",
@@ -34685,7 +35061,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1XuS1s74rjaTEn93RBdzq0R3KAEMESoNP",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁上環站约1146米(约13分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共90伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1146米 (13分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "应天",
@@ -34708,7 +35088,7 @@
     "sqft_price_desc": "7万左右起",
     "main_layout": "1875-2193呎",
     "reason": "1、中半山，背靠太平山，近中环，不可复制的稀缺豪宅地段\n2、顶奢居住体验，高级艺术感的lobby设计，屋内装修的豪华\n3、香港排名前列的中西区11校网",
-    "mainland_selling_points": "核心定位：坐落于港岛中半山尊贵核心地段（波老道21号）、由长实集团倾力打造的“集半山绝版地脉、11名校网优势、纯大户型奢华规制与极致私密保障于一身的家族传世级顶级豪宅”。\n一句话核心卖点——由长实集团重磅打造，傲居中半山波老道21号尊贵龙头，以纯正11校网（圣士提反/嘉诺撒圣心）黄金教育价值、全盘纯大户型（含顶层私人泳池复式）的极度稀缺性、私家升降机大堂与现楼呈现的品质感，精准满足内地顶级高净值人",
+    "mainland_selling_points": "1、中半山波老道21号传世顶奢大宅第2期：长实集团在中半山倾力打造的标志性超级豪宅第2期，全盘仅设2座共66伙，背靠太平山翠绿山峦，俯瞰中环天际线与维多利亚港全景。\n2、大尺度纯正豪宅格局与极致私密保障：实用面积约1,800至3,022平方呎，涵盖3房至5房宏阔大宅，配置专属升降机直达，用料奢华考究，打造全球顶尖家族身份象征。\n3、不可复制的中半山地段与11名校网：地处港岛政治、金融与传统贵胄核心圈层，数分钟车程直抵中环金融区，坐拥全港顶尖中西区11校网，长远保值与家族传承属性无可替代。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_admiralty",
       "nearest_mtr_name": "金鐘站 (港島綫)",
@@ -35233,7 +35613,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1-cq0AnDZIbxCyCUr_3mE7t53ehmOGW09",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁金鐘站约1764米(约21分钟)，雨季建议接驳小巴",
+    "commute_guidance": "步行约 1764米 (21分钟) 直达港铁金鐘站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "罗便臣道80号",
@@ -35490,7 +35874,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1fnpg6eTCTpSupVfEFwjpQW63r4sBuOeE",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁西營盤站约650米(约7分钟)，雨季建议接驳小巴",
+    "commute_guidance": "步行约 650米 (7分钟) 直达港铁西營盤站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Kennedy 38",
@@ -35711,7 +36099,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/0ve1rF7HEmjfmQRCmYUUNw",
     "marketing_url": "https://drive.google.com/drive/folders/1qdNDykKTaLY5AF0yCrG9pLmolRiV0yXh",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 港铁堅尼地城站上盖/极速步行直达",
+    "quantified_cons": "【社区】单幢式精致大厦(共341伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 281米 (3分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "吉喆",
@@ -35890,7 +36282,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2025年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/1lJTSNVJPX4yqz3X8kt-auucVFUNNsw5P",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖11校网 / 中西区校网名校网 ｜ 港铁堅尼地城站上盖/极速步行直达",
+    "quantified_cons": "【社区】单幢式精致大厦(共173伙)，内部公用绿化及大型会所设施相对小巧 ；\n【交付】属预售楼花阶段(2025年入伙)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 151米 (1分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "海嵎",
@@ -35913,7 +36309,7 @@
     "sqft_price_desc": "3.5万左右",
     "main_layout": "284-412呎",
     "reason": "1、位于港岛坚尼地城海旁位置，高层可看海景，步行5分钟到地铁站，8分钟四站到中环  2、户型从两百多到四百多开间到两房，租金回报率在三左右",
-    "mainland_selling_points": "核心定位：占据港岛西核心成熟生活圈、兼顾“西向海景”与“名校网护城河”的港岛市区精品资产。\n\n一句话核心卖点——坐落于坚尼地城爹核士街的核心地段，以独特的港岛西顶尖名校网为护城河，步行至港铁站的高效通勤，以及西向户型（尤其是高层越级）可享的西维港日落海景，精准满足内地中产与年轻专才在港岛核心区的身份落脚与教育配置。\n对内地客户最有吸引力的六个卖点\n1. 西向户型尊享西维港海景与高层越级视野\n项目的",
+    "mainland_selling_points": "1、港岛西坚尼地城临海一线视野：位处港岛西区坚尼地城海旁前排地段，高层单位可饱览极度开扬的西博寮海峡及壮阔海景，近距离尊享西环海滨长廊浪漫落日。\n2、步行约4-5分钟直达港铁站：步行仅约4-5分钟轻松抵达港铁坚尼地城站，港岛线极速直通中环、金钟与湾仔，出入高效，无缝接轨中环外籍与金融核心圈。\n3、11名校网加持与澎湃高租金回报：坐拥港岛中西区11名校网，紧邻香港大学，周边精品咖啡馆与各国轻奢餐厅林立，生活情调浓郁，极受港大师生与金融精英青睐，收租回报极高。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_kennedy_town",
       "nearest_mtr_name": "堅尼地城站 (港島綫)",
@@ -36151,7 +36547,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/rYa3L7Lgon18GjnXos0Hng",
     "marketing_url": "https://drive.google.com/drive/folders/1urBmkVODyuR1RWUcXNIOjF6iNJJ-jWtn",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 紧邻港铁堅尼地城站高效通勤",
+    "quantified_cons": "【社区】单幢式精致大厦(共125伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 410米 (4分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "皇府湾",
@@ -37268,7 +37668,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/131uUNJ_G2IyV0MqRTwO2RBLOc8KdoVZj",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 一线维港海滨/开阔海湾稀缺视野",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 5466米 (65分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "寿臣山15号",
@@ -37291,7 +37695,7 @@
     "sqft_price_desc": "6万起",
     "main_layout": "3777、4025、4909、11660呎",
     "reason": "1、豪宅地段别墅优选，有天有地，至尊豪宅享受\n2、配有室内电梯，花园对着山景，风水宝地",
-    "mainland_selling_points": "核心定位：坐落于港岛南区寿臣山尊贵核心（寿臣山道西15号）、由英皇国际领衔四大名企倾力打造的“集超低密纯洋房社区、万呎独立大宅规制与极致私密保障于一身的顶级家族传世藏品”。\n一句话核心卖点——由英皇国际与中渝置地等四大名企联合打造，傲居港岛南区寿臣山道西15号，以全盘仅15幢独立洋房的极度稀缺性、最大逾万呎超豪规制（户户内置私家电梯及花园，13幢配私家泳池）及现楼落成的顶级私密感，精准满足内地顶级",
+    "mainland_selling_points": "1、港岛南区传统顶级显赫富豪圈：坐落港岛南区传统顶流豪宅地段寿臣山，周边皆为低密独立大宅，绿荫环绕，私隐度极高，出入皆为政商名流及隐形家族财富。\n2、全盘纯独栋洋房绝版稀缺：全盘仅规划15幢超豪华独立洋房，实用面积约3,727至12,073平方呎，户户配私家花园、私家恒温泳池、专属室内电梯及双车位，尊享真正有天有地的独栋奢享。\n3、四大实力财团联袂打造现楼传世：由英皇国际、中渝置地、明发集团及资本策略四强联手打造，大师操刀顶级奢华用料与现代建筑美学，现楼发售，具备极高的家族财富传承与收藏价值。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_ocean_park",
       "nearest_mtr_name": "海洋公園站 (南港島綫)",
@@ -37617,7 +38021,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/18B5bv6iNbUBzQ1VBwfd9NM9cTYTbDLKN",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 英皇国际 / 中渝置地 / 明发集团 / 尚家生活精工品质保障",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 1110米 (13分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "No.3 Repulse Bay Road",
@@ -38242,7 +38650,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1uFBcQxP1KP_fJwocmcJ6ZHy0eXpwTBja",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 新鸿基地产精工品质保障",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 3164米 (38分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Shouson Peak",
@@ -38533,7 +38945,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1JAENMQmkzhcZZTq1ByeDbtZN04ohW3Fu",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 新鸿基地产精工品质保障",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南区校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 996米 (12分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "浅水湾108",
@@ -39107,7 +39523,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1WcYleVKHc7-R4AXuNhqtcL9D_N539QCV",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 一线维港海滨/开阔海湾稀缺视野",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南区校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 3408米 (40分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "深水湾径8号",
@@ -39625,7 +40045,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1sxEj0DnQvchO-tRmzxt5caxtwdqBBdiy",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 一线维港海滨/开阔海湾稀缺视野",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 1685米 (20分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Mount Nicholson I",
@@ -40662,7 +41086,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1xzeGEy3AKPe9hYF_P_XibruQEgQ2NgW5",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖12校网 / 灣仔校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【配套】纯住宅静谧地脉自身底商精简，大型商业采买依赖短途车程接驳",
+    "commute_guidance": "步行约 3647米 (43分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Mount Nicholson II",
@@ -41697,7 +42125,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1xzeGEy3AKPe9hYF_P_XibruQEgQ2NgW5",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖12校网 / 灣仔校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【配套】纯住宅静谧地脉自身底商精简，大型商业采买依赖短途车程接驳",
+    "commute_guidance": "步行约 3696米 (44分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Twelve Peaks",
@@ -42660,7 +43092,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/15sAUzgjvhfsk2dcg3-Um8wFFmCV05dJm",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西区校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【配套】纯住宅静谧地脉自身底商精简，大型商业采买依赖短途车程接驳",
+    "commute_guidance": "步行约 3334米 (40分钟) 直达港铁中環站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "宾吉道3号",
@@ -43605,7 +44041,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1GNwzOtt8Kp6cJR44Nmaq7vslB302dZ0f",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖11校网 / 中西区校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【配套】纯住宅静谧地脉自身底商精简，大型商业采买依赖短途车程接驳",
+    "commute_guidance": "步行约 4143米 (49分钟) 直达港铁金鐘站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "海德园第1期",
@@ -43628,7 +44068,7 @@
     "sqft_price_desc": "1.9万左右",
     "main_layout": "512-538呎",
     "reason": "1、用新界的单价买港岛，单价1.8万起，800W左右买两房，知名开发商太古打造。  2、租金回报率在四左右，适合投资收租的客户",
-    "mainland_selling_points": "核心定位：太古地产二十年磨一剑、以极具杀伤力的“太古折让价”入主港岛东旗舰大社区的“old money品质资产”。\n\n一句话核心卖点——太古地产与中华汽车联手打造、柴湾常安街临海旗舰新盘，以港岛东20年来极其罕见的大型新房供应、太古无可挑剔的顶级品牌效应对接“1字头”极具性价比的呎价，兼顾太古坊通勤自住与港岛稳健的长期长线资产配置。\n对内地客户最有吸引力的六个卖点\n1. 港岛东老牌“Old Mon",
+    "mainland_selling_points": "1、太古地产港岛东柴湾罕见大型综合体：太古地产与中华汽车联合打造，位于港岛东柴湾核心地段，全盘规划约800余伙，是太古品牌在港岛东又一品质标杆作品，品牌含金量极高。\n2、高性价比入主港岛核心都会生活圈：相较港岛动辄高企的尺价，该项目以极具吸引力的亲民单价推售，以亲民总价即可拥有太古品质两房及三房，是刚需及改善买家入主港岛黄金机会。\n3、太古卓越物业服务与成熟交通配套：步行轻松接驳港铁柴湾站，周边生活市集、商场及休闲设施成熟熟透，配合太古业界公认顶尖的物业管理与社群营运，租售流通性俱佳。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_cha1wan",
       "nearest_mtr_name": "柴灣站 (港島綫)",
@@ -43929,7 +44369,11 @@
     "property_type_desc": "期房 (预计2025年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT3VBYUNtRkVPaGNR",
     "marketing_url": "https://drive.google.com/drive/folders/1_55XXbl_HFRwp4IrE6UabpS2Jflhfvnn",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "一线维港海滨/开阔海湾稀缺视野 ｜ 太古地产精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁柴灣站约945米(约11分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为16校网 / 東區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 945米 (11分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "峻誉．渣甸山",
@@ -43952,7 +44396,7 @@
     "sqft_price_desc": "4.8万以上",
     "main_layout": "1座AB户型1679、1686呎",
     "reason": "1、渣甸山30年唯一分层新盘，港岛四大传统富豪区，七成单位无遮挡望维港+渣甸山翠峦，10分钟车程达中环铜锣湾，12校网+顶尖国际学校环绕。\n2、呎价约5万起，德国嘉格纳厨电+3.5米层高，4房设私梯大堂，独立会所含恒温泳池及空中花园。",
-    "mainland_selling_points": "核心定位：隐于港岛渣甸山传统顶级豪宅区、专为追求极致尊贵私密与顶尖名校圈层打造的“收藏级名门大宅资产”。\n一句话核心卖点——由中信泰富倾力打造，坐落于港岛渣甸山/大坑道传统富豪地段，以极其稀缺的低密度私密规划、顶尖12港岛名校网加持，以及现楼即买即享的实景品质，精准满足内地超高净值家庭对尊贵身份象征、下一代顶级教育与家族资产传承的终极诉求。\n对内地客户最有吸引力的六个卖点\n1. 入主港岛渣甸山传统",
+    "mainland_selling_points": "1、渣甸山30年唯一罕见分层新盘：位于港岛传统四大独立豪宅区之一的渣甸山大坑道，板块数十年几乎无新房供应，稀缺性极高，真正入主香港老牌名流核心圈层。\n2、全盘低密奢宅与七成无遮挡开扬景观：中信泰富倾力打造，全盘仅规划低密大单位，七成以上单位直面马场、维港或葱郁山景，配置国际一线奢华厨电，纯正大户型高净值圈层。\n3、港岛名校网与隐形富豪聚居地：划入港岛传统名牌校网，邻近香港优质名校与国际学校，出入非富即贵，社区私密性与安全感极高，兼具资产代际传承与绝对保值属性。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_t1nhau",
       "nearest_mtr_name": "天后站 (港島綫)",
@@ -44486,7 +44930,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/72C8dW-QBWxXyrppMHRfUw",
     "marketing_url": "https://drive.google.com/drive/folders/1u1tkTUIFgOHJa782b9tmdCJfBLcoKlB6",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖12校网 / 灣仔校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁天后站约1809米(约21分钟)，雨季建议接驳小巴",
+    "commute_guidance": "步行约 1809米 (21分钟) 直达港铁天后站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Woodis",
@@ -44858,7 +45306,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/ENTpZ6iO0V2vaIG1nuFZWg",
     "marketing_url": "https://drive.google.com/drive/folders/1DlhJTvQ2r4Iol9CpDS7EMe9LV7JgXpdw",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖12校网 / 灣仔校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁灣仔站约715米(约8分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共167伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 715米 (8分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "One Eighty",
@@ -45082,7 +45534,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1UG4plzTh-K6qFgGHhi38W8zuhC8wlIOX",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "紧邻港铁西灣河站高效通勤 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为16校网 / 東區校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共57伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 339米 (4分钟) 直达港铁西灣河站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "傲华",
@@ -45301,7 +45757,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1xhKMrIG6SW2yn1pDN62hzT0f08k_MT79",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "港铁筲箕灣站上盖/极速步行直达 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为16校网 / 東區校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共156伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 262米 (3分钟) 直达港铁筲箕灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "远晴",
@@ -45646,7 +46106,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1B7V3eB9skHAIoO_bREJrh5go5XpJb8gc",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 协成行精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁筲箕灣站约1073米(约12分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为16校网 / 东区校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 1073米 (12分钟) 直达港铁筲箕灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Victoria Coast",
@@ -46123,7 +46587,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1AnAdnfH53ypmdylEal0iRQv4d5ZY6qw3",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 华懋集团精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁堅尼地城站约1541米(约18分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 1541米 (18分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "15 Western Street",
@@ -46352,7 +46820,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (即将发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1FRQ45J01YXPNViZDuu9HyiCXRDg2VQul",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 港铁西營盤站上盖/极速步行直达",
+    "quantified_cons": "【社区】单幢式精致大厦(共105伙)，内部公用绿化及大型会所设施相对小巧 ；\n【交付】属预售楼花阶段(即将发售)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 234米 (2分钟) 直达港铁西營盤站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "42 Tung St.",
@@ -46633,7 +47105,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1BGeVzfRKP_gmQE2KvnFI9C6LW0SwkCaK",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖11校网 / 中西區校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁上環站约555米(约6分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共13伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 555米 (6分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "50 Stanley Village Road",
@@ -48266,7 +48742,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1RwHdEb3TwziHvkfsQyuLHwOUOuRkNdtt",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 新鸿基地产精工品质保障",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 7824米 (93分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "One Stanley",
@@ -48289,7 +48769,7 @@
     "sqft_price_desc": "3.4万左右",
     "main_layout": "1100-1200呎、2400-2500呎，各仅剩4套左右",
     "reason": "1.\t港岛南区传统顶级豪宅区赤柱罕见大盘，低密度独立洋房与低座大宅，奢华隐逸。\n2.\t建灏地产倾力打造，欧陆地中海城堡式建筑风格，前临赤柱湾与无边际开阔海景。\n3.\t极高私密度与尊贵圈层，独立电梯、私人花园及私人泳池配比，为家族传家级豪宅资产。",
-    "mainland_selling_points": "核心定位：隐于港岛南区赤柱海岸、专为全球顶尖家族与超高净值人群打造的“欧陆城堡级滨海低密超级豪宅”。\n一句话核心卖点——由建灏地产精心雕琢，坐落于港岛南区赤柱黄麻角道，以极其稀缺的低密度欧陆地中海建筑集群、独门独户独立洋房与分层大宅、以及前临赤柱湾的绝版海岸线视野，精准满足内地超高净值家庭对终极避险资产、家族传承及极致尊贵私密居住的终极想象。\n对内地客户最有吸引力的六个卖点\n1. 入主港岛南区赤柱",
+    "mainland_selling_points": "1、港岛南区赤柱黄麻角道纯海景洋房及大宅：建灏地产打造的南区地标级低密滨海豪宅，坐拥赤柱湾开扬辽阔一线海景，极具地中海奢华度假胜地的悠闲宁静风情。\n2、全大理石法式古典外立面与独立泳池花园：全盘规划独立洋房及海景分层大户，洋房户户设私家花园、独立泳池及室内电梯，建筑外墙全干挂天然大理石，历久弥新，奢华考究。\n3、赤柱国际富豪圈层与极度稀缺供应：赤柱数十年来极少有全新大体量豪宅项目推出，周边国际学校（如圣士提反书院）与水上运动设施齐全，极为契合追求高私密度假生活的高净值家庭。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_ocean_park",
       "nearest_mtr_name": "柴灣站 (港島綫)",
@@ -50460,7 +50940,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1vjRYWn5WUOv3h5A0NiweNMCuteQmqy-8",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 建灏地产精工品质保障",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 10184米 (122分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Solace",
@@ -51613,7 +52097,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1jNLKSYsgjV1DM95nQQnaIuSuabsWR0Zr",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 东立地产精工品质保障",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 6946米 (83分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "海天径 1号, 舂磡角道 44, 46, 48, 50号",
@@ -51636,7 +52124,7 @@
     "sqft_price_desc": "",
     "main_layout": "4200呎起",
     "reason": "1.\t港岛南区赤柱/舂磡角绝版低密海景地脉（海天径1号），由旭晖集团持有及操盘的顶奢低密独立洋房名作。\n2.\t全盘仅7座独栋独立洋房（实用约2,788至5,080平方呎），户户配备私人电梯、私家花园、天台、专属车库及私家游泳池。\n3.\t划入港岛18校网（南区），紧邻香港国际学校（HKIS）等顶级国际学府，现楼呈献，尽揽赤柱湾及舂磡角双重奢华海景。",
-    "mainland_selling_points": "核心定位：坐落于港岛南区赤柱海天径1号、由旭晖集团持有及操盘的“集绝版赤柱/舂磡角海岸地脉、全盘仅7座独栋洋房规制、户户私家泳池/私人电梯与海景视野于一身的南区家族传世级顶奢洋房”。\n一句话核心卖点——由旭晖集团持有及操盘，傲居赤柱海天径1号，以全盘仅7座独栋洋房的极致稀缺性、户户配私家泳池/私人电梯/花园/专属车库的尊贵规制、纯正18校网与HKIS顶尖国际学校资源，精准满足内地顶级高净值人群对港",
+    "mainland_selling_points": "1、港岛南区舂磡角海天径绝版5席独立大宅：坐落港岛南区传统隐秘富豪半岛舂磡角，全盘仅建5幢纯独立超豪华洋房，居高临下直面银洲岛与赤柱湾壮阔一线蔚蓝海景。\n2、户户超大私家花园、泳池及室内电梯：每幢洋房实用面积约4,215至6,615平方呎，独享3,000至近5,000平方呎私家花园、私人恒温泳池、专属地下车库及室内升降机。\n3、信德集团打造现楼传世与名门极致私密：信德集团精心铸就，现楼发售实景可见，私隐度与安保规格达到顶峰，极为契合注重家族代际财富沉淀与私享度假生活的顶流买家。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_ocean_park",
       "nearest_mtr_name": "海洋公園站 (南港島綫)",
@@ -52661,7 +53149,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/13ttNXx90i-X5kebo0h1hNV5eyQH_aZ7l",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 一线维港海滨/开阔海湾稀缺视野",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 6345米 (76分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "环角道7号、9号及11号",
@@ -53812,7 +54304,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1NKCECOy4o_TLS9JZjlbbpLqnHXpktcdX",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 培新集团精工品质保障",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南区校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 6842米 (82分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "339 Tai Hang Road",
@@ -54512,7 +55008,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1isjoZuIYlSj_0C84JrsMaaDpCiaWy2oO",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖12校网 / 湾仔区校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【配套】纯住宅静谧地脉自身底商精简，大型商业采买依赖短途车程接驳",
+    "commute_guidance": "步行约 2992米 (35分钟) 直达港铁銅鑼灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Blue Coast",
@@ -54535,7 +55035,7 @@
     "sqft_price_desc": "2.8-4万左右",
     "main_layout": "1267呎",
     "reason": "1.\t黄竹坑站纯正上盖第3期，港岛南岸极具性价比优势的入场之选，长实与港铁打造，享专属电梯直达港铁大堂及60万呎THE SOUTHSIDE商场。\n2.\t务实户型规划与极高实用率，主打2房至4房，以更具竞争力的总价门槛享港岛南区高阶配套与优质景观。\n3.\t顶尖国际学校圈环绕，2站直达金钟、15分钟直达中环CBD，高性价比带来扎实的出租回报率与二手流动性。",
-    "mainland_selling_points": "核心定位：坐落于港岛南区黄竹坑站纯正上盖、由长实集团倾力打造的“高性价比、高实用率铁路上盖高能效资产”。\n一句话核心卖点——由长实集团与港铁强强联合打造，位于黄竹坑站纯正上盖港岛南岸第3期（含BLUE COAST及BLUE COAST II），以全区极具性价比优势的定价策略、专属电梯直达港铁大堂与楼下60万呎旗舰商场、以及顶级国际学校圈加持，精准满足内地买家对高性价比自住、高效通勤及稳健资产配置的",
+    "mainland_selling_points": "1、港铁黄竹坑站上盖专属电梯直达：长实与港铁强强联手打造的港岛南岸第3期地标，特设专属客梯直通港铁站及The Southside商场，2站快速直达金钟核心金融圈。\n2、基座无缝连接近51万呎旗舰商场：基座即是南区最大型地标商场，汇聚近130间多元餐饮、精品超市及高奢影院，彻底实现“出入皆繁华，归家即度假”的顶级居住体验。\n3、李嘉诚旗下长实超高品质与名校圈：长实倾注顶级工法打造，户型宽阔方正，两房至四房涵盖全面，邻近新加坡国际学校及弘立书院等多所顶尖国际名校，受海内外买家热捧。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_wong_chuk_hang",
       "nearest_mtr_name": "黃竹坑站 (南港島綫)",
@@ -54684,7 +55184,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2025年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/111FTbwb2wtmkD7qO69Qooiu4x1WdwnEM",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "港铁黃竹坑站上盖/极速步行直达 ｜ 长江实业 / 港铁精工品质保障",
+    "quantified_cons": "【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校 ；\n【交付】属预售楼花阶段(2025年入伙)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 183米 (2分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Blue Coast II",
@@ -54822,7 +55326,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2025年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/111FTbwb2wtmkD7qO69Qooiu4x1WdwnEM",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "港铁黃竹坑站上盖/极速步行直达 ｜ 长江实业 / 港铁精工品质保障",
+    "quantified_cons": "【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校 ；\n【交付】属预售楼花阶段(2025年入伙)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 98米 (1分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Deep Water South 第6A期",
@@ -54845,7 +55353,7 @@
     "sqft_price_desc": "3.8万左右",
     "main_layout": "3房918呎",
     "reason": "1.港岛南区罕见的港铁黄竹坑站上盖巨型综合体项目，交通与下楼购物极便利。\n2.坐拥港岛南区的优美山海景观，同时享有传统南区豪宅圈层的阶层光环。\n3.邻近香港多所顶尖国际学校（如弘立书院、加拿大国际等），极其吸引重视国际教育的家庭。",
-    "mainland_selling_points": "Deep Water South对内地客户最核心的定位是：港岛南区极为罕见、将传统南区富豪圈层与顶级铁路上盖便利完美融合的“殿堂级双核资产”。\n一句话核心卖点——会德丰与港铁联手打造，黄竹坑站港岛南岸压轴第六期纯正铁路上盖临海豪宅，以港岛南区传统富豪圈层为底色，尊享15分钟直达中环的顶级交通效率，精准满足内地超高净值家庭对子女教育、财富避险及家族传承的终极配置。\n对内地客户最有吸引力的六个卖点\n1",
+    "mainland_selling_points": "1、港岛30年唯一新房地铁上盖：自带60万呎THE SOUTHSIDE大型商业配套，3站直达中环。\n2、会德丰与港铁联合匠心打造：拥有独立会所和联合会所，交楼精装品质与品牌口碑极高。\n3、紧邻多所顶尖国际名校圈：紧邻新加坡国际学校、弘立书院与加拿大国际学校，教育资源极度雄厚。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_wong_chuk_hang",
       "nearest_mtr_name": "黃竹坑站 (南港島綫)",
@@ -54983,7 +55491,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/T6H_dEJZrFoV8g2sr_DnUQ",
     "marketing_url": "https://drive.google.com/drive/folders/1rPHj7MKl2C4zKzXUTFuLOs0vUIiYKUAx",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "港铁黃竹坑站上盖/极速步行直达 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 33米 (0分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Deep Water South 第6B期",
@@ -55006,7 +55518,7 @@
     "sqft_price_desc": "3.8万左右",
     "main_layout": "3房918呎",
     "reason": "1.港岛南区罕见的港铁黄竹坑站上盖巨型综合体项目，交通与下楼购物极便利。\n2.坐拥港岛南区的优美山海景观，同时享有传统南区豪宅圈层的阶层光环。\n3.邻近香港多所顶尖国际学校（如弘立书院、加拿大国际等），极其吸引重视国际教育的家庭。",
-    "mainland_selling_points": "Deep Water South对内地客户最核心的定位是：港岛南区极为罕见、将传统南区富豪圈层与顶级铁路上盖便利完美融合的“殿堂级双核资产”。\n一句话核心卖点——会德丰与港铁联手打造，黄竹坑站港岛南岸压轴第六期纯正铁路上盖临海豪宅，以港岛南区传统富豪圈层为底色，尊享15分钟直达中环的顶级交通效率，精准满足内地超高净值家庭对子女教育、财富避险及家族传承的终极配置。\n对内地客户最有吸引力的六个卖点\n1",
+    "mainland_selling_points": "1、港岛30年唯一新房地铁上盖：自带60万呎THE SOUTHSIDE大型商业配套，3站直达中环。\n2、会德丰与港铁联合匠心打造：拥有独立会所和联合会所，交楼精装品质与品牌口碑极高。\n3、紧邻多所顶尖国际名校圈：紧邻新加坡国际学校、弘立书院与加拿大国际学校，教育资源极度雄厚。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_wong_chuk_hang",
       "nearest_mtr_name": "黃竹坑站 (南港島綫)",
@@ -55113,7 +55625,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/T6H_dEJZrFoV8g2sr_DnUQ",
     "marketing_url": "https://drive.google.com/drive/folders/1rPHj7MKl2C4zKzXUTFuLOs0vUIiYKUAx",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "港铁黃竹坑站上盖/极速步行直达 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 81米 (1分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "PORTO",
@@ -55295,7 +55811,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1mV7fnDMsT_qz-R1kjUuIDI9lkKiXG7UT",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "紧邻港铁利東站高效通勤 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共174伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 473米 (5分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "弦岸",
@@ -55511,7 +56031,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1g4mI6LRKqI7hU3YcIJLPpY0gVNzzwgI_",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 庄士机构精工品质保障",
+    "quantified_cons": "【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共105伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 533米 (6分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "扬海",
@@ -55534,7 +56058,7 @@
     "sqft_price_desc": "3.7万起",
     "main_layout": "1299呎、1420呎",
     "reason": "1.\t黄竹坑站上盖港岛南岸2期，太古与嘉里强强联合，享纯正铁路上盖与THE SOUTHSIDE大型商场便利。\n2.\t直面深水湾及寿臣山极佳山海景观，承接港岛南区传统富豪圈层红利，享极佳尊贵感与私密性。\n3.\t汇聚顶级国际学校圈，15分钟直达中环CBD，兼顾名校教育、高效通勤与高质素租务回报。",
-    "mainland_selling_points": "核心定位：坐落于港岛南区核心黄竹坑站上盖、由太古与嘉里两大豪宅品牌联袂打造的“滨海高阶铁路上盖双核资产”。\n一句话核心卖点——由嘉里建设、太古地产及港铁联合打造，位于黄竹坑站上盖港岛南岸第2期，以开阔深水湾海景与寿臣山绿意、顶奢交楼品质及15分钟直达中环的高效通勤，精准满足内地高净值家庭对南区富豪圈层、顶级国际教育及长期稳健资产配置的极高要求。\n对内地客户最有吸引力的六个卖点\n1. 太古与嘉里顶级",
+    "mainland_selling_points": "1、港铁黄竹坑站上盖港岛南岸第2期：嘉里建设、信和置业及港铁强强联合打造，纯正铁路上盖无缝出行，南港岛线2站直达金钟，迅速切换中环核心金融圈。\n2、近51万呎商场THE SOUTHSIDE成熟生活圈：基座连接南区最大地标购物中心，餐饮、超市、娱乐一应俱全；项目部分高层单位可眺望深湾游艇会及寿臣山翠绿山景。\n3、嘉里顶奢物业服务与国际学区聚集：秉承嘉里豪宅一贯的高品质工艺与尊贵物业服务，邻近新加坡国际学校等多所名校，租赁承接力强劲，深受金融高管与陪读家庭青睐。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_wong_chuk_hang",
       "nearest_mtr_name": "黃竹坑站 (南港島綫)",
@@ -55762,7 +56286,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1Q3l3YoLjrGlKxI4O2rblYqE6lWPIqMEx",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 一线维港海滨/开阔海湾稀缺视野",
+    "quantified_cons": "【交通】步行至最近港铁黃竹坑站约624米(约7分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 624米 (7分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "晋环",
@@ -55990,7 +56518,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1z0F5uCkwm-jRV-tzNp6P56ERlxJPyJUt",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "紧邻港铁黃竹坑站高效通勤 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 501米 (6分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "海盈山第4A期",
@@ -56013,7 +56545,7 @@
     "sqft_price_desc": "4万以上",
     "main_layout": "1204、1515呎",
     "reason": "1、香港岛30年唯一新房地铁上盖，自带60 W 平方尺southside大型商业配套，三站就能到中环，楼下就是新加坡国际学校           2、单价4.5万起，嘉里和港铁联合开发小区品质极高，拥有独立会所和联合会所。稀缺寿臣山和深水湾景观",
-    "mainland_selling_points": "海盈山对内地客户最核心的定位：占据港岛南区黄金腹地、尊享全功能地标商场配套与极速通勤的“港岛新贵铁路上盖标准资产”。\n一句话核心卖点——嘉里建设、信和置业、太古地产及港铁四大巨头联合打造，黄竹坑站港岛南岸核心第4B期铁路上盖地标，以15分钟直达中环的高效、基座巨型商场已启用的熟透配套，以及南区顶尖国际学校圈，精准满足内地中产与高薪专才对子女教育、高品质自住与资产高流动性的刚性需求。\n对内地客户最有",
+    "mainland_selling_points": "1、港铁黄竹坑站纯正铁路上盖：黄竹坑站港岛南岸第4期核心上盖，专属升降机无缝直达港铁大堂与基座商场，2站约8分钟直达金钟，极速连通中环金融腹地。\n2、基座近51万呎THE SOUTHSIDE熟透商圈：楼下即享港岛南区最大地标商业THE SOUTHSIDE，高端超市、影院、精品餐饮一站式直达，彻底解决传统豪宅生活配套痛点。\n3、四大品牌天团背书与南区顶尖国际学区：嘉里、信和、太古及港铁四大巨头联合打造，紧邻新加坡国际学校、加拿大国际学校及弘立书院等名校，深受内地陪读与高薪精英家庭追捧。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_wong_chuk_hang",
       "nearest_mtr_name": "黃竹坑站 (南港島綫)",
@@ -56198,7 +56730,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/aJi1JUQhOf2VPOQh2bZF7w",
     "marketing_url": "https://drive.google.com/drive/folders/19OLCvFmuIERoE0rPQKME-8zYG5Br2EOe",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "紧邻港铁黃竹坑站高效通勤 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 414米 (5分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "海盈山第4B期",
@@ -56221,7 +56757,7 @@
     "sqft_price_desc": "4万以上",
     "main_layout": "1204、1515呎",
     "reason": "1、香港岛30年唯一新房地铁上盖，自带60 W 平方尺southside大型商业配套，三站就能到中环，楼下就是新加坡国际学校           2、单价3.9万起，嘉里和港铁联合开发小区品质极高，拥有独立会所和联合会所。",
-    "mainland_selling_points": "核心定位：占据港岛南区黄金腹地、尊享全功能地标商场配套与极速通勤的“港岛新贵铁路上盖标准资产”。\n一句话核心卖点——嘉里建设、信和置业、太古地产及港铁四大巨头联合打造，黄竹坑站港岛南岸核心第4B期铁路上盖地标，以15分钟直达中环的高效、基座巨型商场已启用的熟透配套，以及南区顶尖国际学校圈，精准满足内地中产与高薪专才对子女教育、高品质自住与资产高流动性的刚性需求。\n对内地客户最有吸引力的六个卖点\n1",
+    "mainland_selling_points": "1、港铁黄竹坑站纯正铁路上盖：黄竹坑站港岛南岸第4期核心上盖，专属升降机无缝直达港铁大堂与基座商场，2站约8分钟直达金钟，极速连通中环金融腹地。\n2、基座近51万呎THE SOUTHSIDE熟透商圈：楼下即享港岛南区最大地标商业THE SOUTHSIDE，高端超市、影院、精品餐饮一站式直达，彻底解决传统豪宅生活配套痛点。\n3、四大品牌天团背书与南区顶尖国际学区：嘉里、信和、太古及港铁四大巨头联合打造，紧邻新加坡国际学校、加拿大国际学校及弘立书院等名校，深受内地陪读与高薪精英家庭追捧。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_wong_chuk_hang",
       "nearest_mtr_name": "黃竹坑站 (南港島綫)",
@@ -56399,7 +56935,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/19OLCvFmuIERoE0rPQKME-8zYG5Br2EOe",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "紧邻港铁黃竹坑站高效通勤 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 381米 (4分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "滶晨 II",
@@ -56597,7 +57137,11 @@
     "property_type_desc": "期房 (预计2026年入伙)",
     "intro_url": "https://mp.weixin.qq.com/s/bUxWEIM7Nm0x0zByqbS6Ww",
     "marketing_url": "https://drive.google.com/drive/folders/1u4TMWsOcApc7vZfwZONBS8Io_Ix4jW3n",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "紧邻港铁黃竹坑站高效通勤 ｜ 新世界 / 帝国集团 / 资本策略 / 丽新发展 / 港铁精工品质保障",
+    "quantified_cons": "【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校 ；\n【交付】属预售楼花阶段(2026年入伙)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 366米 (4分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "璟南",
@@ -56878,7 +57422,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1E0P941BPiNF_xOFyRmGmPmwiyE9mL_IU",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 一线维港海滨/开阔海湾稀缺视野",
+    "quantified_cons": "【交通】步行至最近港铁利東站约892米(约10分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 892米 (10分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "逸南",
@@ -57022,7 +57570,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1LkiiqstiTYtBxCGy4rkAPnH8jHXfI3pd",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "港铁利東站上盖/极速步行直达 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共138伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 282米 (3分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "君豪峰",
@@ -57202,7 +57754,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1bbfPyOl1IhEA_gwQPw0_l-5bB5e9QOxS",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "紧邻港铁鰂魚涌站高效通勤 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为14校网 / 東區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 362米 (4分钟) 直达港铁鰂魚涌站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "凯玥",
@@ -57225,7 +57781,7 @@
     "sqft_price_desc": "3.8万起",
     "main_layout": "3300、3600呎",
     "reason": "1.\t港岛南区罕见纯正“正南向”一线海景超级豪宅，前临南中国海浩瀚海景，背靠玉桂山。\n2.\t合景泰富与龙光联合打造，全盘仅295伙纯大户型规划，配备双私家电梯大堂，私密尊贵。\n3.\t现楼发售即买即入住，邻近海怡半岛及利东站，兼顾南区极致隐逸海景与市区生活便利。",
-    "mainland_selling_points": "核心定位：隐于港岛南区海岸、专为顶级家族与超高净值人群打造的“正南向全海景藏品级奢华大宅”。\n一句话核心卖点——由合景泰富与龙光强强联合打造，坐落于港岛南区鸭脷洲临海龙头宝座，以全港极其稀缺的“正南向”一线无遮挡浩瀚海景、纯大户型低密大宅格局以及现楼即买即享的实景品质，精准满足内地超高净值客户对家族传承资产、极致海景大视野与高端私密居住的终极追求。\n对内地客户最有吸引力的六个卖点\n1. 绝版稀缺的",
+    "mainland_selling_points": "1、港岛南区鸭脷洲一线临海现楼超级豪宅：坐落鸭脷洲利南道66号海旁第一排龙头地段，真正户户直面无遮挡全海景，极目远眺南中国海及南丫岛，极具度假尊崇体验。\n2、全盘纯大户型规划与超高实用尺度：全盘主打1,390至逾3,600平方呎三房至四房大宅及顶层复式大宅，楼底高旷，用料极尽奢华，现楼交付，实景海景与品质一目了然。\n3、快速通达金钟中环与南区名校护航：临近港铁海怡半岛站及利东站，数站直抵金钟金融圈，邻近加拿大国际、新加坡国际学校等顶尖学府，是兼备生活享受与大额资产配置的硬通货。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_south_horizons",
       "nearest_mtr_name": "海怡半島站 (南港島綫)",
@@ -57416,7 +57972,11 @@
     "property_type_desc": "现房 (现楼发售)",
     "intro_url": "https://mp.weixin.qq.com/s/xdjqO7MSlCRDR9SX8Nbe6Q",
     "marketing_url": "https://drive.google.com/drive/folders/1tkEBiV_wOB8PcfySinukSEaL4J-SZsUm",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 龙光集团 / 合景泰富精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁海怡半島站约594米(约7分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 594米 (7分钟) 直达港铁海怡半島站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "Eight Kwai Fong Happy Valley",
@@ -57832,7 +58392,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1jjesCACLonBhNBW1ifmPm5F3lW2nKX0_",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖12校网 / 灣仔校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁銅鑼灣站约1891米(约22分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共156伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1891米 (22分钟) 直达港铁銅鑼灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "蓝塘道23-39号",
@@ -58243,7 +58807,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/19K9pMHeJSGFHPYL4NEqMdgqozsvTSaG2",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖12校网 / 灣仔校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁銅鑼灣站约1824米(约21分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共18伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1824米 (21分钟) 直达港铁銅鑼灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "滶晨",
@@ -58266,7 +58834,7 @@
     "sqft_price_desc": "6.3万起",
     "main_layout": "1706呎、2871呎、3120呎各剩1套",
     "reason": "1.\t新世界财团与港铁打造，港岛南岸第5期低密精品质感社区，享南区高阶圈层与60万呎THE SOUTHSIDE商场配套。\n2.\t毗邻顶级国际学校圈，数分钟步行可达THE SOUTHSIDE及黄竹坑站，2站即达金钟、15分钟直达中环CBD。\n3.\t主打高实用率舒适户型，拥有扎实的高薪人士租赁需求，兼顾自住舒适度与长线稳健资产配置。",
-    "mainland_selling_points": "核心定位：坐落于港岛南区高尚住宅区、由新世界财团倾力打造的“兼具精致居住质感与成熟商圈配套的高阶改善型资产”。\n一句话核心卖点——由新世界发展、帝国集团、资本策略、丽新发展及港铁联合打造，位于港岛南岸第5期，依托新世界一贯的精品豪宅审美、楼下60万呎旗舰商场配套以及顶级国际学校圈加持，精准满足内地高净值家庭对高品质自住、下一代教育及长期稳健资产配置的需求。\n对内地客户最有吸引力的六个卖点\n1. 新",
+    "mainland_selling_points": "1、港铁黄竹坑站上盖港岛南岸第5期：由新世界发展、帝国集团、资本策略及丽新发展四强联袂打造，位于香叶道11号，纯正港铁上盖，2站直达金钟核心金融区。\n2、港岛南岸唯一尊享奢华双会所配套：全盘分5A与5B期规划，提供一房至五房多元户型，是整个黄竹坑站大型综合体中唯一规划双会所的项目，配备极其丰富的顶奢休闲设施。\n3、直通THE SOUTHSIDE商场与国际名校：楼下即享近51万呎地标购物中心，毗邻新加坡国际学校、加拿大国际学校等多所顶尖学府，兼具铁路上盖高效通勤与南区精英教育护城河。",
     "nearest_mtr": {
       "nearest_mtr_id": "mtr_wong_chuk_hang",
       "nearest_mtr_name": "黃竹坑站 (南港島綫)",
@@ -58472,7 +59040,11 @@
     "property_type_desc": "期房 (预计2026年入伙)",
     "intro_url": "https://mp.weixin.qq.com/s/pAjQ2cUrjulCAtypfsdfJA",
     "marketing_url": "https://drive.google.com/drive/folders/1u4TMWsOcApc7vZfwZONBS8Io_Ix4jW3n",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "新世界 / 帝国集团 / 资本策略 / 丽新发展 / 港铁精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁黃竹坑站约598米(约7分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 598米 (7分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "花语海第1期",
@@ -58885,7 +59457,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2027年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/1z723MjO_bKQuUmIidoohimKWjSxooqHQ",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龙城区校网名校网 ｜ 一线维港海滨/开阔海湾稀缺视野",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "花语海第2期",
@@ -59406,7 +59982,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2027年入伙)",
     "marketing_url": "https://drive.google.com/drive/folders/1z723MjO_bKQuUmIidoohimKWjSxooqHQ",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "全港顶尖34校网 / 九龙城区校网名校网 ｜ 一线维港海滨/开阔海湾稀缺视野",
+    "quantified_cons": "【交通】地处启德跑道区，日常需搭乘专线巴士约5-8分钟接驳至港铁启德站/宋皇台站 ；\n【配套】滨海商业街区处于逐步兑现期，现阶段大型商业依赖启德城中心AIRSIDE/双子汇",
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
   },
   {
     "name": "Elize Park",
@@ -59559,7 +60139,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/search?q=Elize%20Park",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "紧邻港铁旺角東站高效通勤 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【校网】所属公立校网为32校网 / 油尖旺校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共52伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 407米 (4分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "维港汇 I",
@@ -59902,7 +60486,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1kESOSr4A55-PY3JZAXIXMnGL5sB3Uxkf",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "现楼发售即买即住/即收租 ｜ 会德丰 / 信和置业 / 嘉华国际 / 世茂 / 爪哇集团精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁南昌站约1247米(约15分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为40校网 / 深水埗区校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 1247米 (15分钟) 直达港铁南昌站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "红山半岛 - C区",
@@ -61095,7 +61683,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (即将发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1J6rC1F3dpyhcY4atrQBg5ZUPmj4CvZ0e",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "信和 / 华懋集团 / 亚证地产精工品质保障",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 6034米 (72分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "红山半岛 - B区",
@@ -62204,7 +62796,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (即将发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1J6rC1F3dpyhcY4atrQBg5ZUPmj4CvZ0e",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "信和 / 华懋集团 / 亚证地产精工品质保障",
+    "quantified_cons": "【交通】纯自住低密地脉无就近港铁站，日常出行高度依赖私家车或专属车队 ；\n【校网】所属公立校网为18校网 / 南區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 5395米 (64分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "泓璟",
@@ -62229,7 +62825,7 @@
     "sqft_price_desc": "",
     "main_layout": "开放式 - 1房",
     "reason": "何文田核心名校网精品新盘",
-    "mainland_selling_points": "34名校网，旺中带静",
+    "mainland_selling_points": "1、何文田自由道传统静谧高尚住宅地脉：地处何文田自由道闹中取静纯住宅板块，步行快速接驳港铁旺角东站与何文田站，畅享港九核心市区极速无缝通勤。\n2、高品质精品都会人居方正阔绰空间：现代化优雅立面与高品质公区打造，精选国际一线精装交楼标准，空间利用率极高，兼备自住舒适度与资产灵活性。\n3、顶尖34名校网黄金加持与高流动性承接：坐落名校林立的九龙34小学名校网，周边拔萃男书院等顶尖学府近在咫尺，深受陪读家庭与都市高薪精英追捧，抗跌保值力极强。",
     "developer": "辉宇国际",
     "address": "自由道 1B號",
     "main_area": "九龙中（九龙城/何文田）",
@@ -62442,7 +63038,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/search?q=type%3Afolder%20parent%3A15tRwSlG1VTOKuEyj-H131zpNK6v6MY04%20%22%E4%B9%9D%E9%BE%99-%E4%BD%95%E6%96%87%E7%94%B0-%E6%B3%93%E7%92%9F%22",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "全港顶尖34校网 / 九龍城校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【社区】单幢式精致大厦(共91伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 499米 (6分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "海德园第2期",
@@ -62467,7 +63067,7 @@
     "sqft_price_desc": "",
     "main_layout": "1房 - 3房",
     "reason": "太古地产柴湾全新海景大型住宅项目",
-    "mainland_selling_points": "太古品质港岛全新大型综合体",
+    "mainland_selling_points": "1、太古地产港岛东柴湾罕见大型综合体：太古地产与中华汽车联合打造，位于港岛东柴湾核心地段，全盘规划约800余伙，是太古品牌在港岛东又一品质标杆作品，品牌含金量极高。\n2、高性价比入主港岛核心都会生活圈：相较港岛动辄高企的尺价，该项目以极具吸引力的亲民单价推售，以亲民总价即可拥有太古品质两房及三房，是刚需及改善买家入主港岛黄金机会。\n3、太古卓越物业服务与成熟交通配套：步行轻松接驳港铁柴湾站，周边生活市集、商场及休闲设施成熟熟透，配合太古业界公认顶尖的物业管理与社群营运，租售流通性俱佳。",
     "developer": "太古地产",
     "address": "常安街99號",
     "main_area": "港岛东区",
@@ -62808,7 +63408,11 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2027年入伙)",
     "marketing_url": "https://drive.google.com/drive/search?q=type%3Afolder%20parent%3A15tRwSlG1VTOKuEyj-H131zpNK6v6MY04%20%22%E6%B8%AF%E5%B2%9B-%E6%9F%B4%E6%B9%BE-%E6%B5%B7%E5%BE%B7%E5%9B%AD%22",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "一线维港海滨/开阔海湾稀缺视野 ｜ 太古地产精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁柴灣站约945米(约11分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为16校网 / 東區校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 945米 (11分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "叡璟II",
@@ -62833,7 +63437,7 @@
     "sqft_price_desc": "",
     "main_layout": "1房 - 4房",
     "reason": "西南九龙临海优质豪宅新盘",
-    "mainland_selling_points": "西九龙海滨成熟配套，交通极度便利",
+    "mainland_selling_points": "1、西南九龙绝版巨无霸大型发展区：华润置地打造的西南九龙核心区临海综合住宅地标，全盘分6期规划约2,200伙，是香港核心市区近年来罕见的大型整体规划品质社区。\n2、自设约10万呎华润「万象生活」高端商场：基座首度引入内地顶奢商业运营品牌“万象生活”，下楼即享高端购物、特色餐饮及生活配套，彻底颠覆传统豪宅生活配套不足体验。\n3、步行5分钟直达南昌站3站8线枢纽：步行约5分钟即达港铁南昌站，1站到西九高铁站、3站直达中环金融区及机场，无缝接轨九龙站及西九文化区，兼具艺术人文与极速通勤。",
     "developer": "华润置地",
     "address": "發祥街西8號",
     "main_area": "九龙西（油尖旺）",
@@ -63123,7 +63727,11 @@
     "property_type_desc": "期房 (预计2028年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT0ZTR2dJVFpucnhJ?opennew=1",
     "marketing_url": "https://drive.google.com/drive/folders/1sa8atOcN3i7GVaCQWMsE0bHAHdeEigOM",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "华润置地精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁長沙灣站约817米(约10分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为40校网 / 深水埗校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 817米 (10分钟) 直达港铁長沙灣站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "映汇",
@@ -63148,7 +63756,7 @@
     "sqft_price_desc": "",
     "main_layout": "开放式 - 2房",
     "reason": "恒基必嘉坊系列 Baker Circle Greenwich",
-    "mainland_selling_points": "红磡三线铁路上盖百万方尺大型商住综合体",
+    "mainland_selling_points": "1、九龙核心百万呎巨无霸都会重建：恒基兆业倾力打造的全港最大型私人市区重建项目之一，横跨多个街区，自设近百万平方呎立体商业步行街，生活、娱乐与社交配套完全熟透。\n2、红磡/黄埔/何文田三站环绕立体枢纽：地处九龙枢纽黄金三角，坐拥港铁红磡站（东铁线/屯马线）、黄埔站及何文田站，1站直达港岛会展/金钟，速通西九高铁站及深圳口岸。\n3、年轻新贵极度青睐的高流动性资产：打造活力轻奢时尚社区，全天候智能家居配备，户型以精品一房及两房为主，低总价入场，极其契合海外及内地高薪专才自住与高租金回报投资需求。",
     "developer": "恒基兆业",
     "address": "寶其利街18號",
     "main_area": "九龙中（九龙城/何文田）",
@@ -63409,7 +64017,11 @@
     "property_type_desc": "期房 (预计2026年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT0Vod0FMcVpidkNM?aidPos=list&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&aidPos=list&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&opennew=1",
     "marketing_url": "https://drive.google.com/drive/folders/1IUe2H8xJOWK11-OIH8xzWsrVrz5vuOZo",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "紧邻港铁何文田站高效通勤 ｜ 恒基兆业精工品质保障",
+    "quantified_cons": "【校网】所属公立校网为35校网 / 九龍城校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共263伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 424米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "肇辉台6号",
@@ -63434,7 +64046,7 @@
     "sqft_price_desc": "",
     "main_layout": "3房 - 4房大户",
     "reason": "东半山传统顶尖豪宅地段现楼",
-    "mainland_selling_points": "东半山稀缺独立地段，名人贵胄聚居地",
+    "mainland_selling_points": "1、港岛东半山肇辉台6号极度低密传世私邸：嘉华国际打造的半山顶奢地标，坐落东半山传统豪门清幽地段肇辉台，全盘仅设24伙纯大宅，出入皆名门望族。\n2、全盘逾2,800呎宏阔大宅与私人电梯大堂：清一色主打2,800呎以上全套房奢华大宅，楼底高旷，户户享专属独立升降机大堂，用料极尽奢华，展现顶级大宅风范。\n3、港岛12名校网与数分钟直达湾仔中环：坐拥湾仔区12名校网，周边传统名校云集，车行数分钟快速直抵铜锣湾时代广场与金钟中环金融CBD，保值抗跌力极强。",
     "developer": "嘉华国际",
     "address": "肇輝台6號",
     "main_area": "港岛湾仔及东半山",
@@ -63824,7 +64436,11 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/search?q=type%3Afolder%20parent%3A15tRwSlG1VTOKuEyj-H131zpNK6v6MY04%20%22%E6%B8%AF%E5%B2%9B-%E5%8D%8A%E5%B1%B1%E5%8C%BA%E4%B8%9C%E9%83%A8-%E8%82%87%E8%BE%89%E5%8F%B06%E5%8F%B7%22",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "🏡 自住型产品",
+    "core_pros": "全港顶尖12校网 / 灣仔校网名校网 ｜ 现楼发售即买即住/即收租",
+    "quantified_cons": "【交通】步行至最近港铁灣仔站约1065米(约13分钟)，雨季建议接驳小巴 ；\n【社区】单幢式精致大厦(共24伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 1065米 (13分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "海瑅湾 I",
@@ -63849,7 +64465,7 @@
     "sqft_price_desc": "",
     "main_layout": "1房 - 4房",
     "reason": "将军澳日出康城一线临海大盘",
-    "mainland_selling_points": "康城站铁路上盖，无遮挡全海景",
+    "mainland_selling_points": "1、港铁康城站临海前排一线开扬全海景：位于日出康城临海核心地段，部分中高层单位坐拥全无遮挡的蓝塘海峡壮阔海景及维港景致，尽享水岸度假生活。\n2、将蓝隧道与跨湾大桥极速直通港岛东：经将蓝隧道及跨湾连接路，驾车数分钟即达东区海底隧道及太古坊CBD，交通网络全面升级，通勤效率大增。\n3、大型成熟商场地标与高性价比品质宜居：楼下即享近50万呎大型购物中心「The LOHAS」，配备大型豪华住客会所，户型方正实用，为中产家庭优质海景大宅。",
     "developer": "信和置业 / 嘉里建设 / 嘉华国际 / 招商置地 / 港铁",
     "address": "康城路1號",
     "main_area": "九龙东（黄大仙/观塘）",
@@ -64136,7 +64752,11 @@
     "property_type_desc": "期房 (预计2027年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT0JwQmxNUkdJbmFn",
     "marketing_url": "https://drive.google.com/drive/folders/1HOnx36Osdu6cW8jxlj9ZRtom34PYCgqY?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "紧邻港铁康城站高效通勤 ｜ 一线维港海滨/开阔海湾稀缺视野",
+    "quantified_cons": "【校网】所属公立校网为95校网 / 西貢校网，重视升学建议结合片区优质私立或国际学校 ；\n【交付】属预售楼花阶段(2027年入伙)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 305米 (3分钟) 直达港铁康城站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "海瑅湾 II",
@@ -64161,7 +64781,7 @@
     "sqft_price_desc": "",
     "main_layout": "1房 - 4房",
     "reason": "将军澳日出康城一线临海大盘第2期",
-    "mainland_selling_points": "康城站铁路上盖，无遮挡全海景",
+    "mainland_selling_points": "1、港铁康城站临海前排一线开扬全海景：位于日出康城临海核心地段，部分中高层单位坐拥全无遮挡的蓝塘海峡壮阔海景及维港景致，尽享水岸度假生活。\n2、将蓝隧道与跨湾大桥极速直通港岛东：经将蓝隧道及跨湾连接路，驾车数分钟即达东区海底隧道及太古坊CBD，交通网络全面升级，通勤效率大增。\n3、大型成熟商场地标与高性价比品质宜居：楼下即享近50万呎大型购物中心「The LOHAS」，配备大型豪华住客会所，户型方正实用，为中产家庭优质海景大宅。",
     "developer": "信和置业 / 嘉里建设 / 嘉华国际 / 招商置地 / 港铁",
     "address": "康城路1號",
     "main_area": "九龙东（黄大仙/观塘）",
@@ -64428,7 +65048,11 @@
     "property_type_desc": "期房 (预计2027年入伙)",
     "intro_url": "https://docs.qq.com/doc/DT0JwQmxNUkdJbmFn",
     "marketing_url": "https://drive.google.com/drive/folders/1HOnx36Osdu6cW8jxlj9ZRtom34PYCgqY?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
-    "has_marketing_materials": true
+    "has_marketing_materials": true,
+    "property_positioning": "⚖️ 投资自住兼顾",
+    "core_pros": "港铁康城站上盖/极速步行直达 ｜ 一线维港海滨/开阔海湾稀缺视野",
+    "quantified_cons": "【校网】所属公立校网为95校网 / 西貢校网，重视升学建议结合片区优质私立或国际学校 ；\n【交付】属预售楼花阶段(2027年入伙)，需等待工程竣工后交付",
+    "commute_guidance": "步行约 277米 (3分钟) 直达港铁康城站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "皇璇",
@@ -64681,7 +65305,11 @@
     "has_marketing_materials": true,
     "tower_names": [
       "皇璇"
-    ]
+    ],
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "紧邻港铁炮台山站高效通勤 ｜ 周大福精工品质保障",
+    "quantified_cons": "【校网】所属公立校网为14校网 / 东区校网，重视升学建议结合片区优质私立或国际学校 ；\n【社区】单幢式精致大厦(共194伙)，内部公用绿化及大型会所设施相对小巧",
+    "commute_guidance": "步行约 496米 (6分钟) 直达港铁炮台山站，轨交干线高效直通中环/九龙核心"
   },
   {
     "name": "逸里1号",
@@ -65114,6 +65742,10 @@
     "property_type": "forward",
     "property_type_desc": "期房 (预计2027年入伙)",
     "marketing_url": "https://drive.google.com/drive/search?q=%E9%80%B8%E9%87%8C1%E5%8F%B7",
-    "has_marketing_materials": false
+    "has_marketing_materials": false,
+    "property_positioning": "💷 投资型产品",
+    "core_pros": "恒基兆业精工品质保障",
+    "quantified_cons": "【交通】步行至最近港铁太子站约1028米(约12分钟)，雨季建议接驳小巴 ；\n【校网】所属公立校网为32校网 / 油尖旺区校网，重视升学建议结合片区优质私立或国际学校",
+    "commute_guidance": "步行约 1028米 (12分钟) 直达港铁太子站，轨交干线高效直通中环/九龙核心"
   }
 ]
