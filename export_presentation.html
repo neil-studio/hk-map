@@ -4674,10 +4674,6 @@
           }).join('');
         }
 
-        const subtitleMatrixText = activeCategories.length > 1
-          ? `(${activeCategories.length}大核心置业客群维度深度匹配)`
-          : `(专属定制置业客群维度深度匹配)`;
-
         const sectionsHtml = activeCategories.length > 0 ? activeCategories.map(cat => {
           const pCount = cat.projects.length;
           let gridCols = pCount;
@@ -4729,7 +4725,7 @@
 
           <div class="verdict-decision-layout">
             <div class="verdict-sec-title">
-              <span>💡 蓝玛置业专家终极选房分类矩阵 ${subtitleMatrixText}</span>
+              <span>💡 蓝玛置业专家选房分类矩阵</span>
               <span class="verdict-sec-subtitle">全案入选 ${targetProjs.length} 个重点新盘 · 消除重复描述 · 根据买家置业重心分类归巢</span>
             </div>
 
