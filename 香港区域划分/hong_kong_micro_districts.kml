@@ -1377,7 +1377,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name><![CDATA[北角核心及炮台山 (S/H8)]]></name>
+      <name><![CDATA[北角及炮台山 (S/H8)]]></name>
       <description><![CDATA[大区: 港岛东区<br/>规划编号: S/H8]]></description>
       <Polygon>
         <outerBoundaryIs><LinearRing><coordinates>
@@ -6284,7 +6284,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name><![CDATA[西湾河 / 筲箕湾及阿公岩 (S/H9/18)]]></name>
+      <name><![CDATA[西湾河及筲箕湾 (S/H9/18)]]></name>
       <description><![CDATA[大区: 港岛东区<br/>规划编号: S/H9/18]]></description>
       <Polygon>
         <outerBoundaryIs><LinearRing><coordinates>
@@ -6293,7 +6293,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name><![CDATA[西营盘及石塘咀 / 上环 (S/H3/34)]]></name>
+      <name><![CDATA[上环及西营盘 (S/H3/34)]]></name>
       <description><![CDATA[大区: 港岛中西区<br/>规划编号: S/H3/34]]></description>
       <Polygon>
         <outerBoundaryIs><LinearRing><coordinates>
@@ -6417,7 +6417,7 @@
       </MultiGeometry>
     </Placemark>
     <Placemark>
-      <name><![CDATA[石澳、大浪湾及鹤咀 (S/H20/25)]]></name>
+      <name><![CDATA[石澳及鹤咀 (S/H20/25)]]></name>
       <description><![CDATA[大区: 港岛南区<br/>规划编号: S/H20/25]]></description>
       <Polygon>
         <outerBoundaryIs><LinearRing><coordinates>
@@ -6933,7 +6933,7 @@
       </MultiGeometry>
     </Placemark>
     <Placemark>
-      <name><![CDATA[九龙塘低密度豪宅区 / 广播道及毕架山 (S/K18/21)]]></name>
+      <name><![CDATA[九龙塘及毕架山 (S/K18/21)]]></name>
       <description><![CDATA[大区: 九龙中（九龙城/何文田）<br/>规划编号: S/K18/21]]></description>
       <Polygon>
         <outerBoundaryIs><LinearRing><coordinates>
