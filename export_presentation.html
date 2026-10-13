@@ -1572,39 +1572,48 @@
       color: var(--slate-500);
       font-weight: normal;
     }
-    .decision-columns-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    .verdict-rows-container {
+      display: flex;
+      flex-direction: column;
       gap: 10px;
       flex: 1;
       min-height: 0;
+      justify-content: stretch;
     }
-    .decision-col {
+    .decision-category-row {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
       border-radius: 8px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       overflow: hidden;
       box-shadow: 0 1px 4px rgba(0,0,0,0.02);
-      border-top: 4px solid var(--primary);
+      border-left: 5px solid var(--primary);
+      flex: 1;
+      min-height: 0;
     }
-    .decision-col.col-owner { border-top-color: #0284C7; background: #FAFCFF; }
-    .decision-col.col-balanced { border-top-color: #16A34A; background: #FAFEFA; }
-    .decision-col.col-invest { border-top-color: #D97706; background: #FFFCF5; }
+    .decision-category-row.cat-owner { border-left-color: #0284C7; }
+    .decision-category-row.cat-balanced { border-left-color: #16A34A; }
+    .decision-category-row.cat-invest { border-left-color: #D97706; }
 
-    .decision-col-head {
-      padding: 8px 12px 6px 12px;
-      border-bottom: 1px solid #E2E8F0;
-      background: #FFFFFF;
+    .decision-row-strategy-box {
+      width: 280px;
+      flex-shrink: 0;
+      padding: 10px 14px;
+      background: rgba(248, 250, 252, 0.95);
+      border-right: 1px solid #E2E8F0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 6px;
     }
-    .decision-col-badge-row {
+    .decision-row-badge-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 2px;
     }
-    .decision-col-title {
+    .decision-row-title {
       font-size: 0.86rem;
       font-weight: 800;
       color: var(--slate-900);
@@ -1613,52 +1622,60 @@
       align-items: center;
       gap: 5px;
     }
-    .decision-col-count-pill {
+    .decision-row-count-pill {
       font-size: 0.62rem;
       font-weight: 700;
       padding: 1px 6px;
       border-radius: 10px;
     }
-    .decision-col-strategy {
-      padding: 7px 10px;
-      font-size: 0.66rem;
-      line-height: 1.45;
+    .decision-row-strategy-text {
+      font-size: 0.65rem;
+      line-height: 1.48;
       color: var(--slate-700);
-      background: rgba(248, 250, 252, 0.85);
-      border-bottom: 1px dashed #CBD5E1;
-    }
-    .decision-col-strategy strong {
-      color: var(--slate-900);
-    }
-    .decision-projects-list {
-      padding: 6px 8px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      flex: 1;
-      overflow-y: auto;
+      gap: 5px;
     }
+    .decision-row-strategy-text strong {
+      color: var(--slate-900);
+    }
+
+    .decision-row-projects-flow {
+      flex: 1;
+      min-width: 0;
+      padding: 8px 12px;
+      overflow: hidden;
+      background: #FAFCFF;
+    }
+    .decision-category-row.cat-balanced .decision-row-projects-flow {
+      background: #FAFEFA;
+    }
+    .decision-category-row.cat-invest .decision-row-projects-flow {
+      background: #FFFCF5;
+    }
+
     .decision-p-card {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
       border-radius: 6px;
-      padding: 6px 8px;
+      padding: 8px 10px;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      justify-content: space-between;
+      gap: 5px;
       box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-      border-left: 3px solid #CBD5E1;
+      border-top: 3px solid #CBD5E1;
     }
-    .decision-p-card.border-owner { border-left-color: #0284C7; }
-    .decision-p-card.border-balanced { border-left-color: #16A34A; }
-    .decision-p-card.border-invest { border-left-color: #D97706; }
+    .decision-p-card.border-owner { border-top-color: #0284C7; }
+    .decision-p-card.border-balanced { border-top-color: #16A34A; }
+    .decision-p-card.border-invest { border-top-color: #D97706; }
     .decision-p-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .decision-p-name {
-      font-size: 0.76rem;
+      font-size: 0.78rem;
       font-weight: 800;
       color: var(--slate-900);
       display: flex;
@@ -1666,25 +1683,25 @@
       gap: 4px;
     }
     .decision-p-price {
-      font-size: 0.70rem;
+      font-size: 0.72rem;
       font-weight: 800;
       color: #0284C7;
     }
     .decision-p-meta {
-      font-size: 0.62rem;
+      font-size: 0.63rem;
       color: #64748B;
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
     }
     .decision-p-highlight {
-      font-size: 0.63rem;
+      font-size: 0.64rem;
       color: var(--slate-700);
       background: #F8FAFC;
-      padding: 2px 5px;
-      border-radius: 3px;
+      padding: 3px 6px;
+      border-radius: 4px;
       border: 1px solid #F1F5F9;
-      line-height: 1.35;
+      line-height: 1.38;
     }
     .decision-empty-state {
       padding: 24px 12px;
@@ -1692,26 +1709,6 @@
       font-size: 0.68rem;
       color: #94A3B8;
       font-style: italic;
-    }
-    .verdict-action-banner {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 6px;
-      padding: 6px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: 0.67rem;
-    }
-    .verdict-action-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      color: var(--slate-700);
-    }
-    .verdict-action-item strong {
-      color: var(--slate-900);
     }
 
     /* =========================================================================
@@ -4543,15 +4540,50 @@
           }
         });
 
-        // 辅助渲染各专栏内项目卡片列表
-        function renderProjectCards(list, borderClass) {
-          if (list.length === 0) {
-            return `
-              <div class="decision-empty-state">
-                <span>本套方案未重点配置此类物业，侧重其他核心方向</span>
-              </div>
-            `;
+        const categories = [
+          {
+            id: 'owner',
+            className: 'cat-owner',
+            borderClass: 'border-owner',
+            title: '🏡 怡居大宅（自住）',
+            themeColor: '#0284C7',
+            badgeBg: '#E0F2FE',
+            badgeColor: '#0369A1',
+            logic: '聚焦低密纯粹圈层、名校网生态或稀缺自然景观，追求高隐私度与居住品质，长线保值抗跌。',
+            guide: '首选中高楼层 3-4 房主力及特色单位，重点关注开阔景观、梯户比与会所圈层。',
+            projects: ownerProjects
+          },
+          {
+            id: 'balanced',
+            className: 'cat-balanced',
+            borderClass: 'border-balanced',
+            title: '⚖️ 兼得平衡（投资自住）',
+            themeColor: '#16A34A',
+            badgeBg: '#DCFCE7',
+            badgeColor: '#15803D',
+            logic: '自住品质与资产流动性兼备的稳健底仓。紧邻核心轨交枢纽或大型综合体商圈，进可攻退可守，周期防御力极强。',
+            guide: '优先锁定主流 2-3 房家庭主力户型，兼得便捷成熟配套与未来二手市场庞大的承接流动性。',
+            projects: balancedProjects
+          },
+          {
+            id: 'invest',
+            className: 'cat-invest',
+            borderClass: 'border-invest',
+            title: '💷 高租售比（投资）',
+            themeColor: '#D97706',
+            badgeBg: '#FEF3C7',
+            badgeColor: '#B45309',
+            logic: '以稳健租金回报与高变现流动性为导向。紧贴核心CBD、高校或高铁圈，租赁客群庞大、空置期极短。',
+            guide: '严格把控总价门槛，优先锁定开放式至 1-2 房中低总价单元，追求高租金净回报率（Net Yield）与快速退出变现。',
+            projects: investProjects
           }
+        ];
+
+        // 仅保留有入选项目的专栏，彻底移除 0 个项目的空白占位
+        const activeCategories = categories.filter(c => c.projects.length > 0);
+
+        // 辅助渲染各专栏内项目卡片列表
+        function renderProjectCards(list, borderClass, themeColor) {
           return list.map(({ p, idx, tradeoff }) => {
             const tCount = p.tower_count || 1;
             const units = p.total_units;
@@ -4571,14 +4603,16 @@
             }
             if (!spTitle) spTitle = `${p.micro_district || p.district}核心地脉·优质人居`;
 
+            const cardStyle = list.length === 1 ? 'max-width: 420px; flex: 0 0 380px;' : 'flex: 1; min-width: 0;';
+
             return `
-              <div class="decision-p-card ${borderClass}">
+              <div class="decision-p-card ${borderClass}" style="${cardStyle}">
                 <div class="decision-p-head">
                   <div class="decision-p-name">
                     <span style="color:#00889A;">#${idx + 1}</span>
                     <span>${p.name}</span>
                   </div>
-                  <div class="decision-p-price">约 $${Math.round(minP)} 万起</div>
+                  <div class="decision-p-price" style="color:${themeColor || '#0284C7'};">约 $${Math.round(minP)} 万起</div>
                 </div>
                 <div class="decision-p-meta">
                   <span>🏛️ ${towerStr} ${unitsStr}</span>
@@ -4593,6 +4627,42 @@
           }).join('');
         }
 
+        const subtitleMatrixText = activeCategories.length > 1
+          ? `(${activeCategories.length}大核心置业客群维度深度匹配)`
+          : `(专属定制置业客群维度深度匹配)`;
+
+        const rowsHtml = activeCategories.length > 0 ? activeCategories.map(cat => {
+          const isGrid = activeCategories.length === 1 && cat.projects.length >= 4;
+          const flowStyle = isGrid
+            ? 'display:grid; grid-template-columns:repeat(2, 1fr); gap:10px;'
+            : 'display:flex; gap:10px; align-items:stretch;';
+
+          return `
+            <div class="decision-category-row ${cat.className}">
+              <!-- 左侧：策略指引看板 -->
+              <div class="decision-row-strategy-box">
+                <div class="decision-row-badge-row">
+                  <div class="decision-row-title">${cat.title}</div>
+                  <span class="decision-row-count-pill" style="background:${cat.badgeBg}; color:${cat.badgeColor};">${cat.projects.length} 盘入选</span>
+                </div>
+                <div class="decision-row-strategy-text">
+                  <div><strong>【核心逻辑】</strong>${cat.logic}</div>
+                  <div><strong>【置业指引】</strong>${cat.guide}</div>
+                </div>
+              </div>
+
+              <!-- 右侧：项目卡片横排流 -->
+              <div class="decision-row-projects-flow" style="${flowStyle}">
+                ${renderProjectCards(cat.projects, cat.borderClass, cat.themeColor)}
+              </div>
+            </div>
+          `;
+        }).join('') : `
+          <div class="decision-empty-state">
+            <span>本套方案未重点配置此类物业，侧重其他核心方向</span>
+          </div>
+        `;
+
         pageEl.innerHTML = `
           <div class="page-header">
             <div class="page-header-left">
@@ -4604,77 +4674,12 @@
 
           <div class="verdict-decision-layout">
             <div class="verdict-sec-title">
-              <span>💡 蓝玛置业专家终极选房分类矩阵 (三大置业客群深度匹配)</span>
+              <span>💡 蓝玛置业专家终极选房分类矩阵 ${subtitleMatrixText}</span>
               <span class="verdict-sec-subtitle">全案入选 ${targetProjs.length} 个重点新盘 · 消除重复描述 · 根据买家置业重心分类归巢</span>
             </div>
 
-            <div class="decision-columns-grid">
-              <!-- 专栏 1：怡居大宅（自住） -->
-              <div class="decision-col col-owner">
-                <div class="decision-col-head">
-                  <div class="decision-col-badge-row">
-                    <div class="decision-col-title">🏡 怡居大宅（自住）</div>
-                    <span class="decision-col-count-pill" style="background:#E0F2FE; color:#0369A1;">${ownerProjects.length} 盘入选</span>
-                  </div>
-                </div>
-                <div class="decision-col-strategy">
-                  <strong>【核心逻辑】</strong>聚焦低密纯粹圈层、名校网生态或稀缺自然景观，追求高隐私度与居住品质，长线保值抗跌。<br>
-                  <strong>【终极置业指引】</strong>首选中高楼层 3-4 房主力及特色单位，重点关注开阔景观、梯户比与会所圈层。
-                </div>
-                <div class="decision-projects-list">
-                  ${renderProjectCards(ownerProjects, 'border-owner')}
-                </div>
-              </div>
-
-              <!-- 专栏 2：兼得平衡（投资自住） -->
-              <div class="decision-col col-balanced">
-                <div class="decision-col-head">
-                  <div class="decision-col-badge-row">
-                    <div class="decision-col-title">⚖️ 兼得平衡（投资自住）</div>
-                    <span class="decision-col-count-pill" style="background:#DCFCE7; color:#15803D;">${balancedProjects.length} 盘入选</span>
-                  </div>
-                </div>
-                <div class="decision-col-strategy">
-                  <strong>【核心逻辑】</strong>自住品质与资产流动性兼备的稳健底仓。紧邻核心轨交枢纽或大型综合体商圈，进可攻退可守，周期防御力极强。<br>
-                  <strong>【终极置业指引】</strong>优先锁定主流 2-3 房家庭主力户型，兼得便捷成熟配套与未来二手市场庞大的承接流动性。
-                </div>
-                <div class="decision-projects-list">
-                  ${renderProjectCards(balancedProjects, 'border-balanced')}
-                </div>
-              </div>
-
-              <!-- 专栏 3：高租售比（投资） -->
-              <div class="decision-col col-invest">
-                <div class="decision-col-head">
-                  <div class="decision-col-badge-row">
-                    <div class="decision-col-title">💷 高租售比（投资）</div>
-                    <span class="decision-col-count-pill" style="background:#FEF3C7; color:#B45309;">${investProjects.length} 盘入选</span>
-                  </div>
-                </div>
-                <div class="decision-col-strategy">
-                  <strong>【核心逻辑】</strong>以稳健租金回报与高变现流动性为导向。紧贴核心CBD、高校或高铁圈，租赁客群庞大、空置期极短。<br>
-                  <strong>【终极置业指引】</strong>严格把控总价门槛，优先锁定开放式至 1-2 房中低总价单元，追求高租金净回报率（Net Yield）与快速退出变现。
-                </div>
-                <div class="decision-projects-list">
-                  ${renderProjectCards(investProjects, 'border-invest')}
-                </div>
-              </div>
-            </div>
-
-            <!-- 底部：现场看房与实操决策要诀 -->
-            <div class="verdict-action-banner">
-              <div class="verdict-action-item">
-                <span style="font-size:0.9rem;">🧭</span>
-                <div><strong>1. 现场实勘优先：</strong>重点比对样板房开间实用率、景观朝向遮挡及项目实际生活步行体验</div>
-              </div>
-              <div class="verdict-action-item">
-                <span style="font-size:0.9rem;">🏷️</span>
-                <div><strong>2. 发展商优惠锁定：</strong>比对即期付款与建期付款折扣利弊，现场优先争取早鸟特惠及特色保留单位</div>
-              </div>
-              <div class="verdict-action-item">
-                <span style="font-size:0.9rem;">💳</span>
-                <div><strong>3. 资金筹划前置：</strong>提前做好资金到位计划与境外按揭预评估，确保心仪单位推售即刻锁定</div>
-              </div>
+            <div class="verdict-rows-container">
+              ${rowsHtml}
             </div>
           </div>
 
