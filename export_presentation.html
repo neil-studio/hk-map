@@ -1762,26 +1762,130 @@
       font-weight: 700;
       color: #991B1B;
     }
-    .fin-guide-body {
-      padding: 8px 12px;
+    .fin-combine-body {
+      padding: 6px 10px;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
       gap: 5px;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       color: var(--slate-700);
-      line-height: 1.45;
       background: #FCFDFE;
       flex: 1;
+      justify-content: space-between;
     }
-    .fin-guide-row {
+    .fin-sec-block {
       display: flex;
-      align-items: flex-start;
-      gap: 6px;
+      flex-direction: column;
+      gap: 3px;
     }
-    .fin-guide-row strong {
+    .fin-sec-subtitle {
+      font-size: 0.61rem;
+      font-weight: 800;
       color: var(--slate-900);
+      letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border-bottom: 1px dashed #E2E8F0;
+      padding-bottom: 2px;
+    }
+    /* 方案三：一手置业4步时间轴 */
+    .fin-steps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+    }
+    .fin-step-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 5px;
+      padding: 3.5px 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5px;
+    }
+    .fin-step-card.highlight {
+      background: #F0FDF4;
+      border-color: #86EFAC;
+    }
+    .fin-step-badge {
+      font-size: 0.54rem;
+      font-weight: 800;
+      color: #0284C7;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .fin-step-card.highlight .fin-step-badge {
+      color: #16A34A;
+    }
+    .fin-step-name {
+      font-weight: 800;
+      color: #0F172A;
+      font-size: 0.60rem;
+    }
+    .fin-step-desc {
+      font-size: 0.54rem;
+      color: #64748B;
+      line-height: 1.25;
+    }
+
+    /* 方案四：持有期4大税费网格 */
+    .fin-holding-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 6px;
+    }
+    .fin-holding-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      line-height: 1.25;
+      background: #F8FAFC;
+      border: 1px solid #F1F5F9;
+      border-radius: 4px;
+      padding: 2.5px 5px;
+    }
+    .fin-holding-badge {
+      font-size: 0.55rem;
+      font-weight: 800;
+      padding: 1px 4px;
+      border-radius: 3px;
       white-space: nowrap;
+    }
+    .fin-holding-badge.rates { background: #E0F2FE; color: #0369A1; }
+    .fin-holding-badge.rent { background: #FEF3C7; color: #B45309; }
+    .fin-holding-badge.tax { background: #DCFCE7; color: #15803D; }
+    .fin-holding-badge.fee { background: #F1F5F9; color: #475569; }
+    .fin-holding-desc {
+      font-size: 0.57rem;
+      color: #334155;
+    }
+    .fin-bottom-notes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 2px;
+    }
+    .fin-note-item {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 5px 8px;
+      font-size: 0.61rem;
+      color: #475569;
+      line-height: 1.35;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .fin-note-item-title {
+      font-weight: 800;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.64rem;
     }
     .fin-full-table-wrap {
       background: #FFFFFF;
@@ -4504,6 +4608,30 @@
 
         const targetProjs = projects;
 
+        function calcHongKongStampDutyWan(priceWan) {
+          if (!priceWan || priceWan <= 0) return 0;
+          const price = priceWan * 10000;
+          let tax = 0;
+          if (price <= 4000000) {
+            tax = 100;
+          } else if (price <= 4500000) {
+            tax = 100 + (price - 4000000) * 0.20;
+          } else if (price <= 6000000) {
+            tax = Math.min(67500 + (price - 4500000) * 0.10, price * 0.0225);
+          } else if (price <= 9000000) {
+            tax = Math.min(135000 + (price - 6000000) * 0.10, price * 0.03);
+          } else if (price <= 20000000) {
+            tax = Math.min(270000 + (price - 9000000) * 0.10, price * 0.0375);
+          } else if (price <= 100000000) {
+            tax = Math.min(750000 + (price - 20000000) * 0.10, price * 0.0425);
+          } else if (price <= 109574470) {
+            tax = 4250000 + (price - 100000000) * 0.30;
+          } else {
+            tax = price * 0.065;
+          }
+          return tax;
+        }
+
         pageEl.innerHTML = `
           <div class="page-header">
             <div class="page-header-left">
@@ -4514,86 +4642,123 @@
           </div>
 
           <div class="verdict-finance-layout">
-            <!-- 模块 1：2026法定印花税阶梯 & 置业按揭规划指引 -->
+            <!-- 模块 1：从价印花税明细表 & 置业法定常规杂费清单 -->
             <div>
               <div class="verdict-sec-title">
-                <span>💷 香港住宅从价印花税（第2标准）最新法定税率与置业按揭核心指引</span>
-                <span class="verdict-sec-subtitle">* 依据2026年最新财案法定标准：全港买家统一适用，≤400万仅$100，过亿物业明确为6.5%</span>
+                <span>💷 香港住宅从价印花税 (第2标准) 税率明细表</span>
+                <span class="verdict-sec-subtitle">* 适用于香港永久性居民及已撤辣之常规买家</span>
               </div>
               <div class="finance-top-grid">
-                <!-- 左半部：2026法定印花税速查表 -->
+                <!-- 左半部：法定从价印花税速查明细表 -->
                 <div class="verdict-fin-card">
-                  <div class="fin-card-mini-title">🏛️ 2026 最新法定住宅从价印花税阶梯 (全港统一适用)</div>
+                  <div class="fin-card-mini-title">🏛️ 从价印花税 (第2标准) 税率明细</div>
                   <table class="statutory-tax-table">
                     <thead>
                       <tr>
                         <th>物业价值区间 (港币)</th>
-                        <th>从价印花税 (第2标准) 计算基准</th>
+                        <th>从价印花税计算基准</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr class="highlight-100">
                         <td><strong>400 万港元或以下</strong></td>
-                        <td><strong>固定 100 港元</strong> (低总价与首置重大利好)</td>
+                        <td><strong>固定 100 港元</strong></td>
                       </tr>
                       <tr>
                         <td>400万 – 450万</td>
-                        <td>$100 + 超额20% 至 1.50%</td>
+                        <td>$100 + 超逾 400 万款额的 20% (最高 1.50%)</td>
                       </tr>
                       <tr>
                         <td>450万 – 600万</td>
-                        <td>$67,500 + 超额10% 至 2.25%</td>
+                        <td>$67,500 + 超逾 450 万款额的 10% (最高 2.25%)</td>
                       </tr>
                       <tr>
                         <td>600万 – 900万</td>
-                        <td>$135,000 + 超额10% 至 3.00%</td>
+                        <td>$135,000 + 超逾 600 万款额的 10% (最高 3.00%)</td>
                       </tr>
                       <tr>
                         <td>900万 – 2,000万</td>
-                        <td>$270,000 + 超额10% 至 3.75% (核心主流改善)</td>
+                        <td>$270,000 + 超逾 900 万款额的 10% (最高 3.75%)</td>
                       </tr>
                       <tr>
                         <td>2,000万 – 1 亿港元</td>
-                        <td>$750,000 + 超额10% 至 <strong>4.25%</strong></td>
+                        <td>$750,000 + 超逾 2,000 万款额的 10% (最高 4.25%)</td>
                       </tr>
                       <tr class="highlight-over100m">
-                        <td><strong>超过 1 亿港元 (超级豪宅)</strong></td>
-                        <td><strong>最新法定标准 6.50%</strong> (1亿~1.096亿设平滑过渡)</td>
+                        <td>1 亿 – 1.096 亿港元</td>
+                        <td><strong>$4,250,000 + 超逾 1 亿款额的 30%</strong></td>
+                      </tr>
+                      <tr class="highlight-over100m">
+                        <td>超过 1.096 亿港元</td>
+                        <td><strong>6.50%</strong></td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
 
-                <!-- 右半部：置业按揭与资金筹备关键要诀 -->
+                <!-- 右半部：一手置业法定流程与持有期税费速查 (方案三 + 方案四融合) -->
                 <div class="verdict-fin-card">
-                  <div class="fin-card-mini-title">🏦 置业按揭贷款与资金筹备实操指引</div>
-                  <div class="fin-guide-body">
-                    <div class="fin-guide-row">
-                      <span style="color:#0284C7;">📌</span>
-                      <div><strong>按揭成数上限：</strong>香港住宅物业按揭成数上限已全面统一为 <strong>最高 70%</strong>（涵盖所有价格区间，适用于所有自住及投资买家）。</div>
+                  <div class="fin-card-mini-title">📋 一手置业法定流程与持有期税费速查</div>
+                  <div class="fin-combine-body">
+                    <!-- 方案三：一手置业法定交易与完税时间轴 -->
+                    <div class="fin-sec-block">
+                      <div class="fin-sec-subtitle">⏳ 一手置业法定交易与完税时间轴</div>
+                      <div class="fin-steps-row">
+                        <div class="fin-step-card">
+                          <span class="fin-step-badge">STEP 1</span>
+                          <span class="fin-step-name">签署临约 (PASP)</span>
+                          <span class="fin-step-desc">认购当天开立本票支付 5% 临时订金</span>
+                        </div>
+                        <div class="fin-step-card">
+                          <span class="fin-step-badge">STEP 2</span>
+                          <span class="fin-step-name">签署正约 (ASP)</span>
+                          <span class="fin-step-desc">法定5工作天内签立，订金按各盘付款办法缴付</span>
+                        </div>
+                        <div class="fin-step-card highlight">
+                          <span class="fin-step-badge">STEP 3 · 完税</span>
+                          <span class="fin-step-name">缴清从价印花税</span>
+                          <span class="fin-step-desc">签正约后 <strong>30天内</strong> 经律师楼缴税</span>
+                        </div>
+                        <div class="fin-step-card">
+                          <span class="fin-step-badge">STEP 4</span>
+                          <span class="fin-step-name">付清余款 / 入伙</span>
+                          <span class="fin-step-desc">即供期满或获发入伙通知书后结算收楼</span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="fin-guide-row">
-                      <span style="color:#16A34A;">⚖️</span>
-                      <div><strong>入息与供款比率：</strong>金管局已暂停压力测试要求，常规供款与入息比率（DSR）上限为 <strong>50%</strong>，按揭最长可达 30 年。</div>
-                    </div>
-                    <div class="fin-guide-row">
-                      <span style="color:#D97706;">🗓️</span>
-                      <div><strong>印花税完税时间：</strong>签立正式买卖合约（PASP 转 ASP，通常认购后 5-7 工作天）后 <strong>30 天内</strong> 必须缴清从价印花税。</div>
-                    </div>
-                    <div class="fin-guide-row">
-                      <span style="color:#7C3AED;">💳</span>
-                      <div><strong>付款方式利弊：</strong><strong>即供付款</strong>可享最高折扣（常规额外 2%~5% 折扣）；<strong>建筑期付款</strong>首期门槛较低（入伙前仅需付 10%~15%）。</div>
+
+                    <!-- 方案四：物业持有期法定税费与运营开支 -->
+                    <div class="fin-sec-block">
+                      <div class="fin-sec-subtitle">🏡 物业持有期法定税费与运营开支</div>
+                      <div class="fin-holding-grid">
+                        <div class="fin-holding-item">
+                          <span class="fin-holding-badge rates">差饷</span>
+                          <div class="fin-holding-desc">按应课差饷租值 <strong>5%</strong> 计征 (按季缴交，常有宽减)</div>
+                        </div>
+                        <div class="fin-holding-item">
+                          <span class="fin-holding-badge rent">地租</span>
+                          <div class="fin-holding-desc">按应课差饷租值 <strong>3%</strong> 计征 (新批/续期地契物业)</div>
+                        </div>
+                        <div class="fin-holding-item">
+                          <span class="fin-holding-badge tax">物业税</span>
+                          <div class="fin-holding-desc">出租按净租金 <strong>15%</strong> 计征 (自住用途<strong>全面免征</strong>)</div>
+                        </div>
+                        <div class="fin-holding-item">
+                          <span class="fin-holding-badge fee">管理费</span>
+                          <div class="fin-holding-desc">按实用面积每月缴纳 (视个盘会所设施与管业标准)</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- 模块 2：全案入选项目置业资金与交付形态速查矩阵 (整页全宽呈现) -->
+            <!-- 模块 2：入选项目置业预算与交付全景速查 (整页全宽呈现) -->
             <div>
               <div class="verdict-sec-title">
-                <span>📊 全案入选项目置业资金门槛与交付形态全景横向速查 (常规3成首付测算)</span>
-                <span class="verdict-sec-subtitle">整宽横向铺开对比 · 满足多盘深度财务横向比选</span>
+                <span>📊 入选项目置业预算与交付全景速查</span>
+                <span class="verdict-sec-subtitle">横向对比首期、印花税、月供及落成周期</span>
               </div>
               <div class="fin-full-table-wrap">
                 <table class="fin-full-table">
@@ -4623,11 +4788,30 @@
                       }).join('')}
                     </tr>
                     <tr>
+                      <td class="dim-col">预估从价印花税</td>
+                      ${targetProjs.map(p => {
+                        const minP = p.min_price_wan || 1500;
+                        const tax = calcHongKongStampDutyWan(minP);
+                        const taxStr = tax <= 100 ? '$100' : `约 $${(tax / 10000).toFixed(1)} 万`;
+                        return `<td style="font-weight:700; color:#B45309; font-size:0.68rem;">${taxStr}</td>`;
+                      }).join('')}
+                    </tr>
+                    <tr>
                       <td class="dim-col">建议首期准备 (3成)</td>
                       ${targetProjs.map(p => {
                         const minP = p.min_price_wan || 1500;
                         const downpay = Math.round(minP * 0.3);
                         return `<td style="font-weight:700; color:#16A34A; font-size:0.70rem;">约 $${downpay} 万起</td>`;
+                      }).join('')}
+                    </tr>
+                    <tr>
+                      <td class="dim-col">首期连税启动资金门槛</td>
+                      ${targetProjs.map(p => {
+                        const minP = p.min_price_wan || 1500;
+                        const downpay = Math.round(minP * 0.3);
+                        const taxWan = calcHongKongStampDutyWan(minP) / 10000;
+                        const totalInitial = (downpay + (taxWan <= 0.01 ? 0.01 : taxWan)).toFixed(1);
+                        return `<td style="font-weight:800; color:#0F766E; background:#F0FDFA; font-size:0.70rem;">约 $${totalInitial} 万起</td>`;
                       }).join('')}
                     </tr>
                     <tr>
@@ -4648,6 +4832,14 @@
                       }).join('')}
                     </tr>
                     <tr>
+                      <td class="dim-col">距入伙等待期</td>
+                      ${targetProjs.map(p => {
+                        const compStr = formatCompletionDate(p.completion_date);
+                        const waitStr = compStr.includes('现楼') ? '即买即住 (现房交付)' : (p.completion_date || '约 12-24 个月');
+                        return `<td style="color:#475569;">${waitStr}</td>`;
+                      }).join('')}
+                    </tr>
+                    <tr>
                       <td class="dim-col">最近港铁与通勤</td>
                       ${targetProjs.map(p => {
                         const mtrName = p.nearest_mtr?.nearest_mtr_cn;
@@ -4658,9 +4850,25 @@
                     </tr>
                   </tbody>
                 </table>
-                <div style="padding:4px 10px; font-size:0.6rem; color:#64748B; background:#FAFAFA; border-top:1px solid #F1F5F9;">
-                  * 测算按主流按揭实际优惠利率(P-1.75%)测算，实际按揭年期、息率及批核条件以银行最终核准为准。
+                <div style="padding:4px 10px; font-size:0.58rem; color:#64748B; background:#FAFAFA; border-top:1px solid #F1F5F9;">
+                  * 测算按主流实际按揭利率 (P-1.75%) 测算，实际按揭成数、年期、息率及批核条件以银行最终核准为准；税费依香港税务局最新法定标准预估。
                 </div>
+              </div>
+            </div>
+
+            <!-- 模块 3：置业资金筹备与交易合规备忘 -->
+            <div class="fin-bottom-notes">
+              <div class="fin-note-item">
+                <div class="fin-note-item-title">🛡️ 交易资金信托独立托管</div>
+                <div>一手交易的所有订金及楼款本票均直接开立给 <strong>发展商代表律师楼独立信托账户</strong>，受法例与律师会严格监管。</div>
+              </div>
+              <div class="fin-note-item">
+                <div class="fin-note-item-title">💼 跨境置业资金合规调度</div>
+                <div>涉及跨境或境外资金安排的买家，建议提前 <strong>2 – 4 周</strong> 规划合规跨境汇款及本地银行账户通道。</div>
+              </div>
+              <div class="fin-note-item">
+                <div class="fin-note-item-title">🤝 一手新盘买家免佣权益</div>
+                <div>依据香港地产代理行业常规，一手新盘买方中介佣金由 <strong>发展商全额承担</strong>，买家无需支付中介佣金。</div>
               </div>
             </div>
           </div>
