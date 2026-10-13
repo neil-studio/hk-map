@@ -4913,7 +4913,11 @@
                       <td class="dim-col">预估参考月供 (30年)</td>
                       ${targetProjs.map(p => {
                         const minP = p.min_price_wan || 1500;
-                        const monthlyW = (Math.round(minP * 0.7 * 0.04702 * 10) / 10).toFixed(1);
+                        const loanWan = minP * 0.7;
+                        const r = 0.0325 / 12;
+                        const n = 360;
+                        const monthlyVal = loanWan * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+                        const monthlyW = monthlyVal.toFixed(1);
                         return `<td style="font-weight:600;">约 $${monthlyW} 万/月</td>`;
                       }).join('')}
                     </tr>
@@ -4946,7 +4950,7 @@
                   </tbody>
                 </table>
                 <div style="padding:4px 10px; font-size:0.58rem; color:#64748B; background:#FAFAFA; border-top:1px solid #F1F5F9;">
-                  * 测算按主流实际按揭利率 (P-1.75%) 测算，实际按揭成数、年期、息率及批核条件以银行最终核准为准；税费依香港税务局最新法定标准预估。
+                  * 月供按常规7成按揭、30年期、主流优惠年利率 3.25% 等额本息测算；实际按揭成数、年期、息率及批核条件以银行最终核准为准；税费依香港税务局法定标准预估。
                 </div>
               </div>
             </div>
