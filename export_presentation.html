@@ -479,347 +479,173 @@
     }
 
     /* =========================================================================
-       PAGE 3: DISTRICT PROFILE (核心商圈深度解析)
+       PAGE: DISTRICT PROFILE (核心商圈深度解析 · 方案一 横向通栏泳道式)
        ========================================================================= */
     .district-page-body {
-      padding: 18px 36px;
+      padding: 12px 30px;
       flex: 1;
       display: flex;
       flex-direction: column;
       overflow: hidden;
-    }
-    .dist-area-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-    .dist-inplan-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: #EFF6FF;
-      color: #1D4ED8;
-      border: 1px solid #DBEAFE;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.72rem;
-      font-weight: 600;
-    }
-    .dist-quote-banner {
-      background: linear-gradient(135deg, #F0FDF4 0%, #E6FBF0 100%);
-      border-left: 4px solid #16A34A;
-      border-radius: 6px;
-      padding: 9px 14px;
-      font-size: 0.83rem;
-      color: #14532D;
-      line-height: 1.5;
-    }
-
-    /* --- Layout 1: Single District (1 商圈全景深度版) --- */
-    .dist-l1-container {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      height: 100%;
-    }
-    .dist-l1-header {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 10px;
-      padding: 10px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    }
-    .dist-l1-title-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .dist-l1-name {
-      font-size: 1.3rem;
-      font-weight: 900;
-      color: var(--slate-900);
-      font-family: 'Noto Serif SC', serif;
-    }
-    .dist-l1-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 12px;
-      flex: 1;
       min-height: 0;
     }
-    .dist-l1-card {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 10px;
-      padding: 12px 16px;
+
+    /* 核心商圈版式：风格一（高质感三段式通栏泳道 · 一页 3 个商圈紧凑无缝版） */
+    .dist-s1-2d-container {
       display: flex;
       flex-direction: column;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-      overflow: hidden;
-    }
-    .dist-l1-card-title {
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: var(--slate-900);
-      margin-bottom: 6px;
-      padding-bottom: 5px;
-      border-bottom: 1.5px solid #F1F5F9;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .dist-l1-card-text {
-      font-size: 0.79rem;
-      color: var(--slate-700);
-      line-height: 1.55;
-      overflow-y: auto;
-    }
-    .dist-l1-fac-item {
-      margin-bottom: 4px;
-      font-size: 0.78rem;
-      color: var(--slate-700);
-      line-height: 1.45;
-    }
-    .dist-l1-fac-item strong {
-      color: var(--slate-900);
-    }
-    .dist-l1-footer-bar {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 8px;
-      padding: 8px 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .dist-proj-pill-box {
-      display: flex;
       gap: 8px;
-      flex-wrap: wrap;
+      height: 100%;
     }
-    .dist-proj-pill {
+    .dist-s1-2d-lane {
+      flex: 1;
+      min-height: 0;
       background: #FFFFFF;
       border: 1px solid #CBD5E1;
       border-radius: 6px;
-      padding: 3px 8px;
-      font-size: 0.76rem;
-      color: var(--slate-800);
-      font-weight: 600;
-    }
-
-    /* --- Layout 2: Dual District (2 商圈并列对比版) --- */
-    .dist-l2-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      height: 100%;
+      grid-template-columns: 260px 1.25fr 1.35fr;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
     }
-    .dist-l2-card {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 12px;
-      padding: 14px 18px;
+    .dist-s1-lane-col1 {
+      background: linear-gradient(180deg, #F0FDF4 0%, #FFFFFF 100%);
+      border-right: 1px solid #E2E8F0;
+      padding: 7px 11px;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-      height: 100%;
-      overflow: hidden;
+      gap: 3px;
     }
-    .dist-l2-header {
+    .dist-s1-lane-col2 {
+      padding: 7px 11px;
+      border-right: 1px solid #E2E8F0;
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 8px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid var(--primary-light);
+      flex-direction: column;
+      gap: 5px;
     }
-    .dist-l2-name {
-      font-size: 1.15rem;
+    .dist-s1-lane-col3 {
+      padding: 7px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      background: #FAFAFA;
+    }
+    .dist-s1-dist-title {
+      font-size: 1.08rem;
+      font-weight: 900;
+      color: var(--slate-900);
+      font-family: 'Noto Serif SC', serif;
+      line-height: 1.2;
+    }
+    .dist-s1-area-tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+    .dist-s1-pos-box {
+      font-size: 0.68rem;
+      color: #166534;
+      line-height: 1.4;
+      background: #DCFCE7;
+      padding: 4px 6px;
+      border-radius: 4px;
+      border-left: 3px solid #16A34A;
+      margin-top: 3px;
+    }
+    .dist-s1-chips-wrap {
+      display: flex;
+      gap: 3px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .dist-s1-chip {
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 1.5px 5px;
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border-radius: 3px;
+      border: 1px solid #DBEAFE;
+    }
+    .dist-s1-projs-row {
+      font-size: 0.66rem;
+      color: var(--slate-600);
+      margin-top: auto;
+      padding-top: 3px;
+      border-top: 1px dashed #CBD5E1;
+    }
+    .dist-s1-card-subhead {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+    .dist-s1-card-desc {
+      font-size: 0.68rem;
+      color: var(--slate-700);
+      line-height: 1.4;
+      text-align: justify;
+    }
+    .dist-s1-future-box {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: 4px;
+      padding: 5px 7px;
+      margin-top: 2px;
+    }
+
+    /* 3~5 商圈版式：多通栏高密度水平泳道 */
+    .dist-s1-multi-container {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      height: 100%;
+    }
+    .dist-s1-multi-lane {
+      flex: 1;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      display: grid;
+      grid-template-columns: 210px 1.4fr 1.3fr 180px;
+      align-items: center;
+      padding: 6px 12px;
+      gap: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .dist-s1-multi-col-name {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .dist-s1-multi-title {
+      font-size: 0.92rem;
       font-weight: 900;
       color: var(--slate-900);
       font-family: 'Noto Serif SC', serif;
     }
-    .dist-l2-quote {
-      background: #F0FDF4;
-      border-left: 3.5px solid #16A34A;
-      padding: 7px 10px;
-      border-radius: 6px;
-      font-size: 0.77rem;
-      color: #14532D;
-      line-height: 1.45;
-      margin-bottom: 8px;
-      font-weight: 500;
-    }
-    .dist-l2-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      overflow-y: auto;
-    }
-    .dist-section-block {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 8px;
-      padding: 8px 10px;
-    }
-    .dist-block-label {
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin-bottom: 3px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .dist-block-content {
-      font-size: 0.75rem;
-      color: var(--slate-700);
-      line-height: 1.5;
-    }
-    .dist-proj-tag {
-      background: #F1F5F9;
-      border: 1px solid #E2E8F0;
-      border-radius: 4px;
-      padding: 2px 6px;
-      font-size: 0.72rem;
-      color: var(--slate-800);
-    }
-
-    /* --- Layout 3: Triple District (3 商圈鼎立竖卡版) --- */
-    .dist-l3-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px;
-      height: 100%;
-    }
-    .dist-l3-card {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 10px;
-      padding: 12px 14px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-      height: 100%;
-      overflow: hidden;
-    }
-    .dist-l3-header {
-      margin-bottom: 6px;
-      padding-bottom: 5px;
-      border-bottom: 1.5px solid var(--primary-light);
-    }
-    .dist-l3-name {
-      font-size: 1.02rem;
-      font-weight: 800;
-      color: var(--slate-900);
-      font-family: 'Noto Serif SC', serif;
-      margin-bottom: 3px;
-    }
-    .dist-l3-quote {
-      background: #F0FDF4;
-      border-left: 3px solid #16A34A;
-      padding: 5px 8px;
-      border-radius: 4px;
-      font-size: 0.72rem;
-      color: #14532D;
-      line-height: 1.4;
-      margin-bottom: 6px;
-    }
-    .dist-l3-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      overflow-y: auto;
-    }
-    .dist-section-block-sm {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 6px;
-      padding: 6px 8px;
-    }
-    .dist-block-label-sm {
-      font-size: 0.71rem;
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin-bottom: 2px;
-    }
-    .dist-block-content-sm {
+    .dist-s1-multi-pos {
       font-size: 0.71rem;
       color: var(--slate-700);
-      line-height: 1.4;
+      line-height: 1.35;
+      border-left: 2.5px solid var(--primary);
+      padding-left: 8px;
     }
-    .dist-proj-tag-sm {
-      background: #F1F5F9;
-      border: 1px solid #E2E8F0;
-      border-radius: 3px;
-      padding: 1px 5px;
-      font-size: 0.68rem;
-      color: var(--slate-800);
-      font-weight: 600;
-      display: inline-block;
-      margin-right: 4px;
-    }
-
-    /* --- Layout 4: Quad District (4 商圈田字格 2x2 版) --- */
-    .dist-l4-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 10px;
-      height: 100%;
-    }
-    .dist-l4-card {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 10px;
-      padding: 10px 14px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      overflow: hidden;
-    }
-    .dist-l4-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 5px;
-      padding-bottom: 4px;
-      border-bottom: 1.5px solid #F1F5F9;
-    }
-    .dist-l4-name {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: var(--slate-900);
-      font-family: 'Noto Serif SC', serif;
-    }
-    .dist-l4-quote {
-      font-size: 0.71rem;
-      color: #166534;
-      background: #F0FDF4;
-      padding: 3px 6px;
-      border-radius: 4px;
-      margin-bottom: 5px;
+    .dist-s1-multi-fac {
+      font-size: 0.69rem;
+      color: var(--slate-600);
       line-height: 1.35;
     }
-    .dist-l4-body {
-      font-size: 0.71rem;
-      color: var(--slate-700);
-      line-height: 1.42;
-      flex: 1;
-      overflow-y: auto;
+    .dist-s1-multi-projs {
+      font-size: 0.70rem;
+      text-align: right;
     }
 
     /* =========================================================================
@@ -1671,13 +1497,13 @@
     }
 
     /* =========================================================================
-       PAGE: FINAL VERDICT (全案综合置业决策与看房指引)
+       PAGE: FINAL VERDICT 1 (全案综合置业决策与客群分类矩阵)
        ========================================================================= */
-    .verdict-layout {
-      padding: 12px 36px 10px 36px;
+    .verdict-decision-layout {
+      padding: 10px 36px 8px 36px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       flex: 1;
       overflow: hidden;
     }
@@ -1685,7 +1511,7 @@
       font-size: 0.82rem;
       font-weight: 800;
       color: var(--slate-900);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1695,76 +1521,163 @@
       color: var(--slate-500);
       font-weight: normal;
     }
-    .verdict-cards-container {
+    .decision-columns-grid {
       display: grid;
-      gap: 8px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      flex: 1;
+      min-height: 0;
     }
-    .verdict-card {
-      background: #F8FAFC;
+    .decision-col {
+      background: #FFFFFF;
       border: 1px solid #E2E8F0;
       border-radius: 8px;
-      padding: 8px 12px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      border-left: 4px solid var(--primary);
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+      border-top: 4px solid var(--primary);
     }
-    .verdict-card.type-edu { border-left-color: #D97706; background: #FFFDF7; }
-    .verdict-card.type-sea { border-left-color: #0284C7; background: #F0F9FF; }
-    .verdict-card.type-roi { border-left-color: #16A34A; background: #F0FDF4; }
-    .verdict-card.type-lux { border-left-color: #7C3AED; background: #FAF5FF; }
-    .verdict-card-head {
+    .decision-col.col-owner { border-top-color: #0284C7; background: #FAFCFF; }
+    .decision-col.col-balanced { border-top-color: #16A34A; background: #FAFEFA; }
+    .decision-col.col-invest { border-top-color: #D97706; background: #FFFCF5; }
+
+    .decision-col-head {
+      padding: 8px 12px 6px 12px;
+      border-bottom: 1px solid #E2E8F0;
+      background: #FFFFFF;
+    }
+    .decision-col-badge-row {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       margin-bottom: 2px;
     }
-    .verdict-card-tag {
-      font-size: 0.68rem;
-      font-weight: 800;
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
-    .tag-edu { background: #FEF3C7; color: #B45309; }
-    .tag-sea { background: #E0F2FE; color: #0369A1; }
-    .tag-roi { background: #DCFCE7; color: #15803D; }
-    .tag-lux { background: #F3E8FF; color: #6D28D9; }
-    .verdict-card-title {
-      font-size: 0.88rem;
+    .decision-col-title {
+      font-size: 0.86rem;
       font-weight: 800;
       color: var(--slate-900);
       font-family: 'Noto Serif SC', serif;
-    }
-    .verdict-card-meta {
-      font-size: 0.65rem;
-      color: #0369a1;
-      font-weight: 600;
-      margin-bottom: 3px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .verdict-card-desc {
-      font-size: 0.69rem;
-      color: var(--slate-700);
-      line-height: 1.4;
-    }
-    .verdict-dual-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 1.35fr;
-      gap: 12px;
-    }
-    .fin-card-mini-title {
-      background: #F8FAFC;
-      padding: 5px 10px;
-      font-size: 0.70rem;
-      font-weight: 800;
-      color: var(--slate-900);
-      border-bottom: 1.5px solid #E2E8F0;
       display: flex;
       align-items: center;
+      gap: 5px;
+    }
+    .decision-col-count-pill {
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 10px;
+    }
+    .decision-col-strategy {
+      padding: 7px 10px;
+      font-size: 0.66rem;
+      line-height: 1.45;
+      color: var(--slate-700);
+      background: rgba(248, 250, 252, 0.85);
+      border-bottom: 1px dashed #CBD5E1;
+    }
+    .decision-col-strategy strong {
+      color: var(--slate-900);
+    }
+    .decision-projects-list {
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
       gap: 6px;
+      flex: 1;
+      overflow-y: auto;
+    }
+    .decision-p-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+      border-left: 3px solid #CBD5E1;
+    }
+    .decision-p-card.border-owner { border-left-color: #0284C7; }
+    .decision-p-card.border-balanced { border-left-color: #16A34A; }
+    .decision-p-card.border-invest { border-left-color: #D97706; }
+    .decision-p-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .decision-p-name {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .decision-p-price {
+      font-size: 0.70rem;
+      font-weight: 800;
+      color: #0284C7;
+    }
+    .decision-p-meta {
+      font-size: 0.62rem;
+      color: #64748B;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .decision-p-highlight {
+      font-size: 0.63rem;
+      color: var(--slate-700);
+      background: #F8FAFC;
+      padding: 2px 5px;
+      border-radius: 3px;
+      border: 1px solid #F1F5F9;
+      line-height: 1.35;
+    }
+    .decision-empty-state {
+      padding: 24px 12px;
+      text-align: center;
+      font-size: 0.68rem;
+      color: #94A3B8;
+      font-style: italic;
+    }
+    .verdict-action-banner {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 6px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.67rem;
+    }
+    .verdict-action-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--slate-700);
+    }
+    .verdict-action-item strong {
+      color: var(--slate-900);
+    }
+
+    /* =========================================================================
+       PAGE: FINAL VERDICT 2 (置业财务速查与交付周期全景)
+       ========================================================================= */
+    .verdict-finance-layout {
+      padding: 10px 36px 8px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+      overflow: hidden;
+    }
+    .finance-top-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 12px;
     }
     .verdict-fin-card {
       background: #FFFFFF;
@@ -1774,6 +1687,17 @@
       box-shadow: 0 1px 4px rgba(0,0,0,0.02);
       display: flex;
       flex-direction: column;
+    }
+    .fin-card-mini-title {
+      background: #F8FAFC;
+      padding: 4px 10px;
+      font-size: 0.70rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      border-bottom: 1.5px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
     .statutory-tax-table {
       width: 100%;
@@ -1804,43 +1728,205 @@
       font-weight: 700;
       color: #991B1B;
     }
-    .verdict-fin-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.68rem;
+    .fin-guide-body {
+      padding: 8px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 5px;
+      font-size: 0.65rem;
+      color: var(--slate-700);
+      line-height: 1.45;
+      background: #FCFDFE;
       flex: 1;
     }
-    .verdict-fin-table th {
+    .fin-guide-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .fin-guide-row strong {
+      color: var(--slate-900);
+      white-space: nowrap;
+    }
+    .fin-full-table-wrap {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .fin-full-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.66rem;
+      table-layout: auto;
+    }
+    .fin-full-table th {
       background: #F8FAFC;
       color: var(--slate-800);
-      padding: 4px 6px;
+      padding: 5px 6px;
       font-weight: 800;
       border-bottom: 1.5px solid #CBD5E1;
       text-align: center;
+      font-size: 0.67rem;
     }
-    .verdict-fin-table th.dim-col {
+    .fin-full-table th.dim-col {
       text-align: left;
-      width: 125px;
+      width: 130px;
       background: #F1F5F9;
       color: #334155;
     }
-    .verdict-fin-table td {
-      padding: 4px 6px;
+    .fin-full-table td {
+      padding: 4.5px 6px;
       border-bottom: 1px solid #E2E8F0;
       text-align: center;
       color: var(--slate-700);
     }
-    .verdict-fin-table td.dim-col {
+    .fin-full-table td.dim-col {
       text-align: left;
       font-weight: 700;
       background: #FAFAFA;
       color: #0f172a;
     }
 
-    /* Executive Summary Mode (1-Page / Key Pages Only) */
-    #presentation-root.summary-only-mode .page-dossier,
-    #presentation-root.summary-only-mode .district-page {
-      display: none !important;
+    /* Section Filter Dropdown Menu (Custom Export Sections) */
+    .section-filter-dropdown-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .btn-section-dropdown {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .section-count-badge {
+      background: #0284C7;
+      color: #FFFFFF;
+      font-size: 0.70rem;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .section-dropdown-arrow {
+      font-size: 0.72rem;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+    .section-filter-dropdown-wrap.open .section-dropdown-arrow {
+      transform: rotate(180deg);
+    }
+    .section-dropdown-menu {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 8px);
+      width: 320px;
+      background: #FFFFFF;
+      border-radius: 10px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.12);
+      border: 1px solid #E2E8F0;
+      z-index: 10000;
+      overflow: hidden;
+      display: none;
+      color: #0F172A;
+      text-align: left;
+    }
+    .section-filter-dropdown-wrap.open .section-dropdown-menu {
+      display: block;
+      animation: fadeInDropdown 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes fadeInDropdown {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .section-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: #F8FAFC;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .section-menu-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-menu-action {
+      background: none;
+      border: none;
+      color: #0284C7;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+    .btn-menu-action:hover {
+      background: #E0F2FE;
+      color: #0369A1;
+    }
+    .section-menu-list {
+      max-height: 380px;
+      overflow-y: auto;
+      padding: 4px 0;
+    }
+    .section-menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 14px;
+      cursor: pointer;
+      border-bottom: 1px solid #F1F5F9;
+      transition: background 0.15s ease;
+      user-select: none;
+    }
+    .section-menu-item:last-child {
+      border-bottom: none;
+    }
+    .section-menu-item:hover {
+      background: #F8FAFC;
+    }
+    .section-item-left {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .section-item-check {
+      width: 15px;
+      height: 15px;
+      accent-color: #00889A;
+      cursor: pointer;
+    }
+    .section-item-name {
+      font-size: 0.80rem;
+      font-weight: 700;
+      color: #1E293B;
+    }
+    .section-item-pages {
+      font-size: 0.70rem;
+      color: #64748B;
+      background: #F1F5F9;
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .section-menu-footer {
+      padding: 7px 14px;
+      background: #F8FAFC;
+      border-top: 1px solid #E2E8F0;
+      font-size: 0.68rem;
+      color: #64748B;
+      line-height: 1.4;
     }
 
     /* =========================================================================
@@ -2201,7 +2287,34 @@
       </div>
     </div>
     <div class="print-btn-group">
-      <button class="btn-print-action btn-print-secondary" id="btn-toggle-summary" onclick="toggleSummaryMode()">⚡ 切换为极简决策版</button>
+      <!-- 方案板块定制下拉菜单 -->
+      <div class="section-filter-dropdown-wrap" id="section-filter-wrap">
+        <button type="button" class="btn-print-action btn-print-secondary btn-section-dropdown" id="btn-section-dropdown" onclick="toggleSectionDropdown(event)">
+          <span>📋 方案板块定制</span>
+          <span class="section-count-badge" id="section-count-badge">9/9</span>
+          <span class="section-dropdown-arrow" id="section-dropdown-arrow">▾</span>
+        </button>
+        
+        <div class="section-dropdown-menu" id="section-dropdown-menu">
+          <div class="section-menu-header">
+            <span style="font-weight:800; font-size:0.78rem; color:#0F172A;">⚙️ 自定义方案呈现板块</span>
+            <div class="section-menu-actions">
+              <button type="button" class="btn-menu-action" onclick="setAllSections(true)">全选</button>
+              <span style="color:#CBD5E1; font-size:0.7rem;">|</span>
+              <button type="button" class="btn-menu-action" onclick="applyPresetSections('minimal')">精简决策</button>
+              <span style="color:#CBD5E1; font-size:0.7rem;">|</span>
+              <button type="button" class="btn-menu-action" onclick="applyPresetSections('default')">重置</button>
+            </div>
+          </div>
+          <div class="section-menu-list" id="section-menu-list">
+            <!-- 动态渲染板块复选列表 -->
+          </div>
+          <div class="section-menu-footer">
+            <span>💡 勾选或取消板块将即时调整呈现内容与页码</span>
+          </div>
+        </div>
+      </div>
+
       <button class="btn-print-action btn-print-secondary" onclick="window.close()">❌ 关闭窗口</button>
       <button class="btn-print-action btn-print-primary" onclick="window.print()">🖨️ 打印 / 保存为高清 PDF</button>
     </div>
@@ -2353,21 +2466,38 @@
       return null;
     }
 
+    function getDistrictChips(dist) {
+      const chips = [];
+      const s = `${dist.positioning || ''} ${dist.history || ''} ${dist.current_status || ''} ${JSON.stringify(dist.facilities || [])}`;
+      if (s.includes('34') || s.includes('34校网')) chips.push('🏫 34名校网');
+      else if (s.includes('41') || s.includes('41校网')) chips.push('🏫 41名校网');
+      else if (s.includes('11') || s.includes('11校网')) chips.push('🏫 11名校网');
+      else if (s.includes('12') || s.includes('12校网')) chips.push('🏫 12名校网');
+      else if (s.includes('18') || s.includes('18校网')) chips.push('🏫 18校网');
+      else if (s.includes('校网') || s.includes('名校')) chips.push('🏫 市区名校网');
+
+      if (s.includes('CBD') || s.includes('CBD2')) chips.push('📈 CBD核心极');
+      else if (s.includes('金融') || s.includes('总部')) chips.push('🏢 金融名企');
+
+      if (s.includes('海景') || s.includes('滨海') || s.includes('维港')) chips.push('🌊 维港海景');
+      else if (s.includes('低密') || s.includes('洋房') || s.includes('花园')) chips.push('🏡 低密大宅');
+
+      if (s.includes('双铁') || s.includes('枢纽') || s.includes('换乘') || s.includes('上盖')) chips.push('🚇 双铁核心枢纽');
+      else if (s.includes('港铁') || s.includes('地铁') || s.includes('站')) chips.push('🚇 港铁直达');
+
+      if (chips.length < 3 && dist.facilities && dist.facilities.length > 0) {
+        dist.facilities.forEach(f => {
+          if (chips.length < 4) chips.push(`🛍️ ${f.label}`);
+        });
+      }
+      return chips.slice(0, 4);
+    }
+
     function renderDistrictPage(districtsInPage, pageNum, totalPages, totalUniqueDistricts) {
       const pageEl = document.createElement('div');
       pageEl.className = 'pdf-page';
       
-      let contentHtml = '';
-      const count = districtsInPage.length;
-      if (count === 1) {
-        contentHtml = buildDistrictLayout1(districtsInPage[0]);
-      } else if (count === 2) {
-        contentHtml = buildDistrictLayout2(districtsInPage);
-      } else if (count === 3) {
-        contentHtml = buildDistrictLayout3(districtsInPage);
-      } else {
-        contentHtml = buildDistrictLayout4(districtsInPage);
-      }
+      const contentHtml = buildDistrictSwimlane(districtsInPage);
 
       pageEl.innerHTML = `
         <div class="page-header">
@@ -2390,115 +2520,53 @@
       return pageEl;
     }
 
-    function buildDistrictLayout1(item) {
-      const dist = item.info;
-      const projs = item.projects;
-      const facHtml = (dist.facilities || []).map(f => `
-        <div class="dist-l1-fac-item">
-          <strong>${f.label}：</strong>${(f.text || '').replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}
-        </div>
-      `).join('');
-
-      const projsHtml = projs.map(p => `
-        <div class="dist-proj-pill">
-          <strong>${p.name}</strong> · ${p.total_price_desc || (p.min_price_wan ? p.min_price_wan + '万起' : '在售')} ${p.main_layout ? '· ' + p.main_layout : ''}
-        </div>
-      `).join('');
-
+    function buildDistrictSwimlane(distList) {
       return `
-        <div class="dist-l1-container">
-          <div class="dist-l1-header">
-            <div class="dist-l1-title-group">
-              <span class="dist-area-badge">📍 ${dist.main_area || '核心区域'}</span>
-              <span class="dist-l1-name">${dist.name}</span>
-            </div>
-            <div class="dist-inplan-pill">
-              <span>📋 本案入选 ${projs.length} 个项目</span>
-            </div>
-          </div>
-
-          <div class="dist-quote-banner">
-            💡 <strong>【商圈核心定位】</strong> ${dist.positioning}
-          </div>
-
-          <div class="dist-l1-grid">
-            <div class="dist-l1-card">
-              <div class="dist-l1-card-title">🏛️ 区域历史与文脉底蕴</div>
-              <div class="dist-l1-card-text">${dist.history}</div>
-            </div>
-            <div class="dist-l1-card">
-              <div class="dist-l1-card-title">🎯 现时定位与高端圈层</div>
-              <div class="dist-l1-card-text">${dist.current_status}</div>
-            </div>
-            <div class="dist-l1-card">
-              <div class="dist-l1-card-title">🛍️ 核心配套与顶尖学区</div>
-              <div class="dist-l1-card-text">${facHtml}</div>
-            </div>
-            <div class="dist-l1-card">
-              <div class="dist-l1-card-title">🚀 未来规划与价值催化</div>
-              <div class="dist-l1-card-text">${dist.future}</div>
-            </div>
-          </div>
-
-          <div class="dist-l1-footer-bar">
-            <span style="font-size:0.78rem; font-weight:700; color:var(--slate-600); white-space:nowrap;">📌 本案所属楼盘：</span>
-            <div class="dist-proj-pill-box">
-              ${projsHtml}
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    function buildDistrictLayout2(distList) {
-      return `
-        <div class="dist-l2-container">
+        <div class="dist-s1-2d-container">
           ${distList.map(item => {
             const dist = item.info;
             const projs = item.projects;
+            const chips = getDistrictChips(dist);
+            const projsText = projs.map(p => p.name).join('、');
             const facHtml = (dist.facilities || []).slice(0, 3).map(f => `
-              <div class="dist-block-content" style="margin-bottom:4px;">
-                <strong>${f.label}:</strong> ${(f.text || '').replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}
+              <div style="font-size:0.66rem; color:var(--slate-700); line-height:1.35; margin-bottom:2px;">
+                <strong>${f.label}：</strong>${(f.text || '').replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}
               </div>
             `).join('');
 
-            const projsHtml = projs.map(p => `
-              <span class="dist-proj-tag"><strong>${p.name}</strong> (${p.total_price_desc || (p.min_price_wan ? p.min_price_wan + '万起' : '在售')})</span>
-            `).join('');
-
             return `
-              <div class="dist-l2-card">
-                <div class="dist-l2-header">
+              <div class="dist-s1-2d-lane">
+                <div class="dist-s1-lane-col1">
                   <div>
-                    <div class="dist-area-badge" style="margin-bottom:4px;">${dist.main_area || '核心大区'}</div>
-                    <div class="dist-l2-name">📍 ${dist.short_name || dist.name}</div>
+                    <span class="dist-s1-area-tag">📍 ${dist.main_area || '核心大区'}</span>
+                    <div class="dist-s1-dist-title">${dist.short_name || dist.name}</div>
+                    <div class="dist-s1-pos-box">💡 <strong>【核心定位】</strong>${dist.positioning}</div>
+                    <div class="dist-s1-chips-wrap">
+                      ${chips.map(c => `<span class="dist-s1-chip">${c}</span>`).join('')}
+                    </div>
                   </div>
-                  <div class="dist-inplan-pill">入选 ${projs.length} 盘</div>
-                </div>
-
-                <div class="dist-l2-quote">
-                  <strong>【定位】</strong>${dist.positioning}
-                </div>
-
-                <div class="dist-l2-body">
-                  <div class="dist-section-block">
-                    <div class="dist-block-label">🎯 圈层定位与历史底蕴</div>
-                    <div class="dist-block-content">${dist.current_status}</div>
+                  <div class="dist-s1-projs-row">
+                    <strong>📌 本案入选：</strong>${projsText || '详见选盘清单'}
                   </div>
-                  <div class="dist-section-block">
-                    <div class="dist-block-label">🛍️ 核心生活配套与名校网</div>
+                </div>
+                <div class="dist-s1-lane-col2">
+                  <div>
+                    <div class="dist-s1-card-subhead">🏛️ 区域文脉与历史蜕变</div>
+                    <div class="dist-s1-card-desc">${dist.history}</div>
+                  </div>
+                  <div>
+                    <div class="dist-s1-card-subhead">🎯 现时圈层与客群特征</div>
+                    <div class="dist-s1-card-desc">${dist.current_status}</div>
+                  </div>
+                </div>
+                <div class="dist-s1-lane-col3">
+                  <div>
+                    <div class="dist-s1-card-subhead">🛍️ 核心生活圈与名校学区</div>
                     ${facHtml}
                   </div>
-                  <div class="dist-section-block">
-                    <div class="dist-block-label">🚀 未来红利与爆发规划</div>
-                    <div class="dist-block-content">${dist.future}</div>
-                  </div>
-                </div>
-
-                <div style="margin-top:auto; padding-top:8px; border-top:1px dashed #CBD5E1; font-size:0.75rem; color:var(--slate-600);">
-                  <div style="font-weight:700; margin-bottom:4px;">📌 入选楼盘：</div>
-                  <div style="display:flex; gap:6px; flex-wrap:wrap;">
-                    ${projsHtml}
+                  <div class="dist-s1-future-box">
+                    <div class="dist-s1-card-subhead" style="color:#1D4ED8;">🚀 未来规划与升值红利</div>
+                    <div class="dist-s1-card-desc" style="color:#1E40AF;">${dist.future}</div>
                   </div>
                 </div>
               </div>
@@ -2508,104 +2576,179 @@
       `;
     }
 
-    function buildDistrictLayout3(distList) {
-      return `
-        <div class="dist-l3-container">
-          ${distList.map(item => {
-            const dist = item.info;
-            const projs = item.projects;
-            const facHtml = (dist.facilities || []).slice(0, 3).map(f => `
-              <div class="dist-block-content-sm" style="margin-bottom:3px;">
-                <strong>${f.label}:</strong> ${(f.text || '').replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}
-              </div>
-            `).join('');
+    // =========================================================================
+    // 方案板块自定义与动态显隐管理器 (Custom Section Visibility Manager)
+    // =========================================================================
+    const SECTION_DEFINITIONS = [
+      { id: 'cover', icon: '📇', name: '方案封面', desc: '客户信息与方案主题' },
+      { id: 'requirements', icon: '🎯', name: '客户诉求与权衡', desc: '需求指标与选盘权衡' },
+      { id: 'overview', icon: '🗺️', name: '宏观分布与清单', desc: '全港分布地图与速览' },
+      { id: 'comparison', icon: '📊', name: '多盘横向对比', desc: '全户型指标矩阵对比' },
+      { id: 'dossier', icon: '🏢', name: '单盘深度档案', desc: '各推荐楼盘独立专页' },
+      { id: 'district', icon: '🏙️', name: '所属商圈深度解析', desc: '核心板块全维深研' },
+      { id: 'verdict_decision', icon: '💡', name: '终极选房决策建议', desc: '客群分类与决策指南' },
+      { id: 'verdict_finance', icon: '💷', name: '财务税费与月供速查', desc: '印花税阶梯与月供速查' },
+      { id: 'closing', icon: '📑', name: '品牌封底', desc: '专属顾问名片与免责' }
+    ];
 
-            const projsHtml = projs.map(p => `
-              <span class="dist-proj-tag-sm">${p.name}</span>
-            `).join('');
-
-            return `
-              <div class="dist-l3-card">
-                <div class="dist-l3-header">
-                  <div class="dist-area-badge" style="margin-bottom:3px; font-size:0.68rem;">${dist.main_area || '核心大区'}</div>
-                  <div class="dist-l3-name">📍 ${dist.short_name || dist.name}</div>
-                </div>
-
-                <div class="dist-l3-quote">
-                  ${dist.positioning}
-                </div>
-
-                <div class="dist-l3-body">
-                  <div class="dist-section-block-sm">
-                    <div class="dist-block-label-sm">🎯 圈层与特征</div>
-                    <div class="dist-block-content-sm">${dist.current_status}</div>
-                  </div>
-                  <div class="dist-section-block-sm">
-                    <div class="dist-block-label-sm">🛍️ 核心配套与名校网</div>
-                    ${facHtml}
-                  </div>
-                  <div class="dist-section-block-sm">
-                    <div class="dist-block-label-sm">🚀 未来发展</div>
-                    <div class="dist-block-content-sm">${dist.future}</div>
-                  </div>
-                </div>
-
-                <div style="margin-top:auto; padding-top:6px; border-top:1px dashed #CBD5E1; font-size:0.72rem;">
-                  <span style="font-weight:700; color:var(--slate-600);">入选楼盘: </span>
-                  ${projsHtml}
-                </div>
-              </div>
-            `;
-          }).join('')}
-        </div>
-      `;
-    }
-
-    function buildDistrictLayout4(distList) {
-      return `
-        <div class="dist-l4-container">
-          ${distList.map(item => {
-            const dist = item.info;
-            const projs = item.projects;
-            const facPreview = (dist.facilities || []).slice(0, 2).map(f => `<strong>${f.label}:</strong> ${(f.text || '').replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}`).join(' ； ');
-            const projsHtml = projs.map(p => `<span class="dist-proj-tag-sm">${p.name}</span>`).join('');
-
-            return `
-              <div class="dist-l4-card">
-                <div class="dist-l4-header">
-                  <div style="display:flex; align-items:center; gap:6px;">
-                    <span class="dist-area-badge" style="font-size:0.65rem;">${dist.main_area || ''}</span>
-                    <span class="dist-l4-name">📍 ${dist.short_name || dist.name}</span>
-                  </div>
-                  <span class="dist-inplan-pill" style="font-size:0.65rem;">${projs.length} 盘</span>
-                </div>
-                <div class="dist-l4-quote">${dist.positioning}</div>
-                <div class="dist-l4-body">
-                  <div style="margin-bottom:3px;">🎯 <strong>圈层地位：</strong>${dist.current_status}</div>
-                  <div style="margin-bottom:3px;">🛍️ <strong>核心配套：</strong>${facPreview}</div>
-                  <div>🚀 <strong>未来爆发：</strong>${dist.future}</div>
-                </div>
-                <div style="margin-top:auto; padding-top:4px; border-top:1px dashed #E2E8F0; font-size:0.7rem;">
-                  <span style="font-weight:700; color:var(--slate-600);">入选: </span>${projsHtml}
-                </div>
-              </div>
-            `;
-          }).join('')}
-        </div>
-      `;
-    }
-
-    function toggleSummaryMode() {
-      const root = document.getElementById('presentation-root');
-      const btn = document.getElementById('btn-toggle-summary');
-      const isSummary = root.classList.toggle('summary-only-mode');
-      if (isSummary) {
-        btn.innerHTML = '📄 恢复为尊享全案研报';
-        btn.style.background = '#0284C7';
-      } else {
-        btn.innerHTML = '⚡ 切换为极简决策版';
-        btn.style.background = '';
+    function toggleSectionDropdown(e) {
+      if (e) {
+        e.stopPropagation();
+        e.preventDefault();
       }
+      const wrap = document.getElementById('section-filter-wrap');
+      if (wrap) wrap.classList.toggle('open');
+    }
+
+    // 点击外部区域自动收起下拉菜单
+    document.addEventListener('click', (e) => {
+      const wrap = document.getElementById('section-filter-wrap');
+      if (wrap && wrap.classList.contains('open') && !wrap.contains(e.target)) {
+        wrap.classList.remove('open');
+      }
+    });
+
+    function getSelectedSections() {
+      try {
+        const saved = localStorage.getItem('landma_export_selected_sections');
+        if (saved) {
+          const arr = JSON.parse(saved);
+          if (Array.isArray(arr) && arr.length > 0) return arr;
+        }
+      } catch (e) {}
+      return SECTION_DEFINITIONS.map(s => s.id);
+    }
+
+    function setSelectedSections(sections) {
+      window.__selectedSections = sections;
+      try {
+        localStorage.setItem('landma_export_selected_sections', JSON.stringify(sections));
+      } catch (e) {}
+    }
+
+    function toggleSectionItem(secId) {
+      let current = window.__selectedSections || getSelectedSections();
+      if (current.includes(secId)) {
+        if (current.length === 1) {
+          alert('方案至少需保留一个呈现板块！');
+          return;
+        }
+        current = current.filter(id => id !== secId);
+      } else {
+        current.push(secId);
+      }
+      setSelectedSections(current);
+      applySectionVisibility();
+    }
+
+    function setAllSections(enableAll) {
+      if (enableAll) {
+        setSelectedSections(SECTION_DEFINITIONS.map(s => s.id));
+      }
+      applySectionVisibility();
+    }
+
+    function applyPresetSections(preset) {
+      if (preset === 'minimal') {
+        // 精简决策版：保留封面、宏观地图分布、多盘横向对比、决策建议、财务税费速查、封底
+        setSelectedSections(['cover', 'overview', 'comparison', 'verdict_decision', 'verdict_finance', 'closing']);
+      } else {
+        // default / 重置：全选
+        setSelectedSections(SECTION_DEFINITIONS.map(s => s.id));
+      }
+      applySectionVisibility();
+    }
+
+    function applySectionVisibility() {
+      const root = document.getElementById('presentation-root');
+      if (!root) return;
+
+      const selected = window.__selectedSections || getSelectedSections();
+
+      const allPages = Array.from(root.querySelectorAll('.pdf-page'));
+      allPages.forEach(page => {
+        const sec = page.dataset.section;
+        if (sec && !selected.includes(sec)) {
+          page.style.display = 'none';
+        } else {
+          page.style.display = '';
+        }
+      });
+
+      // 动态更新页码与页脚
+      updatePresentationPageNumbers();
+      // 重新渲染下拉菜单项状态
+      renderSectionDropdownUI();
+      // 重新触发窗口 resize 事件以更新地图
+      window.dispatchEvent(new Event('resize'));
+    }
+
+    function updatePresentationPageNumbers() {
+      const root = document.getElementById('presentation-root');
+      if (!root) return;
+
+      const allPages = Array.from(root.querySelectorAll('.pdf-page'));
+      const visiblePages = allPages.filter(p => p.style.display !== 'none');
+      const totalVisible = visiblePages.length;
+
+      let visibleIdx = 0;
+      visiblePages.forEach(page => {
+        visibleIdx++;
+        // 查找该页内部的 page-footer
+        const footer = page.querySelector('.page-footer');
+        if (footer) {
+          const spans = footer.querySelectorAll('span');
+          if (spans.length >= 2) {
+            spans[1].textContent = `第 ${visibleIdx} 页 / 共 ${totalVisible} 页`;
+          }
+        }
+      });
+
+      // 更新顶部工具栏状态徽章
+      const badge = document.getElementById('page-stat-badge');
+      if (badge && window.__currentExportData && window.__currentExportData.projects) {
+        const pCount = window.__currentExportData.projects.length;
+        badge.textContent = `共 ${pCount} 个推荐楼盘 / 当前呈现 ${totalVisible} 页`;
+      }
+    }
+
+    function renderSectionDropdownUI() {
+      const menuList = document.getElementById('section-menu-list');
+      const badge = document.getElementById('section-count-badge');
+      if (!menuList) return;
+
+      const selected = window.__selectedSections || getSelectedSections();
+      if (badge) {
+        badge.textContent = `${selected.length}/${SECTION_DEFINITIONS.length}`;
+      }
+
+      // 计算每个 section 对应的总页数
+      const root = document.getElementById('presentation-root');
+      const pageCountMap = {};
+      SECTION_DEFINITIONS.forEach(s => pageCountMap[s.id] = 0);
+      if (root) {
+        root.querySelectorAll('.pdf-page').forEach(page => {
+          const sec = page.dataset.section;
+          if (sec && pageCountMap[sec] !== undefined) {
+            pageCountMap[sec]++;
+          }
+        });
+      }
+
+      menuList.innerHTML = SECTION_DEFINITIONS.map(sec => {
+        const isChecked = selected.includes(sec.id);
+        const count = pageCountMap[sec.id] || 0;
+        const countStr = count > 0 ? `${count} 页` : '';
+        return `
+          <div class="section-menu-item" onclick="toggleSectionItem('${sec.id}')">
+            <div class="section-item-left">
+              <input type="checkbox" class="section-item-check" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation(); toggleSectionItem('${sec.id}')">
+              <span class="section-item-name">${sec.icon} ${sec.name}</span>
+            </div>
+            ${countStr ? `<span class="section-item-pages">${countStr}</span>` : ''}
+          </div>
+        `;
+      }).join('');
     }
 
     function toggleTopLayout(layoutKey) {
@@ -2749,13 +2892,15 @@
       const districtList = Array.from(districtMap.values());
       const numDistricts = districtList.length;
 
-      // 计算商圈页面数：1-4个商圈占1页，>=5个商圈每页3个分页
+      // 计算商圈页面数：风格一（高质感三段式通栏泳道）每页容纳 1~3 个商圈；超出 3 个时启用智能对半均衡分页
       const districtPageChunks = [];
-      if (numDistricts <= 4) {
+      if (numDistricts <= 3) {
         districtPageChunks.push(districtList);
       } else {
-        for (let i = 0; i < numDistricts; i += 3) {
-          districtPageChunks.push(districtList.slice(i, i + 3));
+        const numPages = Math.ceil(numDistricts / 3);
+        const perPage = Math.ceil(numDistricts / numPages);
+        for (let i = 0; i < numDistricts; i += perPage) {
+          districtPageChunks.push(districtList.slice(i, i + perPage));
         }
       }
       const numDistrictPages = districtPageChunks.length;
@@ -2790,8 +2935,8 @@
       }
       const numCompPages = compChunks.length;
 
-      // 页面计算（顺畅漏斗：封面(1) + 需求与权衡(numReqPages) + 宏观地图(1) + 横向对比(numCompPages) + 单盘档案(projects.length) + 商圈解析(numDistrictPages) + 决策落地(1) + 封底(1)）
-      const totalPages = 4 + numReqPages + numCompPages + projects.length + numDistrictPages;
+      // 页面计算（顺畅漏斗：封面(1) + 需求与权衡(numReqPages) + 宏观地图(1) + 横向对比(numCompPages) + 单盘档案(projects.length) + 商圈解析(numDistrictPages) + 终极分类决策(1) + 财务税费速查(1) + 封底(1)）
+      const totalPages = 5 + numReqPages + numCompPages + projects.length + numDistrictPages;
       document.getElementById('page-stat-badge').textContent = `共 ${projects.length} 个推荐楼盘 / ${totalPages} 页`;
 
       // ----------------------------------------------------
@@ -3238,6 +3383,7 @@
       // ----------------------------------------------------
       const coverPage = document.createElement('div');
       coverPage.className = 'pdf-page cover-page';
+      coverPage.dataset.section = 'cover';
       coverPage.innerHTML = `
         <div class="cover-bg-decor"></div>
         <div class="cover-header">
@@ -3272,6 +3418,7 @@
       reqChunks.forEach((chunkProjects, chunkIdx) => {
         const reqPage = document.createElement('div');
         reqPage.className = 'pdf-page';
+        reqPage.dataset.section = 'requirements';
         const reqPageNum = 2 + chunkIdx;
         const isFirstReqPage = (chunkIdx === 0);
 
@@ -3404,7 +3551,8 @@
       // PAGE 3: 全局宏观地图与入选对照表 (Overview Map & Table)
       // ----------------------------------------------------
       const overviewPage = document.createElement('div');
-      overviewPage.className = 'pdf-page';
+      overviewPage.className = 'pdf-page overview-page';
+      overviewPage.dataset.section = 'overview';
       overviewPage.innerHTML = `
         <div class="page-header">
           <div class="page-header-left">
@@ -3497,6 +3645,7 @@
       compChunks.forEach((chunkProjects, chunkIdx) => {
         const compPage = document.createElement('div');
         compPage.className = 'pdf-page comp-matrix-page';
+        compPage.dataset.section = 'comparison';
         const compPageNum = 2 + numReqPages + 1 + chunkIdx;
 
         // 动态计算本次 chunkProjects 实际存在的房型行 (在已选定户型范围内)
@@ -3681,6 +3830,7 @@
       projects.forEach((proj, idx) => {
         const pPage = document.createElement('div');
         pPage.className = 'pdf-page page-dossier';
+        pPage.dataset.section = 'dossier';
         const pageNum = projectPageStartNum + 1 + idx;
         const mtr = proj.nearest_mtr;
         const rawSales = proj.sales_control_summary || [];
@@ -4069,108 +4219,208 @@
         const pageNum = districtPageStartNum + 1 + cIdx;
         const dPage = renderDistrictPage(chunk, pageNum, totalPages, numDistricts);
         dPage.classList.add('district-page');
+        dPage.dataset.section = 'district';
         root.appendChild(dPage);
       });
 
       // ----------------------------------------------------
-      // PAGE: 全案综合横向比选与最终决策建议 (Final Verdict Page)
+      // PAGE: 全案综合置业决策建议与客群分类矩阵 (Final Verdict - Decision Page)
       // ----------------------------------------------------
-      function renderFinalVerdictPage(projects, pageNum, totalPages, client) {
+      function renderFinalVerdictDecisionPage(projects, pageNum, totalPages, client) {
         const pageEl = document.createElement('div');
-        pageEl.className = 'pdf-page verdict-page';
+        pageEl.className = 'pdf-page verdict-page verdict-decision-page';
+        pageEl.dataset.section = 'verdict_decision';
 
         const targetProjs = projects;
 
-        // 决策卡片生成（基于角色分工，文案完全差异化，绝不重复）
-        const verdictCardsHtml = targetProjs.map((p, idx) => {
+        // 归类三大客群维度：自住型、兼顾型、投资型
+        const ownerProjects = [];
+        const balancedProjects = [];
+        const investProjects = [];
+
+        targetProjs.forEach((p, idx) => {
           const tradeoff = getProjectTradeoff(p, idx, targetProjs.length);
-          const tCount = p.tower_count || 1;
-          const units = p.total_units;
-          const towerStr = tCount === 1 ? '1幢独栋' : `${tCount}座大厦`;
-          const unitsStr = units ? `共${units}伙` : '';
-          const compStr = formatCompletionDate(p.completion_date);
-
-          // 提取真实独家卖点
-          let spTitle = '';
-          const rawPts = (p.selling_points || p.reason || p.mainland_selling_points || '').split('\n').filter(s => s.trim().length > 0);
-          if (rawPts.length > 0) {
-            let clean = rawPts[0].replace(/^\d+[\.、]\s*/, '').trim();
-            if (clean.includes('：')) clean = clean.split('：')[0].trim();
-            else if (clean.includes(':')) clean = clean.split(':')[0].trim();
-            spTitle = clean;
-          }
-          if (!spTitle) spTitle = `${p.micro_district || p.district}核心地脉·优质人居`;
-
-          let roleClass = 'tag-edu';
-          let borderC = '#16A34A';
-          if (tradeoff.role.includes('自住型')) { roleClass = 'tag-sea'; borderC = '#0284C7'; }
-          else if (tradeoff.role.includes('投资型')) { roleClass = 'tag-lux'; borderC = '#D97706'; }
-          else if (tradeoff.role.includes('投资自住')) { roleClass = 'tag-edu'; borderC = '#16A34A'; }
-
-          let adviceText = '';
-          if (tradeoff.role.includes('自住型')) {
-            adviceText = `【终极置业指引】高净值家庭自住首选，享受低密静谧环境与纯粹圈层，推荐重点锁定大户型或开阔景观单元。`;
-          } else if (tradeoff.role.includes('投资型')) {
-            adviceText = `【终极置业指引】强流动性资产配置首选，紧邻轨交枢纽、租赁客群澎湃，推荐锁定中低总价高租售比户型。`;
+          const r = tradeoff.role || '';
+          if (r.includes('自住') && !r.includes('兼顾') && !r.includes('投资')) {
+            ownerProjects.push({ p, idx, tradeoff });
+          } else if (r.includes('兼顾') || (r.includes('自住') && r.includes('投资'))) {
+            balancedProjects.push({ p, idx, tradeoff });
           } else {
-            adviceText = `【终极置业指引】家庭自住与资产保值平衡底仓，兼得商圈大盘综合配套与抗跌流通性，推荐主流2-3房家庭主力户型。`;
+            investProjects.push({ p, idx, tradeoff });
           }
+        });
 
-          return `
-            <div class="verdict-card" style="border-left-color:${borderC};">
-              <div class="verdict-card-head">
-                <div class="verdict-card-title">
-                  <span style="color:#00889A; margin-right:4px;">#${idx + 1}</span> ${p.name}
+        // 辅助渲染各专栏内项目卡片列表
+        function renderProjectCards(list, borderClass) {
+          if (list.length === 0) {
+            return `
+              <div class="decision-empty-state">
+                <span>本套方案未重点配置此类物业，侧重其他核心方向</span>
+              </div>
+            `;
+          }
+          return list.map(({ p, idx, tradeoff }) => {
+            const tCount = p.tower_count || 1;
+            const units = p.total_units;
+            const towerStr = tCount === 1 ? '独栋' : `${tCount}座大厦`;
+            const unitsStr = units ? `${units}伙` : '';
+            const compStr = formatCompletionDate(p.completion_date);
+            const minP = p.min_price_wan || 1500;
+
+            // 提取真实独家卖点
+            let spTitle = '';
+            const rawPts = (p.selling_points || p.reason || p.mainland_selling_points || '').split('\n').filter(s => s.trim().length > 0);
+            if (rawPts.length > 0) {
+              let clean = rawPts[0].replace(/^\d+[\.、]\s*/, '').trim();
+              if (clean.includes('：')) clean = clean.split('：')[0].trim();
+              else if (clean.includes(':')) clean = clean.split(':')[0].trim();
+              spTitle = clean;
+            }
+            if (!spTitle) spTitle = `${p.micro_district || p.district}核心地脉·优质人居`;
+
+            return `
+              <div class="decision-p-card ${borderClass}">
+                <div class="decision-p-head">
+                  <div class="decision-p-name">
+                    <span style="color:#00889A;">#${idx + 1}</span>
+                    <span>${p.name}</span>
+                  </div>
+                  <div class="decision-p-price">约 $${Math.round(minP)} 万起</div>
                 </div>
-                <span class="verdict-card-tag ${roleClass}">${tradeoff.role}</span>
+                <div class="decision-p-meta">
+                  <span>🏛️ ${towerStr} ${unitsStr}</span>
+                  <span>🔑 ${compStr}</span>
+                  <span style="display:inline-flex; align-items:center; gap:2px;">${getMtrLogoSvg()} ${p.nearest_mtr?.nearest_mtr_cn ? `近${p.nearest_mtr.nearest_mtr_cn}站` : '核心轨交'}</span>
+                </div>
+                <div class="decision-p-highlight">
+                  <strong>【核心特质】</strong>${spTitle}
+                </div>
               </div>
-              <div class="verdict-card-meta">
-                <span>🏛️ ${towerStr} ${unitsStr}</span>
-                <span>🔑 ${compStr}</span>
-                <span style="display:inline-flex; align-items:center; gap:3px;">${getMtrLogoSvg()} ${p.nearest_mtr?.nearest_mtr_cn ? `近${p.nearest_mtr.nearest_mtr_cn}站` : '核心轨交'}</span>
-              </div>
-              <div class="verdict-card-desc">
-                <div style="margin-bottom:3px;"><strong>【核心特质】</strong>${spTitle}。</div>
-                <div style="color:var(--slate-700);">${adviceText}</div>
-              </div>
-            </div>
-          `;
-        }).join('');
-
-        // 动态设置卡片网格布局
-        let gridCols = 'repeat(3, 1fr)';
-        if (targetProjs.length <= 2) gridCols = `repeat(${targetProjs.length}, 1fr)`;
-        else if (targetProjs.length === 4) gridCols = 'repeat(2, 1fr)';
-        else if (targetProjs.length === 3 || targetProjs.length >= 5) gridCols = 'repeat(3, 1fr)';
+            `;
+          }).join('');
+        }
 
         pageEl.innerHTML = `
           <div class="page-header">
             <div class="page-header-left">
-              <span class="page-header-title">全案综合置业决策建议与置业财务速查指南</span>
+              <span class="page-header-title">全案综合置业决策建议与终极选房指南</span>
               <span class="page-header-badge">THE FINAL VERDICT · 综合决策落地</span>
             </div>
             <img src="landma_logo.png" class="page-header-logo" alt="Logo">
           </div>
 
-          <div class="verdict-layout">
-            <!-- 模块 1：终极选房决策结论卡片 (精准对号入座) -->
-            <div>
-              <div class="verdict-sec-title">
-                <span>💡 蓝玛置业专家终极选房决策结论 (入选项目精准对号入座)</span>
-                <span class="verdict-sec-subtitle">全案入选 ${targetProjs.length} 个重点新盘 · 根据王牌优势与客群置业权重分类匹配</span>
+          <div class="verdict-decision-layout">
+            <div class="verdict-sec-title">
+              <span>💡 蓝玛置业专家终极选房分类矩阵 (三大置业客群深度匹配)</span>
+              <span class="verdict-sec-subtitle">全案入选 ${targetProjs.length} 个重点新盘 · 消除重复描述 · 根据买家置业重心分类归巢</span>
+            </div>
+
+            <div class="decision-columns-grid">
+              <!-- 专栏 1：顶级自住 / 低密改善 -->
+              <div class="decision-col col-owner">
+                <div class="decision-col-head">
+                  <div class="decision-col-badge-row">
+                    <div class="decision-col-title">🏡 顶级自住 · 低密改善专栏</div>
+                    <span class="decision-col-count-pill" style="background:#E0F2FE; color:#0369A1;">${ownerProjects.length} 盘入选</span>
+                  </div>
+                </div>
+                <div class="decision-col-strategy">
+                  <strong>【核心逻辑】</strong>聚焦低密纯粹圈层、名校网生态或稀缺自然景观，追求高隐私度与居住品质，长线保值抗跌。<br>
+                  <strong>【终极置业指引】</strong>首选中高楼层 3-4 房主力及特色单位，重点关注开阔景观、梯户比与会所圈层。
+                </div>
+                <div class="decision-projects-list">
+                  ${renderProjectCards(ownerProjects, 'border-owner')}
+                </div>
               </div>
-              <div class="verdict-cards-container" style="grid-template-columns: ${gridCols};">
-                ${verdictCardsHtml}
+
+              <!-- 专栏 2：兼得平衡 · 资产底仓 -->
+              <div class="decision-col col-balanced">
+                <div class="decision-col-head">
+                  <div class="decision-col-badge-row">
+                    <div class="decision-col-title">⚖️ 兼得平衡 · 资产底仓专栏</div>
+                    <span class="decision-col-count-pill" style="background:#DCFCE7; color:#15803D;">${balancedProjects.length} 盘入选</span>
+                  </div>
+                </div>
+                <div class="decision-col-strategy">
+                  <strong>【核心逻辑】</strong>自住品质与资产流动性兼备的稳健底仓。紧邻核心轨交枢纽或大型综合体商圈，进可攻退可守，周期防御力极强。<br>
+                  <strong>【终极置业指引】</strong>优先锁定主流 2-3 房家庭主力户型，兼得便捷成熟配套与未来二手市场庞大的承接流动性。
+                </div>
+                <div class="decision-projects-list">
+                  ${renderProjectCards(balancedProjects, 'border-balanced')}
+                </div>
+              </div>
+
+              <!-- 专栏 3：高租售比 · 强流转投资 -->
+              <div class="decision-col col-invest">
+                <div class="decision-col-head">
+                  <div class="decision-col-badge-row">
+                    <div class="decision-col-title">💷 高租售比 · 强流转投资专栏</div>
+                    <span class="decision-col-count-pill" style="background:#FEF3C7; color:#B45309;">${investProjects.length} 盘入选</span>
+                  </div>
+                </div>
+                <div class="decision-col-strategy">
+                  <strong>【核心逻辑】</strong>以稳健租金回报与高变现流动性为导向。紧贴核心CBD、高校或高铁圈，租赁客群庞大、空置期极短。<br>
+                  <strong>【终极置业指引】</strong>严格把控总价门槛，优先锁定开放式至 1-2 房中低总价单元，追求高租金净回报率（Net Yield）与快速退出变现。
+                </div>
+                <div class="decision-projects-list">
+                  ${renderProjectCards(investProjects, 'border-invest')}
+                </div>
               </div>
             </div>
 
-            <!-- 模块 2：2026最新法定印花税阶梯 & 资金财务速查矩阵 -->
+            <!-- 底部：现场看房与实操决策要诀 -->
+            <div class="verdict-action-banner">
+              <div class="verdict-action-item">
+                <span style="font-size:0.9rem;">🧭</span>
+                <div><strong>1. 现场实勘优先：</strong>重点比对样板房开间实用率、景观朝向遮挡及项目实际生活步行体验</div>
+              </div>
+              <div class="verdict-action-item">
+                <span style="font-size:0.9rem;">🏷️</span>
+                <div><strong>2. 发展商优惠锁定：</strong>比对即期付款与建期付款折扣利弊，现场优先争取早鸟特惠及特色保留单位</div>
+              </div>
+              <div class="verdict-action-item">
+                <span style="font-size:0.9rem;">💳</span>
+                <div><strong>3. 资金筹划前置：</strong>提前做好资金到位计划与境外按揭预评估，确保心仪单位推售即刻锁定</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-footer">
+            <span>蓝玛国际 LANDMA GLOBAL · 客户定制方案</span>
+            <span>第 ${pageNum} 页 / 共 ${totalPages} 页</span>
+          </div>
+        `;
+
+        return pageEl;
+      }
+
+      // ----------------------------------------------------
+      // PAGE: 置业财务预算规划 · 法定印花税与全案现金流速查 (Final Verdict - Finance Page)
+      // ----------------------------------------------------
+      function renderFinalVerdictFinancePage(projects, pageNum, totalPages, client) {
+        const pageEl = document.createElement('div');
+        pageEl.className = 'pdf-page verdict-page verdict-finance-page';
+        pageEl.dataset.section = 'verdict_finance';
+
+        const targetProjs = projects;
+
+        pageEl.innerHTML = `
+          <div class="page-header">
+            <div class="page-header-left">
+              <span class="page-header-title">置业财务预算规划 · 法定印花税与全案现金流速查</span>
+              <span class="page-header-badge">FINANCIAL MATRIX · 财务速查矩阵</span>
+            </div>
+            <img src="landma_logo.png" class="page-header-logo" alt="Logo">
+          </div>
+
+          <div class="verdict-finance-layout">
+            <!-- 模块 1：2026法定印花税阶梯 & 置业按揭规划指引 -->
             <div>
               <div class="verdict-sec-title">
-                <span>💷 香港住宅从价印花税（第2标准）最新法定税率与置业财务速查矩阵</span>
+                <span>💷 香港住宅从价印花税（第2标准）最新法定税率与置业按揭核心指引</span>
                 <span class="verdict-sec-subtitle">* 依据2026年最新财案法定标准：全港买家统一适用，≤400万仅$100，过亿物业明确为6.5%</span>
               </div>
-              <div class="verdict-dual-grid">
+              <div class="finance-top-grid">
                 <!-- 左半部：2026法定印花税速查表 -->
                 <div class="verdict-fin-card">
                   <div class="fin-card-mini-title">🏛️ 2026 最新法定住宅从价印花税阶梯 (全港统一适用)</div>
@@ -4214,54 +4464,102 @@
                   </table>
                 </div>
 
-                <!-- 右半部：各项目财务现金流与交付周期速查 -->
+                <!-- 右半部：置业按揭与资金筹备关键要诀 -->
                 <div class="verdict-fin-card">
-                  <div class="fin-card-mini-title">📊 入选项目置业资金与交付形态速查 (常规3成首付)</div>
-                  <table class="verdict-fin-table">
-                    <thead>
-                      <tr>
-                        <th class="dim-col">核心考量指标</th>
-                        ${targetProjs.map(p => `<th>${p.name}</th>`).join('')}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="dim-col">入场折实总价参考</td>
-                        ${targetProjs.map(p => {
-                          const minP = p.min_price_wan || 1500;
-                          return `<td style="font-weight:700; color:#0284C7;">约 $${Math.round(minP)} 万起</td>`;
-                        }).join('')}
-                      </tr>
-                      <tr>
-                        <td class="dim-col">建议首期准备 (3成)</td>
-                        ${targetProjs.map(p => {
-                          const minP = p.min_price_wan || 1500;
-                          const downpay = Math.round(minP * 0.3);
-                          return `<td style="font-weight:700; color:#16A34A;">约 $${downpay} 万起</td>`;
-                        }).join('')}
-                      </tr>
-                      <tr>
-                        <td class="dim-col">预估参考月供 (30年)</td>
-                        ${targetProjs.map(p => {
-                          const minP = p.min_price_wan || 1500;
-                          const monthlyW = (Math.round(minP * 0.7 * 0.04702 * 10) / 10).toFixed(1);
-                          return `<td>约 $${monthlyW} 万/月</td>`;
-                        }).join('')}
-                      </tr>
-                      <tr>
-                        <td class="dim-col">交付形态与落成日期</td>
-                        ${targetProjs.map(p => {
-                          const compStr = formatCompletionDate(p.completion_date);
-                          const isExisting = compStr.includes('现楼');
-                          const color = isExisting ? '#16A34A' : '#0284C7';
-                          return `<td style="font-weight:700; color:${color};">${compStr}</td>`;
-                        }).join('')}
-                      </tr>
-                    </tbody>
-                  </table>
-                  <div style="padding:4px 8px; font-size:0.6rem; color:#64748B; background:#FAFAFA; border-top:1px solid #F1F5F9;">
-                    * 测算按主流按揭实际利率(P-1.75%)测算，实际按揭年期及批核以银行最终核准为准。
+                  <div class="fin-card-mini-title">🏦 置业按揭贷款与资金筹备实操指引</div>
+                  <div class="fin-guide-body">
+                    <div class="fin-guide-row">
+                      <span style="color:#0284C7;">📌</span>
+                      <div><strong>按揭成数上限：</strong>香港住宅物业按揭成数上限已全面统一为 <strong>最高 70%</strong>（涵盖所有价格区间，适用于所有自住及投资买家）。</div>
+                    </div>
+                    <div class="fin-guide-row">
+                      <span style="color:#16A34A;">⚖️</span>
+                      <div><strong>入息与供款比率：</strong>金管局已暂停压力测试要求，常规供款与入息比率（DSR）上限为 <strong>50%</strong>，按揭最长可达 30 年。</div>
+                    </div>
+                    <div class="fin-guide-row">
+                      <span style="color:#D97706;">🗓️</span>
+                      <div><strong>印花税完税时间：</strong>签立正式买卖合约（PASP 转 ASP，通常认购后 5-7 工作天）后 <strong>30 天内</strong> 必须缴清从价印花税。</div>
+                    </div>
+                    <div class="fin-guide-row">
+                      <span style="color:#7C3AED;">💳</span>
+                      <div><strong>付款方式利弊：</strong><strong>即供付款</strong>可享最高折扣（常规额外 2%~5% 折扣）；<strong>建筑期付款</strong>首期门槛较低（入伙前仅需付 10%~15%）。</div>
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 模块 2：全案入选项目置业资金与交付形态速查矩阵 (整页全宽呈现) -->
+            <div>
+              <div class="verdict-sec-title">
+                <span>📊 全案入选项目置业资金门槛与交付形态全景横向速查 (常规3成首付测算)</span>
+                <span class="verdict-sec-subtitle">整宽横向铺开对比 · 满足多盘深度财务横向比选</span>
+              </div>
+              <div class="fin-full-table-wrap">
+                <table class="fin-full-table">
+                  <thead>
+                    <tr>
+                      <th class="dim-col">核心考量指标</th>
+                      ${targetProjs.map((p, idx) => `<th><span style="color:#00889A;">#${idx + 1}</span> ${p.name}</th>`).join('')}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="dim-col">置业客群定位</td>
+                      ${targetProjs.map((p, idx) => {
+                        const tradeoff = getProjectTradeoff(p, idx, targetProjs.length);
+                        let bg = '#F1F5F9', col = '#475569';
+                        if (tradeoff.role.includes('自住型')) { bg = '#E0F2FE'; col = '#0369A1'; }
+                        else if (tradeoff.role.includes('投资型')) { bg = '#FEF3C7'; col = '#B45309'; }
+                        else if (tradeoff.role.includes('兼顾')) { bg = '#DCFCE7'; col = '#15803D'; }
+                        return `<td><span style="background:${bg}; color:${col}; font-weight:700; font-size:0.62rem; padding:2px 5px; border-radius:3px;">${tradeoff.role.replace(/^[^\s]+\s/, '')}</span></td>`;
+                      }).join('')}
+                    </tr>
+                    <tr>
+                      <td class="dim-col">入场折实总价参考</td>
+                      ${targetProjs.map(p => {
+                        const minP = p.min_price_wan || 1500;
+                        return `<td style="font-weight:700; color:#0284C7; font-size:0.70rem;">约 $${Math.round(minP)} 万起</td>`;
+                      }).join('')}
+                    </tr>
+                    <tr>
+                      <td class="dim-col">建议首期准备 (3成)</td>
+                      ${targetProjs.map(p => {
+                        const minP = p.min_price_wan || 1500;
+                        const downpay = Math.round(minP * 0.3);
+                        return `<td style="font-weight:700; color:#16A34A; font-size:0.70rem;">约 $${downpay} 万起</td>`;
+                      }).join('')}
+                    </tr>
+                    <tr>
+                      <td class="dim-col">预估参考月供 (30年)</td>
+                      ${targetProjs.map(p => {
+                        const minP = p.min_price_wan || 1500;
+                        const monthlyW = (Math.round(minP * 0.7 * 0.04702 * 10) / 10).toFixed(1);
+                        return `<td style="font-weight:600;">约 $${monthlyW} 万/月</td>`;
+                      }).join('')}
+                    </tr>
+                    <tr>
+                      <td class="dim-col">交付形态与落成日期</td>
+                      ${targetProjs.map(p => {
+                        const compStr = formatCompletionDate(p.completion_date);
+                        const isExisting = compStr.includes('现楼');
+                        const color = isExisting ? '#16A34A' : '#0284C7';
+                        return `<td style="font-weight:700; color:${color};">${compStr}</td>`;
+                      }).join('')}
+                    </tr>
+                    <tr>
+                      <td class="dim-col">最近港铁与通勤</td>
+                      ${targetProjs.map(p => {
+                        const mtrName = p.nearest_mtr?.nearest_mtr_cn;
+                        const walk = p.nearest_mtr?.walk_time_min;
+                        const txt = mtrName ? `${mtrName}站${walk ? `(${walk}分)` : ''}` : '核心轨交';
+                        return `<td>${txt}</td>`;
+                      }).join('')}
+                    </tr>
+                  </tbody>
+                </table>
+                <div style="padding:4px 10px; font-size:0.6rem; color:#64748B; background:#FAFAFA; border-top:1px solid #F1F5F9;">
+                  * 测算按主流按揭实际优惠利率(P-1.75%)测算，实际按揭年期、息率及批核条件以银行最终核准为准。
                 </div>
               </div>
             </div>
@@ -4277,14 +4575,18 @@
       }
 
       const verdictPageNum = districtPageStartNum + numDistrictPages + 1;
-      const verdictPage = renderFinalVerdictPage(projects, verdictPageNum, totalPages, client);
-      root.appendChild(verdictPage);
+      const verdictDecisionPage = renderFinalVerdictDecisionPage(projects, verdictPageNum, totalPages, client);
+      root.appendChild(verdictDecisionPage);
+
+      const verdictFinancePage = renderFinalVerdictFinancePage(projects, verdictPageNum + 1, totalPages, client);
+      root.appendChild(verdictFinancePage);
 
       // ----------------------------------------------------
       // PAGE FINAL: 品牌封底 (Closing Page)
       // ----------------------------------------------------
       const closingPage = document.createElement('div');
       closingPage.className = 'pdf-page closing-page';
+      closingPage.dataset.section = 'closing';
       
       const advisorCardHtml = (advisorName || advisorPhone) ? `
         <div class="closing-advisor-card">
@@ -4310,6 +4612,9 @@
         </div>
       `;
       root.appendChild(closingPage);
+
+      // 初始化已选板块并应用显隐与页码重排
+      applySectionVisibility();
 
       // ----------------------------------------------------
       // 异步初始化所有地图 (Leaflet Maps)
