@@ -3301,7 +3301,7 @@ function initMap() {
   });
 }
 
-const MAP_DATA_VERSION = '20261013_1441_allimg';
+const MAP_DATA_VERSION = '20261013_1932_searchfix';
 
 function getProjectImageInfo(projName) {
   if (!projName) return null;
@@ -5332,10 +5332,14 @@ function applyFilters() {
       }
     }
 
-    // 商圈下钻聚焦筛选
+    // 商圈下钻聚焦筛选 (同时兼容微商圈全称与子行政商圈)
     if (activeDistrictCluster) {
-      const pDist = proj.district || proj.micro_district || proj.region;
-      if (pDist !== activeDistrictCluster) return false;
+      const matchCluster = (proj.micro_district === activeDistrictCluster) ||
+                           (proj.district === activeDistrictCluster) ||
+                           (proj.region === activeDistrictCluster) ||
+                           (proj.micro_district && proj.micro_district.includes(activeDistrictCluster)) ||
+                           (proj.district && activeDistrictCluster.includes(proj.district));
+      if (!matchCluster) return false;
     }
 
     // 若选定了大区域（大区级整体筛选）
@@ -5601,16 +5605,21 @@ function onProjectSearchInput(val) {
 
   applyFilters();
 
-  // 若搜索关键词明确且仅匹配到 1 个项目，自动平移聚焦该项目
-  if (kw) {
-    const matched = projectsData.filter(p => p.name.toLowerCase() === kw.toLowerCase());
-    if (matched.length === 1) {
-      const p = matched[0];
+  // 若搜索关键词明确：
+  // 1. 若仅匹配到 1 个项目，自动平移聚焦该项目并弹出浮窗
+  // 2. 若匹配到多个项目（如搜"北角"命中多个新盘），自动将地图视口漫游至所有命中项目的包围盒视野，并自动展开左侧项目列表！
+  if (kw && currentFilteredProjects && currentFilteredProjects.length > 0) {
+    if (currentFilteredProjects.length === 1) {
+      const p = currentFilteredProjects[0];
       map.flyTo([p.lat, p.lng], 16, { duration: 0.8 });
       setTimeout(() => {
         showProjectFloatingCard(p.name);
       }, 850);
+    } else {
+      const bounds = L.latLngBounds(currentFilteredProjects.map(p => [p.lat, p.lng]));
+      map.fitBounds(bounds, { padding: [60, 60], maxZoom: 15, duration: 0.8 });
     }
+    openDrawer();
   }
 }
 
@@ -5739,25 +5748,68 @@ function updateSearchSuggestions(kw) {
 }
 
 function selectMtrSuggestion(stId) {
+  // 选择地铁站点时，清空文本搜索词与商圈互斥态，聚焦车站周边
+  const inp = document.getElementById('project-search-input');
+  if (inp) inp.value = '';
+  const clearBtn = document.getElementById('search-clear-btn');
+  if (clearBtn) clearBtn.classList.remove('visible');
+  filterState.searchKeyword = '';
+  activeDistrictCluster = null;
+
   focusMtrStation(stId);
   const sug = document.getElementById('search-suggestions');
   if (sug) sug.classList.remove('open');
 }
 
 function selectSchoolSuggestion(schId) {
+  const inp = document.getElementById('project-search-input');
+  if (inp) inp.value = '';
+  const clearBtn = document.getElementById('search-clear-btn');
+  if (clearBtn) clearBtn.classList.remove('visible');
+  filterState.searchKeyword = '';
+  activeDistrictCluster = null;
+
   focusFamousSchool(schId);
   const sug = document.getElementById('search-suggestions');
   if (sug) sug.classList.remove('open');
 }
 
 function selectDistrictSuggestion(dist) {
+  // 选择商圈时，清空文本搜索词以避免叠加过滤，并重置互斥锚点
+  const inp = document.getElementById('project-search-input');
+  if (inp) inp.value = '';
+  const clearBtn = document.getElementById('search-clear-btn');
+  if (clearBtn) clearBtn.classList.remove('visible');
+  filterState.searchKeyword = '';
+
+  activeAnchorSchoolNet = null;
+  activeAnchorLandmark = null;
+  activeAnchorMainArea = null;
+  const sSchool = document.getElementById('anchor-school');
+  const sMtr = document.getElementById('anchor-mtr');
+  if (sSchool) sSchool.value = '';
+  if (sMtr) sMtr.value = '';
+  if (currentAnchorMarker) { map.removeLayer(currentAnchorMarker); currentAnchorMarker = null; }
+  if (currentRadiusCircle) { map.removeLayer(currentRadiusCircle); currentRadiusCircle = null; }
+  if (currentRouteLine) { map.removeLayer(currentRouteLine); currentRouteLine = null; }
+
   activeDistrictCluster = dist;
   updateDistrictDropdownLabel(`🏙️ ${dist}`);
   const sDistrict = document.getElementById('anchor-district');
   if (sDistrict) sDistrict.value = dist;
+
+  // 定位到商圈视野
   if (districtBoundsMap[dist]) {
     map.fitBounds(districtBoundsMap[dist], { padding: [50, 50], maxZoom: 15 });
+  } else {
+    const matched = projectsData.filter(p => (p.micro_district === dist || p.district === dist || (p.micro_district && p.micro_district.includes(dist))));
+    if (matched.length > 0) {
+      const b = L.latLngBounds(matched.map(p => [p.lat, p.lng]));
+      map.fitBounds(b, { padding: [60, 60], maxZoom: 15 });
+    }
   }
+
+  openDrawer();
   applyFilters();
   const sug = document.getElementById('search-suggestions');
   if (sug) sug.classList.remove('open');
@@ -5893,17 +5945,33 @@ function onProjectSearchKeydown(event) {
     const sug = document.getElementById('search-suggestions');
     if (sug) sug.classList.remove('open');
 
-    // 回车时，若输入框有内容，优先取第一个匹配项进行完整联动选择定位
     const kw = (document.getElementById('project-search-input')?.value || '').trim();
-    if (kw) {
-      const first = projectsData.find(p => p.name.toLowerCase().includes(kw.toLowerCase()) || kw.toLowerCase().includes(p.name.toLowerCase()));
-      if (first) {
-        selectProjectSuggestion(first.name);
-        return;
-      }
+    if (!kw) return;
+    const lowerKw = kw.toLowerCase();
+
+    // 1. 优先按楼盘名称精准或模糊命中
+    const projMatch = projectsData.find(p => p.name.toLowerCase() === lowerKw) ||
+                      projectsData.find(p => p.name.toLowerCase().includes(lowerKw) || lowerKw.includes(p.name.toLowerCase()));
+    if (projMatch) {
+      selectProjectSuggestion(projMatch.name);
+      return;
     }
 
-    // 若有结果，定位到当前列表第一项
+    // 2. 其次匹配商圈片区 (如用户回车"北角"、"炮台山"、"太古"等)
+    const matchedDist = Object.keys(districtBoundsMap || {}).find(d => d.toLowerCase().includes(lowerKw) || lowerKw.includes(d.toLowerCase()));
+    if (matchedDist) {
+      selectDistrictSuggestion(matchedDist);
+      return;
+    }
+
+    // 3. 再次匹配港铁站点 (如用户回车"太古"、"北角"命中港铁站)
+    const mtrMatch = (mtrStationsData || []).find(s => s.name && (s.name.toLowerCase().includes(lowerKw) || lowerKw.includes(s.name.toLowerCase())));
+    if (mtrMatch) {
+      selectMtrSuggestion(mtrMatch.id || mtrMatch.name);
+      return;
+    }
+
+    // 4. 若已有过滤列表，定位到当前列表第一项
     const list = document.getElementById('drawer-list');
     const firstCard = list ? list.querySelector('.card-float-title') : null;
     if (firstCard) {
