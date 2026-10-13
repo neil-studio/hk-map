@@ -1084,6 +1084,30 @@
     transition: all 0.3s ease;
   }
 
+  /* 暂停销售项目专属卡片样式 */
+  .card-v2.suspended {
+    border-left: 4px solid #eab308 !important;
+    border-color: #fde047;
+    background: #fffef5;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-v2-suspended-banner {
+    background: linear-gradient(90deg, #fef08a, #facc15);
+    color: #713f12;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 2px;
+    border: 1px solid #fde047;
+    letter-spacing: 0.3px;
+  }
+
   .card-v2-main {
     display: flex;
     gap: 11px;
@@ -1241,6 +1265,13 @@
     color: #dc2626;
     border: 1px solid #fca5a5;
     background: #fef2f2;
+  }
+
+  .card-v2-status.suspended {
+    color: #854d0e;
+    border: 1px solid #facc15;
+    background: #fef9c3;
+    font-weight: 800;
   }
 
   .card-v2-price {
@@ -5398,9 +5429,18 @@ function applyFilters() {
     const saleCountStr = (proj.sale_units !== undefined && proj.sale_units !== null) ? proj.sale_units : '-';
     const soldCountStr = (proj.sold_units !== undefined && proj.sold_units !== null) ? proj.sold_units : '-';
 
+    // 暂停销售判定 (与正式版逻辑完全一致)
+    const isSuspended = proj.is_suspended === true || proj.sell_status === 'sales_suspended' || (proj.stats && proj.stats.stopped > 0 && proj.stats.sale === 0);
+
     // 价格与起步价
     let priceDisplayHtml = '';
-    if (proj.min_price_wan && proj.min_price_wan > 0) {
+    if (isSuspended) {
+      if (proj.min_price_wan && proj.min_price_wan > 0) {
+        priceDisplayHtml = `<span class="card-v2-price" style="color:#ca8a04; font-size:0.85rem;" title="暂停销售参考价">参考$${Number(proj.min_price_wan).toLocaleString()}万</span>`;
+      } else {
+        priceDisplayHtml = `<span class="card-v2-price tender" style="color:#ca8a04;">暂停销售</span>`;
+      }
+    } else if (proj.min_price_wan && proj.min_price_wan > 0) {
       priceDisplayHtml = `<span class="card-v2-price">约$${Number(proj.min_price_wan).toLocaleString()}万<span class="price-unit">起*</span></span>`;
     } else if (proj.sell_status === 'coming_soon') {
       priceDisplayHtml = `<span class="card-v2-price tender">即将发售</span>`;
@@ -5411,12 +5451,20 @@ function applyFilters() {
     // 状态标签
     let statusClass = 'sale';
     let statusText = proj.sell_status_cn || '出售中';
-    if (proj.sell_status === 'coming_soon') {
+    if (isSuspended) {
+      statusClass = 'suspended';
+      statusText = '⛔ 暂停销售';
+    } else if (proj.sell_status === 'coming_soon') {
       statusClass = 'coming';
     } else if (proj.sold_units && proj.total_units && proj.sold_units / proj.total_units >= 0.85) {
       statusClass = 'soldout';
       statusText = '即将售罄';
     }
+
+    // 暂停销售顶部条幅
+    const suspendedBannerHtml = isSuspended
+      ? `<div class="card-v2-suspended-banner">⛔ 官方暂停销售 (Sales Suspended)</div>`
+      : '';
 
     // 现房 / 期房 专属微型徽章
     const isForward = proj.property_type === 'forward' || proj.is_coming_soon;
@@ -5445,9 +5493,10 @@ function applyFilters() {
     }
 
     const card = document.createElement('div');
-    card.className = `card-v2 ${isSelected ? 'selected' : ''}`;
+    card.className = `card-v2 ${isSelected ? 'selected' : ''} ${isSuspended ? 'suspended' : ''}`;
     card.setAttribute('data-proj-name', proj.name);
     card.innerHTML = `
+      ${suspendedBannerHtml}
       <div class="card-v2-main">
         ${coverHtml}
         <div class="card-v2-body">
