@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>蓝玛客户项目推荐方案 - LANDMA GLOBAL</title>
-  <!-- 🔒 专属访问密码保护门 (Password Gate: nb8888) 快速拦截 -->
+  <!-- 🔒 专属访问密码保护门 (Password Gate: lm8888) 快速拦截 -->
   <script>
     (function() {
       var k = 'hk_map_auth_token';
-      var isUnlocked = sessionStorage.getItem(k) === 'unlocked_nb8888' || localStorage.getItem(k) === 'unlocked_nb8888';
+      var isUnlocked = sessionStorage.getItem(k) === 'unlocked_lm8888' || localStorage.getItem(k) === 'unlocked_lm8888';
       if (isUnlocked) {
         document.documentElement.classList.add('unlocked-auth');
       } else {
@@ -2178,7 +2178,7 @@
         overflow: hidden !important;
       }
     }
-  /* 🔒 专属访问密码保护门 (Password Gate: nb8888) - 100% 物理拦截 */
+  /* 🔒 专属访问密码保护门 (Password Gate: lm8888) - 100% 物理拦截 */
   html.unlocked-auth #siteAuthOverlay,
   .site-auth-overlay.unlocked {
     display: none !important;
@@ -2482,7 +2482,7 @@
 </head>
 <body>
 
-  <!-- 🔒 专属访问密码保护门 (Password Gate: nb8888) -->
+  <!-- 🔒 专属访问密码保护门 (Password Gate: lm8888) -->
   <div id="siteAuthOverlay" class="site-auth-overlay">
     <div class="site-auth-card">
       <div class="auth-icon">🔒</div>
@@ -2551,12 +2551,12 @@
   </div>
 
   <script>
-    // 🔒 专属访问密码保护门 (Password Gate: nb8888)
+    // 🔒 专属访问密码保护门 (Password Gate: lm8888)
     function initSiteAuth() {
       const AUTH_KEY = 'hk_map_auth_token';
-      const TARGET_PWD = 'nb8888';
+      const TARGET_PWD = 'lm8888';
 
-      const isUnlocked = sessionStorage.getItem(AUTH_KEY) === 'unlocked_nb8888' || localStorage.getItem(AUTH_KEY) === 'unlocked_nb8888';
+      const isUnlocked = sessionStorage.getItem(AUTH_KEY) === 'unlocked_lm8888' || localStorage.getItem(AUTH_KEY) === 'unlocked_lm8888';
 
       const overlay = document.getElementById('siteAuthOverlay');
       if (!isUnlocked) {
@@ -2578,8 +2578,8 @@
       const verify = () => {
         const inputVal = (pwdInput?.value || '').trim();
         if (inputVal === TARGET_PWD) {
-          sessionStorage.setItem(AUTH_KEY, 'unlocked_nb8888');
-          localStorage.setItem(AUTH_KEY, 'unlocked_nb8888');
+          sessionStorage.setItem(AUTH_KEY, 'unlocked_lm8888');
+          localStorage.setItem(AUTH_KEY, 'unlocked_lm8888');
           document.documentElement.classList.add('unlocked-auth');
           document.documentElement.classList.remove('site-locked');
           overlay.classList.add('unlocked');
