@@ -1572,137 +1572,171 @@
       color: var(--slate-500);
       font-weight: normal;
     }
-    .verdict-rows-container {
+    .verdict-sections-container {
       display: flex;
       flex-direction: column;
       gap: 10px;
       flex: 1;
       min-height: 0;
-      justify-content: stretch;
     }
-    .decision-category-row {
+    .cat-section-block {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
       border-radius: 8px;
-      display: flex;
-      flex-direction: row;
       overflow: hidden;
       box-shadow: 0 1px 4px rgba(0,0,0,0.02);
-      border-left: 5px solid var(--primary);
+      display: flex;
+      flex-direction: column;
       flex: 1;
       min-height: 0;
     }
-    .decision-category-row.cat-owner { border-left-color: #0284C7; }
-    .decision-category-row.cat-balanced { border-left-color: #16A34A; }
-    .decision-category-row.cat-invest { border-left-color: #D97706; }
 
-    .decision-row-strategy-box {
-      width: 280px;
-      flex-shrink: 0;
-      padding: 10px 14px;
-      background: rgba(248, 250, 252, 0.95);
-      border-right: 1px solid #E2E8F0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 6px;
-    }
-    .decision-row-badge-row {
+    /* 方案二：通栏横幅 Banner */
+    .cat-section-banner {
+      padding: 6px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 2px;
+      border-bottom: 1px solid #E2E8F0;
+      flex-shrink: 0;
     }
-    .decision-row-title {
-      font-size: 0.86rem;
+    .cat-section-banner.banner-owner {
+      background: linear-gradient(90deg, #F0F9FF 0%, #E0F2FE 100%);
+      border-left: 5px solid #0284C7;
+    }
+    .cat-section-banner.banner-balanced {
+      background: linear-gradient(90deg, #F0FDF4 0%, #DCFCE7 100%);
+      border-left: 5px solid #16A34A;
+    }
+    .cat-section-banner.banner-invest {
+      background: linear-gradient(90deg, #FFFBEB 0%, #FEF3C7 100%);
+      border-left: 5px solid #D97706;
+    }
+
+    .cat-banner-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cat-banner-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 0.88rem;
       font-weight: 800;
       color: var(--slate-900);
-      font-family: 'Noto Serif SC', serif;
       display: flex;
       align-items: center;
       gap: 5px;
     }
-    .decision-row-count-pill {
+    .cat-banner-count {
       font-size: 0.62rem;
       font-weight: 700;
-      padding: 1px 6px;
+      padding: 1px 7px;
       border-radius: 10px;
     }
-    .decision-row-strategy-text {
-      font-size: 0.65rem;
-      line-height: 1.48;
+    .cat-banner-strategy {
+      font-size: 0.62rem;
       color: var(--slate-700);
       display: flex;
-      flex-direction: column;
-      gap: 5px;
+      gap: 14px;
+      align-items: center;
     }
-    .decision-row-strategy-text strong {
+    .cat-banner-strategy strong {
       color: var(--slate-900);
     }
 
-    .decision-row-projects-flow {
-      flex: 1;
-      min-width: 0;
+    /* 通栏卡片网格池 */
+    .cat-cards-grid-pool {
       padding: 8px 12px;
-      overflow: hidden;
-      background: #FAFCFF;
-    }
-    .decision-category-row.cat-balanced .decision-row-projects-flow {
-      background: #FAFEFA;
-    }
-    .decision-category-row.cat-invest .decision-row-projects-flow {
-      background: #FFFCF5;
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      gap: 8px;
+      align-items: stretch;
+      background: #FAFAFA;
     }
 
-    .decision-p-card {
+    .opt2-pure-card {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      border-radius: 6px;
-      padding: 8px 10px;
+      border-radius: 8px;
+      padding: 8px 12px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 5px;
+      gap: 4px;
       box-shadow: 0 1px 2px rgba(0,0,0,0.02);
       border-top: 3px solid #CBD5E1;
+      min-height: 0;
     }
-    .decision-p-card.border-owner { border-top-color: #0284C7; }
-    .decision-p-card.border-balanced { border-top-color: #16A34A; }
-    .decision-p-card.border-invest { border-top-color: #D97706; }
-    .decision-p-head {
+    .opt2-pure-card.border-owner { border-top-color: #0284C7; }
+    .opt2-pure-card.border-balanced { border-top-color: #16A34A; }
+    .opt2-pure-card.border-invest { border-top-color: #D97706; }
+
+    .opt2-head-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
     }
-    .decision-p-name {
-      font-size: 0.78rem;
+    .opt2-name {
+      font-size: 0.82rem;
       font-weight: 800;
       color: var(--slate-900);
       display: flex;
       align-items: center;
       gap: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .decision-p-price {
-      font-size: 0.72rem;
+    .opt2-price {
+      font-size: 0.76rem;
       font-weight: 800;
-      color: #0284C7;
+      white-space: nowrap;
     }
-    .decision-p-meta {
-      font-size: 0.63rem;
-      color: #64748B;
+
+    .opt2-tags-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 3px;
     }
-    .decision-p-highlight {
-      font-size: 0.64rem;
-      color: var(--slate-700);
+    .opt2-tag-pill {
+      font-size: 0.58rem;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .opt2-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px 8px;
+      font-size: 0.61rem;
+      color: #475569;
       background: #F8FAFC;
-      padding: 3px 6px;
+      padding: 4px 6px;
       border-radius: 4px;
       border: 1px solid #F1F5F9;
-      line-height: 1.38;
     }
+    .opt2-meta-grid span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .opt2-highlight-box {
+      font-size: 0.61rem;
+      color: var(--slate-700);
+      background: #F1F5F9;
+      padding: 5px 8px;
+      border-radius: 4px;
+      line-height: 1.38;
+      border-left: 2px solid var(--primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     .decision-empty-state {
       padding: 24px 12px;
       text-align: center;
@@ -4582,8 +4616,8 @@
         // 仅保留有入选项目的专栏，彻底移除 0 个项目的空白占位
         const activeCategories = categories.filter(c => c.projects.length > 0);
 
-        // 辅助渲染各专栏内项目卡片列表
-        function renderProjectCards(list, borderClass, themeColor) {
+        // 辅助渲染各专栏内项目卡片列表 (建议二：通栏宽幅网格高密度卡片)
+        function renderProjectCards(list, cat) {
           return list.map(({ p, idx, tradeoff }) => {
             const tCount = p.tower_count || 1;
             const units = p.total_units;
@@ -4591,6 +4625,16 @@
             const unitsStr = units ? `${units}伙` : '';
             const compStr = formatCompletionDate(p.completion_date);
             const minP = p.min_price_wan || 1500;
+
+            // 提取标签
+            const tags = [];
+            const area = p.micro_district || p.district;
+            if (area) tags.push(area);
+            const sNet = p.primary_school_net || p.school_net;
+            if (sNet) tags.push(sNet.includes('校网') ? sNet : `${sNet}校网`);
+            tags.push(compStr.includes('已') || compStr.includes('现') ? '现楼即住' : compStr);
+
+            const mtrText = p.nearest_mtr?.nearest_mtr_cn ? `近${p.nearest_mtr.nearest_mtr_cn}站` : '核心轨交';
 
             // 提取真实独家卖点
             let spTitle = '';
@@ -4603,23 +4647,26 @@
             }
             if (!spTitle) spTitle = `${p.micro_district || p.district}核心地脉·优质人居`;
 
-            const cardStyle = list.length === 1 ? 'max-width: 420px; flex: 0 0 380px;' : 'flex: 1; min-width: 0;';
-
             return `
-              <div class="decision-p-card ${borderClass}" style="${cardStyle}">
-                <div class="decision-p-head">
-                  <div class="decision-p-name">
+              <div class="opt2-pure-card ${cat.borderClass}">
+                <div class="opt2-head-row">
+                  <div class="opt2-name">
                     <span style="color:#00889A;">#${idx + 1}</span>
                     <span>${p.name}</span>
                   </div>
-                  <div class="decision-p-price" style="color:${themeColor || '#0284C7'};">约 $${Math.round(minP)} 万起</div>
+                  <div class="opt2-price" style="color:${cat.themeColor};">约 $${Math.round(minP)} 万起</div>
                 </div>
-                <div class="decision-p-meta">
+                <div class="opt2-tags-row">
+                  ${tags.map(t => `<span class="opt2-tag-pill" style="background:${cat.badgeBg}; color:${cat.badgeColor};">${t}</span>`).join('')}
+                </div>
+                <div class="opt2-meta-grid">
                   <span>🏛️ ${towerStr} ${unitsStr}</span>
                   <span>🔑 ${compStr}</span>
-                  <span style="display:inline-flex; align-items:center; gap:2px;">${getMtrLogoSvg()} ${p.nearest_mtr?.nearest_mtr_cn ? `近${p.nearest_mtr.nearest_mtr_cn}站` : '核心轨交'}</span>
+                  <span style="grid-column: span 2; display: inline-flex; align-items: center; gap: 2px;">
+                    ${getMtrLogoSvg()} ${mtrText}
+                  </span>
                 </div>
-                <div class="decision-p-highlight">
+                <div class="opt2-highlight-box">
                   <strong>【核心特质】</strong>${spTitle}
                 </div>
               </div>
@@ -4631,29 +4678,37 @@
           ? `(${activeCategories.length}大核心置业客群维度深度匹配)`
           : `(专属定制置业客群维度深度匹配)`;
 
-        const rowsHtml = activeCategories.length > 0 ? activeCategories.map(cat => {
-          const isGrid = activeCategories.length === 1 && cat.projects.length >= 4;
-          const flowStyle = isGrid
-            ? 'display:grid; grid-template-columns:repeat(2, 1fr); gap:10px;'
-            : 'display:flex; gap:10px; align-items:stretch;';
+        const sectionsHtml = activeCategories.length > 0 ? activeCategories.map(cat => {
+          const pCount = cat.projects.length;
+          let gridCols = pCount;
+          if (pCount <= 4) {
+            gridCols = pCount;
+          } else if (pCount <= 6) {
+            gridCols = 3;
+          } else if (pCount <= 8) {
+            gridCols = 4;
+          } else {
+            gridCols = Math.ceil(pCount / 2);
+          }
+          const poolGridStyle = `grid-template-columns: repeat(${gridCols}, 1fr);`;
 
           return `
-            <div class="decision-category-row ${cat.className}">
-              <!-- 左侧：策略指引看板 -->
-              <div class="decision-row-strategy-box">
-                <div class="decision-row-badge-row">
-                  <div class="decision-row-title">${cat.title}</div>
-                  <span class="decision-row-count-pill" style="background:${cat.badgeBg}; color:${cat.badgeColor};">${cat.projects.length} 盘入选</span>
+            <div class="cat-section-block">
+              <!-- 顶部通栏横幅 Banner -->
+              <div class="cat-section-banner banner-${cat.id}">
+                <div class="cat-banner-left">
+                  <span class="cat-banner-title">${cat.title}</span>
+                  <span class="cat-banner-count" style="background:${cat.badgeBg}; color:${cat.badgeColor};">${cat.projects.length} 盘入选</span>
                 </div>
-                <div class="decision-row-strategy-text">
-                  <div><strong>【核心逻辑】</strong>${cat.logic}</div>
-                  <div><strong>【置业指引】</strong>${cat.guide}</div>
+                <div class="cat-banner-strategy">
+                  <span><strong>【核心逻辑】</strong>${cat.logic}</span>
+                  <span><strong>【置业指引】</strong>${cat.guide}</span>
                 </div>
               </div>
 
-              <!-- 右侧：项目卡片横排流 -->
-              <div class="decision-row-projects-flow" style="${flowStyle}">
-                ${renderProjectCards(cat.projects, cat.borderClass, cat.themeColor)}
+              <!-- 下方通栏卡片网格池 -->
+              <div class="cat-cards-grid-pool" style="${poolGridStyle}">
+                ${renderProjectCards(cat.projects, cat)}
               </div>
             </div>
           `;
@@ -4678,8 +4733,8 @@
               <span class="verdict-sec-subtitle">全案入选 ${targetProjs.length} 个重点新盘 · 消除重复描述 · 根据买家置业重心分类归巢</span>
             </div>
 
-            <div class="verdict-rows-container">
-              ${rowsHtml}
+            <div class="verdict-sections-container">
+              ${sectionsHtml}
             </div>
           </div>
 
