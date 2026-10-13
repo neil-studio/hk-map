@@ -1701,12 +1701,62 @@
        PAGE: FINAL VERDICT 2 (置业财务速查与交付周期全景)
        ========================================================================= */
     .verdict-finance-layout {
-      padding: 10px 36px 8px 36px;
+      padding: 8px 36px 6px 36px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 7px;
       flex: 1;
       overflow: hidden;
+      justify-content: space-between;
+    }
+    .fin-module-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+    }
+    .fin-module-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 0 2px 0;
+      border-bottom: 1.2px solid #CBD5E1;
+      margin-bottom: 1px;
+    }
+    .fin-module-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .fin-module-tag {
+      font-size: 0.54rem;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .fin-module-tag.tag-blue {
+      background: #0284C7;
+      color: #FFFFFF;
+    }
+    .fin-module-tag.tag-teal {
+      background: #0D9488;
+      color: #FFFFFF;
+    }
+    .fin-module-tag.tag-amber {
+      background: #D97706;
+      color: #FFFFFF;
+    }
+    .fin-module-main-title {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: 0.2px;
+    }
+    .fin-module-sub-desc {
+      font-size: 0.58rem;
+      color: #64748B;
+      font-weight: 500;
     }
     .finance-top-grid {
       display: grid;
@@ -1865,19 +1915,20 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
-      margin-top: 2px;
     }
     .fin-note-item {
-      background: #F8FAFC;
+      background: #FFFFFF;
       border: 1px solid #E2E8F0;
+      border-top: 2.5px solid #D97706;
       border-radius: 6px;
-      padding: 5px 8px;
-      font-size: 0.61rem;
+      padding: 4px 8px;
+      font-size: 0.60rem;
       color: #475569;
       line-height: 1.35;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 1.5px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
     }
     .fin-note-item-title {
       font-weight: 800;
@@ -1885,7 +1936,7 @@
       display: flex;
       align-items: center;
       gap: 4px;
-      font-size: 0.64rem;
+      font-size: 0.63rem;
     }
     .fin-full-table-wrap {
       background: #FFFFFF;
@@ -4642,11 +4693,14 @@
           </div>
 
           <div class="verdict-finance-layout">
-            <!-- 模块 1：从价印花税明细表 & 置业法定常规杂费清单 -->
-            <div>
-              <div class="verdict-sec-title">
-                <span>💷 香港住宅从价印花税 (第2标准) 税率明细表</span>
-                <span class="verdict-sec-subtitle">* 适用于香港永久性居民及已撤辣之常规买家</span>
+            <!-- 模块 01：香港法定置业税制与标准交易时间线 -->
+            <div class="fin-module-block">
+              <div class="fin-module-header">
+                <div class="fin-module-title-wrap">
+                  <span class="fin-module-tag tag-blue">PART 01</span>
+                  <span class="fin-module-main-title">香港住宅从价印花税与法定交易时间线</span>
+                </div>
+                <span class="fin-module-sub-desc">法定第2标准阶梯 · 认购至成交4步法定时间轴</span>
               </div>
               <div class="finance-top-grid">
                 <!-- 左半部：法定从价印花税速查明细表 -->
@@ -4696,7 +4750,7 @@
                   </table>
                 </div>
 
-                <!-- 右半部：一手置业法定流程与持有期税费速查 (方案三 + 方案四融合) -->
+                <!-- 右半部：一手置业法定流程与持有期税费速查 -->
                 <div class="verdict-fin-card">
                   <div class="fin-card-mini-title">📋 一手置业法定流程与持有期税费速查</div>
                   <div class="fin-combine-body">
@@ -4754,11 +4808,14 @@
               </div>
             </div>
 
-            <!-- 模块 2：入选项目置业预算与交付全景速查 (整页全宽呈现) -->
-            <div>
-              <div class="verdict-sec-title">
-                <span>📊 入选项目置业预算与交付全景速查</span>
-                <span class="verdict-sec-subtitle">横向对比首期、印花税、月供及落成周期</span>
+            <!-- 模块 02：全案入选项目置业预算与交付全景速查 -->
+            <div class="fin-module-block">
+              <div class="fin-module-header">
+                <div class="fin-module-title-wrap">
+                  <span class="fin-module-tag tag-teal">PART 02</span>
+                  <span class="fin-module-main-title">全案入选项目置业门槛与交付形态全景速查</span>
+                </div>
+                <span class="fin-module-sub-desc">横向对比各盘入场总价、印花税、首期与等待期</span>
               </div>
               <div class="fin-full-table-wrap">
                 <table class="fin-full-table">
@@ -4856,19 +4913,28 @@
               </div>
             </div>
 
-            <!-- 模块 3：置业资金筹备与交易合规备忘 -->
-            <div class="fin-bottom-notes">
-              <div class="fin-note-item">
-                <div class="fin-note-item-title">🛡️ 交易资金信托独立托管</div>
-                <div>一手交易的所有订金及楼款本票均直接开立给 <strong>发展商代表律师楼独立信托账户</strong>，受法例与律师会严格监管。</div>
+            <!-- 模块 03：置业资金安全托管与买方权益备忘 -->
+            <div class="fin-module-block">
+              <div class="fin-module-header">
+                <div class="fin-module-title-wrap">
+                  <span class="fin-module-tag tag-amber">PART 03</span>
+                  <span class="fin-module-main-title">置业资金安全托管与买方权益保障备忘</span>
+                </div>
+                <span class="fin-module-sub-desc">独立信托账户监管 · 跨境资金调度 · 一手免佣权益</span>
               </div>
-              <div class="fin-note-item">
-                <div class="fin-note-item-title">💼 跨境置业资金合规调度</div>
-                <div>涉及跨境或境外资金安排的买家，建议提前 <strong>2 – 4 周</strong> 规划合规跨境汇款及本地银行账户通道。</div>
-              </div>
-              <div class="fin-note-item">
-                <div class="fin-note-item-title">🤝 一手新盘买家免佣权益</div>
-                <div>依据香港地产代理行业常规，一手新盘买方中介佣金由 <strong>发展商全额承担</strong>，买家无需支付中介佣金。</div>
+              <div class="fin-bottom-notes">
+                <div class="fin-note-item">
+                  <div class="fin-note-item-title">🛡️ 交易资金信托独立托管</div>
+                  <div>一手交易的所有订金及楼款本票均直接开立给 <strong>发展商代表律师楼独立信托账户</strong>，受法例与律师会严格监管。</div>
+                </div>
+                <div class="fin-note-item">
+                  <div class="fin-note-item-title">💼 跨境置业资金合规调度</div>
+                  <div>涉及跨境或境外资金安排的买家，建议提前 <strong>2 – 4 周</strong> 规划合规跨境汇款及本地银行账户通道。</div>
+                </div>
+                <div class="fin-note-item">
+                  <div class="fin-note-item-title">🤝 一手新盘买家免佣权益</div>
+                  <div>依据香港地产代理行业常规，一手新盘买方中介佣金由 <strong>发展商全额承担</strong>，买家无需支付中介佣金。</div>
+                </div>
               </div>
             </div>
           </div>
