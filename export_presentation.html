@@ -314,11 +314,28 @@
       color: #FFFFFF;
       font-weight: 700;
     }
-    .cover-brand-sign {
-      text-align: right;
-      font-size: 0.82rem;
-      color: #CBD5E1;
-      line-height: 1.6;
+    .cover-advisor-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      padding: 14px 22px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      min-width: 320px;
+      text-align: left;
+    }
+    .cover-advisor-row {
+      display: flex;
+      margin-bottom: 6px;
+      font-size: 0.88rem;
+    }
+    .cover-advisor-row:last-child { margin-bottom: 0; }
+    .cover-advisor-label {
+      color: #94A3B8;
+      width: 90px;
+    }
+    .cover-advisor-val {
+      color: #FFFFFF;
+      font-weight: 700;
     }
 
     /* =========================================================================
@@ -3633,6 +3650,27 @@
               <span class="cover-client-val">${dateStr || new Date().toLocaleDateString()}</span>
             </div>
           </div>
+          ${(advisorName || advisorPhone) ? `
+          <div class="cover-advisor-card">
+            <div class="cover-advisor-row">
+              <span class="cover-advisor-label">置业顾问：</span>
+              <span class="cover-advisor-val">${advisorName || '专属置业顾问'}</span>
+            </div>
+            <div class="cover-advisor-row">
+              <span class="cover-advisor-label">联系电话：</span>
+              <span class="cover-advisor-val">${advisorPhone || '—'}</span>
+            </div>
+          </div>` : `
+          <div class="cover-advisor-card">
+            <div class="cover-advisor-row">
+              <span class="cover-advisor-label">置业顾问：</span>
+              <span class="cover-advisor-val">蓝玛国际置业团队</span>
+            </div>
+            <div class="cover-advisor-row">
+              <span class="cover-advisor-label">咨询服务：</span>
+              <span class="cover-advisor-val">LANDMA PRIVATE CLIENT</span>
+            </div>
+          </div>`}
         </div>
       `;
       root.appendChild(coverPage);
