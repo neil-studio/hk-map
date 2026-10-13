@@ -3671,10 +3671,6 @@
         });
         const layoutsToRender = activeLayouts.length > 0 ? activeLayouts : filteredCatOrder;
 
-        const subTitleDesc = selectedLayouts.length === 5 
-          ? '基准维度覆盖：实景、地段、名校网、各房型最新真实成交及机场通勤'
-          : `基准维度覆盖：实景、地段、名校网、目标户型 (${selectedLayoutLabelStr}) 最新真实成交及通勤`;
-
         compPage.innerHTML = `
           <div class="page-header">
             <div class="page-header-left">
@@ -3690,7 +3686,6 @@
                 <span>⚖️ 核心推荐项目多维横向参数对比</span>
                 ${numCompPages > 1 ? `<span style="font-size:0.75rem; color:#64748B; font-weight:normal;">(第 ${chunkIdx + 1}/${numCompPages} 组)</span>` : ''}
               </div>
-              <div class="comp-sub-title">${subTitleDesc}</div>
             </div>
 
             <div class="comp-table-container">
@@ -3826,7 +3821,7 @@
 
             <!-- 底部名片横幅 -->
             <div class="comp-footer-banner">
-              <span>💎 <strong>蓝玛国际专属置业顾问服务</strong>：全程实勘·定制规划·资产落地 <span style="font-size:0.62rem; color:#94A3B8; font-weight:normal; margin-left:8px;">(* 机场及陆路口岸行车时长基于日常顺畅路况基准测算)</span></span>
+              <span>💎 <strong>蓝玛国际专属置业顾问服务</strong>：全程实勘·规划定制·资产落地 <span style="font-size:0.62rem; color:#94A3B8; font-weight:normal; margin-left:8px;">(* 机场及陆路口岸行车时长基于日常顺畅路况基准测算)</span></span>
               <span>${(advisorName || advisorPhone) ? `📞 专属联络顾问：${[advisorName, advisorPhone].filter(Boolean).join(' · ')}` : '📞 蓝玛国际 VIP 专属顾问咨询通道已开启'}</span>
             </div>
           </div>
