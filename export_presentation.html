@@ -1936,7 +1936,8 @@
       body {
         background: none;
       }
-      .print-control-bar {
+      .print-control-bar,
+      .empty-section-tip {
         display: none !important;
       }
       .presentation-wrapper {
@@ -2303,7 +2304,7 @@
               <span style="color:#CBD5E1; font-size:0.7rem;">|</span>
               <button type="button" class="btn-menu-action" onclick="applyPresetSections('minimal')">精简决策</button>
               <span style="color:#CBD5E1; font-size:0.7rem;">|</span>
-              <button type="button" class="btn-menu-action" onclick="applyPresetSections('default')">重置</button>
+              <button type="button" class="btn-menu-action" onclick="setAllSections(false)">清空</button>
             </div>
           </div>
           <div class="section-menu-list" id="section-menu-list">
@@ -2629,10 +2630,6 @@
     function toggleSectionItem(secId) {
       let current = window.__selectedSections || getSelectedSections();
       if (current.includes(secId)) {
-        if (current.length === 1) {
-          alert('方案至少需保留一个呈现板块！');
-          return;
-        }
         current = current.filter(id => id !== secId);
       } else {
         current.push(secId);
@@ -2644,6 +2641,8 @@
     function setAllSections(enableAll) {
       if (enableAll) {
         setSelectedSections(SECTION_DEFINITIONS.map(s => s.id));
+      } else {
+        setSelectedSections([]);
       }
       applySectionVisibility();
     }
@@ -2652,9 +2651,6 @@
       if (preset === 'minimal') {
         // 精简决策版：保留封面、宏观地图分布、多盘横向对比、决策建议、财务税费速查、封底
         setSelectedSections(['cover', 'overview', 'comparison', 'verdict_decision', 'verdict_finance', 'closing']);
-      } else {
-        // default / 重置：全选
-        setSelectedSections(SECTION_DEFINITIONS.map(s => s.id));
       }
       applySectionVisibility();
     }
@@ -2674,6 +2670,27 @@
           page.style.display = '';
         }
       });
+
+      // 如果当前未勾选任何板块，展示轻量引导提示
+      let emptyTip = document.getElementById('empty-section-tip');
+      if (selected.length === 0) {
+        if (!emptyTip) {
+          emptyTip = document.createElement('div');
+          emptyTip.id = 'empty-section-tip';
+          emptyTip.className = 'empty-section-tip';
+          emptyTip.style.cssText = 'background:#fff; padding:60px 20px; border-radius:12px; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.06); margin:60px auto; max-width:480px;';
+          emptyTip.innerHTML = `
+            <div style="font-size:2.2rem; margin-bottom:12px;">📋</div>
+            <div style="font-weight:800; color:#0F172A; font-size:1.05rem;">已清空所选呈现板块</div>
+            <div style="color:#64748B; font-size:0.82rem; margin-top:6px;">请在顶部「方案板块定制」菜单中勾选需要呈现的内容</div>
+          `;
+          root.appendChild(emptyTip);
+        } else {
+          emptyTip.style.display = '';
+        }
+      } else if (emptyTip) {
+        emptyTip.style.display = 'none';
+      }
 
       // 动态更新页码与页脚
       updatePresentationPageNumbers();
