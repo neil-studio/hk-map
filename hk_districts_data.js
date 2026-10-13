@@ -1,7 +1,7 @@
 window.HK_DISTRICTS_DATA = [
   {
     "id": 1,
-    "name": "启德城中心 (AIRSIDE/天玺) / 启德跑道区",
+    "name": "启德城中心 / 启德跑道区",
     "short_name": "启德城中心",
     "main_area": "一、九龙中（九龙城 / 何文田）",
     "positioning": "香港维港核心区逾百公顷巨构都会，九龙东 CBD2 核心增长极与全景滨海活力新城。",
@@ -141,7 +141,7 @@ window.HK_DISTRICTS_DATA = [
   },
   {
     "id": 7,
-    "name": "鸭脷洲 (海怡半岛及鸭脷洲大街)",
+    "name": "鸭脷洲",
     "short_name": "鸭脷洲",
     "main_area": "二、港岛南区",
     "positioning": "港岛南端精致海岛水乡，三面临海的成熟中产滨海宜居半岛。",
@@ -321,7 +321,7 @@ window.HK_DISTRICTS_DATA = [
   },
   {
     "id": 15,
-    "name": "山顶 (The Peak)",
+    "name": "山顶",
     "short_name": "山顶",
     "main_area": "三、港岛中西区",
     "positioning": "傲视维港天际的全球财富与权力之巅，世界级独立洋房终极图腾。",
@@ -345,7 +345,7 @@ window.HK_DISTRICTS_DATA = [
   },
   {
     "id": 16,
-    "name": "中半山 (Mid-Levels Central)",
+    "name": "中半山",
     "short_name": "中半山",
     "main_area": "三、港岛中西区",
     "positioning": "俯瞰中环金融心脏的传统老牌官绅半山，极速通达中环的顶级权力走廊。",
@@ -369,7 +369,7 @@ window.HK_DISTRICTS_DATA = [
   },
   {
     "id": 17,
-    "name": "西半山 (Mid-Levels West)",
+    "name": "西半山",
     "short_name": "西半山",
     "main_area": "三、港岛中西区",
     "positioning": "依傍香港大学百年文墨书香，中环精英汇聚的活力人文半山。",
@@ -393,7 +393,7 @@ window.HK_DISTRICTS_DATA = [
   },
   {
     "id": 18,
-    "name": "坚尼地城 (Kennedy Town)",
+    "name": "坚尼地城",
     "short_name": "坚尼地城",
     "main_area": "三、港岛中西区",
     "positioning": "港岛西极滨海日落潮流新城，文艺小资与中环新贵首选滨海活力港。",
@@ -589,7 +589,7 @@ window.HK_DISTRICTS_DATA = [
   },
   {
     "id": 26,
-    "name": "东半山 (Mid-Levels East)",
+    "name": "东半山",
     "short_name": "东半山",
     "main_area": "五、港岛湾仔及东半山",
     "positioning": "司徒拔道俯瞰湾仔铜锣湾繁华的半山脊梁，传统望族高耸独立私享地。",

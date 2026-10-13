@@ -91,7 +91,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name><![CDATA[鸭脷洲 (海怡半岛及鸭脷洲大街) (TPU-174)]]></name>
+      <name><![CDATA[鸭脷洲 (TPU-174)]]></name>
       <description><![CDATA[大区: 港岛南区<br/>规划编号: TPU-174]]></description>
       <MultiGeometry>
         <Polygon>
@@ -6896,7 +6896,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name><![CDATA[启德城中心 (AIRSIDE/天玺) / 启德跑道区 (S/K22/7)]]></name>
+      <name><![CDATA[启德城中心 / 启德跑道区 (S/K22/7)]]></name>
       <description><![CDATA[大区: 九龙中（九龙城/何文田）<br/>规划编号: S/K22/7]]></description>
       <MultiGeometry>
         <Polygon>
