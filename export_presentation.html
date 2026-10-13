@@ -772,20 +772,30 @@
       align-items: center;
       padding-bottom: 2px;
       border-bottom: 1.5px solid #E2E8F0;
+      gap: 10px;
     }
     .proj-name-cn {
       font-family: 'Noto Serif SC', serif;
-      font-size: 1.42rem;
+      font-size: 1.38rem;
       font-weight: 900;
       color: var(--slate-900);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .proj-name-cn span {
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .proj-meta-chips-wide {
       display: flex;
-      gap: 6px;
+      gap: 5px;
       align-items: center;
+      flex-wrap: nowrap;
+      flex-shrink: 1;
+      min-width: 0;
     }
     .meta-chip {
       background: #F1F5F9;
@@ -796,6 +806,7 @@
       font-size: 0.68rem;
       font-weight: 600;
       white-space: nowrap;
+      flex-shrink: 0;
     }
     .meta-chip.primary {
       background: var(--primary-light);
@@ -806,6 +817,29 @@
       background: #F0FDF4;
       color: #166534;
       border-color: #BBF7D0;
+    }
+    /* 发展商超长智能紧凑双行胶囊：保证字号适中清晰，同时与左侧大标题黄金等高对齐 */
+    .meta-chip.chip-developer-multiline {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.15;
+      padding: 2px 7px;
+      font-size: 0.60rem;
+      white-space: nowrap;
+      text-align: left;
+    }
+    .meta-chip.chip-developer-multiline .dev-line-1 {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      font-weight: 700;
+    }
+    .meta-chip.chip-developer-multiline .dev-line-2 {
+      color: var(--primary-dark);
+      opacity: 0.95;
+      padding-left: 15px; /* 对齐“发展商：”后的主体文字 */
+      font-weight: 600;
     }
 
     /* 顶部双宽屏震撼画卷 (Hero Image 50% + Micro/Meso Map 50%) */
@@ -1930,27 +1964,46 @@
     }
 
     /* =========================================================================
-       PRINT SPECIFICATIONS (@media print)
+       PRINT SPECIFICATIONS (@page & @media print)
        ========================================================================= */
+    @page {
+      size: A4 landscape;
+      margin: 0; /* 浏览器默认零边距，完全掌控 A4 画布 */
+    }
+
     @media print {
-      body {
-        background: none;
+      html, body {
+        width: 297mm !important;
+        height: 210mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
       .print-control-bar,
       .empty-section-tip {
         display: none !important;
       }
       .presentation-wrapper {
-        padding: 0;
-        gap: 0;
+        padding: 0 !important;
+        margin: 0 !important;
+        gap: 0 !important;
       }
       .pdf-page {
-        box-shadow: none;
-        margin: 0;
-        width: 100vw;
-        height: 100vh;
+        box-shadow: none !important;
+        margin: 0 !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        min-width: 297mm !important;
+        min-height: 210mm !important;
+        box-sizing: border-box !important;
         page-break-after: always !important;
+        page-break-inside: avoid !important;
         break-after: page !important;
+        overflow: hidden !important;
       }
     }
   /* 🔒 专属访问密码保护门 (Password Gate: nb8888) - 100% 物理拦截 */
@@ -4122,6 +4175,34 @@
           visualTag = '🌟 地标名邸';
         }
 
+        // 格式化发展商胶囊：单发展商保持单行，多联名发展商紧凑双行排版（字号适中看清且不拉高标题栏）
+        function formatDeveloperChip(dev) {
+          const raw = (dev || '知名品牌发展商').trim();
+          if (raw.length <= 14) {
+            return `<span class="meta-chip primary">🏗️ 发展商：${raw}</span>`;
+          }
+          const parts = raw.split(/\s*[\/／]\s*/).filter(Boolean);
+          if (parts.length >= 2) {
+            const mid = Math.ceil(parts.length / 2);
+            const line1 = parts.slice(0, mid).join(' / ');
+            const line2 = parts.slice(mid).join(' / ');
+            return `
+              <span class="meta-chip primary chip-developer-multiline" title="${raw}">
+                <span class="dev-line-1">🏗️ 发展商：${line1}</span>
+                <span class="dev-line-2">${line2}</span>
+              </span>
+            `;
+          } else {
+            const mid = Math.ceil(raw.length / 2);
+            return `
+              <span class="meta-chip primary chip-developer-multiline" title="${raw}">
+                <span class="dev-line-1">🏗️ 发展商：${raw.slice(0, mid)}</span>
+                <span class="dev-line-2">${raw.slice(mid)}</span>
+              </span>
+            `;
+          }
+        }
+
         pPage.innerHTML = `
           <div class="page-header">
             <div class="page-header-left">
@@ -4140,21 +4221,28 @@
                 <span style="font-size:0.75rem; font-weight:700; color:#0284C7; background:#E0F2FE; border:1px solid #BAE6FD; padding:2px 8px; border-radius:4px;">${proj.micro_district || proj.district || '核心板块'}</span>
               </div>
               <div class="proj-meta-chips-wide">
-                <span class="meta-chip primary">🏗️ 发展商：${proj.developer || '知名品牌发展商'}</span>
+                ${formatDeveloperChip(proj.developer)}
                 <span class="meta-chip">📅 落成：${compDateStr}</span>
                 ${proj.school_net ? `<span class="meta-chip">🏫 校网：${proj.school_net}</span>` : ''}
                 ${(() => {
                   const walkMin = Number(mtr?.walk_time_min) || 99;
                   const walkM = Number(mtr?.dist_walk_m) || 9999;
                   const pName = (proj.name || '').toLowerCase();
-                  const isRunway = (proj.micro_district || '').includes('跑道') || 
-                                   (proj.address || '').includes('承') || 
-                                   pName.includes('coast') || 
-                                   (proj.name || '').includes('柏蔚森') || 
-                                   (proj.name || '').includes('天泷') || 
-                                   pName.includes('miami') || 
-                                   (proj.name || '').includes('启德海湾') || 
-                                   (proj.name || '').includes('维港');
+                  const isKaiTakArea = (proj.micro_district || '').includes('启德') || 
+                                       (proj.district || '').includes('启德') || 
+                                       (proj.main_area || '').includes('启德');
+                  const isRunway = isKaiTakArea && (
+                    (proj.micro_district || '').includes('跑道') || 
+                    (proj.address || '').includes('承') || 
+                    pName.includes('coast') || 
+                    (proj.name || '').includes('柏蔚森') || 
+                    (proj.name || '').includes('天泷') || 
+                    pName.includes('miami') || 
+                    (proj.name || '').includes('启德海湾') || 
+                    (proj.name || '').includes('维港1号') || 
+                    (proj.name || '').includes('维港．双钻') || 
+                    (proj.name || '').includes('维港双钻')
+                  );
                   if (isRunway) {
                     return `<span class="meta-chip primary">🚌 跑道穿梭巴士 (约5-8分直达启德站)</span>`;
                   }

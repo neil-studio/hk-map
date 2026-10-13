@@ -34,6 +34,9 @@ EXPLICIT_FOLDER_MAP = {
     "维港.湾畔": ["维港．湾畔第1A期", "维港．湾畔第1B期", "维港．湾畔第2B期"],
     "blue coast": ["Blue Coast", "Blue Coast II"],
     "滶晨": ["滶晨", "滶晨 II"],
+    "天玺．天": ["天玺．天", "天玺．天第2期"],
+    "天玺.天": ["天玺．天", "天玺．天第2期"],
+    "海璇": ["海璇", "海璇 II", "海璇 II (第2B-3期)"],
 }
 
 def load_all_project_names():

@@ -629,6 +629,16 @@
     "hd_height": 1600,
     "aspect_ratio": 0.745
   },
+  "天玺．天第2期": {
+    "original": "images/projects/original/天玺．天/天玺．天.png",
+    "hd": "images/projects/hd/天玺．天第2期.webp",
+    "thumb": "images/projects/thumb/天玺．天第2期.webp",
+    "width": 1280,
+    "height": 1719,
+    "hd_width": 1191,
+    "hd_height": 1600,
+    "aspect_ratio": 0.745
+  },
   "天玺．海第1期": {
     "original": "images/projects/original/天玺．海/天玺.海.jpg",
     "hd": "images/projects/hd/天玺．海第1期.webp",
@@ -933,6 +943,26 @@
     "original": "images/projects/original/海璇/海璇.jpg",
     "hd": "images/projects/hd/海璇.webp",
     "thumb": "images/projects/thumb/海璇.webp",
+    "width": 1182,
+    "height": 787,
+    "hd_width": 1182,
+    "hd_height": 787,
+    "aspect_ratio": 1.502
+  },
+  "海璇 II": {
+    "original": "images/projects/original/海璇/海璇.jpg",
+    "hd": "images/projects/hd/海璇 II.webp",
+    "thumb": "images/projects/thumb/海璇 II.webp",
+    "width": 1182,
+    "height": 787,
+    "hd_width": 1182,
+    "hd_height": 787,
+    "aspect_ratio": 1.502
+  },
+  "海璇 II (第2B-3期)": {
+    "original": "images/projects/original/海璇/海璇.jpg",
+    "hd": "images/projects/hd/海璇 II (第2B-3期).webp",
+    "thumb": "images/projects/thumb/海璇 II (第2B-3期).webp",
     "width": 1182,
     "height": 787,
     "hd_width": 1182,

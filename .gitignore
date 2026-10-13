@@ -5,3 +5,6 @@ Icon?
 *.log
 *.bak
 ~$*
+preview_shots/
+preview_district_*.html
+generate_district_*.py
