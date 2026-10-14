@@ -458,13 +458,58 @@ def main():
         except Exception as e:
             print("读取 data.json 异常:", e)
 
-    # 自动过滤已从正式版下架/售罄的项目（保持与正式版完全一致）
+    # 方案 C：状态驱动生命周期管理 (Soft-Delete / Status-Driven Lifecycle)
+    # 绝对禁止物理删除任何项目记录！保留全部楼盘底座与坐标、5维对比、校网等沉淀资产。
+    # 仅检测是否有新增入市的项目
+    existing_pnames = {p["name"].strip() for p in projects}
     if data_json_map:
-        initial_len = len(projects)
-        projects = [p for p in projects if p["name"].strip() in data_json_map]
-        if len(projects) < initial_len:
-            removed_count = initial_len - len(projects)
-            print(f"🗑️ 已自动同步下线/过滤 {removed_count} 个正式版已售罄项目")
+        for dj_name, dj_proj in data_json_map.items():
+            if dj_name not in existing_pnames:
+                print(f"✨ 发现正式版新项目: {dj_name}，自动收录至地图项目库底座")
+                new_item = {
+                    "name": dj_name,
+                    "region": dj_proj.get("region", ""),
+                    "district": dj_proj.get("district", ""),
+                    "lat": dj_proj.get("lat", 22.3193),
+                    "lng": dj_proj.get("lng", 114.1694),
+                    "sell_status": dj_proj.get("sell_status", "on_sale"),
+                    "sell_status_cn": dj_proj.get("sell_status_cn", "出售中"),
+                    "is_sold_out": False,
+                    "price_tier": dj_proj.get("price_tier", "1000-2000"),
+                    "total_units": 0,
+                    "sale_units": 0,
+                    "sold_units": 0,
+                    "priced_units": 0,
+                    "pending_units": 0,
+                    "basic_price_desc": dj_proj.get("total_price_desc", ""),
+                    "excel_min_price_desc": "详见价单",
+                    "min_price_wan": None,
+                    "sqft_price_desc": dj_proj.get("sqft_price_desc", ""),
+                    "main_layout": dj_proj.get("main_layout", ""),
+                    "reason": dj_proj.get("reason", ""),
+                    "mainland_selling_points": dj_proj.get("mainland_selling_points", ""),
+                    "developer": dj_proj.get("developer", ""),
+                    "completion_date": dj_proj.get("completion_date", ""),
+                    "sales_control_summary": [],
+                    "recent_transactions": [],
+                    "address": dj_proj.get("address", ""),
+                    "main_area": dj_proj.get("main_area", ""),
+                    "micro_district": dj_proj.get("micro_district", ""),
+                    "micro_district_en": dj_proj.get("micro_district_en", ""),
+                    "primary_school_net": "",
+                    "secondary_school_net": "",
+                    "school_net": "",
+                    "max_price_wan": None,
+                    "has_price_data": False,
+                    "tower_count": 1,
+                    "selling_points": dj_proj.get("mainland_selling_points", ""),
+                    "property_positioning": "🏡 自住型产品",
+                    "core_pros": "",
+                    "quantified_cons": "",
+                    "commute_guidance": ""
+                }
+                projects.append(new_item)
+                existing_pnames.add(dj_name)
 
     school_net_map = {}
     if os.path.exists(BASE_INFO_FILE):
@@ -749,27 +794,53 @@ def main():
         pname = p["name"].strip()
         dj_p = data_json_map.get(pname, {})
 
-        # 优先匹配全量可编辑描述库中的定位与卖点
+        # 方案 C 状态动态校准
+        if pname in data_json_map:
+            prod_status = dj_p.get("sell_status", "on_sale")
+            prod_status_cn = dj_p.get("sell_status_cn", "出售中")
+            if prod_status == "sold_out":
+                p["sell_status"] = "sold_out"
+                p["sell_status_cn"] = "已售罄"
+                p["is_sold_out"] = True
+            else:
+                p["sell_status"] = prod_status
+                p["sell_status_cn"] = prod_status_cn
+                p["is_sold_out"] = False
+        else:
+            # 正式版已下架或不在 active 列表的项目，状态置为 sold_out，软删除保护
+            p["sell_status"] = "sold_out"
+            p["sell_status_cn"] = "已售罄"
+            p["is_sold_out"] = True
+
+        # 动态同步营销与楼盘资料链接（若正式版有提供）
+        if "marketing_url" in dj_p and dj_p["marketing_url"]:
+            p["marketing_url"] = dj_p["marketing_url"]
+        if "has_marketing_materials" in dj_p:
+            p["has_marketing_materials"] = dj_p["has_marketing_materials"]
+        if "intro_url" in dj_p and dj_p["intro_url"]:
+            p["intro_url"] = dj_p["intro_url"]
+
+        # 方案 C 核心保护：严禁覆盖已有 5 维研判与客观考量！已有内容绝不被覆盖或简化
         desc_info = descriptions_map.get(pname)
         if not desc_info:
             norm_name = pname.translate(trans).replace(' ', '').replace('　', '').replace('．', '.').lower()
             desc_info = descriptions_map.get(norm_name)
         if desc_info:
-            if desc_info.get("property_positioning"):
+            if not p.get("property_positioning") and desc_info.get("property_positioning"):
                 p["property_positioning"] = desc_info["property_positioning"]
-            if desc_info.get("selling_points"):
+            if not p.get("selling_points") and desc_info.get("selling_points"):
                 p["selling_points"] = desc_info["selling_points"]
                 p["mainland_selling_points"] = desc_info["selling_points"]
                 sp_attached += 1
-            if desc_info.get("core_pros"):
+            if not p.get("core_pros") and desc_info.get("core_pros"):
                 p["core_pros"] = desc_info["core_pros"]
-            if desc_info.get("quantified_cons"):
+            if not p.get("quantified_cons") and desc_info.get("quantified_cons"):
                 p["quantified_cons"] = desc_info["quantified_cons"]
-            if desc_info.get("commute_guidance"):
+            if not p.get("commute_guidance") and desc_info.get("commute_guidance"):
                 p["commute_guidance"] = desc_info["commute_guidance"]
             desc_attached += 1
 
-        # 若描述库未提供卖点则兜底原楼盘卖点.xlsx
+        # 若描述库未提供卖点则兜底原楼盘卖点.xlsx (仅在为空时补充)
         if not p.get("selling_points"):
             sp_text = selling_points_map.get(pname)
             if not sp_text:
@@ -870,6 +941,11 @@ def main():
             p["sale_units"] = ustats["sale_units"]
             p["tower_count"] = ustats.get("tower_count", 1)
             p["tower_names"] = ustats.get("tower_names", [])
+            # 售罄判定：若总套数大于0且已全部售出 (无在售单位)
+            if ustats["sold_units"] >= ustats["total_units"] and ustats.get("sale_units", 0) == 0:
+                p["sell_status"] = "sold_out"
+                p["sell_status_cn"] = "已售罄"
+                p["is_sold_out"] = True
         if not p.get("tower_count"):
             p["tower_count"] = 1
 
@@ -902,7 +978,9 @@ def main():
             p["min_price_wan"] = None
             p["max_price_wan"] = None
             p["has_price_data"] = False
-            if p.get("sell_status") == "coming_soon" or p.get("is_coming_soon"):
+            if p.get("sell_status") == "sold_out" or p.get("is_sold_out"):
+                p["excel_min_price_desc"] = "已售罄"
+            elif p.get("sell_status") == "coming_soon" or p.get("is_coming_soon"):
                 p["excel_min_price_desc"] = "即将发售 / 待定"
             else:
                 p["excel_min_price_desc"] = "招标发售 / 详见价单"

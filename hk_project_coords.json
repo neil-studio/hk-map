@@ -442,7 +442,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 九龙塘龙庭里8号超级豪宅巅峰之作\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 41 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合又一城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】步行至最近港铁九龍塘站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1600米 (19分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1600米 (19分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "The Monet 第2期",
@@ -846,7 +847,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 九龙塘龙庭里8号超级豪宅巅峰之作\n【名校】全港顶尖 41 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合又一城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁九龍塘站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1446米 (17分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1446米 (17分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "The Monet 第3期",
@@ -1250,7 +1252,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 九龙塘龙庭里8号超级豪宅巅峰之作\n【名校】全港顶尖 41 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合又一城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁九龍塘站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1446米 (17分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1446米 (17分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "博峰",
@@ -1258,18 +1261,18 @@
     "district": "九龙塘",
     "lat": 22.343052,
     "lng": 114.183372,
-    "sell_status": "coming_soon",
-    "sell_status_cn": "即將發售",
+    "sell_status": "on_sale",
+    "sell_status_cn": "出售中",
     "is_coming_soon": true,
     "price_tier": "",
-    "total_units": 46,
-    "sale_units": 9,
-    "sold_units": 1,
+    "total_units": 24,
+    "sale_units": 4,
+    "sold_units": 0,
     "priced_units": 0,
     "pending_units": 46,
     "basic_price_desc": "",
-    "excel_min_price_desc": "参考成交: $4883.1万起",
-    "min_price_wan": 4883.1,
+    "excel_min_price_desc": "即将发售 / 待定",
+    "min_price_wan": null,
     "sqft_price_desc": "",
     "main_layout": "",
     "reason": "",
@@ -1620,29 +1623,20 @@
     "sales_control_summary": [
       {
         "layout": "3 房",
-        "unsold_count": 22,
-        "on_sale_count": 5,
-        "sqft_range": "1089 - 2207 呎",
+        "unsold_count": 10,
+        "on_sale_count": 2,
+        "sqft_range": "1089 呎",
         "price_range": "招标"
       },
       {
         "layout": "4 房",
-        "unsold_count": 23,
-        "on_sale_count": 4,
+        "unsold_count": 14,
+        "on_sale_count": 2,
         "sqft_range": "1322 - 2623 呎",
         "price_range": "招标"
       }
     ],
-    "recent_transactions": [
-      {
-        "unit_name": "住宅大楼 - 东翼座 9楼 A室",
-        "layout": "4 房",
-        "sqft": "1322 呎",
-        "price": "4883.1 万",
-        "unit_price": "$36,937/呎",
-        "date": "2026-09-30"
-      }
-    ],
+    "recent_transactions": [],
     "address": "義德道1號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "九龙塘及毕架山",
@@ -1651,13 +1645,12 @@
     "primary_school_net": "41校网",
     "secondary_school_net": "九龍城校网",
     "school_net": "41校网 / 九龍城校网",
-    "max_price_wan": 4883.1,
-    "has_price_data": true,
+    "max_price_wan": null,
+    "has_price_data": false,
     "building_count": 3,
     "selling_points": "1、九龙塘广播道半山珍稀向南大宅：位于九龙塘半山广播道71-75号高地，全盘共46伙，全数单位坐北向南，涵盖大三房、四房及仅2幢独立洋房，采光通透，私隐度极高。\n2、丽新发展匠心打造并获批入伙纸：丽新发展精心打磨的高质感豪宅作品，已获批入伙纸以现楼发售，部分大户配设私人升降机大堂，车位配比超过1:1，完美契合豪宅业主刚需。\n3、顶尖41校网赋能家族教育传承：坐拥九龙顶尖41小学名校网与九龙城中学网，周边传统名校林立，文化底蕴深厚，兼具城市半山清幽景致与核心区名校代际资产价值。",
-    "tower_count": 3,
+    "tower_count": 2,
     "tower_names": [
-      "住宅大楼 - 东翼",
       "住宅大楼 - 西翼",
       "独立屋销控表"
     ],
@@ -1669,7 +1662,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 九龙塘广播道半山珍稀向南大宅\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 41 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合又一城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】步行至最近港铁九龍塘站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1403米 (16分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1403米 (16分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "皇廷汇",
@@ -2294,7 +2288,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 九龙塘喇沙利道32-38号喇沙小学正对面\n【名校】全港顶尖 41 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合又一城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁天后站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 2297米 (27分钟) 直达港铁天后站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 2297米 (27分钟) 直达港铁天后站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "缇外",
@@ -2307,7 +2302,7 @@
     "is_coming_soon": false,
     "price_tier": "10000+",
     "total_units": 64,
-    "sale_units": 0,
+    "sale_units": 1,
     "sold_units": 56,
     "priced_units": 0,
     "pending_units": 11,
@@ -2793,9 +2788,9 @@
       {
         "layout": "4 房",
         "unsold_count": 8,
-        "on_sale_count": 0,
+        "on_sale_count": 1,
         "sqft_range": "3731 - 7915 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       }
     ],
     "recent_transactions": [
@@ -2844,7 +2839,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 九龙笔架山半山龙驹道超级豪宅巅峰\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n️【商业】邻近/周边1.5km聚合又一城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】步行至最近港铁長沙灣站超12分钟，建议接驳小巴至地铁\n【校网】非传统四大名校网（所属40校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 2210米 (26分钟) 直达港铁長沙灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 2210米 (26分钟) 直达港铁長沙灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "天玺",
@@ -3028,9 +3024,9 @@
       {
         "unit_name": "天钻玺座 91楼 C室",
         "layout": "4 房",
-        "sqft": "1775 呎",
+        "sqft": "1798 呎",
         "price": "2.32 亿",
-        "unit_price": "$130,686/呎",
+        "unit_price": "$129,014/呎",
         "date": "2025-08-26"
       },
       {
@@ -3072,7 +3068,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 九龙站上盖香港地标级顶奢天际豪宅\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁九龙站正上盖 / 直通（直通圆方 ELEMENTS 与九龙站/柯士甸）\n️【商业】基座直通圆方 ELEMENTS 超大型购物中心\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属31校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 145米 (1分钟) 直达港铁九龍站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 145米 (1分钟) 直达港铁九龍站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "128 Waterloo",
@@ -3450,7 +3447,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 何文田窝打老道黄金名校地段\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合MOKO 新世纪广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁旺角東站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1070米 (12分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1070米 (12分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Prince Central",
@@ -3463,8 +3461,8 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 101,
-    "sale_units": 8,
-    "sold_units": 30,
+    "sale_units": 9,
+    "sold_units": 29,
     "priced_units": 23,
     "pending_units": 21,
     "basic_price_desc": "",
@@ -3587,8 +3585,8 @@
       },
       {
         "layout": "1 房",
-        "unsold_count": 35,
-        "on_sale_count": 3,
+        "unsold_count": 36,
+        "on_sale_count": 4,
         "sqft_range": "274 - 345 呎",
         "price_range": "1102.7 万 - 1282.8 万"
       },
@@ -3624,12 +3622,12 @@
         "date": "2026-06-17"
       },
       {
-        "unit_name": "Prince Central座 18楼 C室",
+        "unit_name": "Prince Central座 6楼 G室",
         "layout": "1 房",
-        "sqft": "344 呎",
-        "price": "1075.2 万",
-        "unit_price": "$31,255/呎",
-        "date": "2024-07-10"
+        "sqft": "343 呎",
+        "price": "1021.7 万",
+        "unit_price": "$29,787/呎",
+        "date": "2024-06-17"
       },
       {
         "unit_name": "Prince Central座 10楼 A室",
@@ -3704,7 +3702,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 太子道西核心地段新鸿基品质力作\n【轨交】步行约 6 分钟即达港铁旺角東站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合MOKO 新世纪广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 482米 (5分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 482米 (5分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "VAU Residence",
@@ -3991,7 +3990,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 何文田自由道万科品质轻奢地标\n【轨交】步行约 7 分钟即达港铁旺角東站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合MOKO 新世纪广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 606米 (7分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 606米 (7分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "st. george's mansions",
@@ -4263,7 +4263,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 何文田加多利山百年名门显赫地段\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 9 分钟即达港铁旺角東站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合MOKO 新世纪广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "步行约 724米 (8分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 724米 (8分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "傲玟",
@@ -4276,8 +4277,8 @@
     "is_coming_soon": false,
     "price_tier": "2000-5000",
     "total_units": 401,
-    "sale_units": 13,
-    "sold_units": 359,
+    "sale_units": 11,
+    "sold_units": 361,
     "priced_units": 0,
     "pending_units": 47,
     "basic_price_desc": "2房1800万左右、3房2500万起",
@@ -4552,8 +4553,8 @@
       },
       {
         "layout": "3 房",
-        "unsold_count": 39,
-        "on_sale_count": 13,
+        "unsold_count": 37,
+        "on_sale_count": 11,
         "sqft_range": "1251 - 1747 呎",
         "price_range": "招标"
       },
@@ -4583,20 +4584,20 @@
         "date": "2026-09-23"
       },
       {
-        "unit_name": "1座 7楼 C室",
-        "layout": "3 房",
-        "sqft": "1251 呎",
-        "price": "2727.2 万",
-        "unit_price": "$21,800/呎",
-        "date": "2026-10-06"
-      },
-      {
-        "unit_name": "5座 16楼 B室",
+        "unit_name": "5座 9楼 B室",
         "layout": "3 房",
         "sqft": "1398 呎",
-        "price": "3355.2 万",
-        "unit_price": "$24,000/呎",
-        "date": "2026-09-28"
+        "price": "3309.1 万",
+        "unit_price": "$23,670/呎",
+        "date": "2026-10-13"
+      },
+      {
+        "unit_name": "7座 5楼 B室",
+        "layout": "3 房",
+        "sqft": "1340 呎",
+        "price": "3084.7 万",
+        "unit_price": "$23,020/呎",
+        "date": "2026-10-13"
       },
       {
         "unit_name": "5座 19&20楼 A室",
@@ -4638,13 +4639,14 @@
     ],
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
-    "intro_url": "https://mp.weixin.qq.com/s/Amoxa5UYYut6zrXWHKof8A",
+    "intro_url": "https://mp.weixin.qq.com/s/E0bizhMBuJsa-EMeY8qBmw",
     "marketing_url": "https://drive.google.com/drive/folders/1Zb0Enqr7190sc47XLpyonqQQoRUNyzLF",
     "has_marketing_materials": true,
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 何文田核心传统豪宅区现楼大宅\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】步行至最近港铁土瓜灣站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1165米 (14分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1165米 (14分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "名钻",
@@ -4949,7 +4951,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 太子道西266号传统豪宅名门腹地\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合MOKO 新世纪广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁旺角東站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1030米 (12分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1030米 (12分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "天铸 (第2期)",
@@ -5173,7 +5176,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 何文田佛光街23号新鸿基巅峰豪宅标杆\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 6 分钟即达港铁何文田站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "步行约 459米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 459米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "太子道西233号",
@@ -5405,7 +5409,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙顶尖34名校网黄金护城河\n【轨交】步行约 9 分钟即达港铁旺角東站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合MOKO 新世纪广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 740米 (8分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 740米 (8分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "明寓",
@@ -5675,7 +5680,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 太子道西279号极低密名门大宅\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合MOKO 新世纪广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁旺角東站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1090米 (13分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1090米 (13分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "朗贤峰第IIA期",
@@ -5881,7 +5887,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁何文田站纯正铁路上盖绝版压轴大盘\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁何文田站正上盖 / 直通（专属高速客梯直通港铁站大堂）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈",
     "quantified_cons": "⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 386米 (4分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 386米 (4分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "朗贤峰第IIB期",
@@ -6135,7 +6142,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁何文田站纯正铁路上盖绝版压轴大盘\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁何文田站正上盖 / 直通（专属高速客梯直通港铁站大堂）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈",
     "quantified_cons": "⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 464米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 464米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "瑜一第IC期",
@@ -6341,7 +6349,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 纯正铁路上盖双线枢纽极速通达\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁何文田站正上盖 / 直通（专属高速客梯直通港铁站大堂）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈\n🔑【交付】准现楼阶段（短期即将收楼入伙，确定性高）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "步行约 368米 (4分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 368米 (4分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "瑜一．天海",
@@ -6485,20 +6494,28 @@
         "date": "2025-05-30"
       },
       {
-        "unit_name": "2A座 21楼 C室",
+        "unit_name": "2A座 18楼 C室",
         "layout": "2 房",
         "sqft": "593 呎",
-        "price": "1965.4 万",
-        "unit_price": "$33,143/呎",
-        "date": "2026-10-08"
+        "price": "1894.4 万",
+        "unit_price": "$31,946/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "2A座 17楼 C室",
+        "unit_name": "2A座 15楼 C室",
         "layout": "2 房",
         "sqft": "593 呎",
-        "price": "1926.5 万",
-        "unit_price": "$32,487/呎",
-        "date": "2026-10-05"
+        "price": "1866.3 万",
+        "unit_price": "$31,472/呎",
+        "date": "2026-10-09"
+      },
+      {
+        "unit_name": "1B座 29楼 A室",
+        "layout": "3 房",
+        "sqft": "959 呎",
+        "price": "3648 万",
+        "unit_price": "$38,040/呎",
+        "date": "2026-10-13"
       },
       {
         "unit_name": "2A座 8楼 A室",
@@ -6506,14 +6523,6 @@
         "sqft": "997 呎",
         "price": "3011 万",
         "unit_price": "$30,201/呎",
-        "date": "2026-10-05"
-      },
-      {
-        "unit_name": "2B座 25楼 A室",
-        "layout": "3 房",
-        "sqft": "957 呎",
-        "price": "3148.6 万",
-        "unit_price": "$32,901/呎",
         "date": "2026-10-05"
       },
       {
@@ -6551,7 +6560,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 纯正铁路上盖双线枢纽极速通达\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁何文田站正上盖 / 直通（专属高速客梯直通港铁站大堂）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "步行约 292米 (3分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 292米 (3分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "耀爵台",
@@ -6906,7 +6916,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 何文田加多利山老牌名门贵胄地脉\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁土瓜灣站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1115米 (13分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1115米 (13分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "芳菲",
@@ -7154,7 +7165,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 何文田胜利道核心地段精品现楼\n【轨交】步行约 7 分钟即达港铁旺角東站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合MOKO 新世纪广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 554米 (6分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 554米 (6分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "誉林",
@@ -7434,7 +7446,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 窝打老道93号/太子道西交界传统豪宅核心\n【轨交】步行约 12 分钟即达港铁旺角東站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合MOKO 新世纪广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 971米 (11分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 971米 (11分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "隆敍",
@@ -7792,7 +7805,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 加多利山与太子道西传统豪宅腹地\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合MOKO 新世纪广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁宋皇臺站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1045米 (12分钟) 直达港铁宋皇臺站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1045米 (12分钟) 直达港铁宋皇臺站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Double Coast I",
@@ -7805,8 +7819,8 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 361,
-    "sale_units": 13,
-    "sold_units": 348,
+    "sale_units": 12,
+    "sold_units": 349,
     "priced_units": 0,
     "pending_units": 0,
     "basic_price_desc": "",
@@ -8226,8 +8240,8 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 13,
-        "on_sale_count": 13,
+        "unsold_count": 12,
+        "on_sale_count": 12,
         "sqft_range": "440 - 477 呎",
         "price_range": "招标"
       }
@@ -8266,20 +8280,20 @@
         "date": "2026-03-02"
       },
       {
+        "unit_name": "3座 35楼 D室",
+        "layout": "2 房",
+        "sqft": "477 呎",
+        "price": "1036.9 万",
+        "unit_price": "$21,738/呎",
+        "date": "2026-10-12"
+      },
+      {
         "unit_name": "3座 35楼 A室",
         "layout": "2 房",
         "sqft": "439 呎",
         "price": "1003.2 万",
         "unit_price": "$22,852/呎",
         "date": "2026-09-30"
-      },
-      {
-        "unit_name": "3座 32楼 D室",
-        "layout": "2 房",
-        "sqft": "477 呎",
-        "price": "1031.8 万",
-        "unit_price": "$21,631/呎",
-        "date": "2026-09-27"
       },
       {
         "unit_name": "3座 36楼 B室",
@@ -8339,7 +8353,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区三面临海极佳水岸占位\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "Double Coast III",
@@ -8352,8 +8367,8 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 525,
-    "sale_units": 64,
-    "sold_units": 238,
+    "sale_units": 60,
+    "sold_units": 242,
     "priced_units": 5,
     "pending_units": 299,
     "basic_price_desc": "",
@@ -8784,15 +8799,15 @@
       },
       {
         "layout": "1 房",
-        "unsold_count": 85,
-        "on_sale_count": 28,
+        "unsold_count": 83,
+        "on_sale_count": 26,
         "sqft_range": "292 - 340 呎",
         "price_range": "577.3 万 - 732.7 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 170,
-        "on_sale_count": 27,
+        "unsold_count": 168,
+        "on_sale_count": 25,
         "sqft_range": "414 - 518 呎",
         "price_range": "招标"
       },
@@ -8806,68 +8821,68 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "1B座 38楼 G室",
+        "unit_name": "1B座 5楼 G室",
         "layout": "开放式",
-        "sqft": "249 呎",
-        "price": "521.6 万",
-        "unit_price": "$20,948/呎",
-        "date": "2026-10-06"
+        "sqft": "250 呎",
+        "price": "480.4 万",
+        "unit_price": "$19,216/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "1B座 37楼 G室",
+        "unit_name": "1B座 2楼 G室",
         "layout": "开放式",
-        "sqft": "249 呎",
-        "price": "519 万",
-        "unit_price": "$20,843/呎",
-        "date": "2026-10-03"
+        "sqft": "250 呎",
+        "price": "461.3 万",
+        "unit_price": "$18,452/呎",
+        "date": "2026-10-09"
       },
       {
-        "unit_name": "1B座 17楼 D室",
+        "unit_name": "1B座 23楼 D室",
         "layout": "1 房",
         "sqft": "311 呎",
-        "price": "618.7 万",
-        "unit_price": "$19,894/呎",
-        "date": "2026-10-04"
+        "price": "629.5 万",
+        "unit_price": "$20,241/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "1B座 30楼 H室",
+        "unit_name": "1B座 15楼 H室",
         "layout": "1 房",
         "sqft": "322 呎",
-        "price": "675.6 万",
-        "unit_price": "$20,981/呎",
-        "date": "2026-10-02"
+        "price": "649.1 万",
+        "unit_price": "$20,158/呎",
+        "date": "2026-10-10"
       },
       {
-        "unit_name": "1A座 5楼 E室",
+        "unit_name": "1A座 30楼 E室",
         "layout": "2 房",
         "sqft": "429 呎",
-        "price": "815.5 万",
-        "unit_price": "$19,009/呎",
-        "date": "2026-10-08"
+        "price": "895.3 万",
+        "unit_price": "$20,869/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "1A座 32楼 F室",
+        "unit_name": "1A座 5楼 F室",
         "layout": "2 房",
         "sqft": "430 呎",
-        "price": "874.8 万",
-        "unit_price": "$20,344/呎",
-        "date": "2026-10-05"
+        "price": "810.8 万",
+        "unit_price": "$18,856/呎",
+        "date": "2026-10-12"
       },
       {
-        "unit_name": "1A座 6楼 B室",
+        "unit_name": "1A座 33楼 B室",
         "layout": "3 房",
-        "sqft": "696 呎",
-        "price": "1693.6 万",
-        "unit_price": "$24,333/呎",
-        "date": "2026-10-05"
+        "sqft": "695 呎",
+        "price": "1812 万",
+        "unit_price": "$26,072/呎",
+        "date": "2026-10-09"
       },
       {
-        "unit_name": "1A座 26楼 A室",
+        "unit_name": "1A座 29楼 A室",
         "layout": "3 房",
-        "sqft": "641 呎",
-        "price": "1589.9 万",
-        "unit_price": "$24,803/呎",
-        "date": "2026-10-02"
+        "sqft": "640 呎",
+        "price": "1605.9 万",
+        "unit_price": "$25,092/呎",
+        "date": "2026-10-09"
       },
       {
         "unit_name": "1A座 39楼 A室",
@@ -8903,7 +8918,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区三面临海极佳水岸占位\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "Henley Park",
@@ -9175,7 +9191,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德城中心现楼发售即买即住即收租\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 9 分钟即达港铁啟德站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合启德体育园零售馆等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "步行约 5-6 分钟直达港铁启德站（屯马线），两站即达钻石山/宋皇台，畅达全港"
+    "commute_guidance": "步行约 5-6 分钟直达港铁启德站（屯马线），两站即达钻石山/宋皇台，畅达全港",
+    "is_sold_out": false
   },
   {
     "name": "Miami Quay I",
@@ -9188,8 +9205,8 @@
     "is_coming_soon": false,
     "price_tier": "1000-2000万",
     "total_units": 648,
-    "sale_units": 73,
-    "sold_units": 456,
+    "sale_units": 70,
+    "sold_units": 459,
     "priced_units": 46,
     "pending_units": 99,
     "basic_price_desc": "1000万左右",
@@ -9672,15 +9689,15 @@
       },
       {
         "layout": "1 房",
-        "unsold_count": 40,
-        "on_sale_count": 26,
+        "unsold_count": 38,
+        "on_sale_count": 24,
         "sqft_range": "280 - 329 呎",
         "price_range": "669.3 万 - 851.2 万 (含招标)"
       },
       {
         "layout": "2 房",
-        "unsold_count": 121,
-        "on_sale_count": 32,
+        "unsold_count": 120,
+        "on_sale_count": 31,
         "sqft_range": "398 - 487 呎",
         "price_range": "986.3 万 - 1056.9 万 (含招标)"
       },
@@ -9710,20 +9727,28 @@
         "date": "2026-09-17"
       },
       {
-        "unit_name": "3座 26楼 D室",
+        "unit_name": "3座 5楼 D室",
         "layout": "1 房",
         "sqft": "317 呎",
-        "price": "756.4 万",
-        "unit_price": "$23,861/呎",
-        "date": "2026-10-06"
+        "price": "712.4 万",
+        "unit_price": "$22,473/呎",
+        "date": "2026-10-10"
       },
       {
-        "unit_name": "3座 3楼 K室",
+        "unit_name": "3座 22楼 K室",
         "layout": "1 房",
         "sqft": "329 呎",
-        "price": "789.8 万",
-        "unit_price": "$24,006/呎",
-        "date": "2026-10-04"
+        "price": "833.6 万",
+        "unit_price": "$25,337/呎",
+        "date": "2026-10-09"
+      },
+      {
+        "unit_name": "2座 26楼 C室",
+        "layout": "2 房",
+        "sqft": "463 呎",
+        "price": "1063.1 万",
+        "unit_price": "$22,961/呎",
+        "date": "2026-10-11"
       },
       {
         "unit_name": "2座 6楼 J室",
@@ -9731,14 +9756,6 @@
         "sqft": "459 呎",
         "price": "995.2 万",
         "unit_price": "$21,682/呎",
-        "date": "2026-09-30"
-      },
-      {
-        "unit_name": "2座 6楼 A室",
-        "layout": "2 房",
-        "sqft": "487 呎",
-        "price": "1211.4 万",
-        "unit_price": "$24,875/呎",
         "date": "2026-09-30"
       },
       {
@@ -9792,7 +9809,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道公园前排临海游艇景观\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "Miami Quay II",
@@ -9805,8 +9823,8 @@
     "is_coming_soon": false,
     "price_tier": "1000-2000",
     "total_units": 571,
-    "sale_units": 11,
-    "sold_units": 117,
+    "sale_units": 10,
+    "sold_units": 118,
     "priced_units": 0,
     "pending_units": 443,
     "basic_price_desc": "1000万左右",
@@ -10303,8 +10321,8 @@
       },
       {
         "layout": "3 房",
-        "unsold_count": 7,
-        "on_sale_count": 7,
+        "unsold_count": 6,
+        "on_sale_count": 6,
         "sqft_range": "620 呎",
         "price_range": "招标"
       }
@@ -10359,20 +10377,20 @@
         "date": "2026-07-09"
       },
       {
+        "unit_name": "5座 2楼 A室",
+        "layout": "3 房",
+        "sqft": "620 呎",
+        "price": "1499.3 万",
+        "unit_price": "$24,182/呎",
+        "date": "2026-10-09"
+      },
+      {
         "unit_name": "5座 23楼 A室",
         "layout": "3 房",
         "sqft": "620 呎",
         "price": "1576.1 万",
         "unit_price": "$25,421/呎",
         "date": "2026-09-15"
-      },
-      {
-        "unit_name": "5座 22楼 A室",
-        "layout": "3 房",
-        "sqft": "620 呎",
-        "price": "1545.8 万",
-        "unit_price": "$24,932/呎",
-        "date": "2026-08-18"
       },
       {
         "unit_name": "6座 30楼 A室",
@@ -10409,7 +10427,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道公园前排临海游艇景观\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "Monaco Marine",
@@ -10652,7 +10671,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德城中心前排紧邻启德河与港铁站\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 8 分钟即达港铁啟德站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合双子汇等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "步行约 6-8 分钟直达港铁启德站（屯马线），立体路网贯穿港九"
+    "commute_guidance": "步行约 6-8 分钟直达港铁启德站（屯马线），立体路网贯穿港九",
+    "is_sold_out": false
   },
   {
     "name": "Monaco One",
@@ -10886,7 +10906,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德城中心前排紧邻启德河与港铁站\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 7 分钟即达港铁啟德站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合双子汇等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "步行约 6-8 分钟直达港铁启德站（屯马线），立体路网贯穿港九"
+    "commute_guidance": "步行约 6-8 分钟直达港铁启德站（屯马线），立体路网贯穿港九",
+    "is_sold_out": false
   },
   {
     "name": "Monaco 第1期",
@@ -11132,7 +11153,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德城中心前排紧邻启德河与港铁站\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 8 分钟即达港铁啟德站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合双子汇等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "步行约 6-8 分钟直达港铁启德站（屯马线），立体路网贯穿港九"
+    "commute_guidance": "步行约 6-8 分钟直达港铁启德站（屯马线），立体路网贯穿港九",
+    "is_sold_out": false
   },
   {
     "name": "The Henley I",
@@ -11348,20 +11370,20 @@
         "date": "2026-07-08"
       },
       {
+        "unit_name": "2座 9楼 A室",
+        "layout": "3 房",
+        "sqft": "890 呎",
+        "price": "2765.9 万",
+        "unit_price": "$31,077/呎",
+        "date": "2026-10-12"
+      },
+      {
         "unit_name": "2座 6楼 A室",
         "layout": "3 房",
         "sqft": "889 呎",
         "price": "2750.2 万",
         "unit_price": "$30,935/呎",
         "date": "2026-10-05"
-      },
-      {
-        "unit_name": "2座 9楼 A室",
-        "layout": "3 房",
-        "sqft": "889 呎",
-        "price": "2765.9 万",
-        "unit_price": "$31,112/呎",
-        "date": "2026-09-16"
       }
     ],
     "address": "沐泰街7號",
@@ -11392,7 +11414,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德城中心前排与双重视觉地标\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 7 分钟即达港铁啟德站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合双子汇等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "步行约 5-7 分钟直达港铁启德站（屯马线），快速连通中环金钟及九龙东双CBD核心"
+    "commute_guidance": "步行约 5-7 分钟直达港铁启德站（屯马线），快速连通中环金钟及九龙东双CBD核心",
+    "is_sold_out": false
   },
   {
     "name": "The Henley II",
@@ -11632,7 +11655,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德城中心前排与双重视觉地标\n【轨交】步行约 7 分钟即达港铁啟德站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合双子汇等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 5-7 分钟直达港铁启德站（屯马线），快速连通中环金钟及九龙东双CBD核心"
+    "commute_guidance": "步行约 5-7 分钟直达港铁启德站（屯马线），快速连通中环金钟及九龙东双CBD核心",
+    "is_sold_out": false
   },
   {
     "name": "The Henley III",
@@ -11896,7 +11920,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德城中心前排与双重视觉地标\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 7 分钟即达港铁啟德站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合双子汇等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "步行约 5-7 分钟直达港铁启德站（屯马线），快速连通中环金钟及九龙东双CBD核心"
+    "commute_guidance": "步行约 5-7 分钟直达港铁启德站（屯马线），快速连通中环金钟及九龙东双CBD核心",
+    "is_sold_out": false
   },
   {
     "name": "启德海湾 1",
@@ -12430,7 +12455,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区核心海滨大型旗舰热销盘\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "启德海湾 2",
@@ -12443,8 +12469,8 @@
     "is_coming_soon": false,
     "price_tier": "1000-2000",
     "total_units": 1121,
-    "sale_units": 127,
-    "sold_units": 462,
+    "sale_units": 124,
+    "sold_units": 465,
     "priced_units": 0,
     "pending_units": 715,
     "basic_price_desc": "1200万",
@@ -12795,8 +12821,8 @@
       },
       {
         "layout": "1 房",
-        "unsold_count": 236,
-        "on_sale_count": 31,
+        "unsold_count": 234,
+        "on_sale_count": 29,
         "sqft_range": "278 - 313 呎",
         "price_range": "591.8 万 - 823.5 万"
       },
@@ -12809,44 +12835,52 @@
       },
       {
         "layout": "3 房",
-        "unsold_count": 47,
-        "on_sale_count": 7,
+        "unsold_count": 46,
+        "on_sale_count": 6,
         "sqft_range": "713 - 771 呎",
         "price_range": "1727 万 - 2929.8 万 (含招标)"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "1A座 1楼 H室",
+        "unit_name": "1A座 8楼 H室",
         "layout": "1 房",
         "sqft": "305 呎",
-        "price": "560 万",
-        "unit_price": "$18,361/呎",
-        "date": "2026-10-08"
+        "price": "579.8 万",
+        "unit_price": "$19,010/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "1A座 11楼 H室",
+        "unit_name": "1A座 11楼 G室",
         "layout": "1 房",
-        "sqft": "305 呎",
+        "sqft": "306 呎",
         "price": "588.6 万",
-        "unit_price": "$19,298/呎",
-        "date": "2026-10-07"
+        "unit_price": "$19,235/呎",
+        "date": "2026-10-12"
       },
       {
-        "unit_name": "1A座 1楼 E室",
+        "unit_name": "1A座 18楼 M室",
         "layout": "2 房",
-        "sqft": "437 呎",
-        "price": "917.8 万",
-        "unit_price": "$21,002/呎",
-        "date": "2026-10-08"
+        "sqft": "481 呎",
+        "price": "1080 万",
+        "unit_price": "$22,453/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "1C座 10楼 D室",
+        "unit_name": "1A座 1楼 C室",
         "layout": "2 房",
-        "sqft": "432 呎",
-        "price": "968.8 万",
-        "unit_price": "$22,426/呎",
-        "date": "2026-10-08"
+        "sqft": "498 呎",
+        "price": "996.8 万",
+        "unit_price": "$20,016/呎",
+        "date": "2026-10-13"
+      },
+      {
+        "unit_name": "1A座 1楼 A室",
+        "layout": "3 房",
+        "sqft": "771 呎",
+        "price": "1696.8 万",
+        "unit_price": "$22,008/呎",
+        "date": "2026-10-10"
       },
       {
         "unit_name": "1A座 17楼 A室",
@@ -12855,14 +12889,6 @@
         "price": "1855 万",
         "unit_price": "$24,060/呎",
         "date": "2026-10-08"
-      },
-      {
-        "unit_name": "1A座 5楼 A室",
-        "layout": "3 房",
-        "sqft": "771 呎",
-        "price": "1728.8 万",
-        "unit_price": "$22,423/呎",
-        "date": "2026-10-07"
       }
     ],
     "address": "承豐道15號",
@@ -12890,7 +12916,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区核心海滨大型旗舰热销盘\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】准现楼阶段（短期即将收楼入伙，确定性高）",
     "quantified_cons": "【交通】建议接驳小巴至港铁啟德站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "天泷",
@@ -12903,8 +12930,8 @@
     "is_coming_soon": false,
     "price_tier": "5000-10000",
     "total_units": 566,
-    "sale_units": 34,
-    "sold_units": 316,
+    "sale_units": 32,
+    "sold_units": 318,
     "priced_units": 0,
     "pending_units": 214,
     "basic_price_desc": "最低4000万左右",
@@ -13366,8 +13393,8 @@
       },
       {
         "layout": "3 房",
-        "unsold_count": 31,
-        "on_sale_count": 12,
+        "unsold_count": 29,
+        "on_sale_count": 10,
         "sqft_range": "920 - 1384 呎",
         "price_range": "招标"
       },
@@ -13381,20 +13408,20 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "6座 23楼 B室",
+        "unit_name": "6座 28楼 B室",
         "layout": "3 房",
-        "sqft": "1027 呎",
-        "price": "4378 万",
-        "unit_price": "$42,629/呎",
-        "date": "2026-09-29"
+        "sqft": "1102 呎",
+        "price": "4582 万",
+        "unit_price": "$41,579/呎",
+        "date": "2026-10-12"
       },
       {
-        "unit_name": "1座 33楼 C室",
+        "unit_name": "6座 28楼 A室",
         "layout": "3 房",
-        "sqft": "590 呎",
-        "price": "1638.3 万",
-        "unit_price": "$27,768/呎",
-        "date": "2026-09-07"
+        "sqft": "1085 呎",
+        "price": "4533 万",
+        "unit_price": "$41,779/呎",
+        "date": "2026-10-12"
       },
       {
         "unit_name": "8座 16楼 A室",
@@ -13444,7 +13471,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区龙头前排绝对一线临海地王\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "天玺．天",
@@ -13705,7 +13733,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德唯一全天候无缝直达地铁新盘\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁启德站正上盖 / 直通（全天候地下街直通启德站与AIRSIDE）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】下楼直达 AIRSIDE 与双子汇地标级商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "港铁启德站无缝上盖核心枢纽，地下街直通车站及超甲级商厦AIRSIDE/双子汇；自驾经中九龙干线极速通达全港"
+    "commute_guidance": "港铁启德站无缝上盖核心枢纽，地下街直通车站及超甲级商厦AIRSIDE/双子汇；自驾经中九龙干线极速通达全港",
+    "is_sold_out": false
   },
   {
     "name": "天玺．天第2期",
@@ -13884,20 +13913,20 @@
         "date": "2025-12-23"
       },
       {
+        "unit_name": "2座 5楼 A2室",
+        "layout": "2 房",
+        "sqft": "446 呎",
+        "price": "1445.8 万",
+        "unit_price": "$32,417/呎",
+        "date": "2026-10-09"
+      },
+      {
         "unit_name": "2座 11楼 A2室",
         "layout": "2 房",
         "sqft": "446 呎",
         "price": "1552.4 万",
         "unit_price": "$34,807/呎",
         "date": "2026-10-08"
-      },
-      {
-        "unit_name": "1座 18楼 A5室",
-        "layout": "2 房",
-        "sqft": "612 呎",
-        "price": "2229.6 万",
-        "unit_price": "$36,431/呎",
-        "date": "2026-10-06"
       },
       {
         "unit_name": "1座 5楼 B8室",
@@ -13916,20 +13945,20 @@
         "date": "2026-01-26"
       },
       {
+        "unit_name": "1座 19楼 A1室",
+        "layout": "4 房",
+        "sqft": "908 呎",
+        "price": "3702.2 万",
+        "unit_price": "$40,773/呎",
+        "date": "2026-10-09"
+      },
+      {
         "unit_name": "2座 41楼 A室",
         "layout": "4 房",
         "sqft": "1985 呎",
         "price": "9305.8 万",
         "unit_price": "$46,881/呎",
         "date": "2026-10-08"
-      },
-      {
-        "unit_name": "2座 42楼 D室",
-        "layout": "4 房",
-        "sqft": "1365 呎",
-        "price": "5345 万",
-        "unit_price": "$39,158/呎",
-        "date": "2026-09-29"
       }
     ],
     "address": "協調道10號",
@@ -13956,7 +13985,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德唯一全天候无缝直达地铁新盘\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁启德站正上盖 / 直通（全天候地下街直通启德站与AIRSIDE）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】下楼直达 AIRSIDE 与双子汇地标级商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "港铁启德站无缝上盖核心枢纽，地下街直通车站及超甲级商厦AIRSIDE/双子汇；自驾经中九龙干线极速通达全港"
+    "commute_guidance": "港铁启德站无缝上盖核心枢纽，地下街直通车站及超甲级商厦AIRSIDE/双子汇；自驾经中九龙干线极速通达全港",
+    "is_sold_out": false
   },
   {
     "name": "天玺．海第1期",
@@ -14472,20 +14502,20 @@
     ],
     "recent_transactions": [
       {
+        "unit_name": "1座 5楼 A室",
+        "layout": "4 房",
+        "sqft": "2093 呎",
+        "price": "1.19 亿",
+        "unit_price": "$56,885/呎",
+        "date": "2026-10-07"
+      },
+      {
         "unit_name": "1座 22楼 A室",
         "layout": "4 房",
         "sqft": "2144 呎",
         "price": "1.70 亿",
         "unit_price": "$79,073/呎",
         "date": "2026-09-21"
-      },
-      {
-        "unit_name": "1座 3楼 A室",
-        "layout": "4 房",
-        "sqft": "2093 呎",
-        "price": "1.17 亿",
-        "unit_price": "$55,805/呎",
-        "date": "2026-09-14"
       }
     ],
     "address": "承豐道26號",
@@ -14517,7 +14547,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区最前排半岛位龙头地王\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "天玺．海第2A期",
@@ -15042,7 +15073,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 启德跑道区最前排半岛位龙头地王\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "天玺．海第2B期",
@@ -15575,7 +15607,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区最前排半岛位龙头地王\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "柏蔚森 I",
@@ -15588,8 +15621,8 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 291,
-    "sale_units": 20,
-    "sold_units": 271,
+    "sale_units": 19,
+    "sold_units": 272,
     "priced_units": 0,
     "pending_units": 0,
     "basic_price_desc": "",
@@ -16045,8 +16078,8 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 11,
-        "on_sale_count": 11,
+        "unsold_count": 10,
+        "on_sale_count": 10,
         "sqft_range": "374 - 392 呎",
         "price_range": "招标"
       },
@@ -16076,20 +16109,20 @@
         "date": "2024-08-13"
       },
       {
+        "unit_name": "6座 6楼 A室",
+        "layout": "2 房",
+        "sqft": "385 呎",
+        "price": "943.4 万",
+        "unit_price": "$24,504/呎",
+        "date": "2026-10-09"
+      },
+      {
         "unit_name": "5座 23楼 F室",
         "layout": "2 房",
         "sqft": "400 呎",
         "price": "871.2 万",
         "unit_price": "$21,780/呎",
         "date": "2026-09-15"
-      },
-      {
-        "unit_name": "5座 26楼 E室",
-        "layout": "2 房",
-        "sqft": "391 呎",
-        "price": "866.4 万",
-        "unit_price": "$22,159/呎",
-        "date": "2026-09-04"
       },
       {
         "unit_name": "5座 29楼 C室",
@@ -16132,7 +16165,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区三面环海绝佳占位\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "柏蔚森 II",
@@ -16657,7 +16691,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区三面环海绝佳占位\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "柏蔚森 III",
@@ -17200,7 +17235,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区三面环海绝佳占位\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "沄璟",
@@ -17815,7 +17851,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区一线临海龙头\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "维港1号",
@@ -18293,7 +18330,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区首发大型地标住宅承丰道21号\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "维港．双钻",
@@ -18815,7 +18853,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区核心承丰里2号双子地标\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁啟德站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "维港．湾畔第1A期",
@@ -18828,8 +18867,8 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 635,
-    "sale_units": 54,
-    "sold_units": 179,
+    "sale_units": 48,
+    "sold_units": 185,
     "priced_units": 17,
     "pending_units": 433,
     "basic_price_desc": "",
@@ -19352,8 +19391,8 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 240,
-        "on_sale_count": 49,
+        "unsold_count": 234,
+        "on_sale_count": 43,
         "sqft_range": "426 - 548 呎",
         "price_range": "1185.6 万 - 1594.6 万 (含招标)"
       },
@@ -19390,20 +19429,20 @@
         "date": "2026-07-16"
       },
       {
-        "unit_name": "1A座 20楼 E室",
+        "unit_name": "1C座 5楼 A室",
         "layout": "2 房",
-        "sqft": "453 呎",
-        "price": "1218.3 万",
-        "unit_price": "$26,894/呎",
-        "date": "2026-10-06"
+        "sqft": "451 呎",
+        "price": "1218.6 万",
+        "unit_price": "$27,020/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "1C座 12楼 B室",
+        "unit_name": "1C座 19楼 B室",
         "layout": "2 房",
         "sqft": "489 呎",
-        "price": "1445.5 万",
-        "unit_price": "$29,560/呎",
-        "date": "2026-10-06"
+        "price": "1489.7 万",
+        "unit_price": "$30,464/呎",
+        "date": "2026-10-12"
       },
       {
         "unit_name": "1A座 23楼 B室",
@@ -19448,7 +19487,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区前排龙头一线临海大宅\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "维港．湾畔第1B期",
@@ -20001,7 +20041,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区前排龙头一线临海大宅\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "维港．湾畔第2B期",
@@ -20492,20 +20533,20 @@
         "date": "2026-10-05"
       },
       {
+        "unit_name": "5B座 5楼 D室",
+        "layout": "3 房",
+        "sqft": "662 呎",
+        "price": "1797.5 万",
+        "unit_price": "$27,153/呎",
+        "date": "2026-10-09"
+      },
+      {
         "unit_name": "5B座 29楼 B室",
         "layout": "3 房",
         "sqft": "667 呎",
         "price": "2582.8 万",
         "unit_price": "$38,723/呎",
         "date": "2026-10-02"
-      },
-      {
-        "unit_name": "5B座 15楼 D室",
-        "layout": "3 房",
-        "sqft": "662 呎",
-        "price": "1918.9 万",
-        "unit_price": "$28,986/呎",
-        "date": "2026-09-23"
       }
     ],
     "address": "承豐道23號",
@@ -20533,7 +20574,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区前排龙头一线临海大宅\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "本木",
@@ -20748,7 +20790,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙佐敦德成街2号闹中取静绝佳地段\n【轨交】步行约 2 分钟即达港铁佐敦站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合美丽华广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属31校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 163米 (2分钟) 直达港铁佐敦站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 163米 (2分钟) 直达港铁佐敦站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "The Boundary",
@@ -20756,13 +20799,13 @@
     "district": "旺角",
     "lat": 22.32606,
     "lng": 114.16133,
-    "sell_status": "coming_soon",
-    "sell_status_cn": "即將發售",
+    "sell_status": "on_sale",
+    "sell_status_cn": "出售中",
     "is_coming_soon": true,
     "price_tier": "",
     "total_units": 58,
-    "sale_units": 52,
-    "sold_units": 6,
+    "sale_units": 44,
+    "sold_units": 14,
     "priced_units": 0,
     "pending_units": 58,
     "basic_price_desc": "",
@@ -21054,35 +21097,43 @@
     "sales_control_summary": [
       {
         "layout": "开放式",
-        "unsold_count": 33,
-        "on_sale_count": 33,
+        "unsold_count": 26,
+        "on_sale_count": 26,
         "sqft_range": "187 - 213 呎",
         "price_range": "招标"
       },
       {
         "layout": "1 房",
-        "unsold_count": 19,
-        "on_sale_count": 19,
+        "unsold_count": 18,
+        "on_sale_count": 18,
         "sqft_range": "240 - 261 呎",
         "price_range": "招标"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "The Boundary座 17楼 C室",
+        "unit_name": "The Boundary座 9楼 C室",
         "layout": "开放式",
         "sqft": "210 呎",
-        "price": "394 万",
-        "unit_price": "$18,762/呎",
-        "date": "2026-10-04"
+        "price": "352 万",
+        "unit_price": "$16,762/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "The Boundary座 5楼 A室",
+        "unit_name": "The Boundary座 6楼 C室",
         "layout": "开放式",
-        "sqft": "213 呎",
-        "price": "334 万",
-        "unit_price": "$15,681/呎",
-        "date": "2026-10-03"
+        "sqft": "210 呎",
+        "price": "333 万",
+        "unit_price": "$15,857/呎",
+        "date": "2026-10-13"
+      },
+      {
+        "unit_name": "The Boundary座 6楼 B室",
+        "layout": "1 房",
+        "sqft": "260 呎",
+        "price": "427 万",
+        "unit_price": "$16,423/呎",
+        "date": "2026-10-12"
       },
       {
         "unit_name": "The Boundary座 9楼 B室",
@@ -21116,7 +21167,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙繁华腹地界限街交通枢纽\n【轨交】步行约 10 分钟即达港铁深水埗站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合西九龙中心等大型地标商圈\n🔑【交付】准现楼阶段（短期即将收楼入伙，确定性高）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属32校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 836米 (10分钟) 直达港铁深水埗站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 836米 (10分钟) 直达港铁深水埗站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Upper Prince",
@@ -21325,7 +21377,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 太子道西核心地脉步入双铁立体枢纽\n【轨交】步行约 4 分钟即达港铁太子站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合T.O.P等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属32校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 345米 (4分钟) 直达港铁太子站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 345米 (4分钟) 直达港铁太子站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "利奥坊．凯岸",
@@ -21671,7 +21724,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 西九龙核心大角咀大型艺文商业街区\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 11 分钟即达港铁奧運站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合奥海城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属32校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 909米 (10分钟) 直达港铁奧運站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 909米 (10分钟) 直达港铁奧運站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "利奥坊．曦岸",
@@ -22073,7 +22127,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 西九龙核心大角咀大型艺文商业街区\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 11 分钟即达港铁奧運站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合奥海城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属32校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 909米 (10分钟) 直达港铁奧運站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 909米 (10分钟) 直达港铁奧運站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "映居",
@@ -22416,7 +22471,7 @@
         "sqft": "345 呎",
         "price": "859.1 万",
         "unit_price": "$24,902/呎",
-        "date": "2026-09-12"
+        "date": "2026-10-09"
       },
       {
         "unit_name": "映居座 26楼 D室",
@@ -22450,7 +22505,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 西九龙大角咀核心生活圈交通极速通达\n【轨交】步行约 10 分钟即达港铁旺角站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合奥海城等大型地标商圈\n🔑【交付】准现楼阶段（短期即将收楼入伙，确定性高）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属32校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 819米 (9分钟) 直达港铁旺角站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 819米 (9分钟) 直达港铁旺角站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "原舍",
@@ -22749,7 +22805,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙油麻地核心商圈全新精品住宅\n【轨交】步行约 6 分钟即达港铁油麻地站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合朗豪坊等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属31校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 509米 (6分钟) 直达港铁油麻地站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 509米 (6分钟) 直达港铁油麻地站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Beacon Peak 第1期",
@@ -22762,8 +22819,8 @@
     "is_coming_soon": false,
     "price_tier": "2000-5000万",
     "total_units": 332,
-    "sale_units": 23,
-    "sold_units": 135,
+    "sale_units": 22,
+    "sold_units": 136,
     "priced_units": 14,
     "pending_units": 183,
     "basic_price_desc": "2800万",
@@ -23307,8 +23364,8 @@
     "sales_control_summary": [
       {
         "layout": "3 房",
-        "unsold_count": 93,
-        "on_sale_count": 23,
+        "unsold_count": 92,
+        "on_sale_count": 22,
         "sqft_range": "748 - 1395 呎",
         "price_range": "1839.5 万 - 3600.7 万 (含招标)"
       },
@@ -23338,20 +23395,20 @@
         "date": "2026-06-29"
       },
       {
+        "unit_name": "5座 15楼 C室",
+        "layout": "3 房",
+        "sqft": "961 呎",
+        "price": "2650.6 万",
+        "unit_price": "$27,582/呎",
+        "date": "2026-10-12"
+      },
+      {
         "unit_name": "2座 18楼 C室",
         "layout": "3 房",
         "sqft": "1254 呎",
         "price": "3233.9 万",
         "unit_price": "$25,789/呎",
         "date": "2026-09-09"
-      },
-      {
-        "unit_name": "2座 15楼 C室",
-        "layout": "3 房",
-        "sqft": "1252 呎",
-        "price": "3011.9 万",
-        "unit_price": "$24,057/呎",
-        "date": "2026-08-25"
       },
       {
         "unit_name": "6座 15楼 B室",
@@ -23398,7 +23455,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 九龙半山延坪道依山临海豪宅新地标\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】步行至最近港铁長沙灣站超12分钟，建议接驳小巴至地铁\n【校网】非传统四大名校网（所属40校网，升学建议搭配优质私立或国际学校）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "步行约 2071米 (24分钟) 直达港铁長沙灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 2071米 (24分钟) 直达港铁長沙灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "滶蕴",
@@ -23800,7 +23858,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 九龙塘又一村低密传世尊贵名邸\n️【商业】邻近/周边1.5km聚合又一城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁九龍塘站超12分钟，建议接驳小巴至地铁\n【校网】非传统四大名校网（所属40校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 1019米 (12分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1019米 (12分钟) 直达港铁九龍塘站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "The Haddon",
@@ -24124,7 +24183,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 红磡核心三轨枢纽立体交通网络\n【轨交】步行约 7 分钟即达港铁何文田站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合黄埔天地等大型地标商圈\n🔑【交付】准现楼阶段（短期即将收楼入伙，确定性高）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属35校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 550米 (6分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 550米 (6分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "必嘉坊．曦汇",
@@ -24137,8 +24197,8 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 324,
-    "sale_units": 29,
-    "sold_units": 295,
+    "sale_units": 28,
+    "sold_units": 296,
     "priced_units": 0,
     "pending_units": 0,
     "basic_price_desc": "",
@@ -24326,8 +24386,8 @@
     "sales_control_summary": [
       {
         "layout": "开放式",
-        "unsold_count": 13,
-        "on_sale_count": 13,
+        "unsold_count": 12,
+        "on_sale_count": 12,
         "sqft_range": "189 - 218 呎",
         "price_range": "453.6 万 - 491.5 万"
       },
@@ -24348,20 +24408,28 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "必嘉坊．曦汇座 23楼 C室",
-        "layout": "开放式",
-        "sqft": "202 呎",
-        "price": "465.1 万",
-        "unit_price": "$23,025/呎",
-        "date": "2026-10-05"
-      },
-      {
-        "unit_name": "必嘉坊．曦汇座 11楼 F室",
+        "unit_name": "必嘉坊．曦汇座 27楼 F室",
         "layout": "开放式",
         "sqft": "217 呎",
-        "price": "465.1 万",
-        "unit_price": "$21,433/呎",
-        "date": "2026-10-05"
+        "price": "492.9 万",
+        "unit_price": "$22,716/呎",
+        "date": "2026-10-13"
+      },
+      {
+        "unit_name": "必嘉坊．曦汇座 25楼 C室",
+        "layout": "开放式",
+        "sqft": "202 呎",
+        "price": "466.5 万",
+        "unit_price": "$23,094/呎",
+        "date": "2026-10-12"
+      },
+      {
+        "unit_name": "必嘉坊．曦汇座 5楼 M室",
+        "layout": "1 房",
+        "sqft": "213 呎",
+        "price": "677.3 万",
+        "unit_price": "$31,800/呎",
+        "date": "2026-10-12"
       },
       {
         "unit_name": "必嘉坊．曦汇座 16楼 G室",
@@ -24370,14 +24438,6 @@
         "price": "725.4 万",
         "unit_price": "$21,398/呎",
         "date": "2026-09-30"
-      },
-      {
-        "unit_name": "必嘉坊．曦汇座 5楼 M室",
-        "layout": "1 房",
-        "sqft": "213 呎",
-        "price": "677.3 万",
-        "unit_price": "$31,800/呎",
-        "date": "2026-09-22"
       },
       {
         "unit_name": "必嘉坊．曦汇座 6楼 H室",
@@ -24428,7 +24488,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙核心百万呎巨无霸都会重建\n【轨交】步行约 5 分钟即达港铁何文田站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合黄埔天地等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属35校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 414米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 414米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "必嘉坊．迎汇",
@@ -24756,7 +24817,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙核心百万呎巨无霸都会重建\n【轨交】步行约 6 分钟即达港铁何文田站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合黄埔天地等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属35校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 471米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 471米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "悦麓",
@@ -25012,7 +25074,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙土瓜湾高山道公园旁清幽地段\n【轨交】步行约 6 分钟即达港铁土瓜灣站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈\n🔑【交付】准现楼阶段（短期即将收楼入伙，确定性高）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属35校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 536米 (6分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 536米 (6分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "首岸第1期",
@@ -25318,7 +25381,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙红磡/土瓜湾大型千伙综合体地标\n【轨交】步行约 9 分钟即达港铁土瓜灣站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属35校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 724米 (8分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 724米 (8分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "首岸第2期",
@@ -25326,13 +25390,13 @@
     "district": "红磡",
     "lat": 22.31262,
     "lng": 114.18855,
-    "sell_status": "coming_soon",
-    "sell_status_cn": "即將發售",
+    "sell_status": "on_sale",
+    "sell_status_cn": "出售中",
     "is_coming_soon": true,
     "price_tier": "",
     "total_units": 384,
-    "sale_units": 0,
-    "sold_units": 0,
+    "sale_units": 62,
+    "sold_units": 18,
     "priced_units": 0,
     "pending_units": 384,
     "basic_price_desc": "",
@@ -25560,20 +25624,53 @@
     "sales_control_summary": [
       {
         "layout": "2 房",
-        "unsold_count": 336,
-        "on_sale_count": 0,
+        "unsold_count": 322,
+        "on_sale_count": 53,
         "sqft_range": "339 - 432 呎",
         "price_range": "658.9 万 - 959.8 万"
       },
       {
         "layout": "3 房",
-        "unsold_count": 48,
-        "on_sale_count": 0,
+        "unsold_count": 44,
+        "on_sale_count": 9,
         "sqft_range": "622 - 661 呎",
         "price_range": "1402.7 万 - 1559.1 万"
       }
     ],
-    "recent_transactions": [],
+    "recent_transactions": [
+      {
+        "unit_name": "3座 26楼 J室",
+        "layout": "2 房",
+        "sqft": "339 呎",
+        "price": "764.2 万",
+        "unit_price": "$22,543/呎",
+        "date": "2026-10-12"
+      },
+      {
+        "unit_name": "3座 16楼 C室",
+        "layout": "2 房",
+        "sqft": "432 呎",
+        "price": "952.1 万",
+        "unit_price": "$22,040/呎",
+        "date": "2026-10-12"
+      },
+      {
+        "unit_name": "3座 23楼 A室",
+        "layout": "3 房",
+        "sqft": "660 呎",
+        "price": "1534.4 万",
+        "unit_price": "$23,249/呎",
+        "date": "2026-10-12"
+      },
+      {
+        "unit_name": "3座 21楼 A室",
+        "layout": "3 房",
+        "sqft": "660 呎",
+        "price": "1517.8 万",
+        "unit_price": "$22,997/呎",
+        "date": "2026-10-12"
+      }
+    ],
     "address": "庇利街1號",
     "main_area": "九龙中（九龙城/何文田）",
     "micro_district": "红磡及黄埔",
@@ -25598,7 +25695,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙红磡/土瓜湾大型千伙综合体地标\n【轨交】步行约 9 分钟即达港铁土瓜灣站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合黄埔天地等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属35校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 724米 (8分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 724米 (8分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "首岸第3期",
@@ -25903,7 +26001,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙红磡/土瓜湾大型千伙综合体地标\n【轨交】步行约 8 分钟即达港铁土瓜灣站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属35校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 648米 (7分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 648米 (7分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "首岸第4期",
@@ -25916,8 +26015,8 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 264,
-    "sale_units": 31,
-    "sold_units": 135,
+    "sale_units": 0,
+    "sold_units": 136,
     "priced_units": 7,
     "pending_units": 124,
     "basic_price_desc": "",
@@ -26118,34 +26217,42 @@
       {
         "layout": "2 房",
         "unsold_count": 110,
-        "on_sale_count": 26,
+        "on_sale_count": 0,
         "sqft_range": "338 - 469 呎",
         "price_range": "678.2 万 - 1008.9 万"
       },
       {
         "layout": "3 房",
-        "unsold_count": 19,
-        "on_sale_count": 5,
+        "unsold_count": 18,
+        "on_sale_count": 0,
         "sqft_range": "585 呎",
         "price_range": "1183.2 万 - 1351.6 万"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "5座 3楼 F室",
+        "unit_name": "5座 23楼 D室",
         "layout": "2 房",
-        "sqft": "341 呎",
-        "price": "683.4 万",
-        "unit_price": "$20,041/呎",
-        "date": "2026-10-07"
+        "sqft": "342 呎",
+        "price": "760.2 万",
+        "unit_price": "$22,228/呎",
+        "date": "2026-10-09"
       },
       {
-        "unit_name": "5座 20楼 M室",
+        "unit_name": "5座 23楼 C室",
         "layout": "2 房",
-        "sqft": "469 呎",
-        "price": "1026.7 万",
-        "unit_price": "$21,890/呎",
-        "date": "2026-10-05"
+        "sqft": "344 呎",
+        "price": "763.9 万",
+        "unit_price": "$22,205/呎",
+        "date": "2026-10-09"
+      },
+      {
+        "unit_name": "5座 26楼 A室",
+        "layout": "3 房",
+        "sqft": "585 呎",
+        "price": "1407.2 万",
+        "unit_price": "$24,054/呎",
+        "date": "2026-10-11"
       },
       {
         "unit_name": "5座 11楼 A室",
@@ -26154,14 +26261,6 @@
         "price": "1229.1 万",
         "unit_price": "$21,011/呎",
         "date": "2026-09-17"
-      },
-      {
-        "unit_name": "5座 20楼 A室",
-        "layout": "3 房",
-        "sqft": "585 呎",
-        "price": "1269.7 万",
-        "unit_price": "$21,705/呎",
-        "date": "2026-07-13"
       }
     ],
     "address": "庇利街1號",
@@ -26188,7 +26287,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙红磡/土瓜湾大型千伙综合体地标\n【轨交】步行约 7 分钟即达港铁土瓜灣站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属35校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 598米 (7分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 598米 (7分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "首汇",
@@ -26201,8 +26301,8 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 241,
-    "sale_units": 17,
-    "sold_units": 220,
+    "sale_units": 16,
+    "sold_units": 221,
     "priced_units": 2,
     "pending_units": 1,
     "basic_price_desc": "",
@@ -26438,8 +26538,8 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 5,
-        "on_sale_count": 5,
+        "unsold_count": 4,
+        "on_sale_count": 4,
         "sqft_range": "228 - 274 呎",
         "price_range": "招标"
       },
@@ -26467,20 +26567,20 @@
     ],
     "recent_transactions": [
       {
+        "unit_name": "首汇座 5楼 F室",
+        "layout": "1 房",
+        "sqft": "229 呎",
+        "price": "664.1 万",
+        "unit_price": "$29,000/呎",
+        "date": "2026-10-12"
+      },
+      {
         "unit_name": "首汇座 17楼 G室",
         "layout": "1 房",
         "sqft": "274 呎",
         "price": "658.4 万",
         "unit_price": "$24,031/呎",
         "date": "2026-05-11"
-      },
-      {
-        "unit_name": "首汇座 22楼 G室",
-        "layout": "1 房",
-        "sqft": "274 呎",
-        "price": "681.8 万",
-        "unit_price": "$24,885/呎",
-        "date": "2026-04-28"
       },
       {
         "unit_name": "首汇座 29楼 J室",
@@ -26555,7 +26655,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 红磡核心枢纽珍罕999年期地契\n【轨交】步行约 7 分钟即达港铁何文田站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合黄埔天地等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属35校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 599米 (7分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 599米 (7分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "叡璟I",
@@ -26563,8 +26664,8 @@
     "district": "西南九龙",
     "lat": 22.33153,
     "lng": 114.150236,
-    "sell_status": "coming_soon",
-    "sell_status_cn": "即將發售",
+    "sell_status": "on_sale",
+    "sell_status_cn": "出售中",
     "is_coming_soon": true,
     "price_tier": "",
     "total_units": 507,
@@ -26883,19 +26984,19 @@
         "date": "2026-09-30"
       },
       {
+        "unit_name": "3A座 38楼 C室",
+        "layout": "3 房",
+        "sqft": "559 呎",
+        "price": "1561.6 万",
+        "unit_price": "$27,936/呎",
+        "date": "2026-10-09"
+      },
+      {
         "unit_name": "3A座 41楼 D室",
         "layout": "3 房",
         "sqft": "676 呎",
         "price": "1730.6 万",
         "unit_price": "$25,600/呎",
-        "date": "2026-10-02"
-      },
-      {
-        "unit_name": "3A座 7楼 C室",
-        "layout": "3 房",
-        "sqft": "558 呎",
-        "price": "1168.2 万",
-        "unit_price": "$20,935/呎",
         "date": "2026-10-02"
       }
     ],
@@ -26924,7 +27025,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 西南九龙绝版巨无霸大型发展区\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 10 分钟即达港铁荔枝角站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合V Walk等大型地标商圈",
     "quantified_cons": "【校网】非传统四大名校网（所属40校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 874米 (10分钟) 直达港铁荔枝角站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 874米 (10分钟) 直达港铁荔枝角站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "汇玺III",
@@ -27183,7 +27285,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁南昌站纯正铁路上盖双线枢纽\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁南昌站正上盖 / 直通（基座 V Walk 直通南昌站双铁枢纽）\n️【商业】基座直连近 30 万呎 V Walk 大型综合商场\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属40校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "港铁南昌站正上盖物业（东涌线与屯马线双线交汇），一站直达西九龙高铁站及香港站（中环），极速贯通全港核心"
+    "commute_guidance": "港铁南昌站正上盖物业（东涌线与屯马线双线交汇），一站直达西九龙高铁站及香港站（中环），极速贯通全港核心",
+    "is_sold_out": false
   },
   {
     "name": "维港汇 III",
@@ -27586,11 +27689,12 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1kESOSr4A55-PY3JZAXIXMnGL5sB3Uxkf",
-    "has_marketing_materials": false,
+    "has_marketing_materials": true,
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 西南九龙绝版一线临海地王现楼\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n️【商业】邻近/周边1.5km聚合V Walk等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】步行至最近港铁南昌站超12分钟，建议接驳小巴至地铁\n【校网】非传统四大名校网（所属40校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 1374米 (16分钟) 直达港铁南昌站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1374米 (16分钟) 直达港铁南昌站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "南首",
@@ -27811,7 +27915,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 九龙城宋皇台站步行约4-5分钟\n【轨交】步行约 5 分钟即达港铁宋皇臺站（轨交通勤从容便捷）\n【名校】全港顶尖 41 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合Mikiki等大型地标商圈\n🔑【交付】准现楼阶段（短期即将收楼入伙，确定性高）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 406米 (4分钟) 直达港铁宋皇臺站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 406米 (4分钟) 直达港铁宋皇臺站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "壹沐第1期",
@@ -28056,7 +28161,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 九龙土瓜湾核心大型重建标杆住区\n【轨交】步行约 5 分钟即达港铁土瓜灣站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合爱民广场等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 418米 (5分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 418米 (5分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "壹沐第2期",
@@ -28315,7 +28421,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 九龙土瓜湾核心大型重建标杆住区\n【轨交】步行约 5 分钟即达港铁土瓜灣站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合启德体育园零售馆等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 421米 (5分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 421米 (5分钟) 直达港铁土瓜灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "文曜",
@@ -28604,7 +28711,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙城联合道18号核心成熟板块\n【轨交】步行约 7 分钟即达港铁宋皇臺站（轨交通勤从容便捷）\n【名校】全港顶尖 41 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合Mikiki等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 559米 (6分钟) 直达港铁宋皇臺站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 559米 (6分钟) 直达港铁宋皇臺站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "101 Kings Road",
@@ -28828,7 +28936,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛东核心北角英皇道绝佳占位\n【轨交】步行约 3 分钟即达港铁炮台山站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合皇室堡等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属14校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 280米 (3分钟) 直达港铁炮台山站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 280米 (3分钟) 直达港铁炮台山站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "君誉峰",
@@ -28841,8 +28950,8 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 281,
-    "sale_units": 5,
-    "sold_units": 276,
+    "sale_units": 4,
+    "sold_units": 277,
     "priced_units": 0,
     "pending_units": 0,
     "basic_price_desc": "",
@@ -28910,13 +29019,6 @@
         "on_sale_count": 4,
         "sqft_range": "205 呎",
         "price_range": "536 万 - 586.7 万"
-      },
-      {
-        "layout": "2 房",
-        "unsold_count": 1,
-        "on_sale_count": 1,
-        "sqft_range": "355 呎",
-        "price_range": "招标"
       }
     ],
     "recent_transactions": [
@@ -28953,20 +29055,20 @@
         "date": "2021-08-24"
       },
       {
+        "unit_name": "君誉峰座 28楼 G室",
+        "layout": "2 房",
+        "sqft": "355 呎",
+        "price": "1313.5 万",
+        "unit_price": "$37,000/呎",
+        "date": "2026-10-09"
+      },
+      {
         "unit_name": "君誉峰座 28楼 F室",
         "layout": "2 房",
         "sqft": "355 呎",
         "price": "1366.8 万",
         "unit_price": "$38,500/呎",
         "date": "2026-10-06"
-      },
-      {
-        "unit_name": "君誉峰座 28楼 D室",
-        "layout": "2 房",
-        "sqft": "419 呎",
-        "price": "1521.5 万",
-        "unit_price": "$36,313/呎",
-        "date": "2026-09-21"
       }
     ],
     "address": "馬寶道3號",
@@ -28992,7 +29094,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛北角核心步行1-2分钟达北角站\n【轨交】步行约 2 分钟即达港铁北角站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合北角汇等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属14校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 140米 (1分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 140米 (1分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "嘉居．天后",
@@ -29169,7 +29272,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛核心天后站步行约3分钟\n【轨交】步行约 3 分钟即达港铁天后站（轨交通勤从容便捷）\n【名校】全港顶尖 12 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合皇室堡等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 282米 (3分钟) 直达港铁天后站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 282米 (3分钟) 直达港铁天后站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "柏蔚山",
@@ -29182,8 +29286,8 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 611,
-    "sale_units": 1,
-    "sold_units": 610,
+    "sale_units": 2,
+    "sold_units": 609,
     "priced_units": 0,
     "pending_units": 0,
     "basic_price_desc": "",
@@ -29391,9 +29495,9 @@
     "sales_control_summary": [
       {
         "layout": "4 房",
-        "unsold_count": 1,
-        "on_sale_count": 1,
-        "sqft_range": "1006 呎",
+        "unsold_count": 2,
+        "on_sale_count": 2,
+        "sqft_range": "1006 - 2282 呎",
         "price_range": "招标"
       }
     ],
@@ -29488,7 +29592,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛东北角继园街大型旗舰园林私邸\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 8 分钟即达港铁北角站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合北角汇等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属14校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 661米 (7分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 661米 (7分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "海璇",
@@ -29774,7 +29879,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛东一线临海绝版地王\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 5 分钟即达港铁北角站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合北角汇等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属14校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 407米 (4分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 407米 (4分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "海璇 II",
@@ -29986,7 +30092,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛东一线临海绝版地王\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 4 分钟即达港铁北角站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合北角汇等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属14校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 306米 (3分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 306米 (3分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "海璇 II (第2B-3期)",
@@ -30198,7 +30305,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛东一线临海绝版地王\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 3 分钟即达港铁北角站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合北角汇等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属14校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 274米 (3分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 274米 (3分钟) 直达港铁北角站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "雅盈峰",
@@ -30583,7 +30691,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 中环半山己连拿利3号核心绝版地段\n【轨交】步行约 9 分钟即达港铁中環站（轨交通勤从容便捷）\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合置地广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 734米 (8分钟) 直达港铁中環站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 734米 (8分钟) 直达港铁中環站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Central Peak I",
@@ -31144,7 +31253,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 东半山司徒拔道18号低密显赫豪宅\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 12 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合合和商场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 1708米 (20分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1708米 (20分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Central Peak II",
@@ -31685,7 +31795,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 东半山司徒拔道18号低密显赫豪宅\n【名校】全港顶尖 12 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合合和商场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 1708米 (20分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1708米 (20分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "21 Borrett Road 第1期",
@@ -32203,7 +32314,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 中半山波老道21号香港顶奢豪宅标杆\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合太古广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 1709米 (20分钟) 直达港铁金鐘站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1709米 (20分钟) 直达港铁金鐘站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Mount Pokfulam",
@@ -32676,7 +32788,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 薄扶林道138号独立洋房顶奢地标\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合西宝城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 1152米 (13分钟) 直达港铁香港大學站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1152米 (13分钟) 直达港铁香港大學站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Upper Central",
@@ -33058,7 +33171,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛中环核心半山坚道黄金地段\n【轨交】步行约 11 分钟即达港铁上環站（轨交通勤从容便捷）\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合置地广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 891米 (10分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 891米 (10分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "大学阁",
@@ -33424,7 +33538,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛西半山旭龢道42号显赫巅峰地段\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合西宝城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 1021米 (12分钟) 直达港铁香港大學站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1021米 (12分钟) 直达港铁香港大學站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "天御第1期",
@@ -33816,7 +33931,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 地段稀缺\n【轨交】步行约 11 分钟即达港铁上環站（轨交通勤从容便捷）\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合置地广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 947米 (11分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 947米 (11分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "天御第2期",
@@ -34173,20 +34289,20 @@
         "date": "2026-06-11"
       },
       {
-        "unit_name": "1座 11楼 A室",
+        "unit_name": "1座 19楼 A室",
         "layout": "4 房",
         "sqft": "2716 呎",
-        "price": "1.28 亿",
-        "unit_price": "$46,948/呎",
-        "date": "2026-10-07"
+        "price": "1.34 亿",
+        "unit_price": "$49,500/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "1座 18楼 A室",
+        "unit_name": "1座 16楼 B室",
         "layout": "4 房",
-        "sqft": "2716 呎",
-        "price": "1.33 亿",
-        "unit_price": "$48,990/呎",
-        "date": "2026-10-06"
+        "sqft": "2723 呎",
+        "price": "1.24 亿",
+        "unit_price": "$45,653/呎",
+        "date": "2026-10-09"
       }
     ],
     "address": "衛城道 8號",
@@ -34213,7 +34329,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 地段稀缺\n【轨交】步行约 11 分钟即达港铁上環站（轨交通勤从容便捷）\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合置地广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 947米 (11分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 947米 (11分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "宝峰",
@@ -34582,7 +34699,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 西半山宝珊道23号极低密16席传世大宅\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合西宝城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 1241米 (14分钟) 直达港铁香港大學站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1241米 (14分钟) 直达港铁香港大學站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "帝汇豪庭",
@@ -35065,7 +35183,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛西半山罗便臣道23号传统名门腹地\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合置地广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 1146米 (13分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1146米 (13分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "应天",
@@ -35617,7 +35736,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 中半山波老道21号传世顶奢大宅第2期\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合太古广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 1764米 (21分钟) 直达港铁金鐘站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1764米 (21分钟) 直达港铁金鐘站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "罗便臣道80号",
@@ -35630,8 +35750,8 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 264,
-    "sale_units": 1,
-    "sold_units": 234,
+    "sale_units": 0,
+    "sold_units": 235,
     "priced_units": 0,
     "pending_units": 31,
     "basic_price_desc": "",
@@ -35814,10 +35934,10 @@
       },
       {
         "layout": "3 房",
-        "unsold_count": 26,
-        "on_sale_count": 1,
+        "unsold_count": 25,
+        "on_sale_count": 0,
         "sqft_range": "841 - 2158 呎",
-        "price_range": "招标"
+        "price_range": "待定/详见价单"
       }
     ],
     "recent_transactions": [
@@ -35838,20 +35958,20 @@
         "date": "2011-01-31"
       },
       {
+        "unit_name": "1座 45楼 A室",
+        "layout": "3 房",
+        "sqft": "1052 呎",
+        "price": "3280 万",
+        "unit_price": "$31,179/呎",
+        "date": "2026-10-13"
+      },
+      {
         "unit_name": "2座 46楼 A室",
         "layout": "3 房",
         "sqft": "1070 呎",
         "price": "3750 万",
         "unit_price": "$35,047/呎",
         "date": "2026-09-29"
-      },
-      {
-        "unit_name": "2座 30楼 B室",
-        "layout": "3 房",
-        "sqft": "1032 呎",
-        "price": "3028 万",
-        "unit_price": "$29,341/呎",
-        "date": "2026-08-31"
       }
     ],
     "address": "羅便臣道80號",
@@ -35878,7 +35998,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛西半山罗便臣道80号经典名牌豪宅\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 8 分钟即达港铁西營盤站（轨交通勤从容便捷）\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合置地广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板",
-    "commute_guidance": "步行约 650米 (7分钟) 直达港铁西營盤站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 650米 (7分钟) 直达港铁西營盤站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Kennedy 38",
@@ -36103,7 +36224,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港岛西核心枢纽与极速通勤\n【轨交】步行约 3 分钟即达港铁堅尼地城站（轨交通勤从容便捷）\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合西宝城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 281米 (3分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 281米 (3分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "吉喆",
@@ -36286,7 +36408,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛西黄金地段步达坚尼地城站约2分钟\n【轨交】步行约 2 分钟即达港铁堅尼地城站（轨交通勤从容便捷）\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合西宝城等大型地标商圈\n🔑【交付】准现楼阶段（短期即将收楼入伙，确定性高）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 151米 (1分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 151米 (1分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "海嵎",
@@ -36551,7 +36674,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛西坚尼地城临海一线视野\n【轨交】步行约 5 分钟即达港铁堅尼地城站（轨交通勤从容便捷）\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合西宝城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 410米 (4分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 410米 (4分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "皇府湾",
@@ -36563,7 +36687,7 @@
     "sell_status_cn": "出售中",
     "is_coming_soon": false,
     "price_tier": "",
-    "total_units": 33,
+    "total_units": 34,
     "sale_units": 3,
     "sold_units": 5,
     "priced_units": 0,
@@ -37625,7 +37749,7 @@
     "sales_control_summary": [
       {
         "layout": "4 房",
-        "unsold_count": 28,
+        "unsold_count": 29,
         "on_sale_count": 3,
         "sqft_range": "2476 - 3343 呎",
         "price_range": "招标"
@@ -37672,7 +37796,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛南区大潭白笔山道一线纯独立海景洋房\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "步行约 5466米 (65分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 5466米 (65分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "寿臣山15号",
@@ -38025,7 +38150,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛南区传统顶级显赫富豪圈\n️【商业】邻近/周边1.5km聚合The Southside等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 1110米 (13分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1110米 (13分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "No.3 Repulse Bay Road",
@@ -38654,7 +38780,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 浅水湾道3号港岛南区顶级老牌超级豪宅\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "步行约 3164米 (38分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 3164米 (38分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Shouson Peak",
@@ -38949,7 +39076,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛南区寿臣山顶级独立洋房群\n【轨交】步行约 12 分钟即达港铁海洋公園站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合The Southside等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 996米 (12分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 996米 (12分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "浅水湾108",
@@ -39523,11 +39651,12 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1WcYleVKHc7-R4AXuNhqtcL9D_N539QCV",
-    "has_marketing_materials": false,
+    "has_marketing_materials": true,
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 浅水湾道108号极度珍罕独立海景洋房\n️【商业】邻近/周边1.5km聚合The Pulse等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 3408米 (40分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 3408米 (40分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "深水湾径8号",
@@ -40045,11 +40174,13 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1sxEj0DnQvchO-tRmzxt5caxtwdqBBdiy",
-    "has_marketing_materials": false,
+    "has_marketing_materials": true,
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛南区深水湾径超级隐秘纯豪宅\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "步行约 1685米 (20分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1685米 (20分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false,
+    "intro_url": "https://docs.qq.com/doc/DT2dhem9zU0t0Z1Ba?createTs=1791338946223&templateId=31227"
   },
   {
     "name": "Mount Nicholson I",
@@ -41090,7 +41221,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 香港山顶聂歌信山道亚洲顶奢楼王地标\n【名校】全港顶尖 12 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合合和商场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 3647米 (43分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 3647米 (43分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Mount Nicholson II",
@@ -42129,7 +42261,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 香港山顶聂歌信山道亚洲顶奢楼王地标\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 12 名校网，享传统公立名校优质升学梯队\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "步行约 3696米 (44分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 3696米 (44分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Twelve Peaks",
@@ -43096,7 +43229,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 香港山顶加列山道12号巅峰独立洋房群\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合山顶广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 3334米 (40分钟) 直达港铁中環站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 3334米 (40分钟) 直达港铁中環站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "宾吉道3号",
@@ -44045,7 +44179,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 香港山顶宾吉道3号太古地产传世洋房\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合山顶广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 4143米 (49分钟) 直达港铁金鐘站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 4143米 (49分钟) 直达港铁金鐘站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "海德园第1期",
@@ -44058,8 +44193,8 @@
     "is_coming_soon": false,
     "price_tier": "1000-2000",
     "total_units": 592,
-    "sale_units": 28,
-    "sold_units": 402,
+    "sale_units": 27,
+    "sold_units": 403,
     "priced_units": 1,
     "pending_units": 143,
     "basic_price_desc": "950万左右",
@@ -44302,8 +44437,8 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 40,
-        "on_sale_count": 28,
+        "unsold_count": 39,
+        "on_sale_count": 27,
         "sqft_range": "490 - 573 呎",
         "price_range": "912.3 万 - 984 万 (含招标)"
       },
@@ -44333,20 +44468,20 @@
         "date": "2026-07-09"
       },
       {
+        "unit_name": "3座 23楼 H室",
+        "layout": "2 房",
+        "sqft": "573 呎",
+        "price": "1109.4 万",
+        "unit_price": "$19,361/呎",
+        "date": "2026-10-13"
+      },
+      {
         "unit_name": "3座 18楼 H室",
         "layout": "2 房",
         "sqft": "573 呎",
         "price": "1084.8 万",
         "unit_price": "$18,932/呎",
         "date": "2026-10-06"
-      },
-      {
-        "unit_name": "3座 40楼 H室",
-        "layout": "2 房",
-        "sqft": "573 呎",
-        "price": "1246.4 万",
-        "unit_price": "$21,752/呎",
-        "date": "2026-10-04"
       }
     ],
     "main_area": "港岛东区",
@@ -44373,7 +44508,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 太古地产港岛东柴湾罕见大型综合体\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 12 分钟即达港铁柴灣站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合杏花新城等大型地标商圈\n🔑【交付】准现楼阶段（短期即将收楼入伙，确定性高）",
     "quantified_cons": "【校网】非传统四大名校网（所属16校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 945米 (11分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 945米 (11分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "峻誉．渣甸山",
@@ -44934,7 +45070,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 渣甸山30年唯一罕见分层新盘\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 12 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合利园等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】步行至最近港铁天后站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1809米 (21分钟) 直达港铁天后站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1809米 (21分钟) 直达港铁天后站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Woodis",
@@ -45310,7 +45447,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛湾仔活道15号核心成熟地段\n【轨交】步行约 9 分钟即达港铁灣仔站（轨交通勤从容便捷）\n【名校】全港顶尖 12 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合时代广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 715米 (8分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 715米 (8分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "One Eighty",
@@ -45538,7 +45676,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛东核心西湾河站步行约4分钟\n【轨交】步行约 4 分钟即达港铁西灣河站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合太古城中心等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属16校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 339米 (4分钟) 直达港铁西灣河站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 339米 (4分钟) 直达港铁西灣河站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "傲华",
@@ -45761,7 +45900,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛东筲箕湾站步行约3分钟\n【轨交】步行约 3 分钟即达港铁筲箕灣站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合杏花新城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属16校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 262米 (3分钟) 直达港铁筲箕灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 262米 (3分钟) 直达港铁筲箕灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "远晴",
@@ -45769,8 +45909,8 @@
     "district": "筲箕湾",
     "lat": 22.278032,
     "lng": 114.231882,
-    "sell_status": "on_sale",
-    "sell_status_cn": "出售中",
+    "sell_status": "sales_suspended",
+    "sell_status_cn": "暫停銷售",
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 98,
@@ -46110,7 +46250,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛东核心筲箕湾东大街23号成熟商圈\n️【商业】邻近/周边1.5km聚合杏花新城等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁筲箕灣站超12分钟，建议接驳小巴至地铁\n【校网】非传统四大名校网（所属16校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 1073米 (12分钟) 直达港铁筲箕灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1073米 (12分钟) 直达港铁筲箕灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Victoria Coast",
@@ -46591,7 +46732,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 薄扶林域多利道301号全海景现楼\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n️【商业】邻近/周边1.5km聚合数码港商场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】步行至最近港铁堅尼地城站超12分钟，建议接驳小巴至地铁\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 1541米 (18分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1541米 (18分钟) 直达港铁堅尼地城站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "15 Western Street",
@@ -46824,7 +46966,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛西营盘核心枢纽极速通达\n【轨交】步行约 3 分钟即达港铁西營盤站（轨交通勤从容便捷）\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合西宝城等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 234米 (2分钟) 直达港铁西營盤站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 234米 (2分钟) 直达港铁西營盤站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "42 Tung St.",
@@ -47109,7 +47252,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 上环苏豪艺术区极低密顶奢私邸\n【轨交】步行约 7 分钟即达港铁上環站（轨交通勤从容便捷）\n【名校】全港顶尖 11 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合置地广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 555米 (6分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 555米 (6分钟) 直达港铁上環站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "50 Stanley Village Road",
@@ -48746,7 +48890,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛南区赤柱村道纯正低密滨海豪宅\n️【商业】邻近/周边1.5km聚合赤柱广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 7824米 (93分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 7824米 (93分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "One Stanley",
@@ -50944,7 +51089,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛南区赤柱黄麻角道纯海景洋房及大宅\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n️【商业】邻近/周边1.5km聚合赤柱广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 10184米 (122分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 10184米 (122分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Solace",
@@ -52101,7 +52247,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛南区寿臣山道西稀缺纯独立洋房\n️【商业】邻近/周边1.5km聚合赤柱广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 6946米 (83分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 6946米 (83分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "海天径 1号, 舂磡角道 44, 46, 48, 50号",
@@ -53153,7 +53300,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛南区舂磡角海天径绝版5席独立大宅\n️【商业】邻近/周边1.5km聚合赤柱广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 6345米 (76分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 6345米 (76分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "环角道7号、9号及11号",
@@ -53161,8 +53309,8 @@
     "district": "赤柱",
     "lat": 22.218338,
     "lng": 114.214984,
-    "sell_status": "on_sale",
-    "sell_status_cn": "出售中",
+    "sell_status": "sales_suspended",
+    "sell_status_cn": "暫停銷售",
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 3,
@@ -54308,7 +54456,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 赤柱半山环角道隐秘低密独栋纯墅区\n️【商业】邻近/周边1.5km聚合赤柱广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 6842米 (82分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 6842米 (82分钟) 直达港铁海洋公園站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "339 Tai Hang Road",
@@ -54316,8 +54465,8 @@
     "district": "跑马地",
     "lat": 22.265457,
     "lng": 114.183673,
-    "sell_status": "on_sale",
-    "sell_status_cn": "出售中",
+    "sell_status": "sales_suspended",
+    "sell_status_cn": "暫停銷售",
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 9,
@@ -55012,7 +55161,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 东半山大坑道339号传统显赫地段\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【名校】全港顶尖 12 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合利园等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 2992米 (35分钟) 直达港铁銅鑼灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 2992米 (35分钟) 直达港铁銅鑼灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Blue Coast",
@@ -55025,8 +55175,8 @@
     "is_coming_soon": false,
     "price_tier": "5000-10000",
     "total_units": 642,
-    "sale_units": 11,
-    "sold_units": 631,
+    "sale_units": 10,
+    "sold_units": 632,
     "priced_units": 0,
     "pending_units": 0,
     "basic_price_desc": "3500万起",
@@ -55106,8 +55256,8 @@
     "sales_control_summary": [
       {
         "layout": "4 房",
-        "unsold_count": 11,
-        "on_sale_count": 11,
+        "unsold_count": 10,
+        "on_sale_count": 10,
         "sqft_range": "1229 - 1267 呎",
         "price_range": "招标"
       }
@@ -55151,15 +55301,15 @@
         "sqft": "1263 呎",
         "price": "4294.2 万",
         "unit_price": "$34,000/呎",
-        "date": "2026-09-21"
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "1A座 38楼 A室",
+        "unit_name": "1A座 23楼 B室",
         "layout": "4 房",
-        "sqft": "1263 呎",
-        "price": "4824.7 万",
-        "unit_price": "$38,200/呎",
-        "date": "2026-08-25"
+        "sqft": "1267 呎",
+        "price": "3953 万",
+        "unit_price": "$31,200/呎",
+        "date": "2026-10-12"
       }
     ],
     "address": "香葉道11號",
@@ -55188,7 +55338,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁黄竹坑站上盖专属电梯直达\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁黄竹坑站正上盖 / 直通（专属电梯直达港铁黄竹坑站）\n️【商业】基座直达 51 万呎 THE SOUTHSIDE 地标级商场\n🔑【交付】准现楼阶段（短期即将收楼入伙，确定性高）",
     "quantified_cons": "【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 183米 (2分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 183米 (2分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Blue Coast II",
@@ -55330,7 +55481,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁黄竹坑站上盖专属电梯直达\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁黄竹坑站正上盖 / 直通（专属电梯直达港铁黄竹坑站）\n️【商业】基座直达 51 万呎 THE SOUTHSIDE 地标级商场\n🔑【交付】准现楼阶段（短期即将收楼入伙，确定性高）",
     "quantified_cons": "【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 98米 (1分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 98米 (1分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Deep Water South 第6A期",
@@ -55495,7 +55647,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港岛30年唯一新房地铁上盖\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁黄竹坑站正上盖 / 直通（基座直连港铁黄竹坑站）\n️【商业】基座直达 51 万呎 THE SOUTHSIDE 地标级商场\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 33米 (0分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 33米 (0分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Deep Water South 第6B期",
@@ -55629,7 +55782,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港岛30年唯一新房地铁上盖\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁黄竹坑站正上盖 / 直通（基座直连港铁黄竹坑站）\n️【商业】基座直达 51 万呎 THE SOUTHSIDE 地标级商场\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 81米 (1分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 81米 (1分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "PORTO",
@@ -55815,7 +55969,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛南区鸭脷洲海旁水岸生活圈\n【轨交】步行约 6 分钟即达港铁利東站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合The Southside等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 473米 (5分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 473米 (5分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "弦岸",
@@ -55996,20 +56151,20 @@
         "date": "2026-04-22"
       },
       {
+        "unit_name": "弦岸座 26楼 D室",
+        "layout": "1 房",
+        "sqft": "272 呎",
+        "price": "727.6 万",
+        "unit_price": "$26,750/呎",
+        "date": "2026-10-12"
+      },
+      {
         "unit_name": "弦岸座 27楼 D室",
         "layout": "1 房",
         "sqft": "272 呎",
         "price": "743.4 万",
         "unit_price": "$27,331/呎",
         "date": "2026-10-07"
-      },
-      {
-        "unit_name": "弦岸座 26楼 D室",
-        "layout": "1 房",
-        "sqft": "272 呎",
-        "price": "727.6 万",
-        "unit_price": "$26,750/呎",
-        "date": "2026-09-11"
       }
     ],
     "address": "平瀾街8號",
@@ -56035,7 +56190,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛南区鸭脷洲平澜街滨海水岸新盘\n【轨交】步行约 6 分钟即达港铁利東站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合The Southside等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 533米 (6分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 533米 (6分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "扬海",
@@ -56290,7 +56446,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁黄竹坑站上盖港岛南岸第2期\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁黄竹坑站正上盖 / 直通（基座专属电梯直连车站大堂）\n️【商业】基座直达 51 万呎 THE SOUTHSIDE 地标级商场\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "港铁黄竹坑站正上盖港岛南岸（南港岛线），两站直达金钟核心枢纽，商场THE SOUTHSIDE无缝直连"
+    "commute_guidance": "港铁黄竹坑站正上盖港岛南岸（南港岛线），两站直达金钟核心枢纽，商场THE SOUTHSIDE无缝直连",
+    "is_sold_out": false
   },
   {
     "name": "晋环",
@@ -56522,7 +56679,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁黄竹坑站上盖港岛南岸首发旗舰项目\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁黄竹坑站正上盖 / 直通（基座直连 THE SOUTHSIDE 商场与车站）\n️【商业】基座直达 51 万呎 THE SOUTHSIDE 地标级商场\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 501米 (6分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 501米 (6分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "海盈山第4A期",
@@ -56734,7 +56892,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁黄竹坑站纯正铁路上盖\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁黄竹坑站正上盖 / 直通（基座专属电梯直通港铁站）\n️【商业】基座直达 51 万呎 THE SOUTHSIDE 地标级商场\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 414米 (5分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 414米 (5分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "海盈山第4B期",
@@ -56866,20 +57025,20 @@
     ],
     "recent_transactions": [
       {
+        "unit_name": "1B座 28楼 C室",
+        "layout": "2 房",
+        "sqft": "546 呎",
+        "price": "1692.3 万",
+        "unit_price": "$30,995/呎",
+        "date": "2026-10-12"
+      },
+      {
         "unit_name": "1B座 11楼 E室",
         "layout": "2 房",
         "sqft": "499 呎",
         "price": "1402.2 万",
         "unit_price": "$28,100/呎",
         "date": "2026-10-02"
-      },
-      {
-        "unit_name": "1B座 20楼 D室",
-        "layout": "2 房",
-        "sqft": "484 呎",
-        "price": "1403 万",
-        "unit_price": "$28,988/呎",
-        "date": "2026-09-30"
       },
       {
         "unit_name": "1B座 27楼 B室",
@@ -56939,7 +57098,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁黄竹坑站纯正铁路上盖\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁黄竹坑站正上盖 / 直通（基座专属电梯直通港铁站）\n️【商业】基座直达 51 万呎 THE SOUTHSIDE 地标级商场\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 381米 (4分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 381米 (4分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "滶晨 II",
@@ -57141,7 +57301,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁黄竹坑站上盖港岛南岸第5期\n【轨交】港铁黄竹坑站正上盖 / 直通（基座无缝直通黄竹坑站大堂）\n️【商业】基座直达 51 万呎 THE SOUTHSIDE 地标级商场",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 366米 (4分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 366米 (4分钟) 直达港铁黃竹坑站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "璟南",
@@ -57422,11 +57583,13 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1E0P941BPiNF_xOFyRmGmPmwiyE9mL_IU",
-    "has_marketing_materials": false,
+    "has_marketing_materials": true,
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛南区鸭脷洲海旁道一线游艇海景\n【轨交】步行约 11 分钟即达港铁利東站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合The Southside等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 892米 (10分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 892米 (10分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false,
+    "intro_url": "https://docs.qq.com/doc/DT05PR0poT3B2Zk1L?isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&opennew=1"
   },
   {
     "name": "逸南",
@@ -57574,7 +57737,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛南区鸭脷洲大街步行约3分钟达利东站\n【轨交】步行约 3 分钟即达港铁利東站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合The Southside等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 282米 (3分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 282米 (3分钟) 直达港铁利東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "君豪峰",
@@ -57758,7 +57922,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛东核心鲗鱼涌站步行约4分钟\n【轨交】步行约 4 分钟即达港铁鰂魚涌站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合太古城中心等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属14校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 362米 (4分钟) 直达港铁鰂魚涌站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 362米 (4分钟) 直达港铁鰂魚涌站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "凯玥",
@@ -57976,7 +58141,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 港岛南区鸭脷洲一线临海现楼超级豪宅\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 7 分钟即达港铁海怡半島站（轨交通勤从容便捷）\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈",
-    "commute_guidance": "步行约 594米 (7分钟) 直达港铁海怡半島站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 594米 (7分钟) 直达港铁海怡半島站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "Eight Kwai Fong Happy Valley",
@@ -58396,7 +58562,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 跑马地桂芳街8号老牌名流核心区\n【名校】全港顶尖 12 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合利园等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁銅鑼灣站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1891米 (22分钟) 直达港铁銅鑼灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1891米 (22分钟) 直达港铁銅鑼灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "蓝塘道23-39号",
@@ -58811,7 +58978,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 跑马地蓝塘道半山珍罕大型洋房群\n【名校】全港顶尖 12 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合利园等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁銅鑼灣站超12分钟，建议接驳小巴至地铁",
-    "commute_guidance": "步行约 1824米 (21分钟) 直达港铁銅鑼灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1824米 (21分钟) 直达港铁銅鑼灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "滶晨",
@@ -59044,7 +59212,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁黄竹坑站上盖港岛南岸第5期\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁黄竹坑站正上盖 / 直通（基座无缝直通黄竹坑站大堂）\n️【商业】基座直达 51 万呎 THE SOUTHSIDE 地标级商场",
     "quantified_cons": "【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "港铁黄竹坑站正上盖港岛南岸（南港岛线），两站直达金钟核心枢纽，商场THE SOUTHSIDE无缝直连"
+    "commute_guidance": "港铁黄竹坑站正上盖港岛南岸（南港岛线），两站直达金钟核心枢纽，商场THE SOUTHSIDE无缝直连",
+    "is_sold_out": false
   },
   {
     "name": "花语海第1期",
@@ -59461,7 +59630,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区承丰道16号海滨前排新地标\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】建议接驳小巴至港铁啟德站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "花语海第2期",
@@ -59986,7 +60156,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 启德跑道区承丰道16号海滨前排新地标\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】建议接驳小巴至港铁牛頭角站（日常出行依赖专线接驳）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港"
+    "commute_guidance": "专线巴士约 5-8 分钟直达港铁启德站/宋皇台站；自驾经中九龙干线极速贯通全港",
+    "is_sold_out": false
   },
   {
     "name": "Elize Park",
@@ -60143,7 +60314,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 旺角核心洗衣街地段步入太子及旺角东双铁\n【轨交】步行约 5 分钟即达港铁旺角東站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合MOKO 新世纪广场等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属32校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 407米 (4分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 407米 (4分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "维港汇 I",
@@ -60486,11 +60658,12 @@
     "property_type": "ready",
     "property_type_desc": "现房 (现楼发售)",
     "marketing_url": "https://drive.google.com/drive/folders/1kESOSr4A55-PY3JZAXIXMnGL5sB3Uxkf",
-    "has_marketing_materials": false,
+    "has_marketing_materials": true,
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 西南九龙绝版一线临海地王现楼\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n️【商业】邻近/周边1.5km聚合V Walk等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "【交通】步行至最近港铁南昌站超12分钟，建议接驳小巴至地铁\n【校网】非传统四大名校网（所属40校网，升学建议搭配优质私立或国际学校）",
-    "commute_guidance": "步行约 1247米 (15分钟) 直达港铁南昌站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1247米 (15分钟) 直达港铁南昌站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "红山半岛 - C区",
@@ -61687,7 +61860,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛大潭白笔山道18号经典滨海独立洋房",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 6034米 (72分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 6034米 (72分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "红山半岛 - B区",
@@ -62800,7 +62974,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛大潭白笔山道18号经典滨海独立洋房",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾\n【校网】非传统四大名校网（所属18校网，升学建议搭配优质私立或国际学校）\n️【商业】周边1.5km暂无大型商业综合体，日常集中消费依赖外溢商圈\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 5395米 (64分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 5395米 (64分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "泓璟",
@@ -62813,7 +62988,7 @@
     "is_coming_soon": false,
     "price_tier": "",
     "total_units": 91,
-    "sale_units": 0,
+    "sale_units": 18,
     "sold_units": 19,
     "priced_units": 0,
     "pending_units": 54,
@@ -62984,16 +63159,16 @@
       {
         "layout": "开放式",
         "unsold_count": 68,
-        "on_sale_count": 0,
+        "on_sale_count": 16,
         "sqft_range": "144 - 250 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       },
       {
         "layout": "1 房",
         "unsold_count": 4,
-        "on_sale_count": 0,
+        "on_sale_count": 2,
         "sqft_range": "246 - 272 呎",
-        "price_range": "待定/详见价单"
+        "price_range": "招标"
       }
     ],
     "recent_transactions": [
@@ -63042,7 +63217,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 何文田自由道传统静谧高尚住宅地脉\n【轨交】步行约 6 分钟即达港铁旺角東站（轨交通勤从容便捷）\n【名校】全港顶尖 34 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合T.O.P等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "commute_guidance": "步行约 499米 (6分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 499米 (6分钟) 直达港铁旺角東站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "海德园第2期",
@@ -63050,8 +63226,8 @@
     "district": "柴湾",
     "lat": 22.265957,
     "lng": 114.24407,
-    "sell_status": "registration",
-    "sell_status_cn": "即將發售",
+    "sell_status": "on_sale",
+    "sell_status_cn": "出售中",
     "is_coming_soon": true,
     "price_tier": "",
     "total_units": 258,
@@ -63412,7 +63588,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 太古地产港岛东柴湾罕见大型综合体\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 12 分钟即达港铁柴灣站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合杏花新城等大型地标商圈",
     "quantified_cons": "【校网】非传统四大名校网（所属16校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 945米 (11分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 945米 (11分钟) 直达港铁柴灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "叡璟II",
@@ -63420,19 +63597,19 @@
     "district": "西南九龙",
     "lat": 22.331917,
     "lng": 114.151362,
-    "sell_status": "coming_soon",
-    "sell_status_cn": "即將發售",
+    "sell_status": "on_sale",
+    "sell_status_cn": "出售中",
     "is_coming_soon": true,
     "price_tier": "",
     "total_units": 407,
-    "sale_units": 35,
-    "sold_units": 335,
+    "sale_units": 33,
+    "sold_units": 337,
     "priced_units": 0,
     "pending_units": 407,
     "basic_price_desc": "即将发售 / 待定",
-    "excel_min_price_desc": "参考成交: $542.6万 - $1847.6万",
+    "excel_min_price_desc": "参考成交: $542.6万 - $1922.6万",
     "min_price_wan": 542.6,
-    "max_price_wan": 1847.6,
+    "max_price_wan": 1922.6,
     "has_price_data": true,
     "sqft_price_desc": "",
     "main_layout": "1房 - 4房",
@@ -63661,8 +63838,8 @@
       },
       {
         "layout": "3 房",
-        "unsold_count": 28,
-        "on_sale_count": 28,
+        "unsold_count": 26,
+        "on_sale_count": 26,
         "sqft_range": "588 - 730 呎",
         "price_range": "招标"
       }
@@ -63701,20 +63878,20 @@
         "date": "2026-10-03"
       },
       {
-        "unit_name": "5B座 33楼 A室",
+        "unit_name": "5A座 45楼 A室",
         "layout": "3 房",
-        "sqft": "628 呎",
-        "price": "1422.9 万",
-        "unit_price": "$22,658/呎",
-        "date": "2026-10-08"
+        "sqft": "722 呎",
+        "price": "1922.6 万",
+        "unit_price": "$26,629/呎",
+        "date": "2026-10-11"
       },
       {
-        "unit_name": "5A座 36楼 B室",
+        "unit_name": "5A座 37楼 B室",
         "layout": "3 房",
         "sqft": "730 呎",
-        "price": "1722.7 万",
-        "unit_price": "$23,599/呎",
-        "date": "2026-10-07"
+        "price": "1739.9 万",
+        "unit_price": "$23,834/呎",
+        "date": "2026-10-09"
       }
     ],
     "selling_points": "1、西南九龙绝版巨无霸大型发展区：华润置地打造的西南九龙核心区临海综合住宅地标，全盘分6期规划约2,200伙，是香港核心市区近年来罕见的大型整体规划品质社区。\n2、自设约10万呎华润「万象生活」高端商场：基座首度引入内地顶奢商业运营品牌“万象生活”，下楼即享高端购物、特色餐饮及生活配套，彻底颠覆传统豪宅生活配套不足体验。\n3、步行5分钟直达南昌站3站8线枢纽：步行约5分钟即达港铁南昌站，1站到西九高铁站、3站直达中环金融区及机场，无缝接轨九龙站及西九文化区，兼具艺术人文与极速通勤。",
@@ -63731,7 +63908,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 西南九龙绝版巨无霸大型发展区\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】步行约 10 分钟即达港铁長沙灣站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合V Walk等大型地标商圈",
     "quantified_cons": "【校网】非传统四大名校网（所属40校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 817米 (10分钟) 直达港铁長沙灣站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 817米 (10分钟) 直达港铁長沙灣站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "映汇",
@@ -63739,13 +63917,13 @@
     "district": "红磡",
     "lat": 22.30712,
     "lng": 114.18499,
-    "sell_status": "registration",
-    "sell_status_cn": "即將發售",
+    "sell_status": "on_sale",
+    "sell_status_cn": "出售中",
     "is_coming_soon": true,
     "price_tier": "",
     "total_units": 263,
-    "sale_units": 38,
-    "sold_units": 181,
+    "sale_units": 37,
+    "sold_units": 182,
     "priced_units": 111,
     "pending_units": 152,
     "basic_price_desc": "公开价单 / 详见正式版",
@@ -63952,44 +64130,52 @@
       },
       {
         "layout": "3 房",
-        "unsold_count": 17,
-        "on_sale_count": 13,
+        "unsold_count": 16,
+        "on_sale_count": 12,
         "sqft_range": "348 - 630 呎",
         "price_range": "840.7 万 - 1124.2 万 (含招标)"
       }
     ],
     "recent_transactions": [
       {
-        "unit_name": "映汇座 21楼 K室",
+        "unit_name": "映汇座 6楼 K室",
         "layout": "1 房",
         "sqft": "278 呎",
-        "price": "592.5 万",
-        "unit_price": "$21,312/呎",
-        "date": "2026-10-08"
+        "price": "596.2 万",
+        "unit_price": "$21,448/呎",
+        "date": "2026-10-12"
       },
       {
-        "unit_name": "映汇座 17楼 H室",
+        "unit_name": "映汇座 5楼 L室",
         "layout": "1 房",
-        "sqft": "264 呎",
-        "price": "592.8 万",
-        "unit_price": "$22,456/呎",
-        "date": "2026-10-08"
+        "sqft": "231 呎",
+        "price": "605.2 万",
+        "unit_price": "$26,200/呎",
+        "date": "2026-10-12"
       },
       {
-        "unit_name": "映汇座 23楼 D室",
+        "unit_name": "映汇座 22楼 C室",
         "layout": "2 房",
-        "sqft": "357 呎",
-        "price": "812 万",
-        "unit_price": "$22,745/呎",
-        "date": "2026-10-08"
+        "sqft": "358 呎",
+        "price": "878.7 万",
+        "unit_price": "$24,545/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "映汇座 11楼 E室",
+        "unit_name": "映汇座 26楼 C室",
         "layout": "2 房",
-        "sqft": "362 呎",
-        "price": "783.3 万",
-        "unit_price": "$21,638/呎",
-        "date": "2026-10-08"
+        "sqft": "358 呎",
+        "price": "893.9 万",
+        "unit_price": "$24,969/呎",
+        "date": "2026-10-12"
+      },
+      {
+        "unit_name": "映汇座 27楼 F室",
+        "layout": "3 房",
+        "sqft": "387 呎",
+        "price": "1004.9 万",
+        "unit_price": "$25,967/呎",
+        "date": "2026-10-12"
       },
       {
         "unit_name": "映汇座 25楼 M室",
@@ -63997,14 +64183,6 @@
         "sqft": "386 呎",
         "price": "875.3 万",
         "unit_price": "$22,677/呎",
-        "date": "2026-10-08"
-      },
-      {
-        "unit_name": "映汇座 21楼 M室",
-        "layout": "3 房",
-        "sqft": "386 呎",
-        "price": "827.1 万",
-        "unit_price": "$21,427/呎",
         "date": "2026-10-08"
       }
     ],
@@ -64021,7 +64199,8 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 九龙核心百万呎巨无霸都会重建\n【轨交】步行约 5 分钟即达港铁何文田站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合黄埔天地等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属35校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 424米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 424米 (5分钟) 直达港铁何文田站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "肇辉台6号",
@@ -64440,7 +64619,8 @@
     "property_positioning": "🏡 自住型产品",
     "core_pros": "★ 港岛东半山肇辉台6号极度低密传世私邸\n【名校】全港顶尖 12 名校网，享传统公立名校优质升学梯队\n️【商业】邻近/周边1.5km聚合利东街等大型地标商圈\n🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】地处低密私密地脉无就近步行地铁站，依赖接驳小巴或自驾",
-    "commute_guidance": "步行约 1065米 (13分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1065米 (13分钟) 直达港铁灣仔站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "海瑅湾 I",
@@ -64453,8 +64633,8 @@
     "is_coming_soon": false,
     "price_tier": "1000-2000",
     "total_units": 1266,
-    "sale_units": 264,
-    "sold_units": 881,
+    "sale_units": 262,
+    "sold_units": 883,
     "priced_units": 6,
     "pending_units": 114,
     "basic_price_desc": "约650万起",
@@ -64662,8 +64842,8 @@
       },
       {
         "layout": "2 房",
-        "unsold_count": 256,
-        "on_sale_count": 153,
+        "unsold_count": 254,
+        "on_sale_count": 151,
         "sqft_range": "416 - 615 呎",
         "price_range": "723.1 万 - 1154.5 万 (含招标)"
       },
@@ -64700,20 +64880,20 @@
         "date": "2026-07-22"
       },
       {
-        "unit_name": "1B座 48楼 A室",
+        "unit_name": "1B座 62楼 B室",
         "layout": "2 房",
-        "sqft": "612 呎",
-        "price": "1254.6 万",
-        "unit_price": "$20,500/呎",
-        "date": "2026-10-08"
+        "sqft": "455 呎",
+        "price": "903.1 万",
+        "unit_price": "$19,849/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "2A座 55楼 B室",
+        "unit_name": "1B座 10楼 C室",
         "layout": "2 房",
-        "sqft": "599 呎",
-        "price": "1171.2 万",
-        "unit_price": "$19,553/呎",
-        "date": "2026-10-08"
+        "sqft": "584 呎",
+        "price": "1015.6 万",
+        "unit_price": "$17,390/呎",
+        "date": "2026-10-12"
       },
       {
         "unit_name": "1A座 27楼 A室",
@@ -64756,7 +64936,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁康城站临海前排一线开扬全海景\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁康城站正上盖 / 直通（室内全天候天桥直通 The LOHAS 与康城站）\n️【商业】连桥直达 The LOHAS 康城地标级商场",
     "quantified_cons": "【校网】非传统四大名校网（所属95校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 305米 (3分钟) 直达港铁康城站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 305米 (3分钟) 直达港铁康城站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "海瑅湾 II",
@@ -64769,8 +64950,8 @@
     "is_coming_soon": false,
     "price_tier": "1000-2000",
     "total_units": 1284,
-    "sale_units": 234,
-    "sold_units": 326,
+    "sale_units": 224,
+    "sold_units": 336,
     "priced_units": 40,
     "pending_units": 547,
     "basic_price_desc": "约680万起",
@@ -64959,22 +65140,22 @@
     "sales_control_summary": [
       {
         "layout": "1 房",
-        "unsold_count": 92,
-        "on_sale_count": 17,
+        "unsold_count": 91,
+        "on_sale_count": 16,
         "sqft_range": "303 - 347 呎",
         "price_range": "582.1 万 - 613.4 万"
       },
       {
         "layout": "2 房",
-        "unsold_count": 661,
-        "on_sale_count": 157,
+        "unsold_count": 654,
+        "on_sale_count": 150,
         "sqft_range": "410 - 602 呎",
         "price_range": "723.9 万 - 940 万 (含招标)"
       },
       {
         "layout": "3 房",
-        "unsold_count": 203,
-        "on_sale_count": 60,
+        "unsold_count": 201,
+        "on_sale_count": 58,
         "sqft_range": "588 - 957 呎",
         "price_range": "招标"
       },
@@ -64988,52 +65169,52 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "5B座 29楼 F室",
+        "unit_name": "5B座 27楼 F室",
         "layout": "1 房",
         "sqft": "347 呎",
-        "price": "611.2 万",
-        "unit_price": "$17,613/呎",
-        "date": "2026-10-08"
+        "price": "609.3 万",
+        "unit_price": "$17,560/呎",
+        "date": "2026-10-12"
       },
       {
-        "unit_name": "5B座 22楼 F室",
+        "unit_name": "5B座 31楼 F室",
         "layout": "1 房",
         "sqft": "347 呎",
-        "price": "605.7 万",
-        "unit_price": "$17,455/呎",
-        "date": "2026-10-06"
+        "price": "598.9 万",
+        "unit_price": "$17,260/呎",
+        "date": "2026-10-11"
       },
       {
-        "unit_name": "3A座 49楼 D室",
-        "layout": "2 房",
-        "sqft": "446 呎",
-        "price": "738.9 万",
-        "unit_price": "$16,567/呎",
-        "date": "2026-10-08"
-      },
-      {
-        "unit_name": "3A座 36楼 A室",
+        "unit_name": "3A座 26楼 A室",
         "layout": "2 房",
         "sqft": "472 呎",
-        "price": "891 万",
-        "unit_price": "$18,876/呎",
-        "date": "2026-10-08"
+        "price": "859.3 万",
+        "unit_price": "$18,205/呎",
+        "date": "2026-10-12"
       },
       {
-        "unit_name": "5B座 37楼 B室",
-        "layout": "3 房",
-        "sqft": "783 呎",
-        "price": "1549 万",
-        "unit_price": "$19,783/呎",
-        "date": "2026-10-07"
+        "unit_name": "3B座 41楼 D室",
+        "layout": "2 房",
+        "sqft": "554 呎",
+        "price": "904 万",
+        "unit_price": "$16,317/呎",
+        "date": "2026-10-12"
       },
       {
-        "unit_name": "5B座 41楼 B室",
+        "unit_name": "3B座 33楼 B室",
         "layout": "3 房",
-        "sqft": "783 呎",
-        "price": "1515.7 万",
-        "unit_price": "$19,358/呎",
-        "date": "2026-10-05"
+        "sqft": "628 呎",
+        "price": "1252 万",
+        "unit_price": "$19,936/呎",
+        "date": "2026-10-13"
+      },
+      {
+        "unit_name": "3B座 51楼 B室",
+        "layout": "3 房",
+        "sqft": "628 呎",
+        "price": "1261.1 万",
+        "unit_price": "$20,081/呎",
+        "date": "2026-10-12"
       }
     ],
     "selling_points": "1、港铁康城站临海前排一线开扬全海景：位于日出康城临海核心地段，部分中高层单位坐拥全无遮挡的蓝塘海峡壮阔海景及维港景致，尽享水岸度假生活。\n2、将蓝隧道与跨湾大桥极速直通港岛东：经将蓝隧道及跨湾连接路，驾车数分钟即达东区海底隧道及太古坊CBD，交通网络全面升级，通勤效率大增。\n3、大型成熟商场地标与高性价比品质宜居：楼下即享近50万呎大型购物中心「The LOHAS」，配备大型豪华住客会所，户型方正实用，为中产家庭优质海景大宅。",
@@ -65052,7 +65233,8 @@
     "property_positioning": "⚖️ 投资自住兼顾",
     "core_pros": "★ 港铁康城站临海前排一线开扬全海景\n🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林\n【轨交】港铁康城站正上盖 / 直通（室内全天候天桥直通 The LOHAS 与康城站）\n️【商业】连桥直达 The LOHAS 康城地标级商场",
     "quantified_cons": "【校网】非传统四大名校网（所属95校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 277米 (3分钟) 直达港铁康城站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 277米 (3分钟) 直达港铁康城站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   },
   {
     "name": "皇璇",
@@ -65238,52 +65420,52 @@
     ],
     "recent_transactions": [
       {
-        "unit_name": "皇璇座 16楼 J室",
+        "unit_name": "皇璇座 15楼 F室",
         "layout": "1 房",
-        "sqft": "302 呎",
-        "price": "744.1 万",
-        "unit_price": "$24,639/呎",
-        "date": "2026-09-30"
+        "sqft": "304 呎",
+        "price": "656.9 万",
+        "unit_price": "$21,609/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "皇璇座 15楼 J室",
+        "unit_name": "皇璇座 15楼 E室",
         "layout": "1 房",
-        "sqft": "302 呎",
-        "price": "749.1 万",
-        "unit_price": "$24,805/呎",
-        "date": "2026-09-30"
+        "sqft": "304 呎",
+        "price": "665.4 万",
+        "unit_price": "$21,888/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "皇璇座 2楼 D室",
+        "unit_name": "皇璇座 25楼 E室",
         "layout": "2 房",
-        "sqft": "413 呎",
-        "price": "1239 万",
-        "unit_price": "$30,000/呎",
-        "date": "2026-10-01"
+        "sqft": "433 呎",
+        "price": "1121.2 万",
+        "unit_price": "$25,894/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "皇璇座 30楼 E室",
+        "unit_name": "皇璇座 23楼 D室",
         "layout": "2 房",
-        "sqft": "432 呎",
-        "price": "1333.6 万",
-        "unit_price": "$30,870/呎",
-        "date": "2026-09-30"
+        "sqft": "451 呎",
+        "price": "1144.7 万",
+        "unit_price": "$25,381/呎",
+        "date": "2026-10-10"
       },
       {
-        "unit_name": "皇璇座 26楼 B室",
+        "unit_name": "皇璇座 27楼 C室",
         "layout": "3 房",
-        "sqft": "729 呎",
-        "price": "2114.1 万",
-        "unit_price": "$29,000/呎",
-        "date": "2026-10-08"
+        "sqft": "799 呎",
+        "price": "2556.6 万",
+        "unit_price": "$31,997/呎",
+        "date": "2026-10-13"
       },
       {
-        "unit_name": "皇璇座 29楼 A室",
+        "unit_name": "皇璇座 26楼 C室",
         "layout": "3 房",
-        "sqft": "610 呎",
-        "price": "2196 万",
-        "unit_price": "$36,000/呎",
-        "date": "2026-10-07"
+        "sqft": "792 呎",
+        "price": "2455.2 万",
+        "unit_price": "$31,000/呎",
+        "date": "2026-10-13"
       }
     ],
     "address": "熙和街1號",
@@ -65309,7 +65491,9 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 北角核心繁华腹地与成熟商圈\n【轨交】步行约 6 分钟即达港铁炮台山站（轨交通勤从容便捷）\n️【商业】邻近/周边1.5km聚合北角汇等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【校网】非传统四大名校网（所属14校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 496米 (6分钟) 直达港铁炮台山站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 496米 (6分钟) 直达港铁炮台山站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false,
+    "intro_url": "https://docs.qq.com/doc/DT2VwSnRMd2pnc09x?isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&isNewEmptyDoc=1&no_promotion=1&is_blank_or_template=blank&opennew=1"
   },
   {
     "name": "逸里1号",
@@ -65746,6 +65930,7 @@
     "property_positioning": "💷 投资型产品",
     "core_pros": "★ 恒基西九龙市区更新全新力作\n️【商业】邻近/周边1.5km聚合奥海城等大型地标商圈",
     "quantified_cons": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧\n【交通】步行至最近港铁太子站超12分钟，建议接驳小巴至地铁\n【校网】非传统四大名校网（所属32校网，升学建议搭配优质私立或国际学校）\n⏳【交付】属预售楼花阶段（预计交付周期超1年，需等待工程竣工）",
-    "commute_guidance": "步行约 1028米 (12分钟) 直达港铁太子站，轨交干线高效直通中环/九龙核心"
+    "commute_guidance": "步行约 1028米 (12分钟) 直达港铁太子站，轨交干线高效直通中环/九龙核心",
+    "is_sold_out": false
   }
 ]

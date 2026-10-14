@@ -2897,6 +2897,12 @@
             <span>🛍️ 核心商场圈</span>
           </div>
         </label>
+        <label class="layer-checkbox-item">
+          <div class="layer-chk-left">
+            <input type="checkbox" id="chk-layer-soldout" onchange="applyFilters()">
+            <span>🏷️ 包含已售罄项目</span>
+          </div>
+        </label>
       </div>
 
       <!-- 名校收录标准气泡弹窗 -->
@@ -3377,9 +3383,7 @@ async function loadData() {
 async function syncProductionSalesInBackground() {
   const syncEl = document.getElementById('liveSyncText');
   const endpoints = [
-    './data.json?v=' + MAP_DATA_VERSION,
-    '../../价单_正式版/data.json?v=' + MAP_DATA_VERSION,
-    'https://neil-studio.github.io/hk/data.json?v=' + MAP_DATA_VERSION
+    './data.json?v=' + MAP_DATA_VERSION
   ];
 
   let prodData = null;
@@ -5327,6 +5331,14 @@ function applyFilters() {
   markersByName = {};
 
   let filtered = projectsData.filter(proj => {
+    // 🛑 售罄项目生命周期状态过滤 (Scheme C 状态驱动模式)
+    const isSoldOut = proj.sell_status === 'sold_out' || proj.is_sold_out === true;
+    if (isSoldOut) {
+      const showSoldOut = document.getElementById('chk-layer-soldout') && document.getElementById('chk-layer-soldout').checked;
+      const isExplicitSearch = filterState.searchKeyword && proj.name && proj.name.toLowerCase().includes(filterState.searchKeyword.toLowerCase().trim());
+      if (!showSoldOut && !isExplicitSearch) return false;
+    }
+
     // 🏠 现房/期房 过滤 (全部 | 现房 | 期房)
     if (filterState.propType && filterState.propType !== 'all') {
       const pType = proj.property_type || (proj.is_coming_soon ? 'forward' : 'ready');
@@ -5474,6 +5486,8 @@ function applyFilters() {
       } else {
         priceDisplayHtml = `<span class="card-v2-price tender" style="color:#ca8a04;">暂停销售</span>`;
       }
+    } else if (proj.sell_status === 'sold_out' || proj.is_sold_out) {
+      priceDisplayHtml = `<span class="card-v2-price tender" style="color:#64748b;">已售罄</span>`;
     } else if (proj.min_price_wan && proj.min_price_wan > 0) {
       priceDisplayHtml = `<span class="card-v2-price">约$${Number(proj.min_price_wan).toLocaleString()}万<span class="price-unit">起*</span></span>`;
     } else if (proj.sell_status === 'coming_soon') {
@@ -5485,7 +5499,10 @@ function applyFilters() {
     // 状态标签
     let statusClass = 'sale';
     let statusText = proj.sell_status_cn || '出售中';
-    if (isSuspended) {
+    if (proj.sell_status === 'sold_out' || proj.is_sold_out) {
+      statusClass = 'soldout';
+      statusText = '已售罄';
+    } else if (isSuspended) {
       statusClass = 'suspended';
       statusText = '⛔ 暂停销售';
     } else if (proj.sell_status === 'coming_soon') {
@@ -5579,7 +5596,7 @@ function applyFilters() {
 
     // 如果非远视角，或者处于单盘视角，则向地图添加单盘标记
     if (!isFarView) {
-      const mColor = proj.sell_status === 'on_sale' ? '#16a34a' : '#2563eb';
+      const mColor = (proj.sell_status === 'sold_out' || proj.is_sold_out) ? '#64748b' : (proj.sell_status === 'on_sale' ? '#16a34a' : '#2563eb');
       const mIcon = L.divIcon({
         className: 'p-marker',
         html: `<div class="proj-pin-box" style="background:${mColor}; color:#fff;" title="${proj.name}">${proj.name}</div>`,

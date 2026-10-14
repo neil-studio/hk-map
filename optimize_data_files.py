@@ -107,14 +107,11 @@ def optimize_all():
     # 2. Project Coords Minification
     coords_path = os.path.join(base_dir, 'hk_project_coords.json')
     if os.path.exists(coords_path):
-        coords_bak = coords_path + '.bak'
-        if not os.path.exists(coords_bak):
-            shutil.copy2(coords_path, coords_bak)
-        with open(coords_bak, 'r', encoding='utf-8') as f:
+        with open(coords_path, 'r', encoding='utf-8') as f:
             c_data = json.load(f)
         with open(coords_path, 'w', encoding='utf-8') as f:
             json.dump(c_data, f, separators=(',', ':'), ensure_ascii=False)
-        print(f"✅ hk_project_coords.json: {os.path.getsize(coords_path)/1024:.1f} KB (原始: {os.path.getsize(coords_bak)/1024/1024:.2f} MB)")
+        print(f"✅ hk_project_coords.json: {os.path.getsize(coords_path)/1024:.1f} KB")
 
     # 3. Landmarks Minification
     for fname in ['hk_landmarks.json', 'hk_mtr_stations.json']:
