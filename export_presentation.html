@@ -3058,7 +3058,6 @@
       { id: 'comparison', icon: '📊', name: '多盘横向对比', desc: '全户型指标矩阵对比' },
       { id: 'dossier', icon: '🏢', name: '单盘深度档案', desc: '各推荐楼盘独立专页' },
       { id: 'district', icon: '🏙️', name: '所属商圈深度解析', desc: '核心板块全维深研' },
-      { id: 'verdict_decision', icon: '💡', name: '终极选房决策建议', desc: '客群分类与决策指南' },
       { id: 'verdict_finance', icon: '💷', name: '财务税费与月供速查', desc: '印花税阶梯与月供速查' },
       { id: 'closing', icon: '📑', name: '品牌封底', desc: '专属顾问名片与免责' }
     ];
@@ -3085,7 +3084,7 @@
         const saved = localStorage.getItem('landma_export_selected_sections');
         if (saved) {
           const arr = JSON.parse(saved);
-          if (Array.isArray(arr) && arr.length > 0) return arr;
+          if (Array.isArray(arr) && arr.length > 0) return arr.filter(id => id !== 'verdict_decision');
         }
       } catch (e) {}
       return SECTION_DEFINITIONS.map(s => s.id);
@@ -3120,8 +3119,8 @@
 
     function applyPresetSections(preset) {
       if (preset === 'minimal') {
-        // 精简决策版：保留封面、宏观地图分布、多盘横向对比、决策建议、财务税费速查、封底
-        setSelectedSections(['cover', 'overview', 'comparison', 'verdict_decision', 'verdict_finance', 'closing']);
+        // 精简决策版：保留封面、宏观地图分布、多盘横向对比、财务税费速查、封底
+        setSelectedSections(['cover', 'overview', 'comparison', 'verdict_finance', 'closing']);
       }
       applySectionVisibility();
     }
@@ -3451,8 +3450,8 @@
       }
       const numCompPages = compChunks.length;
 
-      // 页面计算（顺畅漏斗：封面(1) + 需求与权衡(numReqPages) + 宏观地图(1) + 横向对比(numCompPages) + 单盘档案(projects.length) + 商圈解析(numDistrictPages) + 终极分类决策(1) + 财务税费速查(1) + 封底(1)）
-      const totalPages = 5 + numReqPages + numCompPages + projects.length + numDistrictPages;
+      // 页面计算（顺畅漏斗：封面(1) + 需求与权衡(numReqPages) + 宏观地图(1) + 横向对比(numCompPages) + 单盘档案(projects.length) + 商圈解析(numDistrictPages) + 财务税费速查(1) + 封底(1)）
+      const totalPages = 4 + numReqPages + numCompPages + projects.length + numDistrictPages;
       document.getElementById('page-stat-badge').textContent = `共 ${projects.length} 个推荐楼盘 / ${totalPages} 页`;
 
       // ----------------------------------------------------
@@ -4888,200 +4887,7 @@
         root.appendChild(dPage);
       });
 
-      // ----------------------------------------------------
-      // PAGE: 全案综合置业决策建议与客群分类矩阵 (Final Verdict - Decision Page)
-      // ----------------------------------------------------
-      function renderFinalVerdictDecisionPage(projects, pageNum, totalPages, client) {
-        const pageEl = document.createElement('div');
-        pageEl.className = 'pdf-page verdict-page verdict-decision-page';
-        pageEl.dataset.section = 'verdict_decision';
 
-        const targetProjs = projects;
-
-        // 归类三大客群维度：自住型、兼顾型、投资型
-        const ownerProjects = [];
-        const balancedProjects = [];
-        const investProjects = [];
-
-        targetProjs.forEach((p, idx) => {
-          const tradeoff = getProjectTradeoff(p, idx, targetProjs.length);
-          const r = tradeoff.role || '';
-          if (r.includes('自住') && !r.includes('兼顾') && !r.includes('投资')) {
-            ownerProjects.push({ p, idx, tradeoff });
-          } else if (r.includes('兼顾') || (r.includes('自住') && r.includes('投资'))) {
-            balancedProjects.push({ p, idx, tradeoff });
-          } else {
-            investProjects.push({ p, idx, tradeoff });
-          }
-        });
-
-        const categories = [
-          {
-            id: 'owner',
-            className: 'cat-owner',
-            borderClass: 'border-owner',
-            title: '🏡 怡居大宅（自住）',
-            themeColor: '#0284C7',
-            badgeBg: '#E0F2FE',
-            badgeColor: '#0369A1',
-            logic: '聚焦低密纯粹圈层、名校网生态或稀缺自然景观，追求高隐私度与居住品质，长线保值抗跌。',
-            guide: '首选中高楼层 3-4 房主力及特色单位，重点关注开阔景观、梯户比与会所圈层。',
-            projects: ownerProjects
-          },
-          {
-            id: 'balanced',
-            className: 'cat-balanced',
-            borderClass: 'border-balanced',
-            title: '⚖️ 兼得平衡（投资自住）',
-            themeColor: '#16A34A',
-            badgeBg: '#DCFCE7',
-            badgeColor: '#15803D',
-            logic: '自住品质与资产流动性兼备的稳健底仓。紧邻核心轨交枢纽或大型综合体商圈，进可攻退可守，周期防御力极强。',
-            guide: '优先锁定主流 2-3 房家庭主力户型，兼得便捷成熟配套与未来二手市场庞大的承接流动性。',
-            projects: balancedProjects
-          },
-          {
-            id: 'invest',
-            className: 'cat-invest',
-            borderClass: 'border-invest',
-            title: '💷 高租售比（投资）',
-            themeColor: '#D97706',
-            badgeBg: '#FEF3C7',
-            badgeColor: '#B45309',
-            logic: '以稳健租金回报与高变现流动性为导向。紧贴核心CBD、高校或高铁圈，租赁客群庞大、空置期极短。',
-            guide: '严格把控总价门槛，优先锁定开放式至 1-2 房中低总价单元，追求高租金净回报率（Net Yield）与快速退出变现。',
-            projects: investProjects
-          }
-        ];
-
-        // 仅保留有入选项目的专栏，彻底移除 0 个项目的空白占位
-        const activeCategories = categories.filter(c => c.projects.length > 0);
-
-        // 辅助渲染各专栏内项目卡片列表 (建议二：通栏宽幅网格高密度卡片)
-        function renderProjectCards(list, cat) {
-          return list.map(({ p, idx, tradeoff }) => {
-            const tCount = p.tower_count || 1;
-            const units = p.total_units;
-            const towerStr = tCount === 1 ? '独栋' : `${tCount}座大厦`;
-            const unitsStr = units ? `${units}伙` : '';
-            const compStr = formatCompletionDate(p.completion_date);
-            const minP = p.min_price_wan || 1500;
-
-            // 提取标签
-            const tags = [];
-            const area = p.micro_district || p.district;
-            if (area) tags.push(area);
-            const sNet = p.primary_school_net || p.school_net;
-            if (sNet) tags.push(sNet.includes('校网') ? sNet : `${sNet}校网`);
-            tags.push(compStr.includes('已') || compStr.includes('现') ? '现楼即住' : compStr);
-
-            const mtrText = p.nearest_mtr?.nearest_mtr_cn ? `近${p.nearest_mtr.nearest_mtr_cn}站` : '核心轨交';
-
-            // 提取真实独家卖点
-            let spTitle = '';
-            const rawPts = (p.selling_points || p.reason || p.mainland_selling_points || '').split('\n').filter(s => s.trim().length > 0);
-            if (rawPts.length > 0) {
-              let clean = rawPts[0].replace(/^\d+[\.、]\s*/, '').trim();
-              if (clean.includes('：')) clean = clean.split('：')[0].trim();
-              else if (clean.includes(':')) clean = clean.split(':')[0].trim();
-              spTitle = clean;
-            }
-            if (!spTitle) spTitle = `${p.micro_district || p.district}核心地脉·优质人居`;
-
-            return `
-              <div class="opt2-pure-card ${cat.borderClass}">
-                <div class="opt2-head-row">
-                  <div class="opt2-name">
-                    <span style="color:#00889A;">#${idx + 1}</span>
-                    <span>${p.name}</span>
-                  </div>
-                  <div class="opt2-price" style="color:${cat.themeColor};">约 $${Math.round(minP)} 万起</div>
-                </div>
-                <div class="opt2-tags-row">
-                  ${tags.map(t => `<span class="opt2-tag-pill" style="background:${cat.badgeBg}; color:${cat.badgeColor};">${t}</span>`).join('')}
-                </div>
-                <div class="opt2-meta-grid">
-                  <span>🏛️ ${towerStr} ${unitsStr}</span>
-                  <span>🔑 ${compStr}</span>
-                  <span style="grid-column: span 2; display: inline-flex; align-items: center; gap: 2px;">
-                    ${getMtrLogoSvg()} ${mtrText}
-                  </span>
-                </div>
-                <div class="opt2-highlight-box">
-                  <strong>【核心特质】</strong>${spTitle}
-                </div>
-              </div>
-            `;
-          }).join('');
-        }
-
-        const sectionsHtml = activeCategories.length > 0 ? activeCategories.map(cat => {
-          const pCount = cat.projects.length;
-          let gridCols = pCount;
-          if (pCount <= 4) {
-            gridCols = pCount;
-          } else if (pCount <= 6) {
-            gridCols = 3;
-          } else if (pCount <= 8) {
-            gridCols = 4;
-          } else {
-            gridCols = Math.ceil(pCount / 2);
-          }
-          const poolGridStyle = `grid-template-columns: repeat(${gridCols}, 1fr);`;
-
-          return `
-            <div class="cat-section-block">
-              <!-- 顶部通栏横幅 Banner -->
-              <div class="cat-section-banner banner-${cat.id}">
-                <div class="cat-banner-left">
-                  <span class="cat-banner-title">${cat.title}</span>
-                  <span class="cat-banner-count" style="background:${cat.badgeBg}; color:${cat.badgeColor};">${cat.projects.length} 盘入选</span>
-                </div>
-                <div class="cat-banner-strategy">
-                  <span><strong>【核心逻辑】</strong>${cat.logic}</span>
-                  <span><strong>【置业指引】</strong>${cat.guide}</span>
-                </div>
-              </div>
-
-              <!-- 下方通栏卡片网格池 -->
-              <div class="cat-cards-grid-pool" style="${poolGridStyle}">
-                ${renderProjectCards(cat.projects, cat)}
-              </div>
-            </div>
-          `;
-        }).join('') : `
-          <div class="decision-empty-state">
-            <span>本套方案未重点配置此类物业，侧重其他核心方向</span>
-          </div>
-        `;
-
-        pageEl.innerHTML = `
-          <div class="page-header">
-            <div class="page-header-left">
-              <span class="page-header-title">全案综合置业决策建议与终极选房指南</span>
-              <span class="page-header-badge">THE FINAL VERDICT · 综合决策落地</span>
-            </div>
-            <img src="landma_logo.png" class="page-header-logo" alt="Logo">
-          </div>
-
-          <div class="verdict-decision-layout">
-            <div class="verdict-sec-title">
-              <span>💡 蓝玛置业专家选房分类矩阵</span>
-            </div>
-
-            <div class="verdict-sections-container">
-              ${sectionsHtml}
-            </div>
-          </div>
-
-          <div class="page-footer">
-            <span>蓝玛国际 LANDMA GLOBAL · 客户定制方案</span>
-            <span>第 ${pageNum} 页 / 共 ${totalPages} 页</span>
-          </div>
-        `;
-
-        return pageEl;
-      }
 
       // ----------------------------------------------------
       // PAGE: 置业财务预算规划 · 法定印花税与全案现金流速查 (Final Verdict - Finance Page)
@@ -5383,10 +5189,7 @@
       }
 
       const verdictPageNum = districtPageStartNum + numDistrictPages + 1;
-      const verdictDecisionPage = renderFinalVerdictDecisionPage(projects, verdictPageNum, totalPages, client);
-      root.appendChild(verdictDecisionPage);
-
-      const verdictFinancePage = renderFinalVerdictFinancePage(projects, verdictPageNum + 1, totalPages, client);
+      const verdictFinancePage = renderFinalVerdictFinancePage(projects, verdictPageNum, totalPages, client);
       root.appendChild(verdictFinancePage);
 
       // ----------------------------------------------------
