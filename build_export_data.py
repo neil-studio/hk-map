@@ -806,11 +806,13 @@ def main():
                 p["sell_status"] = prod_status
                 p["sell_status_cn"] = prod_status_cn
                 p["is_sold_out"] = False
+                p["is_coming_soon"] = (prod_status == "coming_soon")
         else:
             # 正式版已下架或不在 active 列表的项目，状态置为 sold_out，软删除保护
             p["sell_status"] = "sold_out"
             p["sell_status_cn"] = "已售罄"
             p["is_sold_out"] = True
+            p["is_coming_soon"] = False
 
         # 动态同步营销与楼盘资料链接（若正式版有提供）
         if "marketing_url" in dj_p and dj_p["marketing_url"]:
