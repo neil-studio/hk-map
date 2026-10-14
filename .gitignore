@@ -10,3 +10,4 @@ Icon
 preview_shots/
 preview_district_*.html
 generate_district_*.py
+*_backup*.xlsx

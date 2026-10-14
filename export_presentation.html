@@ -2704,8 +2704,8 @@
         '马头角': '马头角及土瓜湾',
         '红磡': '红磡及黄埔',
         '黄埔': '红磡及黄埔',
-        '日出康城': '将军澳南及日出康城',
-        '将军澳': '将军澳南及日出康城'
+        '日出康城': '将军澳及日出康城',
+        '将军澳': '将军澳及日出康城'
       };
 
       if (d && aliasMap[d]) {
@@ -3342,7 +3342,7 @@
         if (!role) {
           const micro = p.micro_district || p.district || '';
           const pname = (p.name || '').toLowerCase();
-          const luxuryAreas = ['山顶', '浅水湾', '深水湾', '寿臣山', '赤柱', '大潭', '中半山', '东半山', '西半山', '渣甸山', '九龙塘低密度豪宅区', '又一村'];
+          const luxuryAreas = ['山顶', '浅水湾', '深水湾', '寿臣山', '赤柱', '大潭', '中半山', '东半山', '西半山', '渣甸山', '九龙塘', '又一村'];
           if (luxuryAreas.some(a => micro.includes(a)) || pname.includes('洋房') || pname.includes('villa')) {
             role = '🏡 自住型产品';
           } else if ((p.tower_count || 1) >= 2 || (p.total_units || 0) >= 250 || micro.includes('黄竹坑') || micro.includes('何文田')) {
