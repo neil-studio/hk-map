@@ -2510,7 +2510,202 @@
     color: var(--slate-600);
   }
   </style>
-</head>
+<style>
+  /* --- 五维刚性排序与卡片泳道排版 --- */
+  .tradeoff-badge-pro-5d {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .tradeoff-pro-killer {
+    font-weight: 700;
+    color: var(--slate-900);
+    background: #F8FAFC;
+    border-left: 3px solid #00889A;
+    padding: 2px 6px;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.65rem;
+    line-height: 1.35;
+    margin-bottom: 1.5px;
+  }
+  .tradeoff-pro-pill {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #F0FDF4;
+    border: 1px solid #DCFCE7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #166534;
+    font-size: 0.65rem;
+    line-height: 1.3;
+  }
+  .tradeoff-pro-pill strong {
+    color: #14532D;
+    white-space: nowrap;
+  }
+  .tradeoff-badge-con-5d {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .tradeoff-con-pill {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #FFFBEB;
+    border: 1px solid #FEF3C7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #92400E;
+    font-size: 0.65rem;
+    line-height: 1.3;
+  }
+  .tradeoff-con-pill strong {
+    color: #78350F;
+    white-space: nowrap;
+  }
+  .tradeoff-con-perfect {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #FEFCE8;
+    border: 1px solid #FEF08A;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #854D0E;
+    font-weight: 700;
+    font-size: 0.65rem;
+    line-height: 1.35;
+  }
+
+  .icon-mtr-svg {
+    display: inline-flex;
+    vertical-align: middle;
+    margin-right: 2px;
+    flex-shrink: 0;
+  }
+  .icon-cap-svg {
+    display: inline-flex;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #0284C7;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-right: 3px;
+    flex-shrink: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  }
+  .icon-mall-svg {
+    display: inline-flex;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #EA580C;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-right: 3px;
+    flex-shrink: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  }
+
+  .page-content-requirements {
+    padding: 8px 36px 6px 36px !important;
+    gap: 6px !important;
+  }
+  .profile-card-compact {
+    padding: 6px 12px !important;
+    border-radius: 8px !important;
+  }
+  .profile-card-header {
+    margin-bottom: 4px !important;
+  }
+  .profile-card-title-main {
+    font-size: 0.78rem !important;
+  }
+  .req-item-box-compact {
+    gap: 6px !important;
+  }
+  .req-cell-compact {
+    padding: 3px 6px !important;
+  }
+  .req-cell-label {
+    font-size: 0.60rem !important;
+  }
+  .req-cell-val {
+    font-size: 0.68rem !important;
+  }
+
+  .tradeoff-card-box {
+    background: #F8FAFC !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding-bottom: 4px !important;
+  }
+  .tradeoff-header {
+    background: #F1F5F9 !important;
+    padding: 6px 14px !important;
+    border-bottom: 1px solid #CBD5E1 !important;
+  }
+  .tradeoff-title {
+    font-size: 0.82rem !important;
+  }
+  .tradeoff-table {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 4px !important;
+    padding: 0 8px !important;
+    font-size: 0.68rem !important;
+  }
+  .tradeoff-table thead th {
+    background: transparent !important;
+    color: #475569 !important;
+    font-weight: 800 !important;
+    border: none !important;
+    padding: 4px 8px 2px 8px !important;
+    letter-spacing: 0.02em !important;
+  }
+  .tradeoff-table tbody tr {
+    background: #FFFFFF !important;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04) !important;
+  }
+  .tradeoff-table tbody td {
+    padding: 5px 8px !important;
+    border-top: 1px solid #E2E8F0 !important;
+    border-bottom: 1.5px solid #CBD5E1 !important;
+    vertical-align: middle !important;
+  }
+  .tradeoff-table tbody td:first-child {
+    border-left: 4px solid #00889A !important;
+    border-top-left-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
+  }
+  .tradeoff-table tbody td:last-child {
+    border-right: 1px solid #E2E8F0 !important;
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+  }
+
+  .proj-num-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #0F172A;
+    color: #FFFFFF;
+    font-weight: 900;
+    font-size: 0.68rem;
+    padding: 1px 5px;
+    border-radius: 4px;
+    margin-right: 5px;
+  }
+</style></head>
 <body>
 
   <!-- 🔒 专属访问密码保护门 (Password Gate: lm8888) -->
@@ -3108,12 +3303,31 @@
 
       // 0. 加载图片清单与地标数据库
       try {
-        const [manifestResp, landmarksResp] = await Promise.all([
+        const [manifestResp, landmarksResp, coordsResp] = await Promise.all([
           fetch('project_images_manifest.json?v=' + Date.now()).then(r => r.ok ? r.json() : {}).catch(() => ({})),
-          fetch('hk_landmarks.json?v=' + Date.now()).then(r => r.ok ? r.json() : []).catch(() => [])
+          fetch('hk_landmarks.json?v=' + Date.now()).then(r => r.ok ? r.json() : []).catch(() => []),
+          fetch('hk_project_coords.json?v=' + Date.now()).then(r => r.ok ? r.json() : []).catch(() => [])
         ]);
         window.projectImagesManifest = manifestResp || {};
         window.allLandmarksData = landmarksResp || [];
+
+        // 强防缓存：用数据库最新优劣势与权衡要素覆盖旧快照
+        if (coordsResp && Array.isArray(coordsResp) && coordsResp.length > 0) {
+          const freshMap = new Map();
+          coordsResp.forEach(cp => {
+            if (cp && cp.name) freshMap.set(cp.name, cp);
+          });
+          projects.forEach(p => {
+            const fresh = freshMap.get(p.name);
+            if (fresh) {
+              if (fresh.quantified_cons !== undefined) p.quantified_cons = fresh.quantified_cons;
+              if (fresh.commute_guidance !== undefined) p.commute_guidance = fresh.commute_guidance;
+              if (fresh.core_pros !== undefined) p.core_pros = fresh.core_pros;
+              if (fresh.property_positioning !== undefined) p.property_positioning = fresh.property_positioning;
+              if (fresh.micro_district !== undefined) p.micro_district = fresh.micro_district;
+            }
+          });
+        }
 
         projects.forEach(p => {
           if (window.projectImagesManifest && window.projectImagesManifest[p.name]) {
@@ -3178,16 +3392,18 @@
       }
       const numDistrictPages = districtPageChunks.length;
 
-      // 计算需求与优劣势对比页数：支持单页最多放 6 个项目；超出 6 个时启用智能动态分页（杜绝溢出截断）
+      // 计算需求与优劣势对比页数：第1页容纳客户档案+4个项目；超出4个时启用智能动态分页
       const reqChunks = [];
       const totalReqProjects = projects.length;
-      if (totalReqProjects <= 6) {
+      if (totalReqProjects <= 4) {
         reqChunks.push(projects);
       } else {
-        const numPages = Math.ceil(totalReqProjects / 5);
-        const perPage = Math.ceil(totalReqProjects / numPages);
-        for (let i = 0; i < totalReqProjects; i += perPage) {
-          reqChunks.push(projects.slice(i, i + perPage));
+        reqChunks.push(projects.slice(0, 4));
+        const remaining = projects.slice(4);
+        const numRemainingPages = Math.ceil(remaining.length / 4);
+        const perPage = Math.ceil(remaining.length / numRemainingPages);
+        for (let i = 0; i < remaining.length; i += perPage) {
+          reqChunks.push(remaining.slice(i, i + perPage));
         }
       }
       const numReqPages = reqChunks.length;
@@ -3731,18 +3947,58 @@
 
           const cleanDist = getCleanDistrict(p);
 
+          // 格式化 Pros 胶囊列表（严格顺序：社区 -> 轨交 -> 校网 -> 商业 -> 交付）
+          const prosLines = (t.pros || '').split('\n').filter(s => s.trim().length > 0);
+          const prosPillsHtml = prosLines.map(line => {
+            if (line.startsWith('★')) {
+              return `<div class="tradeoff-pro-killer">${line}</div>`;
+            }
+            let iconHtml = '';
+            if (line.includes('【轨交】')) {
+              iconHtml = `<span class="icon-mtr-svg"><svg viewBox="0 0 65 52" style="width:13px; height:10px;"><ellipse cx="33" cy="26" rx="32" ry="26" fill="#C8102E"/><path d="M 33,8 V 44 M 21,9 A 12,12 0 0 0 45,9 M 21,43 A 12,12 0 0 1 45,43" stroke="white" stroke-width="6" stroke-linecap="round" fill="none"/></svg></span>`;
+            } else if (line.includes('【名校】')) {
+              iconHtml = `<span class="icon-cap-svg"><svg viewBox="0 0 24 24" width="8" height="8" fill="#fff"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></span>`;
+            } else if (line.includes('【商业】')) {
+              iconHtml = `<span class="icon-mall-svg"><svg viewBox="0 0 24 24" width="7" height="7" fill="#fff"><path d="M16 6V4a4 4 0 0 0-8 0v2H4a1 1 0 0 0-1 1v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1h-4ZM10 4a2 2 0 0 1 4 0v2h-4V4Zm9 16H5V8h3v2a1 1 0 0 0 2 0V8h4v2a1 1 0 0 0 2 0V8h3v12Z"/></svg></span>`;
+            }
+            return `<div class="tradeoff-pro-pill">${iconHtml}<span>${line}</span></div>`;
+          }).join('');
+
+          // 格式化 Cons 胶囊列表（严格顺序：社区 -> 轨交 -> 校网 -> 商业 -> 交付）
+          let consHtml = '';
+          if (t.cons.includes('✨【五维全优】')) {
+            consHtml = `<div class="tradeoff-con-perfect"><span>${t.cons}</span></div>`;
+          } else {
+            const consLines = (t.cons || '').split('\n').filter(s => s.trim().length > 0);
+            consHtml = consLines.map(line => {
+              let iconHtml = '';
+              if (line.includes('【交通】')) {
+                iconHtml = `<span class="icon-mtr-svg"><svg viewBox="0 0 65 52" style="width:13px; height:10px;"><ellipse cx="33" cy="26" rx="32" ry="26" fill="#C8102E"/><path d="M 33,8 V 44 M 21,9 A 12,12 0 0 0 45,9 M 21,43 A 12,12 0 0 1 45,43" stroke="white" stroke-width="6" stroke-linecap="round" fill="none"/></svg></span>`;
+              } else if (line.includes('【校网】')) {
+                iconHtml = `<span class="icon-cap-svg"><svg viewBox="0 0 24 24" width="8" height="8" fill="#fff"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></span>`;
+              } else if (line.includes('【商业】')) {
+                iconHtml = `<span class="icon-mall-svg"><svg viewBox="0 0 24 24" width="7" height="7" fill="#fff"><path d="M16 6V4a4 4 0 0 0-8 0v2H4a1 1 0 0 0-1 1v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1h-4ZM10 4a2 2 0 0 1 4 0v2h-4V4Zm9 16H5V8h3v2a1 1 0 0 0 2 0V8h4v2a1 1 0 0 0 2 0V8h3v12Z"/></svg></span>`;
+              }
+              return `<div class="tradeoff-con-pill">${iconHtml}<span>${line}</span></div>`;
+            }).join('');
+          }
+
           return `
             <tr>
-              <td style="font-weight:800; color:#0F172A; width:18%;">
-                <span style="color:#00889A; margin-right:4px;">#${globalIdx + 1}</span> ${p.name}
+              <td style="font-weight:800; color:#0F172A; width:17%;">
+                <span class="proj-num-badge">#${globalIdx + 1}</span> ${p.name}
               </td>
-              <td style="width:16%;">
+              <td style="width:15%;">
                 <div class="tradeoff-district-badge">📍 ${cleanDist}</div>
-                <div style="font-size:0.68rem; color:#64748B; margin-top:2px;">${p.developer || '香港品牌发展商'}</div>
+                <div style="font-size:0.66rem; color:#64748B; margin-top:2px;">${p.developer || '香港品牌发展商'}</div>
               </td>
-              <td class="tradeoff-badge-pro" style="width:28%;">✓ ${t.pros}</td>
-              <td class="tradeoff-badge-con" style="width:22%;">△ ${t.cons.replace(/\n/g, '<br>')}</td>
-              <td style="width:16%;">
+              <td style="width:32%;">
+                <div class="tradeoff-badge-pro-5d">${prosPillsHtml}</div>
+              </td>
+              <td style="width:24%;">
+                <div class="tradeoff-badge-con-5d">${consHtml}</div>
+              </td>
+              <td style="width:12%; text-align:center;">
                 <span class="tradeoff-role-pill" style="background:${roleBg}; color:${roleColor};">${t.role}</span>
               </td>
             </tr>
@@ -3814,7 +4070,6 @@
                 <div class="tradeoff-title">
                   <span>⚖️ 入选项目核心价值与客观权衡</span>
                 </div>
-                <div class="tradeoff-sub">结合客户资产配置诉求，客观审视各项目核心价值亮点与置业权衡要素</div>
               </div>
               <table class="tradeoff-table">
                 <thead>
@@ -4058,20 +4313,55 @@
                       const walkMin = Number(mtr?.walk_time_min) || 99;
                       const walkM = Number(mtr?.dist_walk_m) || 9999;
                       const pName = (p.name || '').toLowerCase();
-                      const isRunway = (p.micro_district || '').includes('跑道') || 
-                                       (p.address || '').includes('承') || 
-                                       pName.includes('coast') || 
-                                       (p.name || '').includes('柏蔚森') || 
-                                       (p.name || '').includes('天泷') || 
-                                       pName.includes('miami') || 
-                                       (p.name || '').includes('启德海湾') || 
-                                       (p.name || '').includes('维港');
+
+                      // 1. 严格地铁 TOD 上盖项目映射表（直接免除步行米数，展示上盖直通）
+                      const todOnTopMap = {
+                        '天玺．天第2期': '啟德站正上盖 (地下街直通车站)',
+                        '天玺．天': '啟德站正上盖 (地下街直通车站)',
+                        '天玺': '九龍站正上盖 (圆方ELEMENTS直连)',
+                        '汇玺III': '南昌站正上盖 (V Walk商场直通)',
+                        '汇玺': '南昌站正上盖 (V Walk商场直通)',
+                        'Blue Coast II': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                        'Blue Coast': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                        'Deep Water South': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                        '扬海': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                        '晋环': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                        '滶晨 II': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                        '滶晨': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                        '海盈山第4A期': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                        '海盈山第4B期': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                        '朗贤峰': '何文田站正上盖 (专用电梯直达站厅)',
+                        '瑜一第IC期': '何文田站正上盖 (专用电梯直达站厅)',
+                        '瑜一．天海': '何文田站正上盖 (专用电梯直达站厅)',
+                        '柏傲庄': '大圍站正上盖 (商场围方直通)',
+                        '海瑅湾': '康城站正上盖 (商场The LOHAS直通)',
+                        '凯柏峰': '康城站正上盖 (商场The LOHAS直通)',
+                        '柏珑': '錦上路站正上盖 (极速直通车站)'
+                      };
+                      const todKey = Object.keys(todOnTopMap).find(k => (p.name || '').includes(k));
+
+                      // 2. 跑道区判断（严格排除启德城中心与上盖项目）
+                      const cityCenterNames = ['天玺．天', 'henley', 'monaco', '嘉峯汇', '尚．珒溋', '龙誉', '启德1号'];
+                      const isCityCenter = cityCenterNames.some(k => pName.includes(k) || (p.name || '').includes(k));
+
+                      const isRunway = !isCityCenter && !todKey && (
+                        (p.address || '').includes('承丰') || 
+                        pName.includes('coast') || 
+                        (p.name || '').includes('柏蔚森') || 
+                        (p.name || '').includes('天泷') || 
+                        pName.includes('miami') || 
+                        (p.name || '').includes('启德海湾') || 
+                        (p.name || '').includes('维港') ||
+                        (p.name || '').includes('花语海')
+                      );
                       const isLuxuryNoMtr = walkMin >= 20 || walkM >= 2500;
-                      const commuteMetrics = getStationCommuteMetrics(isRunway ? '啟德' : mtr?.nearest_mtr_cn);
+                      const commuteMetrics = getStationCommuteMetrics((isRunway || todKey) ? (todKey ? mtr?.nearest_mtr_cn || '啟德' : '啟德') : mtr?.nearest_mtr_cn);
 
                       let line1Html = '';
                       const walkMinInt = Math.max(1, Math.round(walkMin));
-                      if (isRunway) {
+                      if (todKey) {
+                        line1Html = `${getMtrLogoSvg()} 港铁【${todOnTopMap[todKey]}】`;
+                      } else if (isRunway) {
                         line1Html = `🚌 跑道穿梭巴士约 5-8分 直达启德站`;
                       } else if (walkMin <= 12 && walkM <= 1000) {
                         line1Html = `${getMtrLogoSvg()} 步行约 ${walkM}米 (${walkMinInt}分) 到${mtr?.nearest_mtr_cn || '港铁'}站`;
@@ -4452,20 +4742,44 @@
                   const walkMin = Number(mtr?.walk_time_min) || 99;
                   const walkM = Number(mtr?.dist_walk_m) || 9999;
                   const pName = (proj.name || '').toLowerCase();
-                  const isKaiTakArea = (proj.micro_district || '').includes('启德') || 
-                                       (proj.district || '').includes('启德') || 
-                                       (proj.main_area || '').includes('启德');
-                  const isRunway = isKaiTakArea && (
-                    (proj.micro_district || '').includes('跑道') || 
-                    (proj.address || '').includes('承') || 
+
+                  // 1. 严格地铁 TOD 上盖项目映射表
+                  const todOnTopMap = {
+                    '天玺．天第2期': '啟德站正上盖 (地下街直通车站)',
+                    '天玺．天': '啟德站正上盖 (地下街直通车站)',
+                    '天玺': '九龍站正上盖 (圆方ELEMENTS直连)',
+                    '汇玺III': '南昌站正上盖 (V Walk商场直通)',
+                    '汇玺': '南昌站正上盖 (V Walk商场直通)',
+                    '扬海': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                    '晋环': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                    '滶晨 II': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                    '滶晨': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                    '海盈山第4A期': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                    '海盈山第4B期': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
+                    '瑜一第IC期': '何文田站正上盖 (专用电梯直达站厅)',
+                    '瑜一．天海': '何文田站正上盖 (专用电梯直达站厅)',
+                    '柏傲庄': '大圍站正上盖 (商场围方直通)',
+                    '凯柏峰': '康城站正上盖 (商场The LOHAS直通)',
+                    '柏珑': '錦上路站正上盖 (极速直通车站)'
+                  };
+                  const todKey = Object.keys(todOnTopMap).find(k => (proj.name || '').includes(k));
+                  if (todKey) {
+                    return `<span class="meta-chip success">${getMtrLogoSvg()} 港铁【${todOnTopMap[todKey]}】</span>`;
+                  }
+
+                  // 2. 跑道区判断（严格排除启德城中心与上盖项目）
+                  const cityCenterNames = ['天玺．天', 'henley', 'monaco', '嘉峯汇', '尚．珒溋', '龙誉', '启德1号'];
+                  const isCityCenter = cityCenterNames.some(k => pName.includes(k) || (proj.name || '').includes(k));
+
+                  const isRunway = !isCityCenter && (
+                    (proj.address || '').includes('承丰') || 
                     pName.includes('coast') || 
                     (proj.name || '').includes('柏蔚森') || 
                     (proj.name || '').includes('天泷') || 
                     pName.includes('miami') || 
                     (proj.name || '').includes('启德海湾') || 
-                    (proj.name || '').includes('维港1号') || 
-                    (proj.name || '').includes('维港．双钻') || 
-                    (proj.name || '').includes('维港双钻')
+                    (proj.name || '').includes('维港') ||
+                    (proj.name || '').includes('花语海')
                   );
                   if (isRunway) {
                     return `<span class="meta-chip primary">🚌 跑道穿梭巴士 (约5-8分直达启德站)</span>`;
