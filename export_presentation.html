@@ -2522,44 +2522,49 @@
     color: var(--slate-900);
     background: #F8FAFC;
     border-left: 3px solid #00889A;
-    padding: 2px 6px;
+    padding: 1.5px 5px;
     border-radius: 0 4px 4px 0;
-    font-size: 0.65rem;
-    line-height: 1.35;
-    margin-bottom: 1.5px;
+    font-size: 0.63rem;
+    line-height: 1.25;
+    margin-bottom: 1px;
   }
   .tradeoff-pro-pill {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
     background: #F0FDF4;
     border: 1px solid #DCFCE7;
-    padding: 2px 6px;
+    padding: 1.5px 5px;
     border-radius: 4px;
     color: #166534;
-    font-size: 0.65rem;
-    line-height: 1.3;
+    font-size: 0.63rem;
+    line-height: 1.25;
   }
   .tradeoff-pro-pill strong {
     color: #14532D;
     white-space: nowrap;
   }
+  .tradeoff-badge-pro-5d {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
   .tradeoff-badge-con-5d {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
   }
   .tradeoff-con-pill {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
     background: #FFFBEB;
     border: 1px solid #FEF3C7;
-    padding: 2px 6px;
+    padding: 1.5px 5px;
     border-radius: 4px;
     color: #92400E;
-    font-size: 0.65rem;
-    line-height: 1.3;
+    font-size: 0.63rem;
+    line-height: 1.25;
   }
   .tradeoff-con-pill strong {
     color: #78350F;
@@ -2613,30 +2618,43 @@
   }
 
   .page-content-requirements {
-    padding: 8px 36px 6px 36px !important;
+    padding: 6px 36px 6px 36px !important;
     gap: 6px !important;
   }
   .profile-card-compact {
-    padding: 6px 12px !important;
+    padding: 4px 10px !important;
     border-radius: 8px !important;
   }
   .profile-card-header {
-    margin-bottom: 4px !important;
+    margin-bottom: 3px !important;
+    padding-bottom: 2px !important;
+    border-bottom: 1px solid var(--primary-light) !important;
   }
   .profile-card-title-main {
-    font-size: 0.78rem !important;
+    font-size: 0.74rem !important;
+    gap: 4px !important;
+  }
+  .profile-card-subtag {
+    font-size: 0.60rem !important;
+    padding: 1px 6px !important;
+    border-radius: 8px !important;
   }
   .req-item-box-compact {
-    gap: 6px !important;
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 5px !important;
   }
   .req-cell-compact {
-    padding: 3px 6px !important;
+    padding: 2px 5px !important;
+    border-radius: 4px !important;
   }
   .req-cell-label {
-    font-size: 0.60rem !important;
+    font-size: 0.58rem !important;
+    margin-bottom: 1px !important;
   }
   .req-cell-val {
-    font-size: 0.68rem !important;
+    font-size: 0.66rem !important;
+    line-height: 1.2 !important;
   }
 
   .tradeoff-card-box {
@@ -2647,37 +2665,39 @@
     flex: 1 !important;
     display: flex !important;
     flex-direction: column !important;
-    padding-bottom: 4px !important;
+    padding-bottom: 2px !important;
   }
   .tradeoff-header {
     background: #F1F5F9 !important;
-    padding: 6px 14px !important;
+    padding: 4px 12px !important;
     border-bottom: 1px solid #CBD5E1 !important;
   }
   .tradeoff-title {
-    font-size: 0.82rem !important;
+    font-size: 0.78rem !important;
   }
   .tradeoff-table {
     width: 100% !important;
+    height: 100% !important;
     border-collapse: separate !important;
-    border-spacing: 0 4px !important;
-    padding: 0 8px !important;
-    font-size: 0.68rem !important;
+    border-spacing: 0 3px !important;
+    padding: 0 6px !important;
+    font-size: 0.66rem !important;
   }
   .tradeoff-table thead th {
     background: transparent !important;
     color: #475569 !important;
     font-weight: 800 !important;
     border: none !important;
-    padding: 4px 8px 2px 8px !important;
+    padding: 2px 6px !important;
     letter-spacing: 0.02em !important;
+    font-size: 0.65rem !important;
   }
   .tradeoff-table tbody tr {
     background: #FFFFFF !important;
-    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04) !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
   }
   .tradeoff-table tbody td {
-    padding: 5px 8px !important;
+    padding: 3.5px 6px !important;
     border-top: 1px solid #E2E8F0 !important;
     border-bottom: 1.5px solid #CBD5E1 !important;
     vertical-align: middle !important;
@@ -3392,12 +3412,19 @@
       }
       const numDistrictPages = districtPageChunks.length;
 
-      // 计算需求与优劣势对比页数：第1页容纳客户档案+4个项目；超出4个时启用智能动态分页
+      // 计算需求与优劣势对比页数：基于A4纵向空间安全容量与动态均衡算法（杜绝遮挡与孤立留白）
       const reqChunks = [];
       const totalReqProjects = projects.length;
       if (totalReqProjects <= 4) {
+        // 1~4个项目：第1页超薄客户档案 + 完整容纳所有项目，单页展示
         reqChunks.push(projects);
+      } else if (totalReqProjects <= 9) {
+        // 5~9个项目：2页黄金均衡模式（第1页最多4盘，第2页容纳剩余项目，彻底消灭第3页空白）
+        const p1Count = (totalReqProjects <= 7) ? 3 : 4;
+        reqChunks.push(projects.slice(0, p1Count));
+        reqChunks.push(projects.slice(p1Count));
       } else {
+        // >9个项目：第1页固定安全上限4个，剩余项目在续页间（基准容量4个，上限5个）进行平滑均分，杜绝尾页落单
         reqChunks.push(projects.slice(0, 4));
         const remaining = projects.slice(4);
         const numRemainingPages = Math.ceil(remaining.length / 4);
@@ -4071,7 +4098,7 @@
                   <span>⚖️ 入选项目核心价值与客观权衡</span>
                 </div>
               </div>
-              <table class="tradeoff-table">
+              <table class="tradeoff-table" style="flex: 1;">
                 <thead>
                   <tr>
                     <th style="width:18%;">对比项目</th>
