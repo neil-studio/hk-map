@@ -52,7 +52,7 @@
     }
 
     body {
-      font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 'Noto Sans SC', sans-serif;
       background: #525659;
       color: var(--slate-800);
       margin: 0;
@@ -2539,6 +2539,7 @@
     color: #166534;
     font-size: 0.63rem;
     line-height: 1.25;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 'Noto Sans SC', sans-serif;
   }
   .tradeoff-pro-pill strong {
     color: #14532D;
@@ -2565,6 +2566,7 @@
     color: #92400E;
     font-size: 0.63rem;
     line-height: 1.25;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 'Noto Sans SC', sans-serif;
   }
   .tradeoff-con-pill strong {
     color: #78350F;
@@ -2582,6 +2584,7 @@
     font-weight: 700;
     font-size: 0.65rem;
     line-height: 1.35;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 'Noto Sans SC', sans-serif;
   }
 
   .icon-mtr-svg {
@@ -2589,32 +2592,6 @@
     vertical-align: middle;
     margin-right: 2px;
     flex-shrink: 0;
-  }
-  .icon-cap-svg {
-    display: inline-flex;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background: #0284C7;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    margin-right: 3px;
-    flex-shrink: 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-  }
-  .icon-mall-svg {
-    display: inline-flex;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background: #EA580C;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    margin-right: 3px;
-    flex-shrink: 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
   }
 
   .page-content-requirements {
@@ -3344,6 +3321,7 @@
               if (fresh.core_pros !== undefined) p.core_pros = fresh.core_pros;
               if (fresh.property_positioning !== undefined) p.property_positioning = fresh.property_positioning;
               if (fresh.micro_district !== undefined) p.micro_district = fresh.micro_district;
+              if (fresh.comparison_commute !== undefined) p.comparison_commute = fresh.comparison_commute;
             }
           });
         }
@@ -3973,25 +3951,22 @@
 
           const cleanDist = getCleanDistrict(p);
 
-          // 格式化 Pros 胶囊列表（严格顺序：社区 -> 轨交 -> 校网 -> 商业 -> 交付）
+          // 格式化 Pros 胶囊列表（方案 2：原生 Emoji，轨交保留港铁双拱矢量标）
           const prosLines = (t.pros || '').split('\n').filter(s => s.trim().length > 0);
           const prosPillsHtml = prosLines.map(line => {
             if (line.startsWith('★')) {
               return `<div class="tradeoff-pro-killer">${line}</div>`;
             }
             let iconHtml = '';
-            const cleanLine = line.replace(/^[🚇🎓🛍️]\s*/, '').trim();
-            if (line.includes('【轨交】')) {
+            let textLine = line.trim();
+            if (textLine.includes('【轨交】')) {
               iconHtml = `<span class="icon-mtr-svg"><svg viewBox="0 0 65 52" style="width:13px; height:10px;"><ellipse cx="33" cy="26" rx="32" ry="26" fill="#C8102E"/><path d="M 33,8 V 44 M 21,9 A 12,12 0 0 0 45,9 M 21,43 A 12,12 0 0 1 45,43" stroke="white" stroke-width="6" stroke-linecap="round" fill="none"/></svg></span>`;
-            } else if (line.includes('【名校】')) {
-              iconHtml = `<span class="icon-cap-svg"><svg viewBox="0 0 24 24" width="8" height="8" fill="#fff"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></span>`;
-            } else if (line.includes('【商业】')) {
-              iconHtml = `<span class="icon-mall-svg"><svg viewBox="0 0 24 24" width="7" height="7" fill="#fff"><path d="M16 6V4a4 4 0 0 0-8 0v2H4a1 1 0 0 0-1 1v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1h-4ZM10 4a2 2 0 0 1 4 0v2h-4V4Zm9 16H5V8h3v2a1 1 0 0 0 2 0V8h4v2a1 1 0 0 0 2 0V8h3v12Z"/></svg></span>`;
+              textLine = textLine.replace(/^[\s🚇]+/, '').trim();
             }
-            return `<div class="tradeoff-pro-pill">${iconHtml}<span>${cleanLine}</span></div>`;
+            return `<div class="tradeoff-pro-pill">${iconHtml}<span>${textLine}</span></div>`;
           }).join('');
 
-          // 格式化 Cons 胶囊列表（严格顺序：社区 -> 轨交 -> 校网 -> 商业 -> 交付）
+          // 格式化 Cons 胶囊列表（方案 2：原生 Emoji，交通保留港铁双拱矢量标）
           let consHtml = '';
           if (t.cons.includes('✨【五维全优】')) {
             consHtml = `<div class="tradeoff-con-perfect"><span>${t.cons}</span></div>`;
@@ -3999,15 +3974,12 @@
             const consLines = (t.cons || '').split('\n').filter(s => s.trim().length > 0);
             consHtml = consLines.map(line => {
               let iconHtml = '';
-              const cleanLine = line.replace(/^[🚇🎓🛍️]\s*/, '').trim();
-              if (line.includes('【交通】')) {
+              let textLine = line.trim();
+              if (textLine.includes('【交通】') || textLine.includes('【轨交】')) {
                 iconHtml = `<span class="icon-mtr-svg"><svg viewBox="0 0 65 52" style="width:13px; height:10px;"><ellipse cx="33" cy="26" rx="32" ry="26" fill="#C8102E"/><path d="M 33,8 V 44 M 21,9 A 12,12 0 0 0 45,9 M 21,43 A 12,12 0 0 1 45,43" stroke="white" stroke-width="6" stroke-linecap="round" fill="none"/></svg></span>`;
-              } else if (line.includes('【校网】')) {
-                iconHtml = `<span class="icon-cap-svg"><svg viewBox="0 0 24 24" width="8" height="8" fill="#fff"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></span>`;
-              } else if (line.includes('【商业】')) {
-                iconHtml = `<span class="icon-mall-svg"><svg viewBox="0 0 24 24" width="7" height="7" fill="#fff"><path d="M16 6V4a4 4 0 0 0-8 0v2H4a1 1 0 0 0-1 1v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1h-4ZM10 4a2 2 0 0 1 4 0v2h-4V4Zm9 16H5V8h3v2a1 1 0 0 0 2 0V8h4v2a1 1 0 0 0 2 0V8h3v12Z"/></svg></span>`;
+                textLine = textLine.replace(/^[\s🚇]+/, '').trim();
               }
-              return `<div class="tradeoff-con-pill">${iconHtml}<span>${cleanLine}</span></div>`;
+              return `<div class="tradeoff-con-pill">${iconHtml}<span>${textLine}</span></div>`;
             }).join('');
           }
 
@@ -4331,81 +4303,53 @@
                     </tr>
                   `).join('')}
 
-                  <!-- 5. 交通与通勤 (首发接驳 + CBD与高铁 + 国际机场与跨境口岸) -->
+                  <!-- 5. 交通与通勤 (直接调取保存在文档中的固定渲染结果，无需每次动态重复计算) -->
                   <tr>
                     <td class="dim-col">交通与通勤</td>
                     ${chunkProjects.map(p => {
-                      const mtr = p.nearest_mtr;
-                      const airportMin = getAirportDriveTime(p);
-                      const borderStr = getBorderPortDriveTime(p);
-                      const walkMin = Number(mtr?.walk_time_min) || 99;
-                      const walkM = Number(mtr?.dist_walk_m) || 9999;
-                      const pName = (p.name || '').toLowerCase();
+                      const comp = p.comparison_commute;
+                      let l1 = comp ? comp.line1 : '';
+                      let l2 = comp ? comp.line2 : '';
+                      let l3 = comp ? comp.line3 : '';
 
-                      // 1. 严格地铁 TOD 上盖项目映射表（直接免除步行米数，展示上盖直通）
-                      const todOnTopMap = {
-                        '天玺．天第2期': '啟德站正上盖 (地下街直通车站)',
-                        '天玺．天': '啟德站正上盖 (地下街直通车站)',
-                        '天玺': '九龍站正上盖 (圆方ELEMENTS直连)',
-                        '汇玺III': '南昌站正上盖 (V Walk商场直通)',
-                        '汇玺': '南昌站正上盖 (V Walk商场直通)',
-                        'Blue Coast II': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
-                        'Blue Coast': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
-                        'Deep Water South': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
-                        '扬海': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
-                        '晋环': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
-                        '滶晨 II': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
-                        '滶晨': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
-                        '海盈山第4A期': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
-                        '海盈山第4B期': '黃竹坑站正上盖 (商场THE SOUTHSIDE直连)',
-                        '朗贤峰': '何文田站正上盖 (专用电梯直达站厅)',
-                        '瑜一第IC期': '何文田站正上盖 (专用电梯直达站厅)',
-                        '瑜一．天海': '何文田站正上盖 (专用电梯直达站厅)',
-                        '柏傲庄': '大圍站正上盖 (商场围方直通)',
-                        '海瑅湾': '康城站正上盖 (商场The LOHAS直通)',
-                        '凯柏峰': '康城站正上盖 (商场The LOHAS直通)',
-                        '柏珑': '錦上路站正上盖 (极速直通车站)'
-                      };
-                      const todKey = Object.keys(todOnTopMap).find(k => (p.name || '').includes(k));
+                      // 容错：若未读取到预存，回退基本测算
+                      if (!comp) {
+                        const mtr = p.nearest_mtr;
+                        const airportMin = getAirportDriveTime(p);
+                        const borderStr = getBorderPortDriveTime(p);
+                        const walkMin = Number(mtr?.walk_time_min) || 99;
+                        const walkM = Number(mtr?.dist_walk_m) || 9999;
+                        const walkMinInt = Math.max(1, Math.round(walkMin));
+                        if (walkMin <= 12 && walkM <= 1000) l1 = `步行约 ${walkM}米 (${walkMinInt}分) 到${mtr?.nearest_mtr_cn || '港铁'}站`;
+                        else l1 = `🚌 专线小巴约 3-5分 直达${mtr?.nearest_mtr_cn || '港铁'}站`;
+                        const commuteMetrics = getStationCommuteMetrics(mtr?.nearest_mtr_cn);
+                        l2 = `港铁 ${commuteMetrics.cbd} | 🚅 高铁 ${commuteMetrics.xrl}`;
+                        l3 = `✈️ 机场约 ${airportMin}分 | 🚘 ${borderStr}*`;
+                      }
 
-                      // 2. 跑道区判断（严格排除启德城中心与上盖项目）
-                      const cityCenterNames = ['天玺．天', 'henley', 'monaco', '嘉峯汇', '尚．珒溋', '龙誉', '启德1号'];
-                      const isCityCenter = cityCenterNames.some(k => pName.includes(k) || (p.name || '').includes(k));
+                      // 统一渲染 MTR 矢量图标与微胶囊分隔符
+                      let l1Html = l1;
+                      if (l1.startsWith('港铁') || l1.includes('步行约')) {
+                        l1Html = `${getMtrLogoSvg()} ${l1}`;
+                      }
 
-                      const isRunway = !isCityCenter && !todKey && (
-                        (p.address || '').includes('承丰') || 
-                        pName.includes('coast') || 
-                        (p.name || '').includes('柏蔚森') || 
-                        (p.name || '').includes('天泷') || 
-                        pName.includes('miami') || 
-                        (p.name || '').includes('启德海湾') || 
-                        (p.name || '').includes('维港') ||
-                        (p.name || '').includes('花语海')
-                      );
-                      const isLuxuryNoMtr = walkMin >= 20 || walkM >= 2500;
-                      const commuteMetrics = getStationCommuteMetrics((isRunway || todKey) ? (todKey ? mtr?.nearest_mtr_cn || '啟德' : '啟德') : mtr?.nearest_mtr_cn);
+                      let l2Html = l2;
+                      if (l2.includes(' | ')) {
+                        const parts = l2.split(' | ');
+                        l2Html = `${getMtrLogoSvg()} ${parts[0]}<span class="comp-commute-sep">|</span>${parts[1]}`;
+                      }
 
-                      let line1Html = '';
-                      const walkMinInt = Math.max(1, Math.round(walkMin));
-                      if (todKey) {
-                        line1Html = `${getMtrLogoSvg()} 港铁【${todOnTopMap[todKey]}】`;
-                      } else if (isRunway) {
-                        line1Html = `🚌 跑道穿梭巴士约 5-8分 直达启德站`;
-                      } else if (walkMin <= 12 && walkM <= 1000) {
-                        line1Html = `${getMtrLogoSvg()} 步行约 ${walkM}米 (${walkMinInt}分) 到${mtr?.nearest_mtr_cn || '港铁'}站`;
-                      } else if (isLuxuryNoMtr) {
-                        line1Html = `🚘 专属车队约 6-8分 接驳核心港铁`;
-                      } else if (walkM <= 1800) {
-                        line1Html = `🚌 专线小巴约 3-5分 直达${mtr?.nearest_mtr_cn || '港铁'}站`;
-                      } else {
-                        line1Html = `🚘 私家车约 6-10分 便捷接驳${mtr?.nearest_mtr_cn || '港铁'}站`;
+                      let l3Html = l3;
+                      if (l3.includes(' | ')) {
+                        const parts = l3.split(' | ');
+                        l3Html = `${parts[0]}<span class="comp-commute-sep">|</span>${parts[1]}`;
                       }
 
                       return `
                         <td>
-                          <div class="comp-commute-item">${line1Html}</div>
-                          <div class="comp-commute-item">${getMtrLogoSvg()} 港铁 ${commuteMetrics.cbd}<span class="comp-commute-sep">|</span>🚅 高铁 ${commuteMetrics.xrl}</div>
-                          <div class="comp-commute-item">✈️ 机场约 ${airportMin}分<span class="comp-commute-sep">|</span>🚘 ${borderStr}*</div>
+                          <div class="comp-commute-item">${l1Html}</div>
+                          <div class="comp-commute-item">${l2Html}</div>
+                          <div class="comp-commute-item">${l3Html}</div>
                         </td>
                       `;
                     }).join('')}
@@ -4800,14 +4744,17 @@
                   const isCityCenter = cityCenterNames.some(k => pName.includes(k) || (proj.name || '').includes(k));
 
                   const isRunway = !isCityCenter && (
-                    (proj.address || '').includes('承丰') || 
+                    (proj.address || '').includes('承') || 
                     pName.includes('coast') || 
+                    pName.includes('miami') || 
+                    (proj.name || '').includes('天玺．海') || 
+                    (proj.name || '').includes('沄璟') || 
                     (proj.name || '').includes('柏蔚森') || 
                     (proj.name || '').includes('天泷') || 
-                    pName.includes('miami') || 
                     (proj.name || '').includes('启德海湾') || 
                     (proj.name || '').includes('维港') ||
-                    (proj.name || '').includes('花语海')
+                    (proj.name || '').includes('花语海') ||
+                    (proj.micro_district || '').includes('跑道')
                   );
                   if (isRunway) {
                     return `<span class="meta-chip primary">🚌 跑道穿梭巴士 (约5-8分直达启德站)</span>`;
