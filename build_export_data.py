@@ -950,13 +950,24 @@ def main():
         pt_desc = "现房 (现楼发售)"
         comp_date = "现楼发售 (即买即住)"
 
+        # 综合法定关键日期：优先取数据库 key_date，若空则取 Excel 中的落成入伙日期
+        excel_iso = ""
+        if excel_dt:
+            parts = excel_dt.split("/")
+            if len(parts) == 3:
+                excel_iso = f"{parts[2]}-{parts[1].zfill(2)}-{parts[0].zfill(2)}"
+            elif "202" in excel_dt:
+                excel_iso = excel_dt[:10]
+
+        effective_key_date = kd or excel_iso
+
         if is_cs:
             is_forward = True
             pt_desc = "期房 (即将发售)"
             comp_date = "即将发售"
-        elif kd:
-            if kd > NOW_STR:
-                yr = kd[:4]
+        elif effective_key_date:
+            if effective_key_date > NOW_STR:
+                yr = effective_key_date[:4]
                 is_forward = True
                 pt_desc = f"期房 (预计{yr}年入伙)"
                 comp_date = f"预计{yr}年入伙"
