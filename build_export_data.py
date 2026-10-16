@@ -8,7 +8,8 @@
 更新至 sandbox/hk_project_coords.json
 """
 
-import os, json, re, glob
+import os, json, re, glob, sqlite3
+from datetime import datetime
 import openpyxl
 
 SANDBOX_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -28,6 +29,12 @@ if not os.path.exists(BASE_INFO_FILE) or not os.access(BASE_INFO_FILE, os.R_OK):
         BASE_INFO_FILE = alt_base
     else:
         BASE_INFO_FILE = os.path.join(BASE_DIR, "楼盘基础信息库.xlsx")
+
+DB_FILE = os.path.join(BASE_DIR, "楼盘基础信息数据库.db")
+if not os.path.exists(DB_FILE) or not os.access(DB_FILE, os.R_OK):
+    alt_db = os.path.join(PROD_DIR, "楼盘基础信息数据库.db")
+    if os.path.exists(alt_db) and os.access(alt_db, os.R_OK):
+        DB_FILE = alt_db
 
 SELLING_POINTS_FILE = os.path.join(SANDBOX_DIR, "楼盘卖点.xlsx")
 PROJECT_DESC_FILE = os.path.join(SANDBOX_DIR, "导出方案项目描述库.xlsx")
@@ -556,27 +563,86 @@ def main():
     }
 
     print("3️⃣ 整合发展商、落成日期、校网归属、楼盘卖点、在售明细、最近成交记录、精准价格区间与套数统计...")
-    def load_project_completion_dates():
+    def load_project_lifecycle_data():
+        """
+        整合读取 楼盘基础信息数据库.db 与 项目列表.xlsx，
+        建立高精度双向归一化项目生命周期关键日期与入伙纸落成日期字典。
+        """
+        lifecycle_map = {}
+        t_chars = '號峯滙敍灣瓏鑽鑄賢譽啟璽維奧滶蘊匯悅寶應羅壽淺徑賓園華遠藍語區築緹瀧澐雙鑽閣揚晉凱島輝臺連東紅臺豐環學區萬濱嶺軒廣場頭門閣薈'
+        s_chars = '号峰汇叙湾珑钻铸贤誉启玺维奥滶蕴汇悦宝应罗寿浅径宾园华远蓝语区筑缇泷沄双钻阁扬晋凯岛辉台连东红台丰环学区万滨岭轩广场头门阁荟'
+        trans = str.maketrans(t_chars, s_chars)
+
+        def norm_key(s):
+            if not s:
+                return ""
+            return s.translate(trans).replace(" ", "").replace("　", "").replace("．", ".").replace("·", ".").lower()
+
+        # 1. 优先读取 楼盘基础信息数据库.db
+        if os.path.exists(DB_FILE):
+            try:
+                conn = sqlite3.connect(DB_FILE)
+                cur = conn.cursor()
+                cur.execute("SELECT project_name, clean_project_name, phase_name, key_date, raw_json FROM project_details;")
+                for r in cur.fetchall():
+                    pname, clean_name, phase_name, key_date, raw_json = r
+                    raw = json.loads(raw_json) if raw_json else {}
+                    op_date = raw.get("first_op_date")
+
+                    tl = raw.get("time_line", [])
+                    tl_key_date = None
+                    for item in tl:
+                        if item.get("id") == "key_date" and item.get("checked"):
+                            tl_key_date = item.get("date")
+                            break
+
+                    kd_str = (key_date or tl_key_date or "")[:10]
+                    op_str = (op_date or "")[:10]
+
+                    val = {
+                        "pname": pname,
+                        "clean_name": clean_name,
+                        "phase_name": phase_name,
+                        "key_date": kd_str if kd_str and kd_str != "None" else "",
+                        "op_date": op_str if op_str and op_str != "None" else ""
+                    }
+
+                    cand = [pname, clean_name]
+                    if clean_name and phase_name:
+                        cand.append(f"{clean_name}{phase_name}")
+                    for k in cand:
+                        if k:
+                            lifecycle_map[norm_key(k)] = val
+                            lifecycle_map[k] = val
+                conn.close()
+                print(f"✅ 从 楼盘基础信息数据库.db 成功加载 {len(lifecycle_map)} 条生命周期索引")
+            except Exception as e:
+                print("读取 楼盘基础信息数据库.db 异常:", e)
+
+        # 2. 读取 楼盘字典/项目列表.xlsx 作为辅助补充
         excel_path = "/Users/nb/google/Antigravity/工作/运营/楼盘字典/项目列表.xlsx"
-        if not os.path.exists(excel_path):
-            return {}
-        try:
-            wb = openpyxl.load_workbook(excel_path, read_only=True)
-            ws = wb["项目列表"]
-            rows = list(ws.iter_rows(values_only=True))
-            headers = rows[0]
-            idx_date = headers.index("落成日期")
-            idx_name = headers.index("新盘名称\n（中文）")
-            res = {}
-            for r in rows[1:]:
-                nm = str(r[idx_name] or "").strip()
-                dt = str(r[idx_date] or "").strip()
-                if dt and dt != "None":
-                    res[nm] = dt
-            return res
-        except Exception as e:
-            print("读取项目列表.xlsx落成日期异常:", e)
-            return {}
+        if os.path.exists(excel_path):
+            try:
+                wb = openpyxl.load_workbook(excel_path, read_only=True)
+                ws = wb["项目列表"]
+                rows = list(ws.iter_rows(values_only=True))
+                headers = rows[0]
+                idx_date = headers.index("落成日期")
+                idx_name = headers.index("新盘名称\n（中文）")
+                for r in rows[1:]:
+                    nm = str(r[idx_name] or "").strip()
+                    dt = str(r[idx_date] or "").strip()
+                    if dt and dt != "None":
+                        nk = norm_key(nm)
+                        if nk not in lifecycle_map:
+                            lifecycle_map[nk] = {"pname": nm, "key_date": "", "op_date": "", "excel_date": dt}
+                            lifecycle_map[nm] = lifecycle_map[nk]
+                        else:
+                            lifecycle_map[nk]["excel_date"] = dt
+            except Exception as e:
+                print("读取项目列表.xlsx落成日期异常:", e)
+
+        return lifecycle_map
 
     def load_project_developers():
         verified_devs = {
@@ -778,7 +844,7 @@ def main():
                 print("读取项目列表.xlsx开发商异常:", e)
         return res
 
-    project_completion_map = load_project_completion_dates()
+    project_lifecycle_map = load_project_lifecycle_data()
     project_developer_map = load_project_developers()
     selling_points_map = load_selling_points()
     descriptions_map = load_project_descriptions()
@@ -863,50 +929,100 @@ def main():
         ]))
 
         p["developer"] = extract_developer(pname, full_text, project_developer_map)
-        comp_date = extract_completion_date(full_text)
-        dt_excel = project_completion_map.get(pname)
-        if not dt_excel:
-            for k, v in project_completion_map.items():
-                if k in pname or pname in k:
-                    dt_excel = v
+
+        # 🏠/⏳ 精确项目生命周期与物业类型（现房 vs 期房）动态时间判定
+        norm_pn = pname.translate(trans).replace(" ", "").replace("　", "").replace("．", ".").replace("·", ".").lower()
+        lc_info = project_lifecycle_map.get(norm_pn)
+        if not lc_info:
+            for k, v in project_lifecycle_map.items():
+                if k and (k in norm_pn or norm_pn in k):
+                    lc_info = v
                     break
 
-        is_ready_explicit = any(k in full_text for k in ['现楼发售', '现楼实景', '现楼交付', '即买即住', '即买即收租'])
+        kd = lc_info.get("key_date", "") if lc_info else ""
+        op = lc_info.get("op_date", "") if lc_info else ""
+        excel_dt = lc_info.get("excel_date", "") if lc_info else ""
+
+        is_cs = p.get("is_coming_soon", False) or p.get("sell_status") == "coming_soon"
+        NOW_STR = datetime.now().strftime("%Y-%m-%d")
+
         is_forward = False
         pt_desc = "现房 (现楼发售)"
         comp_date = "现楼发售 (即买即住)"
 
-        if is_ready_explicit:
-            is_forward = False
-            pt_desc = "现房 (现楼发售)"
-            comp_date = "现楼发售 (即买即住)"
-        elif dt_excel:
-            m = re.search(r"20(2[5-9]|3[0-9])", dt_excel)
-            if m:
-                yr = int("20" + m.group(1))
+        if is_cs:
+            is_forward = True
+            pt_desc = "期房 (即将发售)"
+            comp_date = "即将发售"
+        elif kd:
+            if kd > NOW_STR:
+                yr = kd[:4]
                 is_forward = True
                 pt_desc = f"期房 (预计{yr}年入伙)"
                 comp_date = f"预计{yr}年入伙"
             else:
                 is_forward = False
-                pt_desc = f"现房 (现楼发售)"
-                comp_date = f"现楼 ({dt_excel})"
-        elif p.get("is_coming_soon"):
-            is_forward = True
-            pt_desc = "期房 (即将发售)"
-            comp_date = "即将发售"
-        elif any(k in full_text for k in ['预售楼花', '楼花发售', '一手楼花']):
-            is_forward = True
-            pt_desc = "期房 (楼花)"
-            comp_date = "预售楼花"
-        else:
+                pt_desc = "现房 (现楼发售)"
+                comp_date = "现楼发售 (已入伙)"
+        elif op and op <= NOW_STR:
             is_forward = False
             pt_desc = "现房 (现楼发售)"
             comp_date = "现楼发售 (即买即住)"
+        elif excel_dt:
+            m = re.search(r"20(2[6-9]|3[0-9])", excel_dt)
+            if m and int("20" + m.group(1)) > int(NOW_STR[:4]):
+                yr = "20" + m.group(1)
+                is_forward = True
+                pt_desc = f"期房 (预计{yr}年入伙)"
+                comp_date = f"预计{yr}年入伙"
+            else:
+                is_forward = False
+                pt_desc = "现房 (现楼发售)"
+                comp_date = f"现楼 ({excel_dt})"
+        else:
+            # 针对极少数未收录老盘，检查是否有未到期的原有入伙年份（如皇璇）
+            orig_comp = p.get("completion_date", "")
+            m = re.search(r"20(2[6-9]|3[0-9])", orig_comp)
+            if m and int("20" + m.group(1)) > int(NOW_STR[:4]):
+                yr = "20" + m.group(1)
+                is_forward = True
+                pt_desc = f"期房 (预计{yr}年入伙)"
+                comp_date = f"预计{yr}年入伙"
+            else:
+                is_forward = False
+                pt_desc = "现房 (现楼发售)"
+                comp_date = "现楼发售 (即买即住)"
 
         p["completion_date"] = comp_date
         p["property_type"] = "forward" if is_forward else "ready"
         p["property_type_desc"] = pt_desc
+
+        # ⚖️ 5D核心价值与客观权衡（core_pros / quantified_cons）与物业类型（现房 vs 期房）严格守恒对齐
+        pros_raw = str(p.get("core_pros", "") or "")
+        cons_raw = str(p.get("quantified_cons", "") or "")
+        if pros_raw or cons_raw:
+            def is_delivery_line(line):
+                return any(k in line for k in ["【交付】", "现楼发售（即买即住", "属预售楼花阶段", "属全新即将发售阶段"])
+
+            pros_lines = [l.strip() for l in pros_raw.split("\n") if l.strip()]
+            cons_lines = [l.strip() for l in cons_raw.split("\n") if l.strip()]
+
+            clean_pros = [l for l in pros_lines if not is_delivery_line(l)]
+            clean_cons = [l for l in cons_lines if not is_delivery_line(l)]
+
+            if is_forward:
+                if "即将发售" in comp_date or "即将发售" in pt_desc:
+                    del_con = "⏳【交付】属全新即将发售阶段（工程施工中，需等待正式推售及竣工交付）"
+                else:
+                    m = re.search(r"20(2[6-9]|3[0-9])", pt_desc) or re.search(r"20(2[6-9]|3[0-9])", comp_date)
+                    yr_str = f"预计{m.group(0)}年" if m else "预计交付周期超1年"
+                    del_con = f"⏳【交付】属预售楼花阶段（{yr_str}交付，需等待工程竣工）"
+                clean_cons.append(del_con)
+            else:
+                clean_pros.append("🔑【交付】现楼发售（即买即住 / 即时收租，实景所见即所得）")
+
+            p["core_pros"] = "\n".join(clean_pros)
+            p["quantified_cons"] = "\n".join(clean_cons)
 
         # 匹配校网归属
         sn_info = None
