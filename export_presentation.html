@@ -2464,20 +2464,36 @@
   }
   .comp-commute-item {
     text-align: left;
-    font-size: 0.63rem;
-    line-height: 1.45;
-    padding: 1px 0;
+    font-size: 0.62rem;
+    line-height: 1.38;
+    padding: 1.5px 0;
     color: #334155;
     font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     letter-spacing: -0.2px;
+    word-break: break-word;
+    white-space: normal;
   }
   .comp-commute-sep {
     color: #CBD5E1;
-    margin: 0 4px;
+    margin: 0 3px;
     font-weight: 300;
+  }
+
+  /* 密集模式：当横向对比项目达到 5~6 个时，启用紧凑字号与间距，确保内容完整呈现 */
+  .comp-dense-6 .comp-commute-item {
+    font-size: 0.58rem;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+    padding: 1px 0;
+  }
+  .comp-dense-6 td {
+    padding: 6px 3px !important;
+  }
+  .comp-dense-6 .comp-commute-sep {
+    margin: 0 2px;
+  }
+  .comp-dense-6 .comp-proj-name {
+    font-size: 0.72rem;
   }
   .comp-selling-points {
     text-align: left;
@@ -3322,6 +3338,12 @@
               if (fresh.property_positioning !== undefined) p.property_positioning = fresh.property_positioning;
               if (fresh.micro_district !== undefined) p.micro_district = fresh.micro_district;
               if (fresh.comparison_commute !== undefined) p.comparison_commute = fresh.comparison_commute;
+              if (fresh.community_type !== undefined) p.community_type = fresh.community_type;
+              if (fresh.community_type_name !== undefined) p.community_type_name = fresh.community_type_name;
+              if (fresh.is_community !== undefined) p.is_community = fresh.is_community;
+              if (fresh.parent_community !== undefined) p.parent_community = fresh.parent_community;
+              if (fresh.volume_format !== undefined) p.volume_format = fresh.volume_format;
+              if (fresh.nearest_mtr !== undefined) p.nearest_mtr = fresh.nearest_mtr;
             }
           });
         }
@@ -3612,7 +3634,16 @@
         }
 
         if (!cons) {
-          cons = '【房源】高楼层优质采光单位余货稀缺，现场建议尽早锁定';
+          const hasSchool = pros.includes('【名校】') || pros.includes('【校网】');
+          const hasTransit = pros.includes('【轨交】');
+          const hasCommerce = pros.includes('【商业】') || pros.includes('【商圈】');
+          const hasCommunity = pros.includes('【社区】');
+          const hasReady = pros.includes('【交付】') && (pros.includes('现楼') || pros.includes('现房'));
+          if (hasSchool && hasTransit && hasCommerce && hasCommunity && hasReady) {
+            cons = '✨【五维全优】名校网 · 轨交直通 · 商业汇聚 · 大盘格局 · 即期交付，五维无显著量化短板';
+          } else {
+            cons = '✨【综合均衡】各项核心指标均衡协同，无显著量化短板';
+          }
         }
 
         return {
@@ -4221,7 +4252,7 @@
             </div>
 
             <div class="comp-table-container">
-              <table class="comp-table">
+              <table class="comp-table ${chunkProjects.length >= 5 ? 'comp-dense-6' : ''}">
                 <thead>
                   <tr>
                     <th class="dim-col" style="height:92px;">对比项目</th>
@@ -4267,7 +4298,18 @@
                       const tCount = p.tower_count || 1;
                       const units = p.total_units;
                       const unitsStr = units ? `共 ${units} 伙` : '详见销控';
-                      const towerStr = tCount === 1 ? '1 幢独栋' : `${tCount} 座大厦`;
+                      const vFmt = p.volume_format || (p.community_type === 'C' ? 'villa' : (p.community_type === 'D' ? 'manor' : (p.community_type === 'B' ? 'phase' : (tCount >= 2 ? 'estate' : 'single'))));
+
+                      let towerStr = `${tCount} 座大厦`;
+                      if (vFmt === 'villa') {
+                        towerStr = `共 ${units || tCount} 幢独立洋房`;
+                      } else if (vFmt === 'manor') {
+                        towerStr = `复合低密庄园`;
+                      } else if (vFmt === 'phase') {
+                        towerStr = `本期 ${tCount} 座 (大盘组团)`;
+                      } else if (vFmt === 'single' || tCount === 1) {
+                        towerStr = '1 幢独栋';
+                      }
 
                       const cStr = String(p.completion_date || '').trim();
                       const isReady = !cStr || cStr.includes('现楼') || cStr.includes('即买') || cStr.includes('现房') || cStr.includes('已落成');
@@ -4312,8 +4354,18 @@
                       let l2 = comp ? comp.line2 : '';
                       let l3 = comp ? comp.line3 : '';
 
-                      // 容错：若未读取到预存，回退基本测算
-                      if (!comp) {
+                      // 1. 半山天御定制
+                      if (p.name && p.name.includes('天御')) {
+                        l1 = '🚌 专线小巴约 3-5分 直达上環/中環站';
+                        l2 = '港铁 1站达金钟 | 🚅 高铁 2站';
+                        l3 = '✈️ 机场约 32分 | 🚘 深圳湾口岸 35分*';
+                      } 
+                      // 2. 启德跑道区天玺．海修正 (避免误挂九龙站上盖)
+                      else if (p.name && p.name.includes('天玺．海')) {
+                        l1 = '🚌 跑道穿梭巴士约 5-8分 直达启德站';
+                        l2 = '港铁 4站达金钟/中环 | 🚅 高铁 4站';
+                        l3 = '✈️ 机场约 30分 | 🚘 皇岗口岸 32分*';
+                      } else if (!comp) {
                         const mtr = p.nearest_mtr;
                         const airportMin = getAirportDriveTime(p);
                         const borderStr = getBorderPortDriveTime(p);
@@ -4325,6 +4377,49 @@
                         const commuteMetrics = getStationCommuteMetrics(mtr?.nearest_mtr_cn);
                         l2 = `港铁 ${commuteMetrics.cbd} | 🚅 高铁 ${commuteMetrics.xrl}`;
                         l3 = `✈️ 机场约 ${airportMin}分 | 🚘 ${borderStr}*`;
+                      }
+
+                      // 3. 专属车队与泛化站名升级为具体接驳站名，与第2行紧密对应
+                      const luxuryStationMap = {
+                        '皇廷汇': '九龙塘站',
+                        '缇外': '九龙塘站',
+                        'Beacon Peak 第1期': '九龙塘站',
+                        'Central Peak I': '湾仔站',
+                        'Central Peak II': '湾仔站',
+                        '21 Borrett Road 第1期': '金钟站',
+                        '应天': '金钟站',
+                        '皇府湾': '柴湾站',
+                        'No.3 Repulse Bay Road': '海洋公园站',
+                        '浅水湾108': '海洋公园站',
+                        '深水湾径8号': '海洋公园站',
+                        'Mount Nicholson I': '湾仔站',
+                        'Mount Nicholson II': '湾仔站',
+                        'Twelve Peaks': '中环站',
+                        '宾吉道3号': '金钟站',
+                        '峻誉．渣甸山': '天后站',
+                        '50 Stanley Village Road': '柴湾站',
+                        'One Stanley': '柴湾站',
+                        'Solace': '海洋公园站',
+                        '海天径 1号, 舂磡角道 44, 46, 48, 50号': '海洋公园站',
+                        '环角道7号、9号及11号': '海洋公园站',
+                        '339 Tai Hang Road': '铜锣湾站',
+                        'Eight Kwai Fong Happy Valley': '铜锣湾站',
+                        '蓝塘道23-39号': '铜锣湾站',
+                        '红山半岛 - C区': '柴湾站',
+                        '红山半岛 - B区': '柴湾站'
+                      };
+                      const pKey = (p.name || '').trim();
+                      if (luxuryStationMap[pKey]) {
+                        l1 = `🚘 车程约 6-8分 直达${luxuryStationMap[pKey]}`;
+                      } else if (l1.includes('专属车队') || l1.includes('直抵港铁枢纽')) {
+                        const mtrCn = p.nearest_mtr?.nearest_mtr_cn || '核心';
+                        l1 = `🚘 车程约 6-8分 直达${mtrCn}站`;
+                      }
+
+                      // 4. 组合拳方案 A：6列密集对比时对虚词精简，极大提升信息密度与美观度
+                      if (chunkProjects.length >= 5) {
+                        l3 = l3.replace(/机场约\s*/g, '机场').replace(/口岸\s*/g, '');
+                        l2 = l2.replace(/港铁\s+/g, '港铁').replace(/高铁\s+/g, '高铁');
                       }
 
                       // 统一渲染 MTR 矢量图标与微胶囊分隔符
@@ -4734,7 +4829,10 @@
                     '凯柏峰': '康城站正上盖 (商场The LOHAS直通)',
                     '柏珑': '錦上路站正上盖 (极速直通车站)'
                   };
-                  const todKey = Object.keys(todOnTopMap).find(k => (proj.name || '').includes(k));
+                  const todKey = Object.keys(todOnTopMap).find(k => {
+                    if (k === '天玺' && (pName.includes('天玺．海') || (proj.name || '').includes('天玺．海'))) return false;
+                    return (proj.name || '').includes(k);
+                  });
                   if (todKey) {
                     return `<span class="meta-chip success">${getMtrLogoSvg()} 港铁【${todOnTopMap[todKey]}】</span>`;
                   }
@@ -4759,11 +4857,30 @@
                   if (isRunway) {
                     return `<span class="meta-chip primary">🚌 跑道穿梭巴士 (约5-8分直达启德站)</span>`;
                   }
+                  if (proj.name && proj.name.includes('天御')) {
+                    return `<span class="meta-chip primary">🚌 坚道专线小巴/巴士接驳 (约3-5分达上環/中環站)</span>`;
+                  }
                   if (mtr) {
                     if (walkMin <= 12 && walkM <= 1000) {
                       return `<span class="meta-chip success">${getMtrLogoSvg()} ${mtr.nearest_mtr_cn}站 (步行${walkM}米/${walkMin}分)</span>`;
                     } else {
-                      return `<span class="meta-chip primary">🚘 专车/巴士便捷接驳 (约3-5分达${mtr.nearest_mtr_cn}站)</span>`;
+                      const luxuryStationMap = {
+                        '皇廷汇': '九龙塘站', '缇外': '九龙塘站', 'Beacon Peak 第1期': '九龙塘站',
+                        'Central Peak I': '湾仔站', 'Central Peak II': '湾仔站',
+                        '21 Borrett Road 第1期': '金钟站', '应天': '金钟站',
+                        '皇府湾': '柴湾站', 'No.3 Repulse Bay Road': '海洋公园站',
+                        '浅水湾108': '海洋公园站', '深水湾径8号': '海洋公园站',
+                        'Mount Nicholson I': '湾仔站', 'Mount Nicholson II': '湾仔站',
+                        'Twelve Peaks': '中环站', '宾吉道3号': '金钟站',
+                        '峻誉．渣甸山': '天后站', '50 Stanley Village Road': '柴湾站',
+                        'One Stanley': '柴湾站', 'Solace': '海洋公园站',
+                        '海天径 1号, 舂磡角道 44, 46, 48, 50号': '海洋公园站',
+                        '环角道7号、9号及11号': '海洋公园站',
+                        '339 Tai Hang Road': '铜锣湾站', 'Eight Kwai Fong Happy Valley': '铜锣湾站',
+                        '蓝塘道23-39号': '铜锣湾站', '红山半岛 - C区': '柴湾站', '红山半岛 - B区': '柴湾站'
+                      };
+                      const targetSt = luxuryStationMap[(proj.name || '').trim()] || (mtr.nearest_mtr_cn + '站');
+                      return `<span class="meta-chip primary">🚘 车程约 6-8分 直达${targetSt}</span>`;
                     }
                   } else {
                     return `<span class="meta-chip">🚘 尊贵车行生活圈</span>`;
@@ -5092,9 +5209,48 @@
                     <tr>
                       <td class="dim-col">最近港铁与通勤</td>
                       ${targetProjs.map(p => {
+                        if (p.name && p.name.includes('天御')) {
+                          return `<td>上環/中環站 (小巴约3-5分)</td>`;
+                        }
+                        const pClean = (p.name || '').trim();
+                        const luxuryStationMap = {
+                          '皇廷汇': '九龙塘站',
+                          '缇外': '九龙塘站',
+                          'Beacon Peak 第1期': '九龙塘站',
+                          'Central Peak I': '湾仔站',
+                          'Central Peak II': '湾仔站',
+                          '21 Borrett Road 第1期': '金钟站',
+                          '应天': '金钟站',
+                          '皇府湾': '柴湾站',
+                          'No.3 Repulse Bay Road': '海洋公园站',
+                          '浅水湾108': '海洋公园站',
+                          '深水湾径8号': '海洋公园站',
+                          'Mount Nicholson I': '湾仔站',
+                          'Mount Nicholson II': '湾仔站',
+                          'Twelve Peaks': '中环站',
+                          '宾吉道3号': '金钟站',
+                          '峻誉．渣甸山': '天后站',
+                          '50 Stanley Village Road': '柴湾站',
+                          'One Stanley': '柴湾站',
+                          'Solace': '海洋公园站',
+                          '海天径 1号, 舂磡角道 44, 46, 48, 50号': '海洋公园站',
+                          '环角道7号、9号及11号': '海洋公园站',
+                          '339 Tai Hang Road': '铜锣湾站',
+                          'Eight Kwai Fong Happy Valley': '铜锣湾站',
+                          '蓝塘道23-39号': '铜锣湾站',
+                          '红山半岛 - C区': '柴湾站',
+                          '红山半岛 - B区': '柴湾站'
+                        };
+                        if (luxuryStationMap[pClean]) {
+                          return `<td>${luxuryStationMap[pClean]} (车程约6-8分)</td>`;
+                        }
+                        const isRwy = (p.micro_district || '').includes('跑道') || (p.address || '').includes('承') || (p.name || '').includes('天玺．海');
+                        if (isRwy) {
+                          return `<td>啟德站 (巴士约5-8分)</td>`;
+                        }
                         const mtrName = p.nearest_mtr?.nearest_mtr_cn;
                         const walk = p.nearest_mtr?.walk_time_min;
-                        const txt = mtrName ? `${mtrName}站${walk ? `(${walk}分)` : ''}` : '核心轨交';
+                        const txt = mtrName ? `${mtrName}站${walk ? `(步行约${Math.round(walk)}分)` : ''}` : '核心轨交';
                         return `<td>${txt}</td>`;
                       }).join('')}
                     </tr>

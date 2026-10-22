@@ -9,9 +9,12 @@ import socketserver
 PORT = 8080
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-class ThreadingHTTPServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
-    daemon_threads = True
-    allow_reuse_address = True
+try:
+    ThreadingHTTPServer = http.server.ThreadingHTTPServer
+except AttributeError:
+    class ThreadingHTTPServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
+        daemon_threads = True
+        allow_reuse_address = True
 
 class SandboxHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):

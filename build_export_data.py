@@ -38,6 +38,7 @@ if not os.path.exists(DB_FILE) or not os.access(DB_FILE, os.R_OK):
 
 SELLING_POINTS_FILE = os.path.join(SANDBOX_DIR, "楼盘卖点.xlsx")
 PROJECT_DESC_FILE = os.path.join(SANDBOX_DIR, "导出方案项目描述库.xlsx")
+COMMUNITY_FILE = os.path.join(SANDBOX_DIR, "community_classification.json")
 
 def load_project_descriptions():
     desc_map = {}
@@ -470,15 +471,88 @@ def main():
     # 仅检测是否有新增入市的项目
     existing_pnames = {p["name"].strip() for p in projects}
     if data_json_map:
+        # 计算各商圈已有楼盘均值坐标，供智能兜底
+        district_coords = {}
+        for p in projects:
+            d = p.get("district")
+            if d and p.get("lat") and p.get("lng"):
+                district_coords.setdefault(d, []).append((p["lat"], p["lng"]))
+        district_centers = {
+            d: (sum(pt[0] for pt in pts)/len(pts), sum(pt[1] for pt in pts)/len(pts))
+            for d, pts in district_coords.items() if pts
+        }
+
+        # 内置核心地铁站列表供快速就近匹配
+        SUBWAY_STATIONS = [
+            {"station_name_zh": "堅尼地城", "lat": 22.2814, "lng": 114.1286, "lines": "港島綫"},
+            {"station_name_zh": "香港大學", "lat": 22.2840, "lng": 114.1347, "lines": "港島綫"},
+            {"station_name_zh": "西營盤", "lat": 22.2856, "lng": 114.1427, "lines": "港島綫"},
+            {"station_name_zh": "上環", "lat": 22.2865, "lng": 114.1520, "lines": "港島綫/荃灣綫"},
+            {"station_name_zh": "中環", "lat": 22.2820, "lng": 114.1583, "lines": "港島綫/荃灣綫"},
+            {"station_name_zh": "金鐘", "lat": 22.2793, "lng": 114.1654, "lines": "港島綫/荃灣綫/南港島綫/東鐵綫"},
+            {"station_name_zh": "灣仔", "lat": 22.2776, "lng": 114.1731, "lines": "港島綫"},
+            {"station_name_zh": "銅鑼灣", "lat": 22.2802, "lng": 114.1840, "lines": "港島綫"},
+            {"station_name_zh": "北角", "lat": 22.2912, "lng": 114.2001, "lines": "港島綫/將軍澳綫"},
+            {"station_name_zh": "鰂魚涌", "lat": 22.2878, "lng": 114.2097, "lines": "港島綫/將軍澳綫"},
+            {"station_name_zh": "筲箕灣", "lat": 22.2790, "lng": 114.2283, "lines": "港島綫"},
+            {"station_name_zh": "柴灣", "lat": 22.2649, "lng": 114.2371, "lines": "港島綫"},
+            {"station_name_zh": "黃竹坑", "lat": 22.2480, "lng": 114.1680, "lines": "南港島綫"},
+            {"station_name_zh": "海怡半島", "lat": 22.2429, "lng": 114.1490, "lines": "南港島綫"},
+            {"station_name_zh": "尖沙咀", "lat": 22.2973, "lng": 114.1726, "lines": "荃灣綫"},
+            {"station_name_zh": "佐敦", "lat": 22.3050, "lng": 114.1716, "lines": "荃灣綫"},
+            {"station_name_zh": "油麻地", "lat": 22.3131, "lng": 114.1708, "lines": "荃灣綫/觀塘綫"},
+            {"station_name_zh": "旺角", "lat": 22.3193, "lng": 114.1694, "lines": "荃灣綫/觀塘綫"},
+            {"station_name_zh": "深水埗", "lat": 22.3309, "lng": 114.1622, "lines": "荃灣綫"},
+            {"station_name_zh": "九龍塘", "lat": 22.3368, "lng": 114.1760, "lines": "東鐵綫/觀塘綫"},
+            {"station_name_zh": "啟德", "lat": 22.3307, "lng": 114.1994, "lines": "屯馬綫"},
+            {"station_name_zh": "宋皇臺", "lat": 22.3261, "lng": 114.1894, "lines": "屯馬綫"},
+            {"station_name_zh": "何文田", "lat": 22.3094, "lng": 114.1830, "lines": "觀塘綫/屯馬綫"},
+            {"station_name_zh": "紅磡", "lat": 22.3029, "lng": 114.1818, "lines": "東鐵綫/屯馬綫"},
+            {"station_name_zh": "九龍", "lat": 22.3050, "lng": 114.1615, "lines": "東涌綫/機場快綫"},
+            {"station_name_zh": "奧運", "lat": 22.3178, "lng": 114.1601, "lines": "东涌綫"},
+            {"station_name_zh": "南昌", "lat": 22.3265, "lng": 114.1537, "lines": "東涌綫/屯馬綫"}
+        ]
+
+        def get_nearest_mtr_info(t_lat, t_lng):
+            import math
+            def d_m(la1, lo1, la2, lo2):
+                R = 6371000
+                dl = math.radians(la2 - la1)
+                do = math.radians(lo2 - lo1)
+                a = math.sin(dl/2)**2 + math.cos(math.radians(la1))*math.cos(math.radians(la2))*math.sin(do/2)**2
+                return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
+            closest = min(SUBWAY_STATIONS, key=lambda s: d_m(t_lat, t_lng, s["lat"], s["lng"]))
+            s_d = round(d_m(t_lat, t_lng, closest["lat"], closest["lng"]))
+            w_d = round(s_d * 1.3)
+            return {
+                "nearest_mtr_cn": closest["station_name_zh"],
+                "nearest_mtr_lines": closest["lines"],
+                "dist_straight_m": s_d,
+                "dist_walk_m": w_d,
+                "walk_time_min": round(w_d / 75.0, 1)
+            }
+
         for dj_name, dj_proj in data_json_map.items():
             if dj_name not in existing_pnames:
-                print(f"✨ 发现正式版新项目: {dj_name}，自动收录至地图项目库底座")
+                p_dist = dj_proj.get("district", "")
+                p_region = dj_proj.get("region", "")
+                if p_dist in district_centers:
+                    t_lat, t_lng = district_centers[p_dist]
+                    t_lat = round(t_lat + 0.0002, 6)
+                    t_lng = round(t_lng + 0.0002, 6)
+                else:
+                    t_lat = 22.3193 if "九龙" in p_region else 22.2814
+                    t_lng = 114.1694 if "九龙" in p_region else 114.1583
+                
+                mtr_info = get_nearest_mtr_info(t_lat, t_lng)
+                print(f"✨ 发现正式版新项目: {dj_name} (商圈: {p_dist})，自动收录至地图项目库底座 (坐标: {t_lat}, {t_lng}, 最近地铁: {mtr_info['nearest_mtr_cn']}站 步行约{mtr_info['walk_time_min']}分钟)")
                 new_item = {
                     "name": dj_name,
-                    "region": dj_proj.get("region", ""),
-                    "district": dj_proj.get("district", ""),
-                    "lat": dj_proj.get("lat", 22.3193),
-                    "lng": dj_proj.get("lng", 114.1694),
+                    "region": p_region,
+                    "district": p_dist,
+                    "lat": t_lat,
+                    "lng": t_lng,
+                    "nearest_mtr": mtr_info,
                     "sell_status": dj_proj.get("sell_status", "on_sale"),
                     "sell_status_cn": dj_proj.get("sell_status_cn", "出售中"),
                     "is_sold_out": False,
@@ -534,6 +608,7 @@ def main():
             print("读取 楼盘基础信息库.xlsx 异常:", e)
 
     MANUAL_OVERRIDE = {
+        '瑅海': ('34校网', '九龙城区校网'),
         '皇廷汇': ('41校网', '九龙城区校网'),
         '天玺': ('31校网', '油尖旺区校网'),
         '喇沙汇': ('41校网', '九龙城区校网'),
@@ -824,6 +899,7 @@ def main():
             'The Monet 第3期': '会德丰',
             '海瑅湾 I': '信和置业 / 嘉里建设 / 嘉华国际 / 招商置地 / 港铁',
             '海瑅湾 II': '信和置业 / 嘉里建设 / 嘉华国际 / 招商置地 / 港铁',
+            '瑅海': '信和置业 / 招商局置地 / 市建局',
         }
         res = dict(verified_devs)
         excel_path = "/Users/nb/google/Antigravity/工作/运营/楼盘字典/项目列表.xlsx"
@@ -852,6 +928,15 @@ def main():
     s_chars = '号峰汇叙湾珑钻铸贤誉启玺维奥滶蕴汇悦宝应罗寿浅径宾园华远蓝语区筑缇泷沄双钻阁扬晋凯岛辉台连东红台丰环学区万滨岭轩广场头门阁荟'
     trans = str.maketrans(t_chars, s_chars)
 
+    comm_map = {}
+    if os.path.exists(COMMUNITY_FILE):
+        try:
+            with open(COMMUNITY_FILE, "r", encoding="utf-8") as fp:
+                comm_map = json.load(fp)
+            print(f"✅ 成功加载 {len(comm_map)} 条静态社区分类固化数据")
+        except Exception as e:
+            print("读取 community_classification.json 异常:", e)
+
     tx_attached = 0
     price_attached = 0
     sp_attached = 0
@@ -859,6 +944,14 @@ def main():
     for p in projects:
         pname = p["name"].strip()
         dj_p = data_json_map.get(pname, {})
+
+        if comm_map and pname in comm_map:
+            cm = comm_map[pname]
+            p["community_type"] = cm.get("category", "")
+            p["community_type_name"] = cm.get("category_name", "")
+            p["is_community"] = cm.get("is_community", False)
+            p["parent_community"] = cm.get("parent_community", "")
+            p["volume_format"] = cm.get("volume_format", "")
 
         # 方案 C 状态动态校准
         if pname in data_json_map:
@@ -894,18 +987,30 @@ def main():
             norm_name = pname.translate(trans).replace(' ', '').replace('　', '').replace('．', '.').lower()
             desc_info = descriptions_map.get(norm_name)
         if desc_info:
-            if not p.get("property_positioning") and desc_info.get("property_positioning"):
+            if desc_info.get("property_positioning"):
                 p["property_positioning"] = desc_info["property_positioning"]
-            if not p.get("selling_points") and desc_info.get("selling_points"):
+            if desc_info.get("selling_points"):
                 p["selling_points"] = desc_info["selling_points"]
                 p["mainland_selling_points"] = desc_info["selling_points"]
                 sp_attached += 1
-            if not p.get("core_pros") and desc_info.get("core_pros"):
+            elif not p.get("selling_points") and desc_info.get("selling_points"):
+                p["selling_points"] = desc_info["selling_points"]
+                p["mainland_selling_points"] = desc_info["selling_points"]
+                sp_attached += 1
+            if desc_info.get("core_pros"):
                 p["core_pros"] = desc_info["core_pros"]
-            if not p.get("quantified_cons") and desc_info.get("quantified_cons"):
+            if desc_info.get("quantified_cons"):
                 p["quantified_cons"] = desc_info["quantified_cons"]
-            if not p.get("commute_guidance") and desc_info.get("commute_guidance"):
-                p["commute_guidance"] = desc_info["commute_guidance"]
+            if desc_info.get("commute_guidance"):
+                cg = desc_info["commute_guidance"].strip()
+                p["commute_guidance"] = cg
+                c_lines = [l.strip() for l in cg.split('\n') if l.strip()]
+                if len(c_lines) >= 3:
+                    p["comparison_commute"] = {
+                        "line1": c_lines[0],
+                        "line2": c_lines[1],
+                        "line3": c_lines[2]
+                    }
             desc_attached += 1
 
         # 若描述库未提供卖点则兜底原楼盘卖点.xlsx (仅在为空时补充)

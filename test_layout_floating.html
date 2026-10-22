@@ -3306,7 +3306,7 @@ function initMap() {
   });
 }
 
-const MAP_DATA_VERSION = '20261015_1750_release';
+const MAP_DATA_VERSION = 'v_' + Date.now();
 
 function getProjectImageInfo(projName) {
   if (!projName) return null;
@@ -4756,6 +4756,23 @@ function getProjectMobilityProfile(proj) {
     };
   }
 
+  const name = proj.name || '';
+  const d = (proj.district || '').trim();
+  const md = (proj.micro_district || '').trim();
+  const reg = (proj.region || '').trim();
+  const combined = `${name} ${d} ${md} ${reg}`;
+
+  // 0. 特殊半山/坡道豪宅（如西半山天御等，即使直线距离近，但由于陡峭山地坡道垂直落差达近百米，绝非步行通勤盘，必须直通高端接驳/车行模型）
+  if (name.includes('天御')) {
+    return {
+      isWalkable: false,
+      envTag: '👑 西半山百年名门地脉 · 坚道/卫城道名邸',
+      transitDesc: '出门步行约2分即达坚道小巴/城巴站，约 3~5 分钟直通上环/中环核心枢纽',
+      btnText: '🚗 查看半山接驳动线',
+      summaryTag: '🚌 坚道专线小巴/巴士约3~5分达中环/上环'
+    };
+  }
+
   const walkMin = Number(mtr.walk_time_min) || 0;
   const walkM = Number(mtr.dist_walk_m) || 0;
 
@@ -4773,11 +4790,6 @@ function getProjectMobilityProfile(proj) {
   }
 
   // > 12分钟 或 > 1000米：启动方案 B 板块定制
-  const name = proj.name || '';
-  const d = (proj.district || '').trim();
-  const md = (proj.micro_district || '').trim();
-  const reg = (proj.region || '').trim();
-  const combined = `${name} ${d} ${md} ${reg}`;
 
   // 1. 启德跑道区
   if (combined.includes('跑道') || (proj.address || '').includes('承') || name.includes('天泷') || name.includes('天玺．海') || name.includes('柏蔚森') || name.includes('沄璟') || name.includes('维港') || name.includes('花语海') || name.includes('Double Coast') || name.includes('Miami Quay') || name.includes('启德海湾')) {
