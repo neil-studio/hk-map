@@ -546,6 +546,8 @@ def main():
                 
                 mtr_info = get_nearest_mtr_info(t_lat, t_lng)
                 print(f"✨ 发现正式版新项目: {dj_name} (商圈: {p_dist})，自动收录至地图项目库底座 (坐标: {t_lat}, {t_lng}, 最近地铁: {mtr_info['nearest_mtr_cn']}站 步行约{mtr_info['walk_time_min']}分钟)")
+                dj_stats = dj_proj.get("stats", {})
+                dj_is_suspended = dj_proj.get("is_suspended", False) or dj_proj.get("sell_status") == "sales_suspended" or (dj_stats.get("stopped", 0) > 0 and dj_stats.get("sale", 0) == 0)
                 new_item = {
                     "name": dj_name,
                     "region": p_region,
@@ -553,8 +555,11 @@ def main():
                     "lat": t_lat,
                     "lng": t_lng,
                     "nearest_mtr": mtr_info,
-                    "sell_status": dj_proj.get("sell_status", "on_sale"),
-                    "sell_status_cn": dj_proj.get("sell_status_cn", "出售中"),
+                    "sell_status": "sales_suspended" if dj_is_suspended else dj_proj.get("sell_status", "on_sale"),
+                    "sell_status_cn": "暂停销售" if dj_is_suspended else dj_proj.get("sell_status_cn", "出售中"),
+                    "is_suspended": dj_is_suspended,
+                    "stats": dj_stats,
+                    "stopped_units": dj_stats.get("stopped", 0),
                     "is_sold_out": False,
                     "price_tier": dj_proj.get("price_tier", "1000-2000"),
                     "total_units": 0,
@@ -957,10 +962,24 @@ def main():
         if pname in data_json_map:
             prod_status = dj_p.get("sell_status", "on_sale")
             prod_status_cn = dj_p.get("sell_status_cn", "出售中")
+            prod_stats = dj_p.get("stats", {})
+            prod_is_suspended = dj_p.get("is_suspended", False) or prod_status == "sales_suspended" or (prod_stats.get("stopped", 0) > 0 and prod_stats.get("sale", 0) == 0)
+
+            p["is_suspended"] = prod_is_suspended
+            p["stats"] = prod_stats
+            p["stopped_units"] = prod_stats.get("stopped", 0)
+
             if prod_status == "sold_out":
                 p["sell_status"] = "sold_out"
                 p["sell_status_cn"] = "已售罄"
                 p["is_sold_out"] = True
+                p["is_coming_soon"] = False
+                p["is_suspended"] = False
+            elif prod_is_suspended:
+                p["sell_status"] = "sales_suspended" if prod_status == "sales_suspended" else prod_status
+                p["sell_status_cn"] = "暂停销售"
+                p["is_sold_out"] = False
+                p["is_coming_soon"] = False
             else:
                 p["sell_status"] = prod_status
                 p["sell_status_cn"] = prod_status_cn
@@ -972,6 +991,7 @@ def main():
             p["sell_status_cn"] = "已售罄"
             p["is_sold_out"] = True
             p["is_coming_soon"] = False
+            p["is_suspended"] = False
 
         # 动态同步营销与楼盘资料链接（若正式版有提供）
         if "marketing_url" in dj_p and dj_p["marketing_url"]:
@@ -1180,7 +1200,10 @@ def main():
                 p["sell_status"] = "sold_out"
                 p["sell_status_cn"] = "已售罄"
                 p["is_sold_out"] = True
-        if not p.get("tower_count"):
+        if pname == '瑅海':
+            p["tower_count"] = 2
+            p["tower_names"] = ["第1座", "第2座"]
+        elif not p.get("tower_count"):
             p["tower_count"] = 1
 
         # 匹配最近成交数据

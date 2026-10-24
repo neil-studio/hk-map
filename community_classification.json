@@ -551,28 +551,28 @@
   "The Haddon": {
     "name": "The Haddon",
     "category": "B",
-    "category_name": "大型旧改综合体分期",
+    "category_name": "大型重建综合体分期",
     "is_community": true,
     "parent_community": "必嘉坊",
-    "community_tag": "🏡【社区】大型旧改综合体分期",
+    "community_tag": "🏡【社区】大型重建综合体分期，享会所与区域配套绿化",
     "volume_format": "phase"
   },
   "必嘉坊．曦汇": {
     "name": "必嘉坊．曦汇",
     "category": "B",
-    "category_name": "大型旧改综合体分期",
+    "category_name": "大型重建综合体分期",
     "is_community": true,
     "parent_community": "必嘉坊",
-    "community_tag": "🏡【社区】大型旧改综合体分期",
+    "community_tag": "🏡【社区】大型重建综合体分期，享会所与区域配套绿化",
     "volume_format": "phase"
   },
   "必嘉坊．迎汇": {
     "name": "必嘉坊．迎汇",
     "category": "B",
-    "category_name": "大型旧改综合体分期",
+    "category_name": "大型重建综合体分期",
     "is_community": true,
     "parent_community": "必嘉坊",
-    "community_tag": "🏡【社区】大型旧改综合体分期",
+    "community_tag": "🏡【社区】大型重建综合体分期，享会所与区域配套绿化",
     "volume_format": "phase"
   },
   "悦麓": {
@@ -587,46 +587,46 @@
   "首岸第1期": {
     "name": "首岸第1期",
     "category": "B",
-    "category_name": "分期大盘分期",
+    "category_name": "大型综合体分期",
     "is_community": true,
     "parent_community": "首岸",
-    "community_tag": "🏡【社区】大型地标综合体分期，尊享全期中央园林与旗舰会所群",
+    "community_tag": "🏡【社区】大型综合体分期，尊享全期园林与会所",
     "volume_format": "phase"
   },
   "首岸第2期": {
     "name": "首岸第2期",
     "category": "B",
-    "category_name": "分期大盘分期",
+    "category_name": "大型综合体分期",
     "is_community": true,
     "parent_community": "首岸",
-    "community_tag": "🏡【社区】大型地标综合体分期，尊享全期中央园林与旗舰会所群",
+    "community_tag": "🏡【社区】大型综合体分期，尊享全期园林与会所",
     "volume_format": "phase"
   },
   "首岸第3期": {
     "name": "首岸第3期",
     "category": "B",
-    "category_name": "分期大盘分期",
+    "category_name": "大型综合体分期",
     "is_community": true,
     "parent_community": "首岸",
-    "community_tag": "🏡【社区】大型地标综合体分期，尊享全期中央园林与旗舰会所群",
+    "community_tag": "🏡【社区】大型综合体分期，尊享全期园林与会所",
     "volume_format": "phase"
   },
   "首岸第4期": {
     "name": "首岸第4期",
     "category": "B",
-    "category_name": "分期大盘分期",
+    "category_name": "大型综合体分期",
     "is_community": true,
     "parent_community": "首岸",
-    "community_tag": "🏡【社区】大型地标综合体分期，尊享全期中央园林与旗舰会所群",
+    "community_tag": "🏡【社区】大型综合体分期，尊享全期园林与会所",
     "volume_format": "phase"
   },
   "首汇": {
     "name": "首汇",
     "category": "B",
-    "category_name": "大型旧改综合体分期",
+    "category_name": "大型重建综合体分期",
     "is_community": true,
     "parent_community": "必嘉坊",
-    "community_tag": "🏡【社区】大型旧改综合体分期",
+    "community_tag": "🏡【社区】大型重建综合体分期，享会所与区域配套绿化",
     "volume_format": "phase"
   },
   "叡璟I": {
@@ -1370,10 +1370,10 @@
   "映汇": {
     "name": "映汇",
     "category": "B",
-    "category_name": "大型旧改综合体分期",
+    "category_name": "大型重建综合体分期",
     "is_community": true,
     "parent_community": "必嘉坊",
-    "community_tag": "🏡【社区】大型旧改综合体分期",
+    "community_tag": "🏡【社区】大型重建综合体分期，享会所与区域配套绿化",
     "volume_format": "phase"
   },
   "肇辉台6号": {
@@ -1423,11 +1423,11 @@
   },
   "瑅海": {
     "name": "瑅海",
-    "category": "E",
-    "category_name": "市区单幢精致物业",
-    "is_community": false,
+    "category": "A",
+    "category_name": "大型重建综合体",
+    "is_community": true,
     "parent_community": "瑅海",
-    "community_tag": "🏢【社区】属单幢精致物业，公用绿化及大型会所相对小巧",
-    "volume_format": "single"
+    "community_tag": "🏡【社区】大型重建综合体，享会所与区域配套绿化",
+    "volume_format": "estate"
   }
 }

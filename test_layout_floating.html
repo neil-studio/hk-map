@@ -3501,12 +3501,14 @@ function mergeProductionSales(prodData) {
     const prod = pMap[p.name] || pMap[norm(p.name)];
     if (prod) {
       if (prod.stats) {
+        p.stats = prod.stats;
         p.sales_stats = prod.stats;
         p.sold_rate = prod.stats.sold_rate;
         p.unsold_units = prod.stats.sale;
       }
+      p.is_suspended = prod.is_suspended === true || prod.sell_status === 'sales_suspended' || (prod.stats && prod.stats.stopped > 0 && prod.stats.sale === 0);
       p.sell_status = prod.sell_status || p.sell_status;
-      p.sell_status_cn = prod.sell_status_cn || p.sell_status_cn;
+      p.sell_status_cn = p.is_suspended ? '暂停销售' : (prod.sell_status_cn || p.sell_status_cn);
       if (prod.total_price_desc) p.total_price_desc = prod.total_price_desc;
       if (prod.sqft_price_desc) p.sqft_price_desc = prod.sqft_price_desc;
       if (prod.main_layout) p.main_layout = prod.main_layout;
@@ -4905,9 +4907,16 @@ function showProjectFloatingCard(name) {
     ? `<span class="corner-tag forward" title="${proj.property_type_desc || '期房'}">⏳ 期房</span>`
     : `<span class="corner-tag ready" title="${proj.property_type_desc || '现房'}">🏠 现房</span>`;
 
-  // 价格徽章
+  // 价格与状态徽章
+  const isProjSuspended = proj.is_suspended === true || proj.sell_status === 'sales_suspended' || (proj.stats && proj.stats.stopped > 0 && proj.stats.sale === 0) || (proj.sales_stats && proj.sales_stats.stopped > 0 && proj.sales_stats.sale === 0);
   let priceHtml = '';
-  if (proj.min_price_wan && proj.min_price_wan > 0) {
+  if (isProjSuspended) {
+    if (proj.min_price_wan && proj.min_price_wan > 0) {
+      priceHtml = `<span class="corner-tag price" style="background:#fef3c7; color:#b45309; border:1px solid #fde68a;" title="暂停销售参考价">⛔ 暂停销售 (参考$${Number(proj.min_price_wan).toLocaleString()}万)</span>`;
+    } else {
+      priceHtml = `<span class="corner-tag price" style="background:#fef3c7; color:#b45309; border:1px solid #fde68a;">⛔ 暂停销售</span>`;
+    }
+  } else if (proj.min_price_wan && proj.min_price_wan > 0) {
     priceHtml = `<span class="corner-tag price">约$${Number(proj.min_price_wan).toLocaleString()}万起</span>`;
   } else if (proj.sell_status === 'coming_soon') {
     priceHtml = `<span class="corner-tag price">即将发售</span>`;
@@ -5488,7 +5497,7 @@ function applyFilters() {
     const soldCountStr = (proj.sold_units !== undefined && proj.sold_units !== null) ? proj.sold_units : '-';
 
     // 暂停销售判定 (与正式版逻辑完全一致)
-    const isSuspended = proj.is_suspended === true || proj.sell_status === 'sales_suspended' || (proj.stats && proj.stats.stopped > 0 && proj.stats.sale === 0);
+    const isSuspended = proj.is_suspended === true || proj.sell_status === 'sales_suspended' || (proj.stats && proj.stats.stopped > 0 && proj.stats.sale === 0) || (proj.sales_stats && proj.sales_stats.stopped > 0 && proj.sales_stats.sale === 0);
 
     // 价格与起步价
     let priceDisplayHtml = '';
@@ -5608,10 +5617,11 @@ function applyFilters() {
 
     // 如果非远视角，或者处于单盘视角，则向地图添加单盘标记
     if (!isFarView) {
-      const mColor = (proj.sell_status === 'sold_out' || proj.is_sold_out) ? '#64748b' : (proj.sell_status === 'on_sale' ? '#16a34a' : '#2563eb');
+      const isProjSuspended = proj.is_suspended === true || proj.sell_status === 'sales_suspended' || (proj.stats && proj.stats.stopped > 0 && proj.stats.sale === 0) || (proj.sales_stats && proj.sales_stats.stopped > 0 && proj.sales_stats.sale === 0);
+      const mColor = (proj.sell_status === 'sold_out' || proj.is_sold_out) ? '#64748b' : (isProjSuspended ? '#ca8a04' : (proj.sell_status === 'on_sale' ? '#16a34a' : '#2563eb'));
       const mIcon = L.divIcon({
         className: 'p-marker',
-        html: `<div class="proj-pin-box" style="background:${mColor}; color:#fff;" title="${proj.name}">${proj.name}</div>`,
+        html: `<div class="proj-pin-box ${isProjSuspended ? 'suspended-pin' : ''}" style="background:${mColor}; color:#fff;" title="${proj.name}">${proj.name}</div>`,
         iconSize: null
       });
       const marker = L.marker([proj.lat, proj.lng], { icon: mIcon });
@@ -5731,9 +5741,11 @@ function updateSearchSuggestions(kw) {
 
   // 渲染匹配楼盘
   matches.forEach(p => {
-    const isSale = p.sell_status === 'on_sale';
-    const statusBg = isSale ? '#f0fdf4' : '#eff6ff';
-    const statusColor = isSale ? '#16a34a' : '#2563eb';
+    const isSusp = p.is_suspended === true || p.sell_status === 'sales_suspended' || (p.stats && p.stats.stopped > 0 && p.stats.sale === 0) || (p.sales_stats && p.sales_stats.stopped > 0 && p.sales_stats.sale === 0);
+    const isSale = p.sell_status === 'on_sale' && !isSusp;
+    const statusBg = isSusp ? '#fef3c7' : (isSale ? '#f0fdf4' : '#eff6ff');
+    const statusColor = isSusp ? '#ca8a04' : (isSale ? '#16a34a' : '#2563eb');
+    const statusLabel = isSusp ? '暂停销售' : p.sell_status_cn;
     const priceText = p.excel_min_price_desc || p.basic_price_desc || (p.min_price_wan ? `${p.min_price_wan}万起` : '价单待查');
     const isForward = p.property_type === 'forward' || p.is_coming_soon;
     const ptBadge = isForward
@@ -5744,7 +5756,7 @@ function updateSearchSuggestions(kw) {
       <div class="search-item" onclick="selectProjectSuggestion('${p.name.replace(/'/g, "\\'")}')">
         <div class="search-item-title">
           <span>🏢 ${p.name} ${ptBadge}</span>
-          <span class="search-item-badge" style="background:${statusBg}; color:${statusColor};">${p.sell_status_cn}</span>
+          <span class="search-item-badge" style="background:${statusBg}; color:${statusColor};">${statusLabel}</span>
         </div>
         <div class="search-item-desc">
           📍 ${p.main_area || p.region} · ${p.micro_district || p.district} | 💷 ${priceText}

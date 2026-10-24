@@ -1259,6 +1259,16 @@
     "hd_height": 694,
     "aspect_ratio": 1.441
   },
+  "瑅海": {
+    "original": "images/projects/original/瑅海/瑅海.jpeg",
+    "hd": "images/projects/hd/瑅海.webp",
+    "thumb": "images/projects/thumb/瑅海.webp",
+    "width": 1280,
+    "height": 720,
+    "hd_width": 1280,
+    "hd_height": 720,
+    "aspect_ratio": 1.778
+  },
   "瑜一第IC期": {
     "original": "images/projects/original/瑜一/瑜一.png",
     "hd": "images/projects/hd/瑜一第IC期.webp",
