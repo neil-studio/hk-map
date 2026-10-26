@@ -613,7 +613,7 @@ def main():
             print("读取 楼盘基础信息库.xlsx 异常:", e)
 
     MANUAL_OVERRIDE = {
-        '瑅海': ('34校网', '九龙城区校网'),
+        '瑅海': ('35校网', '九龙城区校网'),
         '皇廷汇': ('41校网', '九龙城区校网'),
         '天玺': ('31校网', '油尖旺区校网'),
         '喇沙汇': ('41校网', '九龙城区校网'),
@@ -1178,6 +1178,13 @@ def main():
                 p["school_net"] = f"{sn_info[0]} / {sn_info[1]}"
             elif sn_info[0]:
                 p["school_net"] = sn_info[0]
+
+        # 🏫 校网与卖点文案防呆交叉审计（防止非34校网误写为34名校网）
+        p_net_clean = str(p.get("primary_school_net", ""))
+        sp_full_text = str(p.get("selling_points", "")) + " " + str(p.get("core_pros", "")) + " " + str(p.get("mainland_selling_points", ""))
+        if "34" in sp_full_text and any(x in p_net_clean for x in ["35", "32", "31", "40", "41", "11", "12", "14", "16", "18"]):
+            if "34" not in p_net_clean:
+                print(f"⚠️ [校网防呆警告] 项目 {pname} 归属 {p_net_clean}，但卖点文案中包含 34 校网，请检查！")
 
         # 匹配在售数据与物理销控套数统计
         sc = sales_data.get(pname)
