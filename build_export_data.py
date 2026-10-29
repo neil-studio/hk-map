@@ -159,6 +159,22 @@ def fmt_currency(p):
         return f"{p_wan/10000:.2f} 亿".replace(".00", "")
     return f"{round(p_wan, 1)} 万".replace(".0 万", " 万")
 
+def format_wan_display(w, is_ref=False):
+    if w is None or w <= 0:
+        return ""
+    if w >= 10000:
+        yi = round(w / 10000.0, 2)
+        yi_str = f"{yi:.2f}".rstrip("0").rstrip(".")
+        return f"${yi_str}亿" + ("+" if is_ref else "")
+    else:
+        if is_ref and w >= 1000:
+            val = int(w // 100 * 100)
+        else:
+            val = round(w, 2)
+            if val == int(val):
+                val = int(val)
+        return f"${val}万" + ("+" if is_ref else "")
+
 def fmt_uprice(u):
     if not u or u == '-' or u == '暂无':
         return "-"
@@ -453,12 +469,14 @@ def parse_excel_sales_and_tx():
             if all_active_on_sale_prices:
                 min_wan = round(min(all_active_on_sale_prices) / 10000.0, 2)
                 max_wan = round(max(all_active_on_sale_prices) / 10000.0, 2)
+                d1 = format_wan_display(min_wan)
+                d2 = format_wan_display(max_wan)
                 project_bounds[pname] = {
                     'min_price_wan': min_wan,
                     'max_price_wan': max_wan,
                     'has_price_data': True,
                     'is_tender_project': False,
-                    'desc': f"${min_wan}万起" if min_wan == max_wan else f"${min_wan}万 - ${max_wan}万"
+                    'desc': f"{d1}起" if min_wan == max_wan else f"{d1} - {d2}"
                 }
             # 优先级 2: 可售单位全部为招标发售 (提取当前可售户型的近期真实成交作为参考)
             elif excel_on_sale_units > 0 and any(d.get("tender_count", 0) > 0 for d in unsold_layout_data.values()):
@@ -475,13 +493,13 @@ def parse_excel_sales_and_tx():
                 if ref_prices:
                     min_wan = round(min(ref_prices) / 10000.0, 2)
                     max_wan = round(max(ref_prices) / 10000.0, 2)
-                    ref_rounded = int(min_wan // 100 * 100) if min_wan >= 1000 else int(min_wan)
+                    ref_text = format_wan_display(min_wan, is_ref=True)
                     project_bounds[pname] = {
                         'min_price_wan': min_wan,
                         'max_price_wan': max_wan,
                         'has_price_data': True,
                         'is_tender_project': True,
-                        'desc': f"招标发售 (参考近期成交约${ref_rounded}万+)"
+                        'desc': f"招标发售 (参考近期成交约{ref_text})"
                     }
                 else:
                     project_bounds[pname] = {
@@ -494,23 +512,24 @@ def parse_excel_sales_and_tx():
             elif all_unsold_prices:
                 min_wan = round(min(all_unsold_prices) / 10000.0, 2)
                 max_wan = round(max(all_unsold_prices) / 10000.0, 2)
+                d1 = format_wan_display(min_wan)
                 project_bounds[pname] = {
                     'min_price_wan': min_wan,
                     'max_price_wan': max_wan,
                     'has_price_data': True,
                     'is_tender_project': False,
-                    'desc': f"暂停销售 (停售前参考: ${min_wan}万起)"
+                    'desc': f"暂停销售 (停售前参考: {d1}起)"
                 }
             elif all_sold_prices:
                 min_wan = round(min(all_sold_prices) / 10000.0, 2)
                 max_wan = round(max(all_sold_prices) / 10000.0, 2)
-                ref_rounded = int(min_wan // 100 * 100) if min_wan >= 1000 else int(min_wan)
+                ref_text = format_wan_display(min_wan, is_ref=True)
                 project_bounds[pname] = {
                     'min_price_wan': min_wan,
                     'max_price_wan': max_wan,
                     'has_price_data': True,
                     'is_tender_project': True,
-                    'desc': f"招标发售 (参考近期成交约${ref_rounded}万+)"
+                    'desc': f"招标发售 (参考近期成交约{ref_text})"
                 }
             else:
                 project_bounds[pname] = {

@@ -4873,6 +4873,18 @@ function closeProjectFloatingCard() {
   document.querySelectorAll('.proj-pin-box.active').forEach(el => el.classList.remove('active'));
 }
 
+function formatPriceWanText(valWan, isRef = false) {
+  if (!valWan || valWan <= 0) return '';
+  if (valWan >= 10000) {
+    const yi = (valWan / 10000).toFixed(2).replace(/\.?0+$/, '');
+    return `$${yi}亿${isRef ? '+' : ''}`;
+  } else {
+    const v = (isRef && valWan >= 1000) ? Math.floor(valWan / 100) * 100 : valWan;
+    const rounded = Math.round(v * 100) / 100;
+    return `$${rounded.toLocaleString()}万${isRef ? '+' : ''}`;
+  }
+}
+
 function showProjectFloatingCard(name) {
   const proj = projectsData.find(p => p.name === name);
   if (!proj) return;
@@ -4913,19 +4925,21 @@ function showProjectFloatingCard(name) {
   let priceHtml = '';
   if (isProjSuspended) {
     if (proj.min_price_wan && proj.min_price_wan > 0) {
-      priceHtml = `<span class="corner-tag price" style="background:#fef3c7; color:#b45309; border:1px solid #fde68a;" title="暂停销售参考价">⛔ 暂停销售 (参考$${Number(proj.min_price_wan).toLocaleString()}万)</span>`;
+      const pText = formatPriceWanText(proj.min_price_wan, false);
+      priceHtml = `<span class="corner-tag price" style="background:#fef3c7; color:#b45309; border:1px solid #fde68a;" title="暂停销售参考价">⛔ 暂停销售 (参考${pText})</span>`;
     } else {
       priceHtml = `<span class="corner-tag price" style="background:#fef3c7; color:#b45309; border:1px solid #fde68a;">⛔ 暂停销售</span>`;
     }
   } else if (isProjTender) {
     if (proj.min_price_wan && proj.min_price_wan > 0) {
-      const refWan = Math.round(proj.min_price_wan >= 1000 ? Math.floor(proj.min_price_wan / 100) * 100 : proj.min_price_wan);
-      priceHtml = `<span class="corner-tag price" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd;" title="${proj.excel_min_price_desc || '招标发售'}">🏷️ 招标发售 (参考约$${refWan}万+)</span>`;
+      const pText = formatPriceWanText(proj.min_price_wan, true);
+      priceHtml = `<span class="corner-tag price" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd;" title="${proj.excel_min_price_desc || '招标发售'}">🏷️ 招标发售 (参考约${pText})</span>`;
     } else {
       priceHtml = `<span class="corner-tag price" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd;">🏷️ 招标发售</span>`;
     }
   } else if (proj.min_price_wan && proj.min_price_wan > 0) {
-    priceHtml = `<span class="corner-tag price">约$${Number(proj.min_price_wan).toLocaleString()}万起</span>`;
+    const pText = formatPriceWanText(proj.min_price_wan, false);
+    priceHtml = `<span class="corner-tag price">约${pText}起</span>`;
   } else if (proj.sell_status === 'coming_soon') {
     priceHtml = `<span class="corner-tag price">即将发售</span>`;
   } else {
@@ -5301,7 +5315,11 @@ function copyInsightsContent() {
 
     text += `【${proj.name} - 核心特色卖点】\n`;
     text += `📍 区域：${proj.main_area || proj.region} · ${proj.micro_district || proj.district}\n`;
-    if (proj.min_price_wan) text += `💰 价格：约$${proj.min_price_wan}万起\n`;
+    if (proj.excel_min_price_desc) {
+      text += `💰 价格：${proj.excel_min_price_desc}\n`;
+    } else if (proj.min_price_wan) {
+      text += `💰 价格：约${formatPriceWanText(proj.min_price_wan)}起\n`;
+    }
     if (mob.isWalkable) {
       text += `🚇 交通：${mob.stationName} (步行约${mob.walkMin}分钟)\n`;
     } else {
@@ -5517,7 +5535,8 @@ function applyFilters() {
     let priceDisplayHtml = '';
     if (isSuspended) {
       if (proj.min_price_wan && proj.min_price_wan > 0) {
-        priceDisplayHtml = `<span class="card-v2-price" style="color:#ca8a04; font-size:0.85rem;" title="暂停销售参考价">参考$${Number(proj.min_price_wan).toLocaleString()}万</span>`;
+        const pText = formatPriceWanText(proj.min_price_wan, false);
+        priceDisplayHtml = `<span class="card-v2-price" style="color:#ca8a04; font-size:0.85rem;" title="暂停销售参考价">参考${pText}</span>`;
       } else {
         priceDisplayHtml = `<span class="card-v2-price tender" style="color:#ca8a04;">暂停销售</span>`;
       }
@@ -5525,13 +5544,14 @@ function applyFilters() {
       priceDisplayHtml = `<span class="card-v2-price tender" style="color:#64748b;">已售罄</span>`;
     } else if (isTenderProj) {
       if (proj.min_price_wan && proj.min_price_wan > 0) {
-        const refWan = Math.round(proj.min_price_wan >= 1000 ? Math.floor(proj.min_price_wan / 100) * 100 : proj.min_price_wan);
-        priceDisplayHtml = `<span class="card-v2-price tender" style="color:#0284c7;" title="${proj.excel_min_price_desc || '招标发售'}">招标发售<span class="price-unit" style="font-size:0.75rem; color:#64748b; font-weight:normal;"> (参考约$${refWan.toLocaleString()}万+)</span></span>`;
+        const pText = formatPriceWanText(proj.min_price_wan, true);
+        priceDisplayHtml = `<span class="card-v2-price tender" style="color:#0284c7;" title="${proj.excel_min_price_desc || '招标发售'}">招标发售<span class="price-unit" style="font-size:0.75rem; color:#64748b; font-weight:normal;"> (参考约${pText})</span></span>`;
       } else {
         priceDisplayHtml = `<span class="card-v2-price tender" style="color:#0284c7;">招标发售</span>`;
       }
     } else if (proj.min_price_wan && proj.min_price_wan > 0) {
-      priceDisplayHtml = `<span class="card-v2-price">约$${Number(proj.min_price_wan).toLocaleString()}万<span class="price-unit">起*</span></span>`;
+      const pText = formatPriceWanText(proj.min_price_wan, false);
+      priceDisplayHtml = `<span class="card-v2-price">约${pText}<span class="price-unit">起*</span></span>`;
     } else if (proj.sell_status === 'coming_soon') {
       priceDisplayHtml = `<span class="card-v2-price tender">即将发售</span>`;
     } else {
