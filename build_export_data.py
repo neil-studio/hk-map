@@ -140,7 +140,13 @@ def clean_price(val):
     try:
         f = float(s)
         if f > 2000000000 and len(s) >= 14:
-            f = float(s[:7])
+            # 兼容历史改价拼接数字异常 (例如两个8位数拼接为16位，或两个7位数拼接为14位)
+            if len(s) >= 16:
+                f = float(s[:8])
+            elif len(s) == 14:
+                f = float(s[:7])
+            else:
+                f = float(s[:len(s)//2])
         return f if f > 0 else None
     except:
         return None
@@ -329,15 +335,30 @@ def parse_excel_sales_and_tx():
                     is_tender = True
                 
                 # 判断是否属于狭义在售（已正式发售安排推售）
-                is_on_sale = (status in ["在售", "出售中", "sale", "Sale"])
+                is_on_sale = (status in ["在售", "出售中", "sale", "Sale", "已定价未售"])
+                is_stopped = (status in ["暂停销售", "暂停发售", "stopped", "Stopped"])
+                is_pending = (status in ["待售", "未推售", "pending", "Pending"])
                 
                 if layout not in unsold_layout_data:
-                    unsold_layout_data[layout] = {"sqfts": [], "prices": [], "tender_count": 0, "unsold": 0, "on_sale": 0}
+                    unsold_layout_data[layout] = {
+                        "sqfts": [],
+                        "prices": [],
+                        "active_prices": [],
+                        "tender_count": 0,
+                        "unsold": 0,
+                        "on_sale": 0,
+                        "stopped_count": 0,
+                        "pending_count": 0
+                    }
                 
                 unsold_layout_data[layout]["unsold"] += 1
                 if is_on_sale:
                     excel_on_sale_units += 1
                     unsold_layout_data[layout]["on_sale"] += 1
+                if is_stopped:
+                    unsold_layout_data[layout]["stopped_count"] += 1
+                if is_pending:
+                    unsold_layout_data[layout]["pending_count"] += 1
 
                 if isinstance(sqft, (int, float)) and sqft > 0:
                     unsold_layout_data[layout]["sqfts"].append(sqft)
@@ -346,6 +367,8 @@ def parse_excel_sales_and_tx():
                     unsold_layout_data[layout]["tender_count"] += 1
                 elif price:
                     unsold_layout_data[layout]["prices"].append(price)
+                    if is_on_sale and not is_stopped:
+                        unsold_layout_data[layout]["active_prices"].append(price)
 
             # 整理在售房源列表
             summary_list = []
@@ -353,6 +376,7 @@ def parse_excel_sales_and_tx():
             sorted_keys = sorted(unsold_layout_data.keys(), key=lambda k: layout_order.index(k) if k in layout_order else 99)
             
             all_unsold_prices = []
+            all_active_on_sale_prices = []
             for l_name in sorted_keys:
                 d = unsold_layout_data[l_name]
                 if d["unsold"] == 0:
@@ -366,13 +390,22 @@ def parse_excel_sales_and_tx():
                 
                 if d["prices"]:
                     all_unsold_prices.extend(d["prices"])
-                    min_p = min(d["prices"])
-                    max_p = max(d["prices"])
+                if d.get("active_prices"):
+                    all_active_on_sale_prices.extend(d["active_prices"])
+                
+                # 优先呈现真正可售单位的价格区间
+                if d.get("active_prices"):
+                    min_p = min(d["active_prices"])
+                    max_p = max(d["active_prices"])
                     p_str1 = fmt_currency(min_p)
                     p_str2 = fmt_currency(max_p)
                     price_str = p_str1 if p_str1 == p_str2 else f"{p_str1} - {p_str2}"
                     if d["tender_count"] > 0:
                         price_str += " (含招标)"
+                elif d["on_sale"] > 0 and d["tender_count"] > 0:
+                    price_str = "招标"
+                elif d.get("stopped_count", 0) > 0 and d["on_sale"] == 0:
+                    price_str = "暂停销售"
                 elif d["tender_count"] > 0:
                     price_str = "招标"
                 else:
@@ -416,29 +449,75 @@ def parse_excel_sales_and_tx():
             project_tx[pname] = recent_tx_list
 
             # 计算项目的精准最低与最高价格 (万元)
-            if all_unsold_prices:
+            # 优先级 1: 真正处于可售状态 (在售/已定价且非暂停) 的公开标价
+            if all_active_on_sale_prices:
+                min_wan = round(min(all_active_on_sale_prices) / 10000.0, 2)
+                max_wan = round(max(all_active_on_sale_prices) / 10000.0, 2)
+                project_bounds[pname] = {
+                    'min_price_wan': min_wan,
+                    'max_price_wan': max_wan,
+                    'has_price_data': True,
+                    'is_tender_project': False,
+                    'desc': f"${min_wan}万起" if min_wan == max_wan else f"${min_wan}万 - ${max_wan}万"
+                }
+            # 优先级 2: 可售单位全部为招标发售 (提取当前可售户型的近期真实成交作为参考)
+            elif excel_on_sale_units > 0 and any(d.get("tender_count", 0) > 0 for d in unsold_layout_data.values()):
+                # 寻找当前在售的户型列表
+                active_tender_layouts = [l for l, d in unsold_layout_data.items() if d.get("on_sale", 0) > 0]
+                matched_sold_prices = []
+                for l in active_tender_layouts:
+                    if l in sold_layout_data:
+                        tx_sorted = sorted(sold_layout_data[l], key=lambda x: str(x['date']) if x.get('date') and x['date'] != '-' else '0000-00-00', reverse=True)
+                        for item in tx_sorted[:5]:
+                            if item.get('price_num'):
+                                matched_sold_prices.append(item['price_num'])
+                ref_prices = matched_sold_prices if matched_sold_prices else all_sold_prices
+                if ref_prices:
+                    min_wan = round(min(ref_prices) / 10000.0, 2)
+                    max_wan = round(max(ref_prices) / 10000.0, 2)
+                    ref_rounded = int(min_wan // 100 * 100) if min_wan >= 1000 else int(min_wan)
+                    project_bounds[pname] = {
+                        'min_price_wan': min_wan,
+                        'max_price_wan': max_wan,
+                        'has_price_data': True,
+                        'is_tender_project': True,
+                        'desc': f"招标发售 (参考近期成交约${ref_rounded}万+)"
+                    }
+                else:
+                    project_bounds[pname] = {
+                        'min_price_wan': None,
+                        'max_price_wan': None,
+                        'has_price_data': False,
+                        'is_tender_project': True,
+                        'desc': '招标发售'
+                    }
+            elif all_unsold_prices:
                 min_wan = round(min(all_unsold_prices) / 10000.0, 2)
                 max_wan = round(max(all_unsold_prices) / 10000.0, 2)
                 project_bounds[pname] = {
                     'min_price_wan': min_wan,
                     'max_price_wan': max_wan,
                     'has_price_data': True,
-                    'desc': f"${min_wan}万起" if min_wan == max_wan else f"${min_wan}万 - ${max_wan}万"
+                    'is_tender_project': False,
+                    'desc': f"暂停销售 (停售前参考: ${min_wan}万起)"
                 }
             elif all_sold_prices:
                 min_wan = round(min(all_sold_prices) / 10000.0, 2)
                 max_wan = round(max(all_sold_prices) / 10000.0, 2)
+                ref_rounded = int(min_wan // 100 * 100) if min_wan >= 1000 else int(min_wan)
                 project_bounds[pname] = {
                     'min_price_wan': min_wan,
                     'max_price_wan': max_wan,
                     'has_price_data': True,
-                    'desc': f"参考成交: ${min_wan}万起" if min_wan == max_wan else f"参考成交: ${min_wan}万 - ${max_wan}万"
+                    'is_tender_project': True,
+                    'desc': f"招标发售 (参考近期成交约${ref_rounded}万+)"
                 }
             else:
                 project_bounds[pname] = {
                     'min_price_wan': None,
                     'max_price_wan': None,
                     'has_price_data': False,
+                    'is_tender_project': False,
                     'desc': '招标发售 / 详见价单'
                 }
 
@@ -1236,12 +1315,14 @@ def main():
             p["min_price_wan"] = pb["min_price_wan"]
             p["max_price_wan"] = pb["max_price_wan"]
             p["has_price_data"] = True
+            p["is_tender_project"] = pb.get("is_tender_project", False)
             p["excel_min_price_desc"] = pb["desc"]
             price_attached += 1
         else:
             p["min_price_wan"] = None
             p["max_price_wan"] = None
             p["has_price_data"] = False
+            p["is_tender_project"] = pb.get("is_tender_project", False) if pb else False
             if p.get("sell_status") == "sold_out" or p.get("is_sold_out"):
                 p["excel_min_price_desc"] = "已售罄"
             elif p.get("sell_status") == "coming_soon" or p.get("is_coming_soon"):

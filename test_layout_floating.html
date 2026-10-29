@@ -4909,6 +4909,7 @@ function showProjectFloatingCard(name) {
 
   // 价格与状态徽章
   const isProjSuspended = proj.is_suspended === true || proj.sell_status === 'sales_suspended' || (proj.stats && proj.stats.stopped > 0 && proj.stats.sale === 0) || (proj.sales_stats && proj.sales_stats.stopped > 0 && proj.sales_stats.sale === 0);
+  const isProjTender = proj.is_tender_project === true || (proj.excel_min_price_desc && proj.excel_min_price_desc.includes('招标'));
   let priceHtml = '';
   if (isProjSuspended) {
     if (proj.min_price_wan && proj.min_price_wan > 0) {
@@ -4916,12 +4917,19 @@ function showProjectFloatingCard(name) {
     } else {
       priceHtml = `<span class="corner-tag price" style="background:#fef3c7; color:#b45309; border:1px solid #fde68a;">⛔ 暂停销售</span>`;
     }
+  } else if (isProjTender) {
+    if (proj.min_price_wan && proj.min_price_wan > 0) {
+      const refWan = Math.round(proj.min_price_wan >= 1000 ? Math.floor(proj.min_price_wan / 100) * 100 : proj.min_price_wan);
+      priceHtml = `<span class="corner-tag price" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd;" title="${proj.excel_min_price_desc || '招标发售'}">🏷️ 招标发售 (参考约$${refWan}万+)</span>`;
+    } else {
+      priceHtml = `<span class="corner-tag price" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd;">🏷️ 招标发售</span>`;
+    }
   } else if (proj.min_price_wan && proj.min_price_wan > 0) {
     priceHtml = `<span class="corner-tag price">约$${Number(proj.min_price_wan).toLocaleString()}万起</span>`;
   } else if (proj.sell_status === 'coming_soon') {
     priceHtml = `<span class="corner-tag price">即将发售</span>`;
   } else {
-    priceHtml = `<span class="corner-tag price">招标</span>`;
+    priceHtml = `<span class="corner-tag price">招标发售</span>`;
   }
 
   // 校网徽章 (若有)
@@ -5135,7 +5143,12 @@ function openProjectInsightsPanel(pName, initialTab = 'highlights') {
 
   if (titleEl) titleEl.textContent = proj.name;
   if (badgeEl) {
-    let pTxt = proj.min_price_wan ? `约$${proj.min_price_wan}万起` : (proj.sell_status === 'coming_soon' ? '即将发售' : '招标');
+    let pTxt = '';
+    if (proj.is_tender_project || (proj.excel_min_price_desc && proj.excel_min_price_desc.includes('招标'))) {
+      pTxt = proj.excel_min_price_desc || '招标发售';
+    } else {
+      pTxt = proj.min_price_wan ? `约$${proj.min_price_wan}万起` : (proj.sell_status === 'coming_soon' ? '即将发售' : '招标发售');
+    }
     badgeEl.textContent = pTxt;
   }
   if (subEl) {
@@ -5498,6 +5511,7 @@ function applyFilters() {
 
     // 暂停销售判定 (与正式版逻辑完全一致)
     const isSuspended = proj.is_suspended === true || proj.sell_status === 'sales_suspended' || (proj.stats && proj.stats.stopped > 0 && proj.stats.sale === 0) || (proj.sales_stats && proj.sales_stats.stopped > 0 && proj.sales_stats.sale === 0);
+    const isTenderProj = proj.is_tender_project === true || (proj.excel_min_price_desc && proj.excel_min_price_desc.includes('招标'));
 
     // 价格与起步价
     let priceDisplayHtml = '';
@@ -5509,12 +5523,19 @@ function applyFilters() {
       }
     } else if (proj.sell_status === 'sold_out' || proj.is_sold_out) {
       priceDisplayHtml = `<span class="card-v2-price tender" style="color:#64748b;">已售罄</span>`;
+    } else if (isTenderProj) {
+      if (proj.min_price_wan && proj.min_price_wan > 0) {
+        const refWan = Math.round(proj.min_price_wan >= 1000 ? Math.floor(proj.min_price_wan / 100) * 100 : proj.min_price_wan);
+        priceDisplayHtml = `<span class="card-v2-price tender" style="color:#0284c7;" title="${proj.excel_min_price_desc || '招标发售'}">招标发售<span class="price-unit" style="font-size:0.75rem; color:#64748b; font-weight:normal;"> (参考约$${refWan.toLocaleString()}万+)</span></span>`;
+      } else {
+        priceDisplayHtml = `<span class="card-v2-price tender" style="color:#0284c7;">招标发售</span>`;
+      }
     } else if (proj.min_price_wan && proj.min_price_wan > 0) {
       priceDisplayHtml = `<span class="card-v2-price">约$${Number(proj.min_price_wan).toLocaleString()}万<span class="price-unit">起*</span></span>`;
     } else if (proj.sell_status === 'coming_soon') {
       priceDisplayHtml = `<span class="card-v2-price tender">即将发售</span>`;
     } else {
-      priceDisplayHtml = `<span class="card-v2-price tender">招标项目</span>`;
+      priceDisplayHtml = `<span class="card-v2-price tender">招标发售</span>`;
     }
 
     // 状态标签
