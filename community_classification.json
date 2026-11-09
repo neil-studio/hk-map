@@ -1429,5 +1429,77 @@
     "parent_community": "瑅海",
     "community_tag": "🏡【社区】大型重建综合体，享会所与区域配套绿化",
     "volume_format": "estate"
+  },
+  "天铸": {
+    "name": "天铸",
+    "category": "A",
+    "category_name": "多座组团地标大盘",
+    "is_community": true,
+    "parent_community": "天铸",
+    "community_tag": "🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林",
+    "volume_format": "estate"
+  },
+  "南天第": {
+    "name": "南天第",
+    "category": "B",
+    "category_name": "单幢顶奢独立洋房",
+    "is_community": false,
+    "parent_community": "南天第",
+    "community_tag": "👑【洋房】全盘仅3座顶奢家族洋房，户户配独立私家泳池与花园",
+    "volume_format": "boutique"
+  },
+  "巴丙顿山": {
+    "name": "巴丙顿山",
+    "category": "B",
+    "category_name": "单幢精品住宅",
+    "is_community": false,
+    "parent_community": "巴丙顿山",
+    "community_tag": "🏡【单幢】半山精品低密住宅，私密清幽",
+    "volume_format": "boutique"
+  },
+  "汇玺II": {
+    "name": "汇玺II",
+    "category": "A",
+    "category_name": "多座组团地标大盘",
+    "is_community": true,
+    "parent_community": "汇玺II",
+    "community_tag": "🏡【社区】多座组团地标大盘，配备大型度假式综合会所与园林",
+    "volume_format": "estate"
+  },
+  "尚誉": {
+    "name": "尚誉",
+    "category": "B",
+    "category_name": "单幢精品住宅",
+    "is_community": false,
+    "parent_community": "尚誉",
+    "community_tag": "🏢【单幢】核心地段精巧公寓，主打高租金回报与灵动投资",
+    "volume_format": "boutique"
+  },
+  "柏汇": {
+    "name": "柏汇",
+    "category": "B",
+    "category_name": "单幢精品住宅",
+    "is_community": false,
+    "parent_community": "柏汇",
+    "community_tag": "🏢【单幢】铁路口精品住宅，小户型易租易转手",
+    "volume_format": "boutique"
+  },
+  "南津．迎岸": {
+    "name": "南津．迎岸",
+    "category": "B",
+    "category_name": "单幢精品住宅",
+    "is_community": false,
+    "parent_community": "南津．迎岸",
+    "community_tag": "🏢【单幢】南区小资亲海精品，总价友好",
+    "volume_format": "boutique"
+  },
+  "南湾": {
+    "name": "南湾",
+    "category": "A",
+    "category_name": "多座组团地标大盘",
+    "is_community": true,
+    "parent_community": "南湾",
+    "community_tag": "🏡【社区】9座沿海帆船地标豪宅群，配超豪华私家游艇会所",
+    "volume_format": "estate"
   }
 }

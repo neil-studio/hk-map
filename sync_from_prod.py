@@ -149,11 +149,12 @@ def auto_register_new_projects(prod_data):
             df = pd.read_excel(BASE_INFO_FILE, sheet_name='楼盘基础信息汇总')
             for _, r in df.iterrows():
                 pn = str(r['项目名称']).strip()
-                lat = r.get('纬度')
-                lng = r.get('经度')
+                lat = r.get('GPS纬度') if pd.notna(r.get('GPS纬度')) else r.get('纬度')
+                lng = r.get('GPS经度') if pd.notna(r.get('GPS经度')) else r.get('经度')
                 dist = str(r.get('所属商圈', '')).strip()
+                addr = str(r.get('详细门牌地址', '')).strip()
                 if pd.notna(lat) and pd.notna(lng):
-                    base_coords_map[pn] = (float(lat), float(lng), dist)
+                    base_coords_map[pn] = (float(lat), float(lng), dist, addr)
         except Exception as e:
             log(f"读取基础信息库警告: {e}")
 
