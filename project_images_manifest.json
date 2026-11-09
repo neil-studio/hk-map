@@ -530,14 +530,14 @@
     "aspect_ratio": 0.667
   },
   "傲玟": {
-    "original": "images/projects/original/傲玟/傲玟.jpg",
+    "original": "images/projects/original/傲玟/傲玟.png",
     "hd": "images/projects/hd/傲玟.webp",
     "thumb": "images/projects/thumb/傲玟.webp",
-    "width": 1280,
-    "height": 959,
-    "hd_width": 1280,
-    "hd_height": 959,
-    "aspect_ratio": 1.335
+    "width": 1600,
+    "height": 1200,
+    "hd_width": 1600,
+    "hd_height": 1200,
+    "aspect_ratio": 1.333
   },
   "凯玥": {
     "original": "images/projects/original/凯玥/凯玥.tiff",
@@ -809,10 +809,10 @@
     "hd_height": 1181,
     "aspect_ratio": 1.334
   },
-  "天铸 (第2期)": {
+  "天铸": {
     "original": "images/projects/original/天铸/天铸.png",
-    "hd": "images/projects/hd/天铸 (第2期).webp",
-    "thumb": "images/projects/thumb/天铸 (第2期).webp",
+    "hd": "images/projects/hd/天铸.webp",
+    "thumb": "images/projects/thumb/天铸.webp",
     "width": 2780,
     "height": 1504,
     "hd_width": 1600,
@@ -1058,6 +1058,16 @@
     "hd_width": 1600,
     "hd_height": 1200,
     "aspect_ratio": 1.333
+  },
+  "汇玺II": {
+    "original": "images/projects/original/汇玺/汇玺.tiff",
+    "hd": "images/projects/hd/汇玺II.webp",
+    "thumb": "images/projects/thumb/汇玺II.webp",
+    "width": 1258,
+    "height": 848,
+    "hd_width": 1258,
+    "hd_height": 848,
+    "aspect_ratio": 1.483
   },
   "汇玺III": {
     "original": "images/projects/original/汇玺/汇玺.tiff",
