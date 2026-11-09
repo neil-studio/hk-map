@@ -569,6 +569,36 @@
     "hd_height": 1264,
     "aspect_ratio": 0.667
   },
+  "南天第": {
+    "original": "images/projects/original/南天第/南天第.jpg",
+    "hd": "images/projects/hd/南天第.webp",
+    "thumb": "images/projects/thumb/南天第.webp",
+    "width": 7767,
+    "height": 4790,
+    "hd_width": 1600,
+    "hd_height": 987,
+    "aspect_ratio": 1.622
+  },
+  "南津．迎岸": {
+    "original": "images/projects/original/南津.迎岸/南津.迎岸.png",
+    "hd": "images/projects/hd/南津．迎岸.webp",
+    "thumb": "images/projects/thumb/南津．迎岸.webp",
+    "width": 1920,
+    "height": 1482,
+    "hd_width": 1600,
+    "hd_height": 1235,
+    "aspect_ratio": 1.296
+  },
+  "南湾": {
+    "original": "images/projects/original/南湾/南湾.png",
+    "hd": "images/projects/hd/南湾.webp",
+    "thumb": "images/projects/thumb/南湾.webp",
+    "width": 1018,
+    "height": 640,
+    "hd_width": 1018,
+    "hd_height": 640,
+    "aspect_ratio": 1.591
+  },
   "南首": {
     "original": "images/projects/original/南首/南首.png",
     "hd": "images/projects/hd/南首.webp",
@@ -819,6 +849,16 @@
     "hd_height": 866,
     "aspect_ratio": 1.848
   },
+  "天铸 (第2期)": {
+    "original": "images/projects/original/天铸/天铸.png",
+    "hd": "images/projects/hd/天铸 (第2期).webp",
+    "thumb": "images/projects/thumb/天铸 (第2期).webp",
+    "width": 2780,
+    "height": 1504,
+    "hd_width": 1600,
+    "hd_height": 866,
+    "aspect_ratio": 1.848
+  },
   "太子道西233号": {
     "original": "images/projects/original/太子道西233号/太子道西233号.jpg",
     "hd": "images/projects/hd/太子道西233号.webp",
@@ -859,6 +899,16 @@
     "hd_height": 810,
     "aspect_ratio": 1.778
   },
+  "尚誉": {
+    "original": "images/projects/original/尚誉/尚誉.png",
+    "hd": "images/projects/hd/尚誉.webp",
+    "thumb": "images/projects/thumb/尚誉.webp",
+    "width": 1200,
+    "height": 1600,
+    "hd_width": 1200,
+    "hd_height": 1600,
+    "aspect_ratio": 0.75
+  },
   "峻誉．渣甸山": {
     "original": "images/projects/original/峻誉．渣甸山/峻誉．渣甸山.jpg",
     "hd": "images/projects/hd/峻誉．渣甸山.webp",
@@ -868,6 +918,16 @@
     "hd_width": 1200,
     "hd_height": 1600,
     "aspect_ratio": 0.75
+  },
+  "巴丙顿山": {
+    "original": "images/projects/original/巴丙顿山/巴丙顿山.jpg",
+    "hd": "images/projects/hd/巴丙顿山.webp",
+    "thumb": "images/projects/thumb/巴丙顿山.webp",
+    "width": 560,
+    "height": 642,
+    "hd_width": 560,
+    "hd_height": 642,
+    "aspect_ratio": 0.872
   },
   "帝汇豪庭": {
     "original": "images/projects/original/帝汇豪庭/帝汇豪庭.jpg",
@@ -1019,6 +1079,16 @@
     "hd_height": 1185,
     "aspect_ratio": 1.35
   },
+  "柏汇": {
+    "original": "images/projects/original/柏汇/柏汇.jpg",
+    "hd": "images/projects/hd/柏汇.webp",
+    "thumb": "images/projects/thumb/柏汇.webp",
+    "width": 533,
+    "height": 800,
+    "hd_width": 533,
+    "hd_height": 800,
+    "aspect_ratio": 0.666
+  },
   "柏蔚山": {
     "original": "images/projects/original/柏蔚山/柏蔚山.jpeg",
     "hd": "images/projects/hd/柏蔚山.webp",
@@ -1058,6 +1128,16 @@
     "hd_width": 1600,
     "hd_height": 1200,
     "aspect_ratio": 1.333
+  },
+  "汇玺": {
+    "original": "images/projects/original/汇玺/汇玺.tiff",
+    "hd": "images/projects/hd/汇玺.webp",
+    "thumb": "images/projects/thumb/汇玺.webp",
+    "width": 1258,
+    "height": 848,
+    "hd_width": 1258,
+    "hd_height": 848,
+    "aspect_ratio": 1.483
   },
   "汇玺II": {
     "original": "images/projects/original/汇玺/汇玺.tiff",
