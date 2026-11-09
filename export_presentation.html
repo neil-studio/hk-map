@@ -1010,26 +1010,57 @@
       overflow: visible !important;
     }
 
-    /* 🏢 楼盘项目气泡 (对齐主站 .proj-pin-box) */
+    /* 🏢 楼盘项目气泡 (对齐主站 .proj-pin-box - 优雅正上方顶置锚定) */
     .proj-pin-box {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 3.5px 8px;
+      padding: 4px 9px;
       border-radius: 6px;
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 800;
-      box-shadow: 0 3px 10px rgba(37, 99, 235, 0.45);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5), 0 1px 3px rgba(0,0,0,0.3);
       border: 1.5px solid #ffffff;
       white-space: nowrap;
       line-height: 1.2;
       position: absolute;
       left: 0;
       top: 0;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -100%) translateY(-7px);
       background: #2563EB;
       color: #ffffff;
-      z-index: 1000;
+      z-index: 3000;
+    }
+    .proj-pin-box::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px 5px 0 5px;
+      border-style: solid;
+      border-color: #2563EB transparent transparent transparent;
+    }
+    .proj-dot-anchor {
+      width: 7px;
+      height: 7px;
+      background: #ffffff;
+      border: 2px solid #2563EB;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      z-index: 2900;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+    }
+    .mtr-pin.is-smart-tight {
+      transform: translate(-95%, 8px) !important;
+      z-index: 2500 !important;
+    }
+    .mall-pin.is-smart-tight {
+      transform: translate(6px, 8px) !important;
+      z-index: 2400 !important;
     }
 
     /* 🚇 港铁站 Marker (严格对齐主站红白 MTR 官方标准) */
@@ -3539,6 +3570,9 @@
         const results = [];
         allLandmarks.forEach(lm => {
           if (!lm.lat || !lm.lng) return;
+          // 排除 mtr（港铁站已有 nearest_mtr 单独精准渲染，避免当成商场重复占据名额）和 district（商圈行政区非具体配套设施）
+          const rawC = lm.category || '';
+          if (rawC === 'mtr' || rawC === 'district') return;
           const d = getDistMeters(proj.lat, proj.lng, lm.lat, lm.lng);
           if (d <= 3000) {
             let cat = lm.category || 'landmark';
@@ -5528,14 +5562,17 @@
             maxZoom: 19
           }).addTo(mapSingle);
 
-          // 1. 本案楼盘标记 (严格对齐地图主站 .proj-pin-box 气泡样式)
+          // 1. 本案楼盘标记 (优雅正上方顶置锚定 + 精致坐标定位点，绝对居顶 zIndexOffset: 3000)
           const projIcon = L.divIcon({
             className: 'custom-proj-icon',
-            html: `<div class="proj-pin-box" title="${p.name}">${p.name}</div>`,
+            html: `
+              <div class="proj-dot-anchor"></div>
+              <div class="proj-pin-box" title="${p.name}">${p.name}</div>
+            `,
             iconSize: [0, 0],
             iconAnchor: [0, 0]
           });
-          L.marker([p.lat, p.lng], { icon: projIcon, zIndexOffset: 2000 }).addTo(mapSingle);
+          L.marker([p.lat, p.lng], { icon: projIcon, zIndexOffset: 3000 }).addTo(mapSingle);
 
           const mtr = p.nearest_mtr;
           let mtrDist = 9999;
@@ -5543,7 +5580,7 @@
             mtrDist = getDistMeters(p.lat, p.lng, mtr.nearest_mtr_lat, mtr.nearest_mtr_lng);
             const cName = mtr.nearest_mtr_cn || mtr.station_name_cn || '港铁';
             
-            // 港铁站标记 (严格使用地图网站官方红底白标 SVG 图标，不使用 🚇 emoji)
+            // 港铁站标记 (严格使用地图网站官方红底白标 SVG 图标)
             const mtrSvg = `
               <svg viewBox="0 0 65 52">
                 <ellipse cx="33" cy="26" rx="32" ry="26" fill="#C8102E" />
@@ -5551,18 +5588,14 @@
               </svg>
             `;
 
-            // 若极其靠近项目 (<140米)，使用微标避免字贴字重叠，否则使用主站经典 .mtr-pin
-            let mtrHtml = '';
-            if (mtrDist < 140) {
-              mtrHtml = `<div class="mtr-dot-pin" title="${cName}站">${mtrSvg}</div>`;
-            } else {
-              mtrHtml = `
-                <div class="mtr-pin" title="${cName}站">
-                  <span class="mtr-pin-logo">${mtrSvg}</span>
-                  <span class="mtr-pin-text">${cName}站</span>
-                </div>
-              `;
-            }
+            // 智能品字形错位：若极其靠近项目 (<200米)，应用 is-smart-tight 错位至左下方，完整保留文字与Logo
+            const isSmartTightMtr = (mtrDist < 200);
+            const mtrHtml = `
+              <div class="mtr-pin ${isSmartTightMtr ? 'is-smart-tight' : ''}" title="${cName}站">
+                <span class="mtr-pin-logo">${mtrSvg}</span>
+                <span class="mtr-pin-text">${cName}站</span>
+              </div>
+            `;
 
             const mtrIcon = L.divIcon({
               className: 'custom-mtr-icon',
@@ -5570,7 +5603,7 @@
               iconSize: [0, 0],
               iconAnchor: [0, 0]
             });
-            L.marker([mtr.nearest_mtr_lat, mtr.nearest_mtr_lng], { icon: mtrIcon, zIndexOffset: 1500 }).addTo(mapSingle);
+            L.marker([mtr.nearest_mtr_lat, mtr.nearest_mtr_lng], { icon: mtrIcon, zIndexOffset: 2500 }).addTo(mapSingle);
           }
 
           // 2. 绘制周边核心地标 (商场、重点学校、公园) - 优先选取最具代表性的 2~3 个，避免视觉拥挤
@@ -5583,8 +5616,6 @@
               const dToProj = getDistMeters(p.lat, p.lng, poi.lat, poi.lng);
               const dToMtr = (mtr && mtr.nearest_mtr_lat) ? getDistMeters(mtr.nearest_mtr_lat, mtr.nearest_mtr_lng, poi.lat, poi.lng) : 9999;
               
-              // 防重叠策略：若离项目 < 220米 或 离地铁站 < 150米，使用主站官方 dot-pin 极简微标，否则使用完整 pin
-              const isDense = (dToProj < 220 || dToMtr < 150);
               const rawName = poi.name.split('(')[0].replace(/（.*?）/g, '').trim();
               const displayName = rawName.length > 7 ? rawName.slice(0, 6) + '..' : rawName;
 
@@ -5595,6 +5626,7 @@
               if (cat === 'school' || cat === 'university') {
                 pinClass = 'custom-school-icon';
                 const schoolSvg = `<svg viewBox="0 0 24 24" class="poi-white-svg"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>`;
+                const isDense = (dToProj < 220 || dToMtr < 150);
                 if (isDense) {
                   iconHtml = `<div class="school-dot-pin" title="${rawName}">${schoolSvg}</div>`;
                 } else {
@@ -5608,6 +5640,7 @@
               } else if (cat === 'park') {
                 pinClass = 'custom-park-icon';
                 const parkSvg = `<svg viewBox="0 0 24 24" class="poi-white-svg"><path d="M17 12h2L12 2 5.05 12H7l-3.9 6h6.92v4h3.96v-4H21z"/></svg>`;
+                const isDense = (dToProj < 220 || dToMtr < 150);
                 if (isDense) {
                   iconHtml = `<div class="park-dot-pin" title="${rawName}">${parkSvg}</div>`;
                 } else {
@@ -5619,19 +5652,16 @@
                   `;
                 }
               } else {
-                // 默认商场 / shopping mall
+                // 默认商场 / shopping mall (若靠近项目 <200米，应用 is-smart-tight 错位至右下方，完整保留文字与Logo)
                 pinClass = 'custom-mall-icon';
                 const mallSvg = `<svg viewBox="0 0 24 24" class="poi-white-svg"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/></svg>`;
-                if (isDense) {
-                  iconHtml = `<div class="mall-dot-pin" title="${rawName}">${mallSvg}</div>`;
-                } else {
-                  iconHtml = `
-                    <div class="mall-pin" title="${rawName}">
-                      <span class="mall-pin-logo">${mallSvg}</span>
-                      <span class="mall-pin-text">${displayName}</span>
-                    </div>
-                  `;
-                }
+                const isSmartTightMall = (dToProj < 200 || dToMtr < 140);
+                iconHtml = `
+                  <div class="mall-pin ${isSmartTightMall ? 'is-smart-tight' : ''}" title="${rawName}">
+                    <span class="mall-pin-logo">${mallSvg}</span>
+                    <span class="mall-pin-text">${displayName}</span>
+                  </div>
+                `;
               }
 
               const poiIcon = L.divIcon({
@@ -5640,7 +5670,7 @@
                 iconSize: [0, 0],
                 iconAnchor: [0, 0]
               });
-              L.marker([poi.lat, poi.lng], { icon: poiIcon, zIndexOffset: 500 }).addTo(mapSingle);
+              L.marker([poi.lat, poi.lng], { icon: poiIcon, zIndexOffset: 2400 }).addTo(mapSingle);
             });
           }
 
